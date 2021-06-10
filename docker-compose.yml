@@ -1,0 +1,79 @@
+version: '3.7'
+
+x-node-defaults: &node
+  tty: true
+  init: true
+  image: node:10.24
+  entrypoint: ["node"]
+  working_dir: /root
+  restart: always
+  volumes:
+    - ./:/root:cached
+    - ./node_modules:/root/node_modules:delegated
+    - yarn-cache:/.yarn-cache
+
+x-env-defaults: &env
+  GTM_CONTAINER_ID: ${GTM_CONTAINER_ID}
+  NEW_RELIC_ENABLED: ${NEW_RELIC_ENABLED-0}
+  NEW_RELIC_LICENSE_KEY: ${NEW_RELIC_LICENSE_KEY-(unset)}
+  NODE_ENV: development
+  OMEDA_APP_ID: ${OMEDA_APP_ID-(unset)}
+  OMEDA_INPUT_ID: ${OMEDA_INPUT_ID-(unset)}
+  # @todo the recaptcha values should be removed (?) once contact-us is moved to core.
+  RECAPTCHA_SITE_KEY: ${RECAPTCHA_SITE_KEY-(unset)}
+  RECAPTCHA_SECRET_KEY: ${RECAPTCHA_SECRET_KEY-(unset)}
+  # @todo the sendgrid values should be removed once the @parameter1/base-cms-mailer service is created.
+  SENDGRID_API_KEY: ${SENDGRID_API_KEY-(unset)}
+  SENDGRID_DEV_TO: developer@endeavorb2b.com
+  YARN_CACHE_FOLDER: /.yarn-cache
+  LEADERS_ALIAS: leaders-2021
+
+x-env-leonis: &env-leonis
+  GRAPHQL_URI: ${GRAPHQL_URI-https://leonis.graphql.base.parameter1.com}
+  OEMBED_URI: ${OEMBED_URI-https://leonis.oembed.base.parameter1.com}
+  RSS_URI: ${RSS_URI-https://leonis.rss.base.parameter1.com}
+  SITEMAPS_URI: ${SITEMAPS_URI-https://leonis.sitemaps.base.parameter1.com}
+
+x-env-development: &env-development
+  GRAPHQL_URI: ${GRAPHQL_URI-http://host.docker.internal:10002}
+  OEMBED_URI: ${OEMBED_URI-http://host.docker.internal:10013}
+  RSS_URI: ${RSS_URI-http://host.docker.internal:10011}
+  SITEMAPS_URI: ${SITEMAPS_URI-http://host.docker.internal:10009}
+
+x-site-command: &site-cmd
+  entrypoint: ["node_modules/.bin/basecms-website"]
+  command: ["dev", "index.js"]
+
+volumes:
+  yarn-cache: {}
+
+services:
+  terminal:
+    <<: *node
+    working_dir: /root
+    entrypoint: ["/bin/bash"]
+    environment:
+      <<: *env
+
+  yarn:
+    <<: *node
+    working_dir: /root
+    entrypoint: ["yarn"]
+    environment:
+      <<: *env
+
+  de:
+    <<: *node
+    <<: *site-cmd
+    working_dir: /root/sites/diverseeducation.com
+    environment:
+      <<: *env
+      <<: *env-leonis
+      PORT: 80
+      EXPOSED_PORT: 9710
+      LIVERELOAD_PORT: 19710
+      TENANT_KEY: TBD
+      SITE_ID: TBD
+    ports:
+      - "9710:80"
+      - "19710:19710"
