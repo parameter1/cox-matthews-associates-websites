@@ -1,0 +1,17 @@
+$ const { site, config } = out.global;
+
+$ const {
+  id,
+  alias,
+  name,
+  pageNode,
+} = data;
+
+<shared-leaders-layout id=id alias=alias name=name page-node=pageNode>
+  <@page-description>
+    <p>Welcome to <em>${config.siteName()}'s</em> ${site.get("leaders.title")} program.</p>
+  </@page-description>
+  <@page-body>
+    <p>We hope you'll find this directory to be a helpful resource.</p>
+  </@page-body>
+</shared-leaders-layout>
