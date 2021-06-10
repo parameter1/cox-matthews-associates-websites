@@ -1,0 +1,76 @@
+language: node_js
+node_js: "10.24"
+cache: yarn
+
+_production-job: &production-job
+  stage: production
+  name: SERVICE_NAME
+  script: scripts/deploy.js SERVICE_NAME
+  install: skip
+  env:
+    - "ENVIRONMENT=production RANCHER_CLUSTERID=c-njflm"
+
+_staging-job: &staging-job
+  stage: staging
+  name: SERVICE_NAME
+  script: scripts/deploy.js SERVICE_NAME
+  install: skip
+  env:
+    - "ENVIRONMENT=staging RANCHER_CLUSTERID=c-njflm"
+
+stages:
+  - name: test
+
+  - name: production-started
+    if: tag =~ /^v\d+\.\d+\.\d+$/
+  - name: production
+    if: tag =~ /^v\d+\.\d+\.\d+$/
+  - name: production-finished
+    if: tag =~ /^v\d+\.\d+\.\d+$/
+
+  - name: staging-started
+    if: tag is present
+  - name: staging
+    if: tag is present
+  - name: staging-finished
+    if: tag is present
+
+jobs:
+  include:
+    - stage: test
+      env: [NODE_ENV=test]
+
+    - <<: *production-job
+      stage: production-started
+      name: Deployment Started
+      script: npx @parameter1/base-cms-website-deployment-tool notify-started
+
+    - <<: *staging-job
+      stage: staging-started
+      name: Deployment Started
+      script: npx @parameter1/base-cms-website-deployment-tool notify-started
+
+    #############################
+    ### vvv ADD SITES HERE vvv ##
+    #############################
+
+    - <<: *production-job
+      name: diverseeducation.com
+      script: npx @parameter1/base-cms-website-deployment-tool deploy diverseeducation.com virgon-websites
+    - <<: *staging-job
+      name: diverseeducation.com
+      script: npx @parameter1/base-cms-website-deployment-tool deploy diverseeducation.com leonis-websites
+
+    #############################
+    ### ^^^ ADD SITES HERE ^^^ ##
+    #############################
+
+    - <<: *production-job
+      stage: production-finished
+      name: Deployment Finished
+      script: npx @parameter1/base-cms-website-deployment-tool notify-finished
+
+    - <<: *staging-job
+      stage: production-finished
+      name: Deployment Finished
+      script: npx @parameter1/base-cms-website-deployment-tool notify-finished
