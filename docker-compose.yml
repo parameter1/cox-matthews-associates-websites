@@ -72,7 +72,7 @@ services:
       PORT: 80
       EXPOSED_PORT: 9710
       LIVERELOAD_PORT: 19710
-      TENANT_KEY: TBD
+      TENANT_KEY: diverse_all
       SITE_ID: TBD
     ports:
       - "9710:80"
