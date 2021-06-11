@@ -3,6 +3,13 @@ module.exports = {
   plugins: [
     'import'
   ],
+  rules: {
+    'import/extensions': [
+      {
+        marko: 'never',
+      }
+    ]
+  },
   settings: {
     'import/resolver': {
       node: {
