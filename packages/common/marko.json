@@ -1,0 +1,6 @@
+{
+  "taglib-id": "@cox-matthews-associates/package-common",
+  "taglib-imports": [
+    "./components/marko.json"
+  ]
+}

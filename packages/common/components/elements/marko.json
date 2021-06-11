@@ -1,0 +1,23 @@
+{
+  "tags": {
+    "common-company-logo": {
+      "template": "./company-logo.marko",
+      "@content": "object"
+    },
+    "common-image-slider": {
+      "template": "./image-slider.marko",
+      "@images" : "array"
+    },
+    "common-gam-content-targeting": {
+      "template": "./gam-content-targeting.marko",
+      "@obj": "object"
+    },
+    "common-supplier-disclaimer": {
+      "template": "./supplier-disclaimer.marko",
+      "@obj": "object"
+    }
+  },
+  "taglib-imports": [
+    "./attribution/marko.json"
+  ]
+}

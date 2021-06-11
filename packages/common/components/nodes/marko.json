@@ -1,0 +1,29 @@
+{
+  "tags": {
+    "common-youtube-card-node": {
+      "template": "./youtube-card.marko",
+      "@node": "object",
+      "@company-id": "number",
+      "@link-attrs": "object"
+    },
+    "common-author-card-node": {
+      "template": "./author-card.marko",
+      "@node": "object",
+      "@with-email": "boolean"
+    },
+    "common-featured-products-card-node": {
+      "template": "./featured-products-card.marko",
+      "@node": "object",
+      "@company-id": "number",
+      "@image-width": {
+        "type": "number",
+        "default-value": 300
+      },
+      "@with-teaser": {
+        "type": "boolean",
+        "default-value": true
+      },
+      "@link-attrs": "object"
+    }
+  }
+}

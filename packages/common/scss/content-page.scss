@@ -1,0 +1,17 @@
+.page-attribution {
+  &__inner {
+    &::before {
+      margin-right: .25rem;
+      font-weight: 400;
+      content: "—";
+    }
+  }
+  &__title {
+    &::before {
+      content: ", ";
+    }
+    &::after {
+      content: " ";
+    }
+  }
+}

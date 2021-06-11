@@ -1,0 +1,23 @@
+{
+  "tags": {
+    "common-featured-companies": {
+      "template": "./featured-companies.marko",
+      "@content": {
+        "type": "object",
+        "required": true
+      }
+    },
+    "common-company-details": {
+      "template": "./company-details.marko",
+      "@company": "object",
+      "@lang": "string"
+    },
+    "common-leadership-company-videos": {
+      "template": "./leadership-company-videos.marko",
+      "@content-id": {
+        "type": "number",
+        "required": true
+      }
+    }
+  }
+}
