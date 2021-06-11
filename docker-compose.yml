@@ -70,10 +70,10 @@ services:
       <<: *env
       <<: *env-leonis
       PORT: 80
-      EXPOSED_PORT: 9710
-      LIVERELOAD_PORT: 19710
+      EXPOSED_PORT: 9810
+      LIVERELOAD_PORT: 19810
       TENANT_KEY: diverse_all
       SITE_ID: 60c281c6d28860bc33464ae0
     ports:
-      - "9710:80"
-      - "19710:19710"
+      - "9810:80"
+      - "19810:19810"
