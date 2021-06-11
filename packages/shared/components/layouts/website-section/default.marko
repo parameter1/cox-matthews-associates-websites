@@ -1,0 +1,70 @@
+import hierarchyAliases from "@parameter1/base-cms-marko-web/utils/hierarchy-aliases";
+import queryFragment from "../../../graphql/fragments/content-list";
+
+$ const { site, GAM, i18n } = out.global;
+$ const { id, alias, name, pageNode } = input;
+
+<marko-web-website-section-page-layout id=id alias=alias name=name>
+  <@head>
+    <marko-web-gtm-website-section-context|{ context }| alias=alias>
+      <marko-web-gtm-push data=context />
+    </marko-web-gtm-website-section-context>
+    <marko-web-resolve-page|{ data: section }| node=pageNode>
+      $ const aliases = hierarchyAliases(section);
+      $ const adSlots = {
+        "gpt-ad-leaderboard": GAM.getAdUnit({ name: "leaderboard", aliases }),
+      }
+      <marko-web-gam-slots slots=adSlots />
+      <marko-web-p1-events-track-website-section node=section />
+    </marko-web-resolve-page>
+  </@head>
+  <@above-container>
+    <marko-web-resolve-page|{ data: section }| node=pageNode>
+      $ const aliases = hierarchyAliases(section);
+      <shared-gam-wallpaper-ad aliases=aliases position="section_page" />
+      <marko-web-gam-display-ad id="gpt-ad-leaderboard" modifiers=["above-container"] />
+      <marko-web-gtm-slot prefix=site.get("gtm.slotPrefix") name="home-top-below-head" modifiers=["above-container"] />
+    </marko-web-resolve-page>
+  </@above-container>
+  <@page>
+    <marko-web-query|{ nodes }|
+      name="website-optioned-content"
+      params={ sectionId: id, optionName: "Pinned", limit: 5, requiresImage: true, queryFragment }
+    >
+      <shared-content-hero-flow nodes=nodes />
+    </marko-web-query>
+
+    <marko-web-query|{ nodes }|
+      name="website-optioned-content"
+      params={ sectionId: id, optionName: "Pinned", limit: 5, skip: 5, requiresImage: true, queryFragment }
+    >
+      <shared-content-card-deck-flow nodes=nodes ad-index=1 ad-name="imu1" >
+        <@native-x index=2 name="load-more" />
+      </shared-content-card-deck-flow>
+    </marko-web-query>
+
+    <marko-web-query|{ nodes }|
+      name="website-optioned-content"
+      params={ sectionId: id, optionName: "Pinned", limit: 5, skip: 10, requiresImage: true, queryFragment }
+    >
+      <shared-content-card-deck-flow nodes=nodes ad-index=2 ad-name="imu2" >
+        <@native-x index=1 name="load-more" />
+      </shared-content-card-deck-flow>
+    </marko-web-query>
+  </@page>
+  <@below-page>
+    <marko-web-resolve-page|{ data: section }| node=pageNode>
+      $ const aliases = hierarchyAliases(section);
+      <marko-web-load-more
+        component-name="content-load-more-flow"
+        component-input={ aliases }
+        fragment-name="content-list"
+        query-name="website-scheduled-content"
+        query-params={ sectionId: id, limit: 12, skip: 15, requiresImage: true }
+        max-pages=3
+        page-input={ for: "website-section", id }
+        trigger-input={ buttonLabel: i18n("Load More Content") }
+      />
+    </marko-web-resolve-page>
+  </@below-page>
+</marko-web-website-section-page-layout>

@@ -1,0 +1,38 @@
+.inquiry-form {
+  $self: &;
+  padding: $block-spacer;
+  margin-top: 0;
+  margin-bottom: $block-spacer;
+  background-color: #f8f9fa;
+  border-top: 0;
+
+  &__header {
+    margin-bottom: .5rem;
+    font-size: 20px;
+  }
+
+  &__description {
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #dee2e6;
+  }
+
+  &__content-name {
+    font-weight: 600;
+  }
+
+  .btn {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  label {
+    margin-bottom: 0;
+  }
+
+  &--block {
+    padding: 0;
+    margin-bottom: 0;
+    background-color: $white;
+  }
+}

@@ -1,0 +1,44 @@
+import { getAsArray, get } from "@parameter1/base-cms-object-path";
+import hierarchyAliases from "@parameter1/base-cms-marko-web/utils/hierarchy-aliases";
+
+$ const { i18n } = out.global;
+
+$ const { id, type, pageNode } = data;
+$ const lang = input.lang;
+
+<marko-web-content-page-layout id=id type=type>
+  <@head>
+    <marko-web-gtm-content-context|{ context }| id=id>
+      <marko-web-gtm-push data=context />
+    </marko-web-gtm-content-context>
+    <marko-web-resolve-page|{ data: content }| node=pageNode>
+      <marko-web-p1-events-track-content node=content />
+    </marko-web-resolve-page>
+  </@head>
+  <@page>
+    <marko-web-resolve-page|{ data: content, resolved }| node=pageNode>
+      <if(content.isLeader)>
+        <shared-content-leader-page-wrapper id=id type=type content=content lang=lang/>
+      </if>
+      <else>
+        <shared-content-company-page-wrapper id=id type=type />
+      </else>
+    </marko-web-resolve-page>
+  </@page>
+  <@below-page>
+    <marko-web-resolve-page|{ resolved, data: content }| node=pageNode>
+      $ const section = resolved.getAsObject("primarySection");
+      $ const aliases = hierarchyAliases(section);
+      $ const includeContentTypes = ["Article", "Blog", "Product", "News", "PressRelease", "Webinar", "Whitepaper", "Video"];
+      <marko-web-load-more
+        header=`${i18n("More from")} ${content.name}`
+        component-name="content-load-more-flow"
+        component-input={ aliases }
+        fragment-name="content-list"
+        query-name="all-company-content"
+        query-params={ companyId: id, limit: 9, includeContentTypes, withSite: false }
+        page-input={ for: "content", id, type }
+      />
+    </marko-web-resolve-page>
+  </@below-page>
+</marko-web-content-page-layout>

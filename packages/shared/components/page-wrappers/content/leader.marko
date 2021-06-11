@@ -1,0 +1,183 @@
+import { getAsArray, get } from "@parameter1/base-cms-object-path";
+import eventLinkAttrs from "@parameter1/base-cms-marko-web-p1-events/utils/link-attrs";
+import eventEntity from "@parameter1/base-cms-marko-web-p1-events/utils/base-content-entity";
+import { getAsObject } from "@parameter1/base-cms-object-path";
+import queryFragment from "../../../graphql/fragments/content-list";
+
+
+$ const { site, i18n } = out.global;
+$ const { id, type, content } = input;
+$ const { lang = "en" } = getAsObject(site, "config");
+
+<marko-web-page-wrapper>
+  <@section>
+    <div class="row">
+      <div class="col-md-9 col-sm-12 col-lg-10">
+        <div class="ldp">
+          <div class="ldp__logo">
+            <common-company-logo content=content />
+          </div>
+          <div class="ldp__title">
+            <marko-web-content-name tag="h1" class="page-wrapper__title" obj=content />
+            <marko-web-content-city-state-zip tag="p" class="text-small text-muted" obj=content />
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-lg-2 col-sm-12 justify-content-center d-flex flex-column px-3 py-3">
+        <div class="ldp__social">
+          <marko-web-leaders-company-website-link company=content lang=lang/>
+          <div class="mt-2 d-flex justify-content-around">
+            <for|item| of=content.socialLinks>
+              <marko-web-leaders-company-social-link company=content item=item />
+            </for>
+          </div>
+        </div>
+      </div>
+    </div>
+  </@section>
+</marko-web-page-wrapper>
+
+<div class="row">
+  <div class="col-lg-8 mb-3 mb-lg-0">
+    <marko-web-node-list collapsible=false class="mt-block">
+      <@header>
+        ${i18n("Company Overview")}
+      </@header>
+      <@body>
+        <label class="content-section-header">${i18n("About")} ${content.name}</label>
+        <marko-web-content-teaser tag="p" obj=content />
+        <label class="content-section-header">${i18n("Product Summary")}</label>
+        <marko-web-obj-text tag="p" obj=content field="productSummary" type="content" html=true />
+      </@body>
+    </marko-web-node-list>
+
+    <marko-web-node-list collapsible=false class="mt-block">
+      <@header>
+        <if(content.isLeader)>${site.get("leaders.title")}</if>
+        <else>${i18n("Company Details")}</else>
+      </@header>
+      <@body>
+        <label class="content-section-header content-section-header--border">${i18n("At-a-glance")}</label>
+        <common-company-details company=content lang=lang/>
+
+        <label class="content-section-header content-section-header--border">${i18n("Contact")}</label>
+        $ const { socialLinks, ...contentSansSocial } = content;
+        <default-theme-content-contact-details
+          obj=contentSansSocial
+          website-link-attrs=eventLinkAttrs({
+            category: "Company Profile Page",
+            label: "Company Website",
+            entity: eventEntity(content.id, "company"),
+          })
+          lang=lang
+        />
+
+        <label class="content-section-header content-section-header--border">${i18n("More info on")} ${content.name}</label>
+        <shared-content-body-with-tracking block-name="leaders-more-info" content=content />
+      </@body>
+    </marko-web-node-list>
+
+    <marko-web-query|{ nodes }|
+      name="all-company-content"
+      params={
+        companyId: id,
+        includeContentTypes: ["Promotion"],
+        queryFragment,
+        limit: 4,
+        withSite: false,
+      }
+    >
+      <marko-web-node-list class="mt-block">
+        <@header>
+          ${i18n("Featured Products")}
+        </@header>
+        <@nodes|{ nodes: items }| nodes=nodes>
+          <default-theme-card-deck-flow cols=2 nodes=items>
+            <@slot|{ node, index }|>
+              <common-featured-products-card-node
+                company-id=id
+                image-width=340
+                node=node
+              />
+            </@slot>
+          </default-theme-card-deck-flow>
+        </@nodes>
+      </marko-web-node-list>
+    </marko-web-query>
+
+  </div>
+  <div class="col-lg-4 mb-3 mb-lg-0">
+    <marko-web-node-list collapsible=false class="mt-block">
+      <@header>${i18n("Request More Information")}</@header>
+      <@body>
+        <shared-inquiry-block content=content with-header=false modifiers=["block"] lang=lang />
+      </@body>
+    </marko-web-node-list>
+
+    $ const contacts = getAsArray(content, "contacts.edges").map(({ node }) => node);
+    <marko-web-node-list class="mt-block">
+      <@header>
+        <if(contacts.length > 1)>
+          ${i18n("Key Contacts")}
+        </if>
+        <else>
+          ${i18n("Key Contact")}
+        </else>
+      </@header>
+      <@nodes|{ nodes }| nodes=contacts>
+        <for|node| of=nodes>
+          <common-author-card-node node=node with-email=true />
+        </for>
+      </@nodes>
+    </marko-web-node-list>
+
+    $ const videos = getAsArray(content, "videos.edges").map(({ node }) => node);
+    <marko-web-node-list class="mt-block">
+      <@header>
+        ${i18n("Featured Videos")}
+      </@header>
+      <@nodes|{ nodes }| nodes=videos>
+        <for|node| of=nodes>
+          <div class="node-list__node">
+            <common-youtube-card-node
+              node=node
+              company-id=content.id
+              link-attrs={
+                "data-company-id": content.id,
+                "data-company-name": content.name,
+              }
+            />
+          </div>
+        </for>
+      </@nodes>
+      <@footer>
+        $ const url = get(content, "youtube.url");
+        <a href=url target="_blank" rel="noopener" class="btn btn-sm btn-block btn-secondary">
+          ${i18n("View all videos")} &gt;
+        </a>
+      </@footer>
+    </marko-web-node-list>
+
+    <marko-web-query|{ nodes }|
+      name="all-company-content"
+      params={ companyId: id, includeContentTypes: ["Article"], limit: 3, queryFragment }
+    >
+      <shared-content-list-flow nodes=nodes class="mt-block" inner-justified=false>
+        <@header>
+          ${i18n("Case Studies")}
+        </@header>
+      </shared-content-list-flow>
+    </marko-web-query>
+
+    <marko-web-query|{ nodes }|
+      name="all-company-content"
+      params={ companyId: id, includeContentTypes: ["News", "PressRelease"], limit: 5, queryFragment }
+    >
+      <shared-content-list-flow nodes=nodes class="mt-block" inner-justified=false>
+        <@header>
+          ${i18n("Company News")}
+        </@header>
+      </shared-content-list-flow>
+    </marko-web-query>
+  </div>
+</div>

@@ -1,0 +1,57 @@
+import hierarchyAliases from "@parameter1/base-cms-marko-web/utils/hierarchy-aliases";
+
+$ const { site, config, GAM } = out.global;
+$ const { id, alias, name, pageNode } = input;
+
+<marko-web-website-section-page-layout id=id alias=alias name=name>
+  <@head>
+    <marko-web-gtm-website-section-context|{ context }| alias=alias>
+      <marko-web-gtm-push data=context />
+    </marko-web-gtm-website-section-context>
+    <marko-web-resolve-page|{ data: section }| node=pageNode>
+      $ const aliases = hierarchyAliases(section);
+      $ const adSlots = {
+        "gpt-ad-leaderboard": GAM.getAdUnit({ name: "leaderboard", aliases }),
+      }
+      <marko-web-gam-slots slots=adSlots />
+      <marko-web-p1-events-track-website-section node=section />
+    </marko-web-resolve-page>
+  </@head>
+  <@above-container>
+    <marko-web-gam-display-ad id="gpt-ad-leaderboard" modifiers=["above-container"] />
+    <marko-web-gtm-slot prefix=site.get("gtm.slotPrefix") name="home-top-below-head" modifiers=["above-container"] />
+  </@above-container>
+  <@page>
+    <marko-web-page-wrapper>
+      <@section>
+        <div class="leaders-index-page__header-wrapper">
+          <div class="leaders-index-page__logo">
+            <marko-web-img
+              src=site.get("leaders.header.imgSrc")
+              alt=site.get("leaders.title")
+            />
+          </div>
+          <div class="leaders-index-page__header">
+            <h1 class="leaders-index-page__title">
+              ${site.get("leaders.title")}
+            </h1>
+            <div class="leaders-index-page__description">
+              <if(input.pageDescription)>
+                <${input.pageDescription} />
+              </if>
+              <else>
+                <p>Welcome to <em>${config.siteName()}'s</em> ${site.get("leaders.title")} program.</p>
+              </else>
+            </div>
+          </div>
+          <div class="leaders-index-page__body">
+            <${input.pageBody} />
+          </div>
+        </div>
+      </@section>
+      <@section>
+        <common-leaders-all />
+      </@section>
+    </marko-web-page-wrapper>
+  </@page>
+</marko-web-website-section-page-layout>

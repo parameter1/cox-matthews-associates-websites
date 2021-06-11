@@ -1,0 +1,42 @@
+{
+  "<shared-leaders-layout>": {
+    "template": "./leaders.marko",
+    "<page-description>": {},
+    "<page-body>": {},
+    "@id": {
+      "type": "string",
+      "required": true
+    },
+    "@alias": {
+      "type": "string",
+      "required": true
+    },
+    "@name": {
+      "type": "string",
+      "required": true
+    },
+    "@page-node": {
+      "type": "object",
+      "required": true
+    }
+  },
+  "<shared-website-section-default-layout>": {
+    "template": "./default.marko",
+    "@id": {
+      "type": "string",
+      "required": true
+    },
+    "@alias": {
+      "type": "string",
+      "required": true
+    },
+    "@name": {
+      "type": "string",
+      "required": true
+    },
+    "@page-node": {
+      "type": "object",
+      "required": true
+    }
+  }
+}
