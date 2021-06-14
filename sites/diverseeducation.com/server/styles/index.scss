@@ -1,26 +1,34 @@
 $primary: #3155fc;
-$secondary: #495057;
+$secondary: #515b6e;
 $light: #e9ecef;
 $dark: #212529;
 $info: #6c757d;
-$dark-bg-color: #00337b;
-$light-bg-color: #0a6fff;
+$dark-bg-color: $secondary;
+$light-bg-color: #fff;
 $background: $dark-bg-color;
 $link-color: $light-bg-color;
 
-$theme-site-footer-primary-bg-color: $light-bg-color;
-$theme-site-footer-secondary-bg-color: $dark-bg-color;
+$theme-site-navbar-logo-height: 45px;
+$theme-site-navbar-primary-bg-color: $dark-bg-color;
+$theme-site-navbar-primary-link-color: #fff;
+
+$theme-site-navbar-secondary-type: light;
+$theme-site-navbar-secondary-bg-color: $light-bg-color;
+
+$theme-site-footer-primary-bg-color: $dark-bg-color;
+$theme-site-footer-secondary-bg-color: $light-bg-color;
 
 $theme-load-more-button-background-color: $dark-bg-color;
 $theme-load-more-button-border-color: $dark-bg-color;
 
-$leaders-primary-color: #002f7b;
-$leaders-primary-color-light: #005bac;
-$leaders-accent-color: #d557af;
-
 $theme-site-header-breakpoints: (
-  hide-secondary: 790px,
-  small-text-secondary: 875px
+  hide-primary: 1005px,
+  hide-secondary: 900px,
+  small-logo: 1005px,
+  small-text-primary: 0,
+  small-text-secondary: 0,
+  hide-social-icons: 560px,
+  hide-user-links: 414px,
 );
 
 @import "../../node_modules/@cox-matthews-associates/package-common/scss/common";
