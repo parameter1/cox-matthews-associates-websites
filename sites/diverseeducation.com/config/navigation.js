@@ -1,4 +1,15 @@
+const topics = [
+  { href: '/african-american', label: 'African-American' },
+  { href: '/asian-american-pacific-islander', label: 'Asian American Pacific Islander' },
+  { href: '/campus-climate', label: 'Campus Climate' },
+  { href: '/covid-19', label: 'COVID-19' },
+  { href: '/disabilities', label: 'Disabilities' },
+];
+
 module.exports = {
+  primary: {
+    items: topics,
+  },
   secondary: {
     items: [
     ],
@@ -16,8 +27,7 @@ module.exports = {
   menu: [
     {
       label: 'Topics',
-      items: [
-      ],
+      items: topics,
     },
     {
       label: 'Resources',
