@@ -1,0 +1,37 @@
+import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
+import queryFragment from "../../graphql/fragments/section-feed-block";
+
+$ const queryParams = {
+  ...input.queryParams,
+  sectionAlias: input.alias,
+  queryFragment,
+};
+
+$ const blockName = "section-feed";
+$ const countOnly = defaultValue(input.countOnly, false);
+
+<if(countOnly)>
+  <global-query-total-count|data| name="website-scheduled-content" params=queryParams>
+    <${input.renderBody} ...data />
+  </global-query-total-count>
+</if>
+<else>
+  <marko-web-query|{ nodes }| name="website-scheduled-content" params=queryParams>
+    <default-theme-card-deck-flow cols=3 nodes=nodes modifiers=[blockName]>
+      <@slot|{ node }|>
+        <global-content-node
+          image-position="top"
+          card=true
+          flush=true
+          full-height=true
+          with-teaser=true
+          with-dates=false
+          modifiers=[blockName]
+          node=node
+        >
+          <@image ar="3:2" fluid=true />
+        </global-content-node>
+      </@slot>
+    </default-theme-card-deck-flow>
+  </marko-web-query>
+</else>

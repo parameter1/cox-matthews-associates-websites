@@ -5,9 +5,9 @@ import GAM from '@parameter1/base-cms-marko-web-gam/browser';
 import GCSE from '@parameter1/base-cms-marko-web-gcse/browser';
 import RevealAd from '@parameter1/base-cms-marko-web-reveal-ad/browser';
 import Common from '@cox-matthews-associates/package-common/browser';
-import Shared from '@cox-matthews-associates/package-shared/browser';
+import Global from '@cox-matthews-associates/package-global/browser';
 
-Shared(Browser);
+Global(Browser);
 DefaultTheme(Browser);
 GTM(Browser);
 GAM(Browser);

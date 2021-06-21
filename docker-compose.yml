@@ -26,6 +26,9 @@ x-env-defaults: &env
   SENDGRID_API_KEY: ${SENDGRID_API_KEY-(unset)}
   SENDGRID_DEV_TO: developer@endeavorb2b.com
   YARN_CACHE_FOLDER: /.yarn-cache
+  ALGOLIA_APP_ID: ${ALGOLIA_APP_ID-05JLREVGZ4}
+  ALGOLIA_API_KEY: ${ALGOLIA_API_KEY-needed}
+  ALGOLIA_DEFAULT_INDEX: ${ALGOLIA_DEFAULT_INDEX-randallreilly_all_platform_content}
   LEADERS_ALIAS: leaders-2021
 
 x-env-leonis: &env-leonis

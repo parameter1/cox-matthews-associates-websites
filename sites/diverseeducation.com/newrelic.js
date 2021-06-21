@@ -1,1 +1,1 @@
-module.exports = require('@cox-matthews-associates/package-shared/newrelic');
+module.exports = require('@cox-matthews-associates/package-global/newrelic');
