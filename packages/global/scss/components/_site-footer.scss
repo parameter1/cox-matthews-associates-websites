@@ -10,7 +10,7 @@
 
     &--secondary {
       padding-bottom: 0;
-      background-color: $primary;
+      background-color: #515b6e;
     }
   }
 
@@ -46,7 +46,7 @@
 
   &__brand {
     margin-right: auto;
-    margin-bottom: 33px;
+    margin-bottom: 18px;
     margin-left: auto;
   }
 
@@ -156,7 +156,9 @@
   $self: &;
   &--site-footer {
     #{ $self } {
+      margin-bottom: 16px;
       &__header {
+        display: none;
         color: skin-typography-prop("footer-header-1", "color");
       }
 
@@ -164,6 +166,7 @@
         // stylelint-disable-next-line
         > .social-icon-link {
           margin-right: 16px;
+          // stylelint-disable-next-line
           &:last-of-type {
             margin-right: 0;
           }
