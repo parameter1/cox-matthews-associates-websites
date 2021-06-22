@@ -45,13 +45,11 @@ $ const tagline = site.get("tagline");
           </@item>
         </for>
       </default-theme-breadcrumbs>
-      <marko-web-element
-        block-name='site-footer'
-        name="copyright"
-      >
-        <p>&copy; ${site.get("company")} ${year}</p>
-        <p>${site.get("copyrightNotice")}</p>
-      </marko-web-element>
+
+      <default-theme-site-footer-copyright
+        company=site.get("company")
+        notice=site.get("copyrightNotice")
+      />
     </marko-web-element>
   </default-theme-site-footer-container>
 </marko-web-block>
