@@ -186,6 +186,7 @@ label {
 .section-cards {
   &__header {
     @include skin-typography($style: "header-2");
+    margin-bottom: 16px;
   }
 }
 
