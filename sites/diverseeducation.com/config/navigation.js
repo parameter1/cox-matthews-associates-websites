@@ -1,12 +1,14 @@
 const topics = {
   primary: [
-    { href: '/african-american', label: 'African-American' },
-    { href: '/asian-american-pacific-islander', label: 'Asian American Pacific Islander' },
+    { href: '/latest-news', label: 'News' },
+    { href: '/opinion', label: 'Opinion' },
     { href: '/campus-climate', label: 'Campus Climate' },
+    { href: '/international', label: 'International' },
+    { href: '/disabilities', label: 'Disabilities' },
+    { href: '/sports', label: 'Sports' },
   ],
   expanded: [
     { href: '/covid-19', label: 'COVID-19' },
-    { href: '/disabilities', label: 'Disabilities' },
   ],
   secondary: [],
 };
