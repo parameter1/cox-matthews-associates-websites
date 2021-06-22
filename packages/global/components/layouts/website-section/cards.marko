@@ -4,7 +4,7 @@ $ const { id, alias, name, pageNode } = input;
 $ const sections = getAsArray(input, "sections");
 
 $ const { pagination: p } = out.global;
-$ const perPage = 9;
+$ const perPage = 10;
 
 <global-website-section-default-layout
   id=id
@@ -23,7 +23,7 @@ $ const perPage = 9;
     </global-section-cards-block>
   </@head>
 
-  <!-- <@section|{ aliases }| modifiers=["first"]>
+  <@section|{ aliases }| modifiers=["first"]>
     <global-gam-define-display-ad
       name="leaderboard"
       position="section_page"
@@ -31,7 +31,7 @@ $ const perPage = 9;
       modifiers=["inter-block"]
     />
     <global-gam-wallpaper-ad aliases=aliases position="section_page" />
-  </@section> -->
+  </@section>
 
   <@section|{ blockName, section, aliases }|>
     <if(input.beforeName)>
@@ -54,9 +54,16 @@ $ const perPage = 9;
         section=section
       />
     </if>
+  </@section>
 
-    <global-section-cards-block alias=alias>
-      <@query-params limit=9 skip=p.skip({ perPage }) />
+  <@section|{ blockName, section, aliases }|>
+    <global-section-cards-block alias=alias aliases=aliases ad-index=1 ad-name="rotation">
+      <@query-params limit=5 skip=p.skip({ perPage }) />
+    </global-section-cards-block>
+  </@section>
+  <@section|{ blockName, section, aliases }|>
+    <global-section-cards-block alias=alias aliases=aliases ad-index=1 ad-name="rotation">
+      <@query-params limit=5 skip=p.skip({ perPage }) />
     </global-section-cards-block>
   </@section>
 
