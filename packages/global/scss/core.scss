@@ -183,6 +183,12 @@ label {
   }
 }
 
+.section-cards {
+  &__header {
+    @include skin-typography($style: "header-2");
+  }
+}
+
 // ensure all anvato embeds are treated like videos
 [data-oembed-provider="Anvato"] {
   @extend .embed-responsive;
