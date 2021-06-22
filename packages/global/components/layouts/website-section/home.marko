@@ -11,7 +11,7 @@ $ const sections = getAsArray(input, "sections");
   page-node=pageNode
   head=input.head
 >
-  <@section|{ aliases }| modifiers=["first"]>
+  <!-- <@section|{ aliases }| modifiers=["first"]>
     <global-gam-define-display-ad
       name="leaderboard"
       position="home_page"
@@ -19,7 +19,7 @@ $ const sections = getAsArray(input, "sections");
       modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
     />
     <global-gam-wallpaper-ad aliases=aliases position="home_page" />
-  </@section>
+  </@section> -->
 
   <@section|{ aliases }|>
     <global-hero-card-block alias=alias display-title=false />
@@ -34,12 +34,12 @@ $ const sections = getAsArray(input, "sections");
     </@section>
   </for>
 
-  <@section|{ aliases }|>
+  <!-- <@section|{ aliases }|>
     <global-gam-define-display-ad
       name="rotation"
       position="home_page"
       aliases=aliases
       modifiers=["inter-block"]
     />
-  </@section>
+  </@section> -->
 </global-website-section-default-layout>

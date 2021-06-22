@@ -20,7 +20,7 @@ $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type)
   page-node=pageNode
   ...rest
 >
-  <@section|{ aliases }| modifiers=["first-sm"]>
+  <!-- <@section|{ aliases }| modifiers=["first-sm"]>
     <global-gam-define-display-ad
       name="leaderboard"
       position="content_page"
@@ -28,7 +28,7 @@ $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type)
       modifiers=["inter-block"]
     />
     <global-gam-wallpaper-ad aliases=aliases position="content_page" />
-  </@section>
+  </@section> -->
 
   <@section|{ blockName, content, aliases }| modifiers=["content-header"]>
     $ const { primarySection } = content;
@@ -176,15 +176,7 @@ $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type)
 
 
   <@section|{ blockName, content }|>
-    <marko-web-website-section-name|{ value }|
-      tag="h1"
-        block-name=blockName
-        obj=content.primarySection
-      >
-      Latest in ${value}
-    </marko-web-website-section-name>
-
-    <global-section-cards-block alias=content.primarySection.alias>
+    <global-section-cards-block alias=content.primarySection.alias title=`Latest in ${content.primarySection.name}`>
       <@query-params limit=9 skip=p.skip({ perPage }) />
     </global-section-cards-block>
   </@section>
