@@ -156,9 +156,9 @@
 }
 
 .social-follow {
-  text-align: center;
   $self: &;
   &--site-footer {
+    text-align: center;
     #{ $self } {
       margin-bottom: 16px;
       &__header {
