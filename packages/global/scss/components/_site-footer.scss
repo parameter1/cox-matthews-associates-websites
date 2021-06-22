@@ -158,9 +158,9 @@
 .social-follow {
   $self: &;
   &--site-footer {
+    margin-bottom: 16px;
     text-align: center;
     #{ $self } {
-      margin-bottom: 16px;
       &__header {
         display: none;
         color: skin-typography-prop("footer-header-1", "color");
