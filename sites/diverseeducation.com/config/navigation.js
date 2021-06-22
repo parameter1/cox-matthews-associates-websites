@@ -42,6 +42,7 @@ const desktopMenu = {
 module.exports = {
   desktopMenu,
   mobileMenu,
+  topics,
   primary: {
     items: [],
   },
@@ -50,6 +51,20 @@ module.exports = {
   },
   tertiary: {
     items: [],
+  },
+  toggleMenu: {
+    midColumn: {
+      items: [
+        ...topics.primary,
+        ...topics.expanded,
+      ],
+    },
+    rightColumn: {
+      items: [
+        ...topics.secondary,
+        ...utilities,
+      ],
+    },
   },
   footer: {
     items: [
