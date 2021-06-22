@@ -2,7 +2,7 @@ import { getAsArray } from "@parameter1/base-cms-object-path";
 import DefineDisplayAd from "../../gam/define-display-ad";
 
 $ const { pagination: p, site } = out.global;
-$ const perPage = 9;
+$ const perPage = 10;
 $ const { id, type, pageNode, showReadNextBlock, showBottomAdBlock, showTopStoryBlock, ...rest } = input;
 $ const sections = getAsArray(input, "sections");
 
@@ -27,7 +27,6 @@ $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type)
       aliases=aliases
       modifiers=["inter-block"]
     />
-    <global-gam-wallpaper-ad aliases=aliases position="content_page" />
   </@section>
 
   <@section|{ blockName, content, aliases }| modifiers=["content-header"]>
@@ -193,7 +192,7 @@ $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type)
 
 
   <@section|{ blockName, content, aliases }|>
-    <global-section-cards-block alias=content.primarySection.alias aliases=aliases ad-index=[1,2] ad-name="rotation">
+    <global-section-cards-block alias=content.primarySection.alias aliases=aliases ad-index=[1,6] ad-name="rotation">
       <@query-params limit=10 skip=p.skip({ perPage }) />
     </global-section-cards-block>
   </@section>
