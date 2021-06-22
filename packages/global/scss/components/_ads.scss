@@ -86,7 +86,8 @@
   }
 
   &--rail {
-    background-color: $skin-ad-bg-color;
+    // background-color: $skin-ad-bg-color;
+    background-color: $white;
     > *:first-child {
       padding-bottom: $container-bottom-padding;
     }
@@ -96,7 +97,8 @@
   }
 
   &--rail-mobile {
-    background-color: $skin-ad-bg-color;
+    // background-color: $skin-ad-bg-color;
+    background-color: $white;
     > *:first-child {
       padding-bottom: $container-bottom-padding;
     }
