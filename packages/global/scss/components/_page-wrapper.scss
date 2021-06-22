@@ -70,12 +70,6 @@
   // For now adding margin top to first element of page wrapper
   #{ $self } {
     &__section {
-      &:first-of-type {
-        margin-top: 30px;
-        @include media-breakpoint-up(md) {
-          margin-top: 60px;
-        }
-      }
       &:last-of-type {
         margin-bottom: 30px;
         @include media-breakpoint-up(md) {
