@@ -32,7 +32,7 @@ $ const adPosition = input.adPosition || "after";
           card=true
           flush=true
           full-height=true
-          with-teaser=true
+          with-teaser=false
           with-dates=false
           modifiers=[blockName]
           node=node
@@ -41,9 +41,11 @@ $ const adPosition = input.adPosition || "after";
         </global-content-node>
       </@slot>
       <if(adIndex !== null)>
-        <@slot position=adPosition index=adIndex>
-          <marko-web-gam-define-display-ad ...GAM.getAdUnit({ name: adName, size: [300, 250], aliases }) modifiers=["in-card"] />
-        </@slot>
+        <for|show| of=adIndex>
+          <@slot position=adPosition index=show>
+            <marko-web-gam-define-display-ad ...GAM.getAdUnit({ name: adName, size: [300, 250], aliases }) modifiers=["in-card"] />
+          </@slot>
+        </for>
       </if>
     </default-theme-card-deck-flow>
   </marko-web-query>

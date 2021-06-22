@@ -193,14 +193,8 @@ $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type)
 
 
   <@section|{ blockName, content, aliases }|>
-    <global-section-cards-block alias=content.primarySection.alias aliases=aliases ad-index=1 ad-name="rotation">
-      <@query-params limit=5 skip=p.skip({ perPage }) />
-    </global-section-cards-block>
-  </@section>
-
-  <@section|{ blockName, content, aliases }|>
-    <global-section-cards-block alias=content.primarySection.alias aliases=aliases ad-index=1 ad-name="rotation">
-      <@query-params limit=5 skip=p.skip({ perPage }) />
+    <global-section-cards-block alias=content.primarySection.alias aliases=aliases ad-index=[1,2] ad-name="rotation">
+      <@query-params limit=10 skip=p.skip({ perPage }) />
     </global-section-cards-block>
   </@section>
 
