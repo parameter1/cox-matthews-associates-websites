@@ -16,6 +16,33 @@ $ const { id, alias, name, pageNode } = input;
     <global-opinion-block alias="opinion" />
   </@section> -->
 
+  <@section|{ aliases }|>
+    <div class="row">
+      <div class="col-lg-4">
+        <global-section-list-block alias="opinion" />
+      </div>
+      <div class="col-lg-4">
+        <global-section-list-block alias="international" />
+      </div>
+      <div class="col-lg-4 pt-block">
+        <global-gam-define-display-ad
+          name="rotation"
+          position="content_page"
+          aliases=aliases
+          modifiers=["max-width-300", "center", "margin-auto-x", "rail"]
+          class="mb-block"
+        />
+        <global-gam-define-display-ad
+          name="rotation"
+          position="content_page"
+          aliases=aliases
+          modifiers=["max-width-300", "center", "margin-auto-x", "rail"]
+          class="mb-block"
+        />
+      </div>
+    </div>
+  </@section>
+
   <@section>
     <global-section-list-deck-block aliases=["african-american", "covid-19", "campus-climate"] />
   </@section>
