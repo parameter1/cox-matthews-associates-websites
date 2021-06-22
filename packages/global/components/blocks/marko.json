@@ -104,6 +104,7 @@
     "template": "./section-cards.marko",
     "<query-params>": {},
     "<node>": {},
+    "@title": "string",
     "@alias": "string",
     "@count-only": "boolean"
   },

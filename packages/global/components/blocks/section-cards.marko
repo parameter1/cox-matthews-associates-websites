@@ -7,7 +7,8 @@ $ const queryParams = {
   queryFragment,
 };
 
-$ const blockName = "section-feed";
+$ const { title } = input;
+$ const blockName = "section-cards";
 $ const countOnly = defaultValue(input.countOnly, false);
 
 <if(countOnly)>
@@ -17,6 +18,11 @@ $ const countOnly = defaultValue(input.countOnly, false);
 </if>
 <else>
   <marko-web-query|{ nodes }| name="website-scheduled-content" params=queryParams>
+    <if(title)>
+      <marko-web-element block-name=blockName name="header">
+        ${title}
+      </marko-web-element>
+    </if>
     <default-theme-card-deck-flow cols=3 nodes=nodes modifiers=[blockName]>
       <@slot|{ node }|>
         <global-content-node
