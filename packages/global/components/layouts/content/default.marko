@@ -1,0 +1,229 @@
+import { getAsArray } from "@parameter1/base-cms-object-path";
+import DefineDisplayAd from "../../gam/define-display-ad";
+
+$ const { pagination: p, site } = out.global;
+$ const perPage = 10;
+$ const { id, type, pageNode, showReadNextBlock, showBottomAdBlock, showTopStoryBlock, ...rest } = input;
+$ const sections = getAsArray(input, "sections");
+
+$ const displayPrimaryImage = false; // ["media-gallery"].includes(type) ? false : true;
+$ const displayPublishedDate = ["company", "contact", "whitepaper"].includes(type) ? false : true;
+$ const displayReadNext = false; //showReadNextBlock && ["article"].includes(type);
+$ const displaySocialShare = ["contact"].includes(type) ? false : true;
+$ const displayComments = false; //["contact"].includes(type) ? false : true;
+$ const displayNewsletterSignup = ["contact"].includes(type) ? false : true;
+$ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type);
+
+<global-content-wrapper-layout
+  id=id
+  type=type
+  page-node=pageNode
+  ...rest
+>
+  <@section|{ aliases }| modifiers=["first-sm"]>
+    <global-gam-define-display-ad
+      name="leaderboard"
+      position="content_page"
+      aliases=aliases
+      modifiers=["inter-block"]
+    />
+  </@section>
+
+  <@section|{ blockName, content, aliases }| modifiers=["content-header"]>
+    $ const { primarySection } = content;
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="content-page-header">
+          <global-content-page-breadcrumbs section=primarySection />
+          <marko-web-content-name tag="h1" block-name=blockName obj=content />
+
+          $ const contentContactLength = ["authors", "contributors", "photographers"].reduce((num, field) => {
+            const contacts = getAsArray(content, `${field}.edges`);
+            return num + contacts.length;
+          }, 0);
+
+          $ const authors = getAsArray(content, "authors.edges");
+
+          <if(type !== "contact")>
+            <if(authors.length === 1 && contentContactLength < 2)>
+              <global-author-published-node author=authors[0].node content=content />
+            </if>
+            <else>
+              <default-theme-content-attribution obj=content elements=["authors"] />
+            </else>
+          </if>
+
+          <if(authors.length !== 1 || contentContactLength > 1)>
+            <default-theme-page-dates|{ blockName }|>
+              <if(type === "event")>
+                <marko-web-content-starts block-name=blockName obj=content />
+                <marko-web-content-ends block-name=blockName obj=content />
+              </if>
+              <else-if(type === "webinar")>
+                <marko-web-content-starts block-name=blockName obj=content />
+              </else-if>
+              <else-if(displayPublishedDate)>
+                <global-content-published-node block-name=blockName obj=content />
+              </else-if>
+            </default-theme-page-dates>
+          </if>
+          <global-sponsored-section-logo alias=primarySection.alias modifiers=["content-page"] class="mt-3" />
+        </div>
+
+        <div class="content-page-body">
+          <default-theme-page-contents|{ blockName }| attrs={ "data-gallery-id": id }>
+            <if(content.embedCode)>
+              <marko-web-content-embed-code block-name=blockName obj=content />
+            </if>
+            <else-if(type === "media-gallery")>
+              <!-- <marko-web-image-slider images=images /> -->
+            </else-if>
+            <else-if(displayPrimaryImage)>
+              $ let forceDisplay;
+              $ if (type === "contact") forceDisplay = "left";
+              $ if (type === "video") forceDisplay = "none";
+              <global-primary-image-block
+                obj=content.primaryImage
+                force-display=forceDisplay;
+              />
+            </else-if>
+
+            $ const bodyId = `content-body-${content.id}`;
+
+            <if(shouldInjectAds)>
+
+              $ const desktopCounts = [1000, 2750, 4500, 6250, 8000, 9750, 11500, 13250, 15000, 16750, 18500];
+              $ const mobileCounts = [350, 1650, 2950, 4250, 5550, 6850, 8150, 9450, 10750, 12050, 13350, 14650, 15950, 17250];
+              <global-gam-inject-ads selector=`#${bodyId}` detect-embeds=true>
+                <for|char| of=desktopCounts>
+                  <!-- desktop/tablet only -->
+                  <@inject
+                    at=char
+                    name="inline-content-desktop"
+                    aliases=aliases
+                    modifiers=["max-width-970", "margin-auto-x", "inline-content"]
+                  />
+                </for>
+
+                <for|char| of=mobileCounts>
+                  <!-- mobile only -->
+                  <@inject
+                    at=char
+                    name="inline-content-mobile"
+                    aliases=aliases
+                    modifiers=["max-width-970", "margin-auto-x", "inline-content"]
+                  />
+                </for>
+              </global-gam-inject-ads>
+            </if>
+
+            <marko-web-content-body block-name=blockName obj=content attrs={ id: bodyId } />
+
+            <!-- needs input -->
+            <if(input.afterBody)>
+              <${input.afterBody}
+                aliases=aliases
+                block-name=blockName
+                content=content
+              />
+            </if>
+
+            <if(type === "document" || type === "whitepaper")>
+              <default-theme-content-download obj=content>
+                <@wufoo user-name=site.get("wufoo.userName") />
+                <@link class="btn btn-primary" />
+              </default-theme-content-download>
+            </if>
+
+            <if(displayNewsletterSignup)>
+              <global-newsletter-signup-banner-block />
+            </if>
+
+            <if(displaySocialShare)>
+              <marko-web-social-sharing
+                path=content.siteContext.path
+                providers=["print", "facebook", "linkedin", "twitter", "pinterest"]
+                print-path=`/print/content/${content.id}`
+              />
+            </if>
+
+            <if(displayComments)>
+              <global-identity-x-comment-stream content=content />
+            </if>
+
+            <if(displayReadNext)>
+              <global-read-next-block
+                content-id=id
+                section-id=primarySection.id
+                published=content.published
+              />
+            </if>
+          </default-theme-page-contents>
+        </div>
+      </div>
+      <div class="col-lg-4 pt-block">
+        <global-gam-define-display-ad
+          name="rotation"
+          position="content_page"
+          aliases=aliases
+          modifiers=["max-width-300", "center", "margin-auto-x", "rail"]
+          class="mb-block"
+        />
+        <global-gam-define-display-ad
+          name="rotation"
+          position="content_page"
+          aliases=aliases
+          modifiers=["max-width-300", "center", "margin-auto-x", "rail"]
+          class="mb-block"
+        />
+      </div>
+    </div>
+  </@section>
+  <!-- <if(showBottomAdBlock)>
+    <@section|{ aliases }|>
+      <global-gam-define-display-ad
+        name="rotation"
+        position="content_page"
+        aliases=aliases
+        modifiers=["inter-block"]
+      />
+    </@section>
+  </if> -->
+
+
+  <@section|{ blockName, content, aliases }|>
+    $ const title = `More in ${content.primarySection.name}`;
+    <global-section-cards-block
+      alias=content.primarySection.alias
+      aliases=aliases
+      ad-index=[1,6]
+      ad-name="rotation"
+      title=title
+    >
+      <@query-params limit=10 skip=p.skip({ perPage }) />
+    </global-section-cards-block>
+  </@section>
+
+  <@section|{ content }|>
+    <global-section-cards-block|{ totalCount }|
+      alias=content.primarySection.alias
+      count-only=true
+    >
+      <global-pagination-controls
+        per-page=perPage
+        total-count=totalCount
+        path=content.primarySection.alias
+      />
+    </global-section-cards-block>
+  </@section>
+
+  <for|s| of=sections>
+    <@section|{ blockName, content, aliases }| modifiers=s.modifiers>
+      <${s.renderBody}
+        block-name=blockName
+        content=content
+        aliases=aliases
+      />
+    </@section>
+  </for>
+</global-content-wrapper-layout>

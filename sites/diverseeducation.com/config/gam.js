@@ -1,6 +1,6 @@
-const configureGAM = require('@cox-matthews-associates/package-shared/config/gam');
+const configureGAM = require('@cox-matthews-associates/package-global/config/gam');
 
-const config = configureGAM();
+const config = configureGAM({ basePath: 'de' });
 
 config.lazyLoad = {
   enabled: true, // set to true to enable lazy loading
@@ -9,8 +9,23 @@ config.lazyLoad = {
   mobileScaling: 2, // double these on mobile
 };
 
-config.setAliasAdUnits('default', [
-  { name: 'leaderboard', templateName: 'leaderboard', path: 'de_leaderboard' },
-]);
+config
+  .setAliasAdUnits('default', [
+    { name: 'leaderboard', templateName: 'LEADERBOARD', path: 'leaderboard' },
+    { name: 'rotation', templateName: 'ROTATION', path: 'rotation' },
+    { name: 'inline-content-mobile', templateName: 'INLINE-CONTENT-MOBILE', path: 'rotation' },
+    { name: 'inline-content-desktop', templateName: 'INLINE-CONTENT-DESKTOP', path: 'rotation' },
+  ]);
+
+const aliases = [
+  // channel Aliases
+];
+
+aliases.forEach(alias => config.setAliasAdUnits(alias, [
+  { name: 'leaderboard', templateName: 'LEADERBOARD', path: `${alias}-leaderboard` },
+  { name: 'rotation', templateName: 'ROTATION', path: `${alias}-rotation` },
+  { name: 'inline-content-mobile', templateName: 'INLINE-CONTENT-MOBILE', path: `${alias}-rotation` },
+  { name: 'inline-content-desktop', templateName: 'INLINE-CONTENT-DESKTOP', path: `${alias}-rotation` },
+]));
 
 module.exports = config;

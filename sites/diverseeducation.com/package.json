@@ -29,8 +29,7 @@
     "@parameter1/base-cms-object-path": "^2.22.2",
     "@parameter1/base-cms-utils": "^2.22.2",
     "@parameter1/base-cms-web-cli": "^2.26.0",
-    "@cox-matthews-associates/package-common": "^0.0.0",
-    "@cox-matthews-associates/package-shared": "^0.0.0",
+    "@cox-matthews-associates/package-global": "^0.0.0",
     "graphql": "^14.5.4",
     "graphql-tag": "^2.10.1"
   }

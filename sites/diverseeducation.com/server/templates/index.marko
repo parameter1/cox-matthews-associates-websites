@@ -1,62 +1,107 @@
 import hierarchyAliases from "@parameter1/base-cms-marko-web/utils/hierarchy-aliases";
-import queryFragment from "@cox-matthews-associates/package-shared/graphql/fragments/content-list";
-import latestIssueFragment from "@cox-matthews-associates/package-shared/graphql/fragments/magazine-latest-issue";
 
-$ const { site, GAM, nativeX: nxConfig } = out.global;
-$ const { id, alias, name, pageNode } = data;
+$ const { id, alias, name, pageNode } = input;
 
-<marko-web-website-section-page-layout id=id alias=alias name=name>
-  <@head>
-    <marko-web-gtm-website-section-context|{ context }| alias=alias>
-      <marko-web-gtm-push data=context />
-    </marko-web-gtm-website-section-context>
-    <marko-web-resolve-page|{ data: section }| node=pageNode>
-       <marko-web-p1-events-track-website-section node=section />
-    </marko-web-resolve-page>
-  </@head>
-  <@page>
+<global-website-section-home-layout
+  id=id
+  alias=alias
+  name=name
+  page-node=pageNode
+>
+  <!-- <@head>
+    <meta name="google-site-verification" content="dS4kZmi5L6RGUU0TMDKjqgy_5cqXK8_NSgyuRBGixhg" />
+  </@head> -->
 
-    <marko-web-query|{ nodes }|
-      name="website-optioned-content"
-      params={ sectionId: id, optionName: "Pinned", limit: 5, requiresImage: true, queryFragment }
-    >
-      <shared-content-hero-flow nodes=nodes />
-    </marko-web-query>
-
+  <@section|{ aliases }|>
     <div class="row">
-      <div class="col-lg-8 mb-block">
-        <marko-web-query|{ nodes }|
-          name="website-optioned-content"
-          params={ sectionAlias: "home", optionName: "Pinned", limit: 4, skip: 5, requiresImage: true, queryFragment }
-        >
-          <default-theme-card-deck-flow cols=2 nodes=nodes>
-            <@slot|{ node, index }|>
-              <shared-content-card-node
-                image-width=340
-                node=node
-              />
-            </@slot>
-          </default-theme-card-deck-flow>
-        </marko-web-query>
+      <div class="col-lg-4">
+        <global-section-list-block alias="latest-news" />
       </div>
-      <div class="col-lg-4 mb-block page-rail">
-        <!-- Ad here -->
+      <div class="col-lg-4">
+        <global-section-list-block alias="international" />
+      </div>
+      <div class="col-lg-4 pt-block">
+        <global-gam-define-display-ad
+          name="rotation"
+          position="content_page"
+          aliases=aliases
+          modifiers=["max-width-300", "center", "margin-auto-x", "rail"]
+          class="mb-block"
+        />
+        <global-gam-define-display-ad
+          name="rotation"
+          position="content_page"
+          aliases=aliases
+          modifiers=["max-width-300", "center", "margin-auto-x", "rail"]
+          class="mb-block"
+        />
       </div>
     </div>
+  </@section>
 
-  </@page>
-  <@below-page>
-    <marko-web-resolve-page|{ data: section }| node=pageNode>
-      $ const aliases = hierarchyAliases(section);
-      <marko-web-load-more
-        component-name="content-load-more-flow"
-        component-input={ aliases }
-        fragment-name="content-list"
-        query-name="website-scheduled-content"
-        query-params={ sectionId: id, limit: 12, skip: 19, requiresImage: true }
-        max-pages=0
-        page-input={ for: "website-section", id }
-      />
-    </marko-web-resolve-page>
-  </@below-page>
-</marko-web-website-section-page-layout>
+  <!-- <@section modifiers=["break-container"]>
+    <global-opinion-block alias="opinion" />
+  </@section> -->
+
+  <@section>
+    <global-section-list-deck-block aliases=["african-american", "covid-19", "campus-climate"] />
+  </@section>
+
+  <@section|{ aliases }| modifiers=["first"]>
+    <global-gam-define-display-ad
+      name="leaderboard"
+      position="home_page"
+      aliases=aliases
+      modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
+    />
+  </@section>
+
+  <!-- <@section|{ aliases }|>
+    <global-gam-define-display-ad
+      name="rotation"
+      position="home_page"
+      aliases=aliases
+      modifiers=["inter-block"]
+    />
+  </@section> -->
+
+  <!-- <@section>
+    <global-partners-in-business-block alias="vocational" default-description="Bucket trucks, dump trucks, refuse trucks and more" />
+  </@section> -->
+
+  <!-- <@section>
+    <global-callout-cards-block>
+      <@slot>
+        <global-ccj-top-250-block />
+      </@slot>
+      <@slot>
+        <global-white-papers-block />
+      </@slot>
+    </global-callout-cards-block>
+  </@section> -->
+
+  <!-- <@section>
+    <global-client-side-most-popular-block />
+  </@section> -->
+
+  <!-- <@section|{ aliases }|>
+    <global-gam-define-display-ad
+      name="rotation"
+      position="home_page"
+      aliases=aliases
+      modifiers=["inter-block"]
+    />
+  </@section> -->
+
+  <!-- <@section>
+    <global-gear-block alias="products" default-description="Latest product innovations designed to improve your truck or van" />
+  </@section>
+
+  <@section>
+    <global-reader-rigs-block alias="vans" default-description="Class 1 cargo through Class 6 step vans" />
+  </@section>
+
+  <@section>
+    <global-resource-library-block alias="resource-library" />
+  </@section> -->
+</global-website-section-home-layout>

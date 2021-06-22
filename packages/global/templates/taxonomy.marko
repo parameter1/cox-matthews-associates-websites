@@ -1,0 +1,70 @@
+import hierarchyAliases from "@parameter1/base-cms-marko-web/utils/hierarchy-aliases";
+import { getAsArray } from "@parameter1/base-cms-object-path";
+import queryFragment from "../graphql/fragments/section-feed-block";
+
+$ const { id, name, type, description } = input;
+$ const { GAM, req } = out.global;
+
+$ const { pagination: p } = out.global;
+$ const perPage = 12;
+
+$ const queryParams = {
+  limit: perPage,
+  skip: p.skip({ perPage }),
+  includeTaxonomyIds: [id],
+  queryFragment,
+};
+
+$ const title = `${type}: ${name}`;
+
+<marko-web-default-page-layout type="taxonomy" title=title description=description>
+  <@page>
+    <marko-web-page-wrapper>
+      <@section modifiers=["first"]>
+        <global-gam-define-display-ad
+          name="leaderboard"
+          position="section_page"
+          modifiers=["inter-block"]
+        />
+      </@section>
+
+      <@section|{ blockName }|>
+        <marko-web-website-section-name|{ value }| tag="h1" block-name=blockName obj={ name: title }>
+          <if(p.page > 1)>${value}: Page ${p.page}</if>
+          <else>${value}</else>
+        </marko-web-website-section-name>
+
+        <marko-web-query|{ nodes }| name="all-published-content" params=queryParams>
+          <marko-web-node-list
+            inner-justified=true
+            flush-x=true
+            flush-y=false
+            modifiers=["section-feed"]
+          >
+            <@nodes nodes=nodes>
+              <@slot|{ node }|>
+                <global-section-feed-content-node node=node />
+              </@slot>
+            </@nodes>
+          </marko-web-node-list>
+        </marko-web-query>
+
+        <global-query-total-count|{ totalCount }| name="all-published-content" params={ includeTaxonomyIds: [id] }>
+          <global-pagination-controls
+            per-page=perPage
+            total-count=totalCount
+            path=req.path
+          />
+        </global-query-total-count>
+      </@section>
+
+      <@section>
+        <global-gam-define-display-ad
+          name="rotation"
+          position="section_page"
+          modifiers=["inter-block"]
+        />
+      </@section>
+    </marko-web-page-wrapper>
+  </@page>
+</marko-web-default-page-layout>
