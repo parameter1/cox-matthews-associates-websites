@@ -1,6 +1,6 @@
 const configureGAM = require('@cox-matthews-associates/package-global/config/gam');
 
-const config = configureGAM({ basePath: 'ab' });
+const config = configureGAM({ basePath: 'de' });
 
 config.lazyLoad = {
   enabled: true, // set to true to enable lazy loading
