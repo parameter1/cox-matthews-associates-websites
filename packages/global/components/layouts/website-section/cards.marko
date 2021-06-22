@@ -59,6 +59,14 @@ $ const perPage = 10;
     <global-section-cards-block alias=alias aliases=aliases ad-index=[1,6] ad-name="rotation">
       <@query-params limit=10 skip=p.skip({ perPage }) />
     </global-section-cards-block>
+
+    <global-section-cards-block|{ totalCount }| alias=alias count-only=true>
+      <global-pagination-controls
+        per-page=perPage
+        total-count=totalCount
+        path=alias
+      />
+    </global-section-cards-block>
   </@section>
 
   <!-- <@section|{ aliases }|>
@@ -76,15 +84,7 @@ $ const perPage = 10;
     </global-section-cards-block>
   </@section> -->
 
-  <@section>
-    <global-section-cards-block|{ totalCount }| alias=alias count-only=true>
-      <global-pagination-controls
-        per-page=perPage
-        total-count=totalCount
-        path=alias
-      />
-    </global-section-cards-block>
-  </@section>
+
 
   <!-- <@section>
     <global-newsletter-signup-banner-large-block />
