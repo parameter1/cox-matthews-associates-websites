@@ -107,7 +107,7 @@
     "@title": "string",
     "@alias": "string",
     "@aliases": "array",
-    "@ad-index": "number",
+    "@ad-index": "array",
     "@ad-name": "string",
     "@ad-position": "string",
     "@count-only": "boolean"
