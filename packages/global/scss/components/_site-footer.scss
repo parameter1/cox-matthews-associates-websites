@@ -8,9 +8,13 @@
     padding-bottom: 28px;
     text-align: left;
 
+    &--primary {
+      background-color: $primary;
+    }
+
     &--secondary {
       padding-bottom: 0;
-      background-color: #515b6e;
+      background-color: $primary;
     }
   }
 
