@@ -12,14 +12,10 @@ $ const { id, alias, name, pageNode } = input;
     <meta name="google-site-verification" content="dS4kZmi5L6RGUU0TMDKjqgy_5cqXK8_NSgyuRBGixhg" />
   </@head> -->
 
-  <!-- <@section modifiers=["break-container"]>
-    <global-opinion-block alias="opinion" />
-  </@section> -->
-
   <@section|{ aliases }|>
     <div class="row">
       <div class="col-lg-4">
-        <global-section-list-block alias="opinion" />
+        <global-section-list-block alias="latest-news" />
       </div>
       <div class="col-lg-4">
         <global-section-list-block alias="international" />
@@ -43,8 +39,21 @@ $ const { id, alias, name, pageNode } = input;
     </div>
   </@section>
 
+  <!-- <@section modifiers=["break-container"]>
+    <global-opinion-block alias="opinion" />
+  </@section> -->
+
   <@section>
     <global-section-list-deck-block aliases=["african-american", "covid-19", "campus-climate"] />
+  </@section>
+
+  <@section|{ aliases }| modifiers=["first"]>
+    <global-gam-define-display-ad
+      name="leaderboard"
+      position="home_page"
+      aliases=aliases
+      modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
+    />
   </@section>
 
   <!-- <@section|{ aliases }|>
