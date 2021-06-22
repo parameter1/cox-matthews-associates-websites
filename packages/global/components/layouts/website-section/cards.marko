@@ -53,9 +53,6 @@ $ const perPage = 10;
         section=section
       />
     </if>
-  </@section>
-
-  <@section|{ blockName, section, aliases }|>
     <global-section-cards-block alias=alias aliases=aliases ad-index=[1,6] ad-name="rotation">
       <@query-params limit=10 skip=p.skip({ perPage }) />
     </global-section-cards-block>
