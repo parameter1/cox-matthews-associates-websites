@@ -12,6 +12,10 @@ $ const { id, alias, name, pageNode } = input;
     <meta name="google-site-verification" content="dS4kZmi5L6RGUU0TMDKjqgy_5cqXK8_NSgyuRBGixhg" />
   </@head> -->
 
+  <!-- <@section modifiers=["break-container"]>
+    <global-opinion-block alias="opinion" />
+  </@section> -->
+
   <@section|{ aliases }|>
     <div class="row">
       <div class="col-lg-4">
@@ -20,50 +24,58 @@ $ const { id, alias, name, pageNode } = input;
       <div class="col-lg-4">
         <global-section-list-block alias="international" />
       </div>
-      <div class="col-lg-4 pt-block">
-        <global-gam-define-display-ad
-          name="rotation"
-          position="content_page"
-          aliases=aliases
-          modifiers=["max-width-300", "center", "margin-auto-x", "rail"]
-          class="mb-block"
-        />
-        <global-gam-define-display-ad
-          name="rotation"
-          position="content_page"
-          aliases=aliases
-          modifiers=["max-width-300", "center", "margin-auto-x", "rail"]
-          class="mb-block"
-        />
+      <div class="col-lg-4">
+        <global-section-list-block alias="sports" />
       </div>
+      <!-- <div class="col-lg-4 pt-block">
+        <global-gam-define-display-ad
+          name="rail"
+          position="content_page"
+          aliases=aliases
+          modifiers=["max-width-300", "center", "margin-auto-x", "rail"]
+          class="mb-block"
+        />
+        <global-gam-define-display-ad
+          name="rail"
+          position="content_page"
+          aliases=aliases
+          modifiers=["max-width-300", "center", "margin-auto-x", "rail"]
+          class="mb-block"
+        />
+      </div> -->
     </div>
   </@section>
 
-  <!-- <@section modifiers=["break-container"]>
-    <global-opinion-block alias="opinion" />
-  </@section> -->
-
-  <@section>
-    <global-section-list-deck-block aliases=["african-american", "covid-19", "campus-climate"] />
-  </@section>
-
   <@section|{ aliases }|>
-    <global-gam-define-display-ad
-      name="leaderboard"
-      position="home_page"
-      aliases=aliases
-      modifiers=["inter-block"]
-    />
-  </@section>
-
-  <!-- <@section|{ aliases }|>
     <global-gam-define-display-ad
       name="rotation"
       position="home_page"
       aliases=aliases
       modifiers=["inter-block"]
     />
+  </@section>
+
+  <@section>
+    <global-section-list-deck-block aliases=["african-american", "covid-19", "campus-climate"] />
+  </@section>
+
+  <!-- <@section|{ aliases }|>
+    <global-gam-define-display-ad
+      name="leaderboard"
+      position="home_page"
+      aliases=aliases
+      modifiers=["inter-block"]
+    />
   </@section> -->
+
+  <@section|{ aliases }|>
+    <global-gam-define-display-ad
+      name="rotation"
+      position="home_page"
+      aliases=aliases
+      modifiers=["inter-block"]
+    />
+  </@section>
 
   <!-- <@section>
     <global-partners-in-business-block alias="vocational" default-description="Bucket trucks, dump trucks, refuse trucks and more" />
