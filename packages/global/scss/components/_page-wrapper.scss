@@ -68,14 +68,14 @@
 
   // Will have to revisit this inclusion after we figure out ads and how they will work.
   // For now adding margin top to first element of page wrapper
-  #{ $self } {
-    &__section {
-      &:last-of-type {
-        margin-bottom: 30px;
-        @include media-breakpoint-up(md) {
-          margin-bottom: 60px;
-        }
-      }
-    }
-  }
+  // #{ $self } {
+  //   &__section {
+  //     &:last-of-type {
+  //       margin-bottom: 30px;
+  //       @include media-breakpoint-up(md) {
+  //         margin-bottom: 60px;
+  //       }
+  //     }
+  //   }
+  // }
 }
