@@ -48,7 +48,12 @@
         @include skin-typography($style: "slug-small", $link-style: "primary");
       }
     }
-    &--hero {
+    &--list {
+      &__node:last-of-type .node {
+        border-bottom: none;
+      }
+    }
+    &--card {
       .node {
         @include media-breakpoint-up(md) {
           border-bottom: none;

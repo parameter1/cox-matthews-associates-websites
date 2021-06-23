@@ -40,7 +40,7 @@ $ const blockName = "hero-card";
         <default-theme-card-deck-flow
           cols=1
           nodes=nodes.slice(0,1)
-          modifiers=[blockName, "hero"]
+          modifiers=[blockName, "card"]
         >
           <@slot|{ node }|>
             <global-content-node
@@ -62,7 +62,7 @@ $ const blockName = "hero-card";
         <default-theme-card-deck-flow
           cols=1
           nodes=nodes.slice(1)
-          modifiers=[blockName]
+          modifiers=[blockName, "list"]
         >
           <@slot|{ node }|>
             <global-content-node
