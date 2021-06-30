@@ -1,5 +1,7 @@
 .emerging-scholars {
   .page-banner {
+    display: flex;
+    justify-content: space-between;
     padding: map-get($spacers, 2) map-get($spacers, block);
     background-color: $primary;
   }
@@ -31,8 +33,16 @@
     color: $white;
   }
   .intro {
+    color: $white;
     a {
-      color: $primary;
+      color: $white;
+    }
+  }
+  .awards-menu {
+    &__toggler,
+    &__toggler:focus {
+      background: transparent;
+      border: none;
     }
   }
 }
@@ -48,5 +58,20 @@
     .call-to-action {
       @include skin-button($style: "primary");
     }
+  }
+}
+
+.emerging-scholars-menu {
+  position: absolute;
+  z-index: 1;
+  display: none;
+  width: calc(100% - 30px);
+  @include media-breakpoint-up(lg) {
+    width: calc(100% - 20px);
+  }
+  background-color: $primary;
+  box-shadow: 0 8px 8px 0 rgba(0, 0, 0, .1), 0 20px 20px 0 rgba(0, 0, 0, .15);
+  &--open {
+    display: block;
   }
 }

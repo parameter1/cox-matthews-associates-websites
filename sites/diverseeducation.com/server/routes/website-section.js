@@ -5,13 +5,10 @@ const cards = require('../templates/website-section/cards');
 const products = require('../templates/website-section/products');
 const section = require('../templates/website-section');
 
-const emergingScholars = require('../templates/website-section/emerging-scholars');
+const emergingScholars = require('../templates/website-section/awards-honors/emerging-scholars');
 
 const emergingScholarsYears = [
   '2021',
-  '2020',
-  '2019',
-  '2018',
 ];
 
 module.exports = (app) => {
