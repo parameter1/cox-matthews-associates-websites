@@ -1,0 +1,52 @@
+.emerging-scholars {
+  .page-banner {
+    padding: map-get($spacers, 2) map-get($spacers, block);
+    background-color: $primary;
+  }
+  .header {
+    overflow: hidden;
+    background-color: $black;
+  }
+  .video-frame {
+    position: relative;
+    width: 100%;
+    margin: 150px auto;
+    video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: auto;
+      min-width: 100%;
+      height: auto;
+      min-height: 100%;
+      opacity: .5;
+      transform: translateX(-50%) translateY(-50%);
+    }
+  }
+  .video-overlay {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    color: $white;
+  }
+  .intro {
+    a {
+      color: $primary;
+    }
+  }
+}
+
+.node-list,
+.card-deck-flow {
+  &--emerging-scholars {
+    .section-feed-content-node {
+      &__content-teaser {
+        margin-bottom: map-get($spacers, block);
+      }
+    }
+    .call-to-action {
+      @include skin-button($style: "primary");
+    }
+  }
+}

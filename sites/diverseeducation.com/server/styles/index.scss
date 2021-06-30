@@ -41,8 +41,8 @@ $theme-site-header-breakpoints: (
 
 // Colors
 // $primary: #c91e2d;
-
 @import "../../node_modules/@cox-matthews-associates/package-global/scss/core";
+@import "./components/awards";
 
 // .load-more-trigger > button:hover {
 //   background-color: $light-bg-color;
