@@ -1,3 +1,5 @@
 {
-  "taglib-imports": []
+  "taglib-imports": [
+    "./awards-honors/marko.json"
+  ]
 }
