@@ -1,0 +1,114 @@
+import queryFragment from "@cox-matthews-associates/package-global/graphql/fragments/section-feed-block";
+import { get } from "@parameter1/base-cms-object-path";
+
+$ const { awardsHonorsComponents } = out.global;
+$ const { id, alias, name, pageNode } = input;
+$ const introComponentName = `website-${alias.split("/").join("-")}-intro`;
+$ const introComponent = get(awardsHonorsComponents, `<${introComponentName}>`);
+$ console.log(awardsHonorsComponents, introComponent, `website-${alias.split("/").join("-")}-intro`);
+
+$ const queryParams = {
+  limit:0,
+  sectionAlias: alias,
+  queryFragment,
+};
+
+<global-website-section-default-layout
+  id=id
+  alias=alias
+  name=name
+  page-node=pageNode>
+  <@section>
+    <div class="awards-honors emerging-scholars">
+      <div class="page-banner">
+        <div class="page-banner__logo">
+          <a href="https://diverseeducation.com/2021-emerging-scholars" class="link">
+            <strong>
+              <h3>
+                <marko-web-icon name="rocket" modifiers=["light"] />
+                Emerging Scholars | Diverse
+              </h3>
+            </strong>
+          </a>
+        </div>
+      </div>
+      <div class="header">
+        <div class="video-frame">
+          <video
+            class="video-box"
+            autoplay=""
+            muted=""
+            loop=""
+            poster="//diverseeducation.com/images/professor.jpg">
+            <source
+              src="//diversepodium.com/video/professor.mp4"
+              data-src="//diversepodium.com/video/professor.mp4"
+              type="video/mp4"/>
+            <source
+              src="//diversepodium.com/video/professor.webm"
+              data-src="//diversepodium.com/video/professor.webm"
+              type="video/webm"/>
+            <source
+              src="//diversepodium.com/video/professor.ogg"
+              data-src="//diversepodium.com/video/professor.ogg"
+              type="video/ogg"/>
+          </video>
+        </div>
+        <div class="row video-overlay">
+          <div class="text-center col mb-block">
+            <h1>2021 Emerging Scholars</h1>
+            <h4>
+              Introducing this year’s batch of 15 scholars who represent
+              the future of the academy.
+            </h4>
+          </div>
+        </div>
+      </div>
+      <website-awards-honors-emerging-scholars-2021-intro />
+    </div>
+  </@section>
+  <@section>
+    <marko-web-query|{ nodes }| name="website-scheduled-content" params=queryParams>
+      <default-theme-card-deck-flow cols=4 nodes=nodes modifiers=["awards-honors", "emerging-scholars"] >
+        <@slot|{ node }|>
+          <global-awards-node
+            image-position="top"
+            card=true
+            flush=true
+            full-height=true
+            with-teaser=false
+            with-section=false
+            with-dates=false
+            display-button=true
+            modifiers=["awards-honors", "emerging-scholars"]
+            node=node
+          >
+            <@image ar="1:1" fluid=true />
+          </global-awards-node>
+        </@slot>
+      </default-theme-card-deck-flow>
+    </marko-web-query>
+  </@section>
+  <@section>
+    <marko-web-query|{ nodes }| name="website-scheduled-content" params=queryParams>
+      <marko-web-node-list
+        inner-justified=true
+        flush-x=true
+        flush-y=false
+        modifiers=["awards-honors", "emerging-scholars"]
+      >
+        <@nodes nodes=nodes>
+          <@slot|{ node }|>
+            <global-awards-feed-content-node
+              node=node
+              with-teaser=true
+              with-section=false
+              with-dates=false
+              display-button=true
+            />
+          </@slot>
+        </@nodes>
+      </marko-web-node-list>
+    </marko-web-query>
+  </@section>
+</global-website-section-default-layout>
