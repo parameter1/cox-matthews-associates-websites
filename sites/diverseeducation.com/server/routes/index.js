@@ -1,5 +1,6 @@
 const content = require('@cox-matthews-associates/package-global/routes/content');
 const home = require('./home');
+const awards = require('./awards');
 const websiteSection = require('./website-section');
 
 module.exports = (app) => {
@@ -8,6 +9,9 @@ module.exports = (app) => {
 
   // Content
   content(app);
+
+  // Awards Honors
+  awards(app);
 
   // Website Sections
   websiteSection(app);
