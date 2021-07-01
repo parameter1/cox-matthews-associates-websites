@@ -9,6 +9,7 @@ const emergingScholars = require('../templates/website-section/awards-honors/eme
 
 const emergingScholarsYears = [
   '2021',
+  '2020',
 ];
 
 module.exports = (app) => {
