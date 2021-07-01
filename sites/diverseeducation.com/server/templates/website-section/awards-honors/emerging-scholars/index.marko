@@ -16,7 +16,8 @@ $ const queryParams = {
   id=id
   alias=alias
   name=name
-  page-node=pageNode>
+  page-node=pageNode
+>
   <@section>
     <marko-web-resolve-page|{ data: section }| node=pageNode>
       <div class="awards-honors emerging-scholars">
@@ -34,7 +35,7 @@ $ const queryParams = {
           <div class="page-banner__menu">
             <global-menu-toggle-button
               class="awards-menu__toggler"
-              targets=[".emerging-scholars-menu", ".emerging-scholars"]
+              targets=[".emerging-scholars-menu"]
               toggle-class="emerging-scholars-menu--open"
               icon-modifiers=["lg", "light"]
               icon-name="three-bars"
@@ -77,7 +78,7 @@ $ const queryParams = {
     </marko-web-resolve-page>
   </@section>
   <@section>
-    <div class="row">
+    <div class="awards-honors emerging-scholars row">
       <div class="col-8">
         <marko-web-query|{ nodes }| name="website-scheduled-content" params=queryParams>
           <default-theme-card-deck-flow cols=3 nodes=nodes modifiers=["awards-honors", "emerging-scholars"] >
@@ -102,16 +103,33 @@ $ const queryParams = {
       </div>
       <div class="col-4">
         <p>
-          Each year, it is an extremely tough task for our editorial team to select only 15 scholars — this year was no exception. Therefore, it is our honor to presenting these brilliant young minds to our readers. Of this year’s class of Emerging Scholars, each person is, in their own way, working to improve the lot of humanity. I have no doubt that you will find their personal stories informative as well as inspirational.
+          Each year, it is an extremely tough task for our editorial team to select only 15 scholars — this year was no exception.
+          Therefore, it is our honor to presenting these brilliant young minds to our readers.
+          Of this year’s class of Emerging Scholars, each person is, in their own way, working to improve the lot of humanity.
+          I have no doubt that you will find their personal stories informative as well as inspirational.
         </p>
         <p>
           Our past Emerging Scholars include more than one college president, several deans at leading institutions of higher learning and an array of prolific researchers and thinkers.
         </p>
         <p>
           Sincerely,<br>
-          David Pluviose<br>
+          <i>David Pluviose</i><br>
           Executive Editor
         </p>
+        <div class="past-issues mb-block">
+          <global-menu-toggle-button
+            class="award-years__toggler"
+            targets=[".emerging-scholars-award-years"]
+            toggle-class="emerging-scholars-award-years--open"
+            icon-modifiers=["lg"]
+            icon-name="chevron-down"
+            before="View Additional Years "
+            expanded-icon-name="chevron-up"
+          />
+          <div class="emerging-scholars-award-years">
+            <website-awards-honors-emerging-scholars-child-section-dropdown alias="awards-honors/emerging-scholars" />
+          </div>
+        </div>
       </div>
     </div>
   </@section>
