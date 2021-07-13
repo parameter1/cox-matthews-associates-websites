@@ -1,158 +1,167 @@
-import queryFragment from "@cox-matthews-associates/package-global/graphql/fragments/section-feed-block";
+import { getAsArray } from "@parameter1/base-cms-object-path";
+import queryFragment from "@cox-matthews-associates/package-global/graphql/fragments/content-list"
+import sectionWithChilderenFragment from "../../../../graphql/fragments/section-with-children";
 
-$ const {
-    id,
-    alias,
-    name,
-    pageNode
-  } = input;
+
+$ const { id, alias, name, pageNode } = input;
+$ const blockName = "emerging-scholars-page";
+$ const cardBlock = "emerging-scholars-page-card";
 $ const queryParams = {
-  limit:0,
+  limit: 0,
   sectionAlias: alias,
   queryFragment,
 };
-
 <global-website-section-default-layout
   id=id
   alias=alias
   name=name
-  page-node=pageNode
->
-  <@section>
-    <marko-web-resolve-page|{ data: section }| node=pageNode>
-      <div class="awards-honors emerging-scholars">
-        <div class="page-banner">
-          <div class="page-banner__logo">
-            <a href="https://diverseeducation.com/2021-emerging-scholars" class="link">
-              <strong>
-                <h3>
-                  <marko-web-icon name="rocket" modifiers=["light"] />
-                  Emerging Scholars | Diverse
-                </h3>
-              </strong>
-            </a>
-          </div>
-          <div class="page-banner__menu">
-            <global-menu-toggle-button
-              class="awards-menu__toggler"
-              targets=[".emerging-scholars-menu"]
-              toggle-class="emerging-scholars-menu--open"
-              icon-modifiers=["lg", "light"]
-              icon-name="three-bars"
-            />
-          </div>
-        </div>
-        <div class="emerging-scholars-menu" >
-          <website-awards-honors-emerging-scholars-2021-intro />
-        </div>
-        <div class="header">
-          <div class="video-frame">
-            <video
-              class="video-box"
-              autoplay=""
-              muted=""
-              loop=""
-              poster="//diverseeducation.com/images/professor.jpg">
-              <source
-                src="//diversepodium.com/video/professor.mp4"
-                data-src="//diversepodium.com/video/professor.mp4"
-                type="video/mp4"/>
-              <source
-                src="//diversepodium.com/video/professor.webm"
-                data-src="//diversepodium.com/video/professor.webm"
-                type="video/webm"/>
-              <source
-                src="//diversepodium.com/video/professor.ogg"
-                data-src="//diversepodium.com/video/professor.ogg"
-                type="video/ogg"/>
-            </video>
-          </div>
-          <div class="row video-overlay">
-            <div class="text-center col mb-block">
-              <marko-web-website-section-name obj=section tag="h1" />
-              <marko-web-website-section-description obj=section tag="h4" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </marko-web-resolve-page>
+  page-node=pageNode>
+  <@section|{ aliases }| modifiers=["first"]>
+    <global-gam-define-display-ad
+      name="leaderboard"
+      position="section_page"
+      aliases=aliases
+      modifiers=["inter-block"]/>
+  </@section>
+  <@section|{ section }|>
+    <marko-web-block name=blockName>
+      <global-content-page-breadcrumbs section=section />
+      <marko-web-element block-name=blockName name="header">
+        <marko-web-website-section-name|{ value }|
+          tag="h1"
+          block-name="page-wrapper"
+          obj=section>
+          ${value}
+        </marko-web-website-section-name>
+        <marko-web-website-section-description|{ value }|
+          tag="p"
+          block-name="page-wrapper"
+          obj=section>
+          ${value}
+        </marko-web-website-section-description>
+      </marko-web-element>
+    </marko-web-block>
   </@section>
   <@section>
-    <div class="awards-honors emerging-scholars row">
-      <div class="col-8">
-        <marko-web-query|{ nodes }| name="website-scheduled-content" params=queryParams>
-          <default-theme-card-deck-flow cols=3 nodes=nodes modifiers=["awards-honors", "emerging-scholars"] >
-            <@slot|{ node }|>
-              <global-awards-node
-                image-position="top"
-                card=true
-                flush=true
-                full-height=true
-                with-teaser=false
-                with-section=false
-                with-dates=false
-                display-button=true
-                modifiers=["awards-honors", "emerging-scholars"]
-                node=node
-              >
-                <@image ar="1:1" fluid=true />
-              </global-awards-node>
-            </@slot>
-          </default-theme-card-deck-flow>
-        </marko-web-query>
-      </div>
-      <div class="col-4">
-        <p>
-          Each year, it is an extremely tough task for our editorial team to select only 15 scholars — this year was no exception.
-          Therefore, it is our honor to presenting these brilliant young minds to our readers.
-          Of this year’s class of Emerging Scholars, each person is, in their own way, working to improve the lot of humanity.
-          I have no doubt that you will find their personal stories informative as well as inspirational.
-        </p>
-        <p>
-          Our past Emerging Scholars include more than one college president, several deans at leading institutions of higher learning and an array of prolific researchers and thinkers.
-        </p>
-        <p>
-          Sincerely,<br>
-          <i>David Pluviose</i><br>
-          Executive Editor
-        </p>
-        <div class="past-issues mb-block">
-          <global-menu-toggle-button
-            class="award-years__toggler"
-            targets=[".emerging-scholars-award-years"]
-            toggle-class="emerging-scholars-award-years--open"
-            icon-modifiers=["lg"]
-            icon-name="chevron-down"
-            before="View Additional Years "
-            expanded-icon-name="chevron-up"
-          />
-          <div class="emerging-scholars-award-years">
-            <website-awards-honors-emerging-scholars-child-section-dropdown alias="awards-honors/emerging-scholars" />
+    <marko-web-query|{ nodes }| name="website-scheduled-content" params=queryParams>
+      <default-theme-card-deck-flow
+        cols=4
+        nodes=nodes
+        modifiers=["awards-honors", "emerging-scholars"]>
+        <@slot|{ node }|>
+          <global-awards-node
+            image-position="top"
+            card=true
+            flush=true
+            full-height=true
+            with-teaser=false
+            with-section=false
+            with-dates=false
+            display-button=true
+            modifiers=["awards-honors", "emerging-scholars"]
+            node=node>
+            <@image ar="1:1" fluid=true/>
+          </global-awards-node>
+        </@slot>
+      </default-theme-card-deck-flow>
+    </marko-web-query>
+  </@section>
+  <@section|{ blockName, section }|>
+    <div class="row">
+      <div class="col-md-6 mb-block">
+        <div class="award-about-card">
+          <div class="award-about-card__title">Letter From The Editor</div>
+          <div class="award-about-card__description">
+            <p>
+              Each year, it is an extremely tough task for our editorial team to select only 15 scholars — this year was no exception.
+              Therefore, it is our honor to presenting these brilliant young minds to our readers.
+              Of this year’s class of Emerging Scholars, each person is, in their own way, working to improve the lot of humanity.
+              I have no doubt that you will find their personal stories informative as well as inspirational.
+            </p>
+            <p>
+              Our past Emerging Scholars include more than one college president, several deans at leading institutions of higher learning and an array of prolific researchers and thinkers.
+            </p>
+            <p>
+              Sincerely,<br/>
+              <i>David Pluviose</i>
+              <br/>
+              Executive Editor
+            </p>
           </div>
+        </div>
+      </div>
+      <div class="col-md-6 mb-block">
+        <div class="award-about-card">
+          <div class="award-about-card__title">Scholars By Years</div>
+          <marko-web-query|{ node }|
+            name="website-section"
+            params={ alias: 'awards-honors/emerging-scholars', queryFragment: sectionWithChilderenFragment }
+          >
+          $ const children = getAsArray(node, "children.edges").map(({ node }) => node);
+            <marko-web-node-list>
+              <@nodes|{ nodes }| nodes=children modifiers=["flush-x"]>
+                <div class="list-flow">
+                  <for|node| of=nodes>
+                    <div class="list-flow__node">
+                      <marko-web-link title=node.name href=`/${node.alias}`>${node.name}</marko-web-link>
+                    </div>
+                  </for>
+                </div>
+              </@nodes>
+            </marko-web-node-list>
+          </marko-web-query>
         </div>
       </div>
     </div>
   </@section>
-  <!-- <@section>
-    <marko-web-query|{ nodes }| name="website-scheduled-content" params=queryParams>
-      <marko-web-node-list
-        inner-justified=true
-        flush-x=true
-        flush-y=false
-        modifiers=["awards-honors", "emerging-scholars"]
-      >
-        <@nodes nodes=nodes>
-          <@slot|{ node }|>
-            <global-awards-feed-content-node
-              node=node
-              with-teaser=true
-              with-section=false
-              with-dates=false
-              display-button=true
-            />
-          </@slot>
-        </@nodes>
-      </marko-web-node-list>
-    </marko-web-query>
+  <!-- <@section|{ blockName, section }|>
+    <div class="row">
+      <div class="col mb-block">
+        <div class="award-about-card">
+          <div class="award-about-card__title">About</div>
+          <div class="award-about-card__description">
+            <p>
+              Each year, it is an extremely tough task for our editorial team to select only 15 scholars — this year was no exception.
+              Therefore, it is our honor to presenting these brilliant young minds to our readers.
+              Of this year’s class of Emerging Scholars, each person is, in their own way, working to improve the lot of humanity.
+              I have no doubt that you will find their personal stories informative as well as inspirational.
+            </p>
+            <p>
+              Our past Emerging Scholars include more than one college president, several deans at leading institutions of higher learning and an array of prolific researchers and thinkers.
+            </p>
+            <p>
+              Sincerely,<br/>
+              <i>David Pluviose</i>
+              <br/>
+              Executive Editor
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col mb-block">
+        <div class="award-about-card">
+          <div class="award-about-card__title">Scholars By Years</div>
+          <marko-web-query|{ node }|
+            name="website-section"
+            params={ alias: 'awards-honors/emerging-scholars', queryFragment: sectionWithChilderenFragment }
+          >
+          $ const children = getAsArray(node, "children.edges").map(({ node }) => node);
+            <marko-web-node-list>
+              <@nodes|{ nodes }| nodes=children>
+                <div class="list-flow">
+                  <for|node| of=nodes>
+                    <div class="list-flow__node">
+                      <marko-web-link title=node.name href=`/${node.alias}`>${node.name}</marko-web-link>
+                    </div>
+                  </for>
+                </div>
+              </@nodes>
+            </marko-web-node-list>
+          </marko-web-query>
+        </div>
+      </div>
+    </div>
   </@section> -->
 </global-website-section-default-layout>
