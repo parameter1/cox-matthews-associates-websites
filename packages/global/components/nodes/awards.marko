@@ -134,10 +134,13 @@ $ const imageLink = primaryImage.src ? { href: content.siteContext.path, attrs: 
       <@text|{ blockName }| show=(Boolean(withDates && !isEvent))>
         <marko-web-content-published block-name=blockName obj=content format="MMMM D, YYYY" />
       </@text>
-      <@text show=displayButton>
-        <marko-web-block class="call-to-action">
+      <@text
+        class="btn btn-primary btn-block"
+        show=displayButton
+        href=content.linkUrl
+        title=content.linkText
+      >
           ${callToAction}
-        </marko-web-block>
       </@text>
     </@body>
   </if>
