@@ -1,4 +1,10 @@
-.mppwsa {
+.mppwsa,
+.mppwcc {
+  .page-wrapper {
+    &__title {
+      text-align: center;
+    }
+  }
   table {
     font-size: 14px;
     td {

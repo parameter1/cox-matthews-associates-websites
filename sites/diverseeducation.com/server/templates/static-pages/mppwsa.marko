@@ -13,7 +13,7 @@ $ const description = "";
         <global-gam-define-display-ad
           name="leaderboard"
           position="section_page"
-          aliases=['awards-honors/mppwsa']
+          aliases=["awards-honors/mppwsa"]
           modifiers=["inter-block"]
         />
       </@section>
@@ -40,8 +40,8 @@ $ const description = "";
         </div>
       </@section>
       <@section modifiers=["card-deck"]>
-        <div class="text-center">
-          <p>
+        <div class="page-contents__content-body">
+          <p class="text-center">
             Now in its 8th year, Promising Places to Work in Student Affairs (PPWSA) is a national recognition that celebrates student affairs workplaces that are vibrant,
             diverse, supportive and commited to staff work-life balance, professional development and inclusive excellence. PPWSA offers intitutional leaders information
             that can be used to improve practices across their student affairs community, while also serving as a useful tool for employers, career services staff and
@@ -51,7 +51,7 @@ $ const description = "";
         <table class="table table-responsive table-hover">
           <thead>
             <tr>
-              <td>
+              <td width="400">
                 <b>Institution</b>
               </td>
               <td width="202">
@@ -284,7 +284,7 @@ $ const description = "";
       </@section>
       <@section>
         <div class="row">
-          <div class="col">
+          <div class="col page-contents__content-body">
             <div class="about-text">
             <h2>About the Study</h2>
             </div>
@@ -342,7 +342,7 @@ $ const description = "";
         </div>
       </@section>
       <@section>
-        <div class="about-text">
+        <div class="page-contents__content-body about-text">
           <h2 align="center">
             MOST PROMISING PLACE TO WORK
             <br/>IN STUDENT AFFAIRS PROFILES
@@ -356,8 +356,8 @@ $ const description = "";
                       <marko-web-img
                         class=["lazyload", "profile__thumbnail"]
                         alt=profile.name
-                        src=`https://img.diverseeducation.com/files/base/diverse/all/image/static/de/mppwsa/profiles/${profile.thumbnail}?w=100&auto=format,compress&q=70`
-                        srcset=`https://img.diverseeducation.com/files/base/diverse/all/image/static/de/mppwsa/profiles/${profile.thumbnail}?w=200&auto=format,compress&q=70 x2`
+                        src=`https://img.diverseeducation.com/files/base/diverse/all/image/static/de/mppwsa/profiles/${profile.thumbnail}?w=150&auto=format,compress&q=70`
+                        srcset=`https://img.diverseeducation.com/files/base/diverse/all/image/static/de/mppwsa/profiles/${profile.thumbnail}?w=300&auto=format,compress&q=70 x2`
                         lazyload=true
                       />
                       <h4 class="profile__title">
@@ -369,21 +369,6 @@ $ const description = "";
                 </div>
               </for>
             </div>
-            <!-- <for|profile| of=profiles >
-              <div class="col-6 mb-block profile">
-                  <marko-web-img
-                    class=["lazyload", "profile__thumbnail"]
-                    alt=profile.name
-                    src=`https://img.diverseeducation.com/files/base/diverse/all/image/static/de/mppwsa/profiles/${profile.thumbnail}?w=100&auto=format,compress&q=70`
-                    srcset=`https://img.diverseeducation.com/files/base/diverse/all/image/static/de/mppwsa/profiles/${profile.thumbnail}?w=200&auto=format,compress&q=70 x2`
-                    lazyload=true
-                  />
-                  <h6 class="profile__title">
-                    ${profile.name}
-                  </h6>
-                  $!{profile.body}
-              </div>
-            </for> -->
           </div>
         </div>
       </@section>
