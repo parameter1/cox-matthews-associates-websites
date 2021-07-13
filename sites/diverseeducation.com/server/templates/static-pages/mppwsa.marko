@@ -1,4 +1,4 @@
-import config from "./mppwsa-config.js";
+import config from "./configs/mppwsa.js";
 
 $ const { profiles } = config;
 
@@ -9,6 +9,14 @@ $ const description = "";
 <marko-web-default-page-layout type=type title=title description=description>
   <@page>
     <marko-web-page-wrapper class="awards-honors mppwsa">
+      <@section modifiers=["first"]>
+        <global-gam-define-display-ad
+          name="leaderboard"
+          position="section_page"
+          aliases=['awards-honors/mppwsa']
+          modifiers=["inter-block"]
+        />
+      </@section>
       <@section>
         <div class="row">
           <div class="col">
