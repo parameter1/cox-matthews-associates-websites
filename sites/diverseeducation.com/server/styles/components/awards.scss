@@ -1,0 +1,25 @@
+.award-about-card {
+  height: 100%;
+  padding: 24px;
+  background-color: $gray-100;
+  border-radius: 4px;
+
+  &__title {
+    margin-bottom: 8px;
+    @include skin-typography($style: "header-2");
+  }
+
+  &__description {
+    margin-bottom: 16px;
+    @include skin-typography($style: "small-body-text");
+  }
+
+  &__inner-wrapper {
+    display: flex;
+  }
+  a {
+    color: $primary;
+  }
+}
+
+@import "./awards/mppw";

@@ -1,0 +1,34 @@
+.mppwsa,
+.mppwcc {
+  table {
+    font-size: 14px;
+    td {
+      text-align: center;
+    }
+    .institution {
+      text-align: left;
+    }
+  }
+  thead {
+    color: $white;
+    vertical-align: middle;
+    background-color: $black;
+    td {
+      text-align: center;
+    }
+  }
+  img {
+    max-width: 100%;
+  }
+
+  .profile {
+    &__thumbnail {
+      float: left;
+      margin-right: map-get($spacers, block);
+    }
+    // &__title {
+    //   font-size: 16px;
+    //   font-weight: $font-weight-bold;
+    // }
+  }
+}
