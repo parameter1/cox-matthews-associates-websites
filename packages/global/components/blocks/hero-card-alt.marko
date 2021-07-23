@@ -6,20 +6,26 @@ import sectionFragment from "../../graphql/fragments/section-info";
 $ const queryParams = {
   ... input.queryParams,
   sectionAlias: input.alias,
-  limit: 3,
+  limit: 6,
   queryFragment,
   sectionFragment,
 };
+
+$ const { displayTitle, displayDescription } = input;
 
 $ const description = defaultValue(input.description, "");
 $ const blockName = "hero-card";
 
 <marko-web-query|{ nodes, section }| name="website-scheduled-content" params=queryParams>
   <marko-web-block name=blockName>
-    <marko-web-element block-name=blockName name="header">
-      ${section.name}
-    </marko-web-element>
-    <marko-web-element block-name=blockName name="description-wrapper">
+    <if(displayTitle)>
+      $ const title = defaultValue(input.title, `Latest in ${section.name}`);
+      <marko-web-element block-name=blockName name="header">
+        ${title}
+      </marko-web-element>
+    </if>
+
+    <!-- <marko-web-element block-name=blockName name="description-wrapper">
       <marko-web-element block-name=blockName name="description">
         $!{section.description || description}
       </marko-web-element>
@@ -28,9 +34,9 @@ $ const blockName = "hero-card";
           View more &raquo;
         </marko-web-link>
       </marko-web-element>
-    </marko-web-element>
+    </marko-web-element> -->
     <div class="row">
-      <div class="col-md col-md-9">
+      <div class="col-md col-md-8">
         <default-theme-card-deck-flow
           cols=1
           nodes=nodes.slice(0,1)
@@ -44,15 +50,15 @@ $ const blockName = "hero-card";
               flush=false
               modifiers=[blockName]
               node=node
-              with-teaser=false
+              with-teaser=true
               with-dates=false
             >
-              <@image fluid=true width=790 ar="16:9" />
+              <@image fluid=true width=790 ar="3:2" />
             </global-content-node>
           </@slot>
         </default-theme-card-deck-flow>
       </div>
-      <div class="col-md col-md-3">
+      <div class="col-md col-md-4">
         <default-theme-card-deck-flow
           cols=1
           nodes=nodes.slice(1)
@@ -60,17 +66,15 @@ $ const blockName = "hero-card";
         >
           <@slot|{ node }|>
             <global-content-node
-              image-position="top"
+              display-image=false
               full-height=true
-              card=true
+              card=false
               flush=false
               modifiers=[blockName]
               node=node
               with-teaser=false
               with-dates=false
-            >
-              <@image fluid=true width=240 ar="16:9" />
-            </global-content-node>
+            />
           </@slot>
         </default-theme-card-deck-flow>
       </div>
