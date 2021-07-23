@@ -38,7 +38,9 @@
   }
   .card-deck-flow {
     .node {
+      @include marko-web-node-list-border($property: border-bottom);
       padding: 0;
+      margin-bottom: 16px;
       &__title {
         font-weight: $font-weight-bold;
       }
@@ -49,9 +51,18 @@
     &--hero {
       .node {
         @include media-breakpoint-up(md) {
+          border-bottom: none;
           &__title {
             @include skin-typography($style: "header-2", $link-style: "primary");
           }
+        }
+        &__text--teaser {
+          margin-top: 10px;
+          margin-bottom: 0;
+          @include media-breakpoint-up(lg) {
+            margin-top: 16px;
+          }
+          @include skin-typography($style: "article-text", $link-style: "primary");
         }
       }
     }
