@@ -80,7 +80,7 @@ services:
   dm:
     <<: *node
     <<: *site-cmd
-    working_dir: /root/sites/diversemilitary.com
+    working_dir: /root/sites/diversemilitary.net
     environment:
       <<: *env
       <<: *env-leonis
