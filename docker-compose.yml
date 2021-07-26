@@ -76,3 +76,51 @@ services:
     ports:
       - "9810:80"
       - "19810:19810"
+
+  dm:
+    <<: *node
+    <<: *site-cmd
+    working_dir: /root/sites/diversemilitary.com
+    environment:
+      <<: *env
+      <<: *env-leonis
+      PORT: 80
+      EXPOSED_PORT: 9811
+      LIVERELOAD_PORT: 19811
+      TENANT_KEY: diverse_all
+      SITE_ID:
+    ports:
+      - "9811:80"
+      - "19811:19811"
+
+  dh:
+    <<: *node
+    <<: *site-cmd
+    working_dir: /root/sites/diversehealth.com
+    environment:
+      <<: *env
+      <<: *env-leonis
+      PORT: 80
+      EXPOSED_PORT: 9812
+      LIVERELOAD_PORT: 19812
+      TENANT_KEY: diverse_all
+      SITE_ID:
+    ports:
+      - "9812:80"
+      - "19812:19812"
+
+  ccn:
+    <<: *node
+    <<: *site-cmd
+    working_dir: /root/sites/ccnewsnow.com
+    environment:
+      <<: *env
+      <<: *env-leonis
+      PORT: 80
+      EXPOSED_PORT: 9813
+      LIVERELOAD_PORT: 19813
+      TENANT_KEY: diverse_all
+      SITE_ID:
+    ports:
+      - "9813:80"
+      - "19813:19813"
