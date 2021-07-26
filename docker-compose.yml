@@ -96,7 +96,7 @@ services:
   dh:
     <<: *node
     <<: *site-cmd
-    working_dir: /root/sites/diversehealth.com
+    working_dir: /root/sites/divhealth.net
     environment:
       <<: *env
       <<: *env-leonis
