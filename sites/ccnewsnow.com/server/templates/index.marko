@@ -1,0 +1,119 @@
+import hierarchyAliases from "@parameter1/base-cms-marko-web/utils/hierarchy-aliases";
+
+$ const { id, alias, name, pageNode } = input;
+
+<global-website-section-home-layout
+  id=id
+  alias=alias
+  name=name
+  page-node=pageNode
+>
+  <!-- <@head>
+    <meta name="google-site-verification" content="TBD" />
+  </@head> -->
+
+  <!-- <@section modifiers=["break-container"]>
+    <global-opinion-block alias="opinion" />
+  </@section> -->
+
+  <@section|{ aliases }|>
+    <div class="row">
+      <div class="col-lg-4">
+        <global-section-list-block alias="workforce-development" />
+      </div>
+      <div class="col-lg-4">
+        <global-section-list-block alias="academics" />
+      </div>
+      <div class="col-lg-4">
+        <global-section-list-block alias="campus" />
+      </div>
+      <!-- <div class="col-lg-4 pt-block">
+        <global-gam-define-display-ad
+          name="rail"
+          position="content_page"
+          aliases=aliases
+          modifiers=["max-width-300", "center", "margin-auto-x", "rail"]
+          class="mb-block"
+        />
+        <global-gam-define-display-ad
+          name="rail"
+          position="content_page"
+          aliases=aliases
+          modifiers=["max-width-300", "center", "margin-auto-x", "rail"]
+          class="mb-block"
+        />
+      </div> -->
+    </div>
+  </@section>
+
+  <@section|{ aliases }|>
+    <global-gam-define-display-ad
+      name="rotation"
+      position="home_page"
+      aliases=aliases
+      modifiers=["inter-block"]
+    />
+  </@section>
+
+  <!-- <@section>
+    <global-section-list-deck-block aliases=["african-american", "covid-19", "campus-climate"] />
+  </@section> -->
+
+  <!-- <@section|{ aliases }|>
+    <global-gam-define-display-ad
+      name="leaderboard"
+      position="home_page"
+      aliases=aliases
+      modifiers=["inter-block"]
+    />
+  </@section> -->
+
+  <@section|{ aliases }|>
+    <global-gam-define-display-ad
+      name="rotation"
+      position="home_page"
+      aliases=aliases
+      modifiers=["inter-block"]
+    />
+  </@section>
+
+  <!-- <@section>
+    <global-partners-in-business-block alias="vocational" default-description="Bucket trucks, dump trucks, refuse trucks and more" />
+  </@section> -->
+
+  <!-- <@section>
+    <global-callout-cards-block>
+      <@slot>
+        <global-ccj-top-250-block />
+      </@slot>
+      <@slot>
+        <global-white-papers-block />
+      </@slot>
+    </global-callout-cards-block>
+  </@section> -->
+
+  <!-- <@section>
+    <global-client-side-most-popular-block />
+  </@section> -->
+
+  <!-- <@section|{ aliases }|>
+    <global-gam-define-display-ad
+      name="rotation"
+      position="home_page"
+      aliases=aliases
+      modifiers=["inter-block"]
+    />
+  </@section> -->
+
+  <!-- <@section>
+    <global-gear-block alias="products" default-description="Latest product innovations designed to improve your truck or van" />
+  </@section>
+
+  <@section>
+    <global-reader-rigs-block alias="vans" default-description="Class 1 cargo through Class 6 step vans" />
+  </@section>
+
+  <@section>
+    <global-resource-library-block alias="resource-library" />
+  </@section> -->
+</global-website-section-home-layout>
