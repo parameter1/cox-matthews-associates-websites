@@ -88,7 +88,7 @@ services:
       EXPOSED_PORT: 9811
       LIVERELOAD_PORT: 19811
       TENANT_KEY: diverse_all
-      SITE_ID:
+      SITE_ID: 60c28c0dd28860bc334ed723
     ports:
       - "9811:80"
       - "19811:19811"
@@ -104,7 +104,7 @@ services:
       EXPOSED_PORT: 9812
       LIVERELOAD_PORT: 19812
       TENANT_KEY: diverse_all
-      SITE_ID:
+      SITE_ID: 60c28c4bd28860bc334f485d
     ports:
       - "9812:80"
       - "19812:19812"
@@ -120,7 +120,7 @@ services:
       EXPOSED_PORT: 9813
       LIVERELOAD_PORT: 19813
       TENANT_KEY: diverse_all
-      SITE_ID:
+      SITE_ID: 60c28bc3d28860bc334ebcb2
     ports:
       - "9813:80"
       - "19813:19813"
