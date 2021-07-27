@@ -36,10 +36,7 @@ module.exports = {
     { provider: 'linkedin', href: 'https://www.linkedin.com/company/diverse-issues-in-higher-education/' },
   ],
   gtm: {
-    containerId: process.env.GTM_CONTAINER_ID || 'NOT_SET',
-  },
-  gcse: {
-    id: 'NOT_SET',
+    containerId: process.env.GTM_CONTAINER_ID || 'GTM-TSQTRVN',
   },
   wufoo: {
     userName: 'NOT_SET',
