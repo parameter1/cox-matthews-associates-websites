@@ -1,7 +1,15 @@
 const topics = [
+  { href: '/workforce-development', label: 'Workforce Development' },
+  { href: '/health', label: 'Health' },
+  { href: '/leadership', label: 'Leadership' },
+  { href: '/academics', label: 'Academics' },
+  { href: '/faculty', label: 'Faculty' },
+  { href: '/finance', label: 'Finance' },
 ];
 
 const resources = [
+  { href: '/other-news', label: 'Other News' },
+  { href: '/blogs-opinion', label: 'Blogs/Opinion' },
 ];
 
 const utilities = [
@@ -34,8 +42,7 @@ module.exports = {
     items: [],
   },
   secondary: {
-    items: [
-    ],
+    items: topics,
   },
   tertiary: {
     items: [],

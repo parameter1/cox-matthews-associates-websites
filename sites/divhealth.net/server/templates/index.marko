@@ -12,20 +12,20 @@ $ const { id, alias, name, pageNode } = input;
     <meta name="google-site-verification" content="TBD" />
   </@head> -->
 
-  <!-- <@section modifiers=["break-container"]>
-    <global-opinion-block alias="opinion" />
-  </@section> -->
+  <@section modifiers=["break-container"]>
+    <global-opinion-block alias="blogs-opinion" />
+  </@section>
 
   <@section|{ aliases }|>
     <div class="row">
-      <div class="col-lg-4">
-        <global-section-list-block alias="campus-issues" />
-      </div>
       <div class="col-lg-4">
         <global-section-list-block alias="disparities" />
       </div>
       <div class="col-lg-4">
         <global-section-list-block alias="nursing" />
+      </div>
+      <div class="col-lg-4">
+        <global-section-list-block alias="research" />
       </div>
       <!-- <div class="col-lg-4 pt-block">
         <global-gam-define-display-ad
@@ -55,9 +55,9 @@ $ const { id, alias, name, pageNode } = input;
     />
   </@section>
 
-  <!-- <@section>
-    <global-section-list-deck-block aliases=["african-american", "covid-19", "campus-climate"] />
-  </@section> -->
+  <@section>
+    <global-section-list-deck-block aliases=["mental-health", "policies", "other-news"] />
+  </@section>
 
   <!-- <@section|{ aliases }|>
     <global-gam-define-display-ad
