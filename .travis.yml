@@ -62,11 +62,11 @@ jobs:
       script: npx @parameter1/base-cms-website-deployment-tool deploy diverseeducation.com leonis-websites
 
     - <<: *production-job
-      name: diversehealth.com
-      script: npx @parameter1/base-cms-website-deployment-tool deploy diversehealth.com virgon-websites
+      name: divhealth.net
+      script: npx @parameter1/base-cms-website-deployment-tool deploy divhealth.net virgon-websites
     - <<: *staging-job
-      name: diversehealth.com
-      script: npx @parameter1/base-cms-website-deployment-tool deploy diversehealth.com leonis-websites
+      name: divhealth.net
+      script: npx @parameter1/base-cms-website-deployment-tool deploy divhealth.net leonis-websites
 
     - <<: *production-job
       name: diversemilitary.net
