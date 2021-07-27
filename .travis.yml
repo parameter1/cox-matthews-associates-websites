@@ -61,6 +61,27 @@ jobs:
       name: diverseeducation.com
       script: npx @parameter1/base-cms-website-deployment-tool deploy diverseeducation.com leonis-websites
 
+    - <<: *production-job
+      name: diversehealth.com
+      script: npx @parameter1/base-cms-website-deployment-tool deploy diversehealth.com virgon-websites
+    - <<: *staging-job
+      name: diversehealth.com
+      script: npx @parameter1/base-cms-website-deployment-tool deploy diversehealth.com leonis-websites
+
+    - <<: *production-job
+      name: diversemilitary.net
+      script: npx @parameter1/base-cms-website-deployment-tool deploy diversemilitary.net virgon-websites
+    - <<: *staging-job
+      name: diversemilitary.net
+      script: npx @parameter1/base-cms-website-deployment-tool deploy diversemilitary.net leonis-websites
+
+    - <<: *production-job
+      name: ccnewsnow.com
+      script: npx @parameter1/base-cms-website-deployment-tool deploy ccnewsnow.com virgon-websites
+    - <<: *staging-job
+      name: ccnewsnow.com
+      script: npx @parameter1/base-cms-website-deployment-tool deploy ccnewsnow.com leonis-websites
+
     #############################
     ### ^^^ ADD SITES HERE ^^^ ##
     #############################
