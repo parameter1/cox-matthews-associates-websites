@@ -30,10 +30,10 @@ module.exports = {
   },
   socialMediaLinks: [],
   gtm: {
-    containerId: process.env.GTM_CONTAINER_ID || 'NOT_SET',
   },
   gcse: {
     id: 'NOT_SET',
+    containerId: process.env.GTM_CONTAINER_ID || 'GTM-NJZK2JD',
   },
   wufoo: {
     userName: 'NOT_SET',
