@@ -1,7 +1,16 @@
 const topics = [
+  { href: '/academics', label: 'Academics' },
+  { href: '/campus', label: 'Campus' },
+  { href: '/policy', label: 'Policy' },
+  { href: '/from-the-pentagon', label: 'From the Pentagon' },
+  { href: '/online-education', label: 'Online Education' },
+  { href: '/funding', label: 'Funding' },
+  { href: '/veterans', label: 'Veterans' },
 ];
 
 const resources = [
+  { href: '/other-news', label: 'Other News' },
+  { href: '/blogs-opinion', label: 'Blogs/Opinion' },
 ];
 
 const utilities = [
@@ -35,6 +44,10 @@ module.exports = {
   },
   secondary: {
     items: [
+      { href: '/academics', label: 'Academics' },
+      { href: '/campus', label: 'Campus' },
+      { href: '/policy', label: 'Policy' },
+      { href: '/funding', label: 'Funding' },
     ],
   },
   tertiary: {

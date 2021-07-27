@@ -1,7 +1,18 @@
 const topics = [
+  { href: '/campus-issues', label: 'Campus Issues' },
+  { href: '/disparities', label: 'Disparities' },
+  { href: '/nursing', label: 'Nursing' },
+  { href: '/research', label: 'Research' },
+  { href: '/mental-health', label: 'Mental Health' },
+  { href: '/faculty', label: 'Faculty' },
+  { href: '/technology', label: 'Technology' },
+  { href: '/covid-19', label: 'COVID-19' },
 ];
 
 const resources = [
+  { href: '/other-news', label: 'Other News' },
+  { href: '/blogs-opinion', label: 'Blogs/Opinion' },
+  { href: '/resources/top-100-health-medical-categories', label: 'Top 100-Health & Medical Categories' },
 ];
 
 const utilities = [
@@ -35,6 +46,11 @@ module.exports = {
   },
   secondary: {
     items: [
+      { href: '/campus-issues', label: 'Campus Issues' },
+      { href: '/disparities', label: 'Disparities' },
+      { href: '/nursing', label: 'Nursing' },
+      { href: '/research', label: 'Research' },
+      { href: '/mental-health', label: 'Mental Health' },
     ],
   },
   tertiary: {
