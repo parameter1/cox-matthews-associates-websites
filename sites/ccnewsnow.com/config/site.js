@@ -30,9 +30,6 @@ module.exports = {
   },
   socialMediaLinks: [],
   gtm: {
-  },
-  gcse: {
-    id: 'NOT_SET',
     containerId: process.env.GTM_CONTAINER_ID || 'GTM-NJ23C9G',
   },
   wufoo: {
