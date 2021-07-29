@@ -171,6 +171,14 @@ $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type)
         modifiers=["inter-block"]
       />
     </@section>
+  </if>
+
+  <@section|{ content }|>
+    <global-related-stories-block
+      content-id=content.id
+      section-id=content.primarySection.id
+    />
+  </@section>
 
   <!-- <if(showTopStoryBlock)>
     <@section>
