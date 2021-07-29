@@ -198,22 +198,22 @@ $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type)
     </global-section-feed-block>
   </@section> -->
 
-  <@section|{ aliases }|>
+  <!-- <@section|{ aliases }|>
     <global-gam-define-display-ad
       name="rotation"
       position="content_page"
       aliases=aliases
       modifiers=["inter-block"]
     />
-  </@section>
+  </@section> -->
 
-  <@section|{ blockName, aliases, content }|>
+  <!-- <@section|{ blockName, aliases, content }|>
     $ const { primarySection: section } = content;
 
     <global-section-feed-block alias=section.alias>
       <@query-params limit=3 skip=3 />
     </global-section-feed-block>
-  </@section>
+  </@section> -->
 
   <for|s| of=sections>
     <@section|{ blockName, content, aliases }| modifiers=s.modifiers>
