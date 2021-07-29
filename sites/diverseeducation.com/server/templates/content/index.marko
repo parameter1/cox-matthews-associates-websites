@@ -39,4 +39,13 @@ $ const { id, type, pageNode, ...rest } = input;
   <@section>
     <global-client-side-most-popular-block />
   </@section>
+
+  <@section|{ aliases }|>
+    <global-gam-define-display-ad
+      name="rotation"
+      position="content_page"
+      aliases=aliases
+      modifiers=["inter-block"]
+    />
+  </@section>
 </global-content-default-layout>
