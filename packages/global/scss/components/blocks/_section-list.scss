@@ -35,6 +35,16 @@
         @include marko-web-node-list-border(border-top);
         padding-top: map-get($spacers, "block-sm");
       }
+      &__nodes {
+        flex-grow: 0;
+      }
+    }
+    .node {
+      &__text {
+        &--teaser {
+          font-family: inherit;
+        }
+      }
     }
   }
 }
