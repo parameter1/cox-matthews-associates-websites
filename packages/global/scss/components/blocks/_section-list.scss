@@ -27,6 +27,7 @@
     }
     #{ $self }__footer {
       padding-bottom: map-get($spacers, "block");
+      font-weight: $font-weight-bold;
     }
   }
 }
