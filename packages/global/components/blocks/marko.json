@@ -88,7 +88,9 @@
   },
   "<global-featured-jobs-list-block>": {
     "template": "./featured-jobs-list.marko",
-    "@alias": "string"
+    "@alias": "string",
+    "@findJobLink": "string",
+    "@postJobLink": "string"
   },
   "<global-section-body-feed-block>": {
     "template": "./section-body-feed.marko",
