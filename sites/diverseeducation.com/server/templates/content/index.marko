@@ -6,19 +6,6 @@ $ const { id, type, pageNode, ...rest } = input;
   page-node=pageNode
   ...rest
 >
-  <@section>
-    <site-promo-card-rotation-block />
-  </@section>
-
-  <@section|{ aliases }|>
-    <global-gam-define-display-ad
-      name="rotation"
-      position="content_page"
-      aliases=aliases
-      modifiers=["inter-block"]
-    />
-  </@section>
-
   <@section|{ aliases }|>
     <div class="row">
       <div class="col-lg-4">
@@ -34,6 +21,23 @@ $ const { id, type, pageNode, ...rest } = input;
         </div>
       </div>
     </div>
+  </@section>
+
+  <@section|{ aliases }|>
+    <global-gam-define-display-ad
+      name="rotation"
+      position="content_page"
+      aliases=aliases
+      modifiers=["inter-block"]
+    />
+  </@section>
+
+  <@section>
+    <global-premium-employers-block title="Premium Employers" />
+  </@section>
+
+  <@section>
+    <site-promo-card-rotation-block />
   </@section>
 
   <@section>
