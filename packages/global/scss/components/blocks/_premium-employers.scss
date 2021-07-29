@@ -1,0 +1,9 @@
+.premium-employers {
+  &__header {
+    margin-bottom: 24px;
+    @include media-breakpoint-up(md) {
+      margin-bottom: 30px;
+    }
+    @include skin-typography($style: "section-header");
+  }
+}
