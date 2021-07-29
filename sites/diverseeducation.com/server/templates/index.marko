@@ -19,7 +19,7 @@ $ const { id, alias, name, pageNode } = input;
   <@section|{ aliases }|>
     <div class="row">
       <div class="col-lg-4">
-        <global-section-list-block alias="latest-news" />
+        <global-section-list-block alias="campus-climate" />
       </div>
       <div class="col-lg-4">
         <global-section-list-block alias="international" />
@@ -27,22 +27,6 @@ $ const { id, alias, name, pageNode } = input;
       <div class="col-lg-4">
         <global-section-list-block alias="sports" />
       </div>
-      <!-- <div class="col-lg-4 pt-block">
-        <global-gam-define-display-ad
-          name="rail"
-          position="content_page"
-          aliases=aliases
-          modifiers=["max-width-300", "center", "margin-auto-x", "rail"]
-          class="mb-block"
-        />
-        <global-gam-define-display-ad
-          name="rail"
-          position="content_page"
-          aliases=aliases
-          modifiers=["max-width-300", "center", "margin-auto-x", "rail"]
-          class="mb-block"
-        />
-      </div> -->
     </div>
   </@section>
 
@@ -59,14 +43,31 @@ $ const { id, alias, name, pageNode } = input;
     <global-section-list-deck-block aliases=["african-american", "covid-19", "campus-climate"] />
   </@section>
 
-  <!-- <@section|{ aliases }|>
+  <@section|{ aliases }|>
     <global-gam-define-display-ad
-      name="leaderboard"
+      name="rotation"
       position="home_page"
       aliases=aliases
       modifiers=["inter-block"]
     />
-  </@section> -->
+  </@section>
+
+  <@section|{ aliases }|>
+    <div class="row">
+      <div class="col-lg-4">
+        <global-section-list-block alias="awards-honors" />
+      </div>
+      <div class="col-lg-4">
+        <global-featured-jobs-list-block />
+      </div>
+      <div class="col-lg-4">
+        <div class="twitter-block">
+          <a class="twitter-timeline" data-width="340" data-height="650" data-theme="light" href="https://twitter.com/DiverseIssues?ref_src=twsrc%5Etfw">Tweets by DiverseIssues</a>
+          <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+      </div>
+    </div>
+  </@section>
 
   <@section|{ aliases }|>
     <global-gam-define-display-ad
@@ -77,43 +78,17 @@ $ const { id, alias, name, pageNode } = input;
     />
   </@section>
 
-  <!-- <@section>
-    <global-partners-in-business-block alias="vocational" default-description="Bucket trucks, dump trucks, refuse trucks and more" />
-  </@section> -->
-
-  <!-- <@section>
-    <global-callout-cards-block>
-      <@slot>
-        <global-ccj-top-250-block />
-      </@slot>
-      <@slot>
-        <global-white-papers-block />
-      </@slot>
-    </global-callout-cards-block>
-  </@section> -->
-
-  <!-- <@section>
-    <global-client-side-most-popular-block />
-  </@section> -->
-
-  <!-- <@section|{ aliases }|>
-    <global-gam-define-display-ad
-      name="rotation"
-      position="home_page"
-      aliases=aliases
-      modifiers=["inter-block"]
-    />
-  </@section> -->
-
-  <!-- <@section>
-    <global-gear-block alias="products" default-description="Latest product innovations designed to improve your truck or van" />
+  <@section>
+    <global-premium-employers-block title="Premium Employers" />
   </@section>
 
   <@section>
-    <global-reader-rigs-block alias="vans" default-description="Class 1 cargo through Class 6 step vans" />
+    <site-promo-card-rotation-block />
   </@section>
 
   <@section>
-    <global-resource-library-block alias="resource-library" />
-  </@section> -->
+    <!-- <global-client-side-most-popular-block /> -->
+    <global-most-popular-temp-block />
+  </@section>
+
 </global-website-section-home-layout>

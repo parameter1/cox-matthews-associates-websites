@@ -10,8 +10,7 @@ module.exports = ({
     .setTemplate('LEADERBOARD', {
       size: [
         [970, 250],
-        [300, 250],
-        [1060, 596], // Featured Pushdown / Fluid Banner
+        [1060, 596],
         [736, 414],
         [428, 241],
         [265, 149],

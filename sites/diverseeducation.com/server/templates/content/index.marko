@@ -1,12 +1,10 @@
-import queryFragment from "@cox-matthews-associates/package-global/graphql/fragments/content-list";
+$ const { id, type, pageNode, ...rest } = input;
 
-$ const { id, alias, name, pageNode } = input;
-
-<global-website-section-feed-layout
+<global-content-default-layout
   id=id
-  alias=alias
-  name=name
+  type=type
   page-node=pageNode
+  ...rest
 >
   <@section|{ aliases }|>
     <div class="row">
@@ -28,7 +26,7 @@ $ const { id, alias, name, pageNode } = input;
   <@section|{ aliases }|>
     <global-gam-define-display-ad
       name="rotation"
-      position="section_page"
+      position="content_page"
       aliases=aliases
       modifiers=["inter-block"]
     />
@@ -47,4 +45,4 @@ $ const { id, alias, name, pageNode } = input;
     <global-most-popular-temp-block />
   </@section>
 
-</global-website-section-feed-layout>
+</global-content-default-layout>

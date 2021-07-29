@@ -121,19 +121,6 @@ $ const perPage = 18;
     </global-section-feed-block>
   </@section>
 
-  <!-- <@section>
-    <global-top-stories-block />
-  </@section> -->
-
-  <!-- <@section|{ aliases }|>
-    <global-gam-define-display-ad
-      name="rotation"
-      position="section_page"
-      aliases=aliases
-      modifiers=["inter-block"]
-    />
-  </@section>
-
   <for|s| of=sections>
     <@section|{ blockName, section, aliases }| modifiers=s.modifiers>
       <${s.renderBody}
@@ -142,7 +129,7 @@ $ const perPage = 18;
         aliases=aliases
       />
     </@section>
-  </for> -->
+  </for>
 
   <@section|{ aliases }|>
     <global-gam-define-display-ad

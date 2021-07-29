@@ -1,4 +1,4 @@
-const content = require('@cox-matthews-associates/package-global/routes/content');
+const content = require('./content');
 const home = require('./home');
 const websiteSection = require('./website-section');
 

@@ -22,15 +22,15 @@ const topics = [
 ];
 
 const resources = [
-  { href: '/community-colleges', label: 'Community Colleges' },
-  { href: '/military', label: 'Military' },
-  { href: '/health', label: 'Health' },
+  { href: 'https://www.ccnewsnow.com', label: 'Community Colleges' },
+  { href: 'https://www.diversemilitary.net', label: 'Military' },
+  { href: 'https://www.divhealth.net', label: 'Health' },
   { href: '/sponsored-content', label: 'Sponsored Content' },
   { href: '/latest-news', label: 'Latest News' },
   { href: '/opinion', label: 'Opinion' },
   { href: '/reports-data', label: 'Reports & Data' },
   { href: '/from-the-magazine', label: 'From the Magazine' },
-  { href: '/jobs', label: 'Jobs' },
+  { href: 'https://diversejobs.net', label: 'Jobs', target: '_blank' },
 ];
 
 const utilities = [

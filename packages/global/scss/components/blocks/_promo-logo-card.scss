@@ -1,4 +1,4 @@
-.ccj-top-250 {
+.promo-logo-card {
   height: 100%;
   padding: 24px;
   background-color: $gray-100;
@@ -10,15 +10,14 @@
   }
 
   &__logo {
-    width: 151px;
-    filter: invert(.8);
+    height: 40px;
   }
 }
 
 .node {
   $self: &;
 
-  &--ccj-top-250 {
+  &--promo-logo-card {
     background-color: $gray-100;
 
     #{ $self } {

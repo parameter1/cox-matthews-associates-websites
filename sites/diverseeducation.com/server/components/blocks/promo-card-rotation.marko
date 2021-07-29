@@ -1,0 +1,20 @@
+import { getAsArray } from "@parameter1/base-cms-object-path";
+import shuffle from "@cox-matthews-associates/package-global/utils/shuffle-array";
+import CCN from "@cox-matthews-associates/package-global/components/blocks/promos/ccnews-now";
+import Jobs from "@cox-matthews-associates/package-global/components/blocks/promos/diverse-jobs";
+import Health from "@cox-matthews-associates/package-global/components/blocks/promos/diverse-health";
+import Military from "@cox-matthews-associates/package-global/components/blocks/promos/diverse-military";
+
+$ const Promos = shuffle([CCN, Jobs, Health, Military]);
+$ const blockName = "callout-cards";
+
+<marko-web-block name=blockName>
+  <marko-web-element block-name=blockName name="row">
+    <marko-web-element block-name=blockName name="col">
+      <${Promos[0]} />
+    </marko-web-element>
+    <marko-web-element block-name=blockName name="col" modifiers=["last"]>
+      <${Promos[1]} />
+    </marko-web-element>
+  </marko-web-element>
+</marko-web-block>

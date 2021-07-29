@@ -41,6 +41,9 @@
   "<global-most-popular-block>": {
     "template": "./most-popular.marko"
   },
+  "<global-most-popular-temp-block>": {
+    "template": "./most-popular-temp.marko"
+  },
   "<global-read-next-block>": {
     "template": "./read-next.marko"
   },
@@ -86,6 +89,12 @@
   "<global-white-papers-block>": {
     "template": "./white-papers.marko"
   },
+  "<global-featured-jobs-list-block>": {
+    "template": "./featured-jobs-list.marko",
+    "@alias": "string",
+    "@findJobLink": "string",
+    "@postJobLink": "string"
+  },
   "<global-section-body-feed-block>": {
     "template": "./section-body-feed.marko",
     "<query-params>": {},
@@ -111,6 +120,13 @@
     "@ad-name": "string",
     "@ad-position": "string",
     "@count-only": "boolean"
+  },
+  "<global-premium-employers-block>": {
+    "template": "./premium-employers.marko",
+    "<query-params>": {},
+    "<node>": {},
+    "@title": "string",
+    "@alias": "string"
   },
   "<global-section-title-feed-block>": {
     "template": "./section-title-feed.marko",
