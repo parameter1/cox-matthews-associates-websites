@@ -161,7 +161,8 @@ $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type)
       </default-theme-page-contents>
     </div>
   </@section>
-  <!-- <if(showBottomAdBlock)>
+
+  <if(showBottomAdBlock)>
     <@section|{ aliases }|>
       <global-gam-define-display-ad
         name="rotation"
@@ -170,7 +171,6 @@ $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type)
         modifiers=["inter-block"]
       />
     </@section>
-  </if> -->
 
   <!-- <if(showTopStoryBlock)>
     <@section>
