@@ -118,6 +118,13 @@
     "@ad-position": "string",
     "@count-only": "boolean"
   },
+  "<global-premium-employers-block>": {
+    "template": "./premium-employers.marko",
+    "<query-params>": {},
+    "<node>": {},
+    "@title": "string",
+    "@alias": "string"
+  },
   "<global-section-title-feed-block>": {
     "template": "./section-title-feed.marko",
     "<query-params>": {},

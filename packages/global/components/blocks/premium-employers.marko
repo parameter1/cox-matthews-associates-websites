@@ -1,0 +1,43 @@
+import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
+import queryFragment from "../../graphql/fragments/section-feed-block";
+import shuffle from "../../utils/shuffle-array";
+
+$ const { GAM } = out.global;
+$ const alias = defaultValue(input.alias, 'premium-employers');
+$ const displayLimit = 4;
+
+$ const queryParams = {
+  ...input.queryParams,
+  includeContentTypes: ["Company"],
+  sectionAlias: alias,
+  queryFragment,
+};
+$ const { title } = input;
+
+$ const blockName = "premium-employers";
+
+<marko-web-query|{ nodes: allNodes }| name="website-scheduled-content" params=queryParams>
+  $ const nodes = shuffle(allNodes).slice(0, displayLimit);
+  <if(title)>
+    <marko-web-element block-name=blockName name="header">
+      ${title}
+    </marko-web-element>
+  </if>
+  <default-theme-card-deck-flow cols=displayLimit nodes=nodes modifiers=[blockName]>
+    <@slot|{ node }|>
+      <global-content-node
+        image-position="top"
+        card=true
+        flush=true
+        full-height=true
+        with-teaser=false
+        with-dates=false
+        with-section=false
+        modifiers=[blockName]
+        node=node
+      >
+        <@image ar="1:1" fluid=true />
+      </global-content-node>
+    </@slot>
+  </default-theme-card-deck-flow>
+</marko-web-query>
