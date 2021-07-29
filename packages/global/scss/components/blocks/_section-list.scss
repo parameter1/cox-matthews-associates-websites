@@ -19,6 +19,17 @@
       @include skin-typography($style: "view-more", $link-style: "primary");
     }
   }
+  &--featured-jobs {
+    .btn {
+      padding: map-get($spacers, "block-xs");
+      margin-left: map-get($spacers, "block-xs");
+      font-size: 12px;
+    }
+    #{ $self }__footer {
+      padding-bottom: map-get($spacers, "block");
+      font-weight: $font-weight-bold;
+    }
+  }
 }
 
 .node {
