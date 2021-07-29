@@ -86,6 +86,10 @@
   "<global-white-papers-block>": {
     "template": "./white-papers.marko"
   },
+  "<global-featured-jobs-list-block>": {
+    "template": "./featured-jobs-list.marko",
+    "@alias": "string"
+  },
   "<global-section-body-feed-block>": {
     "template": "./section-body-feed.marko",
     "<query-params>": {},

@@ -1,0 +1,27 @@
+import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
+import queryFragment from "../../graphql/fragments/featured-job-list";
+
+$ const sectionAlias = defaultValue(input.alias, "featured-jobs");
+
+<marko-web-query|{ nodes }|
+  name="website-scheduled-content"
+  params={
+    sectionAlias,
+    limit: 5,
+    sectionBubbling: false,
+    queryFragment,
+  }
+>
+  <global-content-list-flow
+    nodes=nodes
+    inner-justified=true
+    flush-x=true
+    flush-y=true
+    modifiers=["section-list"]
+  >
+    <@header>Featured Jobs</@header>
+    <@node displayImage=false withSection=false withDates=false>
+      <@title modifiers=["small"] />
+    </@node>
+  </global-content-list-flow>
+</marko-web-query>
