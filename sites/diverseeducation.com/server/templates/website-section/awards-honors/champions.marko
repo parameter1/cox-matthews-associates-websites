@@ -1,0 +1,141 @@
+import { getAsArray } from "@parameter1/base-cms-object-path";
+import queryFragment from "@cox-matthews-associates/package-global/graphql/fragments/content-list";
+import promoFragment from "../../../graphql/fragments/champion-promotion";
+
+$ const { id, alias, name, pageNode } = input;
+$ const blockName = "emerging-scholars-page";
+$ const cardBlock = "emerging-scholars-page-card";
+$ const params = {
+  limit: 100,
+  excludeContentTypes: ["Promotion"],
+  sectionAlias: alias,
+  queryFragment
+};
+<global-website-section-default-layout
+  id=id
+  alias=alias
+  name=name
+  page-node=pageNode>
+  <@section|{ aliases }| modifiers=["first"]>
+    <global-gam-define-display-ad
+      name="leaderboard"
+      position="section_page"
+      aliases=aliases
+      modifiers=["inter-block"]/>
+  </@section>
+  <@section|{ section }|>
+    <marko-web-block name=blockName>
+      <global-content-page-breadcrumbs section=section/>
+      <marko-web-element block-name=blockName name="header">
+        <marko-web-website-section-name|{ value }|
+          tag="h1"
+          block-name="page-wrapper"
+          obj=section>
+          ${value}
+        </marko-web-website-section-name>
+        <marko-web-website-section-description|{ value }|
+          tag="p"
+          block-name="page-wrapper"
+          obj=section>
+          ${value}
+        </marko-web-website-section-description>
+      </marko-web-element>
+    </marko-web-block>
+
+    <marko-web-query|{ nodes }|
+      name="website-optioned-content"
+      params={
+        limit: 1,
+        includeContentTypes: ["Promotion"],
+        optionName: "Pinned",
+        sectionAlias: alias,
+        queryFragment: promoFragment,
+      }
+    >
+      <marko-web-node-list
+        inner-justified=true
+        flush-x=true
+        flush-y=false
+        modifiers=[blockName]
+      >
+        <@nodes nodes=nodes>
+          <@slot|{ node }|>
+            $ const featuredContentBlockName = "section-featured-content-node";
+
+            <marko-web-block name=featuredContentBlockName class="page-contents__content-body">
+              <marko-web-element block-name=featuredContentBlockName name="contents">
+                <marko-web-element block-name=featuredContentBlockName name="body">
+                  <global-primary-image-block
+                    obj=node.primaryImage
+                    force-display="right"
+                  />
+                  <marko-web-content-body
+                    block-name=featuredContentBlockName
+                    obj=node
+                  />
+                </marko-web-element>
+              </marko-web-element>
+            </marko-web-block>
+          </@slot>
+        </@nodes>
+      </marko-web-node-list>
+    </marko-web-query>
+  </@section>
+  <@section|{ blockName, section }|>
+    <div class="row">
+      <div class="col-md-6 mb-block">
+        <div class="award-about-card">
+          <div class="award-about-card__title">2021 Deadline</div>
+          <div class="award-about-card__description">
+            <p>
+              The April 1, 2021, edition of
+              <strong><i>Diverse</i></strong>
+              will contain a tribute to Eloy Ortiz Oakley. Please join us and many other institutions,
+              organizations, and colleagues in this recognition of his career achievements by<br/>
+              <a
+                href="https://responses.diverseeducation.com/champions2021promo"
+                target="_blank">
+                placing a congratulatory/celebratory message
+              </a>.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 mb-block">
+        <div class="award-about-card">
+          <div class="award-about-card__title">More about the <i>Diverse</i> Champions Award</div>
+          <div class="award-about-card__description">
+            <p>
+              The award was created by <i><strong>Diverse: Issues In Higher Education</strong></i> in 2012 upon the retirement of the inaugural Diverse Champions Award winner,
+              Dr. John E. Roueche, as director of the Community College Leadership Program (CCLP) at the University of Texas at Austin.
+              Of the more than 500 CCLP graduates produced during his 40-plus year tenure at CCLP, more than 60 percent are women and people of color.
+            </p>
+            <p>
+              The <strong><i>Diverse</i></strong> Champions Award is given to individuals who have made similarly extraordinary contributions to the world of higher education.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </@section>
+  <@section>
+    <marko-web-query|{ nodes }| name="website-scheduled-content" params=params>
+      <marko-web-node-list
+        class="mb-block"
+        inner-justified=true
+        flush-x=true
+        flush-y=false
+        modifiers=[blockName]
+      >
+      <@header>
+        Latest
+      </@header>
+        <@nodes nodes=nodes>
+          <@slot|{ node }|>
+            <global-section-feed-content-node node=node />
+          </@slot>
+        </@nodes>
+      </marko-web-node-list>
+    </marko-web-query>
+  </@section>
+</global-website-section-default-layout>
