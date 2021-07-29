@@ -6,25 +6,18 @@ $ const { id, type, pageNode, ...rest } = input;
   page-node=pageNode
   ...rest
 >
-  <!-- <@section>
-    <global-callout-cards-block>
-      <@slot>
-        <global-ccj-top-250-block />
-      </@slot>
-      <@slot>
-        <global-white-papers-block />
-      </@slot>
-    </global-callout-cards-block>
-  </@section> -->
+  <@section>
+    <site-promo-card-rotation-block />
+  </@section>
 
-  <!-- <@section|{ aliases }|>
+  <@section|{ aliases }|>
     <global-gam-define-display-ad
       name="rotation"
       position="content_page"
       aliases=aliases
       modifiers=["inter-block"]
     />
-  </@section> -->
+  </@section>
 
   <@section|{ aliases }|>
     <div class="row">
