@@ -21,13 +21,20 @@
   }
   &--featured-jobs {
     .btn {
-      padding: map-get($spacers, "block-xs");
-      margin-left: map-get($spacers, "block-xs");
+      padding: map-get($spacers, "block-sm");
       font-size: 12px;
     }
     #{ $self }__footer {
+      display: flex;
+      justify-content: space-between;
       padding-bottom: map-get($spacers, "block");
       font-weight: $font-weight-bold;
+    }
+    .node-list {
+      &__node:first-child {
+        @include marko-web-node-list-border(border-top);
+        padding-top: map-get($spacers, "block-sm");
+      }
     }
   }
 }
