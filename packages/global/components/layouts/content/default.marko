@@ -4,6 +4,7 @@ import DefineDisplayAd from "../../gam/define-display-ad";
 $ const { site } = out.global;
 $ const { id, type, pageNode, showReadNextBlock, showBottomAdBlock, showTopStoryBlock, ...rest } = input;
 $ const sections = getAsArray(input, "sections");
+$ const belowContentSections = getAsArray(input, "belowContentSections");
 
 $ const displayPrimaryImage = ["media-gallery"].includes(type) ? false : true;
 $ const displayPublishedDate = ["company", "contact", "whitepaper"].includes(type) ? false : true;
@@ -84,7 +85,7 @@ $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type)
           $ if (type === "video") forceDisplay = "none";
           <global-primary-image-block
             obj=content.primaryImage
-            force-display=forceDisplay;
+            force-display=forceDisplay
           />
         </else-if>
 
@@ -149,7 +150,7 @@ $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type)
 
         <!-- <if(displayComments)>
           <global-identity-x-comment-stream content=content />
-        </if> -->
+        </if>
 
         <if(displayReadNext)>
           <global-read-next-block
@@ -157,12 +158,11 @@ $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type)
             section-id=primarySection.id
             published=content.published
           />
-        </if>
+        </if> -->
       </default-theme-page-contents>
     </div>
   </@section>
-
-  <if(showBottomAdBlock)>
+  <!-- <if(showBottomAdBlock)>
     <@section|{ aliases }|>
       <global-gam-define-display-ad
         name="rotation"
@@ -171,14 +171,7 @@ $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type)
         modifiers=["inter-block"]
       />
     </@section>
-  </if>
-
-  <@section|{ content }|>
-    <global-related-stories-block
-      content-id=content.id
-      section-id=content.primarySection.id
-    />
-  </@section>
+  </if> -->
 
   <!-- <if(showTopStoryBlock)>
     <@section>
@@ -186,7 +179,17 @@ $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type)
     </@section>
   </if> -->
 
-  <!-- <@section|{ blockName, aliases, content }|>
+  <for|s| of=belowContentSections>
+    <@section|{ blockName, content, aliases }| modifiers=s.modifiers>
+      <${s.renderBody}
+        block-name=blockName
+        content=content
+        aliases=aliases
+      />
+    </@section>
+  </for>
+
+  <@section|{ blockName, aliases, content }|>
     $ const { primarySection: section } = content;
 
     <marko-web-website-section-name|{ value }| tag="h1" block-name=blockName obj=section>
@@ -196,24 +199,24 @@ $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type)
     <global-section-feed-block alias=section.alias>
       <@query-params limit=3 />
     </global-section-feed-block>
-  </@section> -->
+  </@section>
 
-  <!-- <@section|{ aliases }|>
+  <@section|{ aliases }|>
     <global-gam-define-display-ad
       name="rotation"
       position="content_page"
       aliases=aliases
       modifiers=["inter-block"]
     />
-  </@section> -->
+  </@section>
 
-  <!-- <@section|{ blockName, aliases, content }|>
+  <@section|{ blockName, aliases, content }|>
     $ const { primarySection: section } = content;
 
     <global-section-feed-block alias=section.alias>
       <@query-params limit=3 skip=3 />
     </global-section-feed-block>
-  </@section> -->
+  </@section>
 
   <for|s| of=sections>
     <@section|{ blockName, content, aliases }| modifiers=s.modifiers>
@@ -224,13 +227,4 @@ $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type)
       />
     </@section>
   </for>
-
-  <@section|{ aliases }|>
-    <global-gam-define-display-ad
-      name="rotation"
-      position="content_page"
-      aliases=aliases
-      modifiers=["inter-block"]
-    />
-  </@section>
 </global-content-wrapper-layout>
