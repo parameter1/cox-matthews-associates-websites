@@ -13,6 +13,11 @@
     @include skin-typography($style: "section-header");
   }
 
+  &__website-section-description {
+    margin-bottom: 20px;
+    font-size: 18px;
+  }
+
   &__website-section-subhead {
     margin-bottom: 20px;
     @include skin-typography($style: "section-header-small");
@@ -22,6 +27,10 @@
     margin-bottom: 30px;
     @include media-breakpoint-up(md) {
       margin-bottom: 60px;
+    }
+
+    .breadcrumbs {
+      margin-bottom: .5rem;
     }
 
     &--break-container {
