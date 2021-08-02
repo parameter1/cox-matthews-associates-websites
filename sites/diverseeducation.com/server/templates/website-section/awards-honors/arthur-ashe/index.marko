@@ -8,6 +8,10 @@ $ const { req } = out.global;
 $ const { path } = req;
 $ const year = path.split('/')[3];
 $ const config = authurAsheConfig[alias];
+$ const womenWinners = getAsArray(config, 'winners.women.profiles');
+$ const menWinners = getAsArray(config, 'winners.men.profiles');
+$ const womenFinalists = getAsArray(config, 'finalists.women.profiles');
+$ const menFinalists = getAsArray(config, 'finalists.men.profiles');
 
 <global-website-section-default-layout
   id=id
@@ -41,64 +45,64 @@ $ const config = authurAsheConfig[alias];
       </marko-web-element>
     </marko-web-block>
   </@section>
-  <@section|{ blockName }| modifiers=["arthur-ashe"]>
-    <div class="page-contents__content-body page-contents__content-body--profiles">
-      <div class="row">
-        <div class="col-md-6">
-          $ const womenWinners = getAsArray(config, 'winners.women.profiles');
-          <if(womenWinners.length)>
-            <h2 title="Women" class="page-wrapper__website-section-name page-wrapper__website-section-name--secondary">Women Winners</h2>
-            <div class="card-deck-flow card-deck-flow--awards-honors card-deck-flow--arthur-ashe card-deck-flow">
-              <for|profile| of=womenWinners>
-                <site-arthur-ashe-profiles-node profile=profile />
-              </for>
-            </div>
-          </if>
-        </div>
-        <div class="col-md-6">
-          $ const menWinners = getAsArray(config, 'winners.men.profiles');
-          <if(menWinners.length)>
-            <h2 title="Men" class="page-wrapper__website-section-name page-wrapper__website-section-name--secondary">Men Winners</h2>
-            <div class="card-deck-flow card-deck-flow--awards-honors card-deck-flow--arthur-ashe card-deck-flow">
-              <for|profile| of=menWinners>
-                <site-arthur-ashe-profiles-node profile=profile />
-              </for>
-            </div>
-          </if>
-        </div>
-      </div>
-    </div>
-  </@section>
-  <@section|{ blockName }| modifiers=["arthur-ashe"]>
-    <div class="page-contents__content-body page-contents__content-body--profiles">
-      <div class="row">
-        <div class="col-md-6">
-          $ const womenFinalists = getAsArray(config, 'finalists.women.profiles');
-          <if(womenFinalists.length)>
-            <h2 title="2021 Women Finalists" class="page-wrapper__website-section-name page-wrapper__website-section-name--secondary">Women Finalists</h2>
-            <div class="card-deck-flow card-deck-flow--awards-honors card-deck-flow--arthur-ashe card-deck-flow">
-
-              <for|profile| of=womenFinalists>
-                <site-arthur-ashe-profiles-node profile=profile />
-              </for>
-            </div>
-          </if>
-        </div>
-        <div class="col-md-6">
-          $ const menFinalists = getAsArray(config, 'finalists.men.profiles');
-          <if(menFinalists.length)>
-            <h2 title="2021 Men Finalists" class="page-wrapper__website-section-name page-wrapper__website-section-name--secondary">Men Finalist</h2>
-            <div class="card-deck-flow card-deck-flow--awards-honors card-deck-flow--arthur-ashe card-deck-flow">
-
-              <for|profile| of=menFinalists>
-                <site-arthur-ashe-profiles-node profile=profile />
-              </for>
-            </div>
-          </if>
+  <if(womenWinners.length || menWinners.length)>
+    <@section|{ blockName }| modifiers=["arthur-ashe"]>
+      <div class="page-contents__content-body page-contents__content-body--profiles">
+        <div class="row">
+          <div class="col-md-6">
+            <if(womenWinners.length)>
+              <h2 title="Women" class="page-wrapper__website-section-name page-wrapper__website-section-name--secondary">Women Winners</h2>
+              <div class="card-deck-flow card-deck-flow--awards-honors card-deck-flow--arthur-ashe card-deck-flow">
+                <for|profile| of=womenWinners>
+                  <site-arthur-ashe-profiles-node profile=profile />
+                </for>
+              </div>
+            </if>
+          </div>
+          <div class="col-md-6">
+            <if(menWinners.length)>
+              <h2 title="Men" class="page-wrapper__website-section-name page-wrapper__website-section-name--secondary">Men Winners</h2>
+              <div class="card-deck-flow card-deck-flow--awards-honors card-deck-flow--arthur-ashe card-deck-flow">
+                <for|profile| of=menWinners>
+                  <site-arthur-ashe-profiles-node profile=profile />
+                </for>
+              </div>
+            </if>
+          </div>
         </div>
       </div>
-    </div>
-  </@section>
+    </@section>
+  </if>
+  <if(womenFinalists.length || menFinalists.length)>
+    <@section|{ blockName }| modifiers=["arthur-ashe"]>
+      <div class="page-contents__content-body page-contents__content-body--profiles">
+        <div class="row">
+          <div class="col-md-6">
+            <if(womenFinalists.length)>
+              <h2 title="2021 Women Finalists" class="page-wrapper__website-section-name page-wrapper__website-section-name--secondary">Women Finalists</h2>
+              <div class="card-deck-flow card-deck-flow--awards-honors card-deck-flow--arthur-ashe card-deck-flow">
+
+                <for|profile| of=womenFinalists>
+                  <site-arthur-ashe-profiles-node profile=profile />
+                </for>
+              </div>
+            </if>
+          </div>
+          <div class="col-md-6">
+            <if(menFinalists.length)>
+              <h2 title="2021 Men Finalists" class="page-wrapper__website-section-name page-wrapper__website-section-name--secondary">Men Finalist</h2>
+              <div class="card-deck-flow card-deck-flow--awards-honors card-deck-flow--arthur-ashe card-deck-flow">
+
+                <for|profile| of=menFinalists>
+                  <site-arthur-ashe-profiles-node profile=profile />
+                </for>
+              </div>
+            </if>
+          </div>
+        </div>
+      </div>
+    </@section>
+  </if>
   <@section|{ blockName }| modifiers=["arthur-ashe"]>
     <div class="row">
       <div class="col-md-6 mb-block">
