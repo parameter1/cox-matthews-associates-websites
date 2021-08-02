@@ -1,0 +1,29 @@
+.arthur-ashe {
+  .card-deck-flow {
+    .node {
+      border: 1px solid $gray-200;
+    }
+  }
+  .node {
+    .profile {
+      font-size: 16px;
+      &__title {
+        text-align: center;
+      }
+      &__thumbnail {
+        display: block;
+        margin-bottom: $block-spacer;
+        text-align: center;
+      }
+    }
+  }
+  .page-wrapper {
+    &__website-section-name {
+      &--secondary {
+        padding: $block-spacer / 2;
+        text-align: center;
+        background-color: $gray-200;
+      }
+    }
+  }
+}
