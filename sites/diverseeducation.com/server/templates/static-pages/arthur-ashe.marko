@@ -1,0 +1,162 @@
+import { getAsArray } from "@parameter1/base-cms-object-path";
+import queryFragment from "@cox-matthews-associates/package-global/graphql/fragments/content-list";
+import sectionWithChilderenFragment from "../../graphql/fragments/section-with-children";
+import authurAsheConfig from "./configs/arthur-ashe"
+
+$ const { id, alias, name, pageNode } = input;
+$ const { req } = out.global;
+$ const { path } = req;
+$ const year = path.split('/')[3];
+$ const config = authurAsheConfig[alias];
+$ const type = "static-page";
+$ const title = year ? `${year} Arthur Ashe Jr. Sports Scholar Award` : "Arthur Ashe Sports Scholar Award";
+$ const description = "";
+<marko-web-default-page-layout type=type title=title description=description>
+  <@page>
+    <marko-web-page-wrapper class="awards-honors arthur-ashe">
+      <@section modifiers=["first"]>
+        <global-gam-define-display-ad
+          name="leaderboard"
+          position="section_page"
+          aliases=["awards-honors/arthur-ashe"]
+          modifiers=["inter-block"]/>
+      </@section>
+      <@section>
+        <div class="row">
+          <div class="col">
+            <h1 class="page-wrapper__website-section-name">$!{title}</h1>
+            <div class="page-wrapper__website-section-description">
+              <strong><em>Diverse: Issues In Higher Education</em></strong> sponsors the Arthur Ashe Jr. Sports Scholar Awards to honor students of color who have excelled in the classroom as well as on the athletic field. Inspired by tennis legend Arthur Ashe, Jr.'s commitment to education as well as his love for the game of tennis, U.S. colleges and universities are invited to participate in this annual awards program by nominating their outstanding sports scholars. In addition to their athletic ability and academic performance, Arthur Ashe Jr. Sports Scholars demonstrate a commitment to community service and student leadership.
+            </div>
+          </div>
+        </div>
+      </@section>
+      <@section>
+        <div class="page-contents__content-body page-contents__content-body--profiles">
+          <div class="row">
+            <div class="col-md-6">
+              $ const womenWinners = getAsArray(config, 'winners.women.profiles');
+              <if(womenWinners.length)>
+                <h2 title="Women" class="page-wrapper__website-section-name page-wrapper__website-section-name--secondary">Women Winners</h2>
+                <div class="card-deck-flow card-deck-flow--awards-honors card-deck-flow--arthur-ashe card-deck-flow">
+                  <for|profile| of=womenWinners>
+                    <site-arthur-ashe-profiles-node profile=profile />
+                  </for>
+                </div>
+              </if>
+            </div>
+            <div class="col-md-6">
+              $ const menWinners = getAsArray(config, 'winners.men.profiles');
+              <if(menWinners.length)>
+                <h2 title="Men" class="page-wrapper__website-section-name page-wrapper__website-section-name--secondary">Men Winners</h2>
+                <div class="card-deck-flow card-deck-flow--awards-honors card-deck-flow--arthur-ashe card-deck-flow">
+                  <for|profile| of=menWinners>
+                    <site-arthur-ashe-profiles-node profile=profile />
+                  </for>
+                </div>
+              </if>
+            </div>
+          </div>
+        </div>
+      </@section>
+      <@section>
+        <div class="page-contents__content-body page-contents__content-body--profiles">
+          <div class="row">
+            <div class="col-md-6">
+              $ const womenFinalists = getAsArray(config, 'finalists.women.profiles');
+              <if(womenFinalists.length)>
+                <h2 title="2021 Women Finalists" class="page-wrapper__website-section-name page-wrapper__website-section-name--secondary">Women Finalists</h2>
+                <div class="card-deck-flow card-deck-flow--awards-honors card-deck-flow--arthur-ashe card-deck-flow">
+
+                  <for|profile| of=womenFinalists>
+                    <site-arthur-ashe-profiles-node profile=profile />
+                  </for>
+                </div>
+              </if>
+            </div>
+            <div class="col-md-6">
+              $ const menFinalists = getAsArray(config, 'finalists.men.profiles');
+              <if(menFinalists.length)>
+                <h2 title="2021 Men Finalists" class="page-wrapper__website-section-name page-wrapper__website-section-name--secondary">Men Finalist</h2>
+                <div class="card-deck-flow card-deck-flow--awards-honors card-deck-flow--arthur-ashe card-deck-flow">
+
+                  <for|profile| of=menFinalists>
+                    <site-arthur-ashe-profiles-node profile=profile />
+                  </for>
+                </div>
+              </if>
+            </div>
+          </div>
+        </div>
+      </@section>
+      <@section>
+        <div class="row">
+          <div class="col-md-6 mb-block">
+            <div class="award-about-card">
+              <div class="award-about-card__title">Past Scholars:</div>
+              <div class="award-about-card__description award-about-card__description--past-years">
+                <marko-web-query|{ node }|
+                  name="website-section"
+                  params={ alias: 'awards-honors/arthur-ashe', queryFragment: sectionWithChilderenFragment }
+                >
+                $ const children = getAsArray(node, "children.edges").map(({ node }) => node);
+                  <marko-web-node-list>
+                    <@nodes|{ nodes }| nodes=children modifiers=["flush-x"]>
+                      <div class="list-flow">
+                        <for|node| of=nodes>
+                          <div class="list-flow__node">
+                            <marko-web-link title=node.name href=`/${node.alias}`>${node.name}</marko-web-link>
+                          </div>
+                        </for>
+                      </div>
+                    </@nodes>
+                  </marko-web-node-list>
+                </marko-web-query>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 mb-block">
+            <div class="award-about-card">
+              <div class="award-about-card__title">More About This Scholarship:</div>
+              <div class="award-about-card__description">
+                <p>
+                  As the name denotes, the annual Ashe edition is part of the magazine’s quarter-century legacy of recognizing young, outstanding minority men and women who have distinguished themselves in their academic and athletic pursuits.
+                </p>
+                <p>
+                  In addition to their athletic ability, students named 2020 Arthur Ashe Jr. Sports Scholars must maintain a cumulative grade-point average of at least 3.5, be at least a sophomore academically and be active on their campuses or in their communities.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </@section>
+      <@section>
+        <marko-web-query|{ nodes }|
+          name="website-scheduled-content"
+          params={
+            limit: 100,
+            sectionAlias: alias,
+            queryFragment
+          }
+        >
+          <marko-web-node-list
+            class="mb-block"
+            inner-justified=true
+            flush-x=true
+            flush-y=false
+            modifiers=["arthur-ashe-press"]
+          >
+          <@header>
+            Latest
+          </@header>
+            <@nodes nodes=nodes>
+              <@slot|{ node }|>
+                <global-section-feed-content-node node=node />
+              </@slot>
+            </@nodes>
+          </marko-web-node-list>
+        </marko-web-query>
+      </@section>
+    </marko-web-page-wrapper>
+  </@page>
+</marko-web-default-page-layout>
