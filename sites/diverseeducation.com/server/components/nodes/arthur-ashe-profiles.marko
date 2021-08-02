@@ -1,0 +1,20 @@
+$ const { profile } = input;
+<div class="card-deck-flow__node">
+  <div class="node node--awards-honors node--arthur-ashe node--card node--full-height">
+    <div class="profile">
+      <h4 class="profile__title">${profile.name}</h4>
+      <marko-web-block class="profile__thumbnail">
+        <marko-web-img
+          class=["thumbnail"]
+          alt=profile.name
+          src=`https://img.diverseeducation.com/files/base/diverse/all/image/static/de/arthur-ashe/profiles/${profile.thumbnail}?w=150&auto=format,compress&q=70`
+          srcset=`https://img.diverseeducation.com/files/base/diverse/all/image/static/de/arthur-ashe/profiles/${profile.thumbnail}?w=300&auto=format,compress&q=70 x2`
+          lazyload=false
+        />
+      </marko-web-block>
+      <marko-web-block class="profile__body">
+        $!{profile.body}
+      </marko-web-block>
+    </div>
+  </div>
+</div>
