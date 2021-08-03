@@ -51,7 +51,7 @@ $ const menFinalists = getAsArray(config, 'finalists.men.profiles');
         <div class="row">
           <div class="col-md-6">
             <if(womenWinners.length)>
-              <h2 title="Women" class="page-wrapper__website-section-name page-wrapper__website-section-name--secondary">Women Winners</h2>
+              <h2 title="Women" class="page-wrapper__website-section-name page-wrapper__website-section-name--secondary">Female Sports Winner</h2>
               <div class="card-deck-flow card-deck-flow--awards-honors card-deck-flow--arthur-ashe card-deck-flow">
                 <for|profile| of=womenWinners>
                   <site-arthur-ashe-profiles-node profile=profile />
@@ -61,7 +61,7 @@ $ const menFinalists = getAsArray(config, 'finalists.men.profiles');
           </div>
           <div class="col-md-6">
             <if(menWinners.length)>
-              <h2 title="Men" class="page-wrapper__website-section-name page-wrapper__website-section-name--secondary">Men Winners</h2>
+              <h2 title="Men" class="page-wrapper__website-section-name page-wrapper__website-section-name--secondary">Male Sports Winner</h2>
               <div class="card-deck-flow card-deck-flow--awards-honors card-deck-flow--arthur-ashe card-deck-flow">
                 <for|profile| of=menWinners>
                   <site-arthur-ashe-profiles-node profile=profile />
@@ -79,7 +79,7 @@ $ const menFinalists = getAsArray(config, 'finalists.men.profiles');
         <div class="row">
           <div class="col-md-6">
             <if(womenFinalists.length)>
-              <h2 title="2021 Women Finalists" class="page-wrapper__website-section-name page-wrapper__website-section-name--secondary">Women Finalists</h2>
+              <h2 title="2021 Women Finalists" class="page-wrapper__website-section-name page-wrapper__website-section-name--secondary">Femail Sports Finalists</h2>
               <div class="card-deck-flow card-deck-flow--awards-honors card-deck-flow--arthur-ashe card-deck-flow">
 
                 <for|profile| of=womenFinalists>
@@ -90,7 +90,7 @@ $ const menFinalists = getAsArray(config, 'finalists.men.profiles');
           </div>
           <div class="col-md-6">
             <if(menFinalists.length)>
-              <h2 title="2021 Men Finalists" class="page-wrapper__website-section-name page-wrapper__website-section-name--secondary">Men Finalist</h2>
+              <h2 title="2021 Men Finalists" class="page-wrapper__website-section-name page-wrapper__website-section-name--secondary">Male Sports Finalists</h2>
               <div class="card-deck-flow card-deck-flow--awards-honors card-deck-flow--arthur-ashe card-deck-flow">
 
                 <for|profile| of=menFinalists>
