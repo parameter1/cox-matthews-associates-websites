@@ -1,21 +1,20 @@
 .page-wrapper {
-  &__section--arthur-ashe {
+  &__section--arthur-ashe-profiles {
     .card-deck-flow {
       .node {
         border: 1px solid $gray-200;
       }
     }
     .node {
-      .profile {
-        font-size: 16px;
-        &__title {
-          text-align: center;
-        }
-        &__thumbnail {
-          display: block;
-          margin-bottom: $block-spacer;
-          text-align: center;
-        }
+      &__image-wrapper {
+        margin-right: auto;
+        margin-left: auto;
+      }
+      &__title {
+        text-align: center;
+      }
+      &__image {
+        border: none;
       }
     }
     .page-wrapper {

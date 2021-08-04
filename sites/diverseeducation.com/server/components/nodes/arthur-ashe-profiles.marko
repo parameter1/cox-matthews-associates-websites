@@ -1,20 +1,46 @@
-$ const { profile } = input;
-<div class="card-deck-flow__node">
-  <div class="node node--awards-honors node--arthur-ashe node--card node--full-height">
-    <div class="profile">
-      <h4 class="profile__title">${profile.name}</h4>
-      <marko-web-block class="profile__thumbnail">
-        <marko-web-img
-          class=["thumbnail"]
-          alt=profile.name
-          src=`https://img.diverseeducation.com/files/base/diverse/all/image/static/de/arthur-ashe/profiles/${profile.thumbnail}?w=150&auto=format,compress&q=70`
-          srcset=`https://img.diverseeducation.com/files/base/diverse/all/image/static/de/arthur-ashe/profiles/${profile.thumbnail}?w=300&auto=format,compress&q=70 x2`
-          lazyload=false
-        />
-      </marko-web-block>
-      <marko-web-block class="profile__body">
-        $!{profile.body}
-      </marko-web-block>
-    </div>
-  </div>
-</div>
+import { getAsObject, getAsArray } from "@parameter1/base-cms-object-path";
+import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
+
+$ const content = getAsObject(input, "node");
+$ const primaryImage = getAsObject(content, "primaryImage");
+$ const withTeaser = defaultValue(input.withTeaser, true);
+$ const withBody = defaultValue(input.withBody, false);
+$ const imageLink = primaryImage.src ? { href: content.siteContext.path } : false;
+
+<marko-web-node
+  type="arthur-ashe-profile"
+  image-position="top"
+  card=true
+  flush=false
+  full-height=false
+>
+  <@image
+    width=150
+    align="top"
+    use-placeholder=false
+    fluid=false
+    ...input.image
+    ar='1:1'
+    src=primaryImage.src
+    alt=primaryImage.alt
+    is-logo=true
+    link=imageLink
+  />
+  <@body>
+    <@title tag="h5" ...input.title>
+      <marko-web-content-short-name tag=null obj=content />
+    </@title>
+    <@text
+      modifiers=["teaser", ...getAsArray(input, "teaser.modifiers").map(mod => `teaser-${mod}`)]
+      show=(Boolean(withTeaser && content.teaser))
+    >
+      <marko-web-content-teaser tag=null obj=content />
+    </@text>
+    <@text
+      modifiers=["body"]
+      show=(Boolean(withBody && content.body))
+    >
+      <marko-web-content-body tag=null obj=content />
+    </@text>
+  </@body>
+</marko-web-node>
