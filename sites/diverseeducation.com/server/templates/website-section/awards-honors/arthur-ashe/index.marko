@@ -40,45 +40,41 @@ $ const rootAlias = 'awards-honors/arthur-ashe';
   </@section>
   <!-- Only loop over child section awards types & gender on non root aliases -->
   <!-- This assumes the following section structure -->
-  <!-- Year(2021) > AwardType(Winner||Finalist) > Gender(Female||Male) -->
+  <!-- Year(2021) > Awards(Female Sports Winner || Male Sports Winner || Female Sports Finalists || Male Sports Finalists) -->
   <if(alias !== rootAlias)>
     <@section modifiers=["arthur-ashe", "arthur-ashe-profiles"]>
       <marko-web-query|{ node }|
         name="website-section"
         params={ alias, queryFragment: sectionWithChilderenFragment }
       >
-        $ const types = getAsArray(node, "children.edges").map(({ node }) => node);
-        <for|type| of=types>
-          <div class="row">
-            $ const genders = getAsArray(type, "children.edges").map(({ node }) => node);
-            $ const genderCols = Math.floor(12 / genders.length);
-            <for|gender| of=genders>
-              <marko-web-query|{ nodes }|
-                name="website-scheduled-content"
-                params={
-                  limit: 25,
-                  sectionAlias: gender.alias,
-                  sectionBubbling: false,
-                  queryFragment: profilesFragment,
-                }
-              >
-                <div class=`col-md-${genderCols}`>
-                  <h2 title=`${gender.name} Sport ${type.name}` class="page-wrapper__website-section-name page-wrapper__website-section-name--secondary">
-                    ${gender.name} Sport ${type.name}
-                  </h2>
-                  <default-theme-card-deck-flow
-                    cols=1
-                    nodes=nodes
-                    modifiers=["awards-honors", "arthur-ashe"]>
-                    <@slot|{ node }|>
-                      <site-arthur-ashe-profiles-node node=node with-teaser=true />
-                    </@slot>
-                  </default-theme-card-deck-flow>
-                </div>
-              </marko-web-query>
-            </for>
-          </div>
-        </for>
+        $ const awards = getAsArray(node, "children.edges").map(({ node }) => node);
+        <div class="row">
+          <for|award| of=awards>
+            <marko-web-query|{ nodes }|
+              name="website-scheduled-content"
+              params={
+                limit: 25,
+                sectionAlias: award.alias,
+                sectionBubbling: false,
+                queryFragment: profilesFragment,
+              }
+            >
+              <div class="col-md-6">
+                <h2 title=award.name class="page-wrapper__website-section-name page-wrapper__website-section-name--secondary">
+                  ${award.name}
+                </h2>
+                <default-theme-card-deck-flow
+                  cols=1
+                  nodes=nodes
+                  modifiers=["awards-honors", "arthur-ashe"]>
+                  <@slot|{ node }|>
+                    <site-arthur-ashe-profiles-node node=node with-teaser=true />
+                  </@slot>
+                </default-theme-card-deck-flow>
+              </div>
+            </marko-web-query>
+          </for>
+        </div>
       </marko-web-query>
     </@section>
   </if>
