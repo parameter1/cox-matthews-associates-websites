@@ -1,0 +1,12 @@
+.card-deck-flow {
+  &--emerging-scholars {
+    .node {
+      &__title {
+        text-align: center;
+      }
+      &__contents--body {
+        justify-content: space-between;
+      }
+    }
+  }
+}
