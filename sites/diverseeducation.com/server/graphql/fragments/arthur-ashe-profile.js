@@ -14,6 +14,12 @@ fragment WebsiteArthurAsherofileFragment on Content {
     alt
     isLogo
   }
+  ...on SidebarEnabledInterface {
+    profiles: sidebarStubs(input:{labels: ["Scholar Profile"]}) {
+      name
+      body
+    }
+  }
 }
 
 `;
