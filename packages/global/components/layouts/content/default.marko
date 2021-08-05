@@ -12,6 +12,7 @@ $ const displaySocialShare = ["contact"].includes(type) ? false : true;
 $ const displayComments = ["contact"].includes(type) ? false : true;
 $ const displayNewsletterSignup = ["contact"].includes(type) ? false : true;
 $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type);
+$ const excludeFromSidebarsLabel = ["Scholar Profile"];
 
 <global-content-wrapper-layout
   id=id
@@ -117,7 +118,24 @@ $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type)
           </global-gam-inject-ads>
         </if>
 
+        $ const profiles = getAsArray(content, 'profiles');
+        <for|profile| of=profiles>
+          <marko-web-block tag=null>
+            $!{profile.body}
+          </marko-web-block>
+        </for>
+
         <marko-web-content-body block-name=blockName obj=content attrs={ id: bodyId } />
+
+        $ const sidebars = getAsArray(content, 'sidebars');
+        <for|sidebar| of=sidebars>
+          $ const { label } = sidebar;
+          <if(!excludeFromSidebarsLabel.includes(label))>
+            <marko-web-block tag=null>
+              $!{sidebar.body}
+            </marko-web-block>
+          </if>
+        </for>
 
         <!-- needs input -->
         <if(input.afterBody)>

@@ -62,8 +62,14 @@ fragment ContentPageFragment on Content {
     ends
     starts
   }
-  ... on ContentArticle {
-    sidebars
+  ...on SidebarEnabledInterface {
+    profiles: sidebarStubs(input:{labels: ["Scholar Profile"]}) {
+      body
+    }
+    sidebars: sidebarStubs {
+      label
+      body
+    }
   }
   ... on ContentWebinar {
     linkUrl
