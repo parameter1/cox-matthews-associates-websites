@@ -120,7 +120,7 @@ $ const excludeFromSidebarsLabel = ["Scholar Profile"];
 
         $ const profiles = getAsArray(content, 'profiles');
         <for|profile| of=profiles>
-          <marko-web-block tag=null>
+          <marko-web-block class="page-contents__content-profile" tag=null>
             $!{profile.body}
           </marko-web-block>
         </for>
@@ -131,7 +131,7 @@ $ const excludeFromSidebarsLabel = ["Scholar Profile"];
         <for|sidebar| of=sidebars>
           $ const { label } = sidebar;
           <if(!excludeFromSidebarsLabel.includes(label))>
-            <marko-web-block tag=null>
+            <marko-web-block class="page-contents__content-sidebar" tag=null>
               $!{sidebar.body}
             </marko-web-block>
           </if>
