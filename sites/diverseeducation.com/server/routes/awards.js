@@ -21,12 +21,10 @@ module.exports = (app) => {
     return res.marko(mppwsa, { alias });
   }));
 
-  for (let i = 2008; i <= 2021; i += 1) {
-    app.get(`/:alias(awards-honors/arthur-ashe/${i})`, withWebsiteSection({
-      template: arthurAshe,
-      queryFragment,
-    }));
-  }
+  app.get('/:alias(awards-honors/arthur-ashe/\\d{4})', withWebsiteSection({
+    template: arthurAshe,
+    queryFragment,
+  }));
 
   app.get('/:alias(awards-honors/arthur-ashe)', withWebsiteSection({
     template: arthurAshe,
