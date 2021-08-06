@@ -18,16 +18,6 @@ $ const description = "Now in its 8th year, Promising Places to Work in Student 
         />
       </@section>
       <@section>
-        <marko-web-browser-component
-          name="SalaryBarChart"
-          props={
-            schools: schools,
-            chartTitle: 'Aveage Salary: Senior-Level Staff',
-            valueKey: 'senior',
-          }
-        />
-      </@section>
-      <@section>
         <div class="row">
           <div class="col">
             <marko-web-img
@@ -332,6 +322,16 @@ $ const description = "Now in its 8th year, Promising Places to Work in Student 
             />
           </div>
         </div>
+      </@section>
+      <@section>
+        <marko-web-browser-component
+          name="SalaryBarChart"
+          props={
+            schools: schools,
+            chartTitle: 'Aveage Salary: Senior-Level Staff',
+            valueKey: 'senior',
+          }
+        />
       </@section>
       <@section>
         <marko-web-browser-component

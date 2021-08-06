@@ -43,6 +43,18 @@ export default {
         display: true,
         text: 'Custom Bar Chart',
       },
+      tooltips: {
+        callbacks: {
+          label: (tooltipItem, data) => {
+            const salary = data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
+            const formatter = new Intl.NumberFormat('en-US', {
+              style: 'currency',
+              currency: 'USD',
+            });
+            return formatter.format(salary);
+          },
+        },
+      },
     },
   }),
 
@@ -55,7 +67,7 @@ export default {
     schools.forEach((school, index) => {
       chartLabels.push(school.name);
       const value = school[valueKey] ? school[valueKey] : 0;
-      const color = index % 2 === 1 ? '#89b2d1' : '#1e6991';
+      const color = index % 2 === 1 ? '#b1c5d4' : '#356e8c';
       colorPattern.push(color);
       data.push(value);
     });
