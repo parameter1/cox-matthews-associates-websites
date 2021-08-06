@@ -78,6 +78,57 @@ $ const rootAlias = 'awards-honors/arthur-ashe';
       </marko-web-query>
     </@section>
   </if>
+  <else>
+    <@section modifiers=["arthur-ashe", "arthur-ashe-profiles"]>
+      <marko-web-query|{ node }|
+        name="website-section"
+        params={ alias, queryFragment: sectionWithChilderenFragment }
+      >
+        $ const years = getAsArray(node, "children.edges").map(({ node }) => node);
+        <if(years.length)>
+          $ const year = years[0];
+          <div class="row">
+            <div class="col col page-contents__content-body">
+              <h2>${year.name} </h2>
+            </div>
+          </div>
+          <marko-web-query|{ node }|
+            name="website-section"
+            params={ alias: year.alias, queryFragment: sectionWithChilderenFragment }
+          >
+            $ const awards = getAsArray(node, "children.edges").map(({ node }) => node);
+            <div class="row">
+              <for|award| of=awards>
+                <marko-web-query|{ nodes }|
+                  name="website-scheduled-content"
+                  params={
+                    limit: 25,
+                    sectionAlias: award.alias,
+                    sectionBubbling: false,
+                    queryFragment: profilesFragment,
+                  }
+                >
+                  <div class="col-md-6">
+                    <h2 title=award.name class="page-wrapper__website-section-name page-wrapper__website-section-name--secondary">
+                      ${award.name}
+                    </h2>
+                    <default-theme-card-deck-flow
+                      cols=1
+                      nodes=nodes
+                      modifiers=["awards-honors", "arthur-ashe"]>
+                      <@slot|{ node }|>
+                        <site-arthur-ashe-profiles-node node=node with-teaser=true />
+                      </@slot>
+                    </default-theme-card-deck-flow>
+                  </div>
+                </marko-web-query>
+              </for>
+            </div>
+          </marko-web-query>
+        </if>
+      </marko-web-query>
+    </@section>
+  </else>
 
   <@section|{ blockName }| modifiers=["arthur-ashe"]>
     <div class="row">
