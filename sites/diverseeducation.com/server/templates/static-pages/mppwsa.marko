@@ -1,6 +1,6 @@
-import config from "./configs/mppwsa.js";
+import config from "./configs/mppwsa/index.js";
 
-$ const { profiles } = config;
+$ const { profiles, seniorSalaries, schools } = config;
 
 $ const type = "static-page";
 $ const title = "Diverse Most Promising Places to Work in Student Affairs";
@@ -16,16 +16,6 @@ $ const description = "Now in its 8th year, Promising Places to Work in Student 
           aliases=["awards-honors/mppwsa"]
           modifiers=["inter-block"]
         />
-      </@section>
-      <@section>
-        <div class="row">
-          <div class="col">
-            <h1 class="page-wrapper__website-section-name">$!{title}</h1>
-            <if(description)>
-              <div class="page-wrapper__website-section-description">$!{description}</div>
-            </if>
-          </div>
-        </div>
       </@section>
       <@section>
         <div class="row">
@@ -330,6 +320,46 @@ $ const description = "Now in its 8th year, Promising Places to Work in Student 
               srcset="https://img.diverseeducation.com/files/base/diverse/all/image/static/de/mppwsa/MPPINSA-TABLE2.png?w=1600&auto=format,compress&q=70 x2"
               lazyload=true
             />
+          </div>
+        </div>
+      </@section>
+      <@section>
+        <marko-web-browser-component
+          name="SiteSalaryBarChart"
+          props={
+            schools: schools,
+            chartTitle: 'Average Salary: Senior-Level Staff',
+            valueKey: 'senior',
+          }
+        />
+      </@section>
+      <@section>
+        <marko-web-browser-component
+          name="SiteSalaryBarChart"
+          props={
+            schools: schools,
+            chartTitle: 'Average Salary: Mid-Level Staff',
+            valueKey: 'mid',
+          }
+        />
+      </@section>
+      <@section>
+        <marko-web-browser-component
+          name="SiteSalaryBarChart"
+          props={
+            schools: schools,
+            chartTitle: 'Average Salary: Entry-Level Staff',
+            valueKey: 'entry',
+          }
+        />
+      </@section>
+      <@section>
+        <div class="row">
+          <div class="col">
+            <h1 class="page-wrapper__website-section-name">$!{title}</h1>
+            <if(description)>
+              <div class="page-wrapper__website-section-description">$!{description}</div>
+            </if>
           </div>
         </div>
       </@section>
