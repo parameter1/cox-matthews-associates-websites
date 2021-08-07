@@ -1,0 +1,9 @@
+.node-list {
+  &--esurveypro {
+    .node-list {
+      &__node:first-child {
+        @include marko-web-node-list-border(border-top);
+      }
+    }
+  }
+}
