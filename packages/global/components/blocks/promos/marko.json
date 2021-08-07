@@ -8,6 +8,9 @@
   "<global-tps-used-truck-guide-promo-block>": {
     "template": "./tps-used-truck-guide.marko"
   },
+  "<global-diverse-education-promo-block>": {
+    "template": "./diverse-education.marko"
+  },
   "<global-diverse-jobs-promo-block>": {
     "template": "./diverse-jobs.marko"
   },
