@@ -9,6 +9,9 @@
   "<global-ccj-top-250-block>": {
     "template": "./ccj-top-250.marko"
   },
+  "<global-esurveypro-block>": {
+    "template": "./esurveypro.marko"
+  },
   "<global-full-width-native-ad-block>": {
     "template": "./full-width-native-ad.marko"
   },
