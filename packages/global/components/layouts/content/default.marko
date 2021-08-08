@@ -73,6 +73,13 @@ $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type)
     $ const { primarySection } = content;
     <div class="content-page-body">
       <default-theme-page-contents|{ blockName }| attrs={ "data-gallery-id": id }>
+        <if(displaySocialShare)>
+          <marko-web-social-sharing
+            path=content.siteContext.path
+            providers=["print", "facebook", "linkedin", "twitter", "pinterest"]
+            print-path=`/print/content/${content.id}`
+          />
+        </if>
         <if(content.embedCode)>
           <marko-web-content-embed-code block-name=blockName obj=content />
         </if>
