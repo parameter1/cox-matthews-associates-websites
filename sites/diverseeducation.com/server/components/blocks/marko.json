@@ -1,5 +1,12 @@
 {
   "<site-promo-card-rotation-block>": {
     "template": "./promo-card-rotation.marko"
+  },
+  "<site-arthur-ashe-award-content-block>": {
+    "template": "./arthur-ashe-award-content.marko",
+    "@alias" : {
+      "type" : "string",
+      "required": true
+    }
   }
 }
