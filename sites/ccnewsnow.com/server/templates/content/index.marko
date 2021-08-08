@@ -6,27 +6,42 @@ $ const { id, type, pageNode, ...rest } = input;
   page-node=pageNode
   ...rest
 >
-  <!-- <@section>
-    <global-callout-cards-block>
-      <@slot>
-        <global-ccj-top-250-block />
-      </@slot>
-      <@slot>
-        <global-white-papers-block />
-      </@slot>
-    </global-callout-cards-block>
-  </@section> -->
+  <@section|{ aliases }|>
+    <div class="row">
+      <div class="col-lg-4">
+        <global-featured-jobs-list-block />
+      </div>
+      <div class="col-lg-4">
+        <global-esurveypro-block />
+      </div>
+      <div class="col-lg-4">
+        <div class="twitter-block">
+          <a class="twitter-timeline" data-width="340" data-height="650" data-theme="light" href="https://twitter.com/DiverseIssues?ref_src=twsrc%5Etfw">Tweets by DiverseIssues</a>
+          <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+      </div>
+    </div>
+  </@section>
 
-  <!-- <@section|{ aliases }|>
+  <@section|{ aliases }|>
     <global-gam-define-display-ad
       name="rotation"
       position="content_page"
       aliases=aliases
       modifiers=["inter-block"]
     />
-  </@section> -->
+  </@section>
 
   <@section>
-    <global-client-side-most-popular-block />
+    <global-premium-employers-block title="Premium Employers" />
+  </@section>
+
+  <@section>
+    <site-promo-card-rotation-block />
+  </@section>
+
+  <@section>
+    <!-- <global-client-side-most-popular-block /> -->
+    <global-most-popular-temp-block />
   </@section>
 </global-content-default-layout>
