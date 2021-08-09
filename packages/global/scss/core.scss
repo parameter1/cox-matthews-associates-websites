@@ -206,3 +206,11 @@ label {
     }
   }
 }
+
+.marko-web-search-filter {
+  &__item {
+    a {
+      color: $primary;
+    }
+  }
+}

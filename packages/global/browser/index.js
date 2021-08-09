@@ -1,5 +1,6 @@
 import GTM from '@parameter1/base-cms-marko-web-gtm/browser';
 import GAM from '@parameter1/base-cms-marko-web-gam/browser';
+import Search from '@parameter1/base-cms-marko-web-search/browser';
 import SocialSharing from '@parameter1/base-cms-marko-web-social-sharing/browser';
 import IdentityX from '@parameter1/base-cms-marko-web-identity-x/browser';
 import NativeX from '@parameter1/base-cms-marko-web-native-x/browser';
@@ -17,6 +18,7 @@ const IdentityXCommentStream = () => import(/* webpackChunkName: "global-identit
 export default (Browser) => {
   GTM(Browser);
   GAM(Browser);
+  Search(Browser);
   SocialSharing(Browser);
   NativeX(Browser);
   IdentityX(Browser, {
