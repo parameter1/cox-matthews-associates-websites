@@ -1,6 +1,7 @@
 const { asyncRoute } = require('@parameter1/base-cms-utils');
 const { withWebsiteSection } = require('@parameter1/base-cms-marko-web/middleware');
 const queryFragment = require('@cox-matthews-associates/package-global/graphql/fragments/website-section-page');
+const awardRedirects = require('./awards/redirects');
 const emergingScholars = require('./awards/emerging-scholars');
 const champions = require('../templates/website-section/awards-honors/champions');
 const arthurAshe = require('../templates/website-section/awards-honors/arthur-ashe');
@@ -8,6 +9,8 @@ const mppwsa = require('../templates/static-pages/mppwsa');
 const mppwcc = require('../templates/static-pages/mppwcc');
 
 module.exports = (app) => {
+  awardRedirects(app);
+
   app.get('/:alias(awards-honors/diverse-champions)', withWebsiteSection({
     template: champions,
     queryFragment,
