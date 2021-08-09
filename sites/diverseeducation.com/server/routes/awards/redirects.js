@@ -4,7 +4,7 @@ const fromTo = [
   // Arthur Ashe Landing Page
   {
     from: 'ashe',
-    to: 'awards-honors/arthur-ashe'
+    to: 'awards-honors/arthur-ashe',
   },
   // Arthur Ashe 2021 Winners
   {
