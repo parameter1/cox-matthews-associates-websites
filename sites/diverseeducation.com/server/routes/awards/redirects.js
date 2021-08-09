@@ -1,6 +1,11 @@
 const { asyncRoute } = require('@parameter1/base-cms-utils');
 
 const fromTo = [
+  // Arthur Ashe Landing Page
+  {
+    from: 'ashe',
+    to: 'awards-honors/arthur-ashe'
+  },
   // Arthur Ashe 2021 Winners
   {
     from: '2021-ashe-winners',
