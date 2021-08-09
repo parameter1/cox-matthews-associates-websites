@@ -1,0 +1,30 @@
+.page-wrapper {
+  &__section--arthur-ashe-profiles {
+    .card-deck-flow {
+      .node {
+        border: 1px solid $gray-200;
+      }
+    }
+    .node {
+      &__image-wrapper {
+        margin-right: auto;
+        margin-left: auto;
+      }
+      &__title {
+        text-align: center;
+      }
+      &__image {
+        border: none;
+      }
+    }
+    .page-wrapper {
+      &__website-section-name {
+        &--secondary {
+          padding: $block-spacer / 2;
+          text-align: center;
+          background-color: $gray-200;
+        }
+      }
+    }
+  }
+}

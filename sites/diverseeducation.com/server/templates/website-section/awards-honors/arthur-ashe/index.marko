@@ -1,0 +1,137 @@
+import { get, getAsArray, getAsObject } from "@parameter1/base-cms-object-path";
+import queryFragment from "@cox-matthews-associates/package-global/graphql/fragments/content-list";
+import sectionWithChilderenFragment from "../../../../graphql/fragments/section-with-children";
+
+$ const { id, alias, name, pageNode } = input;
+$ const rootAlias = 'awards-honors/arthur-ashe';
+
+<global-website-section-default-layout
+  id=id
+  alias=alias
+  name=name
+  page-node=pageNode
+>
+  <@section|{ aliases }| modifiers=["first"]>
+    <global-gam-define-display-ad
+      name="leaderboard"
+      position="section_page"
+      aliases=aliases
+      modifiers=["inter-block"]/>
+  </@section>
+  <@section|{ blockName, section }| modifiers=["arthur-ashe"]>
+    <marko-web-block name=blockName>
+      <default-theme-website-section-breadcrumbs section=section display-self=false display-home=false modifiers=["website-section"] />
+      <marko-web-element block-name=blockName name="header">
+        <marko-web-website-section-name|{ value }|
+          tag="h1"
+          block-name="page-wrapper"
+          obj=section>
+          ${value}
+        </marko-web-website-section-name>
+        <marko-web-website-section-description|{ value }|
+          tag="p"
+          block-name="page-wrapper"
+          obj=section>
+          ${value}
+        </marko-web-website-section-description>
+      </marko-web-element>
+    </marko-web-block>
+  </@section>
+  <!-- Only loop over child section awards types & gender on non root aliases -->
+  <!-- This assumes the following section structure -->
+  <!-- Year(2021) > Awards(Female Sports Winner || Male Sports Winner || Female Sports Finalists || Male Sports Finalists) -->
+  <if(alias !== rootAlias)>
+    <@section modifiers=["arthur-ashe", "arthur-ashe-profiles"]>
+      <site-arthur-ashe-award-content-block alias=alias />
+    </@section>
+  </if>
+  <else>
+    <@section modifiers=["arthur-ashe", "arthur-ashe-profiles"]>
+      <marko-web-query|{ node }|
+        name="website-section"
+        params={ alias, queryFragment: sectionWithChilderenFragment }
+      >
+        $ const years = getAsArray(node, "children.edges").map(({ node }) => node);
+        <if(years.length)>
+          $ const year = years[0];
+          <div class="row">
+            <div class="col col page-contents__content-body">
+              <h2>${year.name} </h2>
+            </div>
+          </div>
+          <site-arthur-ashe-award-content-block alias=year.alias />
+        </if>
+      </marko-web-query>
+    </@section>
+  </else>
+
+  <@section|{ blockName }| modifiers=["arthur-ashe"]>
+    <div class="row">
+      <div class="col-md-6 mb-block">
+        <div class="award-about-card">
+          <div class="award-about-card__title">Past Scholars:</div>
+          <div class="award-about-card__description award-about-card__description--past-years">
+            <marko-web-query|{ node }|
+              name="website-section"
+              params={ alias: 'awards-honors/arthur-ashe', queryFragment: sectionWithChilderenFragment }
+            >
+            $ const children = getAsArray(node, "children.edges").map(({ node }) => node);
+              <marko-web-node-list>
+                <@nodes|{ nodes }| nodes=children modifiers=["flush-x"]>
+                  <div class="list-flow">
+                    <for|node| of=nodes>
+                      <div class="list-flow__node">
+                        <marko-web-link title=node.name href=`/${node.alias}`>${node.name}</marko-web-link>
+                      </div>
+                    </for>
+                  </div>
+                </@nodes>
+              </marko-web-node-list>
+            </marko-web-query>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 mb-block">
+        <div class="award-about-card">
+          <div class="award-about-card__title">More About This Scholarship:</div>
+          <div class="award-about-card__description">
+            <p>
+              As the name denotes, the annual Ashe edition is part of the magazine’s quarter-century legacy of recognizing young, outstanding minority men and women who have distinguished themselves in their academic and athletic pursuits.
+            </p>
+            <p>
+              In addition to their athletic ability, students named 2020 Arthur Ashe Jr. Sports Scholars must maintain a cumulative grade-point average of at least 3.5, be at least a sophomore academically and be active on their campuses or in their communities.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </@section>
+  <@section|{ blockName }| modifiers=["arthur-ashe"]>
+    <marko-web-query|{ nodes }|
+      name="website-scheduled-content"
+      params={
+        limit: 100,
+        sectionAlias: alias,
+        sectionBubbling: false,
+        queryFragment
+      }
+    >
+      <marko-web-node-list
+        class="mb-block"
+        inner-justified=true
+        flush-x=true
+        flush-y=false
+        modifiers=["arthur-ashe-press"]
+      >
+      <@header>
+        Latest
+      </@header>
+        <@nodes nodes=nodes>
+          <@slot|{ node }|>
+            <global-section-feed-content-node node=node />
+          </@slot>
+        </@nodes>
+      </marko-web-node-list>
+    </marko-web-query>
+  </@section>
+</global-website-section-default-layout>
