@@ -1,20 +1,23 @@
 import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
 import queryFragment from "../../graphql/fragments/featured-job-list";
+import shuffle from "../../utils/shuffle-array";
 
 $ const sectionAlias = defaultValue(input.alias, "featured-jobs");
 $ const findJobLink = defaultValue(input.findJobLink, "https://diversejobs.net/");
 $ const postJobLink = defaultValue(input.postJobLink, "https://494.careersite.com/employer/emplogin.html");
+$ const displayLimit = 5;
 
-<marko-web-query|{ nodes }|
+<marko-web-query|{ nodes: allNodes }|
   name="website-scheduled-content"
   params={
     siteId: "60c281c6d28860bc33464ae0",
     sectionAlias,
-    limit: 5,
+    limit: 25,
     sectionBubbling: false,
     queryFragment,
   }
 >
+  $ const nodes = shuffle(allNodes).slice(0, displayLimit);
   <global-content-list-flow
     nodes=nodes
     inner-justified=true
