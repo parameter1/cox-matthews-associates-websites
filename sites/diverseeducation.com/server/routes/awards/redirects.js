@@ -105,7 +105,6 @@ module.exports = (app) => {
   // Award redirects in fromTo array
   fromTo.forEach((awardRedirect) => {
     const { from, to } = awardRedirect;
-    console.log(from, to);
     app.get(`/${from}`, (req, res) => {
       res.redirect(301, `/${to}`);
     });
