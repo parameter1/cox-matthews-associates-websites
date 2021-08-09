@@ -1,3 +1,4 @@
+const dynamicPage = require('./dynamic-page');
 const feed = require('./feed');
 // const identityX = require('./identity-x');
 const nativeX = require('./native-x');
@@ -31,4 +32,7 @@ module.exports = (app) => {
 
   // Taxonomy pages (for handling redirects from old WP sites)
   taxonomy(app);
+
+  // Dynamic Pages
+  dynamicPage(app);
 };

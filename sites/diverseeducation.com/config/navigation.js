@@ -3,18 +3,20 @@ const topics = [
   { href: '/faculty-staff-issues', label: 'Faculty & Staff Issues' },
   { href: '/leadership-policy', label: 'Leadership & Policy' },
   { href: '/sports', label: 'Sports' },
-  { href: '/best-practices', label: 'Best Practices' },
+  { href: '/demographics', label: 'Demographics' },
+  { href: '/institutions', label: 'Institutions' },
+  // { href: '/best-practices', label: 'Best Practices' },
 ];
 
 const resources = [
   { href: 'https://www.ccnewsnow.com', label: 'Community Colleges' },
-  { href: 'https://www.diversemilitary.net', label: 'Military' },
-  { href: 'https://www.divhealth.net', label: 'Health' },
-  { href: '/sponsored-content', label: 'Sponsored Content' },
-  { href: '/latest-news', label: 'Latest News' },
+  { href: '/military', label: 'Military' },
+  { href: '/health', label: 'Health' },
+  // { href: '/sponsored-content', label: 'Sponsored Content' },
+  // { href: '/latest-news', label: 'Latest News' },
   { href: '/opinion', label: 'Opinion' },
   { href: '/reports-data', label: 'Reports & Data' },
-  { href: '/from-the-magazine', label: 'From the Magazine' },
+  // { href: '/from-the-magazine', label: 'From the Magazine' },
   { href: 'https://diversejobs.net', label: 'Jobs', target: '_blank' },
 ];
 
