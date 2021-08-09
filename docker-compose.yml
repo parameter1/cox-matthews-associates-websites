@@ -27,6 +27,12 @@ x-env-defaults: &env
   SENDGRID_DEV_TO: developer@endeavorb2b.com
   YARN_CACHE_FOLDER: /.yarn-cache
 
+x-env-virgon: &env-virgon
+  GRAPHQL_URI: ${GRAPHQL_URI-https://virgon.graphql.base.parameter1.com}
+  OEMBED_URI: ${OEMBED_URI-https://virgon.oembed.base.parameter1.com}
+  RSS_URI: ${RSS_URI-https://virgon.rss.base.parameter1.com}
+  SITEMAPS_URI: ${SITEMAPS_URI-https://virgon.sitemaps.base.parameter1.com}
+
 x-env-leonis: &env-leonis
   GRAPHQL_URI: ${GRAPHQL_URI-https://leonis.graphql.base.parameter1.com}
   OEMBED_URI: ${OEMBED_URI-https://leonis.oembed.base.parameter1.com}
@@ -67,7 +73,7 @@ services:
     working_dir: /root/sites/diverseeducation.com
     environment:
       <<: *env
-      <<: *env-leonis
+      <<: *env-virgon
       PORT: 80
       EXPOSED_PORT: 9810
       LIVERELOAD_PORT: 19810
@@ -83,7 +89,7 @@ services:
     working_dir: /root/sites/diversemilitary.net
     environment:
       <<: *env
-      <<: *env-leonis
+      <<: *env-virgon
       PORT: 80
       EXPOSED_PORT: 9811
       LIVERELOAD_PORT: 19811
@@ -99,7 +105,7 @@ services:
     working_dir: /root/sites/divhealth.net
     environment:
       <<: *env
-      <<: *env-leonis
+      <<: *env-virgon
       PORT: 80
       EXPOSED_PORT: 9812
       LIVERELOAD_PORT: 19812
@@ -115,7 +121,7 @@ services:
     working_dir: /root/sites/ccnewsnow.com
     environment:
       <<: *env
-      <<: *env-leonis
+      <<: *env-virgon
       PORT: 80
       EXPOSED_PORT: 9813
       LIVERELOAD_PORT: 19813
