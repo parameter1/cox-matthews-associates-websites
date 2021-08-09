@@ -5,9 +5,10 @@ const printContent = require('./print-content');
 const publicFiles = require('./public-files');
 const redirects = require('./redirects');
 const renderBlock = require('./render-block');
+const search = require('./search');
 const taxonomy = require('./taxonomy');
 
-module.exports = (app) => {
+module.exports = (app, siteConfig) => {
   // Feed
   feed(app);
 
@@ -28,6 +29,9 @@ module.exports = (app) => {
 
   // Remote component/block loader
   renderBlock(app);
+
+  // Search routes
+  search(app, siteConfig);
 
   // Taxonomy pages (for handling redirects from old WP sites)
   taxonomy(app);
