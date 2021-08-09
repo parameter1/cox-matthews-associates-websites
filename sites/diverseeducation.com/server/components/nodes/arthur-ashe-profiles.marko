@@ -1,0 +1,60 @@
+import { get, getAsObject, getAsArray } from "@parameter1/base-cms-object-path";
+import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
+
+$ const content = getAsObject(input, "node");
+$ const profile = getAsArray(content, "profiles")[0];
+$ const profileName = get(profile, "name");
+$ const profileBody = get(profile, "body");
+$ const primaryImage = getAsObject(content, "primaryImage");
+$ const withTeaser = defaultValue(input.withTeaser, true);
+$ const withBody = defaultValue(input.withBody, false);
+$ const imageLink = primaryImage.src ? { href: content.siteContext.path } : false;
+
+<marko-web-node
+  type="arthur-ashe-profile"
+  image-position="top"
+  card=true
+  flush=false
+  full-height=false
+>
+  <@image
+    width=150
+    align="top"
+    use-placeholder=false
+    fluid=false
+    ...input.image
+    ar='1:1'
+    src=primaryImage.src
+    alt=primaryImage.alt
+    is-logo=true
+    link=imageLink
+  />
+  <@body>
+    <@title tag="h5" ...input.title>
+      <if(profileName)>
+        ${profileName}
+      </if>
+      <else>
+        <marko-web-content-short-name tag=null obj=content />
+      </else>
+    </@title>
+    <@text
+      modifiers=["teaser", ...getAsArray(input, "teaser.modifiers").map(mod => `teaser-${mod}`)]
+      show=(Boolean(withTeaser && content.teaser && !profileBody))
+    >
+      <marko-web-content-teaser tag=null obj=content />
+    </@text>
+    <@text
+      modifiers=["body"]
+      show=(Boolean(withBody && content.body && !profileBody))
+    >
+      <marko-web-content-body tag=null obj=content />
+    </@text>
+    <@text
+      modifiers=["profile"]
+      show=(Boolean(profileBody))
+    >
+      $!{profileBody}
+    </@text>
+  </@body>
+</marko-web-node>

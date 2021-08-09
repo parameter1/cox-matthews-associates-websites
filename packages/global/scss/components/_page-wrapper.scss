@@ -7,7 +7,14 @@
     padding-right: 16px;
     padding-left: 16px;
   }
-
+  .breadcrumbs {
+    &--website-section {
+      @include skin-typography($style: "slug-medium", $link-style: "primary");
+      .breadcrumb {
+        padding-bottom: 8px;
+      }
+    }
+  }
   &__website-section-name {
     margin-bottom: 20px;
     @include skin-typography($style: "section-header");
