@@ -1,24 +1,9 @@
 const topics = [
-  { href: '/demographics/african-american', label: 'African-American' },
-  { href: '/demographics/asian-american-pacific-islander', label: 'Asian American Pacific Islander' },
-  { href: '/campus-climate', label: 'Campus Climate' },
-  { href: '/covid-19', label: 'COVID-19' },
-  { href: '/demographics/disabilties', label: 'Disabilties' },
-  { href: '/faculty-issues', label: 'Faculty Issues' },
-  { href: '/institutions/hbcus', label: 'HBCUs' },
-  { href: '/international', label: 'International ' },
-  { href: '/demographics/latinx', label: 'Latinx' },
-  { href: '/leadership', label: 'Leadership' },
-  { href: '/demographics/lgbtq+', label: 'LGBTQ+' },
-  { href: '/institutions/msis', label: 'MSIs' },
-  { href: '/demographics/native-americans', label: 'Native Americans' },
-  { href: '/recruitment-retention', label: 'Recruitment & Retention' },
-  { href: '/social-justice', label: 'Social Justice' },
-  { href: '/sports', label: 'Sports' },
-  { href: '/stem', label: 'STEM' },
   { href: '/student-issues', label: 'Student Issues' },
-  { href: '/tenure', label: 'Tenure' },
-  { href: '/demographics/women', label: 'Women' },
+  { href: '/faculty-staff-issues', label: 'Faculty & Staff Issues' },
+  { href: '/leadership-policy', label: 'Leadership & Policy' },
+  { href: '/sports', label: 'Sports' },
+  { href: '/best-practices', label: 'Best Practices' },
 ];
 
 const resources = [
@@ -64,12 +49,11 @@ module.exports = {
   },
   secondary: {
     items: [
-      { href: '/latest-news', label: 'News' },
-      { href: '/opinion', label: 'Opinion' },
-      { href: '/campus-climate', label: 'Campus Climate' },
-      { href: '/international', label: 'International' },
-      { href: '/disabilities', label: 'Disabilities' },
+      { href: '/student-issues', label: 'Student Issues' },
+      { href: '/faculty-staff-issues', label: 'Faculty & Staff Issues' },
+      { href: '/leadership-policy', label: 'Leadership & Policy' },
       { href: '/sports', label: 'Sports' },
+      // { href: '/best-practices', label: 'Best Practices' },
     ],
   },
   tertiary: {
