@@ -1,5 +1,3 @@
-const { asyncRoute } = require('@parameter1/base-cms-utils');
-
 const fromTo = [
   // Arthur Ashe Landing Page
   {
@@ -107,8 +105,9 @@ module.exports = (app) => {
   // Award redirects in fromTo array
   fromTo.forEach((awardRedirect) => {
     const { from, to } = awardRedirect;
-    app.get(`/${from}`, asyncRoute(async (res) => {
+    console.log(from, to);
+    app.get(`/${from}`, (req, res) => {
       res.redirect(301, `/${to}`);
-    }));
+    });
   });
 };
