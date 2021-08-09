@@ -121,6 +121,10 @@ $ const perPage = 18;
     </global-section-feed-block>
   </@section>
 
+  <@section>
+    <global-top-stories-block />
+  </@section>
+
   <for|s| of=sections>
     <@section|{ blockName, section, aliases }| modifiers=s.modifiers>
       <${s.renderBody}

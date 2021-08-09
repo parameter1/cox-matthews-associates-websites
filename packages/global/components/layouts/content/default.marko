@@ -175,7 +175,7 @@ $ const excludeFromSidebarsLabel = ["Scholar Profile"];
 
         <!-- <if(displayComments)>
           <global-identity-x-comment-stream content=content />
-        </if>
+        </if> -->
 
         <if(displayReadNext)>
           <global-read-next-block
@@ -183,11 +183,12 @@ $ const excludeFromSidebarsLabel = ["Scholar Profile"];
             section-id=primarySection.id
             published=content.published
           />
-        </if> -->
+        </if>
       </default-theme-page-contents>
     </div>
   </@section>
-  <!-- <if(showBottomAdBlock)>
+
+  <if(showBottomAdBlock)>
     <@section|{ aliases }|>
       <global-gam-define-display-ad
         name="rotation"
@@ -196,51 +197,13 @@ $ const excludeFromSidebarsLabel = ["Scholar Profile"];
         modifiers=["inter-block"]
       />
     </@section>
-  </if> -->
+  </if>
 
-  <!-- <if(showTopStoryBlock)>
-    <@section>
-      <global-top-stories-block />
-    </@section>
-  </if> -->
-
-  <for|s| of=belowContentSections>
-    <@section|{ blockName, content, aliases }| modifiers=s.modifiers>
-      <${s.renderBody}
-        block-name=blockName
-        content=content
-        aliases=aliases
-      />
-    </@section>
-  </for>
-
-  <@section|{ blockName, aliases, content }|>
-    $ const { primarySection: section } = content;
-
-    <marko-web-website-section-name|{ value }| tag="h1" block-name=blockName obj=section>
-      More in ${value}
-    </marko-web-website-section-name>
-
-    <global-section-feed-block alias=section.alias>
-      <@query-params limit=3 />
-    </global-section-feed-block>
-  </@section>
-
-  <@section|{ aliases }|>
-    <global-gam-define-display-ad
-      name="rotation"
-      position="content_page"
-      aliases=aliases
-      modifiers=["inter-block"]
+  <@section|{ content }|>
+    <global-related-stories-block
+      content-id=content.id
+      section-id=content.primarySection.id
     />
-  </@section>
-
-  <@section|{ blockName, aliases, content }|>
-    $ const { primarySection: section } = content;
-
-    <global-section-feed-block alias=section.alias>
-      <@query-params limit=3 skip=3 />
-    </global-section-feed-block>
   </@section>
 
   <for|s| of=sections>
@@ -252,4 +215,13 @@ $ const excludeFromSidebarsLabel = ["Scholar Profile"];
       />
     </@section>
   </for>
+
+  <@section|{ aliases }|>
+    <global-gam-define-display-ad
+      name="rotation"
+      position="content_page"
+      aliases=aliases
+      modifiers=["inter-block"]
+    />
+  </@section>
 </global-content-wrapper-layout>
