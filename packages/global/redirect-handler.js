@@ -27,7 +27,7 @@ const getFileRedirect = ({ from, app }) => {
   return { to };
 };
 
-module.exports = ({ from, app, req }) => {
+module.exports = ({ from, app }) => {
   const sizedImageRedirect = getSizedImageRedirect({ from });
   if (sizedImageRedirect) return sizedImageRedirect;
   return getFileRedirect({ from, app });
