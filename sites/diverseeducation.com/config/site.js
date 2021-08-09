@@ -3,6 +3,7 @@ const leaders = require('./leaders');
 const nativeX = require('./native-x');
 const identityX = require('./identity-x');
 const gam = require('./gam');
+const search = require('./search');
 
 module.exports = {
   leaders,
@@ -10,6 +11,7 @@ module.exports = {
   nativeX,
   identityX,
   gam,
+  search,
   company: 'Cox Matthews and Associates, Inc',
   p1events: {
     tenant: 'diverse',
