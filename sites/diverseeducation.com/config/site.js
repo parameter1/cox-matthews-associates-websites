@@ -34,6 +34,8 @@ module.exports = {
     { provider: 'facebook', href: 'https://www.facebook.com/DiverseIssuesInHigherEducation/' },
     { provider: 'twitter', href: 'https://twitter.com/DiverseIssues' },
     { provider: 'linkedin', href: 'https://www.linkedin.com/company/diverse-issues-in-higher-education/' },
+    { provider: 'youtube', href: 'https://www.youtube.com/channel/UCXVYpTBoF5lP0FYAz2-ebcQ' },
+    { provider: 'instagram', href: 'https://www.instagram.com/diverseissuesinhighereducation/' },
   ],
   gtm: {
     containerId: process.env.GTM_CONTAINER_ID || 'GTM-TSQTRVN',
