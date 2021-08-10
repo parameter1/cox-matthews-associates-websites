@@ -15,7 +15,7 @@ const resources = [
   // { href: '/sponsored-content', label: 'Sponsored Content' },
   // { href: '/latest-news', label: 'Latest News' },
   { href: '/opinion', label: 'Opinion' },
-  { href: '/reports-data', label: 'Reports & Data' },
+  // { href: '/reports-data', label: 'Reports & Data' },
   // { href: '/from-the-magazine', label: 'From the Magazine' },
   { href: 'https://diversejobs.net', label: 'Jobs', target: '_blank' },
 ];
