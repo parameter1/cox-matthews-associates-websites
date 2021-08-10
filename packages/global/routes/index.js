@@ -1,3 +1,4 @@
+const htmlSitemap = require('@parameter1/base-cms-marko-web-html-sitemap/routes');
 const dynamicPage = require('./dynamic-page');
 const feed = require('./feed');
 // const identityX = require('./identity-x');
@@ -10,6 +11,9 @@ const search = require('./search');
 const taxonomy = require('./taxonomy');
 
 module.exports = (app, siteConfig) => {
+  // HTML Sitemap
+  htmlSitemap(app);
+
   // Feed
   feed(app);
 
