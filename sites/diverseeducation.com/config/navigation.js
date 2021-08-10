@@ -15,14 +15,14 @@ const resources = [
   // { href: '/sponsored-content', label: 'Sponsored Content' },
   // { href: '/latest-news', label: 'Latest News' },
   { href: '/opinion', label: 'Opinion' },
-  { href: '/reports-data', label: 'Reports & Data' },
+  // { href: '/reports-data', label: 'Reports & Data' },
   // { href: '/from-the-magazine', label: 'From the Magazine' },
   { href: 'https://diversejobs.net', label: 'Jobs', target: '_blank' },
 ];
 
 const utilities = [
   { href: '/page/advertise', label: 'Advertise' },
-  { href: '/contact-us', label: 'Contact Us' },
+  { href: '/page/contact-us', label: 'Contact Us' },
   { href: 'https://responses.diverseeducation.com/DiverseDaily', label: 'Newsletters', target: '_blank' },
 ];
 
@@ -76,7 +76,7 @@ module.exports = {
   footer: {
     items: [
       { href: '/page/privacy-policy', label: 'Privacy Policy' },
-      { href: '/contact-us', label: 'Contact Us' },
+      { href: '/page/contact-us', label: 'Contact Us' },
       { href: '/site-map', label: 'Site Map' },
     ],
     topics: topics.primary,

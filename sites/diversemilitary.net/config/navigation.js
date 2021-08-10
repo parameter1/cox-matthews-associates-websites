@@ -15,7 +15,7 @@ const resources = [
 
 const utilities = [
   { href: '/page/advertise', label: 'Advertise' },
-  { href: '/contact-us', label: 'Contact Us' },
+  { href: '/page/contact-us', label: 'Contact Us' },
   { href: 'https://responses.diverseeducation.com/DiverseMilitary', label: 'Newsletters', target: '_blank' },
 ];
 
@@ -68,7 +68,7 @@ module.exports = {
   footer: {
     items: [
       { href: '/page/privacy-policy', label: 'Privacy Policy' },
-      { href: '/contact-us', label: 'Contact Us' },
+      { href: '/page/contact-us', label: 'Contact Us' },
       { href: '/site-map', label: 'Site Map' },
     ],
     topics: topics.primary,
