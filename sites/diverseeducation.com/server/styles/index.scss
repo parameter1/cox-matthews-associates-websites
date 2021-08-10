@@ -1,36 +1,3 @@
-$primary: #436daa;
-$secondary: #515b6e;
-$light: #e9ecef;
-$dark: #212529;
-$info: #6c757d;
-$dark-bg-color: $secondary;
-$light-bg-color: #fff;
-$background: $dark-bg-color;
-$link-color: $light-bg-color;
-
-// $theme-site-navbar-logo-height: 45px;
-// $theme-site-navbar-primary-bg-color: $dark-bg-color;
-// $theme-site-navbar-primary-link-color: #fff;
-
-// $theme-site-navbar-secondary-type: light;
-// $theme-site-navbar-secondary-bg-color: $light-bg-color;
-
-// $theme-site-footer-primary-bg-color: $dark-bg-color;
-// $theme-site-footer-secondary-bg-color: $light-bg-color;
-
-// $theme-load-more-button-background-color: $dark-bg-color;
-// $theme-load-more-button-border-color: $dark-bg-color;
-
-// $theme-site-header-breakpoints: (
-//   hide-primary: 1005px,
-//   hide-secondary: 900px,
-//   small-logo: 1005px,
-//   small-text-primary: 0,
-//   small-text-secondary: 0,
-//   hide-social-icons: 560px,
-//   hide-user-links: 414px,
-// );
-
 $theme-site-header-breakpoints: (
   hide-primary: 100000px, // effectively always hide the primary nav
   hide-secondary: 700px,
@@ -40,11 +7,6 @@ $theme-site-header-breakpoints: (
 );
 
 // Colors
-// $primary: #c91e2d;
+$primary: #436daa;
 @import "../../node_modules/@cox-matthews-associates/package-global/scss/core";
 @import "./components/awards";
-
-// .load-more-trigger > button:hover {
-//   background-color: $light-bg-color;
-//   border-color: $light-bg-color;
-// }
