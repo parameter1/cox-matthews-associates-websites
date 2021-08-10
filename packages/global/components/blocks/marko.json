@@ -38,6 +38,12 @@
     "@alias": "string",
     "@count-only": "boolean"
   },
+  "<global-magazine-current-issue-block>": {
+    "template": "./magazine-current-issue.marko"
+  },
+  "<global-magazine-publications-block>": {
+    "template": "./magazine-publications.marko"
+  },
   "<global-more-gear-block>": {
     "template": "./more-gear.marko"
   },

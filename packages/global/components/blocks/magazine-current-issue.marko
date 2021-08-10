@@ -1,0 +1,16 @@
+import latestIssueFragment from "@cox-matthews-associates/package-global/graphql/fragments/magazine-latest-issue";
+
+$ const { publicationId } = input;
+
+<marko-web-query|{ node: issue }|
+  name="magazine-latest-issue"
+  params={ publicationId, queryFragment: latestIssueFragment, requiresImage: true  }
+>
+  <global-magazine-latest-issue-flow issue-node=issue>
+    <@header>
+      <marko-web-magazine-issue-name tag=null obj=issue link=true>
+        In Print
+      </marko-web-magazine-issue-name>
+    </@header>
+  </global-magazine-latest-issue-flow>
+</marko-web-query>
