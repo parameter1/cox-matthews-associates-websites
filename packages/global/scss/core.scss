@@ -197,6 +197,7 @@ label {
   @extend .embed-responsive;
   @extend .embed-responsive-16by9;
 }
+
 .social-follow {
   &--site-menu {
     .social-follow {
@@ -212,5 +213,12 @@ label {
     a {
       color: $primary;
     }
+  }
+}
+
+.magazine-publication-buttons {
+  &__button {
+    padding: map-get($spacers, "block-sm");
+    font-size: 12px;
   }
 }
