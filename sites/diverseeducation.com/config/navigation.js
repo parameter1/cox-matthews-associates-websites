@@ -23,7 +23,7 @@ const resources = [
 const utilities = [
   { href: '/page/advertise', label: 'Advertise' },
   { href: '/contact-us', label: 'Contact Us' },
-  { href: '/newsletters', label: 'Newsletters' },
+  { href: 'https://responses.diverseeducation.com/DiverseDaily', label: 'Newsletters', target: '_blank' },
 ];
 
 const mobileMenu = {
