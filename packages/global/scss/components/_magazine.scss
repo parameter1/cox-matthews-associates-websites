@@ -7,3 +7,29 @@
     white-space: nowrap;
   }
 }
+
+.node-list {
+  $self: &;
+  &--latest-issue {
+    #{ $self }__nodes {
+      padding-top: 10px;
+    }
+    #{ $self }__footer {
+      display: flex;
+      justify-content: space-between;
+      @include marko-web-node-list-border(border-top);
+      padding-bottom: map-get($spacers, "block");
+      font-weight: $font-weight-bold;
+    }
+    .node-list {
+      &__node:first-child {
+        @include marko-web-node-list-border(border-top);
+        padding-top: map-get($spacers, "block-sm");
+      }
+      &__nodes {
+        flex-grow: 0;
+        border-bottom: none;
+      }
+    }
+  }
+}
