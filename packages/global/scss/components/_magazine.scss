@@ -8,6 +8,14 @@
   }
 }
 
+.magazine-publication-card-block {
+  &__body {
+    .issue-archive-cover {
+      margin-bottom: $block-spacer;
+    }
+  }
+}
+
 .node-list {
   $self: &;
   &--latest-issue {

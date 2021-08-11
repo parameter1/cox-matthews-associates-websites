@@ -44,7 +44,7 @@ $ const perPage = 16;
             name="magazine-active-issues"
             params=params
           >
-            <global-magazine-issue-archive-flow nodes=nodes />
+            <global-magazine-issue-archive-flow nodes=nodes flush=true />
           </marko-web-query>
           <div class="mb-block">
             <global-query-total-count|{ totalCount }| name="magazine-active-issues" params={publicationId: id}>
