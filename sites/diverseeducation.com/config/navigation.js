@@ -9,14 +9,14 @@ const topics = [
 ];
 
 const resources = [
-  { href: 'https://www.ccnewsnow.com', label: 'Community Colleges' },
-  { href: '/military', label: 'Military' },
-  { href: '/health', label: 'Health' },
   // { href: '/sponsored-content', label: 'Sponsored Content' },
   // { href: '/latest-news', label: 'Latest News' },
   { href: '/opinion', label: 'Opinion' },
   // { href: '/reports-data', label: 'Reports & Data' },
   // { href: '/from-the-magazine', label: 'From the Magazine' },
+  { href: 'https://www.ccnewsnow.com', label: 'Community Colleges', target: '_blank' },
+  { href: 'https://www.diversemilitary.net', label: 'Military', target: '_blank' },
+  { href: 'https://www.divhealth.net', label: 'Health', target: '_blank' },
   { href: 'https://diversejobs.net', label: 'Jobs', target: '_blank' },
 ];
 
