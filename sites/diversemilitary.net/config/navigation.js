@@ -11,6 +11,7 @@ const topics = [
 const resources = [
   { href: '/other-news', label: 'Other News' },
   { href: '/blogs-opinion', label: 'Blogs/Opinion' },
+  { href: 'https://keepitreal.diverseeducation.com/site/', label: 'Keep it Real', target: '_blank' },
 ];
 
 const utilities = [
@@ -70,6 +71,7 @@ module.exports = {
       { href: '/page/privacy-policy', label: 'Privacy Policy' },
       { href: '/page/contact-us', label: 'Contact Us' },
       { href: '/site-map', label: 'Site Map' },
+      { href: 'https://keepitreal.diverseeducation.com/site/', label: 'Keep it Real', target: '_blank' },
     ],
     topics: topics.primary,
     more: utilities,
