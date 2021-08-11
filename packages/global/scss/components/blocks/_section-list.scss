@@ -19,36 +19,6 @@
       @include skin-typography($style: "view-more", $link-style: "primary");
     }
   }
-  &--featured-jobs {
-    .btn {
-      padding: map-get($spacers, "block-sm");
-      font-size: 12px;
-    }
-    #{ $self }__footer {
-      display: flex;
-      justify-content: space-between;
-      @include marko-web-node-list-border(border-top);
-      padding-bottom: map-get($spacers, "block");
-      font-weight: $font-weight-bold;
-    }
-    .node-list {
-      &__node:first-child {
-        @include marko-web-node-list-border(border-top);
-        padding-top: map-get($spacers, "block-sm");
-      }
-      &__nodes {
-        flex-grow: 0;
-        border-bottom: none;
-      }
-    }
-    .node {
-      &__text {
-        &--teaser {
-          font-family: inherit;
-        }
-      }
-    }
-  }
 }
 
 .node {

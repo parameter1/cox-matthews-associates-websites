@@ -18,7 +18,8 @@
     "@flush-x": "boolean",
     "@flush-y": "boolean",
     "@class": "string",
-    "@modifiers": "array"
+    "@modifiers": "array",
+    "@collapsible": "boolean"
   },
   "<global-content-card-deck-4-col-flow>": {
     "template": "./card-deck-4-col.marko"

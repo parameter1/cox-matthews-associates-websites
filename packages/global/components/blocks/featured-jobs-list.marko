@@ -10,12 +10,12 @@ $ const displayLimit = 5;
 <marko-web-query|{ nodes: allNodes }|
   name="website-scheduled-content"
   params={
-    siteId: "60c281c6d28860bc33464ae0",
     sectionAlias,
     limit: 25,
     sectionBubbling: false,
     queryFragment,
   }
+  collapsible=false
 >
   $ const nodes = shuffle(allNodes).slice(0, displayLimit);
   <global-content-list-flow
@@ -24,6 +24,7 @@ $ const displayLimit = 5;
     flush-x=true
     flush-y=true
     modifiers=["section-list", "featured-jobs"]
+    collapsible=false
   >
     <@header>Featured Jobs</@header>
     <@node displayImage=false withSection=false withDates=false>
