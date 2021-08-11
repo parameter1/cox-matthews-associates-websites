@@ -1,0 +1,37 @@
+.node-list {
+  $self: &;
+  &--featured-jobs {
+    .btn {
+      padding: map-get($spacers, "block-sm");
+      font-size: 12px;
+    }
+    #{ $self }__footer {
+      display: flex;
+      justify-content: space-between;
+      @include marko-web-node-list-border(border-top);
+      padding-bottom: map-get($spacers, "block");
+      font-weight: $font-weight-bold;
+    }
+    .node-list {
+      &__header {
+        @include marko-web-node-list-border(border-bottom);
+        padding-bottom: 1rem;
+        margin-bottom: 0;
+      }
+      &__node:first-child {
+        padding-top: map-get($spacers, "block-sm");
+      }
+      &__nodes {
+        flex-grow: 0;
+        border-bottom: none;
+      }
+    }
+    .node {
+      &__text {
+        &--teaser {
+          font-family: inherit;
+        }
+      }
+    }
+  }
+}
