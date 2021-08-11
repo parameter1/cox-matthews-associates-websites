@@ -1,0 +1,58 @@
+.magazine-publication-buttons {
+  $self: &;
+  display: flex;
+  #{ $self }__button {
+    padding: 6px 12px;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+}
+
+.magazine-publication-card-block {
+  &__header {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  &__body {
+    padding-right: 0;
+    padding-left: 0;
+    .issue-archive-cover {
+      margin-bottom: $block-spacer;
+    }
+  }
+}
+.page {
+  &--magazine-issue {
+    .magazine-publication-card-block {
+      &__body {
+        padding-right: 10px;
+        padding-left: 10px;
+      }
+    }
+  }
+}
+.node-list {
+  $self: &;
+  &--latest-issue {
+    #{ $self }__nodes {
+      padding-top: 10px;
+    }
+    #{ $self }__footer {
+      display: flex;
+      justify-content: space-between;
+      @include marko-web-node-list-border(border-top);
+      padding-bottom: map-get($spacers, "block");
+      font-weight: $font-weight-bold;
+    }
+    .node-list {
+      &__node:first-child {
+        @include marko-web-node-list-border(border-top);
+        padding-top: map-get($spacers, "block-sm");
+      }
+      &__nodes {
+        flex-grow: 0;
+        border-bottom: none;
+      }
+    }
+  }
+}

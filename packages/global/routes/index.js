@@ -2,6 +2,7 @@ const htmlSitemap = require('@parameter1/base-cms-marko-web-html-sitemap/routes'
 const dynamicPage = require('./dynamic-page');
 const feed = require('./feed');
 // const identityX = require('./identity-x');
+const magazine = require('./magazine');
 const nativeX = require('./native-x');
 const printContent = require('./print-content');
 const publicFiles = require('./public-files');
@@ -16,6 +17,9 @@ module.exports = (app, siteConfig) => {
 
   // Feed
   feed(app);
+
+  // magazine
+  magazine(app);
 
   // // IdentityX (user routing and app context)
   // identityX(app);
