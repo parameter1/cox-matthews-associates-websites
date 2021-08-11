@@ -1,0 +1,9 @@
+.magazine-publication-buttons {
+  $self: &;
+  display: flex;
+  #{ $self }__button {
+    padding: 6px 12px;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+}
