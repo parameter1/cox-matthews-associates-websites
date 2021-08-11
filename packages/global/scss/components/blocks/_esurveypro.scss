@@ -9,6 +9,27 @@
 }
 
 // Specific overrides to css file being imported with script.
+.node-list--inner-justified {
+  div[id^="ESP_container"] {
+    height: 100%;
+  }
+  .ESP {
+    &-box,
+    &-box-outer,
+    &-box-inner,
+    &-box-top {
+      height: 100% !important;
+    }
+    &-box-top {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    &-answer {
+      flex-grow: 1;
+    }
+  }
+}
 
 .ESP {
   &-box {
