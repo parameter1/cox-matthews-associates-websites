@@ -5,6 +5,7 @@ const topics = [
   { href: '/academics', label: 'Academics' },
   { href: '/faculty', label: 'Faculty' },
   { href: '/finance', label: 'Finance' },
+  { href: 'https://jobs.ccjobsnow.com', label: 'CC Jobs', target: '_blank' },
 ];
 
 const resources = [
