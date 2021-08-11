@@ -15,6 +15,7 @@ $ const displayLimit = 5;
     sectionBubbling: false,
     queryFragment,
   }
+  collapsible=false
 >
   $ const nodes = shuffle(allNodes).slice(0, displayLimit);
   <global-content-list-flow
@@ -23,6 +24,7 @@ $ const displayLimit = 5;
     flush-x=true
     flush-y=true
     modifiers=["section-list", "featured-jobs"]
+    collapsible=false
   >
     <@header>Featured Jobs</@header>
     <@node displayImage=false withSection=false withDates=false>
