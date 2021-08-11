@@ -39,19 +39,31 @@ $ const hasUser = defaultValue(input.hasUser, false);
         <default-theme-site-menu-section
           tag="nav"
           block-name=blockName
-          label=(site.get("navigation.toggleMenu.midColumn.label") || "Topics")
+          label=(site.get("navigation.toggleMenu.leftColumn.label") || "Topics")
+          items=site.getAsArray("navigation.toggleMenu.leftColumn.items")
+          modifiers=["primary"]
+          reg-enabled=regEnabled
+          has-user=hasUser
+        />
+      </div>
+      <div class="d-none d-md-flex col-lg-3">
+        <!-- sections -->
+        <default-theme-site-menu-section
+          tag="nav"
+          block-name=blockName
+          label=(site.get("navigation.toggleMenu.midColumn.label") || "Resources")
           items=site.getAsArray("navigation.toggleMenu.midColumn.items")
           modifiers=["primary"]
           reg-enabled=regEnabled
           has-user=hasUser
         />
       </div>
-      <div class="d-none d-md-flex col-md-4">
+      <div class="d-none d-md-flex col-lg-3">
         <!-- sections -->
         <default-theme-site-menu-section
           tag="nav"
           block-name=blockName
-          label=(site.get("navigation.toggleMenu.rightColumn.label") || "Resources")
+          label=(site.get("navigation.toggleMenu.rightColumn.label") || "More")
           items=site.getAsArray("navigation.toggleMenu.rightColumn.items")
           modifiers=["primary"]
           reg-enabled=regEnabled
