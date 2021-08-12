@@ -13,6 +13,7 @@ const resources = [
   { href: '/other-news', label: 'Other News' },
   { href: '/blogs-opinion', label: 'Blogs/Opinion' },
   { href: '/resources/top-100-health-medical-categories', label: 'Top 100-Health & Medical Categories' },
+  { href: 'http://response.diverseeducation.com/DOIT2020', label: 'DOIT', target: '_blank' },
 ];
 
 const utilities = [
