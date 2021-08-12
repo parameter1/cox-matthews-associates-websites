@@ -1,15 +1,18 @@
 const topics = [
   { href: '/workforce-development', label: 'Workforce Development' },
-  { href: '/health', label: 'Health' },
   { href: '/leadership', label: 'Leadership' },
   { href: '/academics', label: 'Academics' },
   { href: '/faculty', label: 'Faculty' },
   { href: '/finance', label: 'Finance' },
+  { href: 'https://jobs.ccjobsnow.com', label: 'CC Jobs', target: '_blank' },
 ];
 
 const resources = [
   { href: '/other-news', label: 'Other News' },
   { href: '/blogs-opinion', label: 'Blogs/Opinion' },
+  { href: 'https://www.divhealth.net', label: 'Health', target: '_blank' },
+  { href: 'https://www.diversemilitary.net', label: 'Military', target: '_blank' },
+  { href: 'https://www.diverseeducation.com', label: 'Education', target: '_blank' },
 ];
 
 const utilities = [
