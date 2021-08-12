@@ -4,7 +4,6 @@ const topics = [
   { href: '/academics', label: 'Academics' },
   { href: '/faculty', label: 'Faculty' },
   { href: '/finance', label: 'Finance' },
-  { href: 'https://jobs.ccjobsnow.com', label: 'CC Jobs', target: '_blank' },
 ];
 
 const resources = [
@@ -12,7 +11,7 @@ const resources = [
   { href: '/blogs-opinion', label: 'Blogs/Opinion' },
   { href: 'https://www.diverseeducation.com', label: 'Education', target: '_blank' },
   { href: 'https://www.divhealth.net', label: 'Health', target: '_blank' },
-  { href: 'https://diversejobs.net', label: 'Jobs', target: '_blank' },
+  { href: 'https://jobs.ccjobsnow.com', label: 'Jobs', target: '_blank' },
   { href: 'https://www.diversemilitary.com', label: 'Military', target: '_blank' },
 ];
 
@@ -25,6 +24,7 @@ const utilities = [
 const mobileMenu = {
   primary: [
     ...topics,
+    { href: 'https://jobs.ccjobsnow.com', label: 'CC Jobs', target: '_blank' },
   ],
   secondary: [
     { href: 'https://responses.diverseeducation.com/CCNewsNow', label: 'Subscribe', target: '_blank' },
@@ -52,12 +52,12 @@ module.exports = {
     items: [],
   },
   toggleMenu: {
-    midColumn: {
+    leftColumn: {
       items: [
         ...topics,
       ],
     },
-    rightColumn: {
+    midColumn: {
       items: [
         ...resources,
       ],
