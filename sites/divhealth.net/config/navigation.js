@@ -12,7 +12,6 @@ const topics = [
 const resources = [
   { href: '/other-news', label: 'Other News' },
   { href: '/blogs-opinion', label: 'Blogs/Opinion' },
-  { href: 'http://response.diverseeducation.com/DOIT2020', label: 'DOIT', target: '_blank' },
   { href: 'https://www.ccnewsnow.com', label: 'Community Colleges', target: '_blank' },
   { href: 'https://www.diverseeducation.com', label: 'Education', target: '_blank' },
   { href: 'https://www.divhealth.net', label: 'Health', target: '_blank' },
