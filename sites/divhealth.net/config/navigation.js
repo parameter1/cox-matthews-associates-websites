@@ -61,12 +61,12 @@ module.exports = {
     items: [],
   },
   toggleMenu: {
-    midColumn: {
+    leftColumn: {
       items: [
         ...topics,
       ],
     },
-    rightColumn: {
+    midColumn: {
       items: [
         ...resources,
       ],
