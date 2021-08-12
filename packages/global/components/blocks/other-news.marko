@@ -1,0 +1,51 @@
+import { getAsObject } from "@parameter1/base-cms-object-path";
+import cardFragment from "../../graphql/fragments/section-list-card-block";
+import listFragment from "../../graphql/fragments/section-list-block";
+import sectionFragment from "../../graphql/fragments/section-info";
+
+$ const { alias } = input;
+
+$ const queryParams = {
+  limit: 3,
+  ...getAsObject(input, "queryParams"),
+  requiresImage: true,
+  queryFragment: listFragment,
+  sectionFragment,
+  sectionAlias: input.alias,
+};
+
+$ const heroParams = {
+  ...queryParams,
+  limit: 3,
+  requiresImage: true,
+  queryFragment: cardFragment,
+};
+
+$ const blockName = "section-list";
+
+<marko-web-query|{ nodes, section }| name="website-scheduled-content" params=heroParams>
+  <marko-web-node-list
+    inner-justified=true
+    flush-x=true
+    flush-y=true
+    modifiers=[blockName]
+  >
+    <@header>
+      <marko-web-website-section-name obj=section link=true />
+    </@header>
+    <@nodes nodes=nodes>
+      <@slot|{ node }|>
+        <global-content-node
+          image-position="left"
+          flush=true
+          modifiers=[`${blockName}-list`]
+          with-teaser=true
+          with-dates=false
+          with-section=false
+          node=node
+        >
+        </global-content-node>
+      </@slot>
+    </@nodes>
+  </marko-web-node-list>
+</marko-web-query>

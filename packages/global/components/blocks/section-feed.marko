@@ -23,6 +23,12 @@ $ const countOnly = defaultValue(input.countOnly, false);
       flush-y=false
       modifiers=[blockName]
     >
+    <if(section)>
+      <marko-web-website-section-name obj=section link=true>
+        <${input.section} />
+      </marko-web-website-section-name>
+    </if>
+
       <@nodes nodes=nodes>
         <@slot|{ node }|>
           <global-section-feed-content-node node=node />

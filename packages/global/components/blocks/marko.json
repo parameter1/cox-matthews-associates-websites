@@ -110,7 +110,8 @@
     "<query-params>": {},
     "<node>": {},
     "@alias": "string",
-    "@count-only": "boolean"
+    "@count-only": "boolean",
+    "@section": "boolean"
   },
   "<global-section-cards-block>": {
     "template": "./section-cards.marko",
@@ -151,5 +152,8 @@
   },
   "<global-magazine-publications-block>": {
     "template": "./magazine-publications.marko"
+  },
+  "<global-other-news-block>": {
+    "template": "./other-news.marko"
   }
 }
