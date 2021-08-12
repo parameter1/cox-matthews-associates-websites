@@ -1,6 +1,6 @@
 const topics = [
-  { href: '/student-issues', label: 'Student Issues' },
-  { href: '/faculty-staff-issues', label: 'Faculty & Staff Issues' },
+  { href: '/student', label: 'Student' },
+  { href: '/faculty-staff', label: 'Faculty & Staff' },
   { href: '/leadership-policy', label: 'Leadership & Policy' },
   { href: '/sports', label: 'Sports' },
   { href: '/demographics', label: 'Demographics' },
@@ -60,8 +60,8 @@ module.exports = {
   },
   secondary: {
     items: [
-      { href: '/student-issues', label: 'Student Issues' },
-      { href: '/faculty-staff-issues', label: 'Faculty & Staff Issues' },
+      { href: '/student', label: 'Student' },
+      { href: '/faculty-staff', label: 'Faculty & Staff' },
       { href: '/leadership-policy', label: 'Leadership & Policy' },
       { href: '/sports', label: 'Sports' },
       // { href: '/best-practices', label: 'Best Practices' },
