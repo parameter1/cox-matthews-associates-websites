@@ -9,15 +9,15 @@ const topics = [
 ];
 
 const resources = [
-  { href: 'https://www.ccnewsnow.com', label: 'Community Colleges' },
-  { href: 'https://www.diversemilitary.com', label: 'Military', target: '_blank' },
-  { href: 'https://www.divhealth.net', label: 'Health', target: '_blank' },
   // { href: '/sponsored-content', label: 'Sponsored Content' },
   // { href: '/latest-news', label: 'Latest News' },
   { href: '/opinion', label: 'Opinion' },
   // { href: '/reports-data', label: 'Reports & Data' },
   // { href: '/from-the-magazine', label: 'From the Magazine' },
+  { href: 'https://www.ccnewsnow.com', label: 'Community Colleges', target: '_blank' },
+  { href: 'https://www.divhealth.net', label: 'Health', target: '_blank' },
   { href: 'https://diversejobs.net', label: 'Jobs', target: '_blank' },
+  { href: 'https://www.diversemilitary.com', label: 'Military', target: '_blank' },
 ];
 
 const awards = [
@@ -32,7 +32,7 @@ const awards = [
 const utilities = [
   { href: 'https://mediakit.diverseeducation.com/', label: 'Advertise', target: '_blank' },
   { href: '/page/contact-us', label: 'Contact Us' },
-  { href: 'https://responses.diverseeducation.com/DiverseDaily', label: 'Newsletters', target: '_blank' },
+  { href: 'https://responses.diverseeducation.com/DiverseDaily', label: 'Subscribe', target: '_blank' },
 ];
 
 const mobileMenu = {
@@ -40,7 +40,7 @@ const mobileMenu = {
     ...topics,
   ],
   secondary: [
-    { href: '/newsletters', label: 'Newsletters' },
+    { href: 'https://responses.diverseeducation.com/DiverseDaily', label: 'Subscribe', target: '_blank' },
   ],
 };
 
