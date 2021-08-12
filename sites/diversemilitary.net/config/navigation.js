@@ -14,7 +14,7 @@ const resources = [
 ];
 
 const utilities = [
-  // { href: '/page/advertise', label: 'Advertise' },
+  { href: 'https://mediakit.diverseeducation.com/', label: 'Advertise', target: '_blank' },
   { href: '/page/contact-us', label: 'Contact Us' },
   { href: 'https://responses.diverseeducation.com/DiverseMilitary', label: 'Newsletters', target: '_blank' },
 ];
