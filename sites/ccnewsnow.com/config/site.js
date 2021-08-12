@@ -30,7 +30,9 @@ module.exports = {
       ],
     },
   },
-  socialMediaLinks: [],
+  socialMediaLinks: [
+    { provider: 'facebook', href: 'https://www.facebook.com/CcNewsNow', target: '_blank' },
+  ],
   gtm: {
     containerId: process.env.GTM_CONTAINER_ID || 'GTM-NJ23C9G',
   },

@@ -13,13 +13,18 @@ const resources = [
   { href: '/other-news', label: 'Other News' },
   { href: '/blogs-opinion', label: 'Blogs/Opinion' },
   { href: '/resources/top-100-health-medical-categories', label: 'Top 100-Health & Medical Categories' },
+  { href: 'https://www.ccnewsnow.com', label: 'Community Colleges', target: '_blank' },
+  { href: 'https://www.diverseeducation.com', label: 'Education', target: '_blank' },
+  { href: 'https://www.divhealth.net', label: 'Health', target: '_blank' },
+  { href: 'https://diversejobs.net', label: 'Jobs', target: '_blank' },
+  { href: 'https://www.diversemilitary.com', label: 'Military', target: '_blank' },
   { href: 'https://keepitreal.diverseeducation.com/site/', label: 'Keep it Real', target: '_blank' },
 ];
 
 const utilities = [
-  // { href: '/page/advertise', label: 'Advertise' },
+  { href: 'https://mediakit.diverseeducation.com/', label: 'Advertise', target: '_blank' },
   { href: '/page/contact-us', label: 'Contact Us' },
-  { href: 'https://responses.diverseeducation.com/DiverseHealth', label: 'Newsletters', target: '_blank' },
+  { href: 'https://responses.diverseeducation.com/DiverseHealth', label: 'Subscribe', target: '_blank' },
 ];
 
 const mobileMenu = {
@@ -27,7 +32,7 @@ const mobileMenu = {
     ...topics,
   ],
   secondary: [
-    { href: '/newsletters', label: 'Newsletters' },
+    { href: 'https://responses.diverseeducation.com/DiverseHealth', label: 'Subscribe', target: '_blank' },
   ],
 };
 
@@ -58,12 +63,12 @@ module.exports = {
     items: [],
   },
   toggleMenu: {
-    midColumn: {
+    leftColumn: {
       items: [
         ...topics,
       ],
     },
-    rightColumn: {
+    midColumn: {
       items: [
         ...resources,
       ],
