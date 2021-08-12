@@ -10,15 +10,16 @@ const topics = [
 const resources = [
   { href: '/other-news', label: 'Other News' },
   { href: '/blogs-opinion', label: 'Blogs/Opinion' },
-  { href: 'https://www.divhealth.net', label: 'Health', target: '_blank' },
-  { href: 'https://www.diversemilitary.net', label: 'Military', target: '_blank' },
   { href: 'https://www.diverseeducation.com', label: 'Education', target: '_blank' },
+  { href: 'https://www.divhealth.net', label: 'Health', target: '_blank' },
+  { href: 'https://diversejobs.net', label: 'Jobs', target: '_blank' },
+  { href: 'https://www.diversemilitary.com', label: 'Military', target: '_blank' },
 ];
 
 const utilities = [
-  // { href: '/page/advertise', label: 'Advertise' },
+  { href: 'https://mediakit.diverseeducation.com/', label: 'Advertise', target: '_blank' },
   { href: '/page/contact-us', label: 'Contact Us' },
-  { href: 'https://responses.diverseeducation.com/CCNewsNow', label: 'Newsletters', target: '_blank' },
+  { href: 'https://responses.diverseeducation.com/CCNewsNow', label: 'Subscribe', target: '_blank' },
 ];
 
 const mobileMenu = {
@@ -26,7 +27,7 @@ const mobileMenu = {
     ...topics,
   ],
   secondary: [
-    { href: '/newsletters', label: 'Newsletters' },
+    { href: 'https://responses.diverseeducation.com/CCNewsNow', label: 'Subscribe', target: '_blank' },
   ],
 };
 
