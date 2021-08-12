@@ -26,10 +26,11 @@ const awards = [
   { href: '/awards-honors/emerging-scholars/2021', label: 'Emerging Scholars' },
   { href: '/awards-honors/mppwcc', label: 'Most Promising Places to Work: Community Colleges' },
   { href: '/awards-honors/mppwsa', label: 'Most Promising Places to Work: Student Affairs' },
+  { href: 'https://top100.diverseeducation.com', label: 'Top 100', target: '_blank' },
 ];
 
 const utilities = [
-  // { href: '/page/advertise', label: 'Advertise' },
+  { href: 'https://mediakit.diverseeducation.com/', label: 'Advertise', target: '_blank' },
   { href: '/page/contact-us', label: 'Contact Us' },
   { href: 'https://responses.diverseeducation.com/DiverseDaily', label: 'Newsletters', target: '_blank' },
 ];
