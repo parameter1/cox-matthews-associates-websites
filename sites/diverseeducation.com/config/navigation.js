@@ -1,6 +1,6 @@
 const topics = [
-  { href: '/student-issues', label: 'Student Issues' },
-  { href: '/faculty-staff-issues', label: 'Faculty & Staff Issues' },
+  { href: '/student', label: 'Student' },
+  { href: '/faculty-staff', label: 'Faculty & Staff' },
   { href: '/leadership-policy', label: 'Leadership & Policy' },
   { href: '/sports', label: 'Sports' },
   { href: '/demographics', label: 'Demographics' },
@@ -10,8 +10,8 @@ const topics = [
 
 const resources = [
   { href: 'https://www.ccnewsnow.com', label: 'Community Colleges' },
-  { href: '/military', label: 'Military' },
-  { href: '/health', label: 'Health' },
+  { href: 'https://www.diversemilitary.com', label: 'Military', target: '_blank' },
+  { href: 'https://www.divhealth.net', label: 'Health', target: '_blank' },
   // { href: '/sponsored-content', label: 'Sponsored Content' },
   // { href: '/latest-news', label: 'Latest News' },
   { href: '/opinion', label: 'Opinion' },
@@ -26,10 +26,11 @@ const awards = [
   { href: '/awards-honors/emerging-scholars/2021', label: 'Emerging Scholars' },
   { href: '/awards-honors/mppwcc', label: 'Most Promising Places to Work: Community Colleges' },
   { href: '/awards-honors/mppwsa', label: 'Most Promising Places to Work: Student Affairs' },
+  { href: 'https://top100.diverseeducation.com', label: 'Top 100', target: '_blank' },
 ];
 
 const utilities = [
-  // { href: '/page/advertise', label: 'Advertise' },
+  { href: 'https://mediakit.diverseeducation.com/', label: 'Advertise', target: '_blank' },
   { href: '/page/contact-us', label: 'Contact Us' },
   { href: 'https://responses.diverseeducation.com/DiverseDaily', label: 'Newsletters', target: '_blank' },
 ];
@@ -59,8 +60,8 @@ module.exports = {
   },
   secondary: {
     items: [
-      { href: '/student-issues', label: 'Student Issues' },
-      { href: '/faculty-staff-issues', label: 'Faculty & Staff Issues' },
+      { href: '/student', label: 'Student' },
+      { href: '/faculty-staff', label: 'Faculty & Staff' },
       { href: '/leadership-policy', label: 'Leadership & Policy' },
       { href: '/sports', label: 'Sports' },
       // { href: '/best-practices', label: 'Best Practices' },
