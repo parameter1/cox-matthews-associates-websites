@@ -9,7 +9,7 @@ const topics = [
 const resources = [
   { href: '/other-news', label: 'Other News' },
   { href: '/blogs-opinion', label: 'Blogs/Opinion' },
-  { href: 'https://www.diverseeducation.com', label: 'Education', target: '_blank' },
+  { href: 'https://www.diverseeducation.com', label: 'Diverse', target: '_blank' },
   { href: 'https://www.divhealth.net', label: 'Health', target: '_blank' },
   { href: 'https://jobs.ccjobsnow.com', label: 'Jobs', target: '_blank' },
   { href: 'https://www.diversemilitary.com', label: 'Military', target: '_blank' },
