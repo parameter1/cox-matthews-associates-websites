@@ -12,11 +12,13 @@ const topics = [
 const resources = [
   { href: '/other-news', label: 'Other News' },
   { href: '/blogs-opinion', label: 'Blogs/Opinion' },
+  { href: '/resources/top-100-health-medical-categories', label: 'Top 100-Health & Medical Categories' },
   { href: 'https://www.ccnewsnow.com', label: 'Community Colleges', target: '_blank' },
   { href: 'https://www.diverseeducation.com', label: 'Diverse', target: '_blank' },
   { href: 'https://www.divhealth.net', label: 'Health', target: '_blank' },
   { href: 'https://diversejobs.net', label: 'Jobs', target: '_blank' },
   { href: 'https://www.diversemilitary.net', label: 'Military', target: '_blank' },
+  { href: 'https://keepitreal.diverseeducation.com/site/', label: 'Keep it Real', target: '_blank' },
 ];
 
 const utilities = [
@@ -77,6 +79,7 @@ module.exports = {
       { href: '/page/privacy-policy', label: 'Privacy Policy' },
       { href: '/page/contact-us', label: 'Contact Us' },
       { href: '/site-map', label: 'Site Map' },
+      { href: 'https://keepitreal.diverseeducation.com/site/', label: 'Keep it Real', target: '_blank' },
     ],
     topics: topics.primary,
     more: utilities,

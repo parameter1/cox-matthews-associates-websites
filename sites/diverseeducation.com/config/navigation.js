@@ -18,6 +18,7 @@ const resources = [
   { href: 'https://www.divhealth.net', label: 'Health', target: '_blank' },
   { href: 'https://diversejobs.net', label: 'Jobs', target: '_blank' },
   { href: 'https://www.diversemilitary.net', label: 'Military', target: '_blank' },
+  { href: 'https://keepitreal.diverseeducation.com/site/', label: 'Keep it Real', target: '_blank' },
 ];
 
 const awards = [
@@ -94,6 +95,7 @@ module.exports = {
       { href: '/page/privacy-policy', label: 'Privacy Policy' },
       { href: '/page/contact-us', label: 'Contact Us' },
       { href: '/site-map', label: 'Site Map' },
+      { href: 'https://keepitreal.diverseeducation.com/site/', label: 'Keep it Real', target: '_blank' },
     ],
     topics: topics.primary,
     more: utilities,
