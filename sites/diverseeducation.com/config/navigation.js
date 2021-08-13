@@ -17,9 +17,8 @@ const resources = [
   { href: 'https://www.ccnewsnow.com', label: 'Community Colleges', target: '_blank' },
   { href: 'https://www.divhealth.net', label: 'Health', target: '_blank' },
   { href: 'https://diversejobs.net', label: 'Jobs', target: '_blank' },
-  { href: 'https://www.diversemilitary.com', label: 'Military', target: '_blank' },
+  { href: 'https://www.diversemilitary.net', label: 'Military', target: '_blank' },
   { href: 'https://keepitreal.diverseeducation.com/site/', label: 'Keep it Real', target: '_blank' },
-
 ];
 
 const awards = [
