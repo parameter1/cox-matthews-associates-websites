@@ -42,9 +42,11 @@
     .radio,
     input[type="radio"] {
       margin-left: initial !important;
+      float: left !important;
     }
     label[class^="ESP-answer"] {
-      width: calc(100% - 10px);
+      width: calc(100% - 30px);
+      margin-left: 15px;
     }
   }
   &-question-top {
