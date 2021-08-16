@@ -9,8 +9,9 @@
 }
 
 // Specific overrides to css file being imported with script.
+/* stylelint-disable declaration-no-important, selector-class-pattern */
 .node-list--inner-justified {
-  div[id^="ESP_container"] {
+  div[id^="ESP_container"] { /* stylelint-disable-line selector-no-qualifying-type */
     width: 100%;
     height: 100%;
   }
@@ -40,11 +41,14 @@
   &-answer {
     width: calc(100% - 30px) !important;
     .radio,
-    input[type="radio"] {
+    input[type="radio"] { /* stylelint-disable-line selector-no-qualifying-type */
+      float: left !important;
       margin-left: initial !important;
     }
-    label[class^="ESP-answer"] {
-      width: calc(100% - 10px);
+    label[class^="ESP-answer"] { /* stylelint-disable-line selector-no-qualifying-type */
+      width: calc(100% - 30px);
+      padding-top: 3px;
+      margin-left: 15px;
     }
   }
   &-question-top {
@@ -59,8 +63,14 @@
     letter-spacing: inherit !important;
   }
   &-votebutton-outer {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
     margin-top: $block-spacer;
     @include marko-web-node-list-border(border-top);
+    br {
+      display: none !important;
+    }
   }
 
   &-viewResult,
@@ -68,6 +78,7 @@
     width: auto !important;
     height: auto !important;
     padding: 12px !important;
+    margin: 0 !important;
     margin-top: ($block-spacer / 2) !important;
     font-family: $skin-font-family-primary !important;
     font-size: 12px !important;
@@ -83,3 +94,4 @@
     border-radius: 4px !important;
   }
 }
+/* stylelint-enable declaration-no-important, selector-class-pattern */
