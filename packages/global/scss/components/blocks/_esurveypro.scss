@@ -61,8 +61,14 @@
     letter-spacing: inherit !important;
   }
   &-votebutton-outer {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
     margin-top: $block-spacer;
     @include marko-web-node-list-border(border-top);
+    br {
+      display: none !important;
+    }
   }
 
   &-viewResult,
@@ -70,6 +76,7 @@
     width: auto !important;
     height: auto !important;
     padding: 12px !important;
+    margin: 0 !important;
     margin-top: ($block-spacer / 2) !important;
     font-family: $skin-font-family-primary !important;
     font-size: 12px !important;
