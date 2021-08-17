@@ -1,0 +1,43 @@
+import { getAsArray, getAsObject } from "@parameter1/base-cms-object-path";
+
+$ const link = { class: 'btn btn-primary' };
+
+$ const publication = getAsObject(input, "publication");
+$ const issue = getAsObject(input, "issue");
+$ const buttons = getAsArray(input, "buttons") || ['subscribe', 'digital-edition', 'pdf', 'archives', 'renewal', 'reprints', 'e-inquiry'];
+
+<if(buttons.includes('subscribe'))>
+  <marko-web-magazine-publication-subscribe-url tag=null obj=publication link=link>
+    Subscribe
+  </marko-web-magazine-publication-subscribe-url>
+</if>
+<if(buttons.includes('digital-edition'))>
+  <marko-web-magazine-issue-digital-edition-url tag=null obj=issue link=link>
+    Digital Edition
+  </marko-web-magazine-issue-digital-edition-url>
+</if>
+<if(buttons.includes('pdf'))>
+  <marko-web-magazine-issue-pdf-url tag=null obj=issue link=link>
+    Download PDF
+  </marko-web-magazine-issue-pdf-url>
+</if>
+<if(buttons.includes('archives'))>
+  <marko-web-magazine-publication-name tag=null obj=publication link=link>
+    Archives
+  </marko-web-magazine-publication-name>
+</if>
+<if(buttons.includes('renewal'))>
+  <marko-web-magazine-publication-renewal-url tag=null obj=publication link=link>
+    Renewal
+  </marko-web-magazine-publication-renewal-url>
+</if>
+<if(buttons.includes('reprints'))>
+  <marko-web-magazine-publication-reprints-url tag=null obj=publication link=link>
+    Reprints
+  </marko-web-magazine-publication-reprints-url>
+</if>
+<if(buttons.includes('e-inquiry'))>
+  <marko-web-magazine-publication-einquiry-url tag=null obj=publication link=link>
+    E-Inquiry
+  </marko-web-magazine-publication-einquiry-url>
+</if>
