@@ -1,5 +1,5 @@
 import { getAsObject } from "@parameter1/base-cms-object-path";
-import issueFragment from "../../graphql/fragments/magazine-issue-archive";
+import issueFragment from "../graphql/fragments/magazine-issue-archive";
 
 $ const { site } = out.global;
 $ const { id, pageNode } = data;
@@ -32,7 +32,7 @@ $ const { id, pageNode } = data;
               </default-theme-breadcrumbs-with-home>
               <h1 class="page-wrapper__title">
                 <marko-web-link href='/magazine'>
-                  BizBash Magazine
+                  ${issue.publication.name}
                 </marko-web-link>
               </h1>
               <div class="magazine-publication-card-block">
