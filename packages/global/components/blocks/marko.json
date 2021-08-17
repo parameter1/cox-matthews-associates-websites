@@ -148,8 +148,5 @@
   },
   "<global-top-stories-menu-block>": {
     "template": "./top-stories-menu.marko"
-  },
-  "<global-magazine-publications-block>": {
-    "template": "./magazine-publications.marko"
   }
 }

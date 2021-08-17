@@ -57,25 +57,6 @@
     "@attrs": "object",
     "@link-attrs": "object"
   },
-  "<global-magazine-latest-issue-node>": {
-    "template": "./magazine-latest-issue.marko",
-    "@node": "object",
-    "@flush": "boolean",
-    "@card": "boolean",
-    "@image-width": {
-      "type": "number",
-      "default-value": 300
-    }
-  },
-  "<global-magazine-issue-archive-node>": {
-    "template": "./magazine-issue-archive.marko",
-    "@node": "object",
-    "@image-width": "number",
-    "@full-height": "boolean",
-    "@flush": "boolean",
-    "@card": "boolean",
-    "@with-title": "boolean"
-  },
   "<global-author-node>": {
     "template": "./author.marko"
   },

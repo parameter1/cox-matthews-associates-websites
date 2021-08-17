@@ -1,5 +1,5 @@
 import { getAsObject } from "@parameter1/base-cms-object-path";
-import issueFragment from "../../graphql/fragments/magazine-issue-archive";
+import issueFragment from "../graphql/fragments/magazine-issue-archive";
 
 $ const { site } = out.global;
 $ const { id, pageNode } = data;
@@ -25,16 +25,10 @@ $ const { id, pageNode } = data;
         <div class="row">
           <div class="col">
             <marko-web-resolve-page|{ data: issue }| node=pageNode>
-              <default-theme-breadcrumbs-with-home>
-                <@item><marko-web-link href="/magazine">Magazines</marko-web-link></@item>
+              <default-theme-breadcrumbs modifiers=["website-section"]>
+                <@item><marko-web-link href="/magazine">Magazine</marko-web-link></@item>
                 <@item><marko-web-magazine-publication-name tag=null obj=issue.publication link=true /></@item>
-                <@item><marko-web-magazine-issue-name tag=null obj=issue /></@item>
-              </default-theme-breadcrumbs-with-home>
-              <h1 class="page-wrapper__title">
-                <marko-web-link href='/magazine'>
-                  BizBash Magazine
-                </marko-web-link>
-              </h1>
+              </default-theme-breadcrumbs>
               <div class="magazine-publication-card-block">
                 <div class="magazine-publication-card-block__body">
                   <div class="row">
@@ -49,7 +43,7 @@ $ const { id, pageNode } = data;
                           link={ href: issue.canonicalPath, title: issue.name }
                         />
                         <@body>
-                          <@title tag="h5">
+                          <@title tag="h1">
                             <marko-web-magazine-issue-name tag=null obj=issue />
                           </@title>
                           <@text modifiers=["teaser"]>
@@ -57,7 +51,7 @@ $ const { id, pageNode } = data;
                           </@text>
                           <@footer>
                             <@left>
-                              <default-theme-magazine-publication-buttons publication=issue.publication issue=issue />
+                              <global-magazine-publication-buttons issue=issue />
                             </@left>
                           </@footer>
                         </@body>
