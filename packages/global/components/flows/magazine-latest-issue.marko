@@ -4,7 +4,14 @@ $ const nodes = [];
 $ const issueNode = getAsObject(input, "issueNode");
 $ if (issueNode) nodes.push(issueNode);
 
-<marko-web-node-list inner-justified=true>
+<marko-web-node-list
+  inner-justified=true
+  flush-x=true
+  flush-y=true
+  modifiers=[
+    "latest-issue",
+  ]
+>
   <if(input.header)>
     <@header ...input.header />
   </if>

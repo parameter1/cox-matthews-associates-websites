@@ -20,8 +20,16 @@ const resources = [
   { href: 'https://diversejobs.net', label: 'Jobs', target: '_blank' },
 ];
 
+const awards = [
+  { href: '/awards-honors/arthur-ashe', label: 'Arthur Ashe' },
+  { href: '/awards-honors/diverse-champions', label: 'Diverse Champions' },
+  { href: '/awards-honors/emerging-scholars/2021', label: 'Emerging Scholars' },
+  { href: '/awards-honors/mppwcc', label: 'Most Promising Places to Work: Community Colleges' },
+  { href: '/awards-honors/mppwsa', label: 'Most Promising Places to Work: Student Affairs' },
+];
+
 const utilities = [
-  { href: '/page/advertise', label: 'Advertise' },
+  // { href: '/page/advertise', label: 'Advertise' },
   { href: '/page/contact-us', label: 'Contact Us' },
   { href: 'https://responses.diverseeducation.com/DiverseDaily', label: 'Newsletters', target: '_blank' },
 ];
@@ -62,14 +70,20 @@ module.exports = {
     items: [],
   },
   toggleMenu: {
-    midColumn: {
+    leftColumn: {
       items: [
         ...topics,
       ],
     },
-    rightColumn: {
+    midColumn: {
       items: [
         ...resources,
+      ],
+    },
+    rightColumn: {
+      label: 'Awards & Honors',
+      items: [
+        ...awards,
       ],
     },
   },

@@ -23,22 +23,12 @@ const routes = siteRoutes => (app, siteConfig) => {
 
 module.exports = (options = {}) => {
   const { onStart } = options;
-  const googleNewsInput = {
-    days: 7,
-    includeContentTypes: ['Article'],
-    excludeLabels: ['Sponsored', 'Sponsored by RoadPro'],
-    ...options.googleNewsInput,
-  };
   return startServer({
     ...options,
     routes: routes(options.routes, options.siteConfig),
     document: options.document || document,
     components: options.components || components,
     fragments: options.fragments || fragments,
-    sitemapsHeaders: {
-      'x-google-news-input': JSON.stringify(googleNewsInput),
-      ...(options.googleNewsPublicationName, { 'x-google-news-publication-name': options.googleNewsPublicationName }),
-    },
     onStart: async (app) => {
       if (typeof onStart === 'function') await onStart(app);
       app.set('trust proxy', 'loopback, linklocal, uniquelocal');

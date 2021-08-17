@@ -16,6 +16,7 @@
 @import "./components/author-published-node";
 @import "./components/comments";
 @import "./components/content-page";
+@import "./components/magazine";
 @import "./components/page-wrapper";
 @import "./components/pagination-controls";
 @import "./components/site-footer";
@@ -197,7 +198,6 @@ label {
   @extend .embed-responsive;
   @extend .embed-responsive-16by9;
 }
-
 .social-follow {
   &--site-menu {
     .social-follow {
@@ -205,20 +205,5 @@ label {
         line-height: 1.5;
       }
     }
-  }
-}
-
-.marko-web-search-filter {
-  &__item {
-    a {
-      color: $primary;
-    }
-  }
-}
-
-.magazine-publication-buttons {
-  &__button {
-    padding: map-get($spacers, "block-sm");
-    font-size: 12px;
   }
 }

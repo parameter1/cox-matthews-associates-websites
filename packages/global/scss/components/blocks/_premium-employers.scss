@@ -9,3 +9,23 @@
     @include skin-typography($style: "section-header");
   }
 }
+
+.node {
+  $self: &;
+  &--premium-employers {
+    #{ $self }__body {
+      display: none;
+    }
+  }
+}
+
+.page-wrapper {
+  &__section {
+    &--break-container {
+      .premium-employers {
+        padding-top: 50px;
+        padding-bottom: 50px;
+      }
+    }
+  }
+}
