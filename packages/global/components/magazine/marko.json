@@ -5,6 +5,6 @@
     "./nodes/marko.json"
   ],
   "<global-magazine-publication-buttons>": {
-    "template": "./publication-buttons"
+    "template": "./publication-buttons.marko"
   }
 }
