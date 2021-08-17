@@ -13,7 +13,7 @@ const resources = [
   { href: 'https://www.divhealth.net', label: 'Health', target: '_blank' },
   { href: 'https://jobs.ccjobsnow.com', label: 'Jobs', target: '_blank' },
   { href: 'https://www.diversemilitary.net', label: 'Military', target: '_blank' },
-  { href: 'https://keepitreal.diverseeducation.com/site/', label: 'Keep it Real', target: '_blank' },
+  // { href: 'https://keepitreal.diverseeducation.com/site/', label: 'Keep it Real', target: '_blank' },
 ];
 
 const utilities = [
