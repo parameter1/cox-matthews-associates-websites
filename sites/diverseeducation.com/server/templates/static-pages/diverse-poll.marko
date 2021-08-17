@@ -1,0 +1,46 @@
+$ const type = "static-page";
+$ const title = "Diverse Poll";
+$ const description = "";
+
+<marko-web-default-page-layout type=type title=title description=description>
+  <@page>
+    <marko-web-page-wrapper class="awards-honors mppwcc">
+      <@section modifiers=["first"]>
+        <global-gam-define-display-ad
+          name="leaderboard"
+          position="section_page"
+          aliases=["awards-honors/mppwcc"]
+          modifiers=["inter-block"]
+        />
+      </@section>
+      <@section>
+        <div class="row">
+          <div class="col">
+            <h1 class="page-wrapper__website-section-name">${title}</h1>
+            <if(description)>
+              <div class="page-wrapper__website-section-description">${description}</div>
+            </if>
+          </div>
+        </div>
+      </@section>
+      <@section>
+        <div class="row">
+          <div class="col-lg-8">
+            <global-esurveypro-block showHeader=false />
+          </div>
+        </div>
+      </@section>
+      <@section>
+        <global-client-side-most-popular-block />
+      </@section>
+      <@section|{ aliases }|>
+        <global-gam-define-display-ad
+          name="rotation"
+          position="section_page"
+          aliases=aliases
+          modifiers=["inter-block"]
+        />
+      </@section>
+    </marko-web-page-wrapper>
+  </@page>
+</marko-web-default-page-layout>

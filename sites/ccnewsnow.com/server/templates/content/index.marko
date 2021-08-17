@@ -9,16 +9,15 @@ $ const { id, type, pageNode, ...rest } = input;
   <@section|{ aliases }|>
     <div class="row">
       <div class="col-lg-4">
-        <global-featured-jobs-list-block />
+        <global-featured-jobs-list-block
+          findJobLink="https://jobs.ccjobsnow.com"
+          postJobLink="https://jobs.ccjobsnow.com/employer/emplogin.html"
+        />
       </div>
       <div class="col-lg-4">
-        <global-esurveypro-block />
       </div>
       <div class="col-lg-4">
-        <div class="twitter-block">
-          <a class="twitter-timeline" data-width="340" data-height="650" data-theme="light" href="https://twitter.com/DiverseIssues?ref_src=twsrc%5Etfw">Tweets by DiverseIssues</a>
-          <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-        </div>
+        <global-section-list-block alias="other-news" />
       </div>
     </div>
   </@section>
