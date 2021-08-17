@@ -22,6 +22,13 @@
   }
 }
 .page {
+  &--magazine-publication {
+    .page-wrapper {
+      &__title {
+        @include skin-typography($style: "section-header");
+      }
+    }
+  }
   &--magazine-issue {
     .magazine-publication-card-block {
       &__body {
