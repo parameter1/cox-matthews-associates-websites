@@ -69,6 +69,23 @@ $ const { id, alias, name, pageNode } = input;
     </div>
   </@section>
 
+  <@section|{ aliases }|>
+    <div class="row">
+      <div class="col-lg-8">
+        <global-esurveypro-block />
+      </div>
+      <div class="col-lg-4">
+        <global-gam-define-display-ad
+          name="rail"
+          position="home_page"
+          aliases=aliases
+          modifiers=["max-width-300", "center", "margin-auto-x", "rail"]
+          class="mb-block"
+        />
+      </div>
+    </div>
+  </@section>
+
   <@section modifiers=["break-container"]>
     <global-premium-employers-block title="Premium Employers" />
   </@section>
