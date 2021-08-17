@@ -7,7 +7,6 @@ $ const { publicationId } = input;
   name="magazine-latest-issue"
   params={ publicationId, queryFragment: latestIssueFragment, requiresImage: true  }
 >
-  $ const publication = getAsObject(issue, "publication");
   <marko-web-node-list
     inner-justified=true
     flush-x=true
@@ -30,7 +29,6 @@ $ const { publicationId } = input;
     </@nodes>
     <@footer>
       <global-magazine-publication-buttons
-        publication=publication
         issue=issue
         buttons=['subscribe', 'digital-edition', 'archives']
       />
