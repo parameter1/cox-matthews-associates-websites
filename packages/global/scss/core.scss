@@ -16,7 +16,6 @@
 @import "./components/author-published-node";
 @import "./components/comments";
 @import "./components/content-page";
-@import "./components/magazine";
 @import "./components/page-wrapper";
 @import "./components/pagination-controls";
 @import "./components/site-footer";
@@ -56,6 +55,8 @@
 @import "./components/blocks/top-stories";
 @import "./components/blocks/top-stories-menu";
 @import "./components/blocks/featured-jobs";
+
+@import "../components/magazine/scss/index";
 
 body {
   -webkit-font-smoothing: antialiased;

@@ -2,7 +2,7 @@
   $self: &;
   display: flex;
   #{ $self }__button {
-    padding: 6px 12px;
+    padding: 12px;
     font-size: 12px;
     white-space: nowrap;
   }
@@ -34,6 +34,10 @@
 .node-list {
   $self: &;
   &--latest-issue {
+    #{ $self }__header {
+      @include skin-typography($style: "section-header-small", $link-style: "primary");
+      margin-bottom: 1rem;
+    }
     #{ $self }__nodes {
       padding-top: 10px;
     }
@@ -44,13 +48,29 @@
       padding-bottom: map-get($spacers, "block");
       font-weight: $font-weight-bold;
     }
+    .btn  {
+      padding: 12px;
+      font-size: 12px;
+    }
+    .node {
+      &__footer-left {
+        .magazine-publication-buttons {
+          display: flex;
+          justify-content: space-between;
+          @include marko-web-node-list-border(border-top);
+          padding-top: 1rem;
+          font-weight: $font-weight-bold;
+        }
+      }
+    }
     .node-list {
       &__node:first-child {
         @include marko-web-node-list-border(border-top);
-        padding-top: map-get($spacers, "block-sm");
+        padding-top: 1rem;
       }
       &__nodes {
         flex-grow: 0;
+        padding-top: 0;
         border-bottom: none;
       }
     }
