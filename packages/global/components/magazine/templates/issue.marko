@@ -25,16 +25,10 @@ $ const { id, pageNode } = data;
         <div class="row">
           <div class="col">
             <marko-web-resolve-page|{ data: issue }| node=pageNode>
-              <default-theme-breadcrumbs-with-home>
-                <@item><marko-web-link href="/magazine">Magazines</marko-web-link></@item>
+              <default-theme-breadcrumbs modifiers=["website-section"]>
+                <@item><marko-web-link href="/magazine">Magazine</marko-web-link></@item>
                 <@item><marko-web-magazine-publication-name tag=null obj=issue.publication link=true /></@item>
-                <@item><marko-web-magazine-issue-name tag=null obj=issue /></@item>
-              </default-theme-breadcrumbs-with-home>
-              <h1 class="page-wrapper__title">
-                <marko-web-link href='/magazine'>
-                  ${issue.publication.name}
-                </marko-web-link>
-              </h1>
+              </default-theme-breadcrumbs>
               <div class="magazine-publication-card-block">
                 <div class="magazine-publication-card-block__body">
                   <div class="row">

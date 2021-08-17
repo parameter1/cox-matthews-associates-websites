@@ -24,11 +24,10 @@ $ const perPage = 16;
       <@section>
         <div class="row">
           <div class="col">
+              <default-theme-breadcrumbs modifiers=["website-section"]>
+                <@item><marko-web-link href="/magazine">Magazine</marko-web-link></@item>
+              </default-theme-breadcrumbs>
             <marko-web-resolve-page|{ data: publication }| node=pageNode>
-              <default-theme-breadcrumbs-with-home>
-                <@item><marko-web-link href="/magazine">Magazines</marko-web-link></@item>
-                <@item><marko-web-magazine-publication-name tag=null obj=publication /></@item>
-              </default-theme-breadcrumbs-with-home>
               <h1 class="page-wrapper__title">
                 ${publication.name} Issue Archive
                 <if(p.page > 1)>: Page ${p.page}</if>
