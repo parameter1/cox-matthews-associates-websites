@@ -1,4 +1,4 @@
-import publicationListFragment from "@cox-matthews-associates/package-global/graphql/fragments/magazine-publication-list";
+import publicationListFragment from "../graphql/fragments/magazine-publication-list";
 
 <marko-web-query|{ nodes }| name="magazine-publications" params={ queryFragmet: publicationListFragment }>
   <for|publication| of=nodes>
