@@ -2242,10 +2242,10 @@
   dependencies:
     "@parameter1/base-cms-marko-web-deferred-script-loader" "^2.22.2"
 
-"@parameter1/base-cms-marko-web-p1-events@^2.22.2":
-  version "2.22.2"
-  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web-p1-events/-/base-cms-marko-web-p1-events-2.22.2.tgz#53c8c2ded54d932b7799fe523ddd181778d9e1bb"
-  integrity sha512-MKDZAlxHvLTWs3ntzD073sHkKE1NUClM0ooTEBdLkCnxXbkDwfiRJDls8iWxtK/XZuDoGHqitVDppo0E9F5pig==
+"@parameter1/base-cms-marko-web-p1-events@^2.39.2":
+  version "2.39.2"
+  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web-p1-events/-/base-cms-marko-web-p1-events-2.39.2.tgz#cd74c5662e87e0f4d3362a02b07da5d3af3690ce"
+  integrity sha512-+UZGOc0uSvg1podTrJwnFpCZ+J8cPqBNOLqc3BMLM0hI0UtsSfn9PFfClO7xV8j83DjF0Bk0Fh3ITCObrOWITA==
   dependencies:
     "@parameter1/base-cms-inflector" "^2.0.0"
     "@parameter1/base-cms-marko-web-deferred-script-loader" "^2.22.2"
@@ -2292,10 +2292,10 @@
     graphql "^14.7.0"
     graphql-tag "^2.11.0"
 
-"@parameter1/base-cms-marko-web@^2.37.2":
-  version "2.37.2"
-  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web/-/base-cms-marko-web-2.37.2.tgz#d9366bf8044264a72557adbfc7482a9e7120771f"
-  integrity sha512-V+PpvCtLrRNtwy3bCgTK370R9xRq4MYtjgFHRTd8CzkVWq6yh71Cp56LPX0Ml0PdPl/eqC/IrebRm9HZxet1+A==
+"@parameter1/base-cms-marko-web@^2.38.0":
+  version "2.38.0"
+  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web/-/base-cms-marko-web-2.38.0.tgz#992f1292e4278bb69daa90a6fea059a95e4d7354"
+  integrity sha512-9fH3V9T53OsAeBfNXi2mAB8ggobRCqu6AH97TbQ4+dp4iIxTSe0guMUqNBNJxV1QXMrjkUY90OAGOMuYcEBIeQ==
   dependencies:
     "@godaddy/terminus" "^4.5.0"
     "@parameter1/base-cms-apollo-ssr" "^2.34.0"
@@ -2345,10 +2345,10 @@
   resolved "https://registry.yarnpkg.com/@parameter1/base-cms-utils/-/base-cms-utils-2.22.2.tgz#3d310aee55e81b4775081f90f7bce6a87dfeaaec"
   integrity sha512-lRd87fymrkkcEXb9zu9hA2t5TMXEUAjOcLTisjZF+FHCj+4/xdSgTPk3xvxJaensX1LWDTbql1hFgQ9e6L4zAg==
 
-"@parameter1/base-cms-web-cli@^2.37.2":
-  version "2.37.2"
-  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-web-cli/-/base-cms-web-cli-2.37.2.tgz#e1f61e410c9c05dbab0a4a34fee08d9080b06ed0"
-  integrity sha512-gNnD7Z559jh/ENs5JROLQGBWs2u5fYqlcJjpcxhXu6LXogNdnq6FN8i8hfyZBQsqOWVy5r0WwK0VOpjBr9oWtg==
+"@parameter1/base-cms-web-cli@^2.38.0":
+  version "2.38.0"
+  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-web-cli/-/base-cms-web-cli-2.38.0.tgz#83b80fbfa892c0eb1dd45b2e8cf6c5eb774420fc"
+  integrity sha512-YryJI4uEOj/0PLmL2AzVoyd4DtxXHnQWjrsSIQO6uO72FYUIkOdEyPcGzmnLLdAoW9KnJH7y6TuOkoW9/l+Cog==
   dependencies:
     "@babel/core" "^7.13.16"
     "@babel/plugin-transform-runtime" "^7.13.15"
@@ -2356,7 +2356,7 @@
     "@babel/runtime" "^7.13.17"
     "@parameter1/base-cms-cli-utils" "^2.8.4"
     "@parameter1/base-cms-express-apollo" "^2.37.1"
-    "@parameter1/base-cms-marko-web" "^2.37.2"
+    "@parameter1/base-cms-marko-web" "^2.38.0"
     autoprefixer "^10.2.5"
     babel-eslint "^10.1.0"
     babel-loader "^8.2.2"
