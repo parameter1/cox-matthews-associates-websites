@@ -34,7 +34,8 @@ const awards = [
 const utilities = [
   { href: 'https://mediakit.diverseeducation.com/', label: 'Advertise', target: '_blank' },
   { href: '/page/contact-us', label: 'Contact Us' },
-  { href: 'https://responses.diverseeducation.com/DiverseDaily', label: 'Subscribe', target: '_blank' },
+  { href: 'https://responses.diverseeducation.com/DiverseNewsletters', label: 'Subscribe to E-Newsletter', target: '_blank' },
+  { href: 'https://diverse.dragonforms.com/loading.do?omedasite=di_new', label: 'Subscribe to Magazine', target: '_blank' },
 ];
 
 const mobileMenu = {
@@ -42,7 +43,8 @@ const mobileMenu = {
     ...topics,
   ],
   secondary: [
-    { href: 'https://responses.diverseeducation.com/DiverseDaily', label: 'Subscribe', target: '_blank' },
+    { href: 'https://responses.diverseeducation.com/DiverseNewsletters', label: 'Subscribe to E-Newsletter', target: '_blank' },
+    { href: 'https://diverse.dragonforms.com/loading.do?omedasite=di_new', label: 'Subscribe to Magazine', target: '_blank' },
   ],
 };
 
