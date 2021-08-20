@@ -10,3 +10,14 @@ $theme-site-header-breakpoints: (
 $primary: #436daa;
 @import "../../node_modules/@cox-matthews-associates/package-global/scss/core";
 @import "./components/awards";
+
+
+.page {
+  &--subscribe {
+    .magazine-publication-card-block {
+      &__header {
+        display: none;
+      }
+    }
+  }
+}
