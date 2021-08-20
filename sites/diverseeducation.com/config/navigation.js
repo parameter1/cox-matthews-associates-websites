@@ -34,7 +34,7 @@ const awards = [
 const utilities = [
   { href: 'https://mediakit.diverseeducation.com/', label: 'Advertise', target: '_blank' },
   { href: '/page/contact-us', label: 'Contact Us' },
-  { href: 'https://responses.diverseeducation.com/DiverseDaily', label: 'Subscribe', target: '_blank' },
+  { href: '/subscribe', label: 'Subscribe' },
 ];
 
 const mobileMenu = {
@@ -42,7 +42,7 @@ const mobileMenu = {
     ...topics,
   ],
   secondary: [
-    { href: 'https://responses.diverseeducation.com/DiverseDaily', label: 'Subscribe', target: '_blank' },
+    { href: '/subscribe', label: 'Subscribe' },
   ],
 };
 
