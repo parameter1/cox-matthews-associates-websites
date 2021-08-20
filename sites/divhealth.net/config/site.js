@@ -18,9 +18,9 @@ module.exports = {
   },
   logos: {
     navbar: {
-      src: 'https://img.divhealth.net/files/base/diverse/all/image/static/dh-logo.png?h=45&auto=format,compress&q=70',
+      src: 'https://img.divhealth.net/files/base/diverse/all/image/static/dh-logo.png?h=60&auto=format,compress&q=70',
       srcset: [
-        'https://img.divhealth.net/files/base/diverse/all/image/static/dh-logo.png?h=90&auto=format,compress&q=70 2x',
+        'https://img.divhealth.net/files/base/diverse/all/image/static/dh-logo.png?h=120&auto=format,compress&q=70 2x',
       ],
     },
     footer: {
