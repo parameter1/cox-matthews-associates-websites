@@ -1,0 +1,53 @@
+$ const { site, config } = out.global;
+$ const type = "subscribe";
+$ const siteName = config.websiteContext.name;
+$ const title = `Connect with ${siteName}`;
+$ const description = `${siteName} has products that deliver powerful content to you in a variety of forms including print, online, email and social media. To subscribe to a product or manage your current subscription, click below and connect with ${siteName}.`;
+
+<marko-web-default-page-layout type=type title=title description=description>
+  <@head>
+    <marko-web-gtm-default-context|{ context }| type=type>
+      <marko-web-gtm-push data=context />
+    </marko-web-gtm-default-context>
+  </@head>
+  <@page>
+    <marko-web-page-wrapper class="mb-block">
+      <@section|{ aliases }|>
+        <global-gam-define-display-ad
+          name="rotation"
+          position="magazine_page"
+          aliases=aliases
+          modifiers=["inter-block"]
+        />
+      </@section>
+
+      <@section>
+        <h1 class="page-wrapper__title">${title}</h1>
+        <if(description)>
+          <p class="page-page-wrapper__website-section-description">${description}</p>
+        </if>
+        <hr>
+      </@section>
+      <@section>
+        <h2>Social Media</h2>
+        <p class="page-wrapper__website-section-description">Stay connected with ${siteName} on your favorite social media plateforms</p>
+        <default-theme-social-icons
+          items=site.getAsArray("socialMediaLinks")
+          icon-modifiers=["xl"]
+        />
+        <hr>
+      </@section>
+      <@section>
+        <h2>Newsletters</h2>
+        <p class="page-wrapper__website-section-description">Stay up-to-date on industry news and events, new product launches and more. Select from our list of targeted newsletter offerings to stay informed on the topics that matter to you and your business.</p>
+        <p class="page-wrapper__website-section-description"><strong><marko-web-link href="https://responses.diverseeducation.com/DiverseNewsletters" target="_blank">Subscribe / Manage Preferences</marko-web-link></strong></p>
+        <hr>
+      </@section>
+      <@section>
+        <h2>Magazines</h2>
+        <p class="page-wrapper__website-section-description"> </p>
+        <global-magazine-publications-block />
+      </@section>
+    </marko-web-page-wrapper>
+  </@page>
+</marko-web-default-page-layout>
