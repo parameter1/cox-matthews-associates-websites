@@ -3,10 +3,14 @@ const home = require('./home');
 const awards = require('./awards');
 const diversePoll = require('./diverse-poll');
 const websiteSection = require('./website-section');
+const subscribe = require('./subscribe');
 
 module.exports = (app) => {
   // Homepage
   home(app);
+
+  // Subscribe
+  subscribe(app);
 
   // Content
   content(app);
