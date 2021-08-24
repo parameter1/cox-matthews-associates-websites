@@ -4,6 +4,7 @@ const cards = require('../templates/website-section/cards');
 const podcasts = require('../templates/website-section/podcasts');
 const products = require('../templates/website-section/products');
 const section = require('../templates/website-section');
+const webinars = require('../templates/website-section/webinars');
 
 module.exports = (app) => {
   app.get('/:alias(opinion)', withWebsiteSection({
@@ -16,6 +17,10 @@ module.exports = (app) => {
   }));
   app.get('/:alias(products)', withWebsiteSection({
     template: products,
+    queryFragment,
+  }));
+  app.get('/:alias(webinars)', withWebsiteSection({
+    template: webinars,
     queryFragment,
   }));
   app.get('/:alias([a-z0-9-/]+)', withWebsiteSection({
