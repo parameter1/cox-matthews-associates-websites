@@ -2,6 +2,7 @@ import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
 import queryFragment from "../../graphql/fragments/section-feed-block";
 
 $ const queryName = defaultValue(input.queryName, "website-scheduled-content");
+$ const withSection = defaultValue(input.withSection, true);
 $ const queryParams = {
   ...input.queryParams,
   ...(input.alias && { sectionAlias: input.alias}),
@@ -26,7 +27,11 @@ $ const countOnly = defaultValue(input.countOnly, false);
     >
       <@nodes nodes=nodes>
         <@slot|{ node }|>
-          <global-section-feed-content-node node=node display-image=input.displayImage />
+          <global-section-feed-content-node
+            node=node
+            display-image=input.displayImage
+            with-section=withSection
+          />
         </@slot>
       </@nodes>
     </marko-web-node-list>
