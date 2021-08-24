@@ -12,6 +12,10 @@ fragment SectionFeedBlockContentFragment on Content {
     path
   }
   published
+  ... on ContentWebinar {
+    linkUrl
+    startDate
+  }
   primarySection {
     id
     name
