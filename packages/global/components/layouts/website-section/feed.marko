@@ -79,7 +79,7 @@ $ const perPage = 18;
   </@section>
 
   <@section>
-    <global-section-feed-block alias=alias>
+    <global-section-feed-block alias=alias display-image=input.displayImage>
       <@query-params limit=3 skip=p.skip({ perPage, skip: 5 }) />
     </global-section-feed-block>
   </@section>
