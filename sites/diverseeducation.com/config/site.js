@@ -32,6 +32,13 @@ module.exports = {
       ],
     },
   },
+  podcastLinks: [
+    { label: 'Apple Podcasts', href: 'https://podcasts.apple.com/us/podcast/in-the-margins/id1540117090' },
+    { label: 'Google Podcasts', href: 'https://podcasts.google.com/feed/aHR0cHM6Ly9kaXZlcnNlZWR1Y2F0aW9uLmxpYnN5bi5jb20vcnNz?sa=X&ved=0CCcQ27cFahcKEwiwvpORs8HtAhUAAAAAHQAAAAAQBA' },
+    { label: 'RadioPublic', href: 'https://radiopublic.com/in-the-margins-WkLmqX' },
+    { label: 'Spotify', href: 'https://open.spotify.com/show/6FSDlxj88XFUgOsfeftBfP' },
+    { label: 'Stitcher', href: 'https://www.stitcher.com/show/in-the-margins' },
+  ],
   socialMediaLinks: [
     { provider: 'facebook', href: 'https://www.facebook.com/DiverseIssuesInHigherEducation/' },
     { provider: 'twitter', href: 'https://twitter.com/DiverseIssues' },
