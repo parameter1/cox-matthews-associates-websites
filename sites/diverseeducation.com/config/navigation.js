@@ -11,6 +11,7 @@ const topics = [
 const resources = [
   // { href: '/sponsored-content', label: 'Sponsored Content' },
   // { href: '/latest-news', label: 'Latest News' },
+  { href: '/podcasts', label: 'Podcasts' },
   { href: '/opinion', label: 'Opinion' },
   // { href: '/reports-data', label: 'Reports & Data' },
   // { href: '/from-the-magazine', label: 'From the Magazine' },
