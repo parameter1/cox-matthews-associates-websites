@@ -25,7 +25,7 @@ $ const countOnly = defaultValue(input.countOnly, false);
     >
       <@nodes nodes=nodes>
         <@slot|{ node }|>
-          <global-section-feed-content-node node=node />
+          <global-section-feed-content-node node=node display-image=input.displayImage />
         </@slot>
       </@nodes>
     </marko-web-node-list>

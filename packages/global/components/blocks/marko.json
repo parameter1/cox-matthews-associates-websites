@@ -110,7 +110,8 @@
     "<query-params>": {},
     "<node>": {},
     "@alias": "string",
-    "@count-only": "boolean"
+    "@count-only": "boolean",
+    "@display-image": "boolean"
   },
   "<global-section-cards-block>": {
     "template": "./section-cards.marko",

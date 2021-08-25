@@ -26,7 +26,8 @@
     "@id": "number",
     "@alias": "string",
     "@name": "string",
-    "@page-node": "object"
+    "@page-node": "object",
+    "@display-image": "boolean"
   },
   "<global-website-section-home-layout>": {
     "template": "./home.marko",
