@@ -19,7 +19,7 @@ module.exports = (app) => {
     template: products,
     queryFragment,
   }));
-  app.get('/:alias(webinars)', withWebsiteSection({
+  app.get('/:alias(webinars|events/diverse-talk-live)', withWebsiteSection({
     template: webinars,
     queryFragment,
   }));
