@@ -6,14 +6,14 @@ $ const sections = getAsArray(input, "sections");
 
 $ const queryParams = {
   includeContentTypes: ["Webinar"],
-  sectionId: id,
+  sectionAlias: alias,
   sectionBubbling: false,
   sort: {
     field: "startDate",
-    order: "asc",
+    order: "desc",
   },
 };
-
+$ console.log(queryParams);
 $ const { pagination: p } = out.global;
 $ const perPage = 18;
 
@@ -26,7 +26,7 @@ $ const perPage = 18;
   <@head>
     <global-section-feed-block|{ totalCount }|
       count-only=true
-      query-name="all-published-content"
+      query-name="website-scheduled-content"
     >
       <@query-params ...queryParams />
       <global-pagination-controls
@@ -69,7 +69,7 @@ $ const perPage = 18;
       />
     </if>
 
-    <global-section-feed-block query-name="all-published-content" with-section=false >
+    <global-section-feed-block query-name="website-scheduled-content" with-section=false >
       <@query-params ...queryParams limit=3 skip=p.skip({ perPage }) />
     </global-section-feed-block>
   </@section>
@@ -84,7 +84,7 @@ $ const perPage = 18;
   </@section>
 
   <@section>
-    <global-section-feed-block query-name="all-published-content" with-section=false >
+    <global-section-feed-block query-name="website-scheduled-content" with-section=false >
       <@query-params ...queryParams limit=2 skip=p.skip({ perPage, skip: 3 }) />
     </global-section-feed-block>
   </@section>
@@ -94,7 +94,7 @@ $ const perPage = 18;
   </@section>
 
   <@section>
-    <global-section-feed-block query-name="all-published-content" with-section=false >
+    <global-section-feed-block query-name="website-scheduled-content" with-section=false >
       <@query-params ...queryParams limit=3 skip=p.skip({ perPage, skip: 5 }) />
     </global-section-feed-block>
   </@section>
@@ -109,7 +109,7 @@ $ const perPage = 18;
   </@section>
 
   <@section>
-    <global-section-feed-block query-name="all-published-content" with-section=false >
+    <global-section-feed-block query-name="website-scheduled-content" with-section=false >
       <@query-params ...queryParams limit=5 skip=p.skip({ perPage, skip: 8 }) />
     </global-section-feed-block>
   </@section>
@@ -124,12 +124,12 @@ $ const perPage = 18;
   </@section>
 
   <@section>
-    <global-section-feed-block query-name="all-published-content" with-section=false >
+    <global-section-feed-block query-name="website-scheduled-content" with-section=false >
       <@query-params ...queryParams limit=5 skip=p.skip({ perPage, skip: 13 }) />
     </global-section-feed-block>
     <global-section-feed-block|{ totalCount }|
       count-only=true
-      query-name="all-published-content"
+      query-name="website-scheduled-content"
     >
       <@query-params ...queryParams />
       <global-pagination-controls
