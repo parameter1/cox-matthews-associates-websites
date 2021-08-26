@@ -4,7 +4,7 @@ import queryFragment from "../../graphql/fragments/section-feed-block";
 $ const withSection = defaultValue(input.withSection, true);
 $ const queryParams = {
   ...input.queryParams,
-  ...(input.alias && { sectionAlias: input.alias}),
+  sectionAlias: input.alias,
   queryFragment,
 };
 
