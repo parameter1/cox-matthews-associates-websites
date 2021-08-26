@@ -6,7 +6,6 @@ $ const sections = getAsArray(input, "sections");
 
 $ const queryParams = {
   includeContentTypes: ["Webinar"],
-  sectionAlias: alias,
   sectionBubbling: false,
   sort: {
     field: "startDate",
@@ -23,7 +22,7 @@ $ const perPage = 18;
   page-node=pageNode
 >
   <@head>
-    <global-section-feed-block|{ totalCount }| count-only=true >
+    <global-section-feed-block|{ totalCount }| count-only=true alias=alias >
       <@query-params ...queryParams />
       <global-pagination-controls
         per-page=perPage
@@ -65,7 +64,7 @@ $ const perPage = 18;
       />
     </if>
 
-    <global-section-feed-block with-section=false >
+    <global-section-feed-block with-section=false alias=alias >
       <@query-params ...queryParams limit=3 skip=p.skip({ perPage }) />
     </global-section-feed-block>
   </@section>
@@ -80,7 +79,7 @@ $ const perPage = 18;
   </@section>
 
   <@section>
-    <global-section-feed-block with-section=false >
+    <global-section-feed-block with-section=false alias=alias >
       <@query-params ...queryParams limit=2 skip=p.skip({ perPage, skip: 3 }) />
     </global-section-feed-block>
   </@section>
@@ -90,7 +89,7 @@ $ const perPage = 18;
   </@section>
 
   <@section>
-    <global-section-feed-block with-section=false >
+    <global-section-feed-block with-section=false alias=alias >
       <@query-params ...queryParams limit=3 skip=p.skip({ perPage, skip: 5 }) />
     </global-section-feed-block>
   </@section>
@@ -105,7 +104,7 @@ $ const perPage = 18;
   </@section>
 
   <@section>
-    <global-section-feed-block with-section=false >
+    <global-section-feed-block with-section=false alias=alias >
       <@query-params ...queryParams limit=5 skip=p.skip({ perPage, skip: 8 }) />
     </global-section-feed-block>
   </@section>
@@ -120,10 +119,10 @@ $ const perPage = 18;
   </@section>
 
   <@section>
-    <global-section-feed-block with-section=false >
+    <global-section-feed-block with-section=false alias=alias >
       <@query-params ...queryParams limit=5 skip=p.skip({ perPage, skip: 13 }) />
     </global-section-feed-block>
-    <global-section-feed-block|{ totalCount }| count-only=true >
+    <global-section-feed-block|{ totalCount }| count-only=true alias=alias >
       <@query-params ...queryParams />
       <global-pagination-controls
         per-page=perPage
