@@ -44,6 +44,7 @@ const mobileMenu = {
   ],
   secondary: [
     { href: '/subscribe', label: 'Subscribe' },
+    { href: 'https://mediakit.diverseeducation.com/', label: 'Advertise', target: '_blank' },
   ],
 };
 

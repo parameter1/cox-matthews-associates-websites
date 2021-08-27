@@ -31,6 +31,7 @@ const mobileMenu = {
   ],
   secondary: [
     { href: 'https://responses.diverseeducation.com/DiverseMilitary', label: 'Subscribe', target: '_blank' },
+    { href: 'https://mediakit.diverseeducation.com/', label: 'Advertise', target: '_blank' },
   ],
 };
 
