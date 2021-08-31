@@ -75,7 +75,12 @@ module.exports = {
     items: [],
   },
   toggleMenu: {
+    about: {
+      label: 'About',
+      items: utilities,
+    },
     leftColumn: {
+      label: 'Topics',
       items: [
         ...topics,
       ],
@@ -95,11 +100,7 @@ module.exports = {
   footer: {
     items: [
       { href: '/page/privacy-policy', label: 'Privacy Policy' },
-      { href: '/page/contact-us', label: 'Contact Us' },
       { href: '/site-map', label: 'Site Map' },
-      { href: 'https://keepitreal.diverseeducation.com/site/', label: 'Keep it Real', target: '_blank' },
     ],
-    topics: topics.primary,
-    more: utilities,
   },
 };

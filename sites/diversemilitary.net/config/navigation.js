@@ -61,6 +61,9 @@ module.exports = {
     items: [],
   },
   toggleMenu: {
+    about: {
+      items: utilities,
+    },
     leftColumn: {
       items: [
         ...topics,
