@@ -111,7 +111,8 @@
     "<node>": {},
     "@alias": "string",
     "@count-only": "boolean",
-    "@display-image": "boolean"
+    "@display-image": "boolean",
+    "@with-section": "boolean"
   },
   "<global-section-cards-block>": {
     "template": "./section-cards.marko",
