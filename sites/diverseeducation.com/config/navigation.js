@@ -56,11 +56,12 @@ const desktopMenu = {
 };
 
 module.exports = {
+  type: 'navbar2',
   desktopMenu,
   mobileMenu,
   topics,
   primary: {
-    items: [],
+    items: [...topics],
   },
   secondary: {
     items: [
