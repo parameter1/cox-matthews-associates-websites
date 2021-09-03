@@ -36,7 +36,7 @@
         &__right {
           display: flex;
           justify-content: flex-end;
-          @media (min-width: map-get($theme-site-header-breakpoints, small-logo)) {
+          @media (min-width: map-get($theme-site-header-breakpoints, hide-primary)) {
             padding-right: 0;
           }
           .btn,
