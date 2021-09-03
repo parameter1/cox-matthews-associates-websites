@@ -61,7 +61,11 @@ module.exports = {
   mobileMenu,
   topics,
   primary: {
-    items: [...topics],
+    items: [
+      ...topics,
+      { href: '/podcasts', label: 'Podcasts' },
+      { href: '/opinion', label: 'Opinion' },
+    ],
   },
   secondary: {
     items: [
