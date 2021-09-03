@@ -31,7 +31,9 @@
           }
         }
         &__center {
+          display: flex;
           align-self: flex-start;
+          justify-content: center;
         }
         &__right {
           display: flex;
