@@ -11,24 +11,59 @@
         max-width: $marko-web-document-container-max-width;
       }
     }
-
     &__brand {
+      margin: 0;
+    }
+    &--top {
+      width: 100%;
+      height: 88px;
       @media (max-width: map-get($theme-site-header-breakpoints, small-logo)) {
-        // reduce padding on small logo
-        margin-right: $theme-site-navbar-brand-margin-x / 2;
-        margin-left: $theme-site-navbar-brand-margin-x / 2;
+        height: 58px;
       }
-    }
-
-    &__logo {
-      filter: none;
-    }
-    &--branding {
-      position: absolute;
-      top: 8px;
-      margin: 0 calc(50% - (295px / 2));
-      @media (max-width: map-get($theme-site-header-breakpoints, small-logo)) {
-        margin-left: 0;
+      padding-top: 10px;
+      background-color: $white;
+      border-bottom: 1px solid $gray-400;
+      #{ $self } {
+        &__left {
+          padding-left: 0;
+          @media (max-width: map-get($theme-site-header-breakpoints, small-logo)) {
+            display: none;
+          }
+        }
+        &__center {
+          align-self: flex-start;
+        }
+        &__right {
+          display: flex;
+          justify-content: flex-end;
+          @media (min-width: map-get($theme-site-header-breakpoints, small-logo)) {
+            padding-right: 0;
+          }
+          .btn,
+          #{ $self }__toggler {
+            width: 40px;
+            height: 40px;
+            padding: 0;
+            margin: 0 0 0 12px;
+            background-color: $gray-100;
+            border-radius: 4px;
+          }
+        }
+      }
+      .subscribe-box {
+        display: flex;
+        &--cover-image {
+          align-self: flex-end;
+        }
+        &--call-to-action {
+          align-self: center;
+          .btn-primary {
+            padding: 8px;
+            margin-left: 16px;
+            font-size: 12px;
+            text-transform: initial;
+          }
+        }
       }
     }
     &--primary {
@@ -47,54 +82,6 @@
           flex-grow: unset;
           padding-right: 0;
           padding-left: 0;
-        }
-      }
-    }
-    &--secondary {
-      height: 88px;
-      @media (max-width: map-get($theme-site-header-breakpoints, small-logo)) {
-        height: 58px;
-      }
-      padding: 0 16px;
-      border-bottom: 1px solid $gray-400;
-      #{ $self }__container {
-        height: 100%;
-        @media (max-width: map-get($theme-site-header-breakpoints, small-logo)) {
-          justify-content: flex-end;
-        }
-      }
-      #{ $self }--right {
-        .btn,
-        #{ $self }__toggler {
-          width: 40px;
-          height: 40px;
-          padding: 0;
-          margin: 0 0 0 12px;
-          background-color: $gray-100;
-          border-radius: 4px;
-        }
-      }
-    }
-    &--left {
-      display: flex;
-      width: 300px;
-      height: 100%;
-      @media (max-width: map-get($theme-site-header-breakpoints, small-logo)) {
-        display: none;
-      }
-      .btn-primary {
-        padding: 8px;
-        margin-left: 16px;
-        font-size: 12px;
-        text-transform: initial;
-      }
-      .subscribe-box {
-        display: flex;
-        &--cover-image {
-          align-self: flex-end;
-        }
-        &--call-to-action {
-          align-self: center;
         }
       }
     }

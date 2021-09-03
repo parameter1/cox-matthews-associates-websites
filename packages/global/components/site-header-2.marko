@@ -18,8 +18,8 @@ $ const navigation = {
   <${input.aboveNav} />
 
 
-  <default-theme-site-navbar modifiers=["secondary"]>
-    <marko-web-block class="site-navbar--left" >
+  <default-theme-site-navbar modifiers=["top"]>
+    <div class="col-lg-4 site-navbar__left">
       <marko-web-block class="subscribe-box">
         <a href="/subscribe" title="Diverse Education September 2, 2021" class="subscribe-box--cover-image">
           <marko-web-img
@@ -36,8 +36,17 @@ $ const navigation = {
           </a>
         </marko-web-block>
       </marko-web-block>
-    </marko-web-block>
-    <marko-web-block class="site-navbar--right" >
+    </div>
+    <div class="col-lg-4 site-navbar__center">
+      <default-theme-site-navbar-brand title=`${config.website("name")} Homepage`>
+        <default-theme-site-navbar-logo
+          alt=config.website("name")
+          src=site.get("logos.navbar.src")
+          srcset=site.getAsArray("logos.navbar.srcset").join(",")
+        />
+      </default-theme-site-navbar-brand>
+    </div>
+    <div class="col-lg-4 site-navbar__right">
       <marko-web-link href="/search">
         <button class="btn btn-lg" type="submit" aria-label="Search">
           <marko-web-icon name="search" modifiers=["dark"] />
@@ -50,17 +59,7 @@ $ const navigation = {
         icon-modifiers=["lg"]
         icon-name="three-bars"
       />
-    </marko-web-block>
-  </default-theme-site-navbar>
-
-  <default-theme-site-navbar modifiers=["branding"]>
-    <default-theme-site-navbar-brand title=`${config.website("name")} Homepage`>
-      <default-theme-site-navbar-logo
-        alt=config.website("name")
-        src=site.get("logos.navbar.src")
-        srcset=site.getAsArray("logos.navbar.srcset").join(",")
-      />
-    </default-theme-site-navbar-brand>
+    </div>
   </default-theme-site-navbar>
 
   <default-theme-site-navbar modifiers=["primary"]>
