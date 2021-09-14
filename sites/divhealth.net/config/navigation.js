@@ -58,8 +58,8 @@ module.exports = {
   type: 'navbar2',
   promos: [
     {
-      title: 'Subscribe to Diverse Education',
-      callToAction: 'Subscribe',
+      title: subscribe.label,
+      callToAction: subscribe.label,
       link: subscribe.href,
     },
   ],
