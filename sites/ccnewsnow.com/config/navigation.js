@@ -1,3 +1,5 @@
+const subscribe = require('./subscribe');
+
 const topics = [
   { href: '/workforce-development', label: 'Workforce Development' },
   { href: '/leadership', label: 'Leadership' },
@@ -19,7 +21,7 @@ const resources = [
 const utilities = [
   { href: 'https://mediakit.diverseeducation.com/', label: 'Advertise', target: '_blank' },
   { href: '/page/contact-us', label: 'Contact Us' },
-  { href: 'https://responses.diverseeducation.com/CCNewsNow', label: 'Subscribe', target: '_blank' },
+  subscribe,
 ];
 
 const mobileMenu = {
@@ -28,7 +30,7 @@ const mobileMenu = {
     { href: 'https://jobs.ccjobsnow.com', label: 'CC Jobs', target: '_blank' },
   ],
   secondary: [
-    { href: 'https://responses.diverseeducation.com/CCNewsNow', label: 'Subscribe', target: '_blank' },
+    subscribe,
     { href: 'https://mediakit.diverseeducation.com/', label: 'Advertise', target: '_blank' },
   ],
 };
@@ -41,11 +43,21 @@ const desktopMenu = {
 };
 
 module.exports = {
+  type: 'navbar2',
+  promos: [
+    {
+      title: 'Subscribe to Diverse Education',
+      callToAction: 'Subscribe',
+      link: subscribe.href,
+    },
+  ],
   desktopMenu,
   mobileMenu,
   topics,
   primary: {
-    items: [],
+    items: [
+      ...topics,
+    ],
   },
   secondary: {
     items: topics,
