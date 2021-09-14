@@ -1,3 +1,6 @@
+import shuffle from "../utils/shuffle-array";
+import { get, getAsArray, getAsObject } from "@parameter1/base-cms-object-path";
+
 $ const { config, site } = out.global;
 
 $ const blockName = input.blockName || "site-header";
@@ -7,6 +10,8 @@ $ const navigation = {
   secondary: site.getAsArray("navigation.secondary.items"),
   tertiary: site.getAsArray("navigation.tertiary.items"),
 };
+$ const promo = shuffle(site.getAsArray("navigation.promos"))[0];
+$ const headerColClass = promo ? "col-lg-4" : "col-lg-6";
 
 <marko-web-block
   name=blockName
@@ -17,27 +22,34 @@ $ const navigation = {
 >
   <${input.aboveNav} />
 
-
   <default-theme-site-navbar modifiers=["top"]>
-    <div class="col-lg-4 site-navbar__left">
-      <marko-web-block class="subscribe-box">
-        <a href="/subscribe" title="Diverse Education September 2, 2021" class="subscribe-box--cover-image">
-          <marko-web-img
-            alt="Diverse Education September 2, 2021"
-            src="https://img.diverseeducation.com/files/base/diverse/all/image/2021/08/September_2__2021.612e87c7a0409.png?auto=format%2Ccompress&amp;fit=crop&amp;h=78&amp;q=70&amp;w=85&amp;crop=top;"
-            srcset="https://img.diverseeducation.com/files/base/diverse/all/image/2021/08/September_2__2021.612e87c7a0409.png?auto=format%2Ccompress&amp;fit=crop&amp;h=78&amp;q=70&amp;w=85&amp;crop=top;"
-            lazyload=true
-            class="magazine-cover"
-          />
-        </a>
-        <marko-web-block class="subscribe-box--call-to-action">
-          <a href="/subscribe" title="Diverse Education September 2, 2021" class="btn btn-primary">
-            Subscribe
-          </a>
+    <if(promo)>
+      <div class=`${headerColClass} site-navbar__left`>
+        $ const promoSrc = get(promo, "image.src");
+        $ const promoSrcSet = getAsArray(promo, "image.srcset");
+        <marko-web-block class="subscribe-box">
+          <if(promoSrc)>
+            <a href=promo.link title=`${promo.callToAction} - ${promo.title}` class="subscribe-box--cover-image">
+              <marko-web-img
+                alt=promo.title
+                src=promoSrc
+                srcset=promoSrcSet
+                lazyload=true
+                class="magazine-cover"
+              />
+            </a>
+          </if>
+          <if(promo.callToAction)>
+            <marko-web-block class="subscribe-box--call-to-action">
+              <a href=promo.link title=`${promo.callToAction} - ${promo.title}` class="btn btn-primary">
+                ${promo.callToAction}
+              </a>
+            </marko-web-block>
+          </if>
         </marko-web-block>
-      </marko-web-block>
-    </div>
-    <div class="col-lg-4 site-navbar__center">
+      </div>
+    </if>
+    <div class=`${headerColClass} site-navbar__center`>
       <default-theme-site-navbar-brand title=`${config.website("name")} Homepage`>
         <default-theme-site-navbar-logo
           alt=config.website("name")
@@ -46,7 +58,7 @@ $ const navigation = {
         />
       </default-theme-site-navbar-brand>
     </div>
-    <div class="col-lg-4 site-navbar__right">
+    <div class=`${headerColClass} site-navbar__right`>
       <marko-web-link href="/search">
         <button class="btn btn-lg" type="submit" aria-label="Search">
           <marko-web-icon name="search" modifiers=["dark"] />
