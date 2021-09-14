@@ -83,7 +83,9 @@
               height: $theme-site-navbar-logo-height-sm + 20px;
             }
             .btn-primary {
-              margin-left: 0;
+              @media (min-width: map-get($theme-site-header-breakpoints, hide-primary)) {
+                margin-left: 0;
+              }
             }
           }
         }
