@@ -59,6 +59,12 @@ $ const headerColClass = promo ? "col-lg-4" : "col-lg-6";
       </default-theme-site-navbar-brand>
     </div>
     <div class=`${headerColClass} site-navbar__right`>
+      <default-theme-site-navbar-items
+        items=navigation.tertiary
+        modifiers=["tertiary"]
+        reg-enabled=input.regEnabled
+        has-user=input.hasUser
+      />
       <marko-web-link href="/search">
         <button class="btn btn-lg" type="submit" aria-label="Search">
           <marko-web-icon name="search" modifiers=["dark"] />
