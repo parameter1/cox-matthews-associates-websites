@@ -25,11 +25,6 @@ module.exports = (app) => {
   const config = getAsObject(app, 'locals.identityX');
   IdentityX(app, config);
   const enable = site.get('idxNavItems.enable');
-  // const defaultTargets = [
-  //   'navigation.tertiary.items',
-  //   'navigation.menu.2.items',
-  // ];
-  // const targets = site.getAsArray('idxNavItems.navigationTargets').length ? site.getAsArray('idxNavItems.targets') : defaultTargets;
 
   if (enable) {
     const navConfig = [
