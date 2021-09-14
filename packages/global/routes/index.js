@@ -1,7 +1,7 @@
 const htmlSitemap = require('@parameter1/base-cms-marko-web-html-sitemap/routes');
 const dynamicPage = require('./dynamic-page');
 const feed = require('./feed');
-// const identityX = require('./identity-x');
+const identityX = require('./identity-x');
 const magazine = require('../components/magazine/routes');
 const nativeX = require('./native-x');
 const printContent = require('./print-content');
@@ -21,8 +21,8 @@ module.exports = (app, siteConfig) => {
   // magazine
   magazine(app);
 
-  // // IdentityX (user routing and app context)
-  // identityX(app);
+  // IdentityX (user routing and app context)
+  identityX(app);
 
   // NativeX (Story rendering)
   nativeX(app);
