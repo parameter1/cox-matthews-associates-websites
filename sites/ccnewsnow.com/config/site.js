@@ -6,12 +6,12 @@ const newsletter = require('./newsletter');
 const search = require('./search');
 
 module.exports = {
-  idxNavItems: {
-    enable: true,
-  },
   navigation,
   nativeX,
   identityX,
+  idxNavItems: {
+    enable: true,
+  },
   gam,
   newsletter,
   search,

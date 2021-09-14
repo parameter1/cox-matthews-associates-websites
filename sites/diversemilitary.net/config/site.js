@@ -9,6 +9,9 @@ module.exports = {
   navigation,
   nativeX,
   identityX,
+  idxNavItems: {
+    enable: true,
+  },
   gam,
   newsletter,
   search,
