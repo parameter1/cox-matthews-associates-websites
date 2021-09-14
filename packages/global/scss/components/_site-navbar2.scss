@@ -99,7 +99,7 @@
           color: $gray-800;
           text-transform: initial;
           &--active {
-            font-weight: 700;
+            font-weight: $font-weight-bold;
             text-decoration: none;
           }
         }
@@ -113,6 +113,15 @@
           padding-right: 0;
           padding-left: 0;
         }
+      }
+    }
+    &__items--tertiary {
+      margin-top: 0;
+      margin-left: 0;
+      font-weight: $font-weight-normal;
+      text-transform: none;
+      #{ $self }__link {
+        padding: 0 7.5px;
       }
     }
     .magazine-cover {
