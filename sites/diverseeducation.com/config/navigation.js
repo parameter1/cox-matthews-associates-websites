@@ -71,9 +71,14 @@ module.exports = {
   topics,
   primary: {
     items: [
-      ...topics,
+      { href: '/students', label: 'Students' },
+      { href: '/faculty-staff', label: 'Faculty & Staff' },
+      { href: '/leadership-policy', label: 'Leadership & Policy' },
       { href: '/podcasts', label: 'Podcasts' },
-      { href: '/opinion', label: 'Opinion' },
+      { href: '/awards-honors', label: 'Awards/Honors' },
+      { href: 'https://mediakit.diverseeducation.com/', label: 'Advertise', target: '_blank' },
+      { href: 'https://diversejobs.net', label: 'Jobs', target: '_blank' },
+      // { href: '#', label: 'Shop', target: '_blank' },
     ],
   },
   secondary: {
