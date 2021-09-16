@@ -53,6 +53,7 @@
     }
     &--right {
       display: flex;
+      align-items: center;
       justify-content: flex-end;
       @include media-breakpoint-down(sm) {
         justify-content: center;
@@ -88,7 +89,8 @@
   $self: &;
   &--premium-employers {
     @include media-breakpoint-down(sm) {
-      margin: 0;
+      margin-right: 0;
+      margin-left: 0;
     }
     #{ $self }__node {
       @include media-breakpoint-down(md) {
@@ -99,7 +101,8 @@
   }
   &--featured-jobs {
     @include media-breakpoint-down(sm) {
-      margin: 0;
+      margin-right: 0;
+      margin-left: 0;
     }
     margin-bottom: -20px;
     .node {
