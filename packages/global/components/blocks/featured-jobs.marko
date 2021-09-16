@@ -19,8 +19,8 @@ $ const blockName = "featured-jobs";
   collapsible=false
 >
   <marko-web-block name=blockName>
-    <div class=`row ${blockName}__banner`>
-      <div class=`col ${blockName}__banner--left`>
+    <div class=`${blockName}__banner`>
+      <div class=`${blockName}__banner--left`>
         <marko-web-img
           class=`${blockName}__logo`
           link={ href: findJobLink, target: "_blank" }
@@ -29,7 +29,7 @@ $ const blockName = "featured-jobs";
           alt="Diverse Jobs"
         />
       </div>
-      <div class=`col ${blockName}__banner--right`>
+      <div class=`${blockName}__banner--right`>
         <marko-web-link class="btn btn-primary" href=findJobLink target="_blank" title=`Find A job on ${findJobLink}`>
           Find A Job
         </marko-web-link>

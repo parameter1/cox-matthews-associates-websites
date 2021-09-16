@@ -44,7 +44,16 @@
     padding-top: 30px;
     padding-bottom: 30px;
   }
+  @include media-breakpoint-up(sm) {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
   &__banner {
+    display: flex;
+    justify-content: space-between;
+    @include media-breakpoint-down(sm) {
+      display: block;
+    }
     &--left {
       @include media-breakpoint-down(sm) {
         display: flex;
@@ -94,7 +103,7 @@
     }
     #{ $self }__node {
       margin-bottom: 15px;
-      @include media-breakpoint-down(md) {
+      @include media-breakpoint-down(lg) {
         @include make-col(6);
       }
     }
