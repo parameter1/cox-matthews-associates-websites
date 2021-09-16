@@ -23,25 +23,19 @@ $ const blockName = "featured-jobs";
       <div class=`col ${blockName}__banner--left`>
         <marko-web-img
           class=`${blockName}__logo`
-          link={ href: "https://www.diversjobs.com", target: "_blank" }
-          src=`https://img.diverseeducation.com/files/base/diverse/all/image/static/diverse-jobs-logo.png?w=300&auto=format,compress&q=70`
-          srcset=`https://img.diverseeducation.com/files/base/diverse/all/image/static/diverse-jobs-logo.png?w=600&auto=format,compress&q=70&dpr=2 2x`
+          link={ href: findJobLink, target: "_blank" }
+          src=`https://img.diverseeducation.com/files/base/diverse/all/image/static/diverse-jobs-logo.png?w=250&auto=format,compress&q=70`
+          srcset=`https://img.diverseeducation.com/files/base/diverse/all/image/static/diverse-jobs-logo.png?w=500&auto=format,compress&q=70&dpr=2 2x`
           alt="Diverse Jobs"
         />
       </div>
       <div class=`col ${blockName}__banner--right`>
-        <if(findJobLink || postJobLink)>
-          <if(findJobLink)>
-            <marko-web-link class="btn btn-primary" href=findJobLink target="_blank" title=`Find A job on ${findJobLink}`>
-              Find A Job
-            </marko-web-link>
-          </if>
-          <if(postJobLink)>
-            <marko-web-link class="btn btn-secondary" href=postJobLink target="_blank" title=`Post a job on ${postJobLink}`>
-              Post A Job
-            </marko-web-link>
-          </if>
-        </if>
+        <marko-web-link class="btn btn-primary" href=findJobLink target="_blank" title=`Find A job on ${findJobLink}`>
+          Find A Job
+        </marko-web-link>
+        <marko-web-link class="btn btn-secondary" href=postJobLink target="_blank" title=`Post a job on ${postJobLink}`>
+          Post A Job
+        </marko-web-link>
       </div>
     </div>
     <!-- files/base/diverse/all/image/static/diverse-jobs-logo.png -->
