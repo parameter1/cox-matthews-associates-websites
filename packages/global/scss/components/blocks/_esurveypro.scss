@@ -66,6 +66,7 @@
     display: flex;
     align-items: baseline;
     justify-content: space-between;
+    padding-bottom: 8px !important;
     margin-top: $block-spacer;
     @include marko-web-node-list-border(border-top);
     br {
@@ -79,7 +80,7 @@
     height: auto !important;
     padding: 12px !important;
     margin: 0 !important;
-    margin-top: ($block-spacer / 2) !important;
+    margin-top: 16px !important;
     font-family: $skin-font-family-primary !important;
     font-size: 12px !important;
     font-weight: $font-weight-bold !important;
