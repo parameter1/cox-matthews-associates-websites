@@ -1,6 +1,12 @@
+import { get } from "@parameter1/base-cms-object-path";
 import hierarchyAliases from "@parameter1/base-cms-marko-web/utils/hierarchy-aliases";
 
+$ const { site, req } = out.global;
+
 $ const { id, alias, name, pageNode } = input;
+
+$ const layout = get(req, "query.layout") || site.get("layout") || "default";
+
 
 <global-website-section-home-layout
   id=id
@@ -43,31 +49,38 @@ $ const { id, alias, name, pageNode } = input;
     <global-section-list-deck-block aliases=["sports", "demographics", "institutions"] />
   </@section>
 
-  <@section|{ aliases }|>
-    <global-gam-define-display-ad
-      name="rotation"
-      position="home_page"
-      aliases=aliases
-      modifiers=["inter-block"]
-    />
-  </@section>
+  <if(layout === "new")>
+    <@section|{ aliases }| modifiers=["break-container"]>
+      <global-featured-jobs-block />
+    </@section>
+  </if>
+  <else>
+    <@section|{ aliases }|>
+      <global-gam-define-display-ad
+        name="rotation"
+        position="home_page"
+        aliases=aliases
+        modifiers=["inter-block"]
+      />
+    </@section>
 
-  <@section|{ aliases }|>
-    <div class="row">
-      <div class="col-lg-4">
-        <global-featured-jobs-list-block />
-      </div>
-      <div class="col-lg-4">
-        <global-magazine-current-issue-block publication-id="61128276dc429e5a098b4576" />
-      </div>
-      <div class="col-lg-4">
-        <div class="twitter-block">
-          <a class="twitter-timeline" data-width="340" data-height="650" data-theme="light" href="https://twitter.com/DiverseIssues?ref_src=twsrc%5Etfw">Tweets by DiverseIssues</a>
-          <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <@section|{ aliases }|>
+      <div class="row">
+        <div class="col-lg-4">
+          <global-featured-jobs-list-block />
+        </div>
+        <div class="col-lg-4">
+          <global-magazine-current-issue-block publication-id="61128276dc429e5a098b4576" />
+        </div>
+        <div class="col-lg-4">
+          <div class="twitter-block">
+            <a class="twitter-timeline" data-width="340" data-height="650" data-theme="light" href="https://twitter.com/DiverseIssues?ref_src=twsrc%5Etfw">Tweets by DiverseIssues</a>
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+          </div>
         </div>
       </div>
-    </div>
-  </@section>
+    </@section>
+  </else>
 
   <@section|{ aliases }|>
     <div class="row">
@@ -86,9 +99,11 @@ $ const { id, alias, name, pageNode } = input;
     </div>
   </@section>
 
-  <@section modifiers=["break-container"]>
-    <global-premium-employers-block title="Premium Employers" />
-  </@section>
+  <if(layout !== "new")>
+    <@section modifiers=["break-container"]>
+      <global-premium-employers-block title="Premium Employers" />
+    </@section>
+  </if>
 
   <@section>
     <site-promo-card-rotation-block />
