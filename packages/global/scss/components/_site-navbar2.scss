@@ -10,6 +10,9 @@
         max-width: $marko-web-document-container-max-width;
       }
     }
+    &__logo {
+      filter: none;
+    }
     &__brand {
       margin: 0;
     }
