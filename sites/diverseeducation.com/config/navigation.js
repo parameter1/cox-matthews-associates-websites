@@ -75,7 +75,7 @@ module.exports = {
       { href: '/faculty-staff', label: 'Faculty & Staff' },
       { href: '/leadership-policy', label: 'Leadership & Policy' },
       { href: '/podcasts', label: 'Podcasts' },
-      { href: '/awards-honors', label: 'Awards/Honors' },
+      { href: 'https://top100.diverseeducation.com', label: 'Top 100', target: '_blank' },
       { href: 'https://mediakit.diverseeducation.com/', label: 'Advertise', target: '_blank' },
       { href: 'https://diversejobs.net', label: 'Jobs', target: '_blank' },
       // { href: '#', label: 'Shop', target: '_blank' },
