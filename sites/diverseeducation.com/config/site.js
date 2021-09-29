@@ -22,15 +22,15 @@ module.exports = {
   },
   logos: {
     navbar: {
-      src: 'https://img.diverseeducation.com/files/base/diverse/all/image/static/de-logo.png?h=60&auto=format,compress&q=70',
+      src: 'https://img.diverseeducation.com/files/base/diverse/all/image/static/diverse-education-logo.png?h=60&auto=format,compress&q=70',
       srcset: [
-        'https://img.diverseeducation.com/files/base/diverse/all/image/static/de-logo.png?h=120&auto=format,compress&q=70 2x',
+        'https://img.diverseeducation.com/files/base/diverse/all/image/static/diverse-education-logo.png?h=60&auto=format,compress&q=70&dpr=2 2x',
       ],
     },
     footer: {
-      src: 'https://img.diverseeducation.com/files/base/diverse/all/image/static/de-logo.png?h=45&auto=format,compress&q=70',
+      src: 'https://img.diverseeducation.com/files/base/diverse/all/image/static/diverse-education-logo.png?h=45&auto=format,compress&q=70',
       srcset: [
-        'https://img.diverseeducation.com/files/base/diverse/all/image/static/de-logo.png?h=90&auto=format,compress&q=70 2x',
+        'https://img.diverseeducation.com/files/base/diverse/all/image/static/diverse-education-logo.png?h=45&auto=format,compress&q=70&dpr=2 2x',
       ],
     },
   },
