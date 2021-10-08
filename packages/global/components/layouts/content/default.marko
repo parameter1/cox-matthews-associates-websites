@@ -136,16 +136,6 @@ $ const excludeFromSidebarsLabel = ["Scholar Profile"];
 
         <marko-web-content-body block-name=blockName obj=content attrs={ id: bodyId } />
 
-        $ const sidebars = getAsArray(content, 'sidebars');
-        <for|sidebar| of=sidebars>
-          $ const { label } = sidebar;
-          <if(!excludeFromSidebarsLabel.includes(label))>
-            <marko-web-block class="page-contents__content-sidebar" tag=null>
-              $!{sidebar.body}
-            </marko-web-block>
-          </if>
-        </for>
-
         <!-- needs input -->
         <if(input.afterBody)>
           <${input.afterBody}
@@ -154,6 +144,9 @@ $ const excludeFromSidebarsLabel = ["Scholar Profile"];
             content=content
           />
         </if>
+
+        $ const sidebars = getAsArray(content, "sidebars").filter((sidebar) => !excludeFromSidebarsLabel.includes(sidebar.label)).map((sidebar) => sidebar.body);
+        <marko-web-content-sidebars block-name=blockName obj={ sidebars } />
 
         <if(type === "document" || type === "whitepaper")>
           <default-theme-content-download obj=content>
