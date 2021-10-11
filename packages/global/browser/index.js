@@ -14,6 +14,7 @@ const TopStoriesMenu = () => import(/* webpackChunkName: "global-top-stories-men
 const CommentToggleButton = () => import(/* webpackChunkName: "global-comment-toggle-button" */ './comment-toggle-button.vue');
 const IdentityXAuthenticate = () => import(/* webpackChunkName: "global-identity-x-authenticate" */ './identity-x/authenticate.vue');
 const IdentityXCommentStream = () => import(/* webpackChunkName: "global-identity-x-comment-stream" */ './identity-x/comments/stream.vue');
+const ContactUsForm = () => import(/* webpackChunkName: "common-contact-us-form" */ './contact-us-form.vue');
 
 export default (Browser) => {
   GTM(Browser);
@@ -32,6 +33,8 @@ export default (Browser) => {
   Browser.register('GlobalTopStoriesMenu', TopStoriesMenu);
   Browser.register('GlobalCommentToggleButton', CommentToggleButton);
   Browser.register('WufooForm', WufooForm);
+  // @todo this should be removed once contact us is moved to core.
+  Browser.register('CommonContactUsForm', ContactUsForm);
 
   Browser.register('OmedaRapidIdentityX', OmedaRapidIdentityX, {
     on: {
