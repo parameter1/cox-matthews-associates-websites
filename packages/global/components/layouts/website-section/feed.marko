@@ -45,6 +45,33 @@ $ const perPage = 18;
       <if(p.page > 1)>${value}: Page ${p.page}</if>
       <else>${value}</else>
     </marko-web-website-section-name>
+    <if(["podcasts"].includes(section.alias))>
+      <div class="row">
+        <div class="col-lg-8">
+        <if(section.logo)>
+        $ const obj = { ...section.logo };
+          <marko-web-page-image
+            width=150
+            fluid=false
+            modifiers=["section-logo"]
+            obj=obj
+          />
+        </if>
+        <if(section.description)>
+          <marko-web-website-section-description|{ value }|
+            tag="p"
+            block-name="page-wrapper"
+            obj=section>
+            ${value}
+          </marko-web-website-section-description>
+        </if>
+        </div>
+        <div class="col-lg-4 page-rail">
+          <!-- @todo This should be changed once contact us is in core. -->
+          <marko-web-browser-component name="CommonContactUsForm" />
+        </div>
+      </div>
+    </if>
 
     <if(input.afterName)>
       <${input.afterName}
