@@ -7,6 +7,10 @@ fragment WebsiteSectionPageFragment on WebsiteSection {
   alias
   fullName
   description
+  logo {
+    id
+    src(input: { options: { auto: "format,compress" q: 70 } })
+  }
   hierarchy {
     id
     alias
