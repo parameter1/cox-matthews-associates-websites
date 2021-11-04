@@ -1,7 +1,7 @@
 .node-list {
   &--franklin-current-winners {
-    background-color: $gray-200;
     margin-bottom: map-get($spacers, block);
+    background-color: $gray-200;
   }
   &--franklin-past-winners {
     .node-list {
@@ -19,9 +19,9 @@
         max-width: initial;
       }
       &__content-short-name {
+        margin-bottom: 0;
         font-size: 14px;
         font-weight: 400;
-        margin-bottom: 0;
       }
     }
   }
