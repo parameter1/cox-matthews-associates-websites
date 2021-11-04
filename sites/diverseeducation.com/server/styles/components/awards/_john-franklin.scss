@@ -1,0 +1,28 @@
+.node-list {
+  &--franklin-current-winners {
+    background-color: $gray-200;
+    margin-bottom: map-get($spacers, block);
+  }
+  &--franklin-past-winners {
+    .node-list {
+      &__header {
+        color: #3f4043;
+        border-bottom: 1px solid $gray-200;
+      }
+      &__node {
+        padding-top: map-get($spacers, 2);
+        padding-bottom: map-get($spacers, 2);
+      }
+    }
+    .section-feed-content-node {
+      &__body {
+        max-width: initial;
+      }
+      &__content-short-name {
+        font-size: 14px;
+        font-weight: 400;
+        margin-bottom: 0;
+      }
+    }
+  }
+}
