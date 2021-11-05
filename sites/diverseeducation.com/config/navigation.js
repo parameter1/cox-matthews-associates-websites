@@ -30,6 +30,7 @@ const awards = [
   { href: '/awards-honors/arthur-ashe', label: 'Arthur Ashe' },
   { href: '/awards-honors/diverse-champions', label: 'Diverse Champions' },
   { href: 'http://response.diverseeducation.com/DOIT2020', label: 'DOIT', target: '_blank' },
+  { href: '/awards-honors/dr-john-hope-franklin', label: 'Dr. John Hope Franklin Award' },
   { href: '/awards-honors/emerging-scholars/2021', label: 'Emerging Scholars' },
   { href: '/awards-honors/mppwcc', label: 'Most Promising Places to Work: Community Colleges' },
   { href: '/awards-honors/mppwsa', label: 'Most Promising Places to Work: Student Affairs' },

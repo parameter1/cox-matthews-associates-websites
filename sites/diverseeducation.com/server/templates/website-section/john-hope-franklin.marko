@@ -53,6 +53,11 @@ $ const queryParams = {
       <else>${value}</else>
     </marko-web-website-section-name>
     <marko-web-website-section-description obj=section tag="p" />
+    <marko-web-block name="register-button">
+      <a class="btn btn-primary" target="_blank" href="https://responses.diverseeducation.com/2021JHFAwards">
+        Register Now for the 2021 Ceremony
+      </a>
+    </marko-web-block>
   </@section>
   <if(p.page === 1)>
     <!-- <@section|{ blockName, section }|>
@@ -144,11 +149,6 @@ $ const queryParams = {
           </div>
         </div>
       </div>
-      <marko-web-block name="register-button">
-        <a class="btn btn-primary" href="https://responses.diverseeducation.com/2021JHFAwards">
-          Register Now for the 2021 Ceremony
-        </a>
-      </marko-web-block>
     </@section>
     <@section>
       <h2 class="page-wrapper__website-section-name">Past Winners</h2>
@@ -171,7 +171,7 @@ $ const queryParams = {
               <div class="section-feed-content-node__contents">
                 <div class="section-feed-content-node__body">
                   <h5 class="section-feed-content-node__content-short-name">
-                    <span class="name">Kimberle Crenshaw</span>, Professor of Law, Columbia Law School and the University of California, Los Angeles
+                    <span class="name">Kimberl&eacute; Crenshaw</span>, Professor of Law, Columbia Law School and the University of California, Los Angeles
                   </h5>
                 </div>
               </div>
@@ -651,5 +651,21 @@ $ const queryParams = {
       <@query-params limit=perPage skip=p.skip({ perPage }) section-bubbling=false />
     </global-section-feed-block>
   </@section>
-
+  <@section>
+    <global-section-feed-block|{ totalCount }| alias=alias count-only=true>
+      <global-pagination-controls
+        per-page=perPage
+        total-count=totalCount
+        path=alias
+      />
+    </global-section-feed-block>
+  </@section>
+  <@section|{ aliases }|>
+    <global-gam-define-display-ad
+      name="rotation"
+      position="section_page"
+      aliases=aliases
+      modifiers=["inter-block"]
+    />
+  </@section>
 </global-website-section-default-layout>
