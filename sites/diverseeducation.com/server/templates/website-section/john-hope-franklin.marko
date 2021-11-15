@@ -1,0 +1,671 @@
+import { get } from "@parameter1/base-cms-object-path";
+import hierarchyAliases from "@parameter1/base-cms-marko-web/utils/hierarchy-aliases";
+import queryFragment from "@cox-matthews-associates/package-global/graphql/fragments/section-feed-block";
+
+
+$ const { site, req, pagination: p } = out.global;
+$ const perPage = 18;
+
+$ const { id, alias, name, pageNode } = input;
+
+$ const layout = get(req, "query.layout") || site.get("layout") || "default";
+$ const queryParams = {
+  queryFragment,
+}
+
+// static list for now to ensure child sections are only past years
+<!-- $ const pastYears = [
+  2020, 2019, 2018, 2017, 2016, 2015,
+  2014, 2013, 2012, 2011, 2010, 2009,
+  2008, 2007, 2006, 2005, 2004
+]; -->
+
+<global-website-section-default-layout
+  id=id
+  alias=alias
+  name=name
+  page-node=pageNode
+>
+  <!-- files/base/diverse/all/image/static/de/john-hope-franklin/freeman-hrabowski.jpeg -->
+  <@head>
+  <global-section-feed-block|{ totalCount }| alias=alias count-only=true>
+    <global-pagination-controls
+      per-page=perPage
+      total-count=totalCount
+      path=alias
+      as-rels=true
+    />
+  </global-section-feed-block>
+  </@head>
+
+  <@section|{ aliases }| modifiers=["first"]>
+  <global-gam-define-display-ad
+    name="leaderboard"
+    position="section_page"
+    aliases=aliases
+    modifiers=["inter-block"]
+  />
+  </@section>
+
+  <@section|{ blockName, section, aliases }|>
+    <marko-web-website-section-name|{ value }| tag="h1" block-name=blockName obj=section>
+      <if(p.page > 1)>${value}: Page ${p.page}</if>
+      <else>${value}</else>
+    </marko-web-website-section-name>
+    <marko-web-website-section-description obj=section tag="p" />
+    <marko-web-block name="register-button">
+      <a class="btn btn-primary" target="_blank" href="https://responses.diverseeducation.com/2021JHFAwards">
+        Register Now for the 2021 Ceremony
+      </a>
+    </marko-web-block>
+  </@section>
+  <if(p.page === 1)>
+    <!-- <@section|{ blockName, section }|>
+      <h2 class="page-wrapper__website-section-name">Current Winners</h2>
+      $ const qpCurrent = {
+        ...queryParams,
+        sectionAlias: 'awards-honors/dr-john-hope-franklin/2021',
+      }
+      <marko-web-query|{ nodes }| name="website-scheduled-content" params=qpCurrent>
+        <marko-web-node-list
+          inner-justified=true
+          flush-x=false
+          flush-y=false
+          modifiers=["section-feed", "franklin-current-winners"]
+        >
+          <@nodes nodes=nodes>
+            <@slot|{ node }|>
+              <global-section-feed-content-node
+                node=node
+                display-image=true
+                with-dates=false
+                with-section=false
+              />
+            </@slot>
+          </@nodes>
+        </marko-web-node-list>
+      </marko-web-query>
+    </@section> -->
+    <!-- <@section|{ blockName, section }|>
+      <h2 class="page-wrapper__website-section-name">Past Winners</h2>
+
+      <for|year| of=pastYears>
+        $ const qpByYear = { ...queryParams, sectionAlias: `awards-honors/dr-john-hope-franklin/${year}`, };
+        <marko-web-query|{ nodes }| name="website-scheduled-content" params=qpByYear>
+          <marko-web-node-list
+            inner-justified=true
+            flush-x=true
+            flush-y=false
+            modifiers=["section-feed", "franklin-past-winners"]
+          >
+            <@header>${year}</@header>
+            <@nodes nodes=nodes>
+              <@slot|{ node }|>
+                <global-section-feed-content-node
+                  node=node
+                  display-image=false
+                  with-teaser=false
+                  with-dates=false
+                  with-section=false
+                />
+              </@slot>
+            </@nodes>
+          </marko-web-node-list>
+        </marko-web-query>
+      </for>
+    </@section> -->
+    <@section>
+      <h2 class="page-wrapper__website-section-name">2021 Winner</h2>
+      <div class="node-list node-list--section-feed node-list--franklin-current-winners node-list--inner-justified">
+        <div class="node-list__nodes">
+          <div class="node-list__node">
+            <div class="section-feed-content-node">
+              <div class="section-feed-content-node__contents">
+                <div class="section-feed-content-node__body">
+                  <h5 class="section-feed-content-node__content-short-name">
+                    <a href="/press-releases/press-release/15280010/diverse-issues-in-higher-education-is-pleased-to-announce-the-recipient-of-this-years-dr-john-hope-franklin-award">
+                      Dr. Freeman Hrabowski, III
+                    </a>
+                  </h5>
+                  <div class="section-feed-content-node__content-teaser">
+                    <a href="/press-releases/press-release/15280010/diverse-issues-in-higher-education-is-pleased-to-announce-the-recipient-of-this-years-dr-john-hope-franklin-award">
+                      One of the nation’s most distinguished college presidents. With 30-years at the helm of the University of Maryland, Baltimore County (UMBC), he serves as a consultant on science and math education to national agencies, universities, and school systems. In 2012, he was named by President Obama to chair the President’s Advisory Commission on Educational Excellence for African Americans. Under his leadership, UMBC has been recognized as a model for academic innovation, undergraduate teaching, and inclusive excellence by numerous publications.
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="section-feed-content-node__image-wrapper">
+                <a href="/press-releases/press-release/15280010/diverse-issues-in-higher-education-is-pleased-to-announce-the-recipient-of-this-years-dr-john-hope-franklin-award">
+                  <marko-web-img
+                    class=["section-feed-content-node__image", "lazyload"]
+                    alt="Promising Places to work logos"
+                    src="https://img.diverseeducation.com/files/base/diverse/all/image/static/de/john-hope-franklin/freeman-hrabowski.jpeg?auto=format%2Ccompress&amp;fit=crop&amp;h=167&amp;q=70&amp;w=250"
+                    srcset="https://img.diverseeducation.com/files/base/diverse/all/image/static/de/john-hope-franklin/freeman-hrabowski.jpeg?auto=format%2Ccompress&amp;dpr=2&amp;fit=crop&amp;h=167&amp;q=70&amp;w=250 2x"
+                    lazyload=true
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </@section>
+    <@section>
+      <h2 class="page-wrapper__website-section-name">Past Winners</h2>
+      <div class="node-list node-list--section-feed node-list--franklin-past-winners node-list--flush-x node-list--inner-justified">
+        <div class="node-list__header">2020</div>
+        <div class="node-list__nodes">
+          <div class="node-list__node">
+            <div class="section-feed-content-node">
+              <div class="section-feed-content-node__contents">
+                <div class="section-feed-content-node__body">
+                  <h5 class="section-feed-content-node__content-short-name">
+                    <span class="name">Dr. Walter Allen</span>, Distinguished Professor of Education, Sociology, and African American Studies
+                  </h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="node-list__node">
+            <div class="section-feed-content-node">
+              <div class="section-feed-content-node__contents">
+                <div class="section-feed-content-node__body">
+                  <h5 class="section-feed-content-node__content-short-name">
+                    <span class="name">Kimberl&eacute; Crenshaw</span>, Professor of Law, Columbia Law School and the University of California, Los Angeles
+                  </h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="node-list__node">
+            <div class="section-feed-content-node">
+              <div class="section-feed-content-node__contents">
+                <div class="section-feed-content-node__body">
+                  <h5 class="section-feed-content-node__content-short-name">
+                    <span class="name">Frank H. Wu</span>, President, Queens College, City University of New York
+                  </h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="node-list node-list--section-feed node-list--franklin-past-winners node-list--flush-x node-list--inner-justified">
+          <div class="node-list__header">2019</div>
+        <div class="node-list__nodes">
+          <div class="node-list__node">
+            <div class="section-feed-content-node">
+              <div class="section-feed-content-node__contents">
+                <div class="section-feed-content-node__body">
+                  <h5 class="section-feed-content-node__content-short-name">
+                    <span class="name">Dr. Michael T. Nettles</span>, Senior Vice President and Chair, Policy Evaluation & Research Center, Educational Testing Service (ETS)
+                  </h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="node-list__node">
+            <div class="section-feed-content-node">
+              <div class="section-feed-content-node__contents">
+                <div class="section-feed-content-node__body">
+                  <h5 class="section-feed-content-node__content-short-name">
+                    <span class="name">Dr. Evelyn Brooks Higginbotham</span>, Harvard University, History Department Chair, Professor of History and of African and African American Studies
+                  </h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="node-list node-list--section-feed node-list--franklin-past-winners node-list--flush-x node-list--inner-justified">
+          <div class="node-list__header">2018</div>
+        <div class="node-list__nodes">
+          <div class="node-list__node">
+            <div class="section-feed-content-node">
+              <div class="section-feed-content-node__contents">
+                <div class="section-feed-content-node__body">
+                  <h5 class="section-feed-content-node__content-short-name">
+                    <span class="name">Dr. James Johnson Duderstadt</span>, President Emeritus, University of Michigan
+                  </h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="node-list__node">
+            <div class="section-feed-content-node">
+              <div class="section-feed-content-node__contents">
+                <div class="section-feed-content-node__body">
+                  <h5 class="section-feed-content-node__content-short-name">
+                    <span class="name">Dr. William R. Harvey</span>, President, Hampton University
+                  </h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="node-list__node">
+            <div class="section-feed-content-node">
+              <div class="section-feed-content-node__contents">
+                <div class="section-feed-content-node__body">
+                  <h5 class="section-feed-content-node__content-short-name">
+                    <span class="name">Dr. Darlene Clark Hine</span>, John A. Hannah Distinguished Professor of History, Michigan State University
+                  </h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="node-list node-list--section-feed node-list--franklin-past-winners node-list--flush-x node-list--inner-justified">
+          <div class="node-list__header">2017</div>
+        <div class="node-list__nodes">
+          <div class="node-list__node">
+            <div class="section-feed-content-node">
+              <div class="section-feed-content-node__contents">
+                <div class="section-feed-content-node__body">
+                  <h5 class="section-feed-content-node__content-short-name">
+                    <span class="name">U.S. Congressman John Lewis</span>, Georgia’s 5th District, Civil Rights Activist
+                  </h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="node-list__node">
+            <div class="section-feed-content-node">
+              <div class="section-feed-content-node__contents">
+                <div class="section-feed-content-node__body">
+                  <h5 class="section-feed-content-node__content-short-name">
+                    <span class="name">Dr. Samuel L. Myers, Sr.</span>, Founder, Minority Access, Inc., pioneering HBCU advocate
+                  </h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="node-list__node">
+            <div class="section-feed-content-node">
+              <div class="section-feed-content-node__contents">
+                <div class="section-feed-content-node__body">
+                  <h5 class="section-feed-content-node__content-short-name">
+                    <span class="name">Dr. Wilma J. Roscoe</span>, Board of Directors, Minority Access, Inc., pioneering HBCU advocate
+                  </h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="node-list node-list--section-feed node-list--franklin-past-winners node-list--flush-x node-list--inner-justified">
+          <div class="node-list__header">2016</div>
+        <div class="node-list__nodes">
+          <div class="node-list__node">
+            <div class="section-feed-content-node">
+              <div class="section-feed-content-node__contents">
+                <div class="section-feed-content-node__body">
+                  <h5 class="section-feed-content-node__content-short-name">
+                    <span class="name">Dr. Rodolfo F. Acuña</span>, Professor Emeritus, California State University, Northridge (CSUN)
+                  </h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="node-list node-list--section-feed node-list--franklin-past-winners node-list--flush-x node-list--inner-justified">
+          <div class="node-list__header">2015</div>
+        <div class="node-list__nodes">
+          <div class="node-list__node">
+            <div class="section-feed-content-node">
+              <div class="section-feed-content-node__contents">
+                <div class="section-feed-content-node__body">
+                  <h5 class="section-feed-content-node__content-short-name">
+                    <span class="name">Dr. Belle Wheelan</span>, President, Southern Association of Colleges and Schools Commission on Colleges
+                  </h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="node-list node-list--section-feed node-list--franklin-past-winners node-list--flush-x node-list--inner-justified">
+          <div class="node-list__header">2014</div>
+          <div class="node-list__node">
+            <div class="section-feed-content-node">
+              <div class="section-feed-content-node__contents">
+                <div class="section-feed-content-node__body">
+                  <h5 class="section-feed-content-node__content-short-name">
+                    <span class="name">Dr. James Rosser</span>, President Emeritus, California State University, Los Angeles
+                  </h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        <div class="node-list__nodes">
+        </div>
+      </div>
+      <div class="node-list node-list--section-feed node-list--franklin-past-winners node-list--flush-x node-list--inner-justified">
+          <div class="node-list__header">2013</div>
+        <div class="node-list__nodes">
+          <div class="node-list__node">
+            <div class="section-feed-content-node">
+              <div class="section-feed-content-node__contents">
+                <div class="section-feed-content-node__body">
+                  <h5 class="section-feed-content-node__content-short-name">
+                    <span class="name">Dr. John T. Casteen III</span>, President Emeritus, The University of Virginia
+                  </h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="node-list__node">
+            <div class="section-feed-content-node">
+              <div class="section-feed-content-node__contents">
+                <div class="section-feed-content-node__body">
+                  <h5 class="section-feed-content-node__content-short-name">
+                    <span class="name">Dr. Mary H. Futrell</span>, President of the Americans, United Nations Educational, Scientific and Cultural Organization (UNESCO)
+                  </h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="node-list__node">
+            <div class="section-feed-content-node">
+              <div class="section-feed-content-node__contents">
+                <div class="section-feed-content-node__body">
+                  <h5 class="section-feed-content-node__content-short-name">
+                    <span class="name">Dr. William Julius Wilson</span>, Lewis P. and Linda L. Geyser University Professor, Harvard University
+                  </h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="node-list node-list--section-feed node-list--franklin-past-winners node-list--flush-x node-list--inner-justified">
+          <div class="node-list__header">2012</div>
+        <div class="node-list__nodes">
+          <div class="node-list__node">
+            <div class="section-feed-content-node">
+              <div class="section-feed-content-node__contents">
+                <div class="section-feed-content-node__body">
+                  <h5 class="section-feed-content-node__content-short-name">
+                    <span class="name">Dr. Robert A. Corrigan</span>, President, San Francisco State University
+                  </h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="node-list__node">
+            <div class="section-feed-content-node">
+              <div class="section-feed-content-node__contents">
+                <div class="section-feed-content-node__body">
+                  <h5 class="section-feed-content-node__content-short-name">
+                    <span class="name">Christopher Edley</span>, Jr., Co-Founder, The Harvard Civil Rights Project
+                  </h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="node-list__node">
+            <div class="section-feed-content-node">
+              <div class="section-feed-content-node__contents">
+                <div class="section-feed-content-node__body">
+                  <h5 class="section-feed-content-node__content-short-name">
+                    <span class="name">Dr. Gary Orfield</span>, Co-Founder, The Harvard Civil Rights Project
+                  </h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="node-list node-list--section-feed node-list--franklin-past-winners node-list--flush-x node-list--inner-justified">
+          <div class="node-list__header">2011</div>
+        <div class="node-list__nodes">
+          <div class="node-list__node">
+            <div class="section-feed-content-node">
+              <div class="section-feed-content-node__contents">
+                <div class="section-feed-content-node__body">
+                  <h5 class="section-feed-content-node__content-short-name">
+                    <span class="name">Marian Wright Edelman</span>, President and Founder, Children’s Defense Fund
+                  </h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="node-list__node">
+            <div class="section-feed-content-node">
+              <div class="section-feed-content-node__contents">
+                <div class="section-feed-content-node__body">
+                  <h5 class="section-feed-content-node__content-short-name">
+                    <span class="name">Dr. Edmund Gordon</span>, Professor Emeritus of Psychology, Yale University
+                  </h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="node-list node-list--section-feed node-list--franklin-past-winners node-list--flush-x node-list--inner-justified">
+          <div class="node-list__header">2010</div>
+        <div class="node-list__nodes">
+          <div class="node-list__node">
+            <div class="section-feed-content-node">
+              <div class="section-feed-content-node__contents">
+                <div class="section-feed-content-node__body">
+                  <h5 class="section-feed-content-node__content-short-name">
+                    <span class="name">The Southern Regional Educational Board (SREB)</span>, State Doctoral Scholars Program
+                  </h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="node-list__node">
+            <div class="section-feed-content-node">
+              <div class="section-feed-content-node__contents">
+                <div class="section-feed-content-node__body">
+                  <h5 class="section-feed-content-node__content-short-name">
+                    <span class="name">The Georgia Institute of Technology)</span>, College of Engineering
+                  </h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="node-list node-list--section-feed node-list--franklin-past-winners node-list--flush-x node-list--inner-justified">
+          <div class="node-list__header">2009</div>
+        <div class="node-list__nodes">
+          <div class="node-list__node">
+            <div class="section-feed-content-node">
+              <div class="section-feed-content-node__contents">
+                <div class="section-feed-content-node__body">
+                  <h5 class="section-feed-content-node__content-short-name">
+                    <span class="name">Dr. Arturo Madrid</span>, Professor of the Humanities, Trinity University
+                  </h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="node-list__node">
+            <div class="section-feed-content-node">
+              <div class="section-feed-content-node__contents">
+                <div class="section-feed-content-node__body">
+                  <h5 class="section-feed-content-node__content-short-name">
+                    <span class="name">Dr. Shirley Ann Jackson</span>, President, Rensselaer Polytechnic Institute
+                  </h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="node-list node-list--section-feed node-list--franklin-past-winners node-list--flush-x node-list--inner-justified">
+          <div class="node-list__header">2008</div>
+        <div class="node-list__nodes">
+          <div class="node-list__node">
+            <div class="section-feed-content-node">
+              <div class="section-feed-content-node__contents">
+                <div class="section-feed-content-node__body">
+                  <h5 class="section-feed-content-node__content-short-name">
+                    <span class="name">Dr. Norman C. Francis</span>, President, Xavier University of Louisiana
+                  </h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="node-list__node">
+            <div class="section-feed-content-node">
+              <div class="section-feed-content-node__contents">
+                <div class="section-feed-content-node__body">
+                  <h5 class="section-feed-content-node__content-short-name">
+                    <span class="name">Dr. Alvin F. Poussaint</span>, Professor, Harvard School of Medicine
+                  </h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="node-list__node">
+            <div class="section-feed-content-node">
+              <div class="section-feed-content-node__contents">
+                <div class="section-feed-content-node__body">
+                  <h5 class="section-feed-content-node__content-short-name">
+                    <span class="name">Mary Duke Biddle Trent Semans</span>, Chairman Emeritus, The Duke Endowment
+                  </h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="node-list node-list--section-feed node-list--franklin-past-winners node-list--flush-x node-list--inner-justified">
+          <div class="node-list__header">2006</div>
+        <div class="node-list__nodes">
+          <div class="node-list__node">
+            <div class="section-feed-content-node">
+              <div class="section-feed-content-node__contents">
+                <div class="section-feed-content-node__body">
+                  <h5 class="section-feed-content-node__content-short-name">
+                    <span class="name">Dr. Maya Angelou</span>, Professor Emeritus, Wake Forest University
+                  </h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="node-list__node">
+            <div class="section-feed-content-node">
+              <div class="section-feed-content-node__contents">
+                <div class="section-feed-content-node__body">
+                  <h5 class="section-feed-content-node__content-short-name">
+                    <span class="name">Dr. James P. Comer</span>, Maurice Falk Professor of Child Psychiatry, Yale University School of Medicine
+                  </h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="node-list__node">
+            <div class="section-feed-content-node">
+              <div class="section-feed-content-node__contents">
+                <div class="section-feed-content-node__body">
+                  <h5 class="section-feed-content-node__content-short-name">
+                    <span class="name">Dr. William C. Friday</span>, President Emeritus, The University of North Carolina System
+                  </h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="node-list node-list--section-feed node-list--franklin-past-winners node-list--flush-x node-list--inner-justified">
+          <div class="node-list__header">2005</div>
+        <div class="node-list__nodes">
+          <div class="node-list__node">
+            <div class="section-feed-content-node">
+              <div class="section-feed-content-node__contents">
+                <div class="section-feed-content-node__body">
+                  <h5 class="section-feed-content-node__content-short-name">
+                    <span class="name">Dr. Johnnetta B .Cole</span>, Director, National Museum of AfricaArt
+                  </h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="node-list__node">
+            <div class="section-feed-content-node">
+              <div class="section-feed-content-node__contents">
+                <div class="section-feed-content-node__body">
+                  <h5 class="section-feed-content-node__content-short-name">
+                    <span class="name">Dr. Clifton R. Wharton Jr.</span>, Former Chairman and CEO, TIAA-CREF
+                  </h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="node-list node-list--section-feed node-list--franklin-past-winners node-list--flush-x node-list--inner-justified">
+          <div class="node-list__header">2004 </div>
+        <div class="node-list__nodes">
+          <div class="node-list__node">
+            <div class="section-feed-content-node">
+              <div class="section-feed-content-node__contents">
+                <div class="section-feed-content-node__body">
+                  <h5 class="section-feed-content-node__content-short-name">
+                    <span class="name">Dr. David Levering Lewis</span>, Historian, New York University
+                  </h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="node-list__node">
+            <div class="section-feed-content-node">
+              <div class="section-feed-content-node__contents">
+                <div class="section-feed-content-node__body">
+                  <h5 class="section-feed-content-node__content-short-name">
+                    <span class="name">Dr. Sybil Mobley</span>, Dean Emeritus School of Business & Industry, Florida A & M University
+                  </h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="node-list__node">
+            <div class="section-feed-content-node">
+              <div class="section-feed-content-node__contents">
+                <div class="section-feed-content-node__body">
+                  <h5 class="section-feed-content-node__content-short-name">
+                    <span class="name">Bill and Melinda Gates</span>, The Bill & Melinda Gates Foundation
+                  </h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </@section>
+  </if>
+  <@section>
+    <if(p.page === 1)>
+      <h2 class="page-wrapper__website-section-name">
+        Latest
+      </h2>
+    </if>
+    <global-section-feed-block alias=alias display-image=true>
+      <@query-params limit=perPage skip=p.skip({ perPage }) section-bubbling=false />
+    </global-section-feed-block>
+  </@section>
+  <@section>
+    <global-section-feed-block|{ totalCount }| alias=alias count-only=true>
+      <global-pagination-controls
+        per-page=perPage
+        total-count=totalCount
+        path=alias
+      />
+    </global-section-feed-block>
+  </@section>
+  <@section|{ aliases }|>
+    <global-gam-define-display-ad
+      name="rotation"
+      position="section_page"
+      aliases=aliases
+      modifiers=["inter-block"]
+    />
+  </@section>
+</global-website-section-default-layout>
