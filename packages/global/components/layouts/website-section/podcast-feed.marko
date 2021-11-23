@@ -67,14 +67,14 @@ $ const perPage = 10;
     </div>
 
     <div class="row">
-      <div class="col col-md-12 podcast-feed">
+      <div class="col col-md-8 podcast-feed">
         <global-section-feed-block alias=alias display-image=false>
           <@query-params limit=perPage skip=p.skip({ perPage }) />
         </global-section-feed-block>
       </div>
-      <!-- <div class="col col-md-4">
-        <h1>form</h1>
-      </div> -->
+      <div class="col col-md-4">
+
+      </div>
     </div>
 
     <global-section-feed-block|{ totalCount }| alias=alias count-only=true>
