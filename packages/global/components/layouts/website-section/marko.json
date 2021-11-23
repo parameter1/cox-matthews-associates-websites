@@ -29,6 +29,17 @@
     "@page-node": "object",
     "@display-image": "boolean"
   },
+  "<global-website-section-podcast-feed-layout>": {
+    "template": "./podcast-feed.marko",
+    "@sections <section>[]": {},
+    "<before-name>": {},
+    "<after-name>": {},
+    "@id": "number",
+    "@alias": "string",
+    "@name": "string",
+    "@page-node": "object",
+    "@display-image": "boolean"
+  },
   "<global-website-section-upcoming-archive-feed-layout>": {
     "template": "./upcoming-archive-feed.marko",
     "@sections <section>[]": {},
