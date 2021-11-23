@@ -1,7 +1,7 @@
 const gql = require('graphql-tag');
 
 module.exports = gql`
-fragment WebsiteSectionPageFragment on WebsiteSection {
+fragment WebsiteSectionPageWithLogoFragment on WebsiteSection {
   id
   name
   alias
