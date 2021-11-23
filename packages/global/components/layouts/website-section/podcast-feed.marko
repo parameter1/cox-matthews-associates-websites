@@ -76,6 +76,14 @@ $ const perPage = 10;
         <h1>form</h1>
       </div> -->
     </div>
+
+    <global-section-feed-block|{ totalCount }| alias=alias count-only=true>
+      <global-pagination-controls
+        per-page=perPage
+        total-count=totalCount
+        path=alias
+      />
+    </global-section-feed-block>
   </@section>
 
   <for|s| of=sections>
