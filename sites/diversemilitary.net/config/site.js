@@ -33,6 +33,9 @@ module.exports = {
     },
   },
   socialMediaLinks: [],
+  gcse: {
+    id: '8382d9da638933d1e',
+  },
   gtm: {
     containerId: process.env.GTM_CONTAINER_ID || 'GTM-NJZK2JD',
   },
