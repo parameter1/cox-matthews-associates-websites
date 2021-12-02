@@ -35,6 +35,9 @@ module.exports = {
   socialMediaLinks: [
     { provider: 'facebook', href: 'https://www.facebook.com/diverseissueshealth/', target: '_blank' },
   ],
+  gcse: {
+    id: 'f98f936730c6bfe14',
+  },
   gtm: {
     containerId: process.env.GTM_CONTAINER_ID || 'GTM-NBNL9ZZ',
   },

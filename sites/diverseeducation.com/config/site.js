@@ -48,6 +48,9 @@ module.exports = {
     { provider: 'youtube', href: 'https://www.youtube.com/channel/UCXVYpTBoF5lP0FYAz2-ebcQ' },
     { provider: 'instagram', href: 'https://www.instagram.com/diverseissuesinhighereducation/' },
   ],
+  gcse: {
+    id: '79253cc8ec9d83184',
+  },
   gtm: {
     containerId: process.env.GTM_CONTAINER_ID || 'GTM-TSQTRVN',
   },

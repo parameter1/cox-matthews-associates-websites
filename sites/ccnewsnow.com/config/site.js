@@ -35,6 +35,9 @@ module.exports = {
   socialMediaLinks: [
     { provider: 'facebook', href: 'https://www.facebook.com/CcNewsNow', target: '_blank' },
   ],
+  gcse: {
+    id: '19ff01bb13abc0001',
+  },
   gtm: {
     containerId: process.env.GTM_CONTAINER_ID || 'GTM-NJ23C9G',
   },

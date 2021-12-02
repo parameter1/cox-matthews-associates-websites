@@ -1,3 +1,4 @@
+import GCSE from '@parameter1/base-cms-marko-web-gcse/browser';
 import GTM from '@parameter1/base-cms-marko-web-gtm/browser';
 import GAM from '@parameter1/base-cms-marko-web-gam/browser';
 import Search from '@parameter1/base-cms-marko-web-search/browser';
@@ -16,6 +17,7 @@ const IdentityXAuthenticate = () => import(/* webpackChunkName: "global-identity
 const IdentityXCommentStream = () => import(/* webpackChunkName: "global-identity-x-comment-stream" */ './identity-x/comments/stream.vue');
 
 export default (Browser) => {
+  GCSE(Browser);
   GTM(Browser);
   GAM(Browser);
   Search(Browser);
