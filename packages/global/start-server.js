@@ -20,7 +20,7 @@ const routes = siteRoutes => (app, siteConfig) => {
   sharedRoutes(app, siteConfig);
   // Load site routes
   siteRoutes(app);
-
+  // load contact us route
   contactUsHandler(app);
 };
 
