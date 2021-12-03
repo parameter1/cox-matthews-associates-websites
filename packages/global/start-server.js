@@ -3,6 +3,7 @@ const { startServer } = require('@parameter1/base-cms-marko-web');
 const { set, get } = require('@parameter1/base-cms-object-path');
 const omedaGraphQL = require('@parameter1/omeda-graphql-client-express');
 const htmlSitemapPagination = require('@parameter1/base-cms-marko-web-html-sitemap/middleware/paginated');
+const contactUsHandler = require('@parameter1/base-cms-marko-web-contact-us');
 
 const document = require('./components/document');
 const components = require('./components');
@@ -19,6 +20,8 @@ const routes = siteRoutes => (app, siteConfig) => {
   sharedRoutes(app, siteConfig);
   // Load site routes
   siteRoutes(app);
+
+  contactUsHandler(app);
 };
 
 module.exports = (options = {}) => {
