@@ -1,16 +1,8 @@
 // Fonts
 //
 // Skin primary + secondary fonts. By default, set secondary to primary.
-// $skin-font-family-primary: -apple-system, blinkmacsystemfont, "Segoe UI", roboto, "Helvetica Neue", arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
-// $skin-font-family-secondary: $skin-font-family-primary !default;
-
-// @import url("https://use.typekit.net/eae7fel.css");
-// $skin-font-family-primary: solitaire-mvb-pro, sans-serif;
-// $skin-font-family-secondary: informapro, sans-serif;
-
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap");
-$skin-font-family-primary: "Open Sans", sans-serif !default;
-$skin-font-family-secondary: "Open Sans", sans-serif !default;
+$skin-font-family-primary: Arial, sans-serif !default;
+$skin-font-family-secondary: Arial, sans-serif !default;
 
 // Set bootstrap font to primary skin font
 $font-family-sans-serif: $skin-font-family-primary;
@@ -83,9 +75,12 @@ $secondary: $gray-800 !default;
 // Default hover colors
 $skin-primary-hover-color: darken($primary, 13%) !default;
 $skin-secondary-hover-color: $gray-900 !default;
+// Newsletter signup colors
+$skin-newsletter-signup-inline-btn-color: #103a57 !default;
+$skin-newsletter-signup-bg-color: #0d9dc9 !default;
+
 // Ad background colors
 $skin-ad-bg-color: $gray-100 !default;
-// $skin-ad-bg-color: $white !default;
 $skin-ad-label-color: $gray-700 !default;
 // HR color
 $hr-border-color: $gray-700 !default;
@@ -130,9 +125,6 @@ $font-weight-normal: 400;
 @import "./variables/inputs";
 @import "./variables/typography";
 
-
-$navbarStyle: "navbar" !default;
-
 // Marko Icons
 $marko-web-icon-fill-dark: $gray-800 !default;
 $marko-web-icon-fill-light: $white !default;
@@ -164,13 +156,13 @@ $theme-site-header-breakpoints: map-merge(
 $skin-desktop-menu-breakpoint: map-get($theme-site-header-breakpoints, hide-secondary);
 $theme-site-navbar-brand-margin-x: 36px !default;
 
-$theme-site-navbar-logo-height: 60px !default;
+$theme-site-navbar-logo-height: 46px !default;
 $theme-site-navbar-logo-height-sm: 35px !default;
 
 $theme-site-navbar-primary-height-sm: 0;
 
 $theme-site-navbar-secondary-bg-color: $white;
-$theme-site-navbar-secondary-font-size: 16px !default;
+$theme-site-navbar-secondary-font-size: 18px !default;
 $theme-site-navbar-secondary-font-size-sm: $theme-site-navbar-secondary-font-size - 2;
 $theme-site-navbar-secondary-line-height: get-line-height($theme-site-navbar-secondary-font-size, 26px);
 $theme-site-navbar-secondary-line-height-sm: get-line-height($theme-site-navbar-secondary-font-size-sm, 24px);
@@ -295,9 +287,6 @@ $theme-heading-h6-line-height-sm:     1.2 !default;
 // Content Headings
 $theme-content-heading-large-margin-bottom:     1rem !default;
 $theme-content-heading-large-margin-bottom-sm:  1rem !default;
-
-$theme-content-heading-h2-margin-bottom:        1rem !default;
-$theme-content-heading-h2-margin-bottom-sm:     1rem !default;
 
 $theme-content-heading-h3-margin-bottom:        1rem !default;
 $theme-content-heading-h3-margin-bottom-sm:     1rem !default;
