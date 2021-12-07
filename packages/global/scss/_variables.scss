@@ -1,11 +1,12 @@
+// Fonts
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap");
 $skin-font-family-primary: "Open Sans", sans-serif !default;
 $skin-font-family-secondary: "Open Sans", sans-serif !default;
 
-$navbarStyle: "navbar" !default;
+// Navbar
+$theme-site-navbar-logo-height: 60px !default;
+$theme-site-navbar-secondary-font-size: 16px !default;
 
-$theme-site-navbar-logo-height: 60px;
-$theme-site-navbar-secondary-font-size: 16px;
 // Ads
 $leaderboard-min-height-mobile: 100px !default;
 $leaderboard-min-height-desktop: 250px !default;
