@@ -6,24 +6,8 @@ $ const { id, type, pageNode, ...rest } = input;
   page-node=pageNode
   ...rest
 >
-  <@section|{ aliases }|>
-    <div class="row">
-      <div class="col-lg-4">
-        <global-featured-jobs-list-block
-          findJobLink="https://jobs.ccjobsnow.com"
-          postJobLink="https://jobs.ccjobsnow.com/employer/emplogin.html"
-        />
-      </div>
-      <div class="col-lg-4">
-      </div>
-      <div class="col-lg-4">
-        <global-section-list-block alias="other-news" />
-      </div>
-    </div>
-  </@section>
-
   <@section modifiers=["break-container"]>
-    <global-premium-employers-block title="Premium Employers" />
+    <global-featured-jobs-block />
   </@section>
 
   <@section>

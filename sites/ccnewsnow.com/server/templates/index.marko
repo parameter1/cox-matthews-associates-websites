@@ -59,36 +59,8 @@ $ const { id, alias, name, pageNode } = input;
     <global-section-list-deck-block aliases=["academics", "faculty", "finance"] />
   </@section>
 
-  <@section|{ aliases }|>
-    <global-gam-define-display-ad
-      name="rotation"
-      position="home_page"
-      aliases=aliases
-      modifiers=["inter-block"]
-    />
-  </@section>
-
-  <@section|{ aliases }|>
-    <div class="row">
-      <div class="col-lg-4">
-        <global-featured-jobs-list-block
-          findJobLink="https://jobs.ccjobsnow.com"
-          postJobLink="https://jobs.ccjobsnow.com/employer/emplogin.html"
-        />
-      </div>
-      <div class="col-lg-4">
-      </div>
-      <!-- <div class="col-lg-4">
-        <global-section-list-block alias="technology" />
-      </div> -->
-      <div class="col-lg-4">
-        <global-section-list-block alias="other-news" />
-      </div>
-    </div>
-  </@section>
-
   <@section modifiers=["break-container"]>
-    <global-premium-employers-block title="Premium Employers" />
+    <global-featured-jobs-block />
   </@section>
 
   <@section>
