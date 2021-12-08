@@ -17,33 +17,7 @@ $ const { id, alias, name, pageNode } = input;
   </@section>
 
   <@section|{ aliases }|>
-    <div class="row">
-      <div class="col-lg-4">
-        <global-section-list-block alias="disparities" />
-      </div>
-      <div class="col-lg-4">
-        <global-section-list-block alias="nursing" />
-      </div>
-      <div class="col-lg-4">
-        <global-section-list-block alias="research" />
-      </div>
-      <!-- <div class="col-lg-4 pt-block">
-        <global-gam-define-display-ad
-          name="rail"
-          position="content_page"
-          aliases=aliases
-          modifiers=["max-width-300", "center", "margin-auto-x", "rail"]
-          class="mb-block"
-        />
-        <global-gam-define-display-ad
-          name="rail"
-          position="content_page"
-          aliases=aliases
-          modifiers=["max-width-300", "center", "margin-auto-x", "rail"]
-          class="mb-block"
-        />
-      </div> -->
-    </div>
+    <global-section-list-deck-block aliases=["disparities", "nursing", "research"] />
   </@section>
 
   <@section|{ aliases }|>
@@ -56,46 +30,24 @@ $ const { id, alias, name, pageNode } = input;
   </@section>
 
   <@section|{ aliases }|>
-    <div class="row">
-      <div class="col-lg-4">
-        <global-section-list-block alias="mental-health" />
-      </div>
-      <div class="col-lg-4">
-      </div>
-      <div class="col-lg-4">
-        <global-section-list-block alias="policies" />
-      </div>
-    </div>
-  </@section>
-
-  <@section|{ aliases }|>
-    <global-gam-define-display-ad
-      name="rotation"
-      position="home_page"
-      aliases=aliases
-      modifiers=["inter-block"]
-    />
-  </@section>
-
-  <@section|{ aliases }|>
-    <div class="row">
-      <div class="col-lg-4">
-        <global-featured-jobs-list-block />
-      </div>
-      <div class="col-lg-4">
-      </div>
-      <div class="col-lg-4">
-        <global-section-list-block alias="other-news" />
-      </div>
-    </div>
+    <global-section-list-deck-block aliases=["mental-health", "policies", "other-news"] />
   </@section>
 
   <@section modifiers=["break-container"]>
-    <global-premium-employers-block title="Premium Employers" />
+    <global-featured-jobs-block />
   </@section>
 
   <@section>
     <site-promo-card-rotation-block />
+  </@section>
+
+  <@section|{ aliases }|>
+    <global-gam-define-display-ad
+      name="rotation"
+      position="home_page"
+      aliases=aliases
+      modifiers=["inter-block"]
+    />
   </@section>
 
   <@section>
