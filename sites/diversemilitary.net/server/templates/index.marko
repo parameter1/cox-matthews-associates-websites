@@ -16,34 +16,8 @@ $ const { id, alias, name, pageNode } = input;
     <global-opinion-block alias="blogs-opinion" />
   </@section>
 
-  <@section|{ aliases }|>
-    <div class="row">
-      <div class="col-lg-4">
-        <global-section-list-block alias="academics" />
-      </div>
-      <div class="col-lg-4">
-        <global-section-list-block alias="veterans" />
-      </div>
-      <div class="col-lg-4">
-        <global-section-list-block alias="policy" />
-      </div>
-      <!-- <div class="col-lg-4 pt-block">
-        <global-gam-define-display-ad
-          name="rail"
-          position="content_page"
-          aliases=aliases
-          modifiers=["max-width-300", "center", "margin-auto-x", "rail"]
-          class="mb-block"
-        />
-        <global-gam-define-display-ad
-          name="rail"
-          position="content_page"
-          aliases=aliases
-          modifiers=["max-width-300", "center", "margin-auto-x", "rail"]
-          class="mb-block"
-        />
-      </div> -->
-    </div>
+  <@section>
+    <global-section-list-deck-block aliases=["academics", "veterans", "policy"] />
   </@section>
 
   <@section|{ aliases }|>
@@ -55,22 +29,12 @@ $ const { id, alias, name, pageNode } = input;
     />
   </@section>
 
-  <@section|{ aliases }|>
-    <div class="row">
-      <div class="col-lg-4">
-        <global-featured-jobs-list-block />
-      </div>
-      <div class="col-lg-4">
-        <global-section-list-block alias="funding" />
-      </div>
-      <div class="col-lg-4">
-        <global-section-list-block alias="other-news" />
-      </div>
-    </div>
+  <@section>
+    <global-section-list-deck-block aliases=["from-the-pentagon", "funding", "other-news"] />
   </@section>
 
-  <@section modifiers=["break-container"]>
-    <global-premium-employers-block title="Premium Employers" />
+  <@section|{ aliases }| modifiers=["break-container"]>
+    <global-featured-jobs-block />
   </@section>
 
   <@section>
