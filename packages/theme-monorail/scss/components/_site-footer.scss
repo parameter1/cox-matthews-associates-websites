@@ -45,12 +45,11 @@
 
   &__brand {
     margin-right: auto;
-    margin-bottom: 18px;
+    margin-bottom: 33px;
     margin-left: auto;
   }
 
   &__logo {
-    height: 45px;
     filter: brightness(0) invert(1);
   }
 
@@ -154,11 +153,8 @@
 .social-follow {
   $self: &;
   &--site-footer {
-    margin-bottom: 16px;
-    text-align: center;
     #{ $self } {
       &__header {
-        display: none;
         color: skin-typography-prop("footer-header-1", "color");
       }
 
@@ -166,10 +162,6 @@
         // stylelint-disable-next-line
         > .social-icon-link {
           margin-right: 16px;
-          // stylelint-disable-next-line
-          &:last-of-type {
-            margin-right: 0;
-          }
         }
       }
     }
