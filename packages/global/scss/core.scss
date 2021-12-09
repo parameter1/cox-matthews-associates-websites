@@ -4,9 +4,35 @@
 // import theme css
 @import "../../node_modules/@cox-matthews-associates/package-theme-monorail/scss/core";
 
+// page wrapper
+.page-wrapper {
+  .breadcrumbs {
+    &--website-section {
+      @include skin-typography($style: "slug-medium", $link-style: "primary");
+      .breadcrumb {
+        padding-bottom: 8px;
+      }
+    }
+  }
+  &__website-section-description {
+    font-size: 18px;
+  }
+  &__section {
+    .breadcrumbs {
+      margin-bottom: .5rem;
+    }
+    &--break-container {
+      @include media-breakpoint-down(md) {
+        margin-right: -16px;
+        margin-left: -16px;
+      }
+    }
+  }
+}
+
+
 // skin components
 @import "./components/content-page";
-@import "./components/page-wrapper";
 @import "./components/podcasts-page";
 @import "./components/site-footer";
 @import "./components/site-newsletter-menu";

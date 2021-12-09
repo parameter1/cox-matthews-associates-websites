@@ -7,27 +7,19 @@
     padding-right: 16px;
     padding-left: 16px;
   }
-  .breadcrumbs {
-    &--website-section {
-      @include skin-typography($style: "slug-medium", $link-style: "primary");
-      .breadcrumb {
-        padding-bottom: 8px;
-      }
-    }
-  }
+
   &__website-section-name {
     margin-bottom: 20px;
     @include skin-typography($style: "section-header");
   }
 
-  &__website-section-description {
-    margin-bottom: 20px;
-    font-size: 18px;
-  }
-
   &__website-section-subhead {
     margin-bottom: 20px;
     @include skin-typography($style: "section-header-small");
+  }
+
+  &__website-section-description {
+    font-size: 20px;
   }
 
   &__section {
@@ -36,17 +28,9 @@
       margin-bottom: 60px;
     }
 
-    .breadcrumbs {
-      margin-bottom: .5rem;
-    }
-
     &--break-container {
       margin-right: $marko-web-page-wrapper-padding * -1;
       margin-left: $marko-web-page-wrapper-padding * -1;
-      @include media-breakpoint-down(md) {
-        margin-right: -16px;
-        margin-left: -16px;
-      }
       background-color: $gray-100;
       @media (min-width: $marko-web-document-container-max-width) {
         $margin: calc((((100vw - #{$marko-web-document-container-max-width}) / 2) + #{$marko-web-page-wrapper-padding}) * -1);
@@ -77,6 +61,10 @@
       }
     }
 
+    &--content-body {
+      margin-bottom: 2rem;
+    }
+
     &--nativex-story-header {
       padding-top: 30px;
     }
@@ -90,17 +78,4 @@
     padding-right: 0;
     padding-left: 0;
   }
-
-  // Will have to revisit this inclusion after we figure out ads and how they will work.
-  // For now adding margin top to first element of page wrapper
-  // #{ $self } {
-  //   &__section {
-  //     &:last-of-type {
-  //       margin-bottom: 30px;
-  //       @include media-breakpoint-up(md) {
-  //         margin-bottom: 60px;
-  //       }
-  //     }
-  //   }
-  // }
 }
