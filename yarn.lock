@@ -2239,20 +2239,6 @@
     marko "~4.20.0"
     resolve-from "^2.0.0"
 
-"@parameter1/base-cms-marko-web-contact-us@^2.62.0":
-  version "2.62.0"
-  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web-contact-us/-/base-cms-marko-web-contact-us-2.62.0.tgz#93db98a66daf55bcd2c078c95aa38291a82f2ad4"
-  integrity sha512-A2DJBmAmq2IBxDxnXb52FJRcjIv3MAIsetzay/7ktWdVmMElh0RdNhJY2Saf6lRzCtrZd/iFEioq0x10aFKVQg==
-  dependencies:
-    "@parameter1/base-cms-env" "^2.45.0"
-    "@parameter1/base-cms-marko-core" "^2.46.0"
-    "@parameter1/base-cms-marko-web" "^2.62.0"
-    "@parameter1/base-cms-utils" "^2.22.2"
-    "@sendgrid/mail" "^6.4.0"
-    body-parser "^1.19.0"
-    node-fetch "^2.6.0"
-    vue-recaptcha "^1.2.0"
-
 "@parameter1/base-cms-marko-web-deferred-script-loader@^2.48.1":
   version "2.48.1"
   resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web-deferred-script-loader/-/base-cms-marko-web-deferred-script-loader-2.48.1.tgz#f16ee9ccb5e69e6604af557a692bde9b4e011627"
