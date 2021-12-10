@@ -3,6 +3,7 @@
 
 // import theme css
 @import "../../node_modules/@cox-matthews-associates/package-theme-monorail/scss/core";
+@import "../../node_modules/@parameter1/base-cms-marko-web-contact-us/scss/index";
 
 // page wrapper
 .page-wrapper {
@@ -62,7 +63,6 @@
     }
   }
 }
-
 
 // skin components
 @import "./components/podcasts-page";

@@ -6,6 +6,7 @@ import SocialSharing from '@parameter1/base-cms-marko-web-social-sharing/browser
 import IdentityX from '@parameter1/base-cms-marko-web-identity-x/browser';
 import NativeX from '@parameter1/base-cms-marko-web-native-x/browser';
 import OmedaRapidIdentityX from '@parameter1/base-cms-marko-web-omeda-identity-x/browser/rapid-identify.vue';
+import ContactUs from '@parameter1/base-cms-marko-web-contact-us/browser';
 
 const BlockLoader = () => import(/* webpackChunkName: "global-block-loader" */ './block-loader.vue');
 const MenuToggleButton = () => import(/* webpackChunkName: "global-menu-toggle-button" */ './menu-toggle-button.vue');
@@ -18,6 +19,7 @@ const IdentityXCommentStream = () => import(/* webpackChunkName: "global-identit
 
 export default (Browser) => {
   GCSE(Browser);
+  ContactUs(Browser);
   GTM(Browser);
   GAM(Browser);
   Search(Browser);
