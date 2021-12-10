@@ -23,6 +23,7 @@ const resources = [
 
 const utilities = [
   { href: 'https://mediakit.diverseeducation.com/', label: 'Advertise', target: '_blank' },
+  { href: '/page/about-us', label: 'About Us' },
   { href: '/page/contact-us', label: 'Contact Us' },
   subscribe,
 ];
