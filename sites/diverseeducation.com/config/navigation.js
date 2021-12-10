@@ -40,6 +40,7 @@ const awards = [
 const utilities = [
   { href: 'https://mediakit.diverseeducation.com/', label: 'Advertise', target: '_blank' },
   { href: '/press-releases', label: 'Press Releases' },
+  { href: '/page/about-us', label: 'About Us' },
   { href: '/page/contact-us', label: 'Contact Us' },
   subscribe,
 ];
