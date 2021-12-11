@@ -10,6 +10,7 @@
     "test": "yarn lint"
   },
   "dependencies": {
+    "@cox-matthews-associates/package-theme-monorail": "^0.0.0",
     "@parameter1/base-cms-image": "^2.45.0",
     "@parameter1/base-cms-inflector": "^2.0.0",
     "@parameter1/base-cms-marko-core": "^2.46.0",
@@ -38,6 +39,7 @@
     "graphql-tag": "^2.10.1",
     "html-entities": "^2.1.0",
     "http-errors": "^1.7.3",
+    "left-pad": "^1.3.0",
     "moment": "^2.29.1",
     "newrelic": "^6.4.1",
     "node-fetch": "^2.6.1",
