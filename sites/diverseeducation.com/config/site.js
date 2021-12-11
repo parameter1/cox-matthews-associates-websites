@@ -5,6 +5,7 @@ const identityX = require('./identity-x');
 const gam = require('./gam');
 const newsletter = require('./newsletter');
 const search = require('./search');
+const contactUs = require('./contact-us');
 
 module.exports = {
   leaders,
@@ -14,6 +15,7 @@ module.exports = {
   gam,
   newsletter,
   search,
+  contactUs,
   company: 'Cox Matthews and Associates, Inc',
   p1events: {
     tenant: 'diverse',
