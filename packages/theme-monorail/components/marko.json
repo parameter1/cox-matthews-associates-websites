@@ -8,6 +8,9 @@
   "<theme-menu-toggle-button>": {
     "template": "./menu-toggle-button.marko"
   },
+  "<theme-pagination-controls>": {
+    "template": "./pagination-controls.marko"
+  },
   "<theme-recaptcha>": {
     "template": "./recaptcha.marko"
   }

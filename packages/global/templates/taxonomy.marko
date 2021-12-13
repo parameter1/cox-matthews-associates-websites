@@ -50,7 +50,7 @@ $ const title = `${type}: ${name}`;
         </marko-web-query>
 
         <global-query-total-count|{ totalCount }| name="all-published-content" params={ includeTaxonomyIds: [id] }>
-          <global-pagination-controls
+          <theme-pagination-controls
             per-page=perPage
             total-count=totalCount
             path=req.path
