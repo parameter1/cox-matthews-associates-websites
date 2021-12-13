@@ -13,5 +13,8 @@
   },
   "<theme-recaptcha>": {
     "template": "./recaptcha.marko"
+  "<theme-social-follow>": {
+    "template": "./social-follow.marko"
+  },
   }
 }

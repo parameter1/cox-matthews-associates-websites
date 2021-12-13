@@ -47,9 +47,6 @@
   "<global-site-footer>": {
     "template": "./site-footer.marko"
   },
-  "<global-social-follow>": {
-    "template": "./social-follow.marko"
-  },
   "<global-query-total-count>": {
     "template": "./query-total-count.marko"
   }
