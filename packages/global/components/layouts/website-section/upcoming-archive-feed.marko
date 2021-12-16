@@ -24,7 +24,7 @@ $ const perPage = 18;
   <@head>
     <global-section-feed-block|{ totalCount }| count-only=true alias=alias >
       <@query-params ...queryParams />
-      <global-pagination-controls
+      <theme-pagination-controls
         per-page=perPage
         total-count=totalCount
         path=alias
@@ -124,7 +124,7 @@ $ const perPage = 18;
     </global-section-feed-block>
     <global-section-feed-block|{ totalCount }| count-only=true alias=alias >
       <@query-params ...queryParams />
-      <global-pagination-controls
+      <theme-pagination-controls
         per-page=perPage
         total-count=totalCount
         path=alias
