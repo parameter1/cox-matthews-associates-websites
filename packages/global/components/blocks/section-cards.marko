@@ -27,7 +27,7 @@ $ const adPosition = input.adPosition || "after";
     </if>
     <default-theme-card-deck-flow cols=3 nodes=nodes modifiers=[blockName]>
       <@slot|{ node }|>
-        <global-content-node
+        <theme-content-node
           image-position="top"
           card=true
           flush=true
@@ -38,7 +38,7 @@ $ const adPosition = input.adPosition || "after";
           node=node
         >
           <@image ar="3:2" fluid=true />
-        </global-content-node>
+        </theme-content-node>
       </@slot>
       <if(adIndex !== null)>
         <for|show| of=adIndex>

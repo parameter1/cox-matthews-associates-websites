@@ -49,7 +49,7 @@ $ const queryParams = {
         nodes=nodes
         modifiers=["awards-honors", "emerging-scholars"]>
         <@slot|{ node }|>
-          <global-awards-node
+          <theme-content-node
             image-position="top"
             card=true
             flush=true
@@ -58,10 +58,11 @@ $ const queryParams = {
             with-section=false
             with-dates=false
             display-button=true
+            call-to-action="View Profile"
             modifiers=["awards-honors", "emerging-scholars"]
             node=node>
             <@image ar="1:1" fluid=true/>
-          </global-awards-node>
+          </theme-content-node>
         </@slot>
       </default-theme-card-deck-flow>
     </marko-web-query>
