@@ -28,7 +28,7 @@ $ const blockName = "premium-employers";
     </if>
     <default-theme-card-deck-flow cols=displayLimit nodes=nodes modifiers=[blockName]>
       <@slot|{ node }|>
-        <global-content-node
+        <theme-content-node
           image-position="top"
           card=true
           flush=true
@@ -40,7 +40,7 @@ $ const blockName = "premium-employers";
           node=node
         >
           <@image ar="16:9" fluid=true />
-        </global-content-node>
+        </theme-content-node>
       </@slot>
     </default-theme-card-deck-flow>
   </marko-web-block>
