@@ -1,5 +1,5 @@
 {
-  "<global-content-list-flow>": {
+  "<theme-content-list-flow>": {
     "template": "./list.marko",
     "<header>": {},
     "<body>": {},
@@ -18,10 +18,18 @@
     "@flush-x": "boolean",
     "@flush-y": "boolean",
     "@class": "string",
-    "@modifiers": "array",
-    "@collapsible": "boolean"
+    "@collapsible": "boolean",
+    "@modifiers": "array"
   },
-  "<global-content-card-deck-4-col-flow>": {
+  "<theme-content-directory-section-flow>": {
+    "template": "./directory-section.marko",
+    "<header>": {},
+    "<node>": {
+      "<image>": {}
+    },
+    "@nodes": "array"
+  },
+  "<theme-content-card-deck-4-col-flow>": {
     "template": "./card-deck-4-col.marko"
   }
 }

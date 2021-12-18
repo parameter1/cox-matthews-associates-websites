@@ -56,13 +56,13 @@ $ const withNativeX = defaultValue(input.withNativeX, true);
       </marko-web-element>
 
       <if(cardNodes.length)>
-        <global-content-card-deck-4-col-flow
+        <theme-content-card-deck-4-col-flow
           nodes=cardNodes
           modifiers=[blockName]
           ...(withNativeX && { nativeX: { name: "default", index: 3, sectionName: "Sponsor Content" } })
         >
           <@node modifiers=[`${blockName}-card`] />
-        </global-content-card-deck-4-col-flow>
+        </theme-content-card-deck-4-col-flow>
       </if>
     </marko-web-block>
   </if>
