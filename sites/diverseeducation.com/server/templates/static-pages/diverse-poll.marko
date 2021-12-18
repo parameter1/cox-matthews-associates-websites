@@ -6,7 +6,7 @@ $ const description = "";
   <@page>
     <marko-web-page-wrapper class="awards-honors mppwcc">
       <@section modifiers=["first"]>
-        <global-gam-define-display-ad
+        <theme-gam-define-display-ad
           name="leaderboard"
           position="section_page"
           aliases=["awards-honors/mppwcc"]
@@ -31,10 +31,10 @@ $ const description = "";
         </div>
       </@section>
       <@section>
-        <global-client-side-most-popular-block />
+        <theme-client-side-most-popular-block />
       </@section>
       <@section|{ aliases }|>
-        <global-gam-define-display-ad
+        <theme-gam-define-display-ad
           name="rotation"
           position="section_page"
           aliases=aliases

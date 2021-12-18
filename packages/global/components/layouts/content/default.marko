@@ -1,6 +1,5 @@
 import { getAsArray } from "@parameter1/base-cms-object-path";
 import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
-import DefineDisplayAd from "../../gam/define-display-ad";
 
 $ const { site } = out.global;
 $ const { id, type, pageNode, showReadNextBlock, showBottomAdBlock, showTopStoryBlock, ...rest } = input;
@@ -23,7 +22,7 @@ $ const excludeFromSidebarsLabel = ["Scholar Profile"];
   ...rest
 >
   <@section|{ aliases }| modifiers=["first-sm"]>
-    <global-gam-define-display-ad
+    <theme-gam-define-display-ad
       name="leaderboard"
       position="content_page"
       aliases=aliases
@@ -104,7 +103,7 @@ $ const excludeFromSidebarsLabel = ["Scholar Profile"];
 
           $ const desktopCounts = [1000, 2750, 4500, 6250, 8000, 9750, 11500, 13250, 15000, 16750, 18500];
           $ const mobileCounts = [350, 1650, 2950, 4250, 5550, 6850, 8150, 9450, 10750, 12050, 13350, 14650, 15950, 17250];
-          <global-gam-inject-ads selector=`#${bodyId}` detect-embeds=true>
+          <theme-gam-inject-ads selector=`#${bodyId}` detect-embeds=true>
             <for|char| of=desktopCounts>
               <!-- desktop/tablet only -->
               <@inject
@@ -124,7 +123,7 @@ $ const excludeFromSidebarsLabel = ["Scholar Profile"];
                 modifiers=["max-width-970", "margin-auto-x", "inline-content"]
               />
             </for>
-          </global-gam-inject-ads>
+          </theme-gam-inject-ads>
         </if>
 
         $ const profiles = getAsArray(content, 'profiles');
@@ -178,7 +177,7 @@ $ const excludeFromSidebarsLabel = ["Scholar Profile"];
         </if>
 
         <!-- <if(displayComments)>
-          <global-identity-x-comment-stream content=content />
+          <theme-identity-x-comment-stream content=content />
         </if> -->
 
         <if(displayReadNext)>
@@ -194,7 +193,7 @@ $ const excludeFromSidebarsLabel = ["Scholar Profile"];
 
   <if(showBottomAdBlock)>
     <@section|{ aliases }|>
-      <global-gam-define-display-ad
+      <theme-gam-define-display-ad
         name="rotation"
         position="content_page"
         aliases=aliases
@@ -221,7 +220,7 @@ $ const excludeFromSidebarsLabel = ["Scholar Profile"];
   </for>
 
   <@section|{ aliases }|>
-    <global-gam-define-display-ad
+    <theme-gam-define-display-ad
       name="rotation"
       position="content_page"
       aliases=aliases
