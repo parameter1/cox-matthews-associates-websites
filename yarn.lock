@@ -2324,6 +2324,22 @@
     moment "^2.29.1"
     node-fetch "^2.6.5"
 
+"@parameter1/base-cms-marko-web-inquiry@^2.61.0":
+  version "2.61.0"
+  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web-inquiry/-/base-cms-marko-web-inquiry-2.61.0.tgz#3dd04010cbb246318e798f724e6ec9fb1ebafa05"
+  integrity sha512-JXnhqx+RMPOvDOJtVcLwlDMe+yA08gck3SBClcXIlWglZ2hCG+l5M1VsZwQX94emEDMARY4iioh+Kpz4h5FIeA==
+  dependencies:
+    "@parameter1/base-cms-env" "^2.45.0"
+    "@parameter1/base-cms-object-path" "^2.45.0"
+    "@parameter1/base-cms-utils" "^2.22.2"
+    "@sendgrid/mail" "^6.4.0"
+    body-parser "^1.19.0"
+    express "^4.17.1"
+    graphql "^14.7.0"
+    graphql-tag "^2.12.5"
+    node-fetch "^2.6.5"
+    vue-recaptcha "^1.3.0"
+
 "@parameter1/base-cms-marko-web-leaders@^2.46.3":
   version "2.46.3"
   resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web-leaders/-/base-cms-marko-web-leaders-2.46.3.tgz#a940d20c10b11a14bd49170a62dfcb00685ce129"
@@ -2565,10 +2581,28 @@
   dependencies:
     "@parameter1/omeda-graphql-client" "^0.2.3"
 
+"@parameter1/omeda-graphql-client-express@^0.4.2":
+  version "0.4.2"
+  resolved "https://registry.yarnpkg.com/@parameter1/omeda-graphql-client-express/-/omeda-graphql-client-express-0.4.2.tgz#a0552d607de75ab35862d62a2c4fac2522aef83f"
+  integrity sha512-Ui4Tt7G8gs2leBlQS/VIzrXpcsLdRp/nb6d0I5JhhKkT3EojrkpA7SZSrAChnwDoCWLn7giP0vtRnWdVE9SpVg==
+  dependencies:
+    "@parameter1/omeda-graphql-client" "^0.4.2"
+
 "@parameter1/omeda-graphql-client@^0.2.3":
   version "0.2.3"
   resolved "https://registry.yarnpkg.com/@parameter1/omeda-graphql-client/-/omeda-graphql-client-0.2.3.tgz#46345a851a7f51b361fe67ad7597429498d5e2d3"
   integrity sha512-cVLB9+paLmEhy6/I8FyjX+YVoGUMqVsfzUvKPRJzhuMLJhpnV88S28WqWWXNFdw8ocySjsmBfohCr74Dd76g7A==
+  dependencies:
+    apollo-cache-inmemory "^1.6.6"
+    apollo-client "^2.6.10"
+    apollo-link-http "^1.5.17"
+    graphql "^15.5.0"
+    node-fetch "^2.6.1"
+
+"@parameter1/omeda-graphql-client@^0.4.2":
+  version "0.4.2"
+  resolved "https://registry.yarnpkg.com/@parameter1/omeda-graphql-client/-/omeda-graphql-client-0.4.2.tgz#42476b0acf1c817ad4facbdfb9b9ba34a140522c"
+  integrity sha512-ZwIu67TcrRxGBg3JJjDma2ZqjLdl79KpQDTho0sQH+2GVFvQkM2/uPgiBAv+6VRlT1FkZ6T2slxXQaGaDYW2tw==
   dependencies:
     apollo-cache-inmemory "^1.6.6"
     apollo-client "^2.6.10"
@@ -13546,6 +13580,11 @@ vue-recaptcha@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/vue-recaptcha/-/vue-recaptcha-1.2.0.tgz#a30ab08b4c79326d2e3ab1c1e76c367e02e6eb35"
   integrity sha512-zgt8bAmlHbLT2XY0diwA/UgGcbp1cOYXJ8za17WM1zlOC8EiO0mpGvYzXaR1aeU0gaiv1qLO6GOUwQVVAjgwMw==
+
+vue-recaptcha@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/vue-recaptcha/-/vue-recaptcha-1.3.0.tgz#e668e54f798c6333057ef38b4425a72f451ce478"
+  integrity sha512-9Qf1niyHq4QbEUhsvdUkS8BoOyhYwpp8v+imUSj67ffDo9RQ6h8Ekq8EGnw/GKViXCwWalp7EEY/n/fOtU0FyA==
 
 vue-server-renderer@^2.6.14:
   version "2.6.14"
