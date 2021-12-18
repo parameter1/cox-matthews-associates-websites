@@ -21,7 +21,7 @@ $ const shouldInjectAds = false;
   ...rest
 >
   <@section|{ aliases }| modifiers=["first-sm"]>
-    <global-gam-define-display-ad
+    <theme-gam-define-display-ad
       name="leaderboard"
       position="content_page"
       aliases=aliases
@@ -162,14 +162,14 @@ $ const shouldInjectAds = false;
         </div>
       </div>
       <div class="col-lg-4 pt-block">
-        <global-gam-define-display-ad
+        <theme-gam-define-display-ad
           name="rail"
           position="content_page"
           aliases=aliases
           modifiers=["max-width-300", "center", "margin-auto-x", "rail"]
           class="mb-block"
         />
-        <global-gam-define-display-ad
+        <theme-gam-define-display-ad
           name="rail"
           position="content_page"
           aliases=aliases
@@ -181,7 +181,7 @@ $ const shouldInjectAds = false;
   </@section>
   <!-- <if(showBottomAdBlock)>
     <@section|{ aliases }|>
-      <global-gam-define-display-ad
+      <theme-gam-define-display-ad
         name="rotation"
         position="content_page"
         aliases=aliases
