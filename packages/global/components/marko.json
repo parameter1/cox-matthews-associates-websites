@@ -2,8 +2,7 @@
   "taglib-imports": [
     "./blocks/marko.json",
     "./layouts/marko.json",
-    "./magazine/marko.json",
-    "./page/marko.json"
+    "./magazine/marko.json"
   ],
   "<global-sponsored-label-logo>": {
     "template": "./sponsored-label-logo.marko"
