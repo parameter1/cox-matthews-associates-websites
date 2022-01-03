@@ -2,12 +2,12 @@ const gql = require('graphql-tag');
 
 module.exports = gql`
 
-fragment ReadNextBlockContentFragment on Content {
+fragment TopStoriesBlockFragment on Content {
   id
   type
   shortName
   labels
-  published
+  teaser(input: { useFallback: false, maxLength: null })
   siteContext {
     path
   }
@@ -19,7 +19,7 @@ fragment ReadNextBlockContentFragment on Content {
   }
   primaryImage {
     id
-    src(input: { options: { auto: "format,compress", q: 70 } })
+    src(input: { options: { auto: "format,compress" } })
     alt
     isLogo
   }
