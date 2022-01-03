@@ -1,7 +1,6 @@
 import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
 import queryFragment from "../../graphql/fragments/section-feed-block";
 
-$ const withSection = defaultValue(input.withSection, true);
 $ const queryParams = {
   ...input.queryParams,
   sectionAlias: input.alias,
@@ -10,6 +9,9 @@ $ const queryParams = {
 
 $ const blockName = "section-feed";
 $ const countOnly = defaultValue(input.countOnly, false);
+$ const modifiers = defaultValue(input.modifiers, []);
+$ const lazyload = defaultValue(input.lazyload, true);
+$ const withSection = defaultValue(input.withSection, true);
 
 <if(countOnly)>
   <theme-query-total-count|data| name="website-scheduled-content" params=queryParams>
@@ -22,7 +24,7 @@ $ const countOnly = defaultValue(input.countOnly, false);
       inner-justified=true
       flush-x=true
       flush-y=false
-      modifiers=[blockName]
+      modifiers=[blockName, ...modifiers]
     >
       <@nodes nodes=nodes>
         <@slot|{ node }|>
@@ -30,6 +32,7 @@ $ const countOnly = defaultValue(input.countOnly, false);
             node=node
             display-image=input.displayImage
             with-section=withSection
+            lazyload=lazyload
           />
         </@slot>
       </@nodes>
