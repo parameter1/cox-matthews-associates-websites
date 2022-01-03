@@ -12,10 +12,6 @@ fragment SectionFeedBlockContentFragment on Content {
     path
   }
   published
-  ... on ContentWebinar {
-    linkUrl
-    startDate
-  }
   primarySection {
     id
     name
@@ -24,9 +20,13 @@ fragment SectionFeedBlockContentFragment on Content {
   }
   primaryImage {
     id
-    src(input: { options: { auto: "format,compress", q: 70 } })
+    src(input: { options: { auto: "format,compress" } })
     alt
     isLogo
+  }
+  ... on ContentWebinar {
+    linkUrl
+    startDate
   }
 }
 
