@@ -5,9 +5,6 @@
   "<global-esurveypro-block>": {
     "template": "./esurveypro.marko"
   },
-  "<global-newsletter-signup-banner-block>": {
-    "template": "./newsletter-signup-banner.marko"
-  },
   "<global-featured-jobs-block>": {
     "template": "./featured-jobs.marko"
   },
