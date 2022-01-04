@@ -2,7 +2,6 @@ const queryFragment = require('@cox-matthews-associates/package-theme-monorail/g
 const withContent = require('../middleware/with-content');
 const contact = require('../templates/content/contact');
 const company = require('../templates/content/company');
-const news = require('../templates/content/news');
 const product = require('../templates/content/product');
 const whitepaper = require('../templates/content/whitepaper');
 const content = require('../templates/content');
@@ -15,11 +14,6 @@ module.exports = (app) => {
 
   app.get('/*?company/:id(\\d{8})*', withContent({
     template: company,
-    queryFragment,
-  }));
-
-  app.get('/*?news/:id(\\d{8})*', withContent({
-    template: news,
     queryFragment,
   }));
 
