@@ -22,7 +22,7 @@ $ const perPage = 18;
   page-node=pageNode
 >
   <@head>
-    <global-section-feed-block|{ totalCount }| count-only=true alias=alias >
+    <theme-section-feed-block|{ totalCount }| count-only=true alias=alias >
       <@query-params ...queryParams />
       <theme-pagination-controls
         per-page=perPage
@@ -30,7 +30,7 @@ $ const perPage = 18;
         path=alias
         as-rels=true
       />
-    </global-section-feed-block>
+    </theme-section-feed-block>
   </@head>
 
   <@section|{ aliases }| modifiers=["first"]>
@@ -64,9 +64,9 @@ $ const perPage = 18;
       />
     </if>
 
-    <global-section-feed-block with-section=false alias=alias >
+    <theme-section-feed-block with-section=false alias=alias >
       <@query-params ...queryParams limit=3 skip=p.skip({ perPage }) />
-    </global-section-feed-block>
+    </theme-section-feed-block>
   </@section>
 
   <@section|{ aliases }|>
@@ -79,19 +79,19 @@ $ const perPage = 18;
   </@section>
 
   <@section>
-    <global-section-feed-block with-section=false alias=alias >
+    <theme-section-feed-block with-section=false alias=alias >
       <@query-params ...queryParams limit=2 skip=p.skip({ perPage, skip: 3 }) />
-    </global-section-feed-block>
+    </theme-section-feed-block>
   </@section>
 
   <@section>
-    <global-newsletter-signup-banner-large-block />
+    <theme-newsletter-signup-banner-large-block />
   </@section>
 
   <@section>
-    <global-section-feed-block with-section=false alias=alias >
+    <theme-section-feed-block with-section=false alias=alias >
       <@query-params ...queryParams limit=3 skip=p.skip({ perPage, skip: 5 }) />
-    </global-section-feed-block>
+    </theme-section-feed-block>
   </@section>
 
   <@section|{ aliases }|>
@@ -104,9 +104,9 @@ $ const perPage = 18;
   </@section>
 
   <@section>
-    <global-section-feed-block with-section=false alias=alias >
+    <theme-section-feed-block with-section=false alias=alias >
       <@query-params ...queryParams limit=5 skip=p.skip({ perPage, skip: 8 }) />
-    </global-section-feed-block>
+    </theme-section-feed-block>
   </@section>
 
   <@section|{ aliases }|>
@@ -119,21 +119,21 @@ $ const perPage = 18;
   </@section>
 
   <@section>
-    <global-section-feed-block with-section=false alias=alias >
+    <theme-section-feed-block with-section=false alias=alias >
       <@query-params ...queryParams limit=5 skip=p.skip({ perPage, skip: 13 }) />
-    </global-section-feed-block>
-    <global-section-feed-block|{ totalCount }| count-only=true alias=alias >
+    </theme-section-feed-block>
+    <theme-section-feed-block|{ totalCount }| count-only=true alias=alias >
       <@query-params ...queryParams />
       <theme-pagination-controls
         per-page=perPage
         total-count=totalCount
         path=alias
       />
-    </global-section-feed-block>
+    </theme-section-feed-block>
   </@section>
 
   <@section>
-    <global-top-stories-block />
+    <theme-top-stories-block />
   </@section>
 
   <for|s| of=sections>

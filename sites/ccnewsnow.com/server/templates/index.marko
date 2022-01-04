@@ -13,19 +13,19 @@ $ const { id, alias, name, pageNode } = input;
   </@head>
 
   <@section modifiers=["break-container"]>
-    <global-opinion-block alias="blogs-opinion" />
+    <theme-opinion-block alias="blogs-opinion" />
   </@section>
 
   <@section|{ aliases }|>
     <div class="row">
       <div class="col-lg-4">
-        <global-section-list-block alias="workforce-development" />
+        <theme-section-list-block alias="workforce-development" />
       </div>
       <div class="col-lg-4">
-        <global-section-list-block alias="health" />
+        <theme-section-list-block alias="health" />
       </div>
       <div class="col-lg-4">
-        <global-section-list-block alias="leadership" />
+        <theme-section-list-block alias="leadership" />
       </div>
       <!-- <div class="col-lg-4 pt-block">
         <theme-gam-define-display-ad
@@ -56,7 +56,7 @@ $ const { id, alias, name, pageNode } = input;
   </@section>
 
   <@section>
-    <global-section-list-deck-block aliases=["academics", "faculty", "finance"] />
+    <theme-section-list-deck-block aliases=["academics", "faculty", "finance"] />
   </@section>
 
   <@section|{ aliases }|>
@@ -79,10 +79,10 @@ $ const { id, alias, name, pageNode } = input;
       <div class="col-lg-4">
       </div>
       <!-- <div class="col-lg-4">
-        <global-section-list-block alias="technology" />
+        <theme-section-list-block alias="technology" />
       </div> -->
       <div class="col-lg-4">
-        <global-section-list-block alias="other-news" />
+        <theme-section-list-block alias="other-news" />
       </div>
     </div>
   </@section>

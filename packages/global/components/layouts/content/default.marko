@@ -91,7 +91,7 @@ $ const excludeFromSidebarsLabel = ["Scholar Profile"];
           $ let forceDisplay;
           $ if (type === "contact") forceDisplay = "left";
           $ if (type === "video") forceDisplay = "none";
-          <global-primary-image-block
+          <theme-primary-image-block
             obj=content.primaryImage
             force-display=forceDisplay
           />
@@ -181,7 +181,7 @@ $ const excludeFromSidebarsLabel = ["Scholar Profile"];
         </if> -->
 
         <if(displayReadNext)>
-          <global-read-next-block
+          <theme-read-next-block
             content-id=id
             section-id=primarySection.id
             published=content.published
@@ -203,7 +203,7 @@ $ const excludeFromSidebarsLabel = ["Scholar Profile"];
   </if>
 
   <@section|{ content }|>
-    <global-related-stories-block
+    <theme-related-stories-block
       content-id=content.id
       section-id=content.primarySection.id
     />

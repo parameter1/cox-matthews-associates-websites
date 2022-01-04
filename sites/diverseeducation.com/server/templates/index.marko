@@ -19,19 +19,19 @@ $ const layout = get(req, "query.layout") || site.get("layout") || "default";
   </@head>
 
   <@section modifiers=["break-container"]>
-    <global-opinion-block alias="opinion" />
+    <theme-opinion-block alias="opinion" />
   </@section>
 
   <@section|{ aliases }|>
     <div class="row">
       <div class="col-lg-4">
-        <global-section-list-block alias="students" />
+        <theme-section-list-block alias="students" />
       </div>
       <div class="col-lg-4">
-        <global-section-list-block alias="faculty-staff" />
+        <theme-section-list-block alias="faculty-staff" />
       </div>
       <div class="col-lg-4">
-        <global-section-list-block alias="leadership-policy" />
+        <theme-section-list-block alias="leadership-policy" />
       </div>
     </div>
   </@section>
@@ -46,7 +46,7 @@ $ const layout = get(req, "query.layout") || site.get("layout") || "default";
   </@section>
 
   <@section>
-    <global-section-list-deck-block aliases=["sports", "demographics", "institutions"] />
+    <theme-section-list-deck-block aliases=["sports", "demographics", "institutions"] />
   </@section>
 
   <if(layout === "new")>

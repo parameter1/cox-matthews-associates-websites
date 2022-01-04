@@ -28,14 +28,14 @@ $ const queryParams = {
 >
   <!-- files/base/diverse/all/image/static/de/john-hope-franklin/freeman-hrabowski.jpeg -->
   <@head>
-  <global-section-feed-block|{ totalCount }| alias=alias count-only=true>
+  <theme-section-feed-block|{ totalCount }| alias=alias count-only=true>
     <theme-pagination-controls
       per-page=perPage
       total-count=totalCount
       path=alias
       as-rels=true
     />
-  </global-section-feed-block>
+  </theme-section-feed-block>
   </@head>
 
   <@section|{ aliases }| modifiers=["first"]>
@@ -655,18 +655,18 @@ $ const queryParams = {
         Latest
       </h2>
     </if>
-    <global-section-feed-block alias=alias display-image=true>
+    <theme-section-feed-block alias=alias display-image=true>
       <@query-params limit=perPage skip=p.skip({ perPage }) section-bubbling=false />
-    </global-section-feed-block>
+    </theme-section-feed-block>
   </@section>
   <@section>
-    <global-section-feed-block|{ totalCount }| alias=alias count-only=true>
+    <theme-section-feed-block|{ totalCount }| alias=alias count-only=true>
       <theme-pagination-controls
         per-page=perPage
         total-count=totalCount
         path=alias
       />
-    </global-section-feed-block>
+    </theme-section-feed-block>
   </@section>
   <@section|{ aliases }|>
     <theme-gam-define-display-ad

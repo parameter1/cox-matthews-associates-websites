@@ -82,7 +82,7 @@ $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type)
           $ let forceDisplay;
           $ if (type === "contact") forceDisplay = "left";
           $ if (type === "video") forceDisplay = "none";
-          <global-primary-image-block
+          <theme-primary-image-block
             obj=content.primaryImage
             force-display=forceDisplay
           />
@@ -152,7 +152,7 @@ $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type)
         </if>
 
         <if(displayReadNext)>
-          <global-read-next-block
+          <theme-read-next-block
             content-id=id
             section-id=primarySection.id
             published=content.published
@@ -174,13 +174,13 @@ $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type)
 
 
   <@section|{ blockName, content }|>
-    <global-section-cards-block alias=content.primarySection.alias title=`Latest in ${content.primarySection.name}`>
+    <theme-section-cards-block alias=content.primarySection.alias title=`Latest in ${content.primarySection.name}`>
       <@query-params limit=9 skip=p.skip({ perPage }) />
-    </global-section-cards-block>
+    </theme-section-cards-block>
   </@section>
 
   <@section|{ content }|>
-    <global-section-cards-block|{ totalCount }|
+    <theme-section-cards-block|{ totalCount }|
       alias=content.primarySection.alias
       count-only=true
     >
@@ -189,7 +189,7 @@ $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type)
         total-count=totalCount
         path=content.primarySection.alias
       />
-    </global-section-cards-block>
+    </theme-section-cards-block>
   </@section>
 
   <for|s| of=sections>

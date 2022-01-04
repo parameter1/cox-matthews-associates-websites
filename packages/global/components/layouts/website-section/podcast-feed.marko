@@ -13,14 +13,14 @@ $ const perPage = 10;
   page-node=pageNode
 >
   <@head>
-    <global-section-feed-block|{ totalCount }| alias=alias count-only=true>
+    <theme-section-feed-block|{ totalCount }| alias=alias count-only=true>
       <theme-pagination-controls
         per-page=perPage
         total-count=totalCount
         path=alias
         as-rels=true
       />
-    </global-section-feed-block>
+    </theme-section-feed-block>
   </@head>
 
   <@section|{ aliases }| modifiers=["first"]>
@@ -68,22 +68,22 @@ $ const perPage = 10;
 
     <div class="row">
       <div class="col-md-8 podcast-feed">
-        <global-section-feed-block alias=alias display-image=false>
+        <theme-section-feed-block alias=alias display-image=false>
           <@query-params limit=perPage skip=p.skip({ perPage }) />
-        </global-section-feed-block>
+        </theme-section-feed-block>
       </div>
       <div class="col-md-4">
         <contact-us-form config-name="submitPodcast"/>
       </div>
     </div>
 
-    <global-section-feed-block|{ totalCount }| alias=alias count-only=true>
+    <theme-section-feed-block|{ totalCount }| alias=alias count-only=true>
       <theme-pagination-controls
         per-page=perPage
         total-count=totalCount
         path=alias
       />
-    </global-section-feed-block>
+    </theme-section-feed-block>
   </@section>
 
   <for|s| of=sections>

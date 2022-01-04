@@ -82,7 +82,7 @@ $ const shouldInjectAds = false;
               $ let forceDisplay;
               $ if (type === "contact") forceDisplay = "left";
               $ if (type === "video") forceDisplay = "none";
-              <global-primary-image-block
+              <theme-primary-image-block
                 obj=content.primaryImage
                 force-display=forceDisplay
               />
@@ -152,7 +152,7 @@ $ const shouldInjectAds = false;
             </if>
 
             <if(displayReadNext)>
-              <global-read-next-block
+              <theme-read-next-block
                 content-id=id
                 section-id=primarySection.id
                 published=content.published
@@ -193,7 +193,7 @@ $ const shouldInjectAds = false;
 
   <@section|{ blockName, content, aliases }|>
     $ const title = `More in ${content.primarySection.name}`;
-    <global-section-cards-block
+    <theme-section-cards-block
       alias=content.primarySection.alias
       aliases=aliases
       ad-index=[1,6]
@@ -201,11 +201,11 @@ $ const shouldInjectAds = false;
       title=title
     >
       <@query-params limit=10 skip=p.skip({ perPage }) />
-    </global-section-cards-block>
+    </theme-section-cards-block>
   </@section>
 
   <@section|{ content }|>
-    <global-section-cards-block|{ totalCount }|
+    <theme-section-cards-block|{ totalCount }|
       alias=content.primarySection.alias
       count-only=true
     >
@@ -214,7 +214,7 @@ $ const shouldInjectAds = false;
         total-count=totalCount
         path=content.primarySection.alias
       />
-    </global-section-cards-block>
+    </theme-section-cards-block>
   </@section>
 
   <for|s| of=sections>

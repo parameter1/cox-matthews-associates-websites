@@ -13,14 +13,14 @@ $ const perPage = 18;
   page-node=pageNode
 >
   <@head>
-    <global-section-feed-block|{ totalCount }| alias=alias count-only=true>
+    <theme-section-feed-block|{ totalCount }| alias=alias count-only=true>
       <theme-pagination-controls
         per-page=perPage
         total-count=totalCount
         path=alias
         as-rels=true
       />
-    </global-section-feed-block>
+    </theme-section-feed-block>
   </@head>
 
   <@section|{ aliases }| modifiers=["first"]>
@@ -54,9 +54,9 @@ $ const perPage = 18;
       />
     </if>
 
-    <global-section-feed-block alias=alias display-image=input.displayImage>
+    <theme-section-feed-block alias=alias display-image=input.displayImage>
       <@query-params limit=3 skip=p.skip({ perPage }) />
-    </global-section-feed-block>
+    </theme-section-feed-block>
   </@section>
 
   <@section|{ aliases }|>
@@ -69,19 +69,19 @@ $ const perPage = 18;
   </@section>
 
   <@section>
-    <global-section-feed-block alias=alias display-image=input.displayImage>
+    <theme-section-feed-block alias=alias display-image=input.displayImage>
       <@query-params limit=2 skip=p.skip({ perPage, skip: 3 }) />
-    </global-section-feed-block>
+    </theme-section-feed-block>
   </@section>
 
   <@section>
-    <global-newsletter-signup-banner-large-block />
+    <theme-newsletter-signup-banner-large-block />
   </@section>
 
   <@section>
-    <global-section-feed-block alias=alias display-image=input.displayImage>
+    <theme-section-feed-block alias=alias display-image=input.displayImage>
       <@query-params limit=3 skip=p.skip({ perPage, skip: 5 }) />
-    </global-section-feed-block>
+    </theme-section-feed-block>
   </@section>
 
   <@section|{ aliases }|>
@@ -94,9 +94,9 @@ $ const perPage = 18;
   </@section>
 
   <@section>
-    <global-section-feed-block alias=alias display-image=input.displayImage>
+    <theme-section-feed-block alias=alias display-image=input.displayImage>
       <@query-params limit=5 skip=p.skip({ perPage, skip: 8 }) />
-    </global-section-feed-block>
+    </theme-section-feed-block>
   </@section>
 
   <@section|{ aliases }|>
@@ -109,16 +109,16 @@ $ const perPage = 18;
   </@section>
 
   <@section>
-    <global-section-feed-block alias=alias display-image=input.displayImage>
+    <theme-section-feed-block alias=alias display-image=input.displayImage>
       <@query-params limit=5 skip=p.skip({ perPage, skip: 13 }) />
-    </global-section-feed-block>
-    <global-section-feed-block|{ totalCount }| alias=alias count-only=true>
+    </theme-section-feed-block>
+    <theme-section-feed-block|{ totalCount }| alias=alias count-only=true>
       <theme-pagination-controls
         per-page=perPage
         total-count=totalCount
         path=alias
       />
-    </global-section-feed-block>
+    </theme-section-feed-block>
   </@section>
 
   <for|s| of=sections>
