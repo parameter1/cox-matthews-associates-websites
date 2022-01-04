@@ -1,12 +1,7 @@
 import { get } from "@parameter1/base-cms-object-path";
 import hierarchyAliases from "@parameter1/base-cms-marko-web/utils/hierarchy-aliases";
 
-$ const { site, req } = out.global;
-
 $ const { id, alias, name, pageNode } = input;
-
-$ const layout = get(req, "query.layout") || site.get("layout") || "default";
-
 
 <global-website-section-home-layout
   id=id
@@ -49,129 +44,28 @@ $ const layout = get(req, "query.layout") || site.get("layout") || "default";
     <global-section-list-deck-block aliases=["sports", "demographics", "institutions"] />
   </@section>
 
-  <if(layout === "a")>
-    <@section|{ aliases }| modifiers=["break-container"]>
-      <global-featured-jobs-block />
-    </@section>
-    <@section|{ aliases }|>
-      <div class="row">
-        <div class="col-lg-4">
-          <global-esurveypro-block />
-        </div>
-        <div class="col-lg-4">
-          <div class="twitter-block">
-            <a class="twitter-timeline" data-width="340" data-height="650" data-theme="light" href="https://twitter.com/DiverseIssues?ref_src=twsrc%5Etfw">Tweets by DiverseIssues</a>
-            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-          </div>
-        </div>
-        <div class="col-lg-4">
-          <global-magazine-current-issue-block publication-id="61128276dc429e5a098b4576" />
-        </div>
+  <@section|{ aliases }| modifiers=["break-container"]>
+    <global-featured-jobs-block />
+  </@section>
+  <@section|{ aliases }|>
+    <div class="row">
+      <div class="col-lg-8">
+        <global-esurveypro-block />
       </div>
-    </@section>
-  </if>
-  <else-if(layout === "b")>
-    <@section|{ aliases }| modifiers=["break-container"]>
-      <global-featured-jobs-block />
-    </@section>
-    <@section|{ aliases }|>
-      <div class="row">
-        <div class="col-lg-8">
-          <global-esurveypro-block />
-        </div>
-        <div class="col-lg-4">
-          <theme-gam-define-display-ad
-            name="rail"
-            position="home_page"
-            aliases=aliases
-            modifiers=["max-width-300", "center", "margin-auto-x", "rail"]
-            class="mb-block"
-          />
-        </div>
+      <div class="col-lg-4">
+        <theme-gam-define-display-ad
+          name="rail"
+          position="home_page"
+          aliases=aliases
+          modifiers=["max-width-300", "center", "margin-auto-x", "rail"]
+          class="mb-block"
+        />
       </div>
-    </@section>
-    <@section|{ aliases }|>
-      <global-magazine-issues-block publication-id="61128276dc429e5a098b4576" />
-    </@section>
-  </else-if>
-  <else-if(layout === "c")>
-    <@section|{ aliases }| modifiers=["break-container"]>
-      <global-featured-jobs-block />
-    </@section>
-    <@section|{ aliases }|>
-      <div class="row">
-        <div class="col-lg-4">
-          <div class="mb-block">
-            <global-esurveypro-block />
-          </div>
-          <theme-gam-define-display-ad
-            name="rail"
-            position="home_page"
-            aliases=aliases
-            modifiers=["max-width-300", "center", "margin-auto-x", "rail"]
-            class="mb-block"
-          />
-        </div>
-
-        <div class="col-lg-4">
-          <global-magazine-current-issue-block publication-id="61128276dc429e5a098b4576" />
-        </div>
-
-        <div class="col-lg-4">
-          <div class="twitter-block">
-            <a class="twitter-timeline" data-width="340" data-height="650" data-theme="light" href="https://twitter.com/DiverseIssues?ref_src=twsrc%5Etfw">Tweets by DiverseIssues</a>
-            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-          </div>
-        </div>
-      </div>
-    </@section>
-  </else-if>
-  <else>
-    <@section|{ aliases }|>
-      <theme-gam-define-display-ad
-        name="rotation"
-        position="home_page"
-        aliases=aliases
-        modifiers=["inter-block"]
-      />
-    </@section>
-
-    <@section|{ aliases }|>
-      <div class="row">
-        <div class="col-lg-4">
-          <global-featured-jobs-list-block />
-        </div>
-        <div class="col-lg-4">
-          <global-magazine-current-issue-block publication-id="61128276dc429e5a098b4576" />
-        </div>
-        <div class="col-lg-4">
-          <div class="twitter-block">
-            <a class="twitter-timeline" data-width="340" data-height="650" data-theme="light" href="https://twitter.com/DiverseIssues?ref_src=twsrc%5Etfw">Tweets by DiverseIssues</a>
-            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-          </div>
-        </div>
-      </div>
-    </@section>
-    <@section|{ aliases }|>
-      <div class="row">
-        <div class="col-lg-8">
-          <global-esurveypro-block />
-        </div>
-        <div class="col-lg-4">
-          <theme-gam-define-display-ad
-            name="rail"
-            position="home_page"
-            aliases=aliases
-            modifiers=["max-width-300", "center", "margin-auto-x", "rail"]
-            class="mb-block"
-          />
-        </div>
-      </div>
-    </@section>
-    <@section modifiers=["break-container"]>
-      <global-premium-employers-block title="Premium Employers" />
-    </@section>
-  </else>
+    </div>
+  </@section>
+  <@section|{ aliases }|>
+    <global-magazine-issues-block publication-id="61128276dc429e5a098b4576" />
+  </@section>
 
   <@section>
     <site-promo-card-rotation-block />
