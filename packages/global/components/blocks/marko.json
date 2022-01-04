@@ -6,9 +6,6 @@
     "template": "./callout-cards.marko",
     "@slots <slot>[]": {}
   },
-  "<global-ccj-top-250-block>": {
-    "template": "./ccj-top-250.marko"
-  },
   "<global-esurveypro-block>": {
     "template": "./esurveypro.marko"
   },

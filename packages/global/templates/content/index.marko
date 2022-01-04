@@ -6,17 +6,6 @@ $ const { id, type, pageNode, ...rest } = input;
   page-node=pageNode
   ...rest
 >
-  <!-- <@section>
-    <global-callout-cards-block>
-      <@slot>
-        <global-ccj-top-250-block />
-      </@slot>
-      <@slot>
-        <global-white-papers-block />
-      </@slot>
-    </global-callout-cards-block>
-  </@section> -->
-
   <@section|{ aliases }|>
     <theme-gam-define-display-ad
       name="rotation"
@@ -25,5 +14,4 @@ $ const { id, type, pageNode, ...rest } = input;
       modifiers=["inter-block"]
     />
   </@section>
-
 </global-content-default-layout>
