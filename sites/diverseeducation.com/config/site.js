@@ -57,7 +57,8 @@ module.exports = {
     containerId: process.env.GTM_CONTAINER_ID || 'GTM-TSQTRVN',
   },
   wufoo: {
-    userName: 'NOT_SET',
+    userName: 'diverseeducation',
+    podcastFormHash: 'zf36w2c0p0xbsh',
   },
   newsletters: {
     subscribeLink: '',
