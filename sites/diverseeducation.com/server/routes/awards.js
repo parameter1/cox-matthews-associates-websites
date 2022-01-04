@@ -1,6 +1,6 @@
 const { asyncRoute } = require('@parameter1/base-cms-utils');
 const { withWebsiteSection } = require('@parameter1/base-cms-marko-web/middleware');
-const queryFragment = require('@cox-matthews-associates/package-global/graphql/fragments/website-section-page');
+const queryFragment = require('@cox-matthews-associates/package-theme-monorail/graphql/fragments/website-section-page');
 const awardRedirects = require('./awards/redirects');
 const emergingScholars = require('./awards/emerging-scholars');
 const champions = require('../templates/website-section/awards-honors/champions');

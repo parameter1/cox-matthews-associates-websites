@@ -1,5 +1,5 @@
+const queryFragment = require('@cox-matthews-associates/package-theme-monorail/graphql/fragments/content-page');
 const withContent = require('../middleware/with-content');
-const queryFragment = require('../graphql/fragments/content-page');
 const contact = require('../templates/content/contact');
 const company = require('../templates/content/company');
 const news = require('../templates/content/news');
