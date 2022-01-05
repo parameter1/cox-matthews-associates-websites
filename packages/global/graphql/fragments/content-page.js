@@ -33,7 +33,7 @@ fragment ContentPageFragment on Content {
   }
   primaryImage {
     id
-    src(input: { useCropRectangle: true, options: { auto: "format,compress", q: 70 } })
+    src(input: { useCropRectangle: true, options: { auto: "format,compress" } })
     alt
     caption
     credit
