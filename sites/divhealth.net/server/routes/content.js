@@ -1,5 +1,5 @@
 const withContent = require('@cox-matthews-associates/package-global/middleware/with-content');
-const queryFragment = require('@cox-matthews-associates/package-theme-monorail/graphql/fragments/content-page');
+const queryFragment = require('@cox-matthews-associates/package-global/graphql/fragments/content-page');
 const contact = require('@cox-matthews-associates/package-global/templates/content/contact');
 const company = require('@cox-matthews-associates/package-global/templates/content/company');
 const product = require('@cox-matthews-associates/package-global/templates/content/product');
