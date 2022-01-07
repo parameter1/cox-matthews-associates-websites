@@ -3,7 +3,10 @@ import { getAsArray } from "@parameter1/base-cms-object-path";
 $ const { id, alias, name, pageNode } = input;
 $ const sections = getAsArray(input, "sections");
 
-$ const { pagination: p } = out.global;
+$ const { pagination: p, site } = out.global;
+$ const wufooUserName = site.get("wufoo.userName");
+$ const wufooPodcastFormHash = site.get("wufoo.podcastFormHash");
+
 $ const perPage = 10;
 
 <global-website-section-default-layout
@@ -73,7 +76,24 @@ $ const perPage = 10;
         </theme-section-feed-block>
       </div>
       <div class="col-md-4">
-        <contact-us-form config-name="submitPodcast"/>
+        <if(wufooPodcastFormHash && wufooUserName)>
+          $ const props = {
+            userName: wufooUserName,
+            formHash: wufooPodcastFormHash,
+          };
+            <marko-web-element block-name=blockName name="wufoo-form">
+              <div class="contact-us-form contact-us-form__header">
+                Drop us a line!
+              </div>
+              <marko-web-browser-component
+                name="WufooForm"
+                props=props
+              />
+            </marko-web-element>
+        </if>
+        <else>
+          <contact-us-form config-name="submitPodcast"/>
+        </else>
       </div>
     </div>
 
