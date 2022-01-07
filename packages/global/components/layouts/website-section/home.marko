@@ -1,5 +1,5 @@
 import { getAsArray } from "@parameter1/base-cms-object-path";
-import queryFragment from "../../../graphql/fragments/content-list";
+import queryFragment from "@cox-matthews-associates/package-theme-monorail/graphql/fragments/content-list";
 
 $ const { id, alias, name, pageNode } = input;
 $ const sections = getAsArray(input, "sections");
@@ -21,7 +21,7 @@ $ const sections = getAsArray(input, "sections");
   </@section>
 
   <@section|{ aliases }|>
-    <global-top-stories-block with-header=false withNativeX=false />
+    <theme-top-stories-block with-header=false withNativeX=false />
   </@section>
   <for|s| of=sections>
     <@section|{ blockName, section, aliases }| modifiers=s.modifiers>

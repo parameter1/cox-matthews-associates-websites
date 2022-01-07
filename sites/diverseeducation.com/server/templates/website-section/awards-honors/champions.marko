@@ -1,5 +1,5 @@
 import { getAsArray } from "@parameter1/base-cms-object-path";
-import queryFragment from "@cox-matthews-associates/package-global/graphql/fragments/content-list";
+import queryFragment from "@cox-matthews-associates/package-theme-monorail/graphql/fragments/content-list";
 import promoFragment from "../../../graphql/fragments/champion-promotion";
 
 $ const { id, alias, name, pageNode } = input;
@@ -65,7 +65,7 @@ $ const params = {
             <marko-web-block name=featuredContentBlockName class="page-contents__content-body">
               <marko-web-element block-name=featuredContentBlockName name="contents">
                 <marko-web-element block-name=featuredContentBlockName name="body">
-                  <global-primary-image-block
+                  <theme-primary-image-block
                     obj=node.primaryImage
                     force-display="right"
                   />

@@ -1,4 +1,6 @@
 const htmlSitemap = require('@parameter1/base-cms-marko-web-html-sitemap/routes');
+const renderBlock = require('@cox-matthews-associates/package-theme-monorail/routes/render-block');
+const taxonomy = require('@cox-matthews-associates/package-theme-monorail/routes/taxonomy');
 const dynamicPage = require('./dynamic-page');
 const feed = require('./feed');
 // const identityX = require('./identity-x');
@@ -7,9 +9,7 @@ const nativeX = require('./native-x');
 const printContent = require('./print-content');
 const publicFiles = require('./public-files');
 const redirects = require('./redirects');
-const renderBlock = require('./render-block');
 const search = require('./search');
-const taxonomy = require('./taxonomy');
 
 module.exports = (app, siteConfig) => {
   // HTML Sitemap
