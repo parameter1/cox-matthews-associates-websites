@@ -1,7 +1,0 @@
-import { getAsArray } from "@parameter1/base-cms-object-path";
-
-$ const labels = getAsArray(input, "obj.labels");
-$ const show = labels.includes("Supplier Submitted");
-<if(show)>
-  <p class="supplier-disclaimer">This content was submitted directly to this website by the supplier.</p>
-</if>
