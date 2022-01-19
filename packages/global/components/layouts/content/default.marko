@@ -87,6 +87,12 @@ $ const excludeFromSidebarsLabel = ["Scholar Profile"];
         <else-if(type === "media-gallery")>
           <!-- <marko-web-image-slider images=images /> -->
         </else-if>
+        <else-if(type === "document")>
+          <theme-primary-image-block
+            obj=content.primaryImage
+            force-display="right"
+          />
+        </else-if>
         <else-if(displayPrimaryImage)>
           $ let forceDisplay;
           $ if (type === "contact") forceDisplay = "left";
