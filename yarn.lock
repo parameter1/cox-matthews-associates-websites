@@ -2368,10 +2368,17 @@
     graphql-tag "^2.12.5"
     node-fetch "^2.6.5"
 
+<<<<<<< HEAD
 "@parameter1/base-cms-marko-web-omeda-identity-x@^2.69.0":
   version "2.69.0"
   resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web-omeda-identity-x/-/base-cms-marko-web-omeda-identity-x-2.69.0.tgz#ae05242a1502c288807c7e619be6e3aa536492f9"
   integrity sha512-wSdSQKazFaefire2/kb4uUaDzHmdsyzNAvAqePwLAB4I/eqHjNfiqeAXhscxXDXsDdvW8n0Yv0gx9qv7Xn66cg==
+=======
+"@parameter1/base-cms-marko-web-omeda-identity-x@^2.68.0":
+  version "2.68.0"
+  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web-omeda-identity-x/-/base-cms-marko-web-omeda-identity-x-2.68.0.tgz#b7a50776bdf75b4481723950d388d2eba7d07a9e"
+  integrity sha512-s/kbLO7WTEtXIqIyRLf7cQ3EPxys89HFtUqWXp0I0XCGWl3oG/aaxfDWNQQtDTF5IqVdr96e6zxiZWtI4cWNQA==
+>>>>>>> P1 Dep upgrade to 2.68.0
   dependencies:
     "@parameter1/base-cms-marko-web-identity-x" "^2.68.0"
     "@parameter1/base-cms-marko-web-omeda" "^2.68.0"
