@@ -139,7 +139,8 @@ $ const excludeFromSidebarsLabel = ["Scholar Profile"];
           </marko-web-block>
         </for>
 
-        <marko-web-content-body block-name=blockName obj=content attrs={ id: bodyId } />
+        $ const bodyModifiers = new Set([83113]).has(primarySection.id) ? ['on-the-move'] : []
+        <marko-web-content-body block-name=blockName obj=content attrs={ id: bodyId } modifiers=bodyModifiers />
 
         <!-- needs input -->
         <if(input.afterBody)>
