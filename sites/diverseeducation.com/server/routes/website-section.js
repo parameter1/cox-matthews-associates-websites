@@ -7,6 +7,7 @@ const products = require('../templates/website-section/products');
 const section = require('../templates/website-section');
 const webinars = require('../templates/website-section/webinars');
 const jhf = require('../templates/website-section/john-hope-franklin');
+const onTheMove = require('../templates/website-section/on-the-move');
 
 module.exports = (app) => {
   app.get('/:alias(opinion)', withWebsiteSection({
@@ -27,6 +28,10 @@ module.exports = (app) => {
   }));
   app.get('/:alias(awards-honors/dr-john-hope-franklin)', withWebsiteSection({
     template: jhf,
+    queryFragment,
+  }));
+  app.get('/:alias(on-the-move)', withWebsiteSection({
+    template: onTheMove,
     queryFragment,
   }));
   app.get('/:alias([a-z0-9-/]+)', withWebsiteSection({

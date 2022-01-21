@@ -1,0 +1,110 @@
+import { get, getAsArray, getAsObject } from "@parameter1/base-cms-object-path";
+import queryFragment from "@cox-matthews-associates/package-theme-monorail/graphql/fragments/content-list";
+
+$ const { id, alias, name, pageNode } = input;
+$ const { pagination: p, site } = out.global;
+$ const perPage = 10;
+
+<global-website-section-default-layout
+  id=id
+  alias=alias
+  name=name
+  page-node=pageNode
+>
+  <@head>
+    <theme-section-feed-block|{ totalCount }| alias=alias count-only=true>
+      <theme-pagination-controls
+        per-page=perPage
+        total-count=totalCount
+        path=alias
+        as-rels=true
+      />
+    </theme-section-feed-block>
+  </@head>
+
+  <@section|{ aliases }| modifiers=["first"]>
+    <theme-gam-define-display-ad
+      name="leaderboard"
+      position="section_page"
+      aliases=aliases
+      modifiers=["inter-block"]/>
+  </@section>
+
+  <@section|{ blockName, section }|>
+    <marko-web-block name=blockName>
+      <theme-website-section-breadcrumbs section=section display-self=false display-home=false modifiers=["website-section"] />
+      <marko-web-element block-name=blockName name="header">
+        <marko-web-website-section-name|{ value }| tag="h1" block-name=blockName obj=section>
+          <if(p.page > 1)>${value}: Page ${p.page}</if>
+          <else>${value}</else>
+        </marko-web-website-section-name>
+        <marko-web-website-section-description|{ value }|
+          tag="p"
+          block-name="page-wrapper"
+          obj=section>
+          ${value}
+        </marko-web-website-section-description>
+      </marko-web-element>
+    </marko-web-block>
+    <if(p.page === 1)>
+      <marko-web-block>
+        <div align="center">
+          <a class="btn btn-primary" target="_blank" href="https://responses.diverseeducation.com/OnTheMove2021">
+            Submit Your Professional Appointment
+          </a>
+        </div>
+      </marko-web-block>
+    </if>
+  </@section>
+
+  <@section>
+    <marko-web-query|{ nodes }|
+      name="website-scheduled-content"
+      params={ limit: perPage, skip: p.skip({ perPage }), sectionAlias: alias, queryFragment }
+      collapsible=false
+    >
+      <if(nodes.length)>
+        <div class="row">
+          <div class="col-md-12">
+            <default-theme-card-deck-flow
+              cols=2
+              nodes=nodes
+              >
+              <@slot|{ node }|>
+                <theme-content-node
+                  image-position="right"
+                  full-height=true
+                  card=true
+                  flush=false
+                  node=node
+                  with-teaser=true
+                  with-dates=false
+                  with-section=false
+                  modifiers=['on-the-move']
+                >
+                  <@image width=112 ar="1:1" />
+                </theme-content-node>
+              </@slot>
+            </default-theme-card-deck-flow>
+          </div>
+      </div>
+     </if>
+    </marko-web-query>
+    <theme-section-feed-block|{ totalCount }| alias=alias count-only=true>
+      <theme-pagination-controls
+        per-page=perPage
+        total-count=totalCount
+        path=alias
+      />
+    </theme-section-feed-block>
+  </@section>
+
+  <@section|{ aliases }|>
+    <theme-gam-define-display-ad
+      name="rotation"
+      position="section_page"
+      aliases=aliases
+      modifiers=["inter-block"]
+    />
+  </@section>
+</global-website-section-default-layout>
