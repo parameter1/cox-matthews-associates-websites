@@ -3,3 +3,11 @@
     border: 1px solid #e3e4e5;
   }
 }
+
+.page-contents {
+  &__content-body {
+    &--on-the-move > p > span[data-embed-type="image"][data-embed-align="left"]{
+      width: calc(300px - 10rem);
+    }
+  }
+}
