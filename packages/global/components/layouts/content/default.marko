@@ -2,7 +2,7 @@ import { getAsArray } from "@parameter1/base-cms-object-path";
 import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
 
 $ const { site } = out.global;
-$ const { id, type, pageNode, showReadNextBlock, showBottomAdBlock, showTopStoryBlock, ...rest } = input;
+$ const { id, type, primarySection, pageNode, showReadNextBlock, showBottomAdBlock, showTopStoryBlock, ...rest } = input;
 $ const sections = getAsArray(input, "sections");
 $ const belowContentSections = getAsArray(input, "belowContentSections");
 
@@ -14,6 +14,7 @@ $ const displayComments = ["contact"].includes(type) ? false : true;
 $ const displayNewsletterSignup = ["contact"].includes(type) ? false : true;
 $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type);
 $ const excludeFromSidebarsLabel = ["Scholar Profile"];
+$ const isOnTheMoveSection = new Set([83113]).has(primarySection.id);
 
 <global-content-wrapper-layout
   id=id
@@ -139,8 +140,17 @@ $ const excludeFromSidebarsLabel = ["Scholar Profile"];
           </marko-web-block>
         </for>
 
-        $ const bodyModifiers = new Set([83113]).has(primarySection.id) ? ['on-the-move'] : []
+        $ const bodyModifiers = isOnTheMoveSection ? ['on-the-move'] : []
         <marko-web-content-body block-name=blockName obj=content attrs={ id: bodyId } modifiers=bodyModifiers />
+        <if(isOnTheMoveSection)>
+          <marko-web-block>
+            <div class="social-sharing" align="center">
+              <a class="btn btn-primary" target="_blank" href="https://responses.diverseeducation.com/OnTheMove2021">
+                Submit Your Professional Appointment
+              </a>
+            </div>
+          </marko-web-block>
+        </if>
 
         <!-- needs input -->
         <if(input.afterBody)>
