@@ -141,13 +141,15 @@ $ const excludeFromSidebarsLabel = ["Scholar Profile"];
 
         $ const bodyModifiers = new Set([83113]).has(primarySection.id) ? ['on-the-move'] : []
         <marko-web-content-body block-name=blockName obj=content attrs={ id: bodyId } modifiers=bodyModifiers />
-        <marko-web-block>
-          <div class="social-sharing" align="center">
-            <a class="btn btn-primary" target="_blank" href="https://responses.diverseeducation.com/OnTheMove2021">
-              Submit Your Professional Appointment
-            </a>
-          </div>
-        </marko-web-block>
+        <if(bodyModifiers)>
+          <marko-web-block>
+            <div class="social-sharing" align="center">
+              <a class="btn btn-primary" target="_blank" href="https://responses.diverseeducation.com/OnTheMove2021">
+                Submit Your Professional Appointment
+              </a>
+            </div>
+          </marko-web-block>
+        </if>
 
         <!-- needs input -->
         <if(input.afterBody)>
