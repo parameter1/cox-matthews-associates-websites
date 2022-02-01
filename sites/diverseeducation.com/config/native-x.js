@@ -1,6 +1,6 @@
-const NativeXConfiguration = require('@parameter1/base-cms-marko-web-native-x/config');
+const configureNativeX = require('@cox-matthews-associates/package-global/config/native-x');
 
-const config = new NativeXConfiguration('https://diverse.native-x.parameter1.com');
+const config = configureNativeX();
 
 config.enabled = true;
 

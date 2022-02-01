@@ -1,12 +1,12 @@
-const NativeXConfiguration = require('@parameter1/base-cms-marko-web-native-x/config');
+const configureNativeX = require('@cox-matthews-associates/package-global/config/native-x');
 
-const config = new NativeXConfiguration('https://diverse.native-x.parameter1.com');
+const config = configureNativeX();
 
 config.enabled = true;
 
 config
   .setAliasPlacements('default', [
-    { name: 'load-more', id: '61f838b0bf6bab0001e06258' },
+    { name: 'default', id: '61f838b0bf6bab0001e06258' },
   ]);
 
 module.exports = config;
