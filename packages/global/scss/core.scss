@@ -229,3 +229,12 @@ label {
     }
   }
 }
+
+.author-published-node {
+  &__content-updated {
+    display: none;
+    &::before {
+      content: "";
+    }
+  }
+}
