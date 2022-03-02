@@ -3,6 +3,7 @@ const { withWebsiteSection } = require('@parameter1/base-cms-marko-web/middlewar
 const queryFragment = require('@cox-matthews-associates/package-theme-monorail/graphql/fragments/website-section-page');
 const awardRedirects = require('./awards/redirects');
 const emergingScholars = require('./awards/emerging-scholars');
+const graduateScholars = require('./awards/graduate-scholars');
 const champions = require('../templates/website-section/awards-honors/champions');
 const arthurAshe = require('../templates/website-section/awards-honors/arthur-ashe');
 const mppwsa = require('../templates/static-pages/mppwsa');
@@ -18,6 +19,9 @@ module.exports = (app) => {
 
   // Emerging Scholars
   emergingScholars(app);
+
+  // Graduate Scholars
+  graduateScholars(app);
 
   app.get('/:alias(awards-honors/mppwsa)', asyncRoute(async (req, res) => {
     const { alias } = req.params;
