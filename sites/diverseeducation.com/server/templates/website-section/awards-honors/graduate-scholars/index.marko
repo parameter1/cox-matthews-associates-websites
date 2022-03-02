@@ -1,0 +1,113 @@
+import { getAsArray } from "@parameter1/base-cms-object-path";
+import queryFragment from "@cox-matthews-associates/package-theme-monorail/graphql/fragments/content-list";
+import sectionWithChildrenFragment from "../../../../graphql/fragments/section-with-children";
+
+$ const { id, alias, name, pageNode } = input;
+$ const blockName = "graduate-scholars-page";
+$ const cardBlock = "graduate-scholars-page-card";
+$ const queryParams = {
+  limit: 0,
+  sectionAlias: alias,
+  queryFragment,
+};
+
+<global-website-section-default-layout
+  id=id
+  alias=alias
+  name=name
+  page-node=pageNode>
+  <@section|{ aliases }| modifiers=["first"]>
+    <theme-gam-define-display-ad
+      name="leaderboard"
+      position="section_page"
+      aliases=aliases
+      modifiers=["inter-block"]
+    />
+  </@section>
+  <@section|{ section }|>
+    <marko-web-block name=blockName>
+      <theme-content-page-breadcrumbs section=section />
+      <marko-web-element block-name=blockName name="header">
+        <marko-web-website-section-name|{ value }|
+          tag="h1"
+          block-name="page-wrapper"
+          obj=section>
+          ${value}
+        </marko-web-website-section-name>
+        <marko-web-website-section-description|{ value }|
+          tag="p"
+          block-name="page-wrapper"
+          obj=section>
+          ${value}
+        </marko-web-website-section-description>
+      </marko-web-element>
+    </marko-web-block>
+  </@section>
+  <@section>
+    <marko-web-query|{ nodes }| name="website-scheduled-content" params=queryParams>
+      <default-theme-card-deck-flow
+        cols=4
+        nodes=nodes
+        modifiers=["awards-honors", "graduate-scholars"]>
+        <@slot|{ node }|>
+          <theme-content-node
+            image-position="top"
+            card=true
+            flush=true
+            full-height=true
+            with-teaser=false
+            with-section=false
+            with-dates=false
+            display-button=true
+            call-to-action="View Profile"
+            modifiers=["awards-honors", "graduate-scholars"]
+            node=node>
+            <@image ar="1:1" fluid=true/>
+          </theme-content-node>
+        </@slot>
+      </default-theme-card-deck-flow>
+    </marko-web-query>
+  </@section>
+  <@section|{ blockName, section }|>
+    <div class="row">
+      <div class="col-md-6 mb-block">
+        <div class="award-about-card">
+          <div class="award-about-card__title">Letter From the Editor</div>
+          <div class="award-about-card__description">
+            <p>
+
+            </p>
+            <p>
+
+            </p>
+            <p>
+
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 mb-block">
+        <div class="award-about-card">
+          <div class="award-about-card__title">Scholars By Years</div>
+          <marko-web-query|{ node }|
+            name="website-section"
+            params={ alias: 'awards-honors/graduate-scholars', queryFragment: sectionWithChildrenFragment }
+          >
+          $ const children = getAsArray(node, "children.edges").map(({ node }) => node);
+            <marko-web-node-list>
+              <@nodes|{ nodes }| nodes=children modifiers=["flush-x"]>
+                <div class="list-flow">
+                  <for|node| of=nodes>
+                    <div class="list-flow__node">
+                      <marko-web-link title=node.name href=`/${node.alias}`>${node.name}</marko-web-link>
+                    </div>
+                  </for>
+                </div>
+              </@nodes>
+            </marko-web-node-list>
+          </marko-web-query>
+        </div>
+      </div>
+    </div>
+  </@section>
+</global-website-section-default-layout>
