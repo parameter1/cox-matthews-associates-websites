@@ -102,6 +102,18 @@ module.exports = (app) => {
       throw error;
     }
   });
+  // Graduate Scholars with query Params
+  app.get('/article/category/graduate-scholars', (req, res) => {
+    const { zyear } = req.query;
+    const year = parseInt(zyear, 10);
+    if (year >= 2008 && year <= 2020) {
+      res.redirect(301, `/awards-honors/graduate-scholars/${year}`);
+    } else {
+      const error = new Error('Not found.');
+      error.statusCode = 404;
+      throw error;
+    }
+  });
   // Award redirects in fromTo array
   fromTo.forEach((awardRedirect) => {
     const { from, to } = awardRedirect;
