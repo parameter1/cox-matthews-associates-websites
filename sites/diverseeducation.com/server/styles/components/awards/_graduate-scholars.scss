@@ -1,0 +1,12 @@
+.card-deck-flow {
+  &--graduate-scholars {
+    .node {
+      &__title {
+        text-align: center;
+      }
+      &__contents--body {
+        justify-content: space-between;
+      }
+    }
+  }
+}
