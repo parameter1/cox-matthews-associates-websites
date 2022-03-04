@@ -51,6 +51,11 @@ module.exports = {
       callToAction: subscribe.label,
       link: subscribe.href,
     },
+    {
+      title: 'Post A Job',
+      callToAction: 'Post A Job',
+      link: 'https://jobs.ccjobsnow.com/employer/emplogin.html',
+    },
   ],
   desktopMenu,
   mobileMenu,
