@@ -1,0 +1,399 @@
+import config from "./configs/mppwsa-2021/index.js";
+
+$ const { profiles, seniorSalaries, schools } = config;
+
+$ const type = "static-page";
+$ const title = "Diverse Most Promising Places to Work in Student Affairs";
+$ const description = "Now in its 8th year, Promising Places to Work in Student Affairs (PPWSA) is a national recognition that celebrates student affairs workplaces that are vibrant, diverse, supportive and commited to staff work-life balance, professional development and inclusive excellence. PPWSA offers intitutional leaders information that can be used to improve practices across their student affairs community, while also serving as a useful tool for employers, career services staff and job-seekers across the country.";
+
+<marko-web-default-page-layout type=type title=title description=description>
+  <@page>
+    <marko-web-page-wrapper class="awards-honors mppwsa">
+      <@section modifiers=["first"]>
+        <theme-gam-define-display-ad
+          name="leaderboard"
+          position="section_page"
+          aliases=["awards-honors/mppwsa"]
+          modifiers=["inter-block"]
+        />
+      </@section>
+      <@section>
+        <div class="row">
+          <div class="col">
+            <marko-web-img
+              class=["lazyload"]
+              alt="Promising Places to work logos"
+              src="https://img.diverseeducation.com/files/base/diverse/all/image/static/de/mppwsa/mppwsa-intro-bg.png?w=1600&auto=format,compress&q=70"
+              srcset="https://img.diverseeducation.com/files/base/diverse/all/image/static/de/mppwsa/mppwsa-intro-bg.png?w=1600&auto=format,compress&q=70 x2"
+              lazyload=true/>
+          </div>
+        </div>
+      </@section>
+      <@section modifiers=["card-deck"]>
+        <table class="table table-responsive table-hover">
+          <thead>
+            <tr>
+              <td width="400">
+                <b>Institution</b>
+              </td>
+              <td width="202">
+                <b>Senior Student Affairs Officer</b>
+              </td>
+              <td width="173">
+                <b>Location</b>
+              </td>
+              <td width="130">
+                <b>Level</b>
+              </td>
+              <td width="178" align="center">
+                <b>Control</b>
+              </td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="institution">Bellarmine University</td>
+              <td class="officer">Helen-Grace Ryan</td>
+              <td class="location">Louisville, KY</td>
+              <td class="level">4-year</td>
+              <td class="control">private</td>
+            </tr>
+            <tr>
+              <td class="institution">California Polytechnic State U-San Luis Obispo</td>
+              <td class="officer">Keith Humphrey</td>
+              <td class="location">San Luis Obispo, CA</td>
+              <td class="level">4-year</td>
+              <td class="control">public</td>
+            </tr>
+            <tr>
+              <td class="institution">California State U-Channel Islands</td>
+              <td class="officer">Toni R. DeBoni</td>
+              <td class="location">Camarillo, CA</td>
+              <td class="level">4-year</td>
+              <td class="control">public</td>
+            </tr>
+            <tr>
+              <td class="institution">Clark University</td>
+              <td class="officer">Francy Magee</td>
+              <td class="location">Worcester, MA</td>
+              <td class="level">4-year</td>
+              <td class="control">private</td>
+            </tr>
+            <tr>
+              <td class="institution">Colgate University</td>
+              <td class="officer">Paul J. McLoughlin II</td>
+              <td class="location">Hamilton, NY</td>
+              <td class="level">4-year</td>
+              <td class="control">private</td>
+            </tr>
+            <tr>
+              <td class="institution">College of William &amp; Mary</td>
+              <td class="officer">Virginia M. Ambler</td>
+              <td class="location">Williamsburg, VA</td>
+              <td class="level">4-year</td>
+              <td class="control">public</td>
+            </tr>
+            <tr>
+              <td class="institution">Davidson College</td>
+              <td class="officer">Byron P. McCrae</td>
+              <td class="location">Davidson, NC</td>
+              <td class="level">4-year</td>
+              <td class="control">private</td>
+            </tr>
+            <tr>
+              <td class="institution">Elon Unversity</td>
+              <td class="officer">Jon Dooley</td>
+              <td class="location">Elon, NC</td>
+              <td class="level">4-year</td>
+              <td class="control">private</td>
+            </tr>
+            <tr>
+              <td class="institution">Holy Names University</td>
+              <td class="officer">Laura Lyndon</td>
+              <td class="location">Oakland, CA</td>
+              <td class="level">4-year</td>
+              <td class="control">private</td>
+            </tr>
+            <tr>
+              <td class="institution">Humboldt State University</td>
+              <td class="officer">Jason L. Meriwether</td>
+              <td class="location">Arcata, CA</td>
+              <td class="level">4-year</td>
+              <td class="control">public</td>
+            </tr>
+            <tr>
+              <td class="institution">Kent State University</td>
+              <td class="officer">Lamar Hylton</td>
+              <td class="location">Kent, OH</td>
+              <td class="level">4-year</td>
+              <td class="control">public</td>
+            </tr>
+            <tr>
+              <td class="institution">Miami University-Oxford</td>
+              <td class="officer">Jayne Brownell</td>
+              <td class="location">Williamsport, PA</td>
+              <td class="level">4-year</td>
+              <td class="control">public</td>
+            </tr>
+            <tr>
+              <td class="institution">Pennsylvania College of Technology</td>
+              <td class="officer">Elliott Strickland</td>
+              <td class="location">Williamsport, PA</td>
+              <td class="level">4-year</td>
+              <td class="control">public</td>
+            </tr>
+            <tr>
+              <td class="institution">Rider University</td>
+              <td class="officer">Leanna Fenneberg</td>
+              <td class="location">Lawrenceville, NJ</td>
+              <td class="level">4-year</td>
+              <td class="control">private</td>
+            </tr>
+            <tr>
+              <td class="institution">Rochester Institute of Technology</td>
+              <td class="officer">Sandra Johnson</td>
+              <td class="location">Rochester, NY</td>
+              <td class="level">4-year</td>
+              <td class="control">private</td>
+            </tr>
+            <tr>
+              <td class="institution">Saint Louis University</td>
+              <td class="officer">Debra Lohe</td>
+              <td class="location">St. Louis, MO</td>
+              <td class="level">4-year</td>
+              <td class="control">private</td>
+            </tr>
+            <tr>
+              <td class="institution">Sam Houston State University</td>
+              <td class="officer">Frank Parker</td>
+              <td class="location">Huntsville, TX</td>
+              <td class="level">4-year</td>
+              <td class="control">public</td>
+            </tr>
+            <tr>
+              <td class="institution">Samuel Merritt University</td>
+              <td class="officer">Timothy Cranford</td>
+              <td class="location">Oakland, CA</td>
+              <td class="level">4-year</td>
+              <td class="control">private</td>
+            </tr>
+            <tr>
+              <td class="institution">Sonoma State University</td>
+              <td class="officer">Wm. Gregory Sawyer</td>
+              <td class="location">Rohnert Park, CA</td>
+              <td class="level">4-year</td>
+              <td class="control">public</td>
+            </tr>
+            <tr>
+              <td class="institution">The Ohio State University - Columbus</td>
+              <td class="officer">Melissa Shivers</td>
+              <td class="location">Columbus, OH</td>
+              <td class="level">4-year</td>
+              <td class="control">public</td>
+            </tr>
+            <tr>
+              <td class="institution">University of California, Riverside</td>
+              <td class="officer">Brian L. Hayes</td>
+              <td class="location">Riverside, CA</td>
+              <td class="level">4-year</td>
+              <td class="control">public</td>
+            </tr>
+            <tr>
+              <td class="institution">University of Delaware</td>
+              <td class="officer">José-Luis Riera</td>
+              <td class="location">Newark, DE</td>
+              <td class="level">4-year</td>
+              <td class="control">public</td>
+            </tr>
+            <tr>
+              <td class="institution">University of Florida</td>
+              <td class="officer">D'Andra Mull</td>
+              <td class="location">Gainsville, FL</td>
+              <td class="level">4-year</td>
+              <td class="control">public</td>
+            </tr>
+            <tr>
+              <td class="institution">University of Hawaii - Hilo</td>
+              <td class="officer">Farrah-Marie Gomes</td>
+              <td class="location">Hilo, HI</td>
+              <td class="level">4-year</td>
+              <td class="control">public</td>
+            </tr>
+            <tr>
+              <td class="institution">University of Maryland - Baltimore</td>
+              <td class="officer">Patty Alvarez</td>
+              <td class="location">Baltimore, MD</td>
+              <td class="level">4-year</td>
+              <td class="control">public</td>
+            </tr>
+            <tr>
+              <td class="institution">University of Maryland - College Park</td>
+              <td class="officer">Patricia A. Perillo</td>
+              <td class="location">College Park, MD</td>
+              <td class="level">4-year</td>
+              <td class="control">public</td>
+            </tr>
+            <tr>
+              <td class="institution">University of North Carolina - Greensboro</td>
+              <td class="officer">Cathy Akens</td>
+              <td class="location">Greensboro, NC</td>
+              <td class="level">4-year</td>
+              <td class="control">public</td>
+            </tr>
+            <tr>
+              <td class="institution">University of Vermont</td>
+              <td class="officer">Annie Stevens</td>
+              <td class="location">Burlington, VT</td>
+              <td class="level">4-year</td>
+              <td class="control">public</td>
+            </tr>
+            <tr>
+              <td class="institution">University of West Georgia</td>
+              <td class="officer">Andre Fortune</td>
+              <td class="location">Carrolton, GA</td>
+              <td class="level">4-year</td>
+              <td class="control">public</td>
+            </tr>
+            <tr>
+              <td class="institution">West Chester University of Pennsylvania</td>
+              <td class="officer">Zebulum Davenport</td>
+              <td class="location">West Chester, PA</td>
+              <td class="level">4-year</td>
+              <td class="control">public</td>
+            </tr>
+          </tbody>
+        </table>
+      </@section>
+      <@section>
+        <div class="row">
+          <div class="col page-contents__content-body">
+            <div class="about-text">
+            <h2>About the Study</h2>
+            </div>
+            <p>
+              This study was fi rst proposed by Ralph Newell at <i>Diverse: Issues In Higher Education</i> as a possible partnership with the American College Personnel Association (ACPA) in 2011. The ACPA Governing Board motioned for the then-director of research and scholarship, Dr. Terrell Strayhorn, to explore the merit and extent of this project. With input from a volunteer advisory board, the project was recommended to the Governing Board and approved.
+            </p>
+            <p>
+              Dr. Strayhorn was commissioned by ACPA and <i>Diverse</i>: Issues In Higher Education to serve as the project’s principal investigator. In this role, Strayhorn developed the Promising Places to Work in Student Affairs (PPWSA) Survey in consultation with experts on the project’s advisory board. The original survey was pilot-tested with a small sample of non-ACPA member institutions; feedback from the pilot-test helped to clarify survey items, correct logic sequencing, and determine the utility of our scoring algorithm.
+            </p>
+            <p>
+              The purpose of this commissioned study was to examine the extent to which diversity and inclusion permeates aspects of various divisions of student affairs (or equivalent) at participating ACPA-member institutions across the globe including administrative structures, commitments, work environments, and staffng practices.
+            </p>
+            <h2>ABOUT THE SURVEY</h2>
+            <p>
+              The PPWSA survey consists of approximately 60 items, organized into 10 major sections. For example, one section elicits contact information for the survey respondent and identifying information about their respective institution (e.g., control, minority-serving institution [MSI] status). Another section includes several items to assess the structural diversity of the institution and student affairs department in terms of gender, race, sexual orientation, and disability status. There are several sections that measure the availability and extent of support services provided to student affairs staff on campus, such as professional development.
+            </p>
+            <p>
+              The survey was authored by Terrell Strayhorn, with input from experts on the project advisory board, and is not available in the public domain. Now part of the larger ‘Promising Places to Work’ project, the survey has been administered by Strayhorn and his teams at various centers and Do Good Work Educational Consulting LLC. All survey rights belong to the author. All analyses presented in this edition were conducted by Terrell Strayhorn and Royel Johnson.
+            </p>
+            <h2>ENGAGE US ON SOCIAL MEDIA</h2>
+            <p>
+              We invite readers to share with us how they’re using this year’s report of Most Promising Places to Work in Student Affairs (MPPWSA). Share with us on Twitter, Facebook, or Instagram using #PPWSA21 and tag @DiverseIssues and @ACPA
+            </p>
+            <h2>PROJECT TEAM BIOGRAPHIES</h2>
+            <p>
+              <b>Dr. Terrell Strayhorn</b> is provost and senior vice president of academic affairs at Virginia Union University, where he also serves as professor of urban education and director of the Center for the Study of HBCUs. Additionally, he is president and CEO of Do Good Work Educational Consulting LLC, a research fi rm that partners with leading colleges and schools to improve policy and practice, as a way of ensuring all students’ success. Author of 11 books, more than 200 journal articles, chapters, and reports, Strayhorn is an internationally known student success expert, equity researcher, and public speaker. <i>Diverse: Issues In Higher Education</i> named him an Emerging Scholar and he has received ACPA’s Emerging Scholar, Annuit Coeptis, and Diamond Honoree Awards. Follow him on Twitter @tlstrayhorn
+            </p>
+            <p>
+              <b>Dr. Royel Johnson</b> is assistant professor of higher education at Pennsylvania State University. As a scholar, Johnson engages in interdisciplinary research on issues related to educational access, equity, and student success. He is co-editor of three forthcoming books including Racial Equity on College Campuses: Connecting Research and Practice (SUNY Press) and has published two dozen academic publications. For his early career contributions to higher education and student affairs research, ACPA-College Student Educators International named him an Emerging Scholar in 2020. Follow him on Twitter @royeljohnson.
+            </p>
+          </div>
+        </div>
+      </@section>
+      <@section>
+        <div class="row">
+          <div class="col">
+            <marko-web-img
+              class=["lazyload"]
+              alt="Promising Places to work logos"
+              src="https://img.diverseeducation.com/files/base/diverse/all/image/static/de/mppwsa/MPPINSA-TABLE1.png?w=1600&auto=format,compress&q=70"
+              srcset="https://img.diverseeducation.com/files/base/diverse/all/image/static/de/mppwsa/MPPINSA-TABLE1.png?w=1600&auto=format,compress&q=70 x2"
+              lazyload=true/>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <marko-web-img
+              class=["lazyload"]
+              alt="Promising Places to work logos"
+              src="https://img.diverseeducation.com/files/base/diverse/all/image/static/de/mppwsa/MPPINSA-TABLE2.png?w=1600&auto=format,compress&q=70"
+              srcset="https://img.diverseeducation.com/files/base/diverse/all/image/static/de/mppwsa/MPPINSA-TABLE2.png?w=1600&auto=format,compress&q=70 x2"
+              lazyload=true
+            />
+          </div>
+        </div>
+      </@section>
+      <@section>
+        <marko-web-browser-component
+          name="SiteSalaryBarChart"
+          props={
+            schools: schools,
+            chartTitle: 'Average Salary: Senior-Level Staff',
+            valueKey: 'senior',
+          }
+        />
+      </@section>
+      <@section>
+        <marko-web-browser-component
+          name="SiteSalaryBarChart"
+          props={
+            schools: schools,
+            chartTitle: 'Average Salary: Mid-Level Staff',
+            valueKey: 'mid',
+          }
+        />
+      </@section>
+      <@section>
+        <marko-web-browser-component
+          name="SiteSalaryBarChart"
+          props={
+            schools: schools,
+            chartTitle: 'Average Salary: Entry-Level Staff',
+            valueKey: 'entry',
+          }
+        />
+      </@section>
+      <@section>
+        <div class="row">
+          <div class="col">
+            <h1 class="page-wrapper__website-section-name">$!{title}</h1>
+            <if(description)>
+              <div class="page-wrapper__website-section-description">$!{description}</div>
+            </if>
+          </div>
+        </div>
+      </@section>
+      <@section>
+        <div class="page-contents__content-body about-text">
+          <h2 align="center">
+            MOST PROMISING PLACE TO WORK
+            <br/>IN STUDENT AFFAIRS PROFILES
+          </h2>
+          <div class="row">
+            <div class="card-deck-flow card-deck-flow--awards-honors card-deck-flow--mppwsa card-deck-flow--2-cols">
+              <for|profile| of=profiles >
+                <div class="card-deck-flow__node">
+                  <div class="node node--awards-honors node--mppwsa node--card node--full-height">
+                    <div class="profile">
+                      <marko-web-img
+                        class=["lazyload", "profile__thumbnail"]
+                        alt=profile.name
+                        src=`https://img.diverseeducation.com/files/base/diverse/all/image/static/de/mppwsa/profiles/${profile.thumbnail}?w=150&auto=format,compress&q=70`
+                        srcset=`https://img.diverseeducation.com/files/base/diverse/all/image/static/de/mppwsa/profiles/${profile.thumbnail}?w=300&auto=format,compress&q=70 x2`
+                        lazyload=true
+                      />
+                      <h4 class="profile__title">
+                        ${profile.name}
+                      </h4>
+                      $!{profile.body}
+                    </div>
+                  </div>
+                </div>
+              </for>
+            </div>
+          </div>
+        </div>
+      </@section>
+    </marko-web-page-wrapper>
+  </@page>
+</marko-web-default-page-layout>
