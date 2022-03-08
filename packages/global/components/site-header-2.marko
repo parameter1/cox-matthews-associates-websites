@@ -1,4 +1,3 @@
-import shuffle from "../utils/shuffle-array";
 import { get, getAsArray, getAsObject } from "@parameter1/base-cms-object-path";
 
 $ const { config, site } = out.global;
@@ -10,8 +9,8 @@ $ const navigation = {
   secondary: site.getAsArray("navigation.secondary.items"),
   tertiary: site.getAsArray("navigation.tertiary.items"),
 };
-$ const promo = shuffle(site.getAsArray("navigation.promos"))[0];
-$ const headerColClass = promo ? "col-lg-4" : "col-lg-6";
+$ const promos = site.getAsArray("navigation.promos");
+$ const headerColClass = promos ? `col-lg-${4 - promos.slice(1).length}` : "col-lg-6";
 
 <marko-web-block
   name=blockName
@@ -23,30 +22,36 @@ $ const headerColClass = promo ? "col-lg-4" : "col-lg-6";
   <${input.aboveNav} />
 
   <default-theme-site-navbar modifiers=["top"]>
-    <if(promo)>
+    <if(promos.length)>
       <div class=`${headerColClass} site-navbar__left`>
-        $ const promoSrc = get(promo, "image.src");
-        $ const promoSrcSet = getAsArray(promo, "image.srcset");
-        <marko-web-block class="subscribe-box">
-          <if(promoSrc)>
-            <a href=promo.link title=promo.title class="subscribe-box--cover-image">
-              <marko-web-img
-                alt=promo.title
-                src=promoSrc
-                srcset=promoSrcSet
-                lazyload=true
-                class="magazine-cover"
-              />
-            </a>
-          </if>
-          <if(promo.callToAction)>
-            <marko-web-block class="subscribe-box--call-to-action">
-              <a href=promo.link title=promo.title class="btn btn-primary">
-                ${promo.callToAction}
-              </a>
-            </marko-web-block>
-          </if>
-        </marko-web-block>
+        <div class="row">
+          <for|promo| of=promos>
+            <div class="col">
+              $ const promoSrc = get(promo, "image.src");
+              $ const promoSrcSet = getAsArray(promo, "image.srcset");
+              <marko-web-block class="subscribe-box">
+                <if(promoSrc)>
+                  <a href=promo.link title=promo.title class="subscribe-box--cover-image">
+                    <marko-web-img
+                      alt=promo.title
+                      src=promoSrc
+                      srcset=promoSrcSet
+                      lazyload=true
+                      class="magazine-cover"
+                    />
+                  </a>
+                </if>
+                <if(promo.callToAction)>
+                  <marko-web-block class="subscribe-box--call-to-action">
+                    <a href=promo.link title=promo.title class="btn btn-primary">
+                      ${promo.callToAction}
+                    </a>
+                  </marko-web-block>
+                </if>
+              </marko-web-block>
+            </div>
+          </for>
+        </div>
       </div>
     </if>
     <div class=`${headerColClass} site-navbar__center`>
