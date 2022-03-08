@@ -16,7 +16,7 @@ module.exports = [
   },
   {
     thumbnail: 'William&Mary.png',
-    name: 'William &amp; Mary',
+    name: 'William & Mary',
     body: 'Founded in 1693, William &amp; Mary, in Williamsburg, Virginia, counts among its alumni U.S. Presidents Thomas Jefferson, James Monroe and John Tyler. "We have chosen a profession whose priority is to stengthen community and promote individual flourishing," says Dr. Virgina M. Ambler, vice president for student affairs. "That’s what we want for our students and it’s what we want for one another as colleagues. At William &amp; Mary, I am profoundly grateful to work with people who share a commitment to creating an inclusive, affirming work experience in our division, one where all voices are valued and actively sought. For me, success is measured by meaningful work and authentic relationships, and those are built day by day, one interaction at a time."',
   },
   {
