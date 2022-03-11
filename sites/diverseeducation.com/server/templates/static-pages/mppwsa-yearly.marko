@@ -170,16 +170,15 @@ $ const pageDescription = currentYearData ? currentYearData.description : title;
           </@section>
         </for>
       <@section modifiers=["card-deck"]>
-        <if (currentYearData && tableThreeLabels.length)>
-          <div class="row">
-            <div class="col page-contents__content-body">
-              <div class="about-text">
-                <h2>Diversity Benefits</h2>
-              </div>
+        <div class="row">
+          <div class="col page-contents__content-body">
+            <div class="about-text">
+              <h2>Diversity Benefits</h2>
             </div>
           </div>
+        </div>
         $ const tableThreeLabels = Object.values(getAsObject(currentYearData, "tableLabels.tableThree"));
-
+        <if (currentYearData && tableThreeLabels.length)>
           <table class="table table-responsive table-hover">
             <thead>
               <tr>
