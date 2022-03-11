@@ -8,6 +8,7 @@ const champions = require('../templates/website-section/awards-honors/champions'
 const arthurAshe = require('../templates/website-section/awards-honors/arthur-ashe');
 const mppwsa = require('../templates/static-pages/mppwsa');
 const mppwsa2021 = require('../templates/static-pages/mppwsa-2021');
+const mppwsa2020 = require('../templates/static-pages/mppwsa-2020');
 const mppwcc = require('../templates/static-pages/mppwcc');
 
 module.exports = (app) => {
@@ -32,6 +33,11 @@ module.exports = (app) => {
   app.get('/:alias(awards-honors/mppwsa/2021)', asyncRoute(async (req, res) => {
     const { alias } = req.params;
     return res.marko(mppwsa2021, { alias });
+  }));
+
+  app.get('/:alias(awards-honors/mppwsa/2020)', asyncRoute(async (req, res) => {
+    const { alias } = req.params;
+    return res.marko(mppwsa2020, { alias });
   }));
 
   app.get('/:alias(awards-honors/arthur-ashe/\\d{4})', withWebsiteSection({
