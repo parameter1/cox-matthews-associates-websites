@@ -1,0 +1,212 @@
+import { getAsObject } from "@parameter1/base-cms-object-path";
+import config from "./configs/mppwsa-all.js";
+
+$ const { alias } = input;
+
+$ const type = "static-page";
+$ const rootAlias = "awards-honors/mppwsa";
+// The config should have the newest year at the top.
+$ const currentYear = alias === rootAlias ? Object.keys(config)[0] : alias.split("/").pop()
+$ const currentYearData = config[currentYear];
+$ const title = currentYearData ? `${currentYear} Most Promising Places to Work in Student Affairs` : 'Most Promising Places to Work in Student Affairs';
+$ const institutionData = getAsObject(currentYearData, "institutionData");
+$ const institutions = Object.keys(institutionData);
+$ const pageDescription = currentYearData ? currentYearData.description : title;
+
+<marko-web-default-page-layout type=type title=title description=pageDescription>
+  <@page>
+    <marko-web-page-wrapper class="awards-honors mppwsa">
+      <@section modifiers=["first"]>
+        <theme-gam-define-display-ad
+          name="leaderboard"
+          position="section_page"
+          aliases=["awards-honors/mppwsa"]
+          modifiers=["inter-block"]
+        />
+      </@section>
+      <@section>
+        <div class="row">
+          <div class="col">
+            <h1 class="page-wrapper__website-section-name">$!{title}</h1>
+            <if(currentYearData && currentYearData.description)>
+              <div class="page-wrapper__website-section-description">$!{currentYearData.description}</div>
+            </if>
+          </div>
+        </div>
+      </@section>
+      <if(currentYearData && currentYearData.logosSrc)>
+        <@section>
+          <div class="row">
+            <div class="col">
+              <marko-web-img
+                class=["lazyload"]
+                alt="Promising Places to work logos"
+                src=currentYearData.logosSrc
+                srcset=`${currentYearData.logosSrc} x2`
+                lazyload=true
+              />
+            </div>
+          </div>
+        </@section>
+      </if>
+      <@section modifiers=["card-deck"]>
+      $ const tableOneLabels = Object.values(getAsObject(currentYearData, "tableLabels.tableOne"));
+      <if (currentYearData && tableOneLabels.length)>
+        <table class="table table-responsive table-hover">
+          <thead>
+            <tr>
+              <td width="400"><b>Institution</b></td>
+              <for|label| of=tableOneLabels>
+                <td width="200">
+                  <b>${label}</b>
+                </td>
+              </for>
+            </tr>
+          </thead>
+          <if (institutions.length)>
+            <tbody>
+                <for|institution| of=institutions>
+                  <tr>
+                    $ const tableOneData = getAsObject(institutionData[institution], "tableOne");
+                    <td class="institution">${institution}</td>
+                    <for|field| of=Object.keys(tableOneData)>
+                      <td class=field>${tableOneData[field]}</td>
+                    </for>
+                  </tr>
+                </for>
+            </tbody>
+          </if>
+        </table>
+      </if>
+      </@section>
+      <@section>
+        <div class="row">
+          <div class="col page-contents__content-body">
+            <div class="about-text">
+            <h2>About the Study</h2>
+            </div>
+            <p>
+              This study was first proposed by Ralph Newell at <i>Diverse: Issues In Higher Education</i> as a possible partnership with the American College Personnel Association (ACPA) in 2011. The ACPA Governing Board motioned for the then-Director of Research and Scholarship, Dr. Terrell Strayhorn, to explore the merit and extent of this project. With input from a volunteer advisory board, the project was recommended to the Governing Board and approved.
+            </p>
+            <p>
+              Dr. Strayhorn was commissioned by ACPA and <i>Diverse: Issues In Higher Education</i> to serve as the project’s principal investigator. In this role, Strayhorn developed the Most Promising Places to Work in Student Affairs (MPPWSA) Survey in consultation with experts on the project’s advisory board. The original survey was pilot-tested with a small sample of non-ACPA member institutions; feedback from the pilot-test helped to clarify survey items, correct logic sequencing and determine the utility of our scoring algorithm.
+            </p>
+            <p>
+              The purpose of this commissioned study, was to examine the extent to which diversity and inclusion permeates aspects of various divisions of student affairs (or equivalent) at participating ACPA-member institutions across the globe including administrative structures, commitments, work environments and staffng practices.
+            </p>
+            <h2>ABOUT THE SURVEY</h2>
+            <p>
+              The MPPWSA survey consists of approximately 60 items, organized into 10 major sections. For example, one section elicits contact information for the survey respondent and identifying information about their respective institution (e.g., control, minority-serving institution [MSI] status). Another section includes several items to assess the structural diversity of the institution and student affairs department in terms of gender, race, sexual orientation, and disability status. There are several sections that measure the availability and extent of support services provided to student affairs staff on campus, such as professional development.
+            </p>
+            <p>
+              The survey was authored by Terrell Strayhorn, with input from experts on the project advisory board, and is not available in the public domain. Now part of the larger project, Most Promising Places to Work, the survey has been administered by Strayhorn and his teams at various centers, Do Good Work Educational Consulting LLC, and in 2019 by a paid external consultant hired by <i>Diverse: Issues In Higher Education</i>. All survey rights belong to the author. All analyses presented in this edition were conducted by Terrell Strayhorn and Royel Johnson.
+            </p>
+            <if(currentYearData)>
+              <h2>Promising Practices</h2>
+              <p>
+                Building on the success of previous years, we are excited to include a set of "promising practices" in this year"s report for Most Promising Places to Work in Student Affairs 2020. As the MPPWSA project matures each year, we learn more and more about what"s going on at various institutions to increase staff diversity, to foster a sense of belonging and to equip college student educators for their work with students. In previous editions of <i>Diverse</i>, we shared practices that hold promise for achieving the outcomes we desire with student affairs staff (for more, see <i>Diverse</i> Online); this year, we present the growing list of promising practices.
+              </p>
+            </if>
+          </div>
+        </div>
+      </@section>
+      <@section modifiers=["card-deck"]>
+        <if(currentYearData)>
+          <div class="row">
+            <div class="col page-contents__content-body">
+              <div class="about-text">
+                <h2>Staff Profile</h2>
+              </div>
+              <p>
+                The Most Promising Places to Work in Student Affairs are promising because of the amazing staff members that constitute the team. The follwing charts and tables summaraize data, facts and figures about this year"s Most Promising Places and how they stack up against all schools surveyed.
+              </p>
+            </div>
+          </div>
+        </if>
+        $ const tableTwoLabels = Object.values(getAsObject(currentYearData, "tableLabels.tableTwo"));
+        <if (currentYearData && tableTwoLabels.length)>
+          <table class="table table-responsive table-hover">
+            <thead>
+              <tr>
+                <td><b>Institution</b></td>
+                <for|label| of=tableTwoLabels>
+                  <td>
+                    <b>${label}</b>
+                  </td>
+                </for>
+              </tr>
+            </thead>
+            <if (institutions.length)>
+              <tbody>
+                  <for|institution| of=institutions>
+                    <tr>
+                      $ const tableTwoData = getAsObject(institutionData[institution], "tableTwo");
+                      <td class="institution">${institution}</td>
+                      <for|field| of=Object.keys(tableTwoData)>
+                        <td class=field>${tableTwoData[field]}</td>
+                      </for>
+                    </tr>
+                  </for>
+              </tbody>
+            </if>
+          </table>
+        </if>
+      </@section>
+        $ const salaryChartTitles = getAsObject(currentYearData, "tableLabels.salaryChart");
+        $ const salaryChartValueKeys = Object.keys(getAsObject(currentYearData, "tableLabels.salaryChart"));
+        $ const schools = institutions.map((institution) => {
+          return { name: institution, ...institutionData[institution].salaryChart }
+        })
+        <for|valueKey| of=salaryChartValueKeys>
+          <@section>
+            <marko-web-browser-component
+              name="SiteSalaryBarChart"
+              props={
+                schools: schools,
+                chartTitle: salaryChartTitles[valueKey],
+                valueKey: valueKey,
+              }
+            />
+          </@section>
+        </for>
+      <@section modifiers=["card-deck"]>
+        <if (currentYearData && tableThreeLabels.length)>
+          <div class="row">
+            <div class="col page-contents__content-body">
+              <div class="about-text">
+                <h2>Diversity Benefits</h2>
+              </div>
+            </div>
+          </div>
+        $ const tableThreeLabels = Object.values(getAsObject(currentYearData, "tableLabels.tableThree"));
+
+          <table class="table table-responsive table-hover">
+            <thead>
+              <tr>
+                <td><b>Institution</b></td>
+                <for|label| of=tableThreeLabels>
+                  <td>
+                    <b>${label}</b>
+                  </td>
+                </for>
+              </tr>
+            </thead>
+            <if (institutions.length)>
+              <tbody>
+                  <for|institution| of=institutions>
+                    <tr>
+                      $ const tableThreeData = getAsObject(institutionData[institution], "tableThree");
+                      <td class="institution">${institution}</td>
+                      <for|field| of=Object.keys(tableThreeData)>
+                        <td class=field>${tableThreeData[field]}</td>
+                      </for>
+                    </tr>
+                  </for>
+              </tbody>
+            </if>
+          </table>
+        </if>
+      </@section>
+    </marko-web-page-wrapper>
+  </@page>
+</marko-web-default-page-layout>
