@@ -51,7 +51,7 @@ $ const pageDescription = currentYearData ? currentYearData.description : title;
       </if>
       <@section modifiers=["card-deck"]>
       $ const tableOneLabels = Object.values(getAsObject(currentYearData, "tableLabels.tableOne"));
-      <if (currentYearData && tableOneLabels.length)>
+      <if(currentYearData && tableOneLabels.length)>
         <table class="table table-responsive table-hover">
           <thead>
             <tr>
@@ -63,7 +63,7 @@ $ const pageDescription = currentYearData ? currentYearData.description : title;
               </for>
             </tr>
           </thead>
-          <if (institutions.length)>
+          <if(institutions.length)>
             <tbody>
                 <for|institution| of=institutions>
                   <tr>
@@ -124,7 +124,7 @@ $ const pageDescription = currentYearData ? currentYearData.description : title;
           </div>
         </if>
         $ const tableTwoLabels = Object.values(getAsObject(currentYearData, "tableLabels.tableTwo"));
-        <if (currentYearData && tableTwoLabels.length)>
+        <if(currentYearData && tableTwoLabels.length)>
           <table class="table table-responsive table-hover">
             <thead>
               <tr>
@@ -136,7 +136,7 @@ $ const pageDescription = currentYearData ? currentYearData.description : title;
                 </for>
               </tr>
             </thead>
-            <if (institutions.length)>
+            <if(institutions.length)>
               <tbody>
                   <for|institution| of=institutions>
                     <tr>
@@ -178,7 +178,7 @@ $ const pageDescription = currentYearData ? currentYearData.description : title;
           </div>
         </div>
         $ const tableThreeLabels = Object.values(getAsObject(currentYearData, "tableLabels.tableThree"));
-        <if (currentYearData && tableThreeLabels.length)>
+        <if(currentYearData && tableThreeLabels.length)>
           <table class="table table-responsive table-hover">
             <thead>
               <tr>
@@ -190,7 +190,7 @@ $ const pageDescription = currentYearData ? currentYearData.description : title;
                 </for>
               </tr>
             </thead>
-            <if (institutions.length)>
+            <if(institutions.length)>
               <tbody>
                   <for|institution| of=institutions>
                     <tr>
