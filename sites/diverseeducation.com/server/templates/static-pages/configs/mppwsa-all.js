@@ -1,5 +1,4 @@
 module.exports = {
-  // Put years after 2020 here
   2022: {
     description: 'Now in its 9th year, Promising Places to Work in Student Affairs (PPWSA) is a national recognition that celebrates student affairs workplaces that are vibrant, diverse, supportive and commited to staff work-life balance, professional development and inclusive excellence. PPWSA offers intitutional leaders information that can be used to improve practices across their student affairs community, while also serving as a useful tool for employers, career services staff and job-seekers across the country!',
     logosSrc: 'https://img.diverseeducation.com/files/base/diverse/all/image/static/de/mppwsa/2022-MPPSA-Schools.png?w=1600&auto=format,compress&q=70',
@@ -2849,5 +2848,4 @@ module.exports = {
       },
     },
   },
-  // Put years before 2020 here.
 };
