@@ -6,7 +6,7 @@ $ const { alias } = input;
 $ const type = "static-page";
 $ const rootAlias = "awards-honors/mppwsa";
 // The config should have the newest year at the top.
-$ const currentYear = alias === rootAlias ? Object.keys(config)[Object.keys(config).length -1] : alias.split("/").pop()
+$ const currentYear = alias === rootAlias ? Object.keys(config)[Object.keys(config).length - 1] : alias.split("/").pop()
 $ const currentYearData = config[currentYear];
 $ const title = currentYearData ? `${currentYear} Most Promising Places to Work in Student Affairs` : 'Most Promising Places to Work in Student Affairs';
 $ const institutionData = getAsObject(currentYearData, "institutionData");
@@ -38,21 +38,22 @@ $ const profiles = currentYearData ? currentYearData.profiles: title;
             </if>
           </div>
         </div>
-        <!-- <div class="row" align="center">
+        <div class="row" align="center">
           <div class="col">
             <div>
               <h4 style="bold">
-                Previous Years
+                Other Years
               </h4>
-              <a target="_blank" href="/awards-honors/mppwsa/2021">
-                2021
-              </a>&nbsp
-              <a target="_blank" href="/awards-honors/mppwsa/2020">
-                2020
-              </a>
+              <for|year| of=Object.keys(config).reverse()>
+                <if(year !== currentYear)>
+                  <a target="_blank" href=`/awards-honors/mppwsa/${year}`>
+                    ${year}
+                  </a>&nbsp;
+                </if>
+              </for>
             </div>
           </div>
-        </div> -->
+        </div>
       </@section>
       <if(currentYearData && currentYearData.logosSrc)>
         <@section>
