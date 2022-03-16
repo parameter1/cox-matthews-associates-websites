@@ -17,6 +17,8 @@ $ const survey = currentYearData ? currentYearData.survey: title;
 $ const socialMedia = currentYearData ? currentYearData.socialMedia: title;
 $ const biographies = currentYearData ? currentYearData.biographies: title;
 $ const profiles = currentYearData ? currentYearData.profiles: title;
+$ const promisingPractices = currentYearData ? currentYearData.promisingPractices: title;
+$ const advisoryBoard = currentYearData ? currentYearData.advisoryBoard: title;
 
 <marko-web-default-page-layout type=type title=title description=pageDescription>
   <@page>
@@ -124,6 +126,12 @@ $ const profiles = currentYearData ? currentYearData.profiles: title;
                   $!{currentYearData.biographies}
                 </p>
               </if>
+              <if(currentYearData && currentYearData.promisingPractices)>
+                <h2>PROMISING PRACTICES</h2>
+                <p>
+                  $!{currentYearData.promisingPractices}
+                </p>
+              </if>
             </div>
           </div>
         </div>
@@ -219,11 +227,11 @@ $ const profiles = currentYearData ? currentYearData.profiles: title;
           </table>
         </if>
       </@section>
-      <if(profiles)>
+      <if(currentYearData && currentYearData.profiles)>
         <@section>
           <div class="page-contents__content-body about-text">
-            <h2 align="center">
-              THE MOST PROMISING PLACES TO WORK IN<br/>STUDENT AFFAIRS: INSTITUTIONAL PROFILES
+            <h2>
+              THE MOST PROMISING PLACES TO WORK IN STUDENT AFFAIRS: INSTITUTIONAL PROFILES
             </h2>
             <div class="row">
               <div class="card-deck-flow card-deck-flow--awards-honors card-deck-flow--mppwsa card-deck-flow--2-cols">
@@ -248,6 +256,25 @@ $ const profiles = currentYearData ? currentYearData.profiles: title;
                 </for>
               </div>
             </div>
+          </div>
+        </@section>
+      </if>
+      <if(currentYearData && currentYearData.advisoryBoard)>
+        <@section>
+          <div class="page-contents__content-body about-text">
+            <h2>
+              MOST PROMISING PLACES TO WORK IN STUDENT AFFAIRS ADVISORY BOARD
+            </h2>
+          </div>
+          <div class="card-deck-flow card-deck-flow--awards-honors card-deck-flow--mppwsa card-deck-flow--3-cols">
+            <for|advisoryBoard, index| of=currentYearData.advisoryBoard>
+              <div class="card-deck-flow__node">
+                <h5>
+                  $!{currentYearData.advisoryBoard[index].name}
+                </h5>
+                $!{currentYearData.advisoryBoard[index].body}
+              </div>
+            </for>
           </div>
         </@section>
       </if>
