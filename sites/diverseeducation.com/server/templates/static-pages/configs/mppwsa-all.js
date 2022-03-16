@@ -704,7 +704,7 @@ module.exports = {
       },
       {
         thumbnail: 'COLLEGE-WM.png',
-        name: 'College of William &amp; Mary',
+        name: 'College of William & Mary',
         body: 'Located in Williamsburg, Virginia, William &amp; Mary, founded in 1693, has educated U.S. Presidents Thomas Jefferson, James Monroe and John Tyler as well as other notable fi gures. “Our division is at its best when we recognize the value in each other’s uniqueness, honor all voices and perspectives, and celebrate one another’s expertise and talents,” says <b>Dr. Virginia M. Ambler</b>, vice president for student affairs. “We know that creating and sustaining an open, respectful campus environment is important for both students and employees to flourish.”',
       },
       {
@@ -745,7 +745,7 @@ module.exports = {
       {
         thumbnail: 'RIDER.png',
         name: 'Rider University',
-        body: 'A private institution in Lawrenceville, New Jersey, Rider University consists of four academic units: Norm Brodsky College of Business, College of Liberal Arts and Sciences, College of Education and Human Services and Westminster College of the Arts. “Rider University emphasizes in its strategic plan an unwavering focus on student growth and development,” says<b>Dr. Leanna Fenneberg</b>, vice president for student affairs. “The role of student affairs in this holistic vision of student learning is essential. Student affairs has played a vital role in advancing Rider’s inclusive excellence plan and our campus commitment to diversity, equity and inclusion to assure each student reaches their potential.”',
+        body: 'A private institution in Lawrenceville, New Jersey, Rider University consists of four academic units: Norm Brodsky College of Business, College of Liberal Arts and Sciences, College of Education and Human Services and Westminster College of the Arts. “Rider University emphasizes in its strategic plan an unwavering focus on student growth and development,” says <b>Dr. Leanna Fenneberg</b>, vice president for student affairs. “The role of student affairs in this holistic vision of student learning is essential. Student affairs has played a vital role in advancing Rider’s inclusive excellence plan and our campus commitment to diversity, equity and inclusion to assure each student reaches their potential.”',
       },
       {
         thumbnail: 'ROCHESTER.png',
@@ -765,7 +765,7 @@ module.exports = {
       {
         thumbnail: 'SMERRITT-UNIVERSITY.png',
         name: 'Samuel Merritt University',
-        body: 'A private institution in Oakland, California, Samuel Merritt University is focused on health sciences and a vision of “Transforming healthcare. Transforming communities.” This is the university’s third consecutive appearance on this list. “This recognition is a tribute to SMU’s dedicated and committed student affairs staff ,” says<b>Timothy Cranford</b>, vice president for student affairs. “When we create healthy working conditions for our staff , they can focus on promoting student success. Our team’s can-do attitude, inclusive thinking, respect for past practices and collaborative efforts helped to build SMU’s promising model for a diverse and equitable Student Affairs division. I could not be more proud of our team.”',
+        body: 'A private institution in Oakland, California, Samuel Merritt University is focused on health sciences and a vision of “Transforming healthcare. Transforming communities.” This is the university’s third consecutive appearance on this list. “This recognition is a tribute to SMU’s dedicated and committed student affairs staff ,” says <b>Timothy Cranford</b>, vice president for student affairs. “When we create healthy working conditions for our staff , they can focus on promoting student success. Our team’s can-do attitude, inclusive thinking, respect for past practices and collaborative efforts helped to build SMU’s promising model for a diverse and equitable Student Affairs division. I could not be more proud of our team.”',
       },
       {
         thumbnail: 'SONOMA.png',
@@ -795,7 +795,7 @@ module.exports = {
       {
         thumbnail: 'HAWAII-HILO.png',
         name: 'University of Hawaii-Hilo',
-        body: 'One of 10 general campuses in the University of Hawaii system, University of Hawaii at Hilo is returning to the list. “Now more than ever, the work of student affairs professionals is critical for providing the holistic support that students need to be successful in college,” says<b>Dr. Farrah-Marie Gomes</b>, vice chancellor for student affairs. “The University of Hawaii at Hilo remains committed to our student affairs professionals, knowing that our investment in their development strengthens individual and collective capacity to better provide for the unique and changing characteristics of our diverse student body. These are the same professionals that contribute to the building of a welcoming, safe and inclusive foundation upon which students and staff will continue to thrive. I have profound gratitude for all of our student a airs professionals who exude compassion and grace for our students while also demonstrating care for one another.”',
+        body: 'One of 10 general campuses in the University of Hawaii system, University of Hawaii at Hilo is returning to the list. “Now more than ever, the work of student affairs professionals is critical for providing the holistic support that students need to be successful in college,” says <b>Dr. Farrah-Marie Gomes</b>, vice chancellor for student affairs. “The University of Hawaii at Hilo remains committed to our student affairs professionals, knowing that our investment in their development strengthens individual and collective capacity to better provide for the unique and changing characteristics of our diverse student body. These are the same professionals that contribute to the building of a welcoming, safe and inclusive foundation upon which students and staff will continue to thrive. I have profound gratitude for all of our student a airs professionals who exude compassion and grace for our students while also demonstrating care for one another.”',
       },
       {
         thumbnail: 'MARYLAND-BALTIMORE.png',
@@ -805,7 +805,7 @@ module.exports = {
       {
         thumbnail: 'COLLEGE-PARK.png',
         name: 'University of Maryland-College Park',
-        body: 'Founded in 1856, University of Maryland, College Park, is the flagship institution in the University System of Maryland. It serves more than 30,000 undergraduates and 10,000 graduate students. “Given this challenging year in higher education, I am especially grateful to receive this honor,” says Dr. Patty Perillo, vice president for student affairs. “This award recognizes the exemplary work of student affairs educators deeply invested in maximizing human potential for all members of our community. We lead with a desire to foster community and a deep sense of caring, so all members feel that they matter.”',
+        body: 'Founded in 1856, University of Maryland, College Park, is the flagship institution in the University System of Maryland. It serves more than 30,000 undergraduates and 10,000 graduate students. “Given this challenging year in higher education, I am especially grateful to receive this honor,” says <b>Dr. Patty Perillo</b>, vice president for student affairs. “This award recognizes the exemplary work of student affairs educators deeply invested in maximizing human potential for all members of our community. We lead with a desire to foster community and a deep sense of caring, so all members feel that they matter.”',
       },
       {
         thumbnail: 'GREENSBORO.png',
@@ -815,7 +815,7 @@ module.exports = {
       {
         thumbnail: 'VERMONT.png',
         name: 'University of Vermont',
-        body: 'A public land-grant research university located in Burlington, the University of Vermont was founded in 1791, making it one of the oldest universities in the country. “We are humbled to be recognized for our 15-plus year commitment to creating a division that is committed to deepening our inter-multicultural competency by examining systems of oppression,” says<b>Jilliene J. Rodriguez</b>, diversity, engagement and professional development director in the vice provost and dean of students office. “The division’s focus on diversity, affIrmative recruitment and hiring and restorative practices has provided us a framework to be more informed leaders. Our staff members are thoughtful and passionate educators who actively work to address, advocate and support the emerging needs of our student body and campus community. While this work can be challenging, we see it as our collective responsibility to build a more equitable, inclusive and caring campus community.”',
+        body: 'A public land-grant research university located in Burlington, the University of Vermont was founded in 1791, making it one of the oldest universities in the country. “We are humbled to be recognized for our 15-plus year commitment to creating a division that is committed to deepening our inter-multicultural competency by examining systems of oppression,” says <b>Jilliene J. Rodriguez</b>, diversity, engagement and professional development director in the vice provost and dean of students office. “The division’s focus on diversity, affIrmative recruitment and hiring and restorative practices has provided us a framework to be more informed leaders. Our staff members are thoughtful and passionate educators who actively work to address, advocate and support the emerging needs of our student body and campus community. While this work can be challenging, we see it as our collective responsibility to build a more equitable, inclusive and caring campus community.”',
       },
       {
         thumbnail: 'WEST-GEORGIA.png',
