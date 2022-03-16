@@ -102,38 +102,34 @@ $ const profiles = currentYearData ? currentYearData.profiles: title;
       </@section>
       <@section>
         <div class="row">
-          <div class="col page-contents__content-body">
-            <div class="about-text">
-              <h2>ABOUT THE STUDY</h2>
-              <p>
-                $!{currentYearData.study}
-              </p>
-              <h2>ABOUT THE SURVEY</h2>
-              <p>
-                $!{currentYearData.survey}
-              </p>
+          <div class="col">
+            <h2 class="page-wrapper__website-section-name">ABOUT THE STUDY</h2>
+              <div class="page-wrapper__website-section-description">
+                <p>$!{currentYearData.study}</p><br/>
+              </div>
+            <h2 class="page-wrapper__website-section-name">ABOUT THE SURVEY</h2>
+              <div class="page-wrapper__website-section-description">
+                <p>$!{currentYearData.survey}</p><br/>
+              </div>
               <if(currentYearData && currentYearData.socialMedia)>
-                <h2>ENGAGE US ON SOCIAL MEDIA</h2>
-                <p>
-                  $!{currentYearData.socialMedia}
-                </p>
+                <h2 class="page-wrapper__website-section-name">ENGAGE US ON SOCIAL MEDIA</h2>
+                  <div class="page-wrapper__website-section-description">
+                    <p>$!{currentYearData.socialMedia}</p><br/>
+                  </div>
               </if>
               <if(currentYearData && currentYearData.biographies)>
-                <h2>PROJECT TEAM BIOGRAPHIES</h2>
-                <p>
-                  $!{currentYearData.biographies}
-                </p>
+                <h2 class="page-wrapper__website-section-name">PROJECT TEAM BIOGRAPHIES</h2>
+                  <div class="page-wrapper__website-section-description">
+                    <p>$!{currentYearData.biographies}</p><br/>
+                  </div>
               </if>
             </div>
           </div>
-        </div>
       </@section>
       <@section modifiers=["card-deck"]>
         <div class="row">
-          <div class="col page-contents__content-body">
-            <div class="about-text">
-              <h2>STAFF PROFILE</h2>
-            </div>
+          <div class="col">
+            <h2 class="page-wrapper__website-section-name">STAFF PROFILE</h2><br/>
           </div>
         </div>
         $ const tableTwoLabels = Object.values(getAsObject(currentYearData, "tableLabels.tableTwo"));
@@ -184,10 +180,8 @@ $ const profiles = currentYearData ? currentYearData.profiles: title;
         </for>
       <@section modifiers=["card-deck"]>
         <div class="row">
-          <div class="col page-contents__content-body">
-            <div class="about-text">
-              <h2>DIVERSITY BENEFITS</h2>
-            </div>
+          <div class="col">
+            <h2 class="page-wrapper__website-section-name">DIVERSITY BENEFITS</h2><br/>
           </div>
         </div>
         $ const tableThreeLabels = Object.values(getAsObject(currentYearData, "tableLabels.tableThree"));
