@@ -19,6 +19,7 @@ $ const biographies = currentYearData ? currentYearData.biographies: title;
 $ const profiles = currentYearData ? currentYearData.profiles: title;
 $ const promisingPractices = currentYearData ? currentYearData.promisingPractices: title;
 $ const advisoryBoard = currentYearData ? currentYearData.advisoryBoard: title;
+$ const promisingPlaces = currentYearData ? currentYearData.promisingPlaces: title;
 
 <marko-web-default-page-layout type=type title=title description=pageDescription>
   <@page>
@@ -109,10 +110,12 @@ $ const advisoryBoard = currentYearData ? currentYearData.advisoryBoard: title;
               <div class="page-wrapper__website-section-description">
                 <p>$!{currentYearData.study}</p><br/>
               </div>
-            <h2 class="page-wrapper__website-section-name">ABOUT THE SURVEY</h2>
-              <div class="page-wrapper__website-section-description">
-                <p>$!{currentYearData.survey}</p><br/>
-              </div>
+              <if(currentYearData && currentYearData.survey)>
+                <h2 class="page-wrapper__website-section-name">ABOUT THE SURVEY</h2>
+                  <div class="page-wrapper__website-section-description">
+                    <p>$!{currentYearData.survey}</p><br/>
+                  </div>
+              </if>
               <if(currentYearData && currentYearData.socialMedia)>
                 <h2 class="page-wrapper__website-section-name">ENGAGE US ON SOCIAL MEDIA</h2>
                   <div class="page-wrapper__website-section-description">
@@ -267,6 +270,25 @@ $ const advisoryBoard = currentYearData ? currentYearData.advisoryBoard: title;
                   $!{currentYearData.advisoryBoard[index].name}
                 </h5>
                 $!{currentYearData.advisoryBoard[index].body}
+              </div>
+            </for>
+          </div>
+        </@section>
+      </if>
+      <if(currentYearData && currentYearData.promisingPlaces)>
+        <@section>
+          <div class="page-contents__content-body about-text">
+            <h2>
+              MOST PROMISING PLACES
+            </h2>
+          </div>
+          <div class="card-deck-flow card-deck-flow--awards-honors card-deck-flow--mppwsa card-deck-flow--3-cols">
+            <for|promisingPlaces, index| of=currentYearData.promisingPlaces>
+              <div class="card-deck-flow__node">
+                <h5>
+                  $!{currentYearData.promisingPlaces[index].name}
+                </h5>
+                $!{currentYearData.promisingPlaces[index].body}
               </div>
             </for>
           </div>
