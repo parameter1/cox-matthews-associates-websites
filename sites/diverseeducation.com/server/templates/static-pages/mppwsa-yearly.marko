@@ -5,7 +5,6 @@ $ const { alias } = input;
 
 $ const type = "static-page";
 $ const rootAlias = "awards-honors/mppwsa";
-// The config should have the newest year at the top.
 $ const currentYear = alias === rootAlias ? Object.keys(config)[Object.keys(config).length - 1] : alias.split("/").pop()
 $ const currentYearData = config[currentYear];
 $ const title = currentYearData ? `${currentYear} Most Promising Places to Work in Student Affairs` : 'Most Promising Places to Work in Student Affairs';
@@ -20,6 +19,8 @@ $ const profiles = currentYearData ? currentYearData.profiles: title;
 $ const promisingPractices = currentYearData ? currentYearData.promisingPractices: title;
 $ const advisoryBoard = currentYearData ? currentYearData.advisoryBoard: title;
 $ const promisingPlaces = currentYearData ? currentYearData.promisingPlaces: title;
+$ const chee = currentYearData ? currentYearData.chee: title;
+$ const ideas = currentYearData ? currentYearData. ideas: title;
 
 <marko-web-default-page-layout type=type title=title description=pageDescription>
   <@page>
@@ -106,36 +107,52 @@ $ const promisingPlaces = currentYearData ? currentYearData.promisingPlaces: tit
       <@section>
         <div class="row">
           <div class="col">
-            <h2 class="page-wrapper__website-section-name">ABOUT THE STUDY</h2>
+            <if(currentYearData && currentYearData.study)>
+              <h2 class="page-wrapper__website-section-name">ABOUT THE STUDY</h2>
+                <div class="page-wrapper__website-section-description">
+                  <p>$!{currentYearData.study}</p><br/>
+                </div>
+            </if>
+            <if(currentYearData && currentYearData.ideas)>
+              <h2 class="page-wrapper__website-section-name">MISSION OF THE CENTER FOR IDEAS</h2>
+                <div class="page-wrapper__website-section-description">
+                  <p>$!{currentYearData.ideas}</p><br/>
+                </div>
+            </if>
+            <if(currentYearData && currentYearData.chee)>
+              <h2 class="page-wrapper__website-section-name">
+                ABOUT THE CENTER FOR HIGHER EDUCATION ENTERPRISE
+              </h2>
               <div class="page-wrapper__website-section-description">
-                <p>$!{currentYearData.study}</p><br/>
+                <p>$!{currentYearData.chee}</p><br/>
               </div>
-              <if(currentYearData && currentYearData.survey)>
-                <h2 class="page-wrapper__website-section-name">ABOUT THE SURVEY</h2>
-                  <div class="page-wrapper__website-section-description">
-                    <p>$!{currentYearData.survey}</p><br/>
-                  </div>
-              </if>
-              <if(currentYearData && currentYearData.socialMedia)>
-                <h2 class="page-wrapper__website-section-name">ENGAGE US ON SOCIAL MEDIA</h2>
-                  <div class="page-wrapper__website-section-description">
-                    <p>$!{currentYearData.socialMedia}</p><br/>
-                  </div>
-              </if>
-              <if(currentYearData && currentYearData.biographies)>
-                <h2 class="page-wrapper__website-section-name">PROJECT TEAM BIOGRAPHIES</h2>
-                  <div class="page-wrapper__website-section-description">
-                    <p>$!{currentYearData.biographies}</p><br/>
-                  </div>
-              </if>
-              <if(currentYearData && currentYearData.promisingPractices)>
-                <h2>PROMISING PRACTICES</h2>
-                <p>
-                  $!{currentYearData.promisingPractices}
-                </p>
-              </if>
-            </div>
+            </if>
+            <if(currentYearData && currentYearData.survey)>
+              <h2 class="page-wrapper__website-section-name">ABOUT THE SURVEY</h2>
+                <div class="page-wrapper__website-section-description">
+                  <p>$!{currentYearData.survey}</p><br/>
+                </div>
+            </if>
+            <if(currentYearData && currentYearData.socialMedia)>
+              <h2 class="page-wrapper__website-section-name">ENGAGE US ON SOCIAL MEDIA</h2>
+                <div class="page-wrapper__website-section-description">
+                  <p>$!{currentYearData.socialMedia}</p><br/>
+                </div>
+            </if>
+            <if(currentYearData && currentYearData.biographies)>
+              <h2 class="page-wrapper__website-section-name">PROJECT TEAM BIOGRAPHIES</h2>
+                <div class="page-wrapper__website-section-description">
+                  <p>$!{currentYearData.biographies}</p><br/>
+                </div>
+            </if>
+            <if(currentYearData && currentYearData.promisingPractices)>
+              <h2 class="page-wrapper__website-section-name">PROMISING PRACTICES</h2>
+                <div class="page-wrapper__website-section-description">
+                  <p>$!{currentYearData.promisingPractices}</p><br/>
+                </div>
+            </if>
           </div>
+        </div>
       </@section>
       <@section modifiers=["card-deck"]>
         <div class="row">
