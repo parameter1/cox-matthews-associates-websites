@@ -50,6 +50,8 @@ const utilities = [
 const mobileMenu = {
   primary: [
     ...topics,
+    ...resources,
+    ...awards,
   ],
   secondary: [
     subscribe,
