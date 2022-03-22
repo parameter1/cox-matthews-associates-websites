@@ -31,6 +31,7 @@ const utilities = [
 const mobileMenu = {
   primary: [
     ...topics,
+    ...resources,
   ],
   secondary: [
     subscribe,

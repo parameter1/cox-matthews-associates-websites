@@ -41,6 +41,7 @@ const mobileMenu = {
   ],
   primary: [
     ...topics,
+    ...resources,
   ],
   secondary: [
     subscribe,

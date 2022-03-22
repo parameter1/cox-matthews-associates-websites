@@ -28,6 +28,7 @@ const utilities = [
 const mobileMenu = {
   primary: [
     ...topics,
+    ...resources,
     { href: 'https://jobs.ccjobsnow.com', label: 'CC Jobs', target: '_blank' },
   ],
   secondary: [
