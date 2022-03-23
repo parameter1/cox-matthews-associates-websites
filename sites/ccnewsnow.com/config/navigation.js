@@ -28,10 +28,10 @@ const utilities = [
 const mobileMenu = {
   primary: [
     ...topics,
-    ...resources,
     { href: 'https://jobs.ccjobsnow.com', label: 'CC Jobs', target: '_blank' },
   ],
   secondary: [
+    ...resources,
     subscribe,
     { href: 'https://mediakit.diverseeducation.com/', label: 'Advertise', target: '_blank' },
   ],
