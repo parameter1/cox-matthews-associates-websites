@@ -43,6 +43,7 @@ const mobileMenu = {
     ...topics,
   ],
   secondary: [
+    ...resources,
     subscribe,
     { href: 'https://mediakit.diverseeducation.com/', label: 'Advertise', target: '_blank' },
   ],
