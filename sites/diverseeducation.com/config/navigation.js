@@ -50,10 +50,10 @@ const utilities = [
 const mobileMenu = {
   primary: [
     ...topics,
-    ...resources,
     ...awards,
   ],
   secondary: [
+    ...resources,
     subscribe,
     { href: 'https://mediakit.diverseeducation.com/', label: 'Advertise', target: '_blank' },
   ],
