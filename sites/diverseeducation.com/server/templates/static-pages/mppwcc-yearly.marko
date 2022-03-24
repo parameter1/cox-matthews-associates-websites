@@ -1,0 +1,307 @@
+import { getAsObject } from "@parameter1/base-cms-object-path";
+import config from "./configs/mppwcc-all.js";
+
+$ const { alias } = input;
+
+$ const type = "static-page";
+$ const rootAlias = "awards-honors/mppwcc";
+$ const currentYear = alias === rootAlias ? Object.keys(config)[Object.keys(config).length - 1] : alias.split("/").pop()
+$ const currentYearData = config[currentYear];
+$ const title = currentYearData ? `${currentYear} Most Promising Places to Work in Community Colleges` : 'Most Promising Places to Work in Community Colleges';
+$ const institutionData = getAsObject(currentYearData, "institutionData");
+$ const institutions = Object.keys(institutionData);
+$ const pageDescription = currentYearData ? currentYearData.description : title;
+$ const study = currentYearData ? currentYearData.study: title;
+$ const survey = currentYearData ? currentYearData.survey: title;
+$ const methodology = currentYearData ? currentYearData.methodology: title;
+$ const workplaces = currentYearData ? currentYearData.workplaces: title;
+$ const lessons = currentYearData ? currentYearData.lessons: title;
+$ const promisingPractices = currentYearData ? currentYearData.promisingPractices: title;
+$ const socialMedia = currentYearData ? currentYearData.socialMedia: title;
+$ const biographies = currentYearData ? currentYearData.biographies: title;
+$ const advisoryBoard = currentYearData ? currentYearData.advisoryBoard: title;
+$ const chee = currentYearData ? currentYear.chee: title;
+$ const cheeGoals = currentYearData ? currentYearData.cheeGoals: title;
+
+<marko-web-default-page-layout type=type title=title>
+  <@page>
+    <marko-web-page-wrapper class="awards-honors mppwcc">
+      <@section modifiers=["first"]>
+        <theme-gam-define-display-ad
+          name="leaderboard"
+          position="section_page"
+          aliases=["awards-honors/mppwcc"]
+          modifiers=["inter-block"]
+        />
+      </@section>
+      <@section>
+        <div class="row">
+          <div class="col">
+            <h1 class="page-wrapper__website-section-name">$!{title}</h1>
+            <if(currentYearData && currentYearData.description)>
+              <div class="page-wrapper__website-section-description">$!{currentYearData.description}</div>
+            </if>
+          </div>
+        </div><br/>
+        <div class="row" align="center">
+          <div class="col">
+            <div>
+              <h4 style="bold">
+                Other Years
+              </h4>
+              <for|year| of=Object.keys(config).reverse()>
+                <if(year !== currentYear)>
+                  <a href=`/awards-honors/mppwcc/${year}`>
+                    ${year}
+                  </a>&nbsp;
+                </if>
+              </for>
+            </div>
+          </div>
+        </div>
+      </@section>
+      <if(currentYearData && currentYearData.logosSrc)>
+        <@section>
+          <div class="row">
+            <div class="col">
+              <marko-web-img
+                class=["lazyload"]
+                alt="Promising Places to work logos"
+                src=currentYearData.logosSrc
+                srcset=`${currentYearData.logosSrc} x2`
+                lazyload=true
+              />
+            </div>
+          </div>
+        </@section>
+      </if>
+
+      $ const tableOneLabels = Object.values(getAsObject(currentYearData, "tableLabels.tableOne"));
+      <if(currentYearData && tableOneLabels.length)>
+        <@section modifiers=["card-deck"]>
+          <table class="table table-responsive table-hover">
+            <thead>
+              <tr>
+                <td width="400"><b>Institution (2-year Public)</b></td>
+                <for|label| of=tableOneLabels>
+                  <td width="200">
+                    <b>${label}</b>
+                  </td>
+                </for>
+              </tr>
+            </thead>
+            <if(institutions.length)>
+              <tbody>
+                  <for|institution| of=institutions>
+                    <tr>
+                      $ const tableOneData = getAsObject(institutionData[institution], "tableOne");
+                      <td class="institution">${institution}</td>
+                      <for|field| of=Object.keys(tableOneData)>
+                        <td class=field>${tableOneData[field]}</td>
+                      </for>
+                    </tr>
+                  </for>
+              </tbody>
+            </if>
+          </table>
+        </@section>
+      </if>
+
+      <@section>
+        <div class="row">
+          <div class="col page-contents__content-body">
+            <div class="about-text">
+              <if(currentYearData && currentYearData.study)>
+                <h3>ABOUT THE STUDY</h3>
+                <p>$!{currentYearData.study}</p>
+              </if>
+              <if(currentYearData && currentYearData.survey)>
+                <h3>ABOUT THE SURVEY</h3>
+                <p>$!{currentYearData.survey}</p>
+              </if>
+              <if(currentYearData && currentYearData.chee)>
+                <h3>ABOUT THE CENTER FOR HIGHER EDUCATION ENTERPRISE</h3>
+                <p>$!{currentYearData.chee}</p>
+              </if>
+              <if(currentYearData && currentYearData.cheeGoals)>
+                <h3>CHEE CORE GOALS</h3>
+                <p>$!{currentYearData.cheeGoals}</p>
+              </if>
+              <if(currentYearData && currentYearData.methodology)>
+                <h3>METHODOLOGY</h3>
+                <p>$!{currentYearData.methodology}</p>
+              </if>
+              <if(currentYearData && currentYearData.workplaces)>
+                <h3>COMMUNITY COLLEGE WORKPLACES</h3>
+                <p>$!{currentYearData.workplaces}</p>
+              </if>
+              <if(currentYearData && currentYearData.lessons)>
+                <h3>KEY LESSONS LEARNED</h3>
+                <p>$!{currentYearData.lessons}</p>
+              </if>
+              <if(currentYearData && currentYearData.promisingPractices)>
+                <h3>PROMISING PRACTICES AT COMMUNITY COLLEGES</h3>
+                <p>$!{currentYearData.promisingPractices}</p>
+              </if>
+              <if(currentYearData && currentYearData.socialMedia)>
+                <h3>ENGAGE US ON SOCIAL MEDIA</h3>
+                <p>$!{currentYearData.socialMedia}</p>
+              </if>
+              <if(currentYearData && currentYearData.biographies)>
+                <h3>BIOGRAPHIES</h3>
+                <p>$!{currentYearData.biographies}</p>
+              </if>
+            </div>
+          </div>
+        </div>
+      </@section>
+
+      <if(currentYearData && currentYearData.advisoryBoard)>
+        <@section>
+          <div class="page-contents__content-body about-text">
+            <h2>
+              MOST PROMISING PLACES TO WORK IN STUDENT AFFAIRS ADVISORY BOARD
+            </h2>
+          </div>
+          <div class="card-deck-flow card-deck-flow--awards-honors card-deck-flow--mppwsa card-deck-flow--3-cols">
+            <for|advisoryBoard, index| of=currentYearData.advisoryBoard>
+              <div class="card-deck-flow__node">
+                <h5>
+                  $!{currentYearData.advisoryBoard[index].name}
+                </h5>
+                $!{currentYearData.advisoryBoard[index].body}
+              </div>
+            </for>
+          </div>
+        </@section>
+      </if>
+
+      <if(currentYearData && currentYearData.profiles)>
+        <@section>
+          <div class="page-contents__content-body page-contents__content-body--profiles">
+            <h2 class="text-center">
+              Most Promising Place to Work in Community College Profiles
+            </h2>
+            <hr />
+          </div>
+        </@section>
+        <@section>
+          <div class="page-contents__content-body page-contents__content-body--profiles">
+            <div class="row">
+              <div class="card-deck-flow card-deck-flow--awards-honors card-deck-flow--mppwcc card-deck-flow--2-cols">
+                <for|profile, index| of=currentYearData.profiles >
+                  <div class="card-deck-flow__node">
+                    <div class="node node--awards-honors node--mppwcc node--card node--full-height">
+                      <div class="profile">
+                        <marko-web-img
+                          class=["lazyload", "profile__thumbnail"]
+                          alt=currentYearData.profiles[index].name
+                          src=`https://img.diverseeducation.com/files/base/diverse/all/image/static/de/mppwcc/profiles/${currentYearData.profiles[index].thumbnail}?w=150&auto=format,compress&q=70`
+                          srcset=`https://img.diverseeducation.com/files/base/diverse/all/image/static/de/mppwcc/profiles/${currentYearData.profiles[index].thumbnail}?w=300&auto=format,compress&q=70 x2`
+                          lazyload=true
+                        />
+                        <h4 class="profile__title">
+                          ${currentYearData.profiles[index].name}
+                        </h4>
+                        $!{currentYearData.profiles[index].body}
+                      </div>
+                    </div>
+                  </div>
+                </for>
+              </div>
+            </div>
+          </div>
+        </@section>
+      </if>
+
+      $ const tableTwoLabels = Object.values(getAsObject(currentYearData, "tableLabels.tableTwo"));
+      <if(currentYearData && tableTwoLabels.length)>
+        <@section modifiers=["card-deck"]>
+          <div class="row">
+            <div class="col">
+              <h2 class="page-wrapper__website-section-name">STAFF PROFILE</h2><br/>
+            </div>
+          </div>
+          <table class="table table-responsive table-hover">
+            <thead>
+              <tr>
+                <td><b>Institution</b></td>
+                <for|label| of=tableTwoLabels>
+                  <td>
+                    <b>${label}</b>
+                  </td>
+                </for>
+              </tr>
+            </thead>
+            <if(institutions.length)>
+              <tbody>
+                  <for|institution| of=institutions>
+                    <tr>
+                      $ const tableTwoData = getAsObject(institutionData[institution], "tableTwo");
+                      <td class="institution">${institution}</td>
+                      <for|field| of=Object.keys(tableTwoData)>
+                        <td class=field>${tableTwoData[field]}</td>
+                      </for>
+                    </tr>
+                  </for>
+              </tbody>
+            </if>
+          </table>
+        </@section>
+        $ const salaryChartTitles = getAsObject(currentYearData, "tableLabels.salaryChart");
+        $ const salaryChartValueKeys = Object.keys(getAsObject(currentYearData, "tableLabels.salaryChart"));
+        $ const schools = institutions.map((institution) => {
+          return { name: institution, ...institutionData[institution].salaryChart }
+        })
+        <for|valueKey| of=salaryChartValueKeys>
+          <@section>
+            <marko-web-browser-component
+              name="SiteSalaryBarChart"
+              props={
+                schools: schools,
+                chartTitle: salaryChartTitles[valueKey],
+                valueKey: valueKey,
+              }
+            />
+          </@section>
+        </for>
+      </if>
+
+      $ const tableThreeLabels = Object.values(getAsObject(currentYearData, "tableLabels.tableThree"));
+      <if(currentYearData && tableThreeLabels.length)>
+        <@section modifiers=["card-deck"]>
+          <div class="row">
+            <div class="col">
+              <h2 class="page-wrapper__website-section-name">DIVERSITY BENEFITS</h2><br/>
+            </div>
+          </div>
+          <table class="table table-responsive table-hover">
+            <thead>
+              <tr>
+                <td><b>Institution</b></td>
+                <for|label| of=tableThreeLabels>
+                  <td>
+                    <b>${label}</b>
+                  </td>
+                </for>
+              </tr>
+            </thead>
+            <if(institutions.length)>
+              <tbody>
+                  <for|institution| of=institutions>
+                    <tr>
+                      $ const tableThreeData = getAsObject(institutionData[institution], "tableThree");
+                      <td class="institution">${institution}</td>
+                      <for|field| of=Object.keys(tableThreeData)>
+                        <td class=field>${tableThreeData[field]}</td>
+                      </for>
+                    </tr>
+                  </for>
+              </tbody>
+            </if>
+          </table>
+        </@section>
+      </if>
+    </marko-web-page-wrapper>
+  </@page>
+</marko-web-default-page-layout>
