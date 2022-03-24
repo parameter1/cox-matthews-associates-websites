@@ -7,7 +7,7 @@ const graduateScholars = require('./awards/graduate-scholars');
 const champions = require('../templates/website-section/awards-honors/champions');
 const arthurAshe = require('../templates/website-section/awards-honors/arthur-ashe');
 const mppwsaYearly = require('../templates/static-pages/mppwsa-yearly');
-const mppwcc = require('../templates/static-pages/mppwcc');
+const mppwccYearly = require('../templates/static-pages/mppwcc-yearly');
 
 module.exports = (app) => {
   awardRedirects(app);
@@ -45,6 +45,11 @@ module.exports = (app) => {
 
   app.get('/:alias(awards-honors/mppwcc)', asyncRoute(async (req, res) => {
     const { alias } = req.params;
-    return res.marko(mppwcc, { alias });
+    return res.marko(mppwccYearly, { alias });
+  }));
+
+  app.get('/:alias(awards-honors/mppwcc/\\d{4})', asyncRoute(async (req, res) => {
+    const { alias } = req.params;
+    return res.marko(mppwccYearly, { alias });
   }));
 };
