@@ -68,9 +68,6 @@ fragment ContentPageFragment on Content {
       body
       label
     }
-    profiles: sidebarStubs(input:{labels: ["Scholar Profile"]}) {
-      body
-    }
   }
   ... on ContentWebinar {
     linkUrl
@@ -146,6 +143,7 @@ fragment ContentPageFragment on Content {
         displayName
         caption
         credit
+        inCarousel
         source {
           width
           height
