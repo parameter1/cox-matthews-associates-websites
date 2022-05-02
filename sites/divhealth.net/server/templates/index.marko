@@ -64,22 +64,13 @@ $ const { id, alias, name, pageNode } = input;
         <theme-section-list-block alias="policies" />
       </div>
       <div class="col-lg-4">
-        <global-featured-jobs-list-block />
+        <theme-section-list-block alias="other-news" />
       </div>
     </div>
   </@section>
 
-  <@section|{ aliases }|>
-    <theme-gam-define-display-ad
-      name="rotation"
-      position="home_page"
-      aliases=aliases
-      modifiers=["inter-block"]
-    />
-  </@section>
-
-  <@section modifiers=["break-container"]>
-    <global-premium-employers-block title="Premium Employers" />
+  <@section|{ aliases }| modifiers=["break-container"]>
+    <global-featured-jobs-block />
   </@section>
 
   <@section>
