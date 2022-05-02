@@ -1,6 +1,6 @@
 {
   "name": "@cox-matthews-associates/ccnewsnow.com",
-  "version": "2.12.16",
+  "version": "2.12.18",
   "author": "Brandon Krigbaum <brandon@parameter1.com>",
   "repository": "https://github.com/parameter1/cox-matthews-associates-websites/tree/master/sites/ccnewsnow.com",
   "license": "MIT",
@@ -15,8 +15,8 @@
     "test": "yarn lint && yarn compile && yarn build"
   },
   "dependencies": {
-    "@cox-matthews-associates/package-global": "^2.12.16",
-    "@cox-matthews-associates/package-theme-monorail": "^2.12.3",
+    "@cox-matthews-associates/package-global": "^2.12.18",
+    "@cox-matthews-associates/package-theme-monorail": "^2.12.18",
     "@parameter1/base-cms-marko-core": "^2.80.0",
     "@parameter1/base-cms-marko-web": "^2.80.0",
     "@parameter1/base-cms-marko-web-gam": "^2.77.0",
