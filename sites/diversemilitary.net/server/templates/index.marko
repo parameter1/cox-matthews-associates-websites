@@ -58,7 +58,7 @@ $ const { id, alias, name, pageNode } = input;
   <@section|{ aliases }|>
     <div class="row">
       <div class="col-lg-4">
-        <global-featured-jobs-list-block />
+        <theme-section-list-block alias="from-the-pentagon" />
       </div>
       <div class="col-lg-4">
         <theme-section-list-block alias="funding" />
@@ -69,8 +69,8 @@ $ const { id, alias, name, pageNode } = input;
     </div>
   </@section>
 
-  <@section modifiers=["break-container"]>
-    <global-premium-employers-block title="Premium Employers" />
+  <@section|{ aliases }| modifiers=["break-container"]>
+    <global-featured-jobs-block />
   </@section>
 
   <@section>

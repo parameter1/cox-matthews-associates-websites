@@ -59,36 +59,11 @@ $ const { id, alias, name, pageNode } = input;
     <theme-section-list-deck-block aliases=["academics", "faculty", "finance"] />
   </@section>
 
-  <@section|{ aliases }|>
-    <theme-gam-define-display-ad
-      name="rotation"
-      position="home_page"
-      aliases=aliases
-      modifiers=["inter-block"]
+  <@section|{ aliases }| modifiers=["break-container"]>
+    <global-featured-jobs-block
+      findJobLink="https://jobs.ccjobsnow.com"
+      postJobLink="https://jobs.ccjobsnow.com/employer/emplogin.html"
     />
-  </@section>
-
-  <@section|{ aliases }|>
-    <div class="row">
-      <div class="col-lg-4">
-        <global-featured-jobs-list-block
-          findJobLink="https://jobs.ccjobsnow.com"
-          postJobLink="https://jobs.ccjobsnow.com/employer/emplogin.html"
-        />
-      </div>
-      <div class="col-lg-4">
-      </div>
-      <!-- <div class="col-lg-4">
-        <theme-section-list-block alias="technology" />
-      </div> -->
-      <div class="col-lg-4">
-        <theme-section-list-block alias="other-news" />
-      </div>
-    </div>
-  </@section>
-
-  <@section modifiers=["break-container"]>
-    <global-premium-employers-block title="Premium Employers" />
   </@section>
 
   <@section>
