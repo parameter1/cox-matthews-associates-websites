@@ -1,6 +1,6 @@
 const htmlSitemap = require('@parameter1/base-cms-marko-web-html-sitemap/routes');
-const renderBlock = require('@cox-matthews-associates/package-theme-monorail/routes/render-block');
-const taxonomy = require('@cox-matthews-associates/package-theme-monorail/routes/taxonomy');
+const renderBlock = require('@parameter1/base-cms-marko-web-theme-monorail/routes/render-block');
+const taxonomy = require('@parameter1/base-cms-marko-web-theme-monorail/routes/taxonomy');
 const dynamicPage = require('./dynamic-page');
 const feed = require('./feed');
 // const identityX = require('./identity-x');

@@ -1,6 +1,6 @@
 const { withWebsiteSection } = require('@parameter1/base-cms-marko-web/middleware');
 const { asyncRoute, cleanPath } = require('@parameter1/base-cms-utils');
-const queryFragment = require('@cox-matthews-associates/package-theme-monorail/graphql/fragments/website-section-page');
+const queryFragment = require('@parameter1/base-cms-marko-web-theme-monorail/graphql/fragments/website-section-page');
 const emergingScholars = require('../../templates/website-section/awards-honors/emerging-scholars');
 
 
