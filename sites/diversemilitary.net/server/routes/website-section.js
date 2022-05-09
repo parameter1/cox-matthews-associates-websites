@@ -1,5 +1,5 @@
 const { withWebsiteSection } = require('@parameter1/base-cms-marko-web/middleware');
-const queryFragment = require('@cox-matthews-associates/package-theme-monorail/graphql/fragments/website-section-page');
+const queryFragment = require('@parameter1/base-cms-marko-web-theme-monorail/graphql/fragments/website-section-page');
 const cards = require('../templates/website-section/cards');
 const products = require('../templates/website-section/products');
 const section = require('../templates/website-section');
