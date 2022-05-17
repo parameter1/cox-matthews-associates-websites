@@ -43,8 +43,10 @@
     flex-direction: row;
   }
   padding-bottom: map-get($spacers, block);
-  .section__logo {
-    margin-right: map-get($spacers, block);
+  .section {
+    &__logo {
+      margin-right: map-get($spacers, block);
+    }
   }
 }
 
