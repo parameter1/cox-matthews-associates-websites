@@ -47,11 +47,13 @@
       margin-bottom: 16px;
       text-align: center;
       #{ $self } {
+        // stylelint-disable-next-line selector-max-compound-selectors
         &__header {
           display: none;
         }
+        // stylelint-disable-next-line selector-max-compound-selectors
         &__section {
-          // stylelint-disable-next-line
+          // stylelint-disable-next-line selector-max-compound-selectors
           > .social-icon-link {
             // stylelint-disable-next-line
             &:last-of-type {
