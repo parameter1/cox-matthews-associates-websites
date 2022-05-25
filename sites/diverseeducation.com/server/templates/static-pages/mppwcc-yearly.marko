@@ -37,7 +37,9 @@ $ const cheeGoals = currentYearData ? currentYearData.cheeGoals: title;
       <@section>
         <div class="row">
           <div class="col">
-            <h1 class="page-wrapper__website-section-name">$!{title}</h1>
+            <h1 class="page-wrapper__website-section-name page-wrapper__website-section-name-mppw">
+              $!{title}
+            </h1>
             <if(currentYearData && currentYearData.description)>
               <div class="page-wrapper__website-section-description">$!{currentYearData.description}</div>
             </if>
@@ -266,7 +268,6 @@ $ const cheeGoals = currentYearData ? currentYearData.cheeGoals: title;
           </@section>
         </for>
       </if>
-
       $ const tableThreeLabels = Object.values(getAsObject(currentYearData, "tableLabels.tableThree"));
       <if(currentYearData && tableThreeLabels.length)>
         <@section modifiers=["card-deck"]>
@@ -300,6 +301,77 @@ $ const cheeGoals = currentYearData ? currentYearData.cheeGoals: title;
               </tbody>
             </if>
           </table>
+        </@section>
+      </if>
+      $ const tableFourLabels = Object.values(getAsObject(currentYearData, "tableLabels.tableFour"));
+      <if(currentYearData && tableFourLabels.length)>
+        <@section modifiers=["card-deck"]>
+          <div class="row">
+            <div class="col">
+              <h2 class="page-wrapper__website-section-name">ENROLLMENT TYPE</h2><br/>
+            </div>
+          </div>
+          <table class="table table-responsive table-hover">
+            <thead>
+              <tr>
+                <td width="500"><b>Institution</b></td>
+                <for|label| of=tableFourLabels>
+                  <td width="350">
+                    <b>${label}</b>
+                  </td>
+                </for>
+              </tr>
+            </thead>
+            <if(institutions.length)>
+              <tbody>
+                  <for|institution| of=institutions>
+                    <tr>
+                      $ const tableFourData = getAsObject(institutionData[institution], "tableFour");
+                      <td class="institution">${institution}</td>
+                      <for|field| of=Object.keys(tableFourData)>
+                        <td class=field>${tableFourData[field]}</td>
+                      </for>
+                    </tr>
+                  </for>
+              </tbody>
+            </if>
+          </table>
+        </@section>
+      </if>
+      $ const tableFiveLabels = Object.values(getAsObject(currentYearData, "tableLabels.tableFive"));
+      <if(currentYearData && tableFiveLabels.length)>
+        <@section modifiers=["card-deck"]>
+          <div class="row">
+            <div class="col">
+              <h2 class="page-wrapper__website-section-name">DEMOGRAPHICS</h2><br/>
+            </div>
+          </div>
+          <table class="table table-responsive table-hover">
+            <thead>
+              <tr>
+                <td width="600"><b>Institution</b></td>
+                <for|label| of=tableFiveLabels>
+                  <td width="100">
+                    <b>${label}</b>
+                  </td>
+                </for>
+              </tr>
+            </thead>
+            <if(institutions.length)>
+              <tbody>
+                  <for|institution| of=institutions>
+                    <tr>
+                      $ const tableFiveData = getAsObject(institutionData[institution], "tableFive");
+                      <td class="institution">${institution}</td>
+                      <for|field| of=Object.keys(tableFiveData)>
+                        <td class=field>${tableFiveData[field]}</td>
+                      </for>
+                    </tr>
+                  </for>
+              </tbody>
+            </if>
+          </table>
+         <br/>
         </@section>
       </if>
     </marko-web-page-wrapper>
