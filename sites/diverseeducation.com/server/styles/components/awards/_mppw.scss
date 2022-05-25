@@ -31,4 +31,10 @@
     //   font-weight: $font-weight-bold;
     // }
   }
+
+  .page-wrapper {
+    &__website-section-name-mppw {
+      text-align: center;
+    }
+  }
 }

@@ -37,7 +37,7 @@ $ const cheeGoals = currentYearData ? currentYearData.cheeGoals: title;
       <@section>
         <div class="row">
           <div class="col">
-           <div align="center"><h1 class="page-wrapper__website-section-name">$!{title}</h1></div>
+           <h1 class="page-wrapper__website-section-name-mppw">$!{title}</h1>
             <if(currentYearData && currentYearData.description)>
               <div class="page-wrapper__website-section-description">$!{currentYearData.description}</div>
             </if>
@@ -301,7 +301,7 @@ $ const cheeGoals = currentYearData ? currentYearData.cheeGoals: title;
           </table>
         </@section>
       </if>
-$ const tableFourLabels = Object.values(getAsObject(currentYearData, "tableLabels.tableFour"));
+      $ const tableFourLabels = Object.values(getAsObject(currentYearData, "tableLabels.tableFour"));
       <if(currentYearData && tableFourLabels.length)>
         <@section modifiers=["card-deck"]>
           <div class="row">
@@ -312,7 +312,7 @@ $ const tableFourLabels = Object.values(getAsObject(currentYearData, "tableLabel
           <table class="table table-responsive table-hover">
             <thead>
               <tr>
-                <td><b>Institution</b></td>
+                <td width="500"><b>Institution</b></td>
                 <for|label| of=tableFourLabels>
                   <td>
                     <b>${label}</b>
@@ -336,7 +336,7 @@ $ const tableFourLabels = Object.values(getAsObject(currentYearData, "tableLabel
           </table>
         </@section>
       </if>
-$ const tableFiveLabels = Object.values(getAsObject(currentYearData, "tableLabels.tableFive"));
+      $ const tableFiveLabels = Object.values(getAsObject(currentYearData, "tableLabels.tableFive"));
       <if(currentYearData && tableFiveLabels.length)>
         <@section modifiers=["card-deck"]>
           <div class="row">
