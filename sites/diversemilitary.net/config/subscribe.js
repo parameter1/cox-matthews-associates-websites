@@ -1,5 +1,5 @@
 module.exports = {
-  href: 'https://responses.diverseeducation.com/DiverseMilitary',
+  href: 'https://cma.dragonforms.com/DiverseMilitary',
   label: 'Subscribe',
   target: '_blank',
 };
