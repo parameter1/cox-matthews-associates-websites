@@ -37,7 +37,9 @@ $ const cheeGoals = currentYearData ? currentYearData.cheeGoals: title;
       <@section>
         <div class="row">
           <div class="col">
-           <h1 class="page-wrapper__website-section-name-mppw">$!{title}</h1>
+            <h1 class="page-wrapper__website-section-name page-wrapper__website-section-name-mppw">
+              $!{title}
+            </h1>
             <if(currentYearData && currentYearData.description)>
               <div class="page-wrapper__website-section-description">$!{currentYearData.description}</div>
             </if>
@@ -314,7 +316,7 @@ $ const cheeGoals = currentYearData ? currentYearData.cheeGoals: title;
               <tr>
                 <td width="500"><b>Institution</b></td>
                 <for|label| of=tableFourLabels>
-                  <td>
+                  <td width="350">
                     <b>${label}</b>
                   </td>
                 </for>
@@ -347,9 +349,9 @@ $ const cheeGoals = currentYearData ? currentYearData.cheeGoals: title;
           <table class="table table-responsive table-hover">
             <thead>
               <tr>
-                <td><b>Institution</b></td>
+                <td width="600"><b>Institution</b></td>
                 <for|label| of=tableFiveLabels>
-                  <td>
+                  <td width="100">
                     <b>${label}</b>
                   </td>
                 </for>

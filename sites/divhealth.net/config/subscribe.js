@@ -1,5 +1,5 @@
 module.exports = {
-  href: 'https://responses.diverseeducation.com/DiverseHealth',
+  href: 'https://cma.dragonforms.com/DiverseHealth',
   label: 'Subscribe',
   target: '_blank',
 };
