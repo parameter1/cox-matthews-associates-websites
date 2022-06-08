@@ -1,5 +1,5 @@
 const baseConfig = {
-  action: 'https://responses.diverseeducation.com/DiverseHealth',
+  action: 'https://cma.dragonforms.com/DiverseHealth',
   hiddenInputs: [
     // { name: 'omedasite', value: 'diverse_subscriptions' },
   ],

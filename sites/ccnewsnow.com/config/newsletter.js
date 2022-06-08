@@ -1,5 +1,5 @@
 const baseConfig = {
-  action: 'https://responses.diverseeducation.com/CCNewsNow',
+  action: 'https://cma.dragonforms.com/CCNewsNow',
   hiddenInputs: [
     // { name: 'omedasite', value: 'diverse_subscriptions' },
   ],
