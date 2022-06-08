@@ -1,5 +1,5 @@
 const baseConfig = {
-  action: 'https://responses.diverseeducation.com/DiverseDaily',
+  action: 'https://cma.dragonforms.com/DiverseDaily',
   hiddenInputs: [
     // { name: 'omedasite', value: 'diverse_subscriptions' },
   ],
