@@ -46,8 +46,8 @@ $ const tagline = site.get("tagline");
                   $!{newsletterConfig.description}
                 </marko-web-element>
               </if>
-               <form action=newsletterConfig.action method="GET">
-                     <!--<div class="form-group">
+              <form action=newsletterConfig.action method="GET">
+                <div class="form-group">
                   <label for="footer-newsletter-signup-email">Email</label>
                   <input
                     id="footer-newsletter-signup-email"
@@ -60,9 +60,9 @@ $ const tagline = site.get("tagline");
                   <for|item| of=newsletterConfig.hiddenInputs>
                     <input type="hidden" name=item.name value=item.value />
                   </for>
-                </div>-->
+                </div>
                 <button class="btn btn-primary" type="submit">Sign Up</button>
-                 </form>
+              </form>
             </marko-web-block>
           </if>
         </marko-web-element>
