@@ -1,6 +1,8 @@
 import { get } from "@parameter1/base-cms-object-path";
 import hierarchyAliases from "@parameter1/base-cms-marko-web/utils/hierarchy-aliases";
 
+$ const { site } = out.global;
+
 $ const { id, alias, name, pageNode } = input;
 
 <global-website-section-home-layout
@@ -63,9 +65,13 @@ $ const { id, alias, name, pageNode } = input;
       </div>
     </div>
   </@section>
-  <@section|{ aliases }|>
-    <global-magazine-issues-block publication-id="61128276dc429e5a098b4576" />
-  </@section>
+
+  $ const publicationIds = site.get("magazine.publicationIds");
+  <if(publicationIds.length)>
+    <@section>
+      <theme-magazine-issues-block publication-id=publicationIds[0] />
+    </@section>
+  </if>
 
   <@section>
     <site-promo-card-rotation-block />

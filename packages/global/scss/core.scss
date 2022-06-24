@@ -3,6 +3,10 @@
 
 // import theme css
 @import "../../node_modules/@parameter1/base-cms-marko-web-theme-monorail/scss/core";
+
+// import theme magazine css
+@import "../../node_modules/@parameter1/package-theme-monorail-magazine/scss/index";
+
 @import "../../node_modules/@parameter1/base-cms-marko-web-contact-us/scss/index";
 
 // page wrapper
@@ -72,12 +76,9 @@
 @import "./components/podcasts-page";
 
 @import "./components/blocks/esurveypro";
-@import "./components/blocks/magazine-issues";
 @import "./components/blocks/premium-employers";
 @import "./components/blocks/promo-logo-card";
 @import "./components/blocks/featured-jobs";
-
-@import "../components/magazine/scss/index";
 
 body {
   -webkit-font-smoothing: antialiased;
