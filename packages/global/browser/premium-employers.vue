@@ -1,0 +1,81 @@
+<template>
+  <div class="premium-employers">
+    <div>
+      <vue-slick-carousel v-bind="SlickCarouselSettings">
+        <a
+          v-for="(employer) in employers"
+          :key="employer.shortName"
+          :href="employer.siteContext.path"
+          :title="employer.shortName"
+          class="premium-employers__link"
+          target="_blank"
+          rel="nofollow"
+        >
+          <img
+            class="premium-employers__logo lazyload"
+            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+            srcset=""
+            :data-src="getImgSrc(employer.primaryImage.src)"
+            :data-srcset="[getImgSrcSet(employer.primaryImage.src)]"
+            :alt="employer.shortName"
+          >
+        </a>
+      </vue-slick-carousel>
+    </div>
+  </div>
+</template>
+
+<script>
+import VueSlickCarousel from 'vue-slick-carousel';
+
+export default {
+  components: { VueSlickCarousel },
+
+  props: {
+    employers: {
+      type: Array,
+      required: true,
+    },
+  },
+
+  data: () => ({
+    SlickCarouselSettings: {
+      autoplay: true,
+      dots: false,
+      arrows: true,
+      focusOnSelect: false,
+      infinite: true,
+      speed: 2500,
+      slidesToShow: 4,
+      slidesToScroll: 4,
+      touchThreshold: 5,
+      responsive: [
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2,
+          },
+        },
+      ],
+    },
+  }),
+
+  methods: {
+    getImgSrc(imagePath) {
+      return `${imagePath}?auto=format%2Ccompress&bg=fff&dpr=2&fill-color=fff&fit=fill&h=141&pad=5&q=70&w=240`;
+    },
+    getImgSrcSet(imagePath) {
+      return `${imagePath}?auto=format%2Ccompress&bg=fff&dpr=2&fill-color=fff&fit=fill&h=141&pad=5&q=70&w=240&dpr=2 2x`;
+    },
+    shuffleArray(a) {
+      const shuffled = [...a];
+      for (let i = shuffled.length - 1; i > 0; i -= 1) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+      }
+      return shuffled;
+    },
+  },
+};
+</script>
