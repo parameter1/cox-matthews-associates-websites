@@ -1,7 +1,10 @@
 <template>
   <div class="premium-employers">
     <div>
-      <vue-slick-carousel v-bind="SlickCarouselSettings">
+      <vue-slick-carousel
+        v-bind="SlickCarouselSettings"
+        :class="(SlickCarouselSettings.arrows)?'with-arrows':'without-arrows'"
+      >
         <a
           v-for="(employer) in employers"
           :key="employer.shortName"
@@ -41,11 +44,12 @@ export default {
   data: () => ({
     SlickCarouselSettings: {
       autoplay: true,
+      autoplaySpeed: 5000,
+      variableWidth: false,
       dots: false,
       arrows: true,
       focusOnSelect: false,
       infinite: true,
-      speed: 2500,
       slidesToShow: 4,
       slidesToScroll: 4,
       touchThreshold: 5,
@@ -61,20 +65,21 @@ export default {
     },
   }),
 
+  mounted() {
+    const employersCount = this.employers.length;
+    const employersPerScroll = this.SlickCarouselSettings.slidesToShow;
+    if (employersCount <= employersPerScroll) {
+      this.SlickCarouselSettings.autoplay = false;
+      this.SlickCarouselSettings.arrows = false;
+    }
+  },
+
   methods: {
     getImgSrc(imagePath) {
       return `${imagePath}?auto=format%2Ccompress&bg=fff&dpr=2&fill-color=fff&fit=fill&h=141&pad=5&q=70&w=240`;
     },
     getImgSrcSet(imagePath) {
       return `${imagePath}?auto=format%2Ccompress&bg=fff&dpr=2&fill-color=fff&fit=fill&h=141&pad=5&q=70&w=240&dpr=2 2x`;
-    },
-    shuffleArray(a) {
-      const shuffled = [...a];
-      for (let i = shuffled.length - 1; i > 0; i -= 1) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-      }
-      return shuffled;
     },
   },
 };

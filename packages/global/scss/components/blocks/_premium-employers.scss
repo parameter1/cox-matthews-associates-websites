@@ -314,7 +314,7 @@
 
 .premium-employers {
   &__link {
-    padding: 0 1rem;
+    padding: 0 10px;
   }
   &__logo {
     width: 100%;
@@ -331,4 +331,7 @@
 }
 .slick-slider {
   margin: 0 25px;
+  &.without-arrows {
+    margin: 0 -10px;
+  }
 }
