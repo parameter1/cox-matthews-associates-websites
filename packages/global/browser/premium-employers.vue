@@ -3,7 +3,6 @@
     <div>
       <vue-slick-carousel
         v-bind="SlickCarouselSettings"
-        :class="(SlickCarouselSettings.arrows)?'with-arrows':'without-arrows'"
       >
         <a
           v-for="(employer) in employers"
@@ -65,15 +64,6 @@ export default {
       ],
     },
   }),
-
-  mounted() {
-    const employersCount = this.employers.length;
-    const employersPerScroll = this.SlickCarouselSettings.slidesToShow;
-    if (employersCount <= employersPerScroll) {
-      this.SlickCarouselSettings.autoplay = false;
-      this.SlickCarouselSettings.arrows = false;
-    }
-  },
 
   methods: {
     getImgSrc(imagePath) {
