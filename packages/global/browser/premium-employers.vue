@@ -44,7 +44,8 @@ export default {
   data: () => ({
     SlickCarouselSettings: {
       autoplay: true,
-      autoplaySpeed: 5000,
+      autoplaySpeed: 10000,
+      speed: 1000,
       variableWidth: false,
       dots: false,
       arrows: true,
