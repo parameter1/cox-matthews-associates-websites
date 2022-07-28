@@ -52,7 +52,7 @@ $ const queryParams = {
         $ const children = getAsArray(node, "children.edges").map(({ node }) => node);
           <marko-web-node-list>
             <@nodes|{ nodes }| nodes=children modifiers=["flush-x"]>
-              <div class="row" align="center">
+              <div align="center">
                 <for|node| of=nodes>
                   <marko-web-link title=node.name href=`/${node.alias}`>${node.name}</marko-web-link>&nbsp
                 </for>
