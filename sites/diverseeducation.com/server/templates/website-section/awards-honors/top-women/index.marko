@@ -1,3 +1,4 @@
+import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
 import { getAsArray } from "@parameter1/base-cms-object-path";
 import queryFragment from "@parameter1/base-cms-marko-web-theme-monorail/graphql/fragments/content-list"
 import sectionWithChilderenFragment from "../../../../graphql/fragments/section-with-children";
@@ -10,7 +11,7 @@ $ const cardBlock = "top-women-page-card";
 $ const rootAlias = "awards-honors/top-women";
 $ const currentYear = alias === rootAlias ? Object.keys(config)[Object.keys(config).length - 1] : alias.split("/").pop()
 $ const currentYearData = config[currentYear];
-$ const title = currentYearData ? currentYearData.title : title;
+$ const title = currentYearData ? currentYearData.title : 'Leading Women in Higher Education';
 $ const subtitle = currentYearData ? currentYearData.subtitle : title;
 $ const createdBy = currentYearData ? currentYearData.createdBy : title;
 
