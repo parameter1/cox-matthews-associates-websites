@@ -1,4 +1,5 @@
 import { getAsArray } from "@parameter1/base-cms-object-path";
+import queryFragment from '../../../graphql/fragments/content-page'
 
 $ const { id, alias, name, pageNode } = input;
 $ const sections = getAsArray(input, "sections");
@@ -72,10 +73,25 @@ $ const perPage = 10;
     <div class="row">
       <div class="col-md-8 podcast-feed">
         <theme-section-feed-block alias=alias display-image=false>
-          <@query-params limit=perPage skip=p.skip({ perPage }) />
+          <@query-params limit=perPage skip=p.skip({ perPage }) exclude-content-types=["Video"] />
         </theme-section-feed-block>
       </div>
       <div class="col-md-4">
+      <marko-web-query|{ nodes }|
+        name="website-scheduled-content"
+        params={
+          sectionAlias: "podcasts",
+          limit: 1,
+          includeContentTypes: ['Video'],
+          queryFragment
+        }
+      >
+        <if(nodes[0].embedCode)>
+          $ nodes[0].embedCode = nodes[0].embedCode.replace(/\d{3}/g, '100%');
+          <h2 class="page-wrapper__website-section-name watch-latest-rail">Watch our latest episode</h2>
+          <marko-web-content-embed-code block-name=blockName obj=nodes[0] modifiers=["podcast-right-rail"] />
+        </if>
+      </marko-web-query>
         <if(wufooPodcastFormHash && wufooUserName)>
           $ const props = {
             userName: wufooUserName,
