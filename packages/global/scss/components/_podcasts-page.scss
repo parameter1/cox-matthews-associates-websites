@@ -61,3 +61,17 @@
     }
   }
 }
+
+.page-wrapper {
+  &__content-embed-code {
+    &--podcast-right-rail {
+      padding: .75rem 0;
+      text-align: center;
+      border-bottom: 1px solid #e3e4e5;
+    }
+  }
+}
+
+.watch-latest-rail {
+  text-align: center;
+}
