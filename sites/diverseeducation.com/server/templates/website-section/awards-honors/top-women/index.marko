@@ -1,10 +1,19 @@
 import { getAsArray } from "@parameter1/base-cms-object-path";
 import queryFragment from "@parameter1/base-cms-marko-web-theme-monorail/graphql/fragments/content-list"
 import sectionWithChilderenFragment from "../../../../graphql/fragments/section-with-children";
+import config from "./config/top-women-all.js";
 
 $ const { id, alias, name, pageNode } = input;
 $ const blockName = "top-women-page";
 $ const cardBlock = "top-women-page-card";
+
+$ const rootAlias = "awards-honors/top-women";
+$ const currentYear = alias === rootAlias ? Object.keys(config)[Object.keys(config).length - 1] : alias.split("/").pop()
+$ const currentYearData = config[currentYear];
+$ const title = currentYearData ? currentYearData.title : title;
+$ const subtitle = currentYearData ? currentYearData.subtitle : title;
+$ const createdBy = currentYearData ? currentYearData.createdBy : title;
+
 $ const queryParams = {
   limit: 0,
   sectionAlias: alias,
@@ -15,6 +24,7 @@ $ const queryParams = {
   alias=alias
   name=name
   page-node=pageNode>
+
   <@section|{ aliases }| modifiers=["first"]>
     <theme-gam-define-display-ad
       name="leaderboard"
@@ -22,18 +32,25 @@ $ const queryParams = {
       aliases=aliases
       modifiers=["inter-block"]/>
   </@section>
+
   <@section>
-    <div class="row">
+    <div class="row" align="center">
       <div class="col">
-        <h1 class="page-wrapper__website-section-name page-wrapper__website-section-name-top-women">
-          Celebrating Leading Women in Higher Education
-        </h1>
-        <h3>
-          <i>Diverse</i> presents 25 women making a difference in the world of academe.
-        </h3>
-        <h5>
-          Compiled by Walter Hudson
-        </h5>
+        <if(title)>
+          <h1 class="page-wrapper__website-section-name page-wrapper__website-section-name-top-women">
+            $!{title}
+          </h1>
+        </if>
+        <if(subtitle)>
+          <h3>
+            $!{subtitle}
+          </h3>
+        </if>
+        <if(createdBy)>
+          <h5>
+            $!{createdBy}
+          </h5>
+        </if>
       </div>
     </div><br/>
     <div class="row" align="center">
@@ -63,6 +80,7 @@ $ const queryParams = {
       </div>
     </div>
   </@section>
+
   <@section|{ section }|>
     <marko-web-block name=blockName>
       <theme-content-page-breadcrumbs section=section />
@@ -82,6 +100,7 @@ $ const queryParams = {
       </marko-web-element>
     </marko-web-block>
   </@section>
+
   <@section>
     <marko-web-query|{ nodes }| name="website-scheduled-content" params=queryParams>
       <default-theme-card-deck-flow
@@ -107,52 +126,4 @@ $ const queryParams = {
       </default-theme-card-deck-flow>
     </marko-web-query>
   </@section>
-  <!-- <@section|{ blockName, section }|>
-    <div class="row">
-      <div class="col-md-6 mb-block">
-        <div class="award-about-card">
-          <div class="award-about-card__title">Letter From The Editor</div>
-          <div class="award-about-card__description">
-            <p>
-              Each year, it is an extremely tough task for our editorial team to select only 15 scholars — this year was no exception.
-              Therefore, it is our honor to presenting these brilliant young minds to our readers.
-              Of this year’s class of Emerging Scholars, each person is, in their own way, working to improve the lot of humanity.
-              I have no doubt that you will find their personal stories informative as well as inspirational.
-            </p>
-            <p>
-              Our past Emerging Scholars include more than one college president, several deans at leading institutions of higher learning and an array of prolific researchers and thinkers.
-            </p>
-            <p>
-              Sincerely,<br/>
-              <i>David Pluviose</i>
-              <br/>
-              Executive Editor
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6 mb-block">
-        <div class="award-about-card">
-          <div class="award-about-card__title">Scholars By Years</div>
-          <marko-web-query|{ node }|
-            name="website-section"
-            params={ alias: 'awards-honors/top-women', queryFragment: sectionWithChilderenFragment }
-          >
-          $ const children = getAsArray(node, "children.edges").map(({ node }) => node);
-            <marko-web-node-list>
-              <@nodes|{ nodes }| nodes=children modifiers=["flush-x"]>
-                <div class="list-flow">
-                  <for|node| of=nodes>
-                    <div class="list-flow__node">
-                      <marko-web-link title=node.name href=`/${node.alias}`>${node.name}</marko-web-link>
-                    </div>
-                  </for>
-                </div>
-              </@nodes>
-            </marko-web-node-list>
-          </marko-web-query>
-        </div>
-      </div>
-    </div>
-  </@section> -->
 </global-website-section-default-layout>
