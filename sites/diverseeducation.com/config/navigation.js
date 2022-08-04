@@ -45,6 +45,7 @@ const utilities = [
   { href: '/page/about-us', label: 'About Us' },
   { href: '/page/contact-us', label: 'Contact Us' },
   subscribe,
+  { href: 'http://editorial-calendar.diverseeducation.com', label: 'Editorial Calendar', target: '_blank'},
 ];
 
 const mobileMenu = {
@@ -56,6 +57,7 @@ const mobileMenu = {
     ...resources,
     subscribe,
     { href: 'https://mediakit.diverseeducation.com/', label: 'Advertise', target: '_blank' },
+    { href: 'http://editorial-calendar.diverseeducation.com', label: 'Editorial Calendar', target: '_blank'},
   ],
 };
 
