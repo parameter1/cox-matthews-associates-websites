@@ -87,7 +87,6 @@ $ const perPage = 10;
         }
       >
         <if(nodes[0].embedCode)>
-          $ nodes[0].embedCode = nodes[0].embedCode.replace(/(width=)"\d{3}"/g, '$1"100%"').replace(/height="\d{3}"/g, 'style="aspect-ratio: 16/9;"');
           <h2 class="page-wrapper__website-section-name watch-latest-rail">Watch our latest episode</h2>
           <marko-web-content-embed-code block-name=blockName obj=nodes[0] modifiers=["podcast-right-rail"] />
         </if>
