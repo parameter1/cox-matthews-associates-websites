@@ -1,8 +1,9 @@
 const navigation = require('./navigation');
 const nativeX = require('./native-x');
-const identityX = require('./identity-x');
 const gam = require('./gam');
 const omeda = require('./omeda');
+const identityX = require('./identity-x');
+const omedaIdentityX = require('./omeda-identity-x');
 const newsletter = require('./newsletter');
 const search = require('./search');
 
@@ -11,6 +12,7 @@ module.exports = {
   nativeX,
   omeda,
   identityX,
+  omedaIdentityX,
   gam,
   newsletter,
   search,
