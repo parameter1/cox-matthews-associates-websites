@@ -1,6 +1,5 @@
 import createOmedaIdentityBuilder from "@parameter1/base-cms-marko-web-p1-events/utils/create-omeda-identity-builder";
 import { getAsObject } from "@parameter1/base-cms-object-path";
-import omedaConfig from "../config/omeda";
 
 $ const {
   site,
@@ -8,6 +7,8 @@ $ const {
   nativeX,
   GAM,
 } = out.global;
+
+$ const omedaConfig = site.get('omeda');
 
 <marko-web-document ...input>
   <@head>

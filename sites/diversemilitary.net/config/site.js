@@ -2,12 +2,14 @@ const navigation = require('./navigation');
 const nativeX = require('./native-x');
 const identityX = require('./identity-x');
 const gam = require('./gam');
+const omeda = require('./omeda');
 const newsletter = require('./newsletter');
 const search = require('./search');
 
 module.exports = {
   navigation,
   nativeX,
+  omeda,
   identityX,
   gam,
   newsletter,
