@@ -1,7 +1,7 @@
 const newrelic = require('newrelic');
 const { startServer } = require('@parameter1/base-cms-marko-web');
-const { set, get } = require('@parameter1/base-cms-object-path');
-const omedaGraphQL = require('@parameter1/omeda-graphql-client-express');
+const { set, get, getAsObject } = require('@parameter1/base-cms-object-path');
+const omedaIdentityX = require('@parameter1/base-cms-marko-web-omeda-identity-x');
 const htmlSitemapPagination = require('@parameter1/base-cms-marko-web-html-sitemap/middleware/paginated');
 const contactUsHandler = require('@parameter1/base-cms-marko-web-contact-us');
 
@@ -13,7 +13,7 @@ const paginated = require('./middleware/paginated');
 const newsletterState = require('./middleware/newsletter-state');
 const redirectHandler = require('./redirect-handler');
 const oembedHandler = require('./oembed-handler');
-const omedaConfig = require('./config/omeda');
+const idxRouteTemplates = require('./templates/user');
 
 const routes = siteRoutes => (app, siteConfig) => {
   // Shared/global routes (all sites)
@@ -50,12 +50,9 @@ module.exports = (options = {}) => {
       app.use(newsletterState());
 
       // Use Omeda middleware
-      app.use(omedaGraphQL({
-        uri: 'https://graphql.omeda.parameter1.com/',
-        brandKey: omedaConfig.brandKey,
-        appId: omedaConfig.appId,
-        inputId: omedaConfig.inputId,
-      }));
+      const omedaIdentityXConfig = getAsObject(options, 'siteConfig.omedaIdentityX');
+      set(app.locals, 'omedaConfig', getAsObject(options, 'siteConfig.omeda'));
+      omedaIdentityX(app, { ...omedaIdentityXConfig, idxRouteTemplates });
 
       // Setup GAM.
       const gamConfig = get(options, 'siteConfig.gam');
@@ -64,10 +61,6 @@ module.exports = (options = {}) => {
       // Setup NativeX.
       const nativeXConfig = get(options, 'siteConfig.nativeX');
       set(app.locals, 'nativeX', nativeXConfig);
-
-      // Setup IdentityX.
-      const identityXConfig = get(options, 'siteConfig.identityX');
-      set(app.locals, 'identityX', identityXConfig);
     },
     onAsyncBlockError: e => newrelic.noticeError(e),
 
