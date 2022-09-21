@@ -30,7 +30,7 @@ const resources = [
 const awards = [
   { href: '/awards-honors/arthur-ashe', label: 'Arthur Ashe' },
   { href: '/awards-honors/diverse-champions', label: 'Diverse Champions' },
-  { href: 'http://response.diverseeducation.com/DOIT2020', label: 'DOIT', target: '_blank' },
+  { href: 'https://www.diverseeducation.com/page/DOIT', label: 'DOIT', target: '_blank' },
   { href: '/awards-honors/dr-john-hope-franklin', label: 'Dr. John Hope Franklin Award' },
   { href: '/awards-honors/emerging-scholars/2022', label: 'Emerging Scholars' },
   { href: '/awards-honors/graduate-scholars/2022', label: 'Graduate Scholars' },
