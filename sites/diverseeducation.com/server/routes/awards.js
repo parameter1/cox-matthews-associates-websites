@@ -4,6 +4,7 @@ const queryFragment = require('@parameter1/base-cms-marko-web-theme-monorail/gra
 const awardRedirects = require('./awards/redirects');
 const emergingScholars = require('./awards/emerging-scholars');
 const graduateScholars = require('./awards/graduate-scholars');
+const topWomen = require('./awards/top-women');
 const champions = require('../templates/website-section/awards-honors/champions');
 const arthurAshe = require('../templates/website-section/awards-honors/arthur-ashe');
 const mppwsaYearly = require('../templates/static-pages/mppwsa-yearly');
@@ -22,6 +23,9 @@ module.exports = (app) => {
 
   // Graduate Scholars
   graduateScholars(app);
+
+  // Top Women
+  topWomen(app);
 
   app.get('/:alias(awards-honors/mppwsa)', asyncRoute(async (req, res) => {
     const { alias } = req.params;

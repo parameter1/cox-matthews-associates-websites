@@ -1,0 +1,130 @@
+import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
+import { getAsArray } from "@parameter1/base-cms-object-path";
+import queryFragment from "@parameter1/base-cms-marko-web-theme-monorail/graphql/fragments/content-list"
+import sectionWithChilderenFragment from "../../../../graphql/fragments/section-with-children";
+import config from "./config/top-women-all.js";
+
+$ const { id, alias, name, pageNode } = input;
+$ const blockName = "top-women-page";
+$ const cardBlock = "top-women-page-card";
+
+$ const rootAlias = "awards-honors/top-women";
+$ const currentYear = alias === rootAlias ? Object.keys(config)[Object.keys(config).length - 1] : alias.split("/").pop()
+$ const currentYearData = config[currentYear];
+$ const title = currentYearData ? currentYearData.title : 'Leading Women in Higher Education';
+$ const subtitle = currentYearData ? currentYearData.subtitle : title;
+$ const createdBy = currentYearData ? currentYearData.createdBy : title;
+
+$ const queryParams = {
+  limit: 0,
+  sectionAlias: alias,
+  queryFragment,
+};
+<global-website-section-default-layout
+  id=id
+  alias=alias
+  name=name
+  page-node=pageNode>
+
+  <@section|{ aliases }| modifiers=["first"]>
+    <theme-gam-define-display-ad
+      name="leaderboard"
+      position="section_page"
+      aliases=aliases
+      modifiers=["inter-block"]/>
+  </@section>
+
+  <@section>
+    <div class="row" align="center">
+      <div class="col">
+        <if(title)>
+          <h1 class="page-wrapper__website-section-name page-wrapper__website-section-name-top-women">
+            $!{title}
+          </h1>
+        </if>
+        <if(subtitle)>
+          <h3>
+            $!{subtitle}
+          </h3>
+        </if>
+        <if(createdBy)>
+          <h5>
+            $!{createdBy}
+          </h5>
+        </if>
+      </div>
+    </div><br/>
+    <div class="row" align="center">
+      <div class="col">
+        <h4 style="bold">
+          Other Years
+        </h4>
+      </div>
+    </div>
+    <div class="row" align="center">
+      <div class="col">
+        <marko-web-query|{ node }|
+          name="website-section"
+          params={ alias: 'awards-honors/top-women', queryFragment: sectionWithChilderenFragment }
+        >
+        $ const children = getAsArray(node, "children.edges").map(({ node }) => node);
+          <marko-web-node-list>
+            <@nodes|{ nodes }| nodes=children modifiers=["flush-x"]>
+              <div align="center">
+                <for|node| of=nodes>
+                  <marko-web-link title=node.name href=`/${node.alias}`>${node.name}</marko-web-link>&nbsp
+                </for>
+              </div>
+            </@nodes>
+          </marko-web-node-list>
+        </marko-web-query>
+      </div>
+    </div>
+  </@section>
+
+  <@section|{ section }|>
+    <marko-web-block name=blockName>
+      <theme-content-page-breadcrumbs section=section />
+      <marko-web-element block-name=blockName name="header">
+        <marko-web-website-section-name|{ value }|
+          tag="h1"
+          block-name="page-wrapper"
+          obj=section>
+          ${value}
+        </marko-web-website-section-name>
+        <marko-web-website-section-description|{ value }|
+          tag="p"
+          block-name="page-wrapper"
+          obj=section>
+          ${value}
+        </marko-web-website-section-description>
+      </marko-web-element>
+    </marko-web-block>
+  </@section>
+
+  <@section>
+    <marko-web-query|{ nodes }| name="website-scheduled-content" params=queryParams>
+      <default-theme-card-deck-flow
+        cols=4
+        nodes=nodes
+        modifiers=["awards-honors", "top-women"]>
+        <@slot|{ node }|>
+          <theme-content-node
+            image-position="top"
+            card=true
+            flush=true
+            full-height=true
+            with-teaser=false
+            with-section=false
+            with-dates=false
+            display-button=true
+            call-to-action="View Profile"
+            modifiers=["awards-honors", "top-women"]
+            node=node>
+            <@image ar="1:1" fluid=true/>
+          </theme-content-node>
+        </@slot>
+      </default-theme-card-deck-flow>
+    </marko-web-query>
+  </@section>
+</global-website-section-default-layout>
