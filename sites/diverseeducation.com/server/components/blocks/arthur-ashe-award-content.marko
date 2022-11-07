@@ -24,14 +24,14 @@ $ const { alias } = input;
           <h2 title=award.name class="page-wrapper__website-section-name page-wrapper__website-section-name--secondary">
             ${award.name}
           </h2>
-          <default-theme-card-deck-flow
+          <theme-card-deck-flow
             cols=1
             nodes=nodes
             modifiers=["awards-honors", "arthur-ashe"]>
             <@slot|{ node }|>
               <site-arthur-ashe-profiles-node node=node with-teaser=true />
             </@slot>
-          </default-theme-card-deck-flow>
+          </theme-card-deck-flow>
         </div>
       </marko-web-query>
     </for>

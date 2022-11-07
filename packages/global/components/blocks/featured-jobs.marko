@@ -43,7 +43,7 @@ $ const blockName = "featured-jobs";
       Featured Jobs
     </marko-web-element>
     $ const nodes = shuffle(allNodes).slice(0, displayLimit);
-    <default-theme-card-deck-flow
+    <theme-card-deck-flow
       cols=2
       nodes=nodes
       modifiers=[blockName]
@@ -61,7 +61,7 @@ $ const blockName = "featured-jobs";
           display-image=false
         />
       </@slot>
-    </default-theme-card-deck-flow>
+    </theme-card-deck-flow>
     <marko-web-element block-name=blockName name="header">
       Premium Employers
     </marko-web-element>
