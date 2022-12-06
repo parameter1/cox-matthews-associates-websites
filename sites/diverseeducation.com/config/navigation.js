@@ -90,7 +90,7 @@ module.exports = {
       { href: 'https://top100.diverseeducation.com', label: 'Top 100', target: '_blank' },
       { href: 'https://mediakit.diverseeducation.com/', label: 'Advertise', target: '_blank' },
       { href: 'https://diversejobs.net', label: 'Jobs', target: '_blank' },
-      { href: 'https://shop.diverseeducation.com/wordpress/', label: 'Shop', target: '_blank' },
+      { href: 'https://shop.diverseeducation.com', label: 'Shop', target: '_blank' },
     ],
   },
   secondary: {
