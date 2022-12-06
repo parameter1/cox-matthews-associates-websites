@@ -7,7 +7,7 @@ const topics = [
   { href: '/sports', label: 'Sports' },
   { href: '/demographics', label: 'Demographics' },
   { href: '/institutions', label: 'Institutions' },
-  { href: 'https://shop.diverseeducation.com/wordpress/', label: 'Shop', target: '_blank' },
+  { href: 'https://shop.diverseeducation.com/', label: 'Shop', target: '_blank' },
   // { href: '/best-practices', label: 'Best Practices' },
 ];
 
