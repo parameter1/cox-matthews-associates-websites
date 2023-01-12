@@ -92,7 +92,8 @@ $ const rootAlias = 'awards-honors/arthur-ashe';
               name="website-section"
               params={ alias: 'awards-honors/arthur-ashe', queryFragment: sectionWithChilderenFragment }
             >
-            $ const children = getAsArray(node, "children.edges").map(({ node }) => node);
+            $ const year = 2022; //current/active year
+            $ const children = getAsArray(node, "children.edges").map(({ node }) => node).filter(({ name })=> parseInt(name) <= year);
               <marko-web-node-list>
                 <@nodes|{ nodes }| nodes=children modifiers=["flush-x"]>
                   <div class="list-flow">
