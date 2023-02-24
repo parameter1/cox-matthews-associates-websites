@@ -24,3 +24,8 @@ $primary: #436daa;
     }
   }
 }
+
+.site-menu--open {
+  max-height: calc(100vh - 300px);
+  overflow: scroll;
+}
