@@ -3,7 +3,7 @@ version: '3.7'
 x-node-defaults: &node
   tty: true
   init: true
-  image: node:10.24
+  image: node:14.21
   entrypoint: ["node"]
   working_dir: /root
   restart: always
@@ -43,8 +43,9 @@ x-env-development: &env-development
   SITEMAPS_URI: ${SITEMAPS_URI-http://host.docker.internal:10009}
 
 x-site-command: &site-cmd
-  entrypoint: ["node_modules/.bin/basecms-website"]
-  command: ["dev", "index.js"]
+  <<: *node
+  entrypoint: ["yarn"]
+  command: ["dev"]
 
 volumes:
   yarn-cache: {}
@@ -65,12 +66,10 @@ services:
       <<: *env
 
   de:
-    <<: *node
     <<: *site-cmd
     working_dir: /root/sites/diverseeducation.com
     environment:
-      <<: *env
-      <<: *env-virgon
+      <<: [*env, *env-virgon]
       PORT: 80
       EXPOSED_PORT: 9810
       LIVERELOAD_PORT: 19810
@@ -81,12 +80,10 @@ services:
       - "19810:19810"
 
   dm:
-    <<: *node
     <<: *site-cmd
     working_dir: /root/sites/diversemilitary.net
     environment:
-      <<: *env
-      <<: *env-virgon
+      <<: [*env, *env-virgon]
       PORT: 80
       EXPOSED_PORT: 9811
       LIVERELOAD_PORT: 19811
@@ -97,12 +94,10 @@ services:
       - "19811:19811"
 
   dh:
-    <<: *node
     <<: *site-cmd
     working_dir: /root/sites/divhealth.net
     environment:
-      <<: *env
-      <<: *env-virgon
+      <<: [*env, *env-virgon]
       PORT: 80
       EXPOSED_PORT: 9812
       LIVERELOAD_PORT: 19812
@@ -113,12 +108,10 @@ services:
       - "19812:19812"
 
   ccn:
-    <<: *node
     <<: *site-cmd
     working_dir: /root/sites/ccnewsnow.com
     environment:
-      <<: *env
-      <<: *env-virgon
+      <<: [*env, *env-virgon]
       PORT: 80
       EXPOSED_PORT: 9813
       LIVERELOAD_PORT: 19813
