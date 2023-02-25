@@ -15,7 +15,7 @@ const redirectHandler = require('./redirect-handler');
 const oembedHandler = require('./oembed-handler');
 const idxRouteTemplates = require('./templates/user');
 
-const routes = siteRoutes => (app, siteConfig) => {
+const routes = (siteRoutes) => (app, siteConfig) => {
   // Shared/global routes (all sites)
   sharedRoutes(app, siteConfig);
   // Load site routes
@@ -40,7 +40,7 @@ module.exports = (options = {}) => {
       app.use(paginated());
 
       // i18n
-      const i18n = v => v;
+      const i18n = (v) => v;
       set(app.locals, 'i18n', options.i18n || i18n);
 
       // Use paginated middleware
@@ -62,7 +62,7 @@ module.exports = (options = {}) => {
       const nativeXConfig = get(options, 'siteConfig.nativeX');
       set(app.locals, 'nativeX', nativeXConfig);
     },
-    onAsyncBlockError: e => newrelic.noticeError(e),
+    onAsyncBlockError: (e) => newrelic.noticeError(e),
 
     redirectHandler,
 

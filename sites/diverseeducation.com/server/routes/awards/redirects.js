@@ -76,7 +76,6 @@ const fromTo = [
   },
 ];
 
-
 module.exports = (app) => {
   // Arthur Ashe with query params
   app.get('/ashewinners', (req, res) => {

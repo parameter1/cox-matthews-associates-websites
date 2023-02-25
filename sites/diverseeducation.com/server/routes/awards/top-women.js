@@ -3,7 +3,6 @@ const { asyncRoute, cleanPath } = require('@parameter1/base-cms-utils');
 const queryFragment = require('@parameter1/base-cms-marko-web-theme-monorail/graphql/fragments/website-section-page');
 const topWomen = require('../../templates/website-section/awards-honors/top-women');
 
-
 module.exports = (app) => {
   app.get('/:alias(awards-honors/top-women)', asyncRoute(async (req, res) => {
     const { alias } = req.params;
