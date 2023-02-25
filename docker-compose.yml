@@ -67,12 +67,10 @@ services:
     <<: *site-cmd
     working_dir: /root/sites/diverseeducation.com
     environment:
-      <<: [*env, *env-virgon]
+      <<: *env
       PORT: 80
       EXPOSED_PORT: 9810
       LIVERELOAD_PORT: 19810
-      TENANT_KEY: diverse_all
-      SITE_ID: 60c281c6d28860bc33464ae0
     ports:
       - "9810:80"
       - "19810:19810"
@@ -81,12 +79,10 @@ services:
     <<: *site-cmd
     working_dir: /root/sites/diversemilitary.net
     environment:
-      <<: [*env, *env-virgon]
+      <<: *env
       PORT: 80
       EXPOSED_PORT: 9811
       LIVERELOAD_PORT: 19811
-      TENANT_KEY: diverse_all
-      SITE_ID: 60c28c0dd28860bc334ed723
     ports:
       - "9811:80"
       - "19811:19811"
@@ -95,12 +91,10 @@ services:
     <<: *site-cmd
     working_dir: /root/sites/divhealth.net
     environment:
-      <<: [*env, *env-virgon]
+      <<: *env
       PORT: 80
       EXPOSED_PORT: 9812
       LIVERELOAD_PORT: 19812
-      TENANT_KEY: diverse_all
-      SITE_ID: 60c28c4bd28860bc334f485d
     ports:
       - "9812:80"
       - "19812:19812"
@@ -109,12 +103,10 @@ services:
     <<: *site-cmd
     working_dir: /root/sites/ccnewsnow.com
     environment:
-      <<: [*env, *env-virgon]
+      <<: *env
       PORT: 80
       EXPOSED_PORT: 9813
       LIVERELOAD_PORT: 19813
-      TENANT_KEY: diverse_all
-      SITE_ID: 60c28bc3d28860bc334ebcb2
     ports:
       - "9813:80"
       - "19813:19813"
