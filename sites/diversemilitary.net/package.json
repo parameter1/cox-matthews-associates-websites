@@ -5,6 +5,14 @@
   "repository": "https://github.com/parameter1/cox-matthews-associates-websites/tree/master/sites/diversemilitary.net",
   "license": "MIT",
   "private": true,
+  "website": {
+    "id": "60c28c0dd28860bc334ed723",
+    "tenant": "diverse_all",
+    "account": "diverse",
+    "stack": "virgon",
+    "key": "dm",
+    "deploy": true
+  },
   "scripts": {
     "dev": "basecms-website dev --compile-dir ../../packages --watch-dir ../../packages",
     "build": "basecms-website build",
@@ -13,6 +21,14 @@
     "lint:fix": "yarn lint --fix",
     "test": "yarn lint && yarn compile --no-clean"
   },
+  "engines": {
+    "node": ">=14.15"
+  },
+  "os": [
+    "darwin",
+    "linux",
+    "win32"
+  ],
   "dependencies": {
     "@cox-matthews-associates/package-global": "^2.17.2",
     "@parameter1/base-cms-marko-core": "^4.2.0",
@@ -32,13 +48,5 @@
     "@parameter1/base-cms-web-cli": "^4.1.1",
     "graphql": "^14.5.4",
     "graphql-tag": "^2.10.1"
-  },
-  "engines": {
-    "node": ">=14.15"
-  },
-  "os": [
-    "darwin",
-    "linux",
-    "win32"
-  ]
+  }
 }
