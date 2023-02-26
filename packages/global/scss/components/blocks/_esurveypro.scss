@@ -52,9 +52,9 @@
     }
   }
   &-question-top {
-    padding-top: $block-spacer / 2;
-    padding-bottom: $block-spacer / 2;
-    margin: ($block-spacer / 2) 0 !important;
+    padding-top: $block-spacer * 0.5;
+    padding-bottom: $block-spacer * 0.5;
+    margin: ($block-spacer * 0.5) 0 !important;
     font-family: $skin-font-family-primary !important;
     font-size: 17px !important;
     font-weight: $font-weight-semibold !important;
