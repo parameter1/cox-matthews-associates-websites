@@ -670,9 +670,9 @@ $ const queryParams = {
   </if>
   <@section>
     <if(p.page === 1)>
-      <h2 class="page-wrapper__website-section-name">
+   <!--   <h2 class="page-wrapper__website-section-name">
         Latest
-      </h2>
+      </h2> -->
     </if>
     <theme-section-feed-block alias=alias display-image=true>
       <@query-params limit=perPage skip=p.skip({ perPage }) section-bubbling=false />
