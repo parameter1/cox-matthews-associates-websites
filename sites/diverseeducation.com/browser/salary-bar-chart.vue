@@ -36,11 +36,11 @@ export default {
       },
       scales: {
         xAxes: [{
-        ticks: {
-          min: 0,
-          beginAtZero: false
-        }
-      }]
+         ticks: {
+            min: 0,
+            beginAtZero: false,
+          }
+        }]
       },
       title: {
         display: true,

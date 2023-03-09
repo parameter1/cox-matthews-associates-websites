@@ -13,9 +13,6 @@ module.exports = {
   mapSrc: 'http://img.diverseeducation.com/files/base/diverse/all/image/static/de/mppwsa/map-mpptwsa.png?w=800&auto=fomat,compress&q=70',
   mpplogoSrc: 'https://img.diverseeducation.com/files/base/diverse/all/image/static/de/mppwsa/PROMISING-SA_2023.png?w=200&auto=fomat,compress&q=70',
 
-
-
-
   profiles: [
     {
       thumbnail: 'CALPOLY-San-Luis.png',
@@ -98,60 +95,60 @@ module.exports = {
       body: 'The State University of New York (SUNY) at Stony Brook is a public research university and one of SUNY’s flagship institutions. It enrolls roughly 25,000 students, both undergraduate and graduate. “Diversity, equity, and inclusion are at the heart of everything we do — from the types of celebrations we plan on campus, to the educational and social programming and events we offer, to our students, to the staff we hire so our students can see themselves represented,” says Dr. Rick Gatteau, vice president for student affairs. “The Diversity Leadership Initiative was created to cultivate an affirming professional development environment for historically underrepresented student affairs professionals.”',
     },
     {
-        thumbnail: 'Alabama-Birmingham.png',
-        name: 'The University of Alabama at Birmingham',
-        body: 'The University of Alabama at Birmingham, founded in 1969, is a public research institution with 140 programs in 12 academic divisions. “University of Alabama at Birmingham’s division of student affairs holds inclusive excellence at the center of its actions, initiatives and services,” says Dr. John R. Jones III, vice president for student affairs. “Student affairs staff find meaning in their work; they engage in important conversations to help students navigate complex priorities throughout their college journey while fostering impactful relationships as mentors and collaborative college administrators. University campuses are a microcosm of our larger society, and at UAB… we co-construct what it means to address important societal issues in the spirit of our creed, The Blazer Way.” ',
-      },
-      {
-        thumbnail: 'California-Riverside.png',
-        name: 'The University of California, Riverside',
-        body: 'This is a repeat recognition for the University of California, Riverside, which is part of the University of California system. “We believe in building a community of student affairs professionals reflective of the diverse student body that collectively we serve,” says Dr. Brian Haynes, vice chancellor for student affairs. “It is essential that diversity, inclusion, equity, and social justice are embedded in our hiring practices and for team members at all levels of the organization… We cannot provide the highest quality of student excellence without the ability to take care of our mental, physical, and emotional well-being. Our division is fortunate to work in a collaborative and welcoming environment.”',
-      },
-      {
-        thumbnail: 'Hilo.png',
-        name: 'University of Hawaii at Hilo',
-        body: 'A public university in the University of Hawaii system, the University of Hawaii at Hilo offers 33 undergraduate and three graduate degree programs for its roughly 3,000 students. “We have intentionally looked at people’s roles and responsibilities and opened up options for flexible scheduling, including telework, and have been flexible with the everchanging demands on people due to the pandemic and how it has impacted people’s lives — from healthcare to school to work,” says Dr. Christopher Holland, interim vice chancellor for student affairs. “Additionally, we have been mapping the student lifecycle and looking at where barriers exist and are looking at reducing or removing those barriers where we can.”',
-      },
-      {
-        thumbnail: 'MD-Baltimore.png',
-        name: 'University of Maryland, Baltimore',
-        body: 'Primarily a graduate institution with professional schools in dentistry, law, medicine, pharmacy, social work, and nursing, the University of Maryland, Baltimore, is a public institution with the mission of improving the human condition. “Student affairs remains committed to creating environments where staff feel respected and valued,” says Dr. Patty Alvarez, chief student affairs officer and associate vice president of student affairs. “We remain committed to achieving our diversity, equity, inclusion, anti-racism, and anti-oppression goals to create inclusive campus climates for employees and students. To truly be a promising place to work and learn, this commitment and the supporting action must be never ending.”',
-      },
-      {
-        thumbnail: 'MD-College-Park.png',
-        name: 'University of Maryland-College Park',
-        body: 'The flagship institution of the University System of Maryland, University of Maryland-College Park serves more than 30,000 undergraduate and 10,000 graduate students. “We have hired an inaugural director of diversity, equity and inclusion for the division of student affairs. Investing in people and communities is a strategic priority of ours,” says Dr. Patty Perillo, vice president for student affairs. “We have launched a strategic plan focused on inclusion, diversity, equity, anti-racism, and social justice (IDEAS). We have developed a comprehensive professional development curriculum, including coaching options, for our staff. Our new mission — Every Student Thrives — centers our work.”',
-      },
-      {
-        thumbnail: 'NC-Greensboro.png',
-        name: 'University of North Carolina Greensboro',
-        body: 'Although it is a stand-alone university, the University of North Carolina Greensboro (UNCG) is a public research institution and part of the UNC system. Its student population of almost 20,000 is comprised of both undergraduate and graduate students. “UNCG is committed to issues of equity and inclusion and embodies a strong culture of care,” says Dr. Cathy Akens, vice chancellor for student affairs. “This team’s steadfast focus on student success has been critical to our ability to find innovative ways to reduce students’ barriers and provide them access and opportunities to achieve their academic goals.”',
-      },
-      {
-        thumbnail: 'NC-Wilmington.png',
-        name: 'University of North Carolina Wilmington',
-        body: 'Founded in 1947, the University of North Carolina Wilmington is a public research university and part of the University of North Carolina system. It enrolls approximately 17,500 undergraduate and graduate students each year. “The division of student affairs strengthened its commitment to diversity through the creation of several initiatives and programs over the past year,” says Dr. Lowell K. Davis, vice chancellor for student affairs. This includes Women in Leadership Development and Brothers Breaking Bread. “By amplifying all voices, universities discover new ideas and ways to solve the challenges we, and other places in higher education, currently face.”',
-      },
-      {
-        thumbnail: 'University-of-Pennsylvania.png',
-        name: 'University of Pennsylvania',
-        body: 'University of Pennsylvania is a private Ivy League research institution with over 22,000 students, and more than half of them are graduate or professional students. The pandemic propelled the university life division to engage in innovative strategic long-term planning. “This planning intentionally involved every staff member in the entire division, allowing for everyone to have a voice during the planning process,” says Tamara Greenfield King, interim vice provost for university life and senior associate vice provost for student affairs. “It is our divisional goal and ethos that when people have a voice in the process, they are much more engaged and committed to the outcome.”',
-      },
-      {
-        thumbnail: 'West-Georgia.png',
-        name: 'University of West Georgia',
-        body: 'University of West Georgia is a public university with both undergraduate and graduate degree programs. “In the past three years, the University of West Georgia executive administration has committed to reshaping our efforts to enhance diversity, equity and inclusion outcomes,” says Dr. André L. Fortune, vice president for student affairs. “Instead of assigning one person or one office to meet the needs of students, faculty and staff, we restructured to identify leaders within student affairs — and throughout our institution — to operationalize a team approach, focusing on the seamless integration of DEI for all members of our university community.”',
-      },
-      {
-        thumbnail: 'W&M.png',
-        name: 'William & Mary',
-        body: 'Founded in 1693 and the alma mater of U.S. presidents, William & Mary (W&M) is a public research institution in Williamsburg, Virginia. “The professionalism of our student affairs team has never been more essential or more visible than during the last three years,” says Dr. Virginia M. Ambler, vice president for student affairs. “With an unfailing commitment to mission, they’ve ensured that William & Mary students felt a sense of community and purpose during a time that was isolating for so many. At W&M we have a saying, ‘Who comes here, belongs here.’”',
-      },
-      {
-        thumbnail: 'Winston-Salem.png',
-        name: 'Winston-Salem State University',
-        body: 'A historically Black public university, Winston-Salem State University (WSSU) has over 40 academic majors and 10 graduate degrees. “As WSSU enters a bold new era, our commitment to student affairs is engrained in the work that we do on a daily basis and codified in our recent strategic plan, ‘Unleash the Genius,’” says Dr. Mel Johnson-Norwood, associate provost and vice chancellor for student affairs. “As we reflect upon our experiences over the past three years, we are looking outside of tradition and audaciously moving into spaces that may be uncomfortable but necessary for our future growth and development.”',
-      },
+      thumbnail: 'Alabama-Birmingham.png',
+      name: 'The University of Alabama at Birmingham',
+      body: 'The University of Alabama at Birmingham, founded in 1969, is a public research institution with 140 programs in 12 academic divisions. “University of Alabama at Birmingham’s division of student affairs holds inclusive excellence at the center of its actions, initiatives and services,” says Dr. John R. Jones III, vice president for student affairs. “Student affairs staff find meaning in their work; they engage in important conversations to help students navigate complex priorities throughout their college journey while fostering impactful relationships as mentors and collaborative college administrators. University campuses are a microcosm of our larger society, and at UAB… we co-construct what it means to address important societal issues in the spirit of our creed, The Blazer Way.” ',
+    },
+    {
+      thumbnail: 'California-Riverside.png',
+      name: 'The University of California, Riverside',
+      body: 'This is a repeat recognition for the University of California, Riverside, which is part of the University of California system. “We believe in building a community of student affairs professionals reflective of the diverse student body that collectively we serve,” says Dr. Brian Haynes, vice chancellor for student affairs. “It is essential that diversity, inclusion, equity, and social justice are embedded in our hiring practices and for team members at all levels of the organization… We cannot provide the highest quality of student excellence without the ability to take care of our mental, physical, and emotional well-being. Our division is fortunate to work in a collaborative and welcoming environment.”',
+    },
+    {
+      thumbnail: 'Hilo.png',
+      name: 'University of Hawaii at Hilo',
+      body: 'A public university in the University of Hawaii system, the University of Hawaii at Hilo offers 33 undergraduate and three graduate degree programs for its roughly 3,000 students. “We have intentionally looked at people’s roles and responsibilities and opened up options for flexible scheduling, including telework, and have been flexible with the everchanging demands on people due to the pandemic and how it has impacted people’s lives — from healthcare to school to work,” says Dr. Christopher Holland, interim vice chancellor for student affairs. “Additionally, we have been mapping the student lifecycle and looking at where barriers exist and are looking at reducing or removing those barriers where we can.”',
+    },
+    {
+      thumbnail: 'MD-Baltimore.png',
+      name: 'University of Maryland, Baltimore',
+      body: 'Primarily a graduate institution with professional schools in dentistry, law, medicine, pharmacy, social work, and nursing, the University of Maryland, Baltimore, is a public institution with the mission of improving the human condition. “Student affairs remains committed to creating environments where staff feel respected and valued,” says Dr. Patty Alvarez, chief student affairs officer and associate vice president of student affairs. “We remain committed to achieving our diversity, equity, inclusion, anti-racism, and anti-oppression goals to create inclusive campus climates for employees and students. To truly be a promising place to work and learn, this commitment and the supporting action must be never ending.”',
+    },
+    {
+      thumbnail: 'MD-College-Park.png',
+      name: 'University of Maryland-College Park',
+      body: 'The flagship institution of the University System of Maryland, University of Maryland-College Park serves more than 30,000 undergraduate and 10,000 graduate students. “We have hired an inaugural director of diversity, equity and inclusion for the division of student affairs. Investing in people and communities is a strategic priority of ours,” says Dr. Patty Perillo, vice president for student affairs. “We have launched a strategic plan focused on inclusion, diversity, equity, anti-racism, and social justice (IDEAS). We have developed a comprehensive professional development curriculum, including coaching options, for our staff. Our new mission — Every Student Thrives — centers our work.”',
+    },
+    {
+      thumbnail: 'NC-Greensboro.png',
+      name: 'University of North Carolina Greensboro',
+      body: 'Although it is a stand-alone university, the University of North Carolina Greensboro (UNCG) is a public research institution and part of the UNC system. Its student population of almost 20,000 is comprised of both undergraduate and graduate students. “UNCG is committed to issues of equity and inclusion and embodies a strong culture of care,” says Dr. Cathy Akens, vice chancellor for student affairs. “This team’s steadfast focus on student success has been critical to our ability to find innovative ways to reduce students’ barriers and provide them access and opportunities to achieve their academic goals.”',
+    },
+    {
+      thumbnail: 'NC-Wilmington.png',
+      name: 'University of North Carolina Wilmington',
+      body: 'Founded in 1947, the University of North Carolina Wilmington is a public research university and part of the University of North Carolina system. It enrolls approximately 17,500 undergraduate and graduate students each year. “The division of student affairs strengthened its commitment to diversity through the creation of several initiatives and programs over the past year,” says Dr. Lowell K. Davis, vice chancellor for student affairs. This includes Women in Leadership Development and Brothers Breaking Bread. “By amplifying all voices, universities discover new ideas and ways to solve the challenges we, and other places in higher education, currently face.”',
+    },
+    {
+      thumbnail: 'University-of-Pennsylvania.png',
+      name: 'University of Pennsylvania',
+      body: 'University of Pennsylvania is a private Ivy League research institution with over 22,000 students, and more than half of them are graduate or professional students. The pandemic propelled the university life division to engage in innovative strategic long-term planning. “This planning intentionally involved every staff member in the entire division, allowing for everyone to have a voice during the planning process,” says Tamara Greenfield King, interim vice provost for university life and senior associate vice provost for student affairs. “It is our divisional goal and ethos that when people have a voice in the process, they are much more engaged and committed to the outcome.”',
+    },
+    {
+      thumbnail: 'West-Georgia.png',
+      name: 'University of West Georgia',
+      body: 'University of West Georgia is a public university with both undergraduate and graduate degree programs. “In the past three years, the University of West Georgia executive administration has committed to reshaping our efforts to enhance diversity, equity and inclusion outcomes,” says Dr. André L. Fortune, vice president for student affairs. “Instead of assigning one person or one office to meet the needs of students, faculty and staff, we restructured to identify leaders within student affairs — and throughout our institution — to operationalize a team approach, focusing on the seamless integration of DEI for all members of our university community.”',
+    },
+    {
+      thumbnail: 'W&M.png',
+      name: 'William & Mary',
+      body: 'Founded in 1693 and the alma mater of U.S. presidents, William & Mary (W&M) is a public research institution in Williamsburg, Virginia. “The professionalism of our student affairs team has never been more essential or more visible than during the last three years,” says Dr. Virginia M. Ambler, vice president for student affairs. “With an unfailing commitment to mission, they’ve ensured that William & Mary students felt a sense of community and purpose during a time that was isolating for so many. At W&M we have a saying, ‘Who comes here, belongs here.’”',
+    },
+    {
+      thumbnail: 'Winston-Salem.png',
+      name: 'Winston-Salem State University',
+      body: 'A historically Black public university, Winston-Salem State University (WSSU) has over 40 academic majors and 10 graduate degrees. “As WSSU enters a bold new era, our commitment to student affairs is engrained in the work that we do on a daily basis and codified in our recent strategic plan, ‘Unleash the Genius,’” says Dr. Mel Johnson-Norwood, associate provost and vice chancellor for student affairs. “As we reflect upon our experiences over the past three years, we are looking outside of tradition and audaciously moving into spaces that may be uncomfortable but necessary for our future growth and development.”',
+    },
   ],
   tableLabels: {
     tableOne: {
