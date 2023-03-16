@@ -42,21 +42,20 @@ $ const nationalPerspective = currentYearData ? currentYearData.nationalPerspect
         <div class="row">
           <div class="col">
             <h1 class="page-wrapper__website-section-name">$!{title}</h1>
-          <div class="row">
-            <div class="col" align="center">
-              <marko-web-img
-                class=["lazyload"]
-                alt="logo"
-                src=currentYearData.mpplogoSrc
-                srcset=`${currentYearData.mpplogoSrc} x2`
-                lazyload=true
-              />
-            </div>
-          </div>
-          <br/>
-            <if(currentYearData && currentYearData.description)>
-              <div class="page-wrapper__website-section-description">$!{currentYearData.description}
+            <div class="row">
+              <div class="col" align="center">
+                <marko-web-img
+                  class=["lazyload"]
+                  alt="logo"
+                  src=currentYearData.mpplogoSrc
+                  srcset=`${currentYearData.mpplogoSrc} x2`
+                  lazyload=true
+                />
               </div>
+            </div>
+            <br/>
+            <if(currentYearData && currentYearData.description)>
+              <div class="page-wrapper__website-section-description">$!{currentYearData.description}</div>
             </if>
           </div>
         </div>
@@ -93,21 +92,21 @@ $ const nationalPerspective = currentYearData ? currentYearData.nationalPerspect
         </@section>
       </if>
       <@section modifiers=["card-deck"]>
-      $ const tableOneLabels = Object.values(getAsObject(currentYearData, "tableLabels.tableOne"));
-      <if(currentYearData && tableOneLabels.length)>
-        <table class="table table-responsive table-hover">
-          <thead>
-            <tr>
-              <td width="400"><b>Institution</b></td>
-              <for|label| of=tableOneLabels>
-                <td width="200">
-                  <b>${label}</b>
-                </td>
-              </for>
-            </tr>
-          </thead>
-          <if(institutions.length)>
-            <tbody>
+        $ const tableOneLabels = Object.values(getAsObject(currentYearData, "tableLabels.tableOne"));
+        <if(currentYearData && tableOneLabels.length)>
+          <table class="table table-responsive table-hover">
+            <thead>
+              <tr>
+                <td width="400"><b>Institution</b></td>
+                <for|label| of=tableOneLabels>
+                  <td width="200">
+                    <b>${label}</b>
+                  </td>
+                </for>
+              </tr>
+            </thead>
+            <if(institutions.length)>
+              <tbody>
                 <for|institution| of=institutions>
                   <tr>
                     $ const tableOneData = getAsObject(institutionData[institution], "tableOne");
@@ -117,25 +116,25 @@ $ const nationalPerspective = currentYearData ? currentYearData.nationalPerspect
                     </for>
                   </tr>
                 </for>
-            </tbody>
-          </if>
-        </table>
-      </if>
+              </tbody>
+            </if>
+          </table>
+        </if>
       </@section>
       <@section>
         <div class="row">
           <div class="col">
             <if(currentYearData && currentYearData.study)>
               <h2 class="page-wrapper__website-section-name">ABOUT THE STUDY</h2>
-                <div class="page-wrapper__website-section-description">
-                  <p>$!{currentYearData.study}</p><br/>
-                </div>
+              <div class="page-wrapper__website-section-description">
+                <p>$!{currentYearData.study}</p><br/>
+              </div>
             </if>
             <if(currentYearData && currentYearData.ideas)>
               <h2 class="page-wrapper__website-section-name">MISSION OF THE CENTER FOR IDEAS</h2>
-                <div class="page-wrapper__website-section-description">
-                  <p>$!{currentYearData.ideas}</p><br/>
-                </div>
+              <div class="page-wrapper__website-section-description">
+                <p>$!{currentYearData.ideas}</p><br/>
+              </div>
             </if>
             <if(currentYearData && currentYearData.chee)>
               <h2 class="page-wrapper__website-section-name">
@@ -147,45 +146,45 @@ $ const nationalPerspective = currentYearData ? currentYearData.nationalPerspect
             </if>
             <if(currentYearData && currentYearData.survey)>
               <h2 class="page-wrapper__website-section-name">ABOUT THE SURVEY</h2>
-                <div class="page-wrapper__website-section-description">
-                  <p>$!{currentYearData.survey}</p><br/>
-                </div>
+              <div class="page-wrapper__website-section-description">
+                <p>$!{currentYearData.survey}</p><br/>
+              </div>
             </if>
             <if(currentYearData && currentYearData.socialMedia)>
               <h2 class="page-wrapper__website-section-name">ENGAGE US ON SOCIAL MEDIA</h2>
-                <div class="page-wrapper__website-section-description">
-                  <p>$!{currentYearData.socialMedia}</p><br/>
-                </div>
+              <div class="page-wrapper__website-section-description">
+                <p>$!{currentYearData.socialMedia}</p><br/>
+              </div>
             </if>
             <if(currentYearData && currentYearData.biographies)>
               <h2 class="page-wrapper__website-section-name">PROJECT TEAM BIOGRAPHIES</h2>
-                <div class="page-wrapper__website-section-description">
-                  <p>$!{currentYearData.biographies}</p><br/>
-                </div>
+              <div class="page-wrapper__website-section-description">
+                <p>$!{currentYearData.biographies}</p><br/>
+              </div>
             </if>
             <if(currentYearData && currentYearData.promisingPractices)>
               <h2 class="page-wrapper__website-section-name">PROMISING PRACTICES</h2>
-                <div class="page-wrapper__website-section-description">
-                  <p>$!{currentYearData.promisingPractices}</p><br/>
-                </div>
+              <div class="page-wrapper__website-section-description">
+                <p>$!{currentYearData.promisingPractices}</p><br/>
+              </div>
             </if>
               <if(currentYearData && currentYearData.commitment)>
               <h2 class="page-wrapper__website-section-name">DEMONSTRATED COMMITMENT TO INCLUSIVE EXCELLENCE</h2>
-                <div class="page-wrapper__website-section-description">
-                  <p>$!{currentYearData.commitment}</p><br/>
-                </div>
+              <div class="page-wrapper__website-section-description">
+                <p>$!{currentYearData.commitment}</p><br/>
+              </div>
             </if>
             <if(currentYearData && currentYearData.encourageWork)>
               <h2 class="page-wrapper__website-section-name">ENCOURAGE WORK ACROSS SILOS</h2>
-                <div class="page-wrapper__website-section-description">
-                  <p>$!{currentYearData.encourageWork}</p><br/>
-                </div>
+              <div class="page-wrapper__website-section-description">
+                <p>$!{currentYearData.encourageWork}</p><br/>
+              </div>
             </if>
             <if(currentYearData && currentYearData.fostering)>
               <h2 class="page-wrapper__website-section-name">FOSTERING A SENSE OF BELONGING</h2>
-                <div class="page-wrapper__website-section-description">
-                  <p>$!{currentYearData.fostering}</p><br/>
-                </div>
+              <div class="page-wrapper__website-section-description">
+                <p>$!{currentYearData.fostering}</p><br/>
+              </div>
             </if>
           </div>
         </div>
@@ -263,15 +262,15 @@ $ const nationalPerspective = currentYearData ? currentYearData.nationalPerspect
             </thead>
             <if(institutions.length)>
               <tbody>
-                  <for|institution| of=institutions>
-                    <tr>
-                      $ const tableThreeData = getAsObject(institutionData[institution], "tableThree");
-                      <td class="institution">${institution}</td>
-                      <for|field| of=Object.keys(tableThreeData)>
-                        <td class=field>${tableThreeData[field]}</td>
-                      </for>
-                    </tr>
-                  </for>
+                <for|institution| of=institutions>
+                  <tr>
+                    $ const tableThreeData = getAsObject(institutionData[institution], "tableThree");
+                    <td class="institution">${institution}</td>
+                    <for|field| of=Object.keys(tableThreeData)>
+                      <td class=field>${tableThreeData[field]}</td>
+                    </for>
+                  </tr>
+                </for>
               </tbody>
             </if>
           </table>
