@@ -35,9 +35,12 @@ export default {
         display: false,
       },
       scales: {
-        x: {
-          min: 20000,
-        },
+        xAxes: [{
+         ticks: {
+            min: 0,
+            beginAtZero: false,
+          }
+        }]
       },
       title: {
         display: true,
