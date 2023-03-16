@@ -1,4 +1,4 @@
-import { getAsObject } from "@parameter1/base-cms-object-path";
+import { get, getAsObject } from "@parameter1/base-cms-object-path";
 import config from "./configs/mppwsa-all.js";
 
 $ const { alias } = input;
@@ -42,18 +42,20 @@ $ const nationalPerspective = currentYearData ? currentYearData.nationalPerspect
         <div class="row">
           <div class="col">
             <h1 class="page-wrapper__website-section-name">$!{title}</h1>
-            <div class="row">
-              <div class="col" align="center">
-                <marko-web-img
-                  class=["lazyload"]
-                  alt="logo"
-                  src=currentYearData.mpplogoSrc
-                  srcset=`${currentYearData.mpplogoSrc} x2`
-                  lazyload=true
-                />
+            <if(currentYearData && get(currentYearData, 'mppLogoSrc'))>
+              <div class="row">
+                <div class="col" align="center">
+                  <marko-web-img
+                    class=["lazyload"]
+                    alt="logo"
+                    src=currentYearData.mpplogoSrc
+                    srcset=`${currentYearData.mpplogoSrc} x2`
+                    lazyload=true
+                  />
+                </div>
               </div>
-            </div>
-            <br/>
+              <br/>
+            </if>
             <if(currentYearData && currentYearData.description)>
               <div class="page-wrapper__website-section-description">$!{currentYearData.description}</div>
             </if>
