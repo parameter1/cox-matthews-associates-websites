@@ -11,20 +11,20 @@ $ const title = currentYearData ? `${currentYear} Most Promising Places to Work 
 $ const institutionData = getAsObject(currentYearData, "institutionData");
 $ const institutions = Object.keys(institutionData);
 $ const pageDescription = currentYearData ? currentYearData.description : title;
-$ const study = currentYearData ? currentYearData.study: title;
-$ const survey = currentYearData ? currentYearData.survey: title;
-$ const socialMedia = currentYearData ? currentYearData.socialMedia: title;
-$ const biographies = currentYearData ? currentYearData.biographies: title;
-$ const profiles = currentYearData ? currentYearData.profiles: title;
-$ const promisingPractices = currentYearData ? currentYearData.promisingPractices: title;
-$ const advisoryBoard = currentYearData ? currentYearData.advisoryBoard: title;
-$ const promisingPlaces = currentYearData ? currentYearData.promisingPlaces: title;
-$ const commitment = currentYearData ? currentYearData.commitment: title;
-$ const encourageWork = currentYearData ? currentYearData.encourageWork: title;
-$ const fostering = currentYearData ? currentYearData.fostering: title;
-$ const chee = currentYearData ? currentYearData.chee: title;
-$ const ideas = currentYearData ? currentYearData.ideas: title;
-$ const nationalPerspective = currentYearData ? currentYearData.ideas: title;
+$ const study = currentYearData ? currentYearData.study : title;
+$ const survey = currentYearData ? currentYearData.survey : title;
+$ const socialMedia = currentYearData ? currentYearData.socialMedia : title;
+$ const biographies = currentYearData ? currentYearData.biographies : title;
+$ const profiles = currentYearData ? currentYearData.profiles : title;
+$ const promisingPractices = currentYearData ? currentYearData.promisingPractices : title;
+$ const advisoryBoard = currentYearData ? currentYearData.advisoryBoard : title;
+$ const promisingPlaces = currentYearData ? currentYearData.promisingPlaces : title;
+$ const commitment = currentYearData ? currentYearData.commitment : title;
+$ const encourageWork = currentYearData ? currentYearData.encourageWork : title;
+$ const fostering = currentYearData ? currentYearData.fostering : title;
+$ const chee = currentYearData ? currentYearData.chee : title;
+$ const ideas = currentYearData ? currentYearData.ideas : title;
+$ const nationalPerspective = currentYearData ? currentYearData.nationalPerspective : title;
 
 
 <marko-web-default-page-layout type=type title=title description=pageDescription>
@@ -52,7 +52,7 @@ $ const nationalPerspective = currentYearData ? currentYearData.ideas: title;
                 lazyload=true
               />
             </div>
-          </div> 
+          </div>
           <br/>
             <if(currentYearData && currentYearData.description)>
               <div class="page-wrapper__website-section-description">$!{currentYearData.description}
@@ -181,7 +181,7 @@ $ const nationalPerspective = currentYearData ? currentYearData.ideas: title;
                   <p>$!{currentYearData.encourageWork}</p><br/>
                 </div>
             </if>
-              <if(currentYearData && currentYearData.fostering)>
+            <if(currentYearData && currentYearData.fostering)>
               <h2 class="page-wrapper__website-section-name">FOSTERING A SENSE OF BELONGING</h2>
                 <div class="page-wrapper__website-section-description">
                   <p>$!{currentYearData.fostering}</p><br/>
@@ -211,15 +211,15 @@ $ const nationalPerspective = currentYearData ? currentYearData.ideas: title;
             </thead>
             <if(institutions.length)>
               <tbody>
-                  <for|institution| of=institutions>
-                    <tr>
-                      $ const tableTwoData = getAsObject(institutionData[institution], "tableTwo");
-                      <td class="institution">${institution}</td>
-                      <for|field| of=Object.keys(tableTwoData)>
-                        <td class=field>${tableTwoData[field]}</td>
-                      </for>
-                    </tr>
-                  </for>
+                <for|institution| of=institutions>
+                  <tr>
+                    $ const tableTwoData = getAsObject(institutionData[institution], "tableTwo");
+                    <td class="institution">${institution}</td>
+                    <for|field| of=Object.keys(tableTwoData)>
+                      <td class=field>${tableTwoData[field]}</td>
+                    </for>
+                  </tr>
+                </for>
               </tbody>
             </if>
           </table>
@@ -275,25 +275,25 @@ $ const nationalPerspective = currentYearData ? currentYearData.ideas: title;
               </tbody>
             </if>
           </table>
-              <if(currentYearData && currentYearData.nationalPerspective)>
-                <br/>
-              <h2 class="page-wrapper__website-section-name">A NATIONAL PERSPECTIVE</h2>
-                <div class="page-wrapper__website-section-description">
-                <p>$!{currentYearData.nationalPerspective}</p><br/>    
-             <div class="row">
-            <div class="col" align="center">
-                    <marko-web-img
-                class=["lazyload"]
-                alt="US map"
-                src=currentYearData.mapSrc
-                srcset=`${currentYearData.mapSrc} x2`
-                lazyload=true
-              />
+          <if(currentYearData && currentYearData.nationalPerspective)>
+            <br/>
+            <h2 class="page-wrapper__website-section-name">A NATIONAL PERSPECTIVE</h2>
+            <div class="page-wrapper__website-section-description">
+              <p>$!{currentYearData.nationalPerspective}</p><br/>
+              <div class="row">
+                <div class="col" align="center">
+                  <marko-web-img
+                    class=["lazyload"]
+                    alt="US map"
+                    src=currentYearData.mapSrc
+                    srcset=`${currentYearData.mapSrc} x2`
+                    lazyload=true
+                  />
+                </div>
               </div>
-             </div>
-           </div>   
-            </if>
-         </if>
+            </div>
+          </if>
+        </if>
       </@section>
       <if(currentYearData && currentYearData.profiles)>
         <@section>
