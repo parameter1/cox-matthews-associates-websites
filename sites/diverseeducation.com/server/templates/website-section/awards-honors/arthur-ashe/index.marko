@@ -72,15 +72,15 @@ $ const rootAlias = 'awards-honors/arthur-ashe';
         name="website-section"
         params={ alias, queryFragment: sectionWithChilderenFragment }
       >
-        $ const years = getAsArray(node, "children.edges").map(({ node }) => node);
-        <if(years.length)>
-          $ const year = years[10];
+        $ const year = 2023;
+        $ const [yearSection] = getAsArray(node, "children.edges").map(({ node }) => node).filter(({ name })=> parseInt(name) === year);
+        <if(yearSection)>
           <div class="row">
             <div class="col col page-contents__content-body">
-              <h2>${year.name}</h2>
+              <h2>${yearSection.name}</h2>
             </div>
           </div>
-          <site-arthur-ashe-award-content-block alias=year.alias />
+          <site-arthur-ashe-award-content-block alias=yearSection.alias />
         </if>
       </marko-web-query>
     </@section>
