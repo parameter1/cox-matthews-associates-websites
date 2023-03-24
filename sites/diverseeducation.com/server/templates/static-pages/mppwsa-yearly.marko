@@ -1,8 +1,6 @@
 import { get, getAsObject } from "@parameter1/base-cms-object-path";
 import config from "./configs/mppwsa-all.js";
-
 $ const { alias } = input;
-
 $ const type = "static-page";
 $ const rootAlias = "awards-honors/mppwsa";
 $ const currentYear = alias === rootAlias ? Object.keys(config)[Object.keys(config).length - 1] : alias.split("/").pop()
@@ -11,6 +9,7 @@ $ const title = currentYearData ? `${currentYear} Most Promising Places to Work 
 $ const institutionData = getAsObject(currentYearData, "institutionData");
 $ const institutions = Object.keys(institutionData);
 $ const pageDescription = currentYearData ? currentYearData.description : title;
+$ const itTakesTeamwork = currentYearData ? currentYearData.itTakesTeamwork : title;
 $ const study = currentYearData ? currentYearData.study : title;
 $ const survey = currentYearData ? currentYearData.survey : title;
 $ const socialMedia = currentYearData ? currentYearData.socialMedia : title;
@@ -42,7 +41,7 @@ $ const nationalPerspective = currentYearData ? currentYearData.nationalPerspect
         <div class="row">
           <div class="col">
             <h1 class="page-wrapper__website-section-name">$!{title}</h1>
-            <if(currentYearData && get(currentYearData, "mppLogoSrc"))>
+            <if(currentYearData && get(currentYearData, "mpplogoSrc"))>
               <div class="row">
                 <div class="col" align="center">
                   <marko-web-img
@@ -56,44 +55,43 @@ $ const nationalPerspective = currentYearData ? currentYearData.nationalPerspect
               </div>
               <br/>
             </if>
-            <if(currentYearData && currentYearData.description)>
+            <if(currentYearData && currentYearData.logosSrc)>
+              <div class="row">
+                <div class="col">
+                  <marko-web-img
+                    class=["lazyload"]
+                    alt="Promising Places to work logos"
+                    src=currentYearData.logosSrc
+                    srcset=`${currentYearData.logosSrc} x2`
+                    lazyload=true
+                  />
+                </div>
+              </div>
+              <br/>
+             </if>
+             <if(currentYearData && currentYearData.description)>
               <div class="page-wrapper__website-section-description">$!{currentYearData.description}</div>
-            </if>
-          </div>
-        </div>
-        <div class="row" align="center">
-          <div class="col">
-            <div>
-              <h4 style="bold">
-                Other Years
-              </h4>
-              <for|year| of=Object.keys(config).reverse()>
-                <if(year !== currentYear)>
-                  <a href=`/awards-honors/mppwsa/${year}`>
-                    ${year}
-                  </a>&nbsp;
-                </if>
-              </for>
+             </if>
             </div>
           </div>
-        </div>
-      </@section>
-      <if(currentYearData && currentYearData.logosSrc)>
-        <@section>
-          <div class="row">
+          <div class="row" align="center">
             <div class="col">
-              <marko-web-img
-                class=["lazyload"]
-                alt="Promising Places to work logos"
-                src=currentYearData.logosSrc
-                srcset=`${currentYearData.logosSrc} x2`
-                lazyload=true
-              />
+              <div>
+                <h4 style="bold">
+                  Other Years
+                </h4>
+                <for|year| of=Object.keys(config).reverse()>
+                  <if(year !== currentYear)>
+                    <a href=`/awards-honors/mppwsa/${year}`>
+                      ${year}
+                    </a>&nbsp;
+                  </if>
+                </for>
+              </div>
             </div>
           </div>
         </@section>
-      </if>
-      <@section modifiers=["card-deck"]>
+        <@section modifiers=["card-deck"]>
         $ const tableOneLabels = Object.values(getAsObject(currentYearData, "tableLabels.tableOne"));
         <if(currentYearData && tableOneLabels.length)>
           <table class="table table-responsive table-hover">
@@ -126,6 +124,12 @@ $ const nationalPerspective = currentYearData ? currentYearData.nationalPerspect
       <@section>
         <div class="row">
           <div class="col">
+              <if(currentYearData && currentYearData.itTakesTeamwork)>
+              <h2 class="page-wrapper__website-section-name">There’s No “I” in MPPWSA: It Takes Teamwork to Do <i>This</i> Work</h2>
+              <div class="page-wrapper__website-section-description">
+                <p>$!{currentYearData.ittakesTeamwork}</p><br/>
+              </div>
+            </if>
             <if(currentYearData && currentYearData.study)>
               <h2 class="page-wrapper__website-section-name">ABOUT THE STUDY</h2>
               <div class="page-wrapper__website-section-description">
