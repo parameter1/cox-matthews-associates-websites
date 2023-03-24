@@ -9,7 +9,7 @@ $ const title = currentYearData ? `${currentYear} Most Promising Places to Work 
 $ const institutionData = getAsObject(currentYearData, "institutionData");
 $ const institutions = Object.keys(institutionData);
 $ const pageDescription = currentYearData ? currentYearData.description : title;
-$ const Ittakesteamwork = currentYearData ? currentYearData.Ittakesteamwork : title;
+$ const ittakesTeamwork = currentYearData ? currentYearData.ittakesTeamwork : title;
 $ const study = currentYearData ? currentYearData.study : title;
 $ const survey = currentYearData ? currentYearData.survey : title;
 $ const socialMedia = currentYearData ? currentYearData.socialMedia : title;
@@ -124,10 +124,10 @@ $ const nationalPerspective = currentYearData ? currentYearData.nationalPerspect
       <@section>
         <div class="row">
           <div class="col">
-      <if(currentYearData && currentYearData.Ittakesteamwork)>
+      <if(currentYearData && currentYearData.ittakesTeamwork)>
               <h2 class="page-wrapper__website-section-name">There’s No “I” in MPPWSA: It Takes Teamwork to Do <i>This</i> Work</h2>
               <div class="page-wrapper__website-section-description">
-                <p>$!{currentYearData.Ittakesteamwork}</p><br/>
+                <p>$!{currentYearData.ittakesTeamwork}</p><br/>
               </div>
             </if>
             <if(currentYearData && currentYearData.study)>
