@@ -56,7 +56,13 @@ $ const rootAlias = 'awards-honors/arthur-ashe';
         </a>
       </div>
     </marko-web-block>
-
+  </@section>
+  <@section|{ aliases }| modifiers=["first"]>
+    <theme-gam-define-display-ad
+      name="rotation"
+      position="section_page"
+      aliases=aliases
+      modifiers=["inter-block"]/>
   </@section>
   <!-- Only loop over child section awards types & gender on non root aliases -->
   <!-- This assumes the following section structure -->
@@ -127,6 +133,13 @@ $ const rootAlias = 'awards-honors/arthur-ashe';
         </div>
       </div>
     </div>
+  </@section>
+  <@section|{ aliases }| modifiers=["first"]>
+    <theme-gam-define-display-ad
+      name="rotation"
+      position="section_page"
+      aliases=aliases
+      modifiers=["inter-block"]/>
   </@section>
   <@section|{ blockName }| modifiers=["arthur-ashe"]>
     <marko-web-query|{ nodes }|
