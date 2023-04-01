@@ -94,7 +94,8 @@ $ const queryParams = {
             name="website-section"
             params={ alias: 'awards-honors/graduate-scholars', queryFragment: sectionWithChildrenFragment }
           >
-          $ const children = getAsArray(node, "children.edges").map(({ node }) => node);
+          $ const year = 2022; //current/active year
+          $ const children = getAsArray(node, "children.edges").map(({ node }) => node).filter(({ name })=> parseInt(name) <= year);
             <marko-web-node-list>
               <@nodes|{ nodes }| nodes=children modifiers=["flush-x"]>
                 <div class="list-flow">

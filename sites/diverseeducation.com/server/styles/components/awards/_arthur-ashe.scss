@@ -20,7 +20,7 @@
     .page-wrapper {
       &__website-section-name {
         &--secondary {
-          padding: $block-spacer / 2;
+          padding: $block-spacer * 0.5;
           text-align: center;
           background-color: $gray-200;
         }

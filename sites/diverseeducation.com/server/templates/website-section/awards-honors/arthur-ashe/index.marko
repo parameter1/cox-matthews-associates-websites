@@ -36,6 +36,19 @@ $ const rootAlias = 'awards-honors/arthur-ashe';
         </marko-web-website-section-description>
       </marko-web-element>
     </marko-web-block>
+
+   <!-- <marko-web-block name="nominate-now">
+      <div align="center">
+        <a class="btn btn-primary" target="_blank" href="https://survey.alchemer.com/s3/7169278/Arthur-Ashe-Nominations-2023">
+          NOMINATE FOR 2023
+        </a>
+      </div>
+      <div align="center">
+        Deadline February 13
+      </div>
+      <br/><br/>
+    </marko-web-block> -->
+
     <marko-web-block name="roster">
       <div align="center">
         <a class="btn btn-primary" target="_blank" href="https://arthur-ashe-roster.diverseeducation.com/roster/">
@@ -43,16 +56,13 @@ $ const rootAlias = 'awards-honors/arthur-ashe';
         </a>
       </div>
     </marko-web-block>
-    <!-- <marko-web-block name="nominate-now">
-      <div align="center">
-        <a class="btn btn-primary" target="_blank" href="https://survey.alchemer.com/s3/6663556/2022-Arthur-Ashe-Nomination?utm_campaign=&utm_medium=email&utm_source=Eloqua">
-          NOMINATE NOW
-        </a>
-      </div>
-      <div align="center">
-        Deadline extended to February 16
-      </div>
-    </marko-web-block> -->
+  </@section>
+  <@section|{ aliases }|>
+    <theme-gam-define-display-ad
+      name="rail"
+      position="section_page"
+      aliases=aliases
+      modifiers=["inter-block"]/>
   </@section>
   <!-- Only loop over child section awards types & gender on non root aliases -->
   <!-- This assumes the following section structure -->
@@ -68,15 +78,15 @@ $ const rootAlias = 'awards-honors/arthur-ashe';
         name="website-section"
         params={ alias, queryFragment: sectionWithChilderenFragment }
       >
-        $ const years = getAsArray(node, "children.edges").map(({ node }) => node);
-        <if(years.length)>
-          $ const year = years[0];
+        $ const year = 2023;
+        $ const [yearSection] = getAsArray(node, "children.edges").map(({ node }) => node).filter(({ name })=> parseInt(name) === year);
+        <if(yearSection)>
           <div class="row">
             <div class="col col page-contents__content-body">
-              <h2>${year.name} </h2>
+              <h2>${yearSection.name}</h2>
             </div>
           </div>
-          <site-arthur-ashe-award-content-block alias=year.alias />
+          <site-arthur-ashe-award-content-block alias=yearSection.alias />
         </if>
       </marko-web-query>
     </@section>
@@ -92,7 +102,8 @@ $ const rootAlias = 'awards-honors/arthur-ashe';
               name="website-section"
               params={ alias: 'awards-honors/arthur-ashe', queryFragment: sectionWithChilderenFragment }
             >
-            $ const children = getAsArray(node, "children.edges").map(({ node }) => node);
+            $ const year = 2022; //current/active year
+            $ const children = getAsArray(node, "children.edges").map(({ node }) => node).filter(({ name })=> parseInt(name) <= year);
               <marko-web-node-list>
                 <@nodes|{ nodes }| nodes=children modifiers=["flush-x"]>
                   <div class="list-flow">
@@ -110,18 +121,25 @@ $ const rootAlias = 'awards-honors/arthur-ashe';
       </div>
       <div class="col-md-6 mb-block">
         <div class="award-about-card">
-          <div class="award-about-card__title">More About This Scholarship:</div>
+          <div class="award-about-card__title">More About This Program:</div>
           <div class="award-about-card__description">
             <p>
               As the name denotes, the annual Ashe edition is part of the magazine’s quarter-century legacy of recognizing young, outstanding minority men and women who have distinguished themselves in their academic and athletic pursuits.
             </p>
             <p>
-              In addition to their athletic ability, students named 2020 Arthur Ashe Jr. Sports Scholars must maintain a cumulative grade-point average of at least 3.5, be at least a sophomore academically and be active on their campuses or in their communities.
+              In addition to their athletic ability, students named Arthur Ashe Jr. Sports Scholars must maintain a cumulative grade-point average of at least 3.5, be at least a sophomore academically and be active on their campuses or in their communities.
             </p>
           </div>
         </div>
       </div>
     </div>
+  </@section>
+  <@section|{ aliases }|>
+    <theme-gam-define-display-ad
+      name="rail"
+      position="section_page"
+      aliases=aliases
+      modifiers=["inter-block"]/>
   </@section>
   <@section|{ blockName }| modifiers=["arthur-ashe"]>
     <marko-web-query|{ nodes }|

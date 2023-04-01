@@ -11,7 +11,7 @@ $theme-site-navbar-primary-type: light;
 
 // Colors
 $primary: #436daa;
-@import "../../node_modules/@cox-matthews-associates/package-global/scss/core";
+@import "@cox-matthews-associates/package-global/scss/core";
 @import "./components/awards";
 
 
@@ -23,4 +23,9 @@ $primary: #436daa;
       }
     }
   }
+}
+
+.site-menu--open {
+  max-height: calc(100vh - 300px);
+  overflow: scroll;
 }

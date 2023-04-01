@@ -6,7 +6,7 @@
       >
         <a
           v-for="(employer) in employers"
-          :key="employer.shortName"
+          :key="employer.id"
           :href="employer.siteContext.path"
           :title="employer.shortName"
           class="premium-employers__link"
@@ -16,7 +16,6 @@
           <img
             class="premium-employers__logo lazyload"
             src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-            srcset=""
             :data-src="getImgSrc(employer.primaryImage.src)"
             :data-srcset="[getImgSrcSet(employer.primaryImage.src)]"
             :alt="employer.shortName"

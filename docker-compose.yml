@@ -3,7 +3,7 @@ version: '3.7'
 x-node-defaults: &node
   tty: true
   init: true
-  image: node:10.24
+  image: node:14.21
   entrypoint: ["node"]
   working_dir: /root
   restart: always
@@ -21,11 +21,9 @@ x-env-defaults: &env
   OMEDA_INPUT_ID: ${OMEDA_INPUT_ID-(unset)}
   OMEDA_GRAPHQL_URI: ${OMEDA_GRAPHQL_URI-https://graphql.omeda.parameter1.com}
   IDENTITYX_API_TOKEN: ${IDENTITYX_API_TOKEN-(unset)}
-  # @todo the recaptcha values should be removed (?) once contact-us is moved to core.
   RECAPTCHA_V3_SITE_KEY: ${RECAPTCHA_V3_SITE_KEY-}
   RECAPTCHA_V3_SECRET_KEY: ${RECAPTCHA_V3_SECRET_KEY-}
   BASE_BROWSE_GRAPHQL_URI: ${BASE_BROWSE_GRAPHQL_URI-https://base-browse.virgon.base.parameter1.com/graphql}
-  # @todo the sendgrid values should be removed once the @parameter1/base-cms-mailer service is created.
   SENDGRID_API_KEY: ${SENDGRID_API_KEY-(unset)}
   SENDGRID_DEV_TO: developer@endeavorb2b.com
   YARN_CACHE_FOLDER: /.yarn-cache
@@ -43,8 +41,9 @@ x-env-development: &env-development
   SITEMAPS_URI: ${SITEMAPS_URI-http://host.docker.internal:10009}
 
 x-site-command: &site-cmd
-  entrypoint: ["node_modules/.bin/basecms-website"]
-  command: ["dev", "index.js"]
+  <<: *node
+  entrypoint: ["yarn"]
+  command: ["dev"]
 
 volumes:
   yarn-cache: {}
@@ -65,65 +64,49 @@ services:
       <<: *env
 
   de:
-    <<: *node
     <<: *site-cmd
     working_dir: /root/sites/diverseeducation.com
     environment:
       <<: *env
-      <<: *env-virgon
       PORT: 80
       EXPOSED_PORT: 9810
       LIVERELOAD_PORT: 19810
-      TENANT_KEY: diverse_all
-      SITE_ID: 60c281c6d28860bc33464ae0
     ports:
       - "9810:80"
       - "19810:19810"
 
   dm:
-    <<: *node
     <<: *site-cmd
     working_dir: /root/sites/diversemilitary.net
     environment:
       <<: *env
-      <<: *env-virgon
       PORT: 80
       EXPOSED_PORT: 9811
       LIVERELOAD_PORT: 19811
-      TENANT_KEY: diverse_all
-      SITE_ID: 60c28c0dd28860bc334ed723
     ports:
       - "9811:80"
       - "19811:19811"
 
   dh:
-    <<: *node
     <<: *site-cmd
     working_dir: /root/sites/divhealth.net
     environment:
       <<: *env
-      <<: *env-virgon
       PORT: 80
       EXPOSED_PORT: 9812
       LIVERELOAD_PORT: 19812
-      TENANT_KEY: diverse_all
-      SITE_ID: 60c28c4bd28860bc334f485d
     ports:
       - "9812:80"
       - "19812:19812"
 
   ccn:
-    <<: *node
     <<: *site-cmd
     working_dir: /root/sites/ccnewsnow.com
     environment:
       <<: *env
-      <<: *env-virgon
       PORT: 80
       EXPOSED_PORT: 9813
       LIVERELOAD_PORT: 19813
-      TENANT_KEY: diverse_all
-      SITE_ID: 60c28bc3d28860bc334ebcb2
     ports:
       - "9813:80"
       - "19813:19813"
