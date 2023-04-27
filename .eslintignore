@@ -2,3 +2,4 @@
 *.marko.js
 # Build assets
 dist
+public
