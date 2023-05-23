@@ -290,7 +290,9 @@
 @import "./components/blocks/esurveypro";
 /*! critical:start|end */
 /*! critical:start|home */
+/*! purgecss start ignore */
 @import "./components/blocks/premium-employers";
+/*! purgecss end ignore */
 @import "./components/blocks/promo-logo-card";
 @import "./components/blocks/featured-jobs";
 /*! critical:start|end */
