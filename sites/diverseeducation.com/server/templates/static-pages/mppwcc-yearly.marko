@@ -9,7 +9,7 @@ $ const currentYear = alias === rootAlias ? Object.keys(config)[Object.keys(conf
 $ const currentYearData = config[currentYear];
 $ const title = currentYearData ? `${currentYear} Most Promising Places to Work in Community Colleges` : 'Most Promising Places to Work in Community Colleges';
 $ const institutionData = getAsObject(currentYearData, "institutionData");
-$ const institutions = Object.keys(institutionData);
+$ const institutions = Object.keys(institutionData).sort();
 $ const newcomerData = getAsObject(currentYearData, "newcomerData");
 $ const newcomers = Object.keys(newcomerData);
 $ const pageDescription = currentYearData ? currentYearData.description : title;
@@ -67,7 +67,7 @@ $ const cheeGoals = currentYearData ? currentYearData.cheeGoals: title;
          <if(currentYearData && currentYearData.mpplogoSrc)>
     <@section>
           <div class="row">
-            <div class="col" align="center">  
+            <div class="col" align="center">
               <marko-web-img
                 class=["lazyload"]
                 alt="Promising Places to work logos"
@@ -194,13 +194,15 @@ $ const tableOneLabels = Object.values(getAsObject(currentYearData, "tableLabels
             <if(newcomers.length)>
               <tbody>
                   <for|institution| of=institutions>
-                    <tr>
-                      $ const tableSevenData = getAsObject(newcomerData[institution], "tableSeven");
-                      <td class="institution">${institution}</td>
-                      <for|field| of=Object.keys(tableSevenData)>
-                        <td class=field>${tableSevenData[field]}</td>
-                      </for>
-                    </tr>
+                    $ const tableSevenData = getAsObject(newcomerData[institution], "tableSeven");
+                    <if(tableSevenData && Object.keys(tableSevenData).length)>
+                      <tr>
+                        <td class="institution">${institution}</td>
+                        <for|field| of=Object.keys(tableSevenData)>
+                          <td class=field>${tableSevenData[field]}</td>
+                        </for>
+                      </tr>
+                    </if>
                   </for>
               </tbody>
             </if>
