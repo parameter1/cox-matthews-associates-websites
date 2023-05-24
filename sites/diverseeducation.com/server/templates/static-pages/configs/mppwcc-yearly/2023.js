@@ -11,7 +11,6 @@ module.exports = {
   biographies: '<b>Dr. Terrell Lamont Strayhorn</b> is provost and senior vice president of academic affairs at Virginia Union University, where he also serves as professor of urban education and director of the Center for the Study of HBCUs. Additionally, he is president and CEO of Do Good Work Educational Consulting LLC, a research firm that partners with leading colleges and schools to improve policy and practice, as a way of ensuring all students’ success. Author of 11 books, more than 200 journal articles, chapters and reports, Strayhorn is an internationally known student success expert and public speaker. <i>Diverse Issues</i> named him an Emerging Scholar in 2011 and he has received ACPA’s Emerging Scholar, Annuit Coeptis and Diamond Honoree Awards. @tlstrayhorn<p><b>Dr. Royel M. Johnson</b> is assistant professor of higher education at Pennsylvania State University. As a scholar, Johnson engages in interdisciplinary research on issues related to educational access, equity and student success. He is co-editor of three forthcoming books and has published two dozen academic publications. For his early career contributions to higher education and student affairs research, ACPA-College Student Educators International named him an Emerging Scholar in 2020. @royeljohnson</p>',
   mpplogoSrc: 'http://img.diverseeducation.com/files/base/diverse/all/image/static/de/mppwcc/MPPWCC.png?w=200&auto=fomat,compress&q=70',
 
-
   profiles: [{
     thumbnail: 'AUSTIN-CC.jpg',
     name: 'Austin Community College',
@@ -57,7 +56,7 @@ module.exports = {
     name: 'Joliet Junior College',
     body: 'Joliet Junior College (JJC) is the first public community college founded in the U.S. Approximately 48,000 students per year enroll in the college’s academic and non-credit programs at JJC’s three campuses and three centers. “We are challenging our faculty, staff, and students to have difficult conversations in the DEI space and emphasizing we are people before we are employees or students. This has been reflected in the internal and external environment our campus community is thriving in,” says Dr. Clyne G. H. Namuo, JCC’s president.',
   },
- 
+
   {
     thumbnail: 'LORAIN-COUNTY-CC.jpg',
     name: 'Lorain County Community College',
@@ -129,21 +128,21 @@ module.exports = {
       aian: 'AI/AN (%)',
     },
     tableSix: {
-    cdo: 'CDO',
-    flexiblework: 'Flexible Work',
-    compwork: 'COMP Work',
-    wfh: 'Work From Home',
-    stressreduction: 'Stress Reduction Program',
-    edleave: 'Ed. Leave',
-    readinggroups: 'Reading Groups',
-    ceCredit: 'CE Credit',
+      cdo: 'CDO',
+      flexiblework: 'Flexible Work',
+      compwork: 'COMP Work',
+      wfh: 'Work From Home',
+      stressreduction: 'Stress Reduction Program',
+      edleave: 'Ed. Leave',
+      readinggroups: 'Reading Groups',
+      ceCredit: 'CE Credit',
     },
     tableSeven: {
-       2023: '2023 New Comer',
-       2020: '2020',
-       2021: '2021',
-       2022: '2022',
-    }
+      2023: '2023 New Comer',
+      2020: '2020',
+      2021: '2021',
+      2022: '2022',
+    },
   },
   newcomerData: {
     'Austin Community College': {
@@ -151,170 +150,162 @@ module.exports = {
         2023: 'x',
         2020: '',
         2021: '',
-        2022: '', 
-      }
+        2022: '',
+      },
     },
     'Bergen Community College': {
       tableSeven: {
         2023: 'x',
         2020: '',
         2021: '',
-        2022: '', 
-      }
+        2022: '',
+      },
     },
     'Blinn College': {
       tableSeven: {
         2023: '',
         2020: 'x',
         2021: '',
-        2022: 'x', 
-      }
+        2022: 'x',
+      },
     },
-  'Broward College': {
-    tableSeven: {
-      2023: '',
-      2020: '',
-      2021: '',
-      2022: 'x', 
-    }
+    'Broward College': {
+      tableSeven: {
+        2023: '',
+        2020: '',
+        2021: '',
+        2022: 'x',
+      },
+    },
+    'Community College of Allegheny County': {
+      tableSeven: {
+        2023: '',
+        2020: 'x',
+        2021: 'x',
+        2022: 'x',
+      },
+    },
+    'Garden City Community College': {
+      tableSeven: {
+        2023: '',
+        2020: 'x',
+        2021: '',
+        2022: '',
+      },
+    },
+    'Harrisburg Area Community College': {
+      tableSeven: {
+        2023: '',
+        2020: 'x',
+        2021: '',
+        2022: 'x',
+      },
+    },
+    'Hudson County Community College': {
+      tableSeven: {
+        2023: '',
+        2020: '',
+        2021: '',
+        2022: 'x',
+      },
+    },
+    'Joliet Junior College': {
+      tableSeven: {
+        2023: '',
+        2020: '',
+        2021: '',
+        2022: 'x',
+      },
+    },
+    'Lorain County Community College': {
+      tableSeven: {
+        2023: '',
+        2020: '',
+        2021: '',
+        2022: 'x',
+      },
+    },
+    'Malcolm X College': {
+      tableSeven: {
+        2023: '',
+        2020: '',
+        2021: 'x',
+        2022: 'x',
+      },
+    },
+    'McLennan Community College': {
+      tableSeven: {
+        2023: '',
+        2020: 'x',
+        2021: 'x',
+        2022: 'x',
+      },
+    },
+    'Montgomery County Community College': {
+      tableSeven: {
+        2023: '',
+        2020: 'x',
+        2021: 'x',
+        2022: '',
+      },
+    },
+    'National Park College': {
+      tableSeven: {
+        2023: '',
+        2020: '',
+        2021: 'x',
+        2022: '',
+      },
+    },
+    'Nicolet College': {
+      tableSeven: {
+        2023: '',
+        2020: 'x',
+        2021: 'x',
+        2022: '',
+      },
+    },
+    'Northeast Lakeview College': {
+      tableSeven: {
+        2023: '',
+        2020: 'x',
+        2021: 'x',
+        2022: 'x',
+      },
+    },
+    'Nunez Community College': {
+      tableSeven: {
+        2023: 'x',
+        2020: '',
+        2021: '',
+        2022: '',
+      },
+    },
+    'Olive-Harvey College': {
+      tableSeven: {
+        2023: 'x',
+        2020: '',
+        2021: '',
+        2022: '',
+      },
+    },
+    'Pellissippi State Community College': {
+      tableSeven: {
+        2023: 'x',
+        2020: '',
+        2021: '',
+        2022: '',
+      },
+    },
+    'San Antonio College': {
+      tableSeven: {
+        2023: '',
+        2020: 'x',
+        2021: 'x',
+        2022: '',
+      },
+    },
   },
-  'Community College of Allegheny County': {
-    tableSeven: {
-      2023: '',
-      2020: 'x',
-      2021: 'x',
-      2022: 'x', 
-    }
-  },
-  'Garden City Community College': {
-    tableSeven: {
-      2023: '',
-      2020: 'x',
-      2021: '',
-      2022: '', 
-    }
-  },
-  'Harrisburg Area Community College': {
-    tableSeven: {
-      2023: '',
-      2020: 'x',
-      2021: '',
-      2022: 'x', 
-    }
-  },
-  'Hudson County Community College': {
-    tableSeven: {
-      2023: '',
-      2020: '',
-      2021: '',
-      2022: 'x', 
-    }
-  },
-  'Joliet Junior College': {
-    tableSeven: {
-      2023: '',
-      2020: '',
-      2021: '',
-      2022: 'x', 
-    }
-  },
-  'Lorain County Community College': {
-    tableSeven: {
-      2023: '',
-      2020: '',
-      2021: '',
-      2022: 'x', 
-    }
-  },
-  'Malcolm X College': {
-    tableSeven: {
-      2023: '',
-      2020: '',
-      2021: 'x',
-      2022: 'x', 
-    }
-  },
-  'McLennan Community College': {
-    tableSeven: {
-      2023: '',
-      2020: 'x',
-      2021: 'x',
-      2022: 'x', 
-    }
-  },
-  'Montgomery County Community College': {
-    tableSeven: {
-      2023: '',
-      2020: 'x',
-      2021: 'x',
-      2022: '', 
-    }
-  },
-  'National Park College': {
-    tableSeven: {
-      2023: '',
-      2020: '',
-      2021: 'x',
-      2022: '', 
-    }
-  },
-  'Nicolet College': {
-    tableSeven: {
-      2023: '',
-      2020: 'x',
-      2021: 'x',
-      2022: '', 
-    }
-  },
-  'Nicolet College': {
-    tableSeven: {
-      2023: '',
-      2020: 'x',
-      2021: 'x',
-      2022: '', 
-    }
-  },
-  'Northeast Lakeview College': {
-    tableSeven: {
-      2023: '',
-      2020: 'x',
-      2021: 'x',
-      2022: 'x', 
-    }
-  },
-  'Nunez Community College': {
-    tableSeven: {
-      2023: 'x',
-      2020: '',
-      2021: '',
-      2022: '', 
-    }
-  },
-  'Olive-Harvey College': {
-    tableSeven: {
-      2023: 'x',
-      2020: '',
-      2021: '',
-      2022: '', 
-    }
-  },
-  'Pellissippi State Community College': {
-    tableSeven: {
-      2023: 'x',
-      2020: '',
-      2021: '',
-      2022: '', 
-    }
-  },
-  'San Antonio College': {
-    tableSeven: {
-      2023: '',
-      2020: 'x',
-      2021: 'x',
-      2022: '', 
-    }
-  },
-},
   institutionData: {
     'Nunez Community College': {
       tableFour: {
