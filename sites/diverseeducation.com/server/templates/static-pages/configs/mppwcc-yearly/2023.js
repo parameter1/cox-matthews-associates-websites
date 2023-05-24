@@ -823,7 +823,7 @@ module.exports = {
 
       },
     },
-    'MalcolmX College': {
+    'Malcolm X College': {
       tableFour: {
         type: 'PBI/HSI',
         enrollment: '10-15k',
@@ -874,7 +874,7 @@ module.exports = {
 
       },
     },
-    'Pellissippi State Coummunity College': {
+    'Pellissippi State Community College': {
       tableFour: {
         type: 'PWI',
         enrollment: '1-5k',
