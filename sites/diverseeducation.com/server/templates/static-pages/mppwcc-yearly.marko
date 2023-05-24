@@ -10,6 +10,8 @@ $ const currentYearData = config[currentYear];
 $ const title = currentYearData ? `${currentYear} Most Promising Places to Work in Community Colleges` : 'Most Promising Places to Work in Community Colleges';
 $ const institutionData = getAsObject(currentYearData, "institutionData");
 $ const institutions = Object.keys(institutionData);
+$ const newcomerData = getAsObject(currentYearData, "newcomerData");
+$ const newcomers = Object.keys(newcomerData);
 $ const pageDescription = currentYearData ? currentYearData.description : title;
 $ const study = currentYearData ? currentYearData.study: title;
 $ const survey = currentYearData ? currentYearData.survey: title;
@@ -122,7 +124,6 @@ $ const tableOneLabels = Object.values(getAsObject(currentYearData, "tableLabels
           </table>
         </@section>
       </if>
-
       <@section>
         <div class="row">
           <div class="col page-contents__content-body">
@@ -159,6 +160,10 @@ $ const tableOneLabels = Object.values(getAsObject(currentYearData, "tableLabels
                 <h3>PROMISING PRACTICES AT COMMUNITY COLLEGES</h3>
                 <p>$!{currentYearData.promisingPractices}</p>
               </if>
+              <if(currentYearData && currentYearData.theresnoIinmppwcc)>
+                <h3>THERE'S NO "I" IN MPPWCC: IT TAKES TEAMWORK TO DO THIS WORK</h3>
+                <p>$!{currentYearData.theresnoIinmppwcc}</p>
+              </if>
               <if(currentYearData && currentYearData.socialMedia)>
                 <h3>ENGAGE US ON SOCIAL MEDIA</h3>
                 <p>$!{currentYearData.socialMedia}</p>
@@ -172,6 +177,36 @@ $ const tableOneLabels = Object.values(getAsObject(currentYearData, "tableLabels
         </div>
       </@section>
 
+      $ const tableSevenLabels = Object.values(getAsObject(currentYearData, "tableLabels.tableSeven"));
+      <if(currentYearData && tableSevenLabels.length)>
+        <@section modifiers=["card-deck"]>
+          <table class="table table-responsive table-hover">
+            <thead>
+              <tr>
+                <td width="400"><b>Institution</b></td>
+                <for|label| of=tableSevenLabels>
+                  <td width="200">
+                    <b>${label}</b>
+                  </td>
+                </for>
+              </tr>
+            </thead>
+            <if(newcomers.length)>
+              <tbody>
+                  <for|institution| of=institutions>
+                    <tr>
+                      $ const tableSevenData = getAsObject(newcomerData[institution], "tableSeven");
+                      <td class="institution">${institution}</td>
+                      <for|field| of=Object.keys(tableSevenData)>
+                        <td class=field>${tableSevenData[field]}</td>
+                      </for>
+                    </tr>
+                  </for>
+              </tbody>
+            </if>
+          </table>
+        </@section>
+      </if>
       <if(currentYearData && currentYearData.advisoryBoard)>
         <@section>
           <div class="page-contents__content-body about-text">
@@ -229,7 +264,6 @@ $ const tableOneLabels = Object.values(getAsObject(currentYearData, "tableLabels
           </div>
         </@section>
       </if>
-
       $ const tableTwoLabels = Object.values(getAsObject(currentYearData, "tableLabels.tableTwo"));
       <if(currentYearData && tableTwoLabels.length)>
         <@section modifiers=["card-deck"]>
@@ -385,6 +419,47 @@ $ const tableOneLabels = Object.values(getAsObject(currentYearData, "tableLabels
               </tbody>
             </if>
           </table>
+         <br/>
+        </@section>
+      </if>
+      $ const tableSixLabels = Object.values(getAsObject(currentYearData, "tableLabels.tableSix"));
+      <if(currentYearData && tableSixLabels.length)>
+        <@section modifiers=["card-deck"]>
+          <div class="row">
+            <div class="col">
+              <h2 class="page-wrapper__website-section-name">DIVERSITY BENEFITS</h2><br/>
+            </div>
+          </div>
+          <table class="table table-responsive table-hover">
+            <thead>
+              <tr>
+                <td width="600"><b>Institution</b></td>
+                <for|label| of=tableSixLabels>
+                  <td width="100">
+                    <b>${label}</b>
+                  </td>
+                </for>
+              </tr>
+            </thead>
+            <if(institutions.length)>
+              <tbody>
+                  <for|institution| of=institutions>
+                    <tr>
+                      $ const tableSixData = getAsObject(institutionData[institution], "tableSix");
+                      <td class="institution">${institution}</td>
+                      <for|field| of=Object.keys(tableSixData)>
+                        <td class=field>${tableSixData[field]}</td>
+                      </for>
+                    </tr>
+                  </for>
+              </tbody>
+            </if>
+          </table>
+          <br/>
+          <br/>
+          <div class="col">
+            <p>CDO = chief diversity officer or equivalent at or near cabinet-level. COMP = compressed work schedule. CE = continuing education.</p>
+           </div>
          <br/>
         </@section>
       </if>
