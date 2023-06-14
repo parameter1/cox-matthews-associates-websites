@@ -77,7 +77,7 @@ $ const isOnTheMoveSection = new Set([83113]).has(primarySection.id);
     </div>
   </@section>
 
-  <@section|{ aliases, content }|>
+  <@section|{ aliases, content, authors }|>
     $ const { primarySection } = content;
     <div class="content-page-body" role="region" aria-label="Content Body">
       <theme-page-contents|{ blockName }| attrs={ "data-gallery-id": id }>
