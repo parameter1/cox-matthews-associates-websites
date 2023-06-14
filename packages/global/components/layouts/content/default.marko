@@ -75,7 +75,7 @@ $ const isOnTheMoveSection = new Set([83113]).has(primarySection.id);
     </div>
   </@section>
 
-  <@section|{ aliases, content, authors }|>
+  <@section|{ aliases, content }|>
     $ const { primarySection } = content;
     <div class="content-page-body" role="region" aria-label="Content Body">
       <theme-page-contents|{ blockName }| attrs={ "data-gallery-id": id }>
@@ -215,14 +215,6 @@ $ const isOnTheMoveSection = new Set([83113]).has(primarySection.id);
                 <@wufoo user-name=site.get("wufoo.userName") />
                 <@link class="btn btn-primary" />
               </theme-content-download>
-            </if>
-
-            <if(type !== "contact")>
-              <for|author| of=authors>
-                <if(getAsArray(author, "labels").includes("Contributor"))>
-                  <marko-web-content-body obj=author block-name="inline-author-bio" />
-                </if>
-              </for>
             </if>
 
             <if(displayReadNext)>
