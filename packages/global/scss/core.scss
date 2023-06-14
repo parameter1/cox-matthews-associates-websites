@@ -91,7 +91,9 @@
 @import "@parameter1/base-cms-marko-web-theme-monorail/scss/components/content-page";
 @import "@parameter1/base-cms-marko-web-theme-monorail/scss/components/embedded-media";
 /*! critical:end */
+/*! critical:start|content */
 @import "@parameter1/base-cms-marko-web-theme-monorail/scss/components/identity-x";
+/*! critical:end */
 /*! critical:start */
 @import "@parameter1/base-cms-marko-web-theme-monorail/scss/components/lazyload";
 /*! critical:end */
@@ -295,6 +297,7 @@
 /*! critical:start|end */
 /*! critical:start|website-section.podcast */
 /*! critical:start|content */
+@import "./components/content-meter";
 @import "./components/podcasts-page";
 /*! critical:end */
 /*! critical:start|content */
