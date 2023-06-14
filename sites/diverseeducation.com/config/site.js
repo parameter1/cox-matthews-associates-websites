@@ -9,9 +9,11 @@ const magazine = require('./magazine');
 const newsletter = require('./newsletter');
 const search = require('./search');
 const contactUs = require('./contact-us');
+const contentMeter = require('./content-meter');
 
 module.exports = {
   leaders,
+  contentMeter,
   navigation,
   nativeX,
   omeda,
