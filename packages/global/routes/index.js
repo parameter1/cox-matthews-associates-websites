@@ -4,7 +4,6 @@ const taxonomy = require('@parameter1/base-cms-marko-web-theme-monorail/routes/t
 const magazine = require('@parameter1/base-cms-marko-web-theme-monorail-magazine/routes');
 const dynamicPage = require('./dynamic-page');
 const feed = require('./feed');
-// const identityX = require('./identity-x');
 const nativeX = require('./native-x');
 const printContent = require('./print-content');
 const publicFiles = require('./public-files');
@@ -20,9 +19,6 @@ module.exports = (app, siteConfig) => {
 
   // magazine
   magazine(app);
-
-  // // IdentityX (user routing and app context)
-  // identityX(app);
 
   // NativeX (Story rendering)
   nativeX(app);
