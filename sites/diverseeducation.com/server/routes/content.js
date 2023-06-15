@@ -1,4 +1,6 @@
 const withContent = require('@cox-matthews-associates/package-global/middleware/with-content');
+const contentMeter = require('@cox-matthews-associates/package-global/middleware/content-meter');
+const { newsletterState, formatContentResponse } = require('@cox-matthews-associates/package-global/middleware/newsletter-state');
 const queryFragment = require('@cox-matthews-associates/package-global/graphql/fragments/content-page');
 const contact = require('@cox-matthews-associates/package-global/templates/content/contact');
 const company = require('@cox-matthews-associates/package-global/templates/content/company');
@@ -6,29 +8,52 @@ const product = require('@cox-matthews-associates/package-global/templates/conte
 const whitepaper = require('@cox-matthews-associates/package-global/templates/content/whitepaper');
 const content = require('../templates/content');
 
-module.exports = (app) => {
-  app.get('/*?contact/:id(\\d{8})*', withContent({
+const routesList = [
+  { // contact
+    regex: '/*?contact/:id(\\d{8})*',
     template: contact,
     queryFragment,
-  }));
-
-  app.get('/*?company/:id(\\d{8})*', withContent({
+  },
+  { // company
+    regex: '/*?company/:id(\\d{8})*',
     template: company,
     queryFragment,
-  }));
-
-  app.get('/*?product/:id(\\d{8})*', withContent({
+  },
+  { // product
+    regex: '/*?product/:id(\\d{8})*',
     template: product,
     queryFragment,
-  }));
-
-  app.get('/*?whitepaper/:id(\\d{8})*', withContent({
+  },
+  { // whitepaper
+    regex: '/*?whitepaper/:id(\\d{8})*',
     template: whitepaper,
     queryFragment,
-  }));
-
-  app.get('/*?:id(\\d{8})*', withContent({
+  },
+  { // default
+    regex: '/*?/:id(\\d{8})/*|/:id(\\d{8})(/|$)*',
     template: content,
     queryFragment,
-  }));
+    withContentMeter: true,
+  },
+];
+
+module.exports = (app) => {
+  const { site } = app.locals;
+  const contentMeterEnable = site.get('contentMeter.enable');
+  // determin to use newsletterstate or contentMeter middleware
+  routesList.forEach((route) => {
+    if (route.withContentMeter && contentMeterEnable) {
+      app.get(route.regex, newsletterState({ setCookie: false }), contentMeter(), withContent({
+        template: route.template,
+        queryFragment: route.queryFragment,
+        formatResponse: formatContentResponse,
+      }));
+    } else {
+      app.get(route.regex, newsletterState({ setCookie: false }), withContent({
+        template: route.template,
+        queryFragment: route.queryFragment,
+        formatResponse: formatContentResponse,
+      }));
+    }
+  });
 };
