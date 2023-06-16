@@ -1,3 +1,4 @@
+const user = require('@cox-matthews-associates/package-global/config/user');
 const subscribe = require('./subscribe');
 
 const topics = [
@@ -50,6 +51,7 @@ const utilities = [
 ];
 
 const mobileMenu = {
+  user,
   primary: [
     ...topics,
     ...awards,
@@ -80,6 +82,7 @@ module.exports = {
   ],
   desktopMenu,
   mobileMenu,
+  user,
   topics,
   primary: {
     items: [

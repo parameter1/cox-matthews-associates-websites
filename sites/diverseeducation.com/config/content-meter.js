@@ -2,5 +2,5 @@ const defaultConfig = require('@cox-matthews-associates/package-global/config/co
 
 module.exports = {
   ...defaultConfig,
-  enable: process.env.ENABLE_CONTENT_METER === 'true',
+  enable: true,
 };
