@@ -55,7 +55,7 @@ module.exports = {
     {
       title: 'Post A Job',
       callToAction: 'Post A Job',
-          link: 'https://hiring.ccjobsnow.com/purchase/welcome-choose-plan/packages',
+      link: 'https://hiring.ccjobsnow.com/purchase/welcome-choose-plan/packages',
     },
   ],
   desktopMenu,
