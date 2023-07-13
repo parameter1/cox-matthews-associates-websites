@@ -5,6 +5,7 @@ const gam = require('./gam');
 const omeda = require('./omeda');
 const identityX = require('./identity-x');
 const omedaIdentityX = require('./omeda-identity-x');
+const identityXOptInHooks = require('./identity-x-opt-in-hooks');
 const magazine = require('./magazine');
 const newsletter = require('./newsletter');
 const search = require('./search');
@@ -19,6 +20,7 @@ module.exports = {
   omeda,
   identityX,
   omedaIdentityX,
+  identityXOptInHooks,
   gam,
   magazine,
   newsletter,
