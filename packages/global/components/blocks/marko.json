@@ -8,6 +8,9 @@
   "<global-featured-jobs-block>": {
     "template": "./featured-jobs.marko"
   },
+  "<global-content-meter-block>": {
+    "template": "./content-meter.marko"
+  },
   "<global-featured-jobs-list-block>": {
     "template": "./featured-jobs-list.marko",
     "@alias": "string",

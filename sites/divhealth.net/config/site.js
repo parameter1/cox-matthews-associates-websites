@@ -4,15 +4,19 @@ const gam = require('./gam');
 const omeda = require('./omeda');
 const identityX = require('./identity-x');
 const omedaIdentityX = require('./omeda-identity-x');
+const identityXOptInHooks = require('./identity-x-opt-in-hooks');
 const newsletter = require('./newsletter');
+const contentMeter = require('./content-meter');
 const search = require('./search');
 
 module.exports = {
   navigation,
+  contentMeter,
   nativeX,
   omeda,
   identityX,
   omedaIdentityX,
+  identityXOptInHooks,
   gam,
   newsletter,
   search,

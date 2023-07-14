@@ -6,9 +6,11 @@ const identityX = require('./identity-x');
 const omedaIdentityX = require('./omeda-identity-x');
 const newsletter = require('./newsletter');
 const search = require('./search');
+const contentMeter = require('./content-meter');
 
 module.exports = {
   navigation,
+  contentMeter,
   nativeX,
   omeda,
   identityX,
