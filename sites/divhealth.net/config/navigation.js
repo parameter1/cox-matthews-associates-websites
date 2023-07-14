@@ -32,6 +32,7 @@ const utilities = [
 
 const mobileMenu = {
   type: 'navbar2',
+  user: [],
   promos: [
     {
       title: 'Subscribe to Diverse Education',

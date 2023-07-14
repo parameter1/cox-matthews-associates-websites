@@ -46,6 +46,7 @@ const desktopMenu = {
 
 module.exports = {
   type: 'navbar2',
+  user: [],
   promos: [
     {
       title: subscribe.label,

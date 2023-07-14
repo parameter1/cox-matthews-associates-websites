@@ -19,6 +19,9 @@ module.exports = {
   nativeX,
   omeda,
   identityX,
+  idxNavItems: {
+    enable: process.env.IDX_NAV_ENABLE === 'true',
+  },
   omedaIdentityX,
   identityXOptInHooks,
   gam,
