@@ -468,6 +468,10 @@ label {
   }
 }
 
+.site-menu__section--user {
+  @include marko-web-node-list-border(border-bottom);
+}
+
 .page {
   &--authenticate,
   &--profile,

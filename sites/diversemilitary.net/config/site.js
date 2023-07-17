@@ -4,6 +4,7 @@ const gam = require('./gam');
 const omeda = require('./omeda');
 const identityX = require('./identity-x');
 const omedaIdentityX = require('./omeda-identity-x');
+const identityXOptInHooks = require('./identity-x-opt-in-hooks');
 const newsletter = require('./newsletter');
 const search = require('./search');
 const contentMeter = require('./content-meter');
@@ -14,7 +15,11 @@ module.exports = {
   nativeX,
   omeda,
   identityX,
+  idxNavItems: {
+    enable: process.env.IDX_NAV_ENABLE === 'true',
+  },
   omedaIdentityX,
+  identityXOptInHooks,
   gam,
   newsletter,
   search,
