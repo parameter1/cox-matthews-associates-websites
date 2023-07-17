@@ -46,6 +46,7 @@ const desktopMenu = {
 
 module.exports = {
   type: 'navbar2',
+  user: [],
   promos: [
     {
       title: subscribe.label,
@@ -55,7 +56,7 @@ module.exports = {
     {
       title: 'Post A Job',
       callToAction: 'Post A Job',
-      link: 'https://jobs.ccjobsnow.com/employer/emplogin.html',
+      link: 'https://hiring.ccjobsnow.com/purchase/welcome-choose-plan/packages',
     },
   ],
   desktopMenu,

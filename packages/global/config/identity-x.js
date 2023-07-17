@@ -5,18 +5,9 @@ const newrelic = require('newrelic');
 const { log } = console;
 
 module.exports = ({
-  appId,
+  appId = '60b7b2bd1245f46d03e69e1d',
   apiToken = process.env.IDENTITYX_API_TOKEN,
-  hiddenFields = [
-    'organizationTitle',
-    'phoneNumber',
-    'street',
-    'addressExtra',
-    'city',
-    'postalCode',
-    'regionCode',
-    'countryCode',
-  ],
+  hiddenFields = [],
   requiredServerFields = [
     'givenName',
     'familyName',
@@ -28,6 +19,7 @@ module.exports = ({
     // 'postalCode',
   ],
   requiredCreateFields = [],
+  ...rest
 } = {}) => {
   const config = new IdentityXConfiguration({
     appId,
@@ -43,6 +35,7 @@ module.exports = ({
       }
       newrelic.noticeError(e);
     },
+    ...rest,
   });
   return config;
 };

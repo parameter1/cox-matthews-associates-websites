@@ -13,6 +13,7 @@ const paginated = require('./middleware/paginated');
 const redirectHandler = require('./redirect-handler');
 const oembedHandler = require('./oembed-handler');
 const idxRouteTemplates = require('./templates/user');
+const idxNavItems = require('./config/identity-x-nav');
 
 const routes = (siteRoutes) => (app, siteConfig) => {
   // Shared/global routes (all sites)
@@ -49,6 +50,7 @@ module.exports = (options = {}) => {
       const omedaIdentityXConfig = getAsObject(options, 'siteConfig.omedaIdentityX');
       set(app.locals, 'omedaConfig', getAsObject(options, 'siteConfig.omeda'));
       omedaIdentityX(app, { ...omedaIdentityXConfig, idxRouteTemplates });
+      idxNavItems({ site: app.locals.site });
 
       // Setup GAM.
       const gamConfig = get(options, 'siteConfig.gam');

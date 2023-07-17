@@ -1,4 +1,3 @@
-const user = require('@cox-matthews-associates/package-global/config/user');
 const subscribe = require('./subscribe');
 
 const topics = [
@@ -34,7 +33,7 @@ const awards = [
   { href: 'https://www.diverseeducation.com/page/DOIT', label: 'DOIT', target: '_blank' },
   { href: '/awards-honors/dr-john-hope-franklin', label: 'Dr. John Hope Franklin Award' },
   { href: '/awards-honors/emerging-scholars/2023', label: 'Emerging Scholars' },
-  { href: '/awards-honors/graduate-scholars/2022', label: 'Graduate Scholars' },
+  { href: '/awards-honors/graduate-scholars/2023', label: 'Graduate Scholars' },
   { href: '/awards-honors/mppwcc', label: 'Most Promising Places to Work: Community Colleges' },
   { href: '/awards-honors/mppwsa', label: 'Most Promising Places to Work: Student Affairs' },
   { href: 'https://top100.diverseeducation.com', label: 'Top 100', target: '_blank' },
@@ -51,7 +50,6 @@ const utilities = [
 ];
 
 const mobileMenu = {
-  user,
   primary: [
     ...topics,
     ...awards,
@@ -82,7 +80,7 @@ module.exports = {
   ],
   desktopMenu,
   mobileMenu,
-  user,
+  user: [],
   topics,
   primary: {
     items: [

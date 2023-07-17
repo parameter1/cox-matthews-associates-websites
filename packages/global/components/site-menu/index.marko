@@ -21,6 +21,15 @@ $ const hasUser = defaultValue(input.hasUser, false);
       <div class="col-6 col-md-4 col-lg-3">
         <!-- search box -->
         <search block-name=blockName />
+        <theme-site-menu-section
+          tag="nav"
+          block-name=blockName
+          label="Account"
+          items=site.getAsArray("navigation.user")
+          modifiers=["secondary", "user"]
+          reg-enabled=regEnabled
+          has-user=hasUser
+        />
         <!-- social -->
         <social-icons block-name=blockName title="Follow Us" />
         <!-- about section -->
@@ -76,6 +85,15 @@ $ const hasUser = defaultValue(input.hasUser, false);
   <marko-web-element block-name=blockName name="contents-mobile">
     <!-- search box -->
     <search block-name=blockName />
+    <theme-site-menu-section
+      tag="nav"
+      block-name=blockName
+      label="Account"
+      items=site.getAsArray("navigation.user")
+      modifiers=["secondary", "user"]
+      reg-enabled=regEnabled
+      has-user=hasUser
+    />
     <!-- social -->
     <social-icons block-name=blockName />
     <!-- primary section -->
