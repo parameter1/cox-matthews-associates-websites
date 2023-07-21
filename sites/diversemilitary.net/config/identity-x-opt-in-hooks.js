@@ -1,5 +1,5 @@
 module.exports = {
   onAuthenticationSuccess: {
-    productIds: [9],
+    productIds: [10],
   },
 };
