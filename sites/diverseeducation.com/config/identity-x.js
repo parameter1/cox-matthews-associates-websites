@@ -14,6 +14,7 @@ module.exports = configureIdentityX({
   ],
   activeCustomFieldIds: [
     '64b59e6ab0c3f1123ebfdf04', // Diverse Daily
+    '64c03173d786a63621af8423', // Categories
   ],
   forms: {
     default: formDefault,
