@@ -293,7 +293,9 @@
 
 // skin components
 /*! critical:start|website-section.on-the-move */
+/*! purgecss start ignore */
 @import "./components/on-the-move-page";
+/*! purgecss end ignore */
 /*! critical:start|end */
 /*! critical:start|website-section.podcast */
 /*! critical:start|content */
