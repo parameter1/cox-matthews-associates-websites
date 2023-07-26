@@ -2,7 +2,8 @@ const configureIdentityX = require('@cox-matthews-associates/package-global/conf
 const formDefault = require('@cox-matthews-associates/package-global/config/identity-x/default');
 
 module.exports = configureIdentityX({
-  appContextId: '60b7b2bd1245f46d03e69e1d',
+  appId: '60b7b2bd1245f46d03e69e1d',
+  appContextId: '64b0215b178ace5438da4269',
   requiredClientFields: [
     'givenName',
     'familyName',
