@@ -1,10 +1,14 @@
-import { get, getAsArray } from "@parameter1/base-cms-object-path";
+import { get, getAsArray, getAsObject } from "@parameter1/base-cms-object-path";
 import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
 import getContentPreview from "@parameter1/base-cms-marko-web-theme-monorail/utils/get-content-preview";
 
 import { cmShowOverlay, cmRestrictContentByReg, cmTruncateBody } from "../../../utils/content-meter-helpers";
+import shuffle from "../../../utils/shuffle-array";
 
 $ const { site, contentMeterState } = out.global;
+$ const idxConfig = site.getAsObject('identityX');
+$ const recommendedQuestionId = get(idxConfig, 'options.recommendedQuestionId');
+
 $ const showOverlay = cmShowOverlay(contentMeterState);
 $ const { id, type, primarySection, pageNode, showReadNextBlock, showBottomAdBlock, showTopStoryBlock, ...rest } = input;
 $ const sections = getAsArray(input, "sections");
@@ -263,11 +267,30 @@ $ const isOnTheMoveSection = new Set([83113]).has(primarySection.id);
   </if>
 
   <@section|{ content }|>
-    <theme-related-stories-block
-      content-id=content.id
-      section-id=content.primarySection.id
-      with-native-x=true
-    />
+    <marko-web-identity-x-context|{ user, hasUser }|>
+      <if(user)>
+        $ const userAnswer = user.customSelectFieldAnswers.find(({id, answers}) => answers.length && id === recommendedQuestionId);
+        $ const answers = getAsArray(userAnswer, "answers");
+        $ const answer = shuffle(answers)[0];
+        $ const queryParams = {
+          ...get(idxConfig, `options.answerToQueryParamsMap.${recommendedQuestionId}.${answer.id}.queryParams`),
+          excludeContentIds: [content.id],
+        };
+        <theme-content-card-deck-block
+          title=`Recommended for ${user.givenName}`
+          query-params=queryParams
+          cols=4
+          with-native-x=false
+        />
+      </if>
+      <else>
+        <theme-related-stories-block
+          content-id=content.id
+          section-id=content.primarySection.id
+          with-native-x=true
+        />
+      </else>
+    </marko-web-identity-x-context>
   </@section>
 
   <for|s| of=sections>
