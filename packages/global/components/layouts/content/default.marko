@@ -273,11 +273,13 @@ $ const isOnTheMoveSection = new Set([83113]).has(primarySection.id);
         $ const answers = getAsArray(userAnswer, "answers");
         $ const answer = shuffle(answers)[0];
         $ const queryParams = {
+          limit: 4,
           ...get(idxConfig, `options.answerToQueryParamsMap.${recommendedQuestionId}.${answer.id}.queryParams`),
           excludeContentIds: [content.id],
         };
+        $ const title = user.givenName ? `Suggested for ${user.givenName}` : 'Suggested for You';
         <theme-content-card-deck-block
-          title=`Recommended for ${user.givenName}`
+          title=title
           query-params=queryParams
           cols=4
           view-more=false
