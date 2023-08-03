@@ -19,6 +19,8 @@ module.exports = ({
     // 'postalCode',
   ],
   requiredCreateFields = [],
+  recommendedQuestionId,
+  answerToQueryParamsMap,
   ...rest
 } = {}) => {
   const config = new IdentityXConfiguration({
@@ -28,6 +30,8 @@ module.exports = ({
     requiredServerFields,
     requiredClientFields,
     requiredCreateFields,
+    recommendedQuestionId,
+    answerToQueryParamsMap,
     onHookError: (e) => {
       if (process.env.NODE_ENV === 'development') {
         log('ERROR IN IDENTITY-X HOOK', e);
