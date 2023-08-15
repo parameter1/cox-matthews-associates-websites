@@ -4,16 +4,19 @@ import CCN from "@cox-matthews-associates/package-global/components/blocks/promo
 import Jobs from "@cox-matthews-associates/package-global/components/blocks/promos/diverse-jobs";
 import Health from "@cox-matthews-associates/package-global/components/blocks/promos/diverse-health";
 import Military from "@cox-matthews-associates/package-global/components/blocks/promos/diverse-military";
+import Podcasts from "./promos/podcasts";
+import NativeX from "./promos/native-x";
+
+$ const { nativeX: nxConfig } = out.global;
+$ const placement = nxConfig.getPlacement({ name: "promotion" });
 
 $ const Promos = shuffle([CCN, Jobs, Health, Military]);
+$ const Promos2 = shuffle([Podcasts, NativeX]);
 $ const blockName = "callout-cards";
 
 <marko-web-block name=blockName>
   <marko-web-element block-name=blockName name="row">
-    <marko-web-element block-name=blockName name="col">
-      <!-- <${Promos[0]} /> -->
-      <theme-latest-podcast-block alias="podcasts" />
-    </marko-web-element>
+      <${Promos2[0]} />
     <marko-web-element block-name=blockName name="col" modifiers=["last"]>
       <${Promos[1]} />
     </marko-web-element>
