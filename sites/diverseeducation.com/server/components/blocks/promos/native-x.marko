@@ -1,0 +1,17 @@
+import { defaultValue } from "@parameter1/base-cms-marko-web/utils";
+import convertAdToNode from "@parameter1/base-cms-marko-web-native-x/utils/convert-ad-to-node";
+
+$ const { nativeX: nxConfig } = out.global;
+$ const placementName = "promotion";
+$ const aliases = defaultValue(input.aliases, []);
+$ const blockName = "callout-cards";
+$ const uri = nxConfig.getUri();
+$ const placement = nxConfig.getPlacement({ name: placementName, aliases });
+
+<marko-web-native-x-fetch-elements|{ ads }| uri=uri id=placement.id opts={ n: 1 }>
+  <marko-web-element block-name=blockName name="col">
+    <if(ads[0] && ads[0].hasCampaign)>
+      <theme-standard-promo-node ...convertAdToNode(ads[0]) />
+    </if>
+  </marko-web-element>
+</marko-web-native-x-fetch-elements>
