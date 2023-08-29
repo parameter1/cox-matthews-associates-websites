@@ -7,7 +7,6 @@ const topics = [
   { href: '/sports', label: 'Sports' },
   { href: '/demographics', label: 'Demographics' },
   { href: '/institutions', label: 'Institutions' },
-  { href: 'https://shop.diverseeducation.com/', label: 'Shop', target: '_blank' },
   // { href: '/best-practices', label: 'Best Practices' },
 ];
 
@@ -25,6 +24,7 @@ const resources = [
   { href: 'https://diversejobs.net', label: 'Jobs', target: '_blank' },
   { href: 'https://www.diversemilitary.net', label: 'Military', target: '_blank' },
   { href: 'https://keepitreal.diverseeducation.com/', label: 'Keep it Real', target: '_blank' },
+  { href: 'https://shop.diverseeducation.com/', label: 'Shop', target: '_blank' },
 ];
 
 const awards = [
