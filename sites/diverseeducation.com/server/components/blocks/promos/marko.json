@@ -1,8 +1,0 @@
-{
-  "<site-podcasts-promo-block>": {
-    "template": "./podcasts.marko"
-  },
-  "<site-native-x-promo-block>": {
-    "template": "./native-x.marko"
-  }
-}
