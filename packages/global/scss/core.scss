@@ -89,6 +89,7 @@
 @import "@parameter1/base-cms-marko-web-theme-monorail/scss/components/comments";
 /*! critical:start|content */
 @import "@parameter1/base-cms-marko-web-theme-monorail/scss/components/content-page";
+@import "@parameter1/base-cms-marko-web-theme-monorail/scss/components/content-page-gate";
 @import "@parameter1/base-cms-marko-web-theme-monorail/scss/components/embedded-media";
 /*! critical:end */
 /*! critical:start|content */
@@ -293,7 +294,9 @@
 
 // skin components
 /*! critical:start|website-section.on-the-move */
+/*! purgecss start ignore */
 @import "./components/on-the-move-page";
+/*! purgecss end ignore */
 /*! critical:start|end */
 /*! critical:start|website-section.podcast */
 /*! critical:start|content */
