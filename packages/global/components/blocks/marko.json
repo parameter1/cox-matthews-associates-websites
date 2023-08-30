@@ -1,7 +1,4 @@
 {
-  "taglib-imports": [
-    "./promos/marko.json"
-  ],
   "<global-esurveypro-block>": {
     "template": "./esurveypro.marko"
   },
