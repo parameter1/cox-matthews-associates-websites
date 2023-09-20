@@ -279,7 +279,7 @@
         // stylelint-disable-next-line selector-max-compound-selectors
         &__section {
           // stylelint-disable-next-line selector-max-compound-selectors
-          > .social-icon-link {
+          .social-icon-link {
             // stylelint-disable-next-line
             &:last-of-type {
               margin-right: 0;
@@ -291,6 +291,11 @@
   }
 }
 
+a {
+  &:hover {
+    text-decoration: none;
+  }
+}
 
 // skin components
 /*! critical:start|website-section.on-the-move */
