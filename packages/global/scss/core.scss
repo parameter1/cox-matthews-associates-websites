@@ -291,6 +291,11 @@
   }
 }
 
+a {
+  &:hover {
+    text-decoration: none;
+  }
+}
 
 // skin components
 /*! critical:start|website-section.on-the-move */
