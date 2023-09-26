@@ -1,5 +1,6 @@
 import createOmedaIdentityBuilder from "@parameter1/base-cms-marko-web-p1-events/utils/create-omeda-identity-builder";
 import { getAsObject } from "@parameter1/base-cms-object-path";
+import getCookieId from "@parameter1/base-cms-marko-web-omeda-identity-x/utils/get-cookie-id";
 
 $ const {
   site,
@@ -10,17 +11,6 @@ $ const {
 } = out.global;
 
 $ const { cookies } = req;
-$ const getCookieId = (value, type) => {
-  if (!value) return null;
-  const trimmed = `${value.replace(/^"/, '').replace(/"$/, '')}`.trim();
-  if (type === 'anon') {
-    return /^[a-z0-9-]{36}$/i.test(trimmed) ? trimmed : null;
-  }
-  if(type === 'enc') {
-    return /^[a-z0-9]{15}$/i.test(trimmed) ? trimmed : null;
-  }
-  return null;
-};
 
 $ const omedaConfig = site.get('omeda');
 
@@ -84,14 +74,14 @@ $ const omedaConfig = site.get('omeda');
     </marko-web-identity-x-context>
 
     <!-- Send Encrypted Omeda Id to GTM -->
-    $ const oylEncId = cookies.oly_enc_id ? getCookieId(cookies.oly_enc_id, 'enc') : undefined;
-    <if(oylEncId)>
-      <marko-web-gtm-push data={ oly_enc_id: oylEncId } />
+    $ const olyEncId = cookies.oly_enc_id ? getCookieId(cookies.oly_enc_id, 'enc') : undefined;
+    <if(olyEncId)>
+      <marko-web-gtm-push data={ oly_enc_id: olyEncId } />
     </if>
     <!-- Send Anonomouse Omeda Id to GTM -->
-    $ const oylAnonId = cookies.oly_anon_id ? getCookieId(cookies.oly_anon_id, 'anon') : undefined;
-    <if(oylAnonId)>
-      <marko-web-gtm-push data={ oly_anon_id: oylAnonId } />
+    $ const olyAnonId = cookies.oly_anon_id ? getCookieId(cookies.oly_anon_id, 'anon') : undefined;
+    <if(olyAnonId)>
+      <marko-web-gtm-push data={ oly_anon_id: olyAnonId } />
     </if>
 
     <!-- start gtm -->
