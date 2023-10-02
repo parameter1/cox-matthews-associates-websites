@@ -121,4 +121,7 @@ module.exports = configureIdentityX({
   forms: {
     default: formDefault,
   },
+  gtmUserFields: {
+    categories: '64c03173d786a63621af8423',
+  },
 });
