@@ -20,9 +20,9 @@ const resources = [
   // { href: '/reports-data', label: 'Reports & Data' },
   // { href: '/from-the-magazine', label: 'From the Magazine' },
   { href: 'https://www.ccnewsnow.com', label: 'Community Colleges', target: '_blank' },
-  { href: 'https://www.divhealth.net', label: 'Health', target: '_blank' },
+  { href: '/health', label: 'Health' },
   { href: 'https://diversejobs.net', label: 'Jobs', target: '_blank' },
-  { href: 'https://www.diversemilitary.net', label: 'Military', target: '_blank' },
+  { href: '/military', label: 'Military' },
   { href: 'https://keepitreal.diverseeducation.com/', label: 'Keep it Real', target: '_blank' },
   { href: 'https://shop.diverseeducation.com/', label: 'Shop', target: '_blank' },
 ];
