@@ -64,6 +64,14 @@ $ const headerColClass = promos ? `col-lg-${4 - promos.slice(1).length}` : "col-
       </theme-site-navbar-brand>
     </div>
     <div class=`${headerColClass} site-navbar__right`>
+      <if(site.get('idxNavItems.enable'))>
+        $ const userLink = (input.hasUser) ? "/user/profile" : "/user/login";
+        <marko-web-link href=userLink>
+          <button class="btn btn-lg" type="submit" aria-label="User Profile">
+            <marko-web-icon name="person" modifiers=["dark"] />
+          </button>
+        </marko-web-link>
+      </if>
       <marko-web-link href="/search">
         <button class="btn btn-lg" type="submit" aria-label="Search">
           <marko-web-icon name="search" modifiers=["dark"] />

@@ -5,5 +5,8 @@
       "type" : "string",
       "required": true
     }
+  },
+  "<site-promo-card-rotation-block>": {
+    "template": "./promo-card-rotation.marko"
   }
 }

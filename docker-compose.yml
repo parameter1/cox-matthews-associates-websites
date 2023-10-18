@@ -31,6 +31,12 @@ x-env-defaults: &env
   ENABLE_CONTENT_METER: ${ENABLE_CONTENT_METER-false}
   IDX_NAV_ENABLE: ${IDX_NAV_ENABLE-false}
 
+x-env-leonis: &env-leonis
+  GRAPHQL_URI: ${GRAPHQL_URI-https://graphql.leonis.base.parameter1.com}
+  OEMBED_URI: ${OEMBED_URI-https://oembed.leonis.base.parameter1.com}
+  RSS_URI: ${RSS_URI-https://rss.leonis.base.parameter1.com}
+  SITEMAPS_URI: ${SITEMAPS_URI-https://sitemaps.leonis.base.parameter1.com}
+
 x-env-virgon: &env-virgon
   GRAPHQL_URI: ${GRAPHQL_URI-https://virgon.graphql.base.parameter1.com}
   OEMBED_URI: ${OEMBED_URI-https://virgon.oembed.base.parameter1.com}
