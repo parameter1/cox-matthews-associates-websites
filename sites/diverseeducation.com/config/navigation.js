@@ -14,8 +14,7 @@ const resources = [
   // { href: '/sponsored-content', label: 'Sponsored Content' },
   // { href: '/latest-news', label: 'Latest News' },
   { href: '/podcasts', label: 'Podcasts' },
-  { href: '/blog', label: 'Blog' },
-  { href: '/views', label: 'Views' },
+  { href: '/opinion', label: 'Opinion' },
   { href: '/webinars', label: '<em>Diverse</em> Talk Live! Webcasts' },
   // { href: '/reports-data', label: 'Reports & Data' },
   // { href: '/from-the-magazine', label: 'From the Magazine' },
@@ -59,7 +58,9 @@ const mobileMenu = {
     subscribe,
     { href: 'https://mediakit.diverseeducation.com/', label: 'Advertise', target: '_blank' },
     { href: 'https://editorial-calendar.diverseeducation.com', label: 'Editorial Calendar', target: '_blank' },
-  ],
+    { href: '/page/about-us', label: 'About Us', target: '_blank' },
+    { href: '/page/contact-us', label: 'Contact Us', target: '_blank' },
+  ]
 };
 
 const desktopMenu = {
