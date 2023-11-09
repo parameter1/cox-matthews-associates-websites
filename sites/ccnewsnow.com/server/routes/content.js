@@ -1,5 +1,6 @@
+const contentMetering = require('@parameter1/base-cms-marko-web-theme-monorail/middleware/content-metering');
+
 const withContent = require('@cox-matthews-associates/package-global/middleware/with-content');
-const contentMeter = require('@cox-matthews-associates/package-global/middleware/content-meter');
 const { newsletterState, formatContentResponse } = require('@cox-matthews-associates/package-global/middleware/newsletter-state');
 const queryFragment = require('@cox-matthews-associates/package-global/graphql/fragments/content-page');
 const contact = require('@cox-matthews-associates/package-global/templates/content/contact');
@@ -43,7 +44,7 @@ module.exports = (app) => {
   // determin to use newsletterstate or contentMeter middleware
   routesList.forEach((route) => {
     if (route.withContentMeter && contentMeterEnable) {
-      app.get(route.regex, newsletterState({ setCookie: false }), contentMeter(), withContent({
+      app.get(route.regex, newsletterState({ setCookie: false }), contentMetering(), withContent({
         template: route.template,
         queryFragment: route.queryFragment,
         formatResponse: formatContentResponse,
