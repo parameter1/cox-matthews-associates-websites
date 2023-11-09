@@ -40,15 +40,21 @@ const routesList = [
 
 module.exports = (app) => {
   const { site } = app.locals;
-  const contentMeterEnable = site.get('contentMeter.enable');
+  const cmConfig = site.getAsObject('contentMeter');
+  const contentMeterEnable = cmConfig.enabled;
   // determin to use newsletterstate or contentMeter middleware
   routesList.forEach((route) => {
     if (route.withContentMeter && contentMeterEnable) {
-      app.get(route.regex, newsletterState({ setCookie: false }), contentMetering(), withContent({
-        template: route.template,
-        queryFragment: route.queryFragment,
-        formatResponse: formatContentResponse,
-      }));
+      app.get(
+        route.regex,
+        newsletterState({ setCookie: false }),
+        contentMetering(cmConfig),
+        withContent({
+          template: route.template,
+          queryFragment: route.queryFragment,
+          formatResponse: formatContentResponse,
+        }),
+      );
     } else {
       app.get(route.regex, newsletterState({ setCookie: false }), withContent({
         template: route.template,
