@@ -43,9 +43,9 @@ module.exports = {
       ],
     },
     footer: {
-      src: 'https://img.diverseeducation.com/files/base/diverse/all/image/static/diverse-education-logo.png?h=45&auto=format,compress&q=70',
+      src: 'https://img.diverseeducation.com/files/base/diverse/all/image/static/Diverse-Logo-2023-WhiteWithTag-01.png?h=45&auto=format,compress&q=70',
       srcset: [
-        'https://img.diverseeducation.com/files/base/diverse/all/image/static/diverse-education-logo.png?h=45&auto=format,compress&q=70&dpr=2 2x',
+        'https://img.diverseeducation.com/files/base/diverse/all/image/static/Diverse-Logo-2023-WhiteWithTag-01.png?h=45&auto=format,compress&q=70&dpr=2 2x',
       ],
     },
   },
