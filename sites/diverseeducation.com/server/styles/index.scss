@@ -24,3 +24,11 @@ $primary: #0087ca;
     }
   }
 }
+
+.site-menu {
+  &__section--secondary {
+    .site-menu__header {
+      display: none;
+    }
+  }
+}
