@@ -24,7 +24,7 @@ const resources = [
   { href: 'https://www.diversemilitary.net', label: 'Military', target: '_blank' },
   { href: 'https://keepitreal.diverseeducation.com/', label: 'Keep it Real', target: '_blank' },
   { href: 'https://shop.diverseeducation.com/', label: 'Shop', target: '_blank' },
-  { href: '/feed', label: 'Feed', target: '_blank' },
+  { href: '/page/rss-feed', label: 'Feed' },
 ];
 
 const awards = [
