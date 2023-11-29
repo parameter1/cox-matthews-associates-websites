@@ -2,8 +2,12 @@
   &__content-body {
     // stylelint-disable-next-line selector-no-qualifying-type
     [data-embed-id="655bb0903f117aab6c8b45e3"]{
-      width: calc(800px - 10rem);
-      margin-left: 32px;
+      width: calc(600px - 10rem);
+      margin-left:125px;
+      @include media-breakpoint-down(md){
+        width: auto;
+        margin-left: 0;
+      }
     }
   }
 }
