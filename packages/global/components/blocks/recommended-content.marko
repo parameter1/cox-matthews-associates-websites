@@ -12,19 +12,26 @@ $ const title = defaultValue(input.title, "Recommended");
   <if(hasUser)>
     $ const userAnswer = user.customSelectFieldAnswers.find(({id, answers}) => answers.length && id === recommendedQuestionId);
     $ const answers = getAsArray(userAnswer, "answers");
-    $ const answer = shuffle(answers)[0];
-    $ console.log(input.queryParams)
-    $ const queryParams = {
-      limit: 4,
-      ...input.queryParams,
-      ...get(idxConfig, `options.answerToQueryParamsMap.${recommendedQuestionId}.${answer.id}.queryParams`),
-    };
-    $ const title = user.givenName ? `Suggested for ${user.givenName}` : 'Suggested for You';
+    <if(answers.length)>
+      $ const answer = shuffle(answers)[0];
+      $ const queryParams = {
+        limit: 4,
+        ...input.queryParams,
+        ...get(idxConfig, `options.answerToQueryParamsMap.${recommendedQuestionId}.${answer.id}.queryParams`),
+      };
+      $ const title = user.givenName ? `Suggested for ${user.givenName}` : 'Suggested for You';
 
-    <theme-latest-content-list-block title=customTitle query-params=queryParams class="recommended-content">
-      <@native-x indexes=[0] name="default" aliases=input.aliases ...input.nativeX />
-      <@node with-section=true with-dates=false ...input.node />
-    </theme-latest-content-list-block>
+      <theme-latest-content-list-block title=customTitle query-params=queryParams class="recommended-content">
+        <@native-x indexes=[0] name="default" aliases=input.aliases ...input.nativeX />
+        <@node with-section=true with-dates=false ...input.node />
+      </theme-latest-content-list-block>
+    </if>
+    <else>
+      <theme-latest-content-list-block title=customTitle query-params=input.queryParams class="recommended-content">
+        <@native-x indexes=[0] name="default" aliases=input.aliases ...input.nativeX />
+        <@node with-section=true with-dates=false ...input.node />
+      </theme-latest-content-list-block>
+    </else>
   </if>
   <else>
     <theme-latest-content-list-block title=customTitle query-params=input.queryParams class="recommended-content">
