@@ -501,6 +501,11 @@ label {
     margin-top: map-get($spacers, block);
     margin-bottom: map-get($spacers, block);
   }
-
+  .content-page-header,
+  .section-feed-content-node__body {
+    max-width: none;
+    margin-right: 0;
+    margin-left: 0;
+  }
 }
 /*! critical:end */
