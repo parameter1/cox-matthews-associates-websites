@@ -6,6 +6,8 @@ import { cmShowOverlay, cmRestrictContentByReg, cmTruncateBody } from "../../../
 import shuffle from "../../../utils/shuffle-array";
 
 $ const { site, contentMeterState } = out.global;
+$ const { req } = out.global;
+$ const { v } = req.query;
 $ const idxConfig = site.getAsObject('identityX');
 $ const recommendedQuestionId = get(idxConfig, 'options.recommendedQuestionId');
 
@@ -32,12 +34,23 @@ $ const isOnTheMoveSection = new Set([83113]).has(primarySection.id);
 >
   <@section|{ aliases }| modifiers=["first-sm"]>
     <if(!showOverlay)>
-      <theme-gam-define-display-ad
-        name="leaderboard"
-        position="content_page"
-        aliases=aliases
-        modifiers=["inter-block"]
-      />
+      <if(v)>
+        <div class="ad-container ad-container--with-label ad-container--video ad-container--max-width-970 ad-container--center ad-container--margin-auto-x ad-container--inline ad-container--template-leaderboard">
+          <div class="ad-container__wrapper">
+            <div style="border: 0pt none;">
+              <iframe width="560" height="315" src=`https://www.youtube.com/embed/${v}` title="" frameBorder="0"   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  allowFullScreen></iframe>
+            </div>
+          </div>
+        </div>
+      </if>
+      <else>
+        <theme-gam-define-display-ad
+          name="leaderboard"
+          position="home_page"
+          aliases=aliases
+          modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
+        />
+      </else>
     </if>
   </@section>
 

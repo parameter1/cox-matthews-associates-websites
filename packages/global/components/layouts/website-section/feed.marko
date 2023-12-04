@@ -3,8 +3,9 @@ import { getAsArray } from "@parameter1/base-cms-object-path";
 $ const { id, alias, name, pageNode } = input;
 $ const sections = getAsArray(input, "sections");
 
-$ const { pagination: p } = out.global;
+$ const { pagination: p, req } = out.global;
 $ const perPage = 18;
+$ const { v } = req.query;
 
 <global-website-section-default-layout
   id=id
@@ -24,12 +25,23 @@ $ const perPage = 18;
   </@head>
 
   <@section|{ aliases }| modifiers=["first"]>
-    <theme-gam-define-display-ad
-      name="leaderboard"
-      position="section_page"
-      aliases=aliases
-      modifiers=["inter-block"]
-    />
+    <if(v)>
+      <div class="ad-container ad-container--with-label ad-container--video ad-container--max-width-970 ad-container--center ad-container--margin-auto-x ad-container--inline ad-container--template-leaderboard">
+        <div class="ad-container__wrapper">
+          <div style="border: 0pt none;">
+            <iframe width="560" height="315" src=`https://www.youtube.com/embed/${v}` title="" frameBorder="0"   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  allowFullScreen></iframe>
+          </div>
+        </div>
+      </div>
+    </if>
+    <else>
+      <theme-gam-define-display-ad
+        name="leaderboard"
+        position="home_page"
+        aliases=aliases
+        modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
+      />
+    </else>
   </@section>
 
   <@section|{ blockName, section, aliases }|>

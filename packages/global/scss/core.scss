@@ -499,4 +499,15 @@ label {
   }
 
 }
+.ad-container {
+  $self: &;
+  &--video {
+    > *:first-child {
+      &::before {
+        content: "Holiday Greetings!";
+      }
+    }
+  }
+}
+
 /*! critical:end */
