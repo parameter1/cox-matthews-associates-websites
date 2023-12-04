@@ -25,6 +25,7 @@ $ const displayNewsletterSignup = ["contact"].includes(type) || showOverlay ? fa
 $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type);
 $ const excludeFromSidebarsLabel = ["Scholar Profile"];
 $ const isOnTheMoveSection = new Set([83113]).has(primarySection.id);
+$ const withRecommended = defaultValue(input.withRecommended, true);
 
 <global-content-wrapper-layout
   id=id
@@ -96,163 +97,10 @@ $ const isOnTheMoveSection = new Set([83113]).has(primarySection.id);
 
   <@section|{ aliases, content }|>
     $ const { primarySection } = content;
-    <div class="content-page-body" role="region" aria-label="Content Body">
-      <theme-page-contents|{ blockName }| attrs={ "data-gallery-id": id }>
-        <if(displaySocialShare)>
-          <marko-web-social-sharing
-            path=content.siteContext.path
-            providers=["print", "facebook", "linkedin", "twitter", "pinterest"]
-            print-path=`/print/content/${content.id}`
-          />
-        </if>
-        <if(content.embedCode)>
-          <marko-web-content-embed-code block-name=blockName obj=content />
-        </if>
-        <else-if(type === "media-gallery")>
-          <!-- <marko-web-image-slider images=images /> -->
-        </else-if>
-        <else-if(type === "document")>
-          <theme-primary-image-block
-            obj=content.primaryImage
-            force-display="right"
-          />
-        </else-if>
-        <else-if(displayPrimaryImage)>
-          $ let forceDisplay;
-          $ if (type === "contact") forceDisplay = "left";
-          $ if (type === "video") forceDisplay = "none";
-          <theme-primary-image-block
-            obj=content.primaryImage
-            force-display=forceDisplay
-          />
-        </else-if>
-
-        <if(content.transcript)>
-          <marko-web-link href=`#transcript-${id}` class="btn btn-transcript mt-block mb-2" title="Transcript">
-            <marko-web-icon name="file" modifiers=["lg"] /> Transcript
-          </marko-web-link>
-        </if>
-
-        $ const contentRequiresRegistration = get(content, "userRegistration.isCurrentlyRequired");
-        $ const requiresRegistration = contentRequiresRegistration || cmRestrictContentByReg(contentMeterState, content);
-        $ const accessLevels = getAsArray(content, "userRegistration.accessLevels");
-
-        <marko-web-identity-x-access|context|
-          enabled=requiresRegistration
-          required-access-level-ids=accessLevels
-        >
-          $ const lazyloadFirstImage = displayPrimaryImage && content.primaryImage;
-          $ const bodyModifiers = isOnTheMoveSection ? ['on-the-move'] : []
-          <if(cmTruncateBody(contentMeterState))>
-            $ const body = showOverlay ? getContentPreview({ body: content.body, selector: "p:lt(7)" }) : getContentPreview({ body: content.body, selector: "p:nth-of-type(1)" });
-            <marko-web-content-body block-name=blockName modifiers=bodyModifiers obj={ body } lazyload-first-image=lazyloadFirstImage />
-
-            <div class="content-page-preview-overlay" />
-            <if(!showOverlay)>
-              <theme-content-page-gate
-                can-access=context.canAccess
-                is-logged-in=context.isLoggedIn
-                has-required-access-level=context.hasRequiredAccessLevel
-                requires-access-level=context.requiresAccessLevel
-                requires-user-input=context.requiresUserInput
-                messages=context.messages
-                user-input-title="Step 2 of 2"
-                profile-call-to-action=""
-                profile-button-label="Create Account"
-                profile-event-name="content_meter_profile"
-              />
-            </if>
-          </if>
-          <else-if(!context.canAccess || context.requiresUserInput)>
-            $ const body = getContentPreview({ body: content.body, selector: "p:nth-of-type(1)" });
-            <marko-web-content-body block-name=blockName modifiers=bodyModifiers obj={ body } lazyload-first-image=lazyloadFirstImage />
-
-            <div class="content-page-preview-overlay" />
-            <theme-content-page-gate
-              can-access=context.canAccess
-              is-logged-in=context.isLoggedIn
-              has-required-access-level=context.hasRequiredAccessLevel
-              requires-access-level=context.requiresAccessLevel
-              requires-user-input=context.requiresUserInput
-              messages=context.messages
-            />
-            <marko-web-content-body block-name=blockName modifiers=bodyModifiers attrs={ style: "display: none;" }  obj=content modifiers=["ld-json"] />
-          </else-if>
-          <else>
-            <theme-body-with-injection
-              content=content
-              aliases=aliases
-              block-name=blockName
-              preventHTMLInjection=!shouldInjectAds
-              lazyload-first-image=lazyloadFirstImage
-              modifiers=bodyModifiers
-            />
-            <if(content.transcript)>
-              <div id=`transcript-${id}` class="page-contents__content-transcript">
-                <marko-web-element block-name="page-contents" name="content-transcript-title">
-                  <marko-web-icon name="file" modifiers=["lg"] /> Transcript
-                </marko-web-element>
-                <theme-body-with-injection
-                  content={ body: content.transcript }
-                  aliases=aliases
-                  block-name=blockName
-                  preventHTMLInjection=!shouldInjectAds
-                />
-              </div>
-            </if>
-
-            <!-- needs input -->
-            <if(input.afterBody)>
-              <${input.afterBody}
-                aliases=aliases
-                block-name=blockName
-                content=content
-              />
-            </if>
-
-            $ const profiles = getAsArray(content, 'profiles');
-            <for|profile| of=profiles>
-              <marko-web-block class="page-contents__content-profile" tag=null>
-                $!{profile.body}
-              </marko-web-block>
-            </for>
-
-             <if(isOnTheMoveSection)>
-              <marko-web-block>
-                <div class="social-sharing" align="center">
-                  <a class="btn btn-primary" target="_blank" href="https://responses.diverseeducation.com/OnTheMove2021">
-                    Submit Your Professional Appointment
-                  </a>
-                </div>
-              </marko-web-block>
-            </if>
-
-            $ const sidebars = getAsArray(content, "sidebars").map((sidebar) => sidebar.body);
-            <marko-web-content-sidebars block-name=blockName obj={ sidebars } />
-
-            <if(type === "document" || type === "whitepaper")>
-              <theme-content-download obj=content>
-                <@wufoo user-name=site.get("wufoo.userName") />
-                <@link class="btn btn-primary" />
-              </theme-content-download>
-            </if>
-
-            <if(displayReadNext)>
-              <theme-read-next-block
-                content-id=id
-                section-id=primarySection.id
-                published=content.published
-              />
-            </if>
-
-            <if(displayNewsletterSignup)>
-              <marko-web-identity-x-context|{ hasUser }|>
-                <if(!hasUser)>
-                  <identity-x-newsletter-form-inline type="inlineContent" />
-                </if>
-              </marko-web-identity-x-context>
-            </if>
-
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="content-page-body" role="region" aria-label="Content Body">
+          <theme-page-contents|{ blockName }| attrs={ "data-gallery-id": id }>
             <if(displaySocialShare)>
               <marko-web-social-sharing
                 path=content.siteContext.path
@@ -260,9 +108,173 @@ $ const isOnTheMoveSection = new Set([83113]).has(primarySection.id);
                 print-path=`/print/content/${content.id}`
               />
             </if>
-          </else>
-        </marko-web-identity-x-access>
-      </theme-page-contents>
+            <if(content.embedCode)>
+              <marko-web-content-embed-code block-name=blockName obj=content />
+            </if>
+            <else-if(type === "media-gallery")>
+              <!-- <marko-web-image-slider images=images /> -->
+            </else-if>
+            <else-if(type === "document")>
+              <theme-primary-image-block
+                obj=content.primaryImage
+                force-display="right"
+              />
+            </else-if>
+            <else-if(displayPrimaryImage)>
+              $ let forceDisplay;
+              $ if (type === "contact") forceDisplay = "left";
+              $ if (type === "video") forceDisplay = "none";
+              <theme-primary-image-block
+                obj=content.primaryImage
+                force-display=forceDisplay
+              />
+            </else-if>
+
+            <if(content.transcript)>
+              <marko-web-link href=`#transcript-${id}` class="btn btn-transcript mt-block mb-2" title="Transcript">
+                <marko-web-icon name="file" modifiers=["lg"] /> Transcript
+              </marko-web-link>
+            </if>
+
+            $ const contentRequiresRegistration = get(content, "userRegistration.isCurrentlyRequired");
+            $ const requiresRegistration = contentRequiresRegistration || cmRestrictContentByReg(contentMeterState, content);
+            $ const accessLevels = getAsArray(content, "userRegistration.accessLevels");
+
+            <marko-web-identity-x-access|context|
+              enabled=requiresRegistration
+              required-access-level-ids=accessLevels
+            >
+              $ const lazyloadFirstImage = displayPrimaryImage && content.primaryImage;
+              $ const bodyModifiers = isOnTheMoveSection ? ['on-the-move'] : []
+              <if(cmTruncateBody(contentMeterState))>
+                $ const body = showOverlay ? getContentPreview({ body: content.body, selector: "p:lt(7)" }) : getContentPreview({ body: content.body, selector: "p:nth-of-type(1)" });
+                <marko-web-content-body block-name=blockName modifiers=bodyModifiers obj={ body } lazyload-first-image=lazyloadFirstImage />
+
+                <div class="content-page-preview-overlay" />
+                <if(!showOverlay)>
+                  <theme-content-page-gate
+                    can-access=context.canAccess
+                    is-logged-in=context.isLoggedIn
+                    has-required-access-level=context.hasRequiredAccessLevel
+                    requires-access-level=context.requiresAccessLevel
+                    requires-user-input=context.requiresUserInput
+                    messages=context.messages
+                    user-input-title="Step 2 of 2"
+                    profile-call-to-action=""
+                    profile-button-label="Create Account"
+                    profile-event-name="content_meter_profile"
+                  />
+                </if>
+              </if>
+              <else-if(!context.canAccess || context.requiresUserInput)>
+                $ const body = getContentPreview({ body: content.body, selector: "p:nth-of-type(1)" });
+                <marko-web-content-body block-name=blockName modifiers=bodyModifiers obj={ body } lazyload-first-image=lazyloadFirstImage />
+
+                <div class="content-page-preview-overlay" />
+                <theme-content-page-gate
+                  can-access=context.canAccess
+                  is-logged-in=context.isLoggedIn
+                  has-required-access-level=context.hasRequiredAccessLevel
+                  requires-access-level=context.requiresAccessLevel
+                  requires-user-input=context.requiresUserInput
+                  messages=context.messages
+                />
+                <marko-web-content-body block-name=blockName modifiers=bodyModifiers attrs={ style: "display: none;" }  obj=content modifiers=["ld-json"] />
+              </else-if>
+              <else>
+                <theme-body-with-injection
+                  content=content
+                  aliases=aliases
+                  block-name=blockName
+                  preventHTMLInjection=!shouldInjectAds
+                  lazyload-first-image=lazyloadFirstImage
+                  modifiers=bodyModifiers
+                />
+                <if(content.transcript)>
+                  <div id=`transcript-${id}` class="page-contents__content-transcript">
+                    <marko-web-element block-name="page-contents" name="content-transcript-title">
+                      <marko-web-icon name="file" modifiers=["lg"] /> Transcript
+                    </marko-web-element>
+                    <theme-body-with-injection
+                      content={ body: content.transcript }
+                      aliases=aliases
+                      block-name=blockName
+                      preventHTMLInjection=!shouldInjectAds
+                    />
+                  </div>
+                </if>
+
+                <!-- needs input -->
+                <if(input.afterBody)>
+                  <${input.afterBody}
+                    aliases=aliases
+                    block-name=blockName
+                    content=content
+                  />
+                </if>
+
+                $ const profiles = getAsArray(content, 'profiles');
+                <for|profile| of=profiles>
+                  <marko-web-block class="page-contents__content-profile" tag=null>
+                    $!{profile.body}
+                  </marko-web-block>
+                </for>
+
+                <if(isOnTheMoveSection)>
+                  <marko-web-block>
+                    <div class="social-sharing" align="center">
+                      <a class="btn btn-primary" target="_blank" href="https://responses.diverseeducation.com/OnTheMove2021">
+                        Submit Your Professional Appointment
+                      </a>
+                    </div>
+                  </marko-web-block>
+                </if>
+
+                $ const sidebars = getAsArray(content, "sidebars").map((sidebar) => sidebar.body);
+                <marko-web-content-sidebars block-name=blockName obj={ sidebars } />
+
+                <if(type === "document" || type === "whitepaper")>
+                  <theme-content-download obj=content>
+                    <@wufoo user-name=site.get("wufoo.userName") />
+                    <@link class="btn btn-primary" />
+                  </theme-content-download>
+                </if>
+
+                <if(displayReadNext)>
+                  <theme-read-next-block
+                    content-id=id
+                    section-id=primarySection.id
+                    published=content.published
+                  />
+                </if>
+
+                <if(displayNewsletterSignup)>
+                  <marko-web-identity-x-context|{ hasUser }|>
+                    <if(!hasUser)>
+                      <identity-x-newsletter-form-inline type="inlineContent" />
+                    </if>
+                  </marko-web-identity-x-context>
+                </if>
+
+                <if(displaySocialShare)>
+                  <marko-web-social-sharing
+                    path=content.siteContext.path
+                    providers=["print", "facebook", "linkedin", "twitter", "pinterest"]
+                    print-path=`/print/content/${content.id}`
+                  />
+                </if>
+              </else>
+            </marko-web-identity-x-access>
+          </theme-page-contents>
+        </div>
+      </div>
+      <div class="col-lg-4 page-rail">
+        <if(withRecommended)>
+          <div class="sticky-top">
+            <global-recommended-content-block query-params={ excludeContentIds: [content.id], sectionId: primarySection.id } aliases=aliases />
+          </div>
+        </if>
+      </div>
     </div>
   </@section>
 
@@ -280,34 +292,33 @@ $ const isOnTheMoveSection = new Set([83113]).has(primarySection.id);
   </if>
 
   <@section|{ content }|>
-    <marko-web-identity-x-context|{ user, hasUser }|>
-      <if(user)>
-        $ const userAnswer = user.customSelectFieldAnswers.find(({id, answers}) => answers.length && id === recommendedQuestionId);
-        $ const answers = getAsArray(userAnswer, "answers");
-        $ const answer = shuffle(answers)[0];
-        $ const queryParams = {
-          limit: 4,
-          ...get(idxConfig, `options.answerToQueryParamsMap.${recommendedQuestionId}.${answer.id}.queryParams`),
-          excludeContentIds: [content.id],
-        };
-        $ const title = user.givenName ? `Suggested for ${user.givenName}` : 'Suggested for You';
-        <theme-content-card-deck-block
-          title=title
-          query-params=queryParams
-          cols=4
-          view-more=false
-          with-native-x=false
-        />
-      </if>
-      <else>
-        <theme-related-stories-block
-          content-id=content.id
-          section-id=content.primarySection.id
-          with-native-x=true
-        />
-      </else>
-    </marko-web-identity-x-context>
+    <theme-related-stories-block
+      content-id=content.id
+      section-id=content.primarySection.id
+      with-native-x=true
+    />
   </@section>
+
+  <!-- <@section|{ content, aliases }|>
+    <global-section-feed-wrapper aliases=aliases alias=content.primarySection.alias ad-name="rotation">
+      <@header>More in ${content.primarySection.name}</@header>
+      <@query-params excludeContentIds=[content.id] />
+      <@native-x index=[1] name="default" aliases=aliases sectionName="Sponsored" />
+      <@rail>
+        <div class="sticky-top">
+          <theme-gam-define-display-ad
+            name="rail"
+            position="section_page"
+            aliases=input.aliases
+            modifiers=[]
+          />
+        </div>
+      </@rail>
+      <@rail>
+        <theme-client-side-most-popular-list-block class="sticky-top" />
+      </@rail>
+    </global-section-feed-wrapper>
+  </@section> -->
 
   <for|s| of=sections>
     <@section|{ blockName, content, aliases }| modifiers=s.modifiers>
