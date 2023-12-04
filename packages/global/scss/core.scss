@@ -303,6 +303,11 @@ a {
 @import "./components/on-the-move-page";
 /*! purgecss end ignore */
 /*! critical:start|end */
+/*! critical:start|website-section.doit */
+/*! purgecss start ignore */
+@import "./components/doit-page";
+/*! purgecss end ignore */
+/*! critical:start|end */
 /*! critical:start|website-section.podcast */
 /*! critical:start|content */
 @import "./components/content-meter";
@@ -319,6 +324,7 @@ a {
 /*! purgecss end ignore */
 @import "./components/blocks/promo-logo-card";
 @import "./components/blocks/featured-jobs";
+@import "./components/blocks/section-card";
 /*! critical:start|end */
 
 /*! critical:start */
@@ -472,10 +478,14 @@ label {
       &__header {
         line-height: 1.5;
       }
+      &__section {
+        .social-icon-link {
+          margin-right: 14px;
+        }
+      }
     }
   }
 }
-
 .site-menu__section--user {
   @include marko-web-node-list-border(border-bottom);
 }

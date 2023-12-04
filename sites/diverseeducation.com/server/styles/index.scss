@@ -10,7 +10,7 @@ $navbarStyle: "navbar-b";
 $theme-site-navbar-primary-type: light;
 
 // Colors
-$primary: #436daa;
+$primary: #0087ca;
 @import "@cox-matthews-associates/package-global/scss/core";
 @import "./components/awards";
 
@@ -21,6 +21,14 @@ $primary: #436daa;
       &__header {
         display: none;
       }
+    }
+  }
+}
+
+.site-menu {
+  &__section--secondary {
+    .site-menu__header {
+      display: none;
     }
   }
 }

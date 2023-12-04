@@ -14,8 +14,7 @@ const resources = [
   // { href: '/sponsored-content', label: 'Sponsored Content' },
   // { href: '/latest-news', label: 'Latest News' },
   { href: '/podcasts', label: 'Podcasts' },
-  { href: '/blog', label: 'Blog' },
-  { href: '/views', label: 'Views' },
+  { href: '/opinion', label: 'Opinion' },
   { href: '/webinars', label: '<em>Diverse</em> Talk Live! Webcasts' },
   // { href: '/reports-data', label: 'Reports & Data' },
   // { href: '/from-the-magazine', label: 'From the Magazine' },
@@ -30,7 +29,7 @@ const resources = [
 const awards = [
   { href: '/awards-honors/arthur-ashe', label: 'Arthur Ashe' },
   { href: '/awards-honors/diverse-champions', label: 'Diverse Champions' },
-  { href: 'https://www.diverseeducation.com/page/DOIT', label: 'DOIT', target: '_blank' },
+  { href: '/page/DOIT', label: 'DOIT' },
   { href: '/awards-honors/dr-john-hope-franklin', label: 'Dr. John Hope Franklin Award' },
   { href: '/awards-honors/emerging-scholars/2023', label: 'Emerging Scholars' },
   { href: '/awards-honors/graduate-scholars/2023', label: 'Graduate Scholars' },
@@ -59,6 +58,8 @@ const mobileMenu = {
     subscribe,
     { href: 'https://mediakit.diverseeducation.com/', label: 'Advertise', target: '_blank' },
     { href: 'https://editorial-calendar.diverseeducation.com', label: 'Editorial Calendar', target: '_blank' },
+    { href: '/page/about-us', label: 'About Us', target: '_blank' },
+    { href: '/page/contact-us', label: 'Contact Us', target: '_blank' },
   ],
 };
 
