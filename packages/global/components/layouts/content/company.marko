@@ -4,6 +4,8 @@ import imageHeight from "@parameter1/base-cms-marko-web/components/node/utils/im
 
 $ const { id, type, pageNode, ...rest } = input;
 $ const sections = getAsArray(input, "sections");
+$ const { req } = out.global;
+$ const { v } = req.query;
 
 <global-content-wrapper-layout
   id=id
@@ -12,12 +14,23 @@ $ const sections = getAsArray(input, "sections");
   ...rest
 >
   <@section|{ aliases }| modifiers=["first-sm"]>
-    <theme-gam-define-display-ad
-      name="leaderboard"
-      position="content_page"
-      aliases=aliases
-      modifiers=["inter-block"]
-    />
+    <if(v)>
+      <div class="ad-container ad-container--with-label ad-container--video ad-container--max-width-970 ad-container--center ad-container--margin-auto-x ad-container--inline ad-container--template-leaderboard">
+        <div class="ad-container__wrapper">
+          <div style="border: 0pt none;">
+            <iframe width="560" height="315" src=`https://www.youtube.com/embed/${v}` title="" frameBorder="0"   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  allowFullScreen></iframe>
+          </div>
+        </div>
+      </div>
+    </if>
+    <else>
+      <theme-gam-define-display-ad
+        name="leaderboard"
+        position="home_page"
+        aliases=aliases
+        modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
+      />
+    </else>
   </@section>
 
   <@section|{ aliases, blockName, content }| modifiers=["content-header"]>
