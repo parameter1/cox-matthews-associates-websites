@@ -3,12 +3,12 @@ import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
 import shuffle from "../../utils/shuffle-array";
 
 $ const { site, } = out.global;
-$ const idxConfig = site.getAsObject('identityX');
-$ const recommendedQuestionId = get(idxConfig, 'options.recommendedQuestionId');
-$ const title = defaultValue(input.title, "Recommended");
+$ const idxConfig = site.getAsObject("identityX");
+$ const recommendedQuestionId = get(idxConfig, "options.recommendedQuestionId");
+$ const title = defaultValue(input.title, "Suggested");
 
 <marko-web-identity-x-context|{ user, hasUser }|>
-  $ const customTitle = (hasUser) ? `${title} for ${user.givenName}` : title;
+  $ const customTitle = (hasUser) ? `${title} for ${user.givenName}` : `${title} for You`;
   <if(hasUser)>
     $ const userAnswer = user.customSelectFieldAnswers.find(({id, answers}) => answers.length && id === recommendedQuestionId);
     $ const answers = getAsArray(userAnswer, "answers");
@@ -19,7 +19,7 @@ $ const title = defaultValue(input.title, "Recommended");
         ...input.queryParams,
         ...get(idxConfig, `options.answerToQueryParamsMap.${recommendedQuestionId}.${answer.id}.queryParams`),
       };
-      $ const title = user.givenName ? `Suggested for ${user.givenName}` : 'Suggested for You';
+      $ const title = user.givenName ? `${title} for ${user.givenName}` : `${title} for You`;
 
       <theme-latest-content-list-block title=customTitle query-params=queryParams class="recommended-content">
         <@native-x indexes=[0] name="default" aliases=input.aliases ...input.nativeX />
