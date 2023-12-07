@@ -5,7 +5,6 @@ $ const { id, alias, name, pageNode } = input;
 $ const sections = getAsArray(input, "sections");
 
 $ const { pagination: p, site, req } = out.global;
-$ const holidayGreetingID = site.get('holidayGreetingID');
 $ const wufooUserName = site.get("wufoo.userName");
 $ const wufooPodcastFormHash = site.get("wufoo.podcastFormHash");
 
@@ -29,14 +28,8 @@ $ const perPage = 10;
   </@head>
 
   <@section|{ aliases }| modifiers=["first"]>
-    <if(holidayGreetingID)>
-      <div class="ad-container ad-container--with-label ad-container--video ad-container--max-width-970 ad-container--center ad-container--margin-auto-x ad-container--inline ad-container--template-leaderboard">
-        <div class="ad-container__wrapper">
-          <div style="border: 0pt none;">
-            <iframe width="560" height="315" src=`https://www.youtube.com/embed/${holidayGreetingID}?si=` title="Youtube Player" frameBorder="0"   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  allowFullScreen></iframe>
-          </div>
-        </div>
-      </div>
+    <if(site.get('holidayGreetingID'))>
+      <global-greeting-video-block />
     </if>
     <else>
       <theme-gam-define-display-ad
