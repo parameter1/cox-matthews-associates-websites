@@ -10,6 +10,7 @@ const search = require('./search');
 const contentMeter = require('./content-meter');
 
 module.exports = {
+  holidayGreetingID: process.env.HOLIDAY_GREETING_ID,
   navigation,
   contentMeter,
   nativeX,
