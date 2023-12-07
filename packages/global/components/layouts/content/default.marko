@@ -5,9 +5,8 @@ import getContentPreview from "@parameter1/base-cms-marko-web-theme-monorail/uti
 import { cmShowOverlay, cmRestrictContentByReg, cmTruncateBody } from "../../../utils/content-meter-helpers";
 import shuffle from "../../../utils/shuffle-array";
 
-$ const { site, contentMeterState } = out.global;
-$ const { req } = out.global;
-$ const { v } = req.query;
+$ const { req, site, contentMeterState } = out.global;
+$ const holidayGreetingID = site.get('holidayGreetingID');
 $ const idxConfig = site.getAsObject('identityX');
 $ const recommendedQuestionId = get(idxConfig, 'options.recommendedQuestionId');
 
@@ -34,11 +33,11 @@ $ const isOnTheMoveSection = new Set([83113]).has(primarySection.id);
 >
   <@section|{ aliases }| modifiers=["first-sm"]>
     <if(!showOverlay)>
-      <if(v)>
+      <if(holidayGreetingID)>
         <div class="ad-container ad-container--with-label ad-container--video ad-container--max-width-970 ad-container--center ad-container--margin-auto-x ad-container--inline ad-container--template-leaderboard">
           <div class="ad-container__wrapper">
             <div style="border: 0pt none;">
-              <iframe width="560" height="315" src=`https://www.youtube.com/embed/${v}` title="" frameBorder="0"   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  allowFullScreen></iframe>
+              <iframe width="560" height="315" src=`https://www.youtube.com/embed/${holidayGreetingID}?si=` title="Youtube Player" frameBorder="0"   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  allowFullScreen></iframe>
             </div>
           </div>
         </div>

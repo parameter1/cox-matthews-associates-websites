@@ -1,9 +1,8 @@
 import { getAsArray } from "@parameter1/base-cms-object-path";
 
-$ const { site } = out.global;
+$ const { req, site } = out.global;
 $ const { id, type, pageNode, ...rest } = input;
-$ const { req } = out.global;
-$ const { v } = req.query;
+$ const holidayGreetingID = site.get('holidayGreetingID');
 
 <global-content-wrapper-layout
   id=id
@@ -12,11 +11,11 @@ $ const { v } = req.query;
   ...rest
 >
   <@section|{ aliases }| modifiers=["first-sm"]>
-    <if(v)>
+    <if(holidayGreetingID)>
       <div class="ad-container ad-container--with-label ad-container--video ad-container--max-width-970 ad-container--center ad-container--margin-auto-x ad-container--inline ad-container--template-leaderboard">
         <div class="ad-container__wrapper">
           <div style="border: 0pt none;">
-            <iframe width="560" height="315" src=`https://www.youtube.com/embed/${v}` title="" frameBorder="0"   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  allowFullScreen></iframe>
+            <iframe width="560" height="315" src=`https://www.youtube.com/embed/${holidayGreetingID}?si=` title="Youtube Player" frameBorder="0"   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  allowFullScreen></iframe>
           </div>
         </div>
       </div>

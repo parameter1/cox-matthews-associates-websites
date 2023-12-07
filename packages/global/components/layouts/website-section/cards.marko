@@ -3,9 +3,9 @@ import { getAsArray } from "@parameter1/base-cms-object-path";
 $ const { id, alias, name, pageNode } = input;
 $ const sections = getAsArray(input, "sections");
 
-$ const { pagination: p, req } = out.global;
+$ const { pagination: p, req, site } = out.global;
 $ const perPage = 10;
-$ const { v } = req.query;
+$ const holidayGreetingID = site.get('holidayGreetingID');
 
 <global-website-section-default-layout
   id=id
@@ -25,7 +25,7 @@ $ const { v } = req.query;
   </@head>
 
   <@section|{ aliases }| modifiers=["first"]>
-    <if(v)>
+    <if(holidayGreetingID)>
       <div class="ad-container ad-container--with-label ad-container--video ad-container--max-width-970 ad-container--center ad-container--margin-auto-x ad-container--inline ad-container--template-leaderboard">
         <div class="ad-container__wrapper">
           <div style="border: 0pt none;">
