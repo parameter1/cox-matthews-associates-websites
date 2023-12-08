@@ -291,14 +291,14 @@ $ const isOnTheMoveSection = new Set([83113]).has(primarySection.id);
             view-more=false
             with-native-x=false
           />
-          </if>
-          <else>
-            <theme-related-stories-block
-              content-id=content.id
-              section-id=content.primarySection.id
-              with-native-x=true
-            />
-          </else>
+        </if>
+        <else>
+          <theme-related-stories-block
+            content-id=content.id
+            section-id=content.primarySection.id
+            with-native-x=true
+          />
+        </else>
       </if>
       <else>
         <theme-related-stories-block
