@@ -18,6 +18,7 @@ $ const perPage = 10;
 >
   <@head>
     <theme-section-feed-block|{ totalCount }| alias=alias count-only=true>
+      <@query-params exclude-content-types=["Video"] />
       <theme-pagination-controls
         per-page=perPage
         total-count=totalCount
@@ -118,6 +119,7 @@ $ const perPage = 10;
     </div>
 
     <theme-section-feed-block|{ totalCount }| alias=alias count-only=true>
+      <@query-params exclude-content-types=["Video"] />
       <theme-pagination-controls
         per-page=perPage
         total-count=totalCount
