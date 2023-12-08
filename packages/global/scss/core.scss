@@ -303,6 +303,11 @@ a {
 @import "./components/on-the-move-page";
 /*! purgecss end ignore */
 /*! critical:start|end */
+/*! critical:start|website-section.doit */
+/*! purgecss start ignore */
+@import "./components/doit-page";
+/*! purgecss end ignore */
+/*! critical:start|end */
 /*! critical:start|website-section.podcast */
 /*! critical:start|content */
 @import "./components/content-meter";
@@ -494,4 +499,15 @@ label {
   }
 
 }
+.ad-container {
+  $self: &;
+  &--video {
+    > *:first-child {
+      &::before {
+        content: "Holiday Greetings!";
+      }
+    }
+  }
+}
+
 /*! critical:end */

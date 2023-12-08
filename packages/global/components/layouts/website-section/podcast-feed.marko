@@ -4,7 +4,7 @@ import queryFragment from '../../../graphql/fragments/content-page'
 $ const { id, alias, name, pageNode } = input;
 $ const sections = getAsArray(input, "sections");
 
-$ const { pagination: p, site } = out.global;
+$ const { pagination: p, site, req } = out.global;
 $ const wufooUserName = site.get("wufoo.userName");
 $ const wufooPodcastFormHash = site.get("wufoo.podcastFormHash");
 
@@ -18,6 +18,7 @@ $ const perPage = 10;
 >
   <@head>
     <theme-section-feed-block|{ totalCount }| alias=alias count-only=true>
+      <@query-params exclude-content-types=["Video"] />
       <theme-pagination-controls
         per-page=perPage
         total-count=totalCount
@@ -28,12 +29,17 @@ $ const perPage = 10;
   </@head>
 
   <@section|{ aliases }| modifiers=["first"]>
-    <theme-gam-define-display-ad
-      name="leaderboard"
-      position="section_page"
-      aliases=aliases
-      modifiers=["inter-block"]
-    />
+    <if(site.get('holidayGreetingID'))>
+      <global-greeting-video-block />
+    </if>
+    <else>
+      <theme-gam-define-display-ad
+        name="leaderboard"
+        position="home_page"
+        aliases=aliases
+        modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
+      />
+    </else>
   </@section>
 
   <@section|{ blockName, section, aliases }|>
@@ -113,6 +119,7 @@ $ const perPage = 10;
     </div>
 
     <theme-section-feed-block|{ totalCount }| alias=alias count-only=true>
+      <@query-params exclude-content-types=["Video"] />
       <theme-pagination-controls
         per-page=perPage
         total-count=totalCount

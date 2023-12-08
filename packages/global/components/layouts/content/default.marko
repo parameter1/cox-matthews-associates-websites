@@ -5,7 +5,7 @@ import getContentPreview from "@parameter1/base-cms-marko-web-theme-monorail/uti
 import { cmShowOverlay, cmRestrictContentByReg, cmTruncateBody } from "../../../utils/content-meter-helpers";
 import shuffle from "../../../utils/shuffle-array";
 
-$ const { site, contentMeterState } = out.global;
+$ const { req, site, contentMeterState } = out.global;
 $ const idxConfig = site.getAsObject('identityX');
 $ const recommendedQuestionId = get(idxConfig, 'options.recommendedQuestionId');
 
@@ -32,12 +32,17 @@ $ const isOnTheMoveSection = new Set([83113]).has(primarySection.id);
 >
   <@section|{ aliases }| modifiers=["first-sm"]>
     <if(!showOverlay)>
-      <theme-gam-define-display-ad
-        name="leaderboard"
-        position="content_page"
-        aliases=aliases
-        modifiers=["inter-block"]
-      />
+      <if(site.get('holidayGreetingID'))>
+        <global-greeting-video-block />
+      </if>
+      <else>
+        <theme-gam-define-display-ad
+          name="leaderboard"
+          position="home_page"
+          aliases=aliases
+          modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
+        />
+      </else>
     </if>
   </@section>
 
@@ -272,19 +277,28 @@ $ const isOnTheMoveSection = new Set([83113]).has(primarySection.id);
         $ const userAnswer = user.customSelectFieldAnswers.find(({id, answers}) => answers.length && id === recommendedQuestionId);
         $ const answers = getAsArray(userAnswer, "answers");
         $ const answer = shuffle(answers)[0];
-        $ const queryParams = {
-          limit: 4,
-          ...get(idxConfig, `options.answerToQueryParamsMap.${recommendedQuestionId}.${answer.id}.queryParams`),
-          excludeContentIds: [content.id],
-        };
-        $ const title = user.givenName ? `Suggested for ${user.givenName}` : 'Suggested for You';
-        <theme-content-card-deck-block
-          title=title
-          query-params=queryParams
-          cols=4
-          view-more=false
-          with-native-x=false
-        />
+        <if(answer && answer.id)>
+          $ const queryParams = {
+            limit: 4,
+            ...get(idxConfig, `options.answerToQueryParamsMap.${recommendedQuestionId}.${answer.id}.queryParams`),
+            excludeContentIds: [content.id],
+          };
+          $ const title = user.givenName ? `Suggested for ${user.givenName}` : 'Suggested for You';
+          <theme-content-card-deck-block
+            title=title
+            query-params=queryParams
+            cols=4
+            view-more=false
+            with-native-x=false
+          />
+        </if>
+        <else>
+          <theme-related-stories-block
+            content-id=content.id
+            section-id=content.primarySection.id
+            with-native-x=true
+          />
+        </else>
       </if>
       <else>
         <theme-related-stories-block
