@@ -3,7 +3,7 @@ import queryFragment from "@parameter1/base-cms-marko-web-theme-monorail/graphql
 
 $ const { id, type, pageNode } = data;
 
-$ const { pagination: p, req } = out.global;
+$ const { pagination: p, req, site } = out.global;
 $ const perPage = 10;
 
 <global-content-wrapper-layout
@@ -12,12 +12,17 @@ $ const perPage = 10;
   page-node=pageNode
 >
   <@section|{ aliases }| modifiers=["first-sm"]>
-    <theme-gam-define-display-ad
-      name="leaderboard"
-      position="content_page"
-      aliases=aliases
-      modifiers=["inter-block"]
-    />
+    <if(site.get('holidayGreetingID'))>
+      <global-greeting-video-block />
+    </if>
+    <else>
+      <theme-gam-define-display-ad
+        name="leaderboard"
+        position="home_page"
+        aliases=aliases
+        modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
+      />
+    </else>
   </@section>
 
   <@section|{ content }|>

@@ -4,6 +4,7 @@ import imageHeight from "@parameter1/base-cms-marko-web/components/node/utils/im
 
 $ const { id, type, pageNode, ...rest } = input;
 $ const sections = getAsArray(input, "sections");
+$ const { req, site } = out.global;
 
 <global-content-wrapper-layout
   id=id
@@ -12,12 +13,17 @@ $ const sections = getAsArray(input, "sections");
   ...rest
 >
   <@section|{ aliases }| modifiers=["first-sm"]>
-    <theme-gam-define-display-ad
-      name="leaderboard"
-      position="content_page"
-      aliases=aliases
-      modifiers=["inter-block"]
-    />
+    <if(site.get('holidayGreetingID'))>
+      <global-greeting-video-block />
+    </if>
+    <else>
+      <theme-gam-define-display-ad
+        name="leaderboard"
+        position="home_page"
+        aliases=aliases
+        modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
+      />
+    </else>
   </@section>
 
   <@section|{ aliases, blockName, content }| modifiers=["content-header"]>
