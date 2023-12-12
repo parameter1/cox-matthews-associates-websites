@@ -21,6 +21,9 @@
     "@title": "string",
     "@alias": "string"
   },
+  "<global-recommended-content-block>": {
+    "template": "./recommended-content.marko"
+  },
   "<global-section-cards-block>": {
     "template": "./section-cards.marko",
     "<query-params>": {},
