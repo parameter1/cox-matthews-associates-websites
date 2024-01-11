@@ -9,7 +9,6 @@ const product = require('@cox-matthews-associates/package-global/templates/conte
 const whitepaper = require('@cox-matthews-associates/package-global/templates/content/whitepaper');
 const content = require('../templates/content');
 
-
 module.exports = (app) => {
   const { site } = app.locals;
   const cmConfig = site.getAsObject('contentMeter');
