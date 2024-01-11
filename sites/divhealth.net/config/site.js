@@ -11,6 +11,7 @@ const search = require('./search');
 
 module.exports = {
   holidayGreetingID: process.env.HOLIDAY_GREETING_ID,
+  useLinkInjectedBody: process.env.USE_LINK_INJECTED_BODY === 'true',
   navigation,
   contentMeter,
   nativeX,
