@@ -14,7 +14,7 @@ $ const { req, site } = out.global;
   head=input.head
 >
   <@section|{ aliases }| modifiers=["first"]>
-    <if(site.get('holidayGreetingID'))>
+    <if(site.get('videoGreetingID'))>
       <global-greeting-video-block />
     </if>
     <else>

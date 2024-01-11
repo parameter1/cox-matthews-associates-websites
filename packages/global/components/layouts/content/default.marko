@@ -33,7 +33,7 @@ $ const withRecommended = defaultValue(input.withRecommended, true);
 >
   <@section|{ aliases }| modifiers=["first-sm"]>
     <if(!showOverlay)>
-      <if(site.get('holidayGreetingID'))>
+      <if(site.get('videoGreetingID'))>
         <global-greeting-video-block />
       </if>
       <else>
