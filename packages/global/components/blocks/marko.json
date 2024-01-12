@@ -2,8 +2,8 @@
   "<global-esurveypro-block>": {
     "template": "./esurveypro.marko"
   },
-  "<global-greeting-video-block>": {
-    "template": "./greeting-video.marko"
+  "<global-suggested-video-block>": {
+    "template": "./suggested-video.marko"
   },
   "<global-featured-jobs-block>": {
     "template": "./featured-jobs.marko"
