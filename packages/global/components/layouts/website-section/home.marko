@@ -14,17 +14,12 @@ $ const { req, site } = out.global;
   head=input.head
 >
   <@section|{ aliases }| modifiers=["first"]>
-    <if(site.get('holidayGreetingID'))>
-      <global-greeting-video-block />
-    </if>
-    <else>
-      <theme-gam-define-display-ad
-        name="leaderboard"
-        position="home_page"
-        aliases=aliases
-        modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
-      />
-    </else>
+    <theme-gam-define-display-ad
+      name="leaderboard"
+      position="home_page"
+      aliases=aliases
+      modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
+    />
   </@section>
 
   <@section|{ aliases }|>
