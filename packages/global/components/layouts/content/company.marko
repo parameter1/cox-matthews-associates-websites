@@ -13,17 +13,12 @@ $ const { req, site } = out.global;
   ...rest
 >
   <@section|{ aliases }| modifiers=["first-sm"]>
-    <if(site.get('holidayGreetingID'))>
-      <global-greeting-video-block />
-    </if>
-    <else>
-      <theme-gam-define-display-ad
-        name="leaderboard"
-        position="home_page"
-        aliases=aliases
-        modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
-      />
-    </else>
+    <theme-gam-define-display-ad
+      name="leaderboard"
+      position="home_page"
+      aliases=aliases
+      modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
+    />
   </@section>
 
   <@section|{ aliases, blockName, content }| modifiers=["content-header"]>
@@ -71,6 +66,9 @@ $ const { req, site } = out.global;
       </div>
 
       <div class="col-lg-4 pt-block">
+        <if(site.get('suggestedVideoID'))>
+          <global-suggested-video-block />
+        </if>
         <if(input.rightRail)>
           <${input.rightRail}
             aliases=aliases

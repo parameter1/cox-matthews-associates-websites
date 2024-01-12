@@ -33,17 +33,12 @@ $ const withRecommended = defaultValue(input.withRecommended, true);
 >
   <@section|{ aliases }| modifiers=["first-sm"]>
     <if(!showOverlay)>
-      <if(site.get('holidayGreetingID'))>
-        <global-greeting-video-block />
-      </if>
-      <else>
-        <theme-gam-define-display-ad
-          name="leaderboard"
-          position="home_page"
-          aliases=aliases
-          modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
-        />
-      </else>
+      <theme-gam-define-display-ad
+        name="leaderboard"
+        position="home_page"
+        aliases=aliases
+        modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
+      />
     </if>
   </@section>
 
@@ -261,6 +256,9 @@ $ const withRecommended = defaultValue(input.withRecommended, true);
         </div>
       </div>
       <div class="col-lg-4 page-rail">
+        <if(site.get('suggestedVideoID'))>
+          <global-suggested-video-block />
+        </if>
         <if(withRecommended)>
           <div class="sticky-top">
             <global-recommended-content-block query-params={ excludeContentIds: [content.id], sectionId: primarySection.id } aliases=aliases />

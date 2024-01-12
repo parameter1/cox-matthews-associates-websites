@@ -13,7 +13,8 @@ const contactUs = require('./contact-us');
 const contentMeter = require('./content-meter');
 
 module.exports = {
-  holidayGreetingID: process.env.HOLIDAY_GREETING_ID,
+  suggestedVideoID: process.env.SUGGESTED_VIDEO_ID,
+  suggestedVideoPlaylist: process.env.SUGGESTED_VIDEO_PLAYLIST,
   leaders,
   contentMeter,
   navigation,
