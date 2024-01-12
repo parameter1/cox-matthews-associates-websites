@@ -14,6 +14,8 @@
   }
 }
 .ad-container {
+  $self: &;
+
   &--inline-content,
   &--inline-section-feed  {
     background-color: #fff;
@@ -21,6 +23,19 @@
       border-bottom: 3px solid #f0f1f2;
       border-top: 3px solid #f0f1f2;
       padding-bottom: 30px;
+    }
+  }
+
+  &--template-suggested-video {
+    > *:first-child {
+      &::before {
+        content: "Sponsored";
+      }
+    }
+    iframe {
+      aspect-ratio: 16 / 9;
+      max-width: 100%;
+      height: auto;
     }
   }
 }
