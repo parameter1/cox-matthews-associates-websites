@@ -328,6 +328,10 @@ a {
 /*! critical:start|end */
 
 /*! critical:start */
+@import "./components/ads";
+/*! critical:end */
+
+/*! critical:start */
 body {
   -webkit-font-smoothing: antialiased;
   // set a default letter spacing of .25px, since most fonts have some form of spacing
@@ -412,8 +416,30 @@ label {
 }
 
 .node-list {
+  $self: &;
   &__header {
     padding-bottom: 0;
+  }
+  &--latest-content-list {
+    #{ $self } {
+      &__header {
+        padding-bottom: 10px;
+        margin-bottom: 24px;
+
+        border-bottom: 1px solid $gray-700;
+        @include media-breakpoint-up(md) {
+          margin-bottom: 0;
+        }
+        @include skin-typography($style: "section-header-small", $link-style: "primary");
+      }
+    }
+  }
+}
+.page-rail {
+  .node-list {
+    .node-list__header {
+      @include skin-typography($style: "section-header-small", $link-style: "primary");
+    }
   }
 }
 
@@ -497,16 +523,11 @@ label {
     margin-top: map-get($spacers, block);
     margin-bottom: map-get($spacers, block);
   }
-
-}
-.ad-container {
-  $self: &;
-  &--video {
-    > *:first-child {
-      &::before {
-        content: "Holiday Greetings!";
-      }
-    }
+  .content-page-header,
+  .section-feed-content-node__body {
+    max-width: none;
+    margin-right: 0;
+    margin-left: 0;
   }
 }
 

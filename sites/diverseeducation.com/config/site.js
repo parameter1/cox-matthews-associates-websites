@@ -13,7 +13,8 @@ const contactUs = require('./contact-us');
 const contentMeter = require('./content-meter');
 
 module.exports = {
-  holidayGreetingID: process.env.HOLIDAY_GREETING_ID,
+  suggestedVideoID: process.env.SUGGESTED_VIDEO_ID,
+  suggestedVideoPlaylist: process.env.SUGGESTED_VIDEO_PLAYLIST,
   leaders,
   contentMeter,
   navigation,
@@ -38,15 +39,15 @@ module.exports = {
   },
   logos: {
     navbar: {
-      src: 'https://img.diverseeducation.com/files/base/diverse/all/image/static/Diverse-Logo-2023-BlueWithTag.png?h=60&auto=format,compress&q=70',
+      src: 'https://img.diverseeducation.com/files/base/diverse/all/image/static/DIV-40th-Anniversary.png?h=60&auto=format,compress&q=70',
       srcset: [
-        'https://img.diverseeducation.com/files/base/diverse/all/image/static/Diverse-Logo-2023-BlueWithTag.png?h=60&auto=format,compress&q=70&dpr=2 2x',
+        'https://img.diverseeducation.com/files/base/diverse/all/image/static/DIV-40th-Anniversary.png?h=60&auto=format,compress&q=70&dpr=2 2x',
       ],
     },
     footer: {
-      src: 'https://img.diverseeducation.com/files/base/diverse/all/image/static/Diverse-Logo-2023-WhiteWithTag-01.png?h=45&auto=format,compress&q=70',
+      src: 'https://img.diverseeducation.com/files/base/diverse/all/image/static/DIV-40th-Anniversary.png?h=45&auto=format,compress&q=70',
       srcset: [
-        'https://img.diverseeducation.com/files/base/diverse/all/image/static/Diverse-Logo-2023-WhiteWithTag-01.png?h=45&auto=format,compress&q=70&dpr=2 2x',
+        'https://img.diverseeducation.com/files/base/diverse/all/image/static/DIV-40th-Anniversary.png?h=45&auto=format,compress&q=70&dpr=2 2x',
       ],
     },
   },

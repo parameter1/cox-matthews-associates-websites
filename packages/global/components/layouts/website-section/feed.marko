@@ -1,10 +1,13 @@
+import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
 import { getAsArray } from "@parameter1/base-cms-object-path";
 
 $ const { id, alias, name, pageNode } = input;
+$ const withNativeX = defaultValue(input.withNativeX, true);
 $ const sections = getAsArray(input, "sections");
 
-$ const { pagination: p, req, site } = out.global;
-$ const perPage = 18;
+$ const { pagination: p, site } = out.global;
+$ const newsletterConfig = site.getAsObject('newsletter.signupBannerLarge');
+$ const perPage = 12;
 
 <global-website-section-default-layout
   id=id
@@ -24,17 +27,12 @@ $ const perPage = 18;
   </@head>
 
   <@section|{ aliases }| modifiers=["first"]>
-    <if(site.get('holidayGreetingID'))>
-      <global-greeting-video-block />
-    </if>
-    <else>
-      <theme-gam-define-display-ad
-        name="leaderboard"
-        position="home_page"
-        aliases=aliases
-        modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
-      />
-    </else>
+    <theme-gam-define-display-ad
+      name="leaderboard"
+      position="home_page"
+      aliases=aliases
+      modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
+    />
   </@section>
 
   <@section|{ blockName, section, aliases }|>
@@ -59,71 +57,44 @@ $ const perPage = 18;
       />
     </if>
 
-    <theme-section-feed-block alias=alias display-image=input.displayImage>
-      <@query-params limit=3 skip=p.skip({ perPage }) />
-    </theme-section-feed-block>
-  </@section>
-
-  <@section|{ aliases }|>
-    <theme-gam-define-display-ad
-      name="rotation"
-      position="section_page"
-      aliases=aliases
-      modifiers=["inter-block"]
-    />
-  </@section>
-
-  <@section>
-    <theme-section-feed-block alias=alias display-image=input.displayImage>
-      <@query-params limit=2 skip=p.skip({ perPage, skip: 3 }) />
-    </theme-section-feed-block>
-  </@section>
-
-  <@section>
-    <theme-newsletter-signup-banner-large-block />
-  </@section>
-
-  <@section>
-    <theme-section-feed-block alias=alias display-image=input.displayImage>
-      <@query-params limit=3 skip=p.skip({ perPage, skip: 5 }) />
-    </theme-section-feed-block>
-  </@section>
-
-  <@section|{ aliases }|>
-    <theme-gam-define-display-ad
-      name="rotation"
-      position="section_page"
-      aliases=aliases
-      modifiers=["inter-block"]
-    />
-  </@section>
-
-  <@section>
-    <theme-section-feed-block alias=alias display-image=input.displayImage>
-      <@query-params limit=5 skip=p.skip({ perPage, skip: 8 }) />
-    </theme-section-feed-block>
-  </@section>
-
-  <@section|{ aliases }|>
-    <theme-gam-define-display-ad
-      name="rotation"
-      position="section_page"
-      aliases=aliases
-      modifiers=["inter-block"]
-    />
-  </@section>
-
-  <@section>
-    <theme-section-feed-block alias=alias display-image=input.displayImage>
-      <@query-params limit=5 skip=p.skip({ perPage, skip: 13 }) />
-    </theme-section-feed-block>
-    <theme-section-feed-block|{ totalCount }| alias=alias count-only=true>
-      <theme-pagination-controls
-        per-page=perPage
-        total-count=totalCount
-        path=alias
-      />
-    </theme-section-feed-block>
+    <global-section-feed-wrapper
+        aliases=aliases
+        alias=alias
+        flow=input.feedFlow
+        with-ads=input.withAds
+        query-params=input.queryParams
+        above-the-fold=true
+        ad-name=input.adName
+      >
+        <@node ...input.node />
+        <if(withNativeX)>
+          <@native-x index=[1] name="default" aliases=aliases sectionName="Sponsored" />
+        </if>
+        <@rail>
+          <if(site.get('suggestedVideoID'))>
+            <global-suggested-video-block />
+          </if>
+          <!-- Remobe sticky top if you add user stuff back. -->
+          <div class="mb-block sticky-top">
+            <theme-gam-define-display-ad
+              name="rail"
+              position="section_page"
+              aliases=input.aliases
+              modifiers=["rotation", "section_page"]
+            />
+          </div>
+          <!-- <marko-web-identity-x-context|{ hasUser }|>
+            <if(!hasUser)>
+              <div class="sticky-top mt-2">
+                <global-identity-x-newsletter-form-inline with-image=false type="inlineContent" />
+              </div>
+            </if>
+          </marko-web-identity-x-context> -->
+        </@rail>
+        <@rail>
+          <theme-client-side-most-popular-list-block class="sticky-top" />
+        </@rail>
+      </global-section-feed-wrapper>
   </@section>
 
   <for|s| of=sections>
@@ -140,8 +111,8 @@ $ const perPage = 18;
     <theme-gam-define-display-ad
       name="rotation"
       position="section_page"
-      aliases=aliases
-      modifiers=["inter-block"]
+      aliases=input.aliases
+      modifiers=["rotation", "inter-block", "section_page"]
     />
   </@section>
 </global-website-section-default-layout>
