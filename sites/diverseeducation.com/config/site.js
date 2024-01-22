@@ -15,6 +15,7 @@ const contentMeter = require('./content-meter');
 module.exports = {
   suggestedVideoID: process.env.SUGGESTED_VIDEO_ID,
   suggestedVideoPlaylist: process.env.SUGGESTED_VIDEO_PLAYLIST,
+  useLinkInjectedBody: process.env.USE_LINK_INJECTED_BODY === 'true',
   leaders,
   contentMeter,
   navigation,
