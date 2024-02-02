@@ -40,7 +40,9 @@ $ const nationalPerspective = currentYearData ? currentYearData.nationalPerspect
       <@section>
         <div class="row">
           <div class="col">
-            <h1 class="page-wrapper__website-section-name">$!{title}</h1>
+            <h1 class="page-wrapper__website-section-name page-wrapper__website-section-name-mppw">
+              $!{title}
+            </h1>
             <if(currentYearData && get(currentYearData, "mpplogoSrc"))>
               <div class="row">
                 <div class="col" align="center">
