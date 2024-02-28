@@ -37,7 +37,7 @@ const awards = [
   { href: '/awards-honors/mppwcc', label: 'Most Promising Places to Work: Community Colleges' },
   { href: '/awards-honors/mppwsa', label: 'Most Promising Places to Work: Student Affairs' },
   { href: 'https://top100.diverseeducation.com', label: 'Top 100', target: '_blank' },
-  { href: '/awards-honors/top-women', label: 'Top Women' },
+  { href: '/awards-honors/top-women/2024', label: 'Top Women' },
 ];
 
 const utilities = [

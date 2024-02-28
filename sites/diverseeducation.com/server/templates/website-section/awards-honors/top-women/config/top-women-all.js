@@ -1,3 +1,4 @@
+const info2024 = require('./top-women-yearly/2024');
 const info2023 = require('./top-women-yearly/2023');
 const info2022 = require('./top-women-yearly/2022');
 const info2021 = require('./top-women-yearly/2021');
@@ -12,6 +13,7 @@ const info2013 = require('./top-women-yearly/2013');
 const info2012 = require('./top-women-yearly/2012');
 
 module.exports = {
+  2024: info2024,
   2023: info2023,
   2022: info2022,
   2021: info2021,
