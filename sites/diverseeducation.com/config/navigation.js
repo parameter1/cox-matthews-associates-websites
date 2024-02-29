@@ -58,6 +58,7 @@ const mobileMenu = {
     ...resources,
     subscribe,
     { href: 'https://mediakit.diverseeducation.com/', label: 'Advertise', target: '_blank' },
+    { href: '/press-releases', label: 'Press Releases'},
     { href: 'https://editorial-calendar.diverseeducation.com', label: 'Editorial Calendar', target: '_blank' },
     { href: '/page/about-us', label: 'About Us', target: '_blank' },
     { href: '/page/contact-us', label: 'Contact Us', target: '_blank' },
