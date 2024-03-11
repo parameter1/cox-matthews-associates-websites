@@ -16,117 +16,117 @@ module.exports = {
 
   profiles: [
     {
-      thumbnail: 'Jamie_Zamjahn.jpg',
+      thumbnail: '24-Jamie_Zamjahn.jpg',
       name: 'Baker College',
       body: 'Baker College serves thousands of students across the state of Michigan, as well as across the U.S., through its global campus. The institution offers diverse academic depth and breadth in undergraduate and graduate programs across eight academic colleges, ranging from health sciences and engineering to business and technology. Baker College strives to cultivate and encourage positive action, critical thought, and the knowledge students need to improve their lives, careers, and the world around them. Under the leadership of Dr. Jamie Zamjahn, vice president of student success & engagement, the college launched #StudentFirst philosophy, a holistic and proactive support Baker College students receive when they enroll. “#StudentFirst extends through your entire Baker College journey,” says Zamjahn. “Whether this is your first or last term, we are here to cheer you on. Our career services team is here to provide you guidance during your time as a student, as well as after graduation.”',
     },
     {
-      thumbnail: 'Dr_Joe_Oravecz.jpg',
+      thumbnail: '24-Dr_Joe_Oravecz.jpg',
       name: 'Bridgewater State University',
       body: 'Bridgewater State University is a public university in Bridgewater, Massachusetts, with campuses in Attleboro, Cape Cod, and New Bedford. The university’s six academic colleges offer 36 undergraduate majors and over 60 graduate-degree and certificate programs. The Honors Program at Bridgewater State University is a welcoming community of nearly 500 students focused on academic success, personal goals, social justice, service, and leadership. The program associates students to a diverse community of engaged citizen-scholars on campus and to a network of Honors students across Massachusetts and the country. Honors can assist students to develop essential skills. These skills include teamwork, oral and written communication skills, critical thinking, and problem-solving, as well as self-motivation and time-management. Dr. Joseph Oravecz recently retired from his position as vice president of the division for student life. During his tenure at the university, he oversaw several initiatives, including the Center for Student Engagement and the Wellness Center.',
     },
     {
-      thumbnail: 'Dr_Kent_L_Willis.jpg',
+      thumbnail: '24-Dr_Kent_L_Willis.jpg',
       name: 'California State University, Fresno',
       body: '<p>California State University, Fresno, serves a 24,000-student body that is nearly 60% Hispanic in the Central Valley region of California. Fresno State’s campus facilitates more than 100 academic majors and over 300 student organizations, but its division of student affairs and enrollment management has been an invaluable resource to inspire student success.</p><p>Fresno State offers dozens of services and programs including its Academic Success Coaching Program for students needing academic or personal assistance and its College Assistance Migrant Program for incoming freshmen of migrant or seasonal farm worker families. Other examples include the university’s Central Valley California Student Opportunity and Access Program that provides tutoring and advising to help increase higher education access to low-income, first-generation, or underserved high schoolers; its Cross Cultural and Gender Center fosters meaningful dialogue and activism that works to eliminate racism, sexism, heterosexism, and other forms of oppression; and its Office of Student Rights and Responsibilities exists to develop, disseminate, interpret, and enforce campus regulations and protect student rights. <p/><p>Dr. Kent L. Willis, Fresno State’s vice president for student affairs and enrollment management since 2023, oversees employees in the division. Willis then described the division as “exhibiting a commitment to student success in an institution that has over time demonstrated the ability to raise the social mobility of its students.” He said “the most attractive thing has been the institution, as well as the vision of the leaders on campus that really compelled us [his family] to Fresno.”</p>',
     },
     {
-      thumbnail: 'Dr_Beth_Lesen.jpg',
+      thumbnail: '24-Dr_Beth_Lesen.jpg',
       name: 'California State University, Long Beach',
       body: 'The mission of the Office of Student Affairs at California State University is to “shape an inclusive and affirming experience for students to grow, thrive, and succeed.” Led by Dr. Beth Lesen, who appointed the inaugural Student Affairs Equity & Diversity Task Force in response to the continued acts of hate, violence, racism, and systemic oppression across the nation toward the Black community. The Office of Student Affairs has actively engaged in dismantling structures that have historically marginalized and targeted many groups including, but not limited to, those identifying as Black/Pan-African, Asian, Pacific Islander, LatinX, Native American/American Indian, Jewish, Muslim, LGBTQIA+, individuals with disabilities, undocumented, and intersecting identities.',
     },
     {
-      thumbnail: 'Dr_Jon_Dooley.jpg',
+      thumbnail: '24-Dr_Jon_Dooley.jpg',
       name: 'Elon University',
       body: '<p>A private university in North Carolina founded in 1889, Elon University has about 7,100 students and offers both undergraduate and graduate degrees. For the fourth year in a row, Elon has been named one of the most promising places to work in student affairs. “To be lifted up among the 22 institutions named as Most Promising Places to Work in Student Affairs is certainly an honor,” says Jon Dooley, vice president for student life and associate professor of education. “The fact that Elon is one of only two institutions that have been named to this list every year for the past four years speaks to the consistency of the efforts of student life colleagues to embrace inclusive excellence in our workplace culture and in our work with students.”</p><p>The recognition is the result of strategies focused on two of the seven themes of the current Student Life Five Year Plan, “Inclusive Excellence,” and “Divisional Excellence,” as well as efforts named in the “Thrive” theme of the university’s Boldly Elon 10-Year Strategic Plan. Through the intentional enhancement of policies, practices, and professional development, the Division of Student Life and the university have strengthened and advanced workplace culture and commitment to diversity, equity, and inclusion. Consistently evaluating campus climate outcomes and tailoring strategic endeavors accordingly have been pivotal in cultivating a healthier, more inclusive environment where all students and employees can thrive. “I am incredibly proud of the work that each of our student life staff has been doing to fulfill our vision and goals, and I know this recognition will only fuel our future efforts as we continue to improve and implement the plans laid out in Boldly Elon and our Student Life Five Year Plan,” Dooley said.</p>',
     },
     {
-      thumbnail: 'Dr_Kent_Porterfield.jpg',
+      thumbnail: '24-Dr_Kent_Porterfield.jpg',
       name: 'Gonzaga University',
       body: '<p>“We are very excited and proud to be named on this list,” says Dr. Kent Porterfield, Gonzaga’s vice provost for student affairs, noting that the recognition comes after the trying times of the COVID-19 pandemic and ongoing efforts to develop and implement strategies for recruiting and sustaining a diverse student affairs staff.</p><p>“Nearly four years ago, we established a professional development committee in student affairs charged with developing an education and training series emphasizing knowledge and skills building through the lens of diversity, equity, and inclusion,” Porterfield said.</p><p>That committee has offered monthly professional development programs and a full-day colloquium annually for all student affairs staff. Student affairs staff also complete the Intercultural Development Inventory and Intercultural Conflict Style Inventory training, as well as DiversityEdu.</p><p>Porterfield said that newer initiatives such as flexible work guidelines for staff, supervisor training, and DEI-focused caucuses also contribute to improving the student affairs work culture. Student affairs also coordinates social gatherings, awards and recognitions, and “Ask Me Anything” sessions led by Porterfield twice each month to keep the communication flowing. Many of these initiatives evolved post-pandemic when higher education, and student affairs in particular, was impacted by higher-than-normal numbers of resignations and retirements. Among the reasons cited were increased responsibilities, stagnant pay, stress, and a lack of recognition for the important work student affairs staff provide.</p><p>Gonzaga was not immune to these challenges, says Porterfield. So, in spring 2022, the students affairs department conducted its own workplace climate survey. The department learned its staff desired greater collaboration, DEI-focused hiring practices, increased professional development, and more social interactions with coworkers. Porterfield and other leaders in student affairs took the feedback to heart. “We hope the changes we have made, and continue to make, will continue to improve the work experience for student affairs staff at Gonzaga. We recognize there is more work to do, but we are truly honored to be considered one of the most promising places to work in student affairs in the country.”</p>',
     },
     {
-      thumbnail: 'Dr_Jenny_Hall-Jones.jpg',
+      thumbnail: '24-Dr_Jenny_Hall-Jones.jpg',
       name: 'Grand Valley State University',
       body: 'The mission of the Office of Student Affairs at Grand Valley State University (GVSU) is “to elevate, challenge, and empower all learners to develop their passions and purpose in a healthy, inclusive, and equitable environment.” The Division of Student Affairs positively impacts the university through engaging experiential learning and exceptional student support. Dr. Jenny Hall-Jones currently serves as the vice president for student affairs. Hall-Jones joined GVSU in February 2022, as the inaugural vice president of student affairs. “My visit to campus showed me that Grand Valley has an incredible dedication to students and to colleagues,” says Hall-Jones. “I was impressed by the questions asked of me at the community interview. They were around strategy and student well-being. Everyone asked about how we are going to support students. That told me a great deal about what motivates the people at GVSU. I saw great camaraderie with the team here. I see tremendous opportunity to both be mentored and to use my skill set to help students and the Division of Student Affairs to thrive.”',
     },
     {
-      thumbnail: 'Dr_Eboni_Pringle.jpg',
+      thumbnail: '24-Dr_Eboni_Pringle.jpg',
       name: 'Kent State University',
       body: 'The Division of Student Affairs at Kent State University offers a variety of student organizations and leadership opportunities. It creates an inclusive, co-curricular environment that engages students in an optimal learning experience. Students are the priority. Kent State’s Division of Student Affairs works hard to provide students with the skills necessary to make a positive impact on the world. This would be impossible without their constant drive to instill the fundamental workplace principles that they are being recognized for.',
     },
     {
-      thumbnail: 'Dr_MarQuita_Barker.jpg',
+      thumbnail: '24-Dr_MarQuita_Barker.jpg',
       name: 'Knox College',
       body: 'With students at the heart of all that is done at Knox College, the Division of Student Development was created to support student success both inside and outside of the classroom. Informed by decades of theory, best practices, and educational models that affirm and support its commitment to the holistic development of all students, student affairs personnel work to help students develop an honest appreciation of themselves, make choices aligned with their values, sustain meaningful interpersonal connections, and engage deeply with those different from themselves — all in support of becoming engaged members of an equitable and inclusive society. Dr. MarQuita Barker has served as the vice president for student development at Knox College since January 2022.',
     },
     {
-      thumbnail: 'Dr_Ricardo_Hall.jpg',
+      thumbnail: '24-Dr_Ricardo_Hall.jpg',
       name: 'Lehigh University',
       body: '<p>The Division of Student Affairs at Lehigh University, led by Dr. Ricardo D. Hall, is guided by the following foundational principles:</p><p>Commitment to student learning and development. We engage students in the discovery of knowledge, exploration of skills, connection with others, and application of behaviors that cultivate self-efficacy and lifelong learning. Commitment to community. We embrace a prominent role in the shared responsibility to promote an inclusive community characterized by a genuine sense of belonging and demonstrated respect for self and others.</p><p>Commitment to purposeful action. We empower students to integrate learning and development by leading with integrity and contributing to the community as active, engaged citizens. Commitment to staff professional growth and development. We foster a professional culture that values and promotes staff member learning and engagement, as well as the sharing of knowledge and expertise, both on and off campus.</p>',
     },
     {
-      thumbnail: 'Dr_Brandon_Common.jpg',
+      thumbnail: '24-Dr_Brandon_Common.jpg',
       name: 'Louisiana State University',
       body: 'Dr. Brandon Common leads the Division of Student Affairs at Louisiana State University. Common oversees more than a dozen departments, helping to curate the student experience for LSU students. “There are so many things to love about higher education. Events like orientation and welcome week introduce new students to our culture while teaching them our unique customs, language, and values,” he says. “Campus programs, academic and non-academic, help to build community and foster a sense of belonging for students. The exchange of ideas and perspectives, both inside and outside of the classroom, allows students to grow intellectually. Higher education positively transforms the lives of students and positively impacts our society.”',
     },
     {
-      thumbnail: 'Dr_David_L_Greene.jpg',
+      thumbnail: '24-Dr_David_L_Greene.jpg',
       name: 'New Mexico Institute of Mining and Technology',
       body: 'Founded in 1889 as New Mexico School of Mines, the institution located in the historic Rio Grande Valley, changed its name in 1951 to New Mexico Institute of Mining and Technology. The institution serves the state and beyond through education, research, and service focused on science, technology, engineering, and mathematics. Involved faculty educate a diverse student body in rigorous and collaborative programs, preparing scientists and engineers for the future. Its innovative and interdisciplinary research expands the reach of humanity’s knowledge and capabilities. Researchers, faculty, and students work together to solve real world problems.',
     },
     {
-      thumbnail: 'Dr_Andres_Oroz.jpg',
+      thumbnail: '24-Dr_Andres_Oroz.jpg',
       name: 'Oregon Coast Community College',
       body: 'Dr. Andres Oroz is vice president for academic and student affairs at Oregon Coast Community College, where students can complete the first two years of a bachelor’s degree, earn an associate degree, take courses to obtain employment, prepare to start a small business, earn a GED, learn English as a second language, or take courses for personal enrichment. Oregon Coast students may attend full- and part-time and explore career ideas, retrain or update job skills, pursue a personal interest, or broaden their horizons. The community college also offers credit and non-credit courses at its centers at various other locations throughout the county and online.',
     },
     {
-      thumbnail: 'Dr_Sara_Rothenberger.jpg',
+      thumbnail: '24-Dr_Sara_Rothenberger.jpg',
       name: 'Rhode Island School of Design',
       body: 'Rhode Island School of Design (RISD) is a college and museum founded in 1877 in Providence, Rhode Island. About 2,620 students engage in 44 full-time bachelor’s and master’s degree programs supported by a committed faculty and worldwide network of more than 31,000 alumni. Among the many initiatives at RISD, one that stands out is the Center for Social Equity and Inclusion. The center provides myriad resources for students, faculty, and staff in an effort to enhance the experiences of the RISD community and help ensure that all members of the community feel included and fully supported at RISD.',
     },
     {
-      thumbnail: 'Dr_Nicole_J_Johnson.jpg',
+      thumbnail: '24-Dr_Nicole_J_Johnson.jpg',
       name: 'Rhodes College',
       body: '<p>“We are proud to be acknowledged as one of the most promising places to work in student affairs,” says Nicole J. Johnson, vice president for student life at Rhodes College. “This recognition reflects our dedication to fostering an inclusive, supportive environment for our student life professionals, and they can make a meaningful impact on students’ educational journey.” </p><p>The Division of Student Life provides resources, skills, and experiences to foster the development of the student in preparation for a life of learning, effective leadership, and civic engagement. Rhodes provides endless opportunities for students to contribute, create, and lead. Whether serving on the Honor Council, organizing a community service initiative, participating in athletics or the fine arts, or bringing new ideas and energy to a student club or organization, Rhodes students define and enhance their experiences while enrolled at the institution.</p>',
     },
     {
-      thumbnail: 'Dr_Kevin_Koett.jpg',
+      thumbnail: '24-Dr_Kevin_Koett.jpg',
       name: 'Rowan University',
       body: 'At Rowan University in the southern part of New Jersey, student affairs encompasses the three divisions of student success, student life, and strategic enrollment management. The offices support students through vital services and initiatives to help them succeed. In addition, the divisions offer a variety of lifestyle activities, and a wellness community to help students thrive throughout their college experience. Small class sizes, experiential learning, leadership opportunities, and career placement network put the student at the center of Rowan’s world.',
     },
     {
-      thumbnail: 'Dr_Ricardo_Hall.jpg',
+      thumbnail: '24-Dr_Ricardo_Hall.jpg',
       name: 'Rutgers University-New Brunswick',
       body: 'The Division of Student Affairs at Rutgers University-New Brunswick is a diverse institutional powerhouse, with more than 20 departments and areas, over 1,000 staff members, and more than 2,300 student-staff members. The university is committed to enriching the quality of life and academic success of its students and the personal and professional development of its staff. The division is led by Dr. Salvador Mena, senior vice chancellor of student affairs at Rutgers University-New Brunswick. “What drives me to keep going every day is the fact that I really believe we are able to make a difference in the lives of students who will, in turn, make the world a better place for us all,” says Mena.',
     },
     {
-      thumbnail: 'Dr_John_R_Jones_III.jpg',
+      thumbnail: '24-Dr_John_R_Jones_III.jpg',
       name: 'The University of Alabama at Birmingham',
       body: '“In our division we always strive for excellence, whether that is removing a barrier to success for a student, increasing access to services, or to collaborate with partners across campus to be innovative and hold one another accountable, student affairs is a place where all Blazers can thrive,” comments Dr. John R. Jones, III, vice president of student affairs at University of Alabama at Birmingham (UAB), on being named to the Most Promising Places to Work in 2023. UAB returned to the list for a consecutive year. The division supports hundreds of student organizations and activities for every possible interest. Through their engagement with students, student affairs personnel can watch as students progress academically, discover their values, develop their identity, and realize their full potential. This is achieved through advising students and student organizations, creating innovative leadership opportunities, and promoting involvement in the campus community. Student involvement and leadership values and encourages all forms of leadership to cultivate an inclusive, socially responsible, and vibrant campus community.',
     },
     {
-      thumbnail: 'Dr_Stephen_Sutton.jpg',
+      thumbnail: '24-Dr_Stephen_Sutton.jpg',
       name: 'University of California-Berkeley',
       body: '<p>The Division of Student Affairs at Berkeley works to make a big public institution feel smaller. “We do this primarily by supporting your successful navigation of our culture and campus,” Dr. Stephen C. Sutton, vice chancellor of the division of student affairs tells his students. “We want you to experience ‘every door is the right door.’ We are translators of the student experience, collaborators, and problem solvers, and we hold the safety net for those students’ experiencing crisis.”</p><p>This work, he says, begins with the early outreach we do to help students learn about and apply to Berkeley. “We ensure that basic needs are met through housing and meals, are packaged for financial aid, and we provide transcripts and academic records. We support your transition, help you navigate campus, and find supportive and engaging communities, for example, in residence halls and campus clubs and organizations.”</p><p>The end goal is to ensure that graduates feel “a connection to the engagement opportunities” they have had during their time at the university.</p>',
     },
     {
-      thumbnail: 'Dr_Jeff_Howard.jpg',
+      thumbnail: '24-Dr_Jeff_Howard.jpg',
       name: 'University of North Carolina-Pembroke',
       body: 'Diversity at the University of North Carolina-Pembroke is rooted in the institution’s historical mission of service to the Lumbee and other American Indian nations, which dates to the institution’s establishment in 1887. Today, the UNC Pembroke community reflects diverse ethnicities, backgrounds, perspectives, and experiences. The Office of Student Inclusion and Diversity (OSID) at UNC Pembroke values the opportunity to celebrate and showcase the institution’s rich diversity as reflected in community members’ race, age, ethnicity, sex, gender identity and expression, sexual orientation, ability, faith, religion, national origin, citizenship, social and economic class, ideology, and other identities. OSID is committed to advancing equity and inclusion for all community members through intercultural engagement, social justice initiatives, education, and student-centered programming. OSID is building an inclusive culture, based in alliances across differences, that addresses and removes barriers to success, fosters freedom from prejudice and promotes a community of empathy and mutual respect for the identities of all members. OSID recognizes creating a culture of inclusivity is an ongoing collaborative process that requires a community member to be actively engaged, aware of oneself and other community members, address personal biases, and lean into the discomfort that often accompanies growth.',
     },
     {
-      thumbnail: 'Dr_J_Rex_Tolliver.jpg',
+      thumbnail: '24-Dr_J_Rex_Tolliver.jpg',
       name: 'University of South Carolina',
       body: '<p>“We are immensely proud of this recognition of our efforts to make USC’s Division of Student Affairs and Academic Support a place where people feel they’re valued and able to do meaningful work for students, have fun and make progress toward their career goals,” says J. Rex Tolliver, vice president for student affairs and academic support at University of South Carolina (USC), the only school in South Carolina to make the list.</p><p>Student affairs and academic support at the university, connects students with experiences and resources that will help them achieve a lifetime of meaningful leadership, service, employment, and continued learning.</p>',
     },
     {
-      thumbnail: 'Dr_Aaron_Hart.jpg',
+      thumbnail: '24-Dr_Aaron_Hart.jpg',
       name: 'Virginia Commonwealth University',
       body: 'Led by Dr. Aaron J. Hart, the Division of Student Affairs at Virginia Commonwealth University offers many support services for students, but its Office for Multicultural Student Affairs (OMSA) is worth noting. OMSA offers diversity, inclusion and social justice dialogues, presentations, and workshops, cultural heritage month events, mentorship and leadership engagement opportunities, identity-based discussion groups, and diversity and inclusion living-learning floors. In addition to being a resource for the entire Virginia Commonwealth University community, OMSA supports and celebrates specific constituency groups, including students who identify as African American/Black, Asian American and Pacific Islander, Indigenous/Native American, Hispanic/Latinx, and LGBTQIA+.',
     },
     {
-      thumbnail: 'Dr_Mel_Johnson-Norwood.jpg',
+      thumbnail: '24-Dr_Mel_Johnson-Norwood.jpg',
       name: 'Virginia Commonwealth University',
       body: 'A historically Black public university, Winston-Salem State University (WSSU) has over 40 academic majors and 10 graduate degrees. “As WSSU enters a bold new era, our commitment to student affairs is engrained in the work that we do on a daily basis and codified in our recent strategic plan, ‘Unleash the Genius,’” says Dr. Mel Johnson-Norwood, associate provost and vice chancellor for student affairs at WSSU. “As we reflect upon our experiences over the past three years, we are looking outside of tradition and audaciously moving into spaces that may be uncomfortable but necessary for our future growth and development.”',
     },
