@@ -126,36 +126,36 @@ $ const nationalPerspective = currentYearData ? currentYearData.nationalPerspect
         </if>
       </@section>
       <@section modifiers=["card-deck"]>
-      $ const tableHMLabels = Object.values(getAsObject(currentYearData, "tableHMLabels.tableHM"));
-      <if(currentYearData && tableHMLabels.length)>
-        <table class="table table-responsive table-hover">
-          <thead>
-            <tr>
-            <h3 style='color:#2A96B4;'> HONORABLE MENTION </h3>
-            <td width="400"><b>Institution</b></td> 
-            <for|label| of=tableHMLabels>
-                <td width="200">
-                  <b>${label}</b>
-                </td>
-              </for> 
-            </tr>
-          </thead>
-          <if(hminstitutions.length)>
-            <tbody>
-              <for|hminstitution| of=hminstitutions>
-                <tr>
-                  $ const tableHMData = getAsObject(hminstitutionData[hminstitution], "tableHM");
-                  <td class="institution">${hminstitution}</td>
-                  <for|field| of=Object.keys(tableHMData)>
-                    <td class=field>${tableHMData[field]}</td>
-                  </for>
-                </tr>
-              </for>
-            </tbody>
-          </if>
-        </table>
-      </if>
-    </@section>
+        $ const tableHMLabels = Object.values(getAsObject(currentYearData, "tableHMLabels.tableHM"));
+        <if(currentYearData && tableHMLabels.length)>
+          <table class="table table-responsive table-hover">
+            <thead>
+              <tr>
+                <h3 style='color:#2A96B4;'> HONORABLE MENTION </h3>
+                <td width="400"><b>Institution</b></td> 
+                <for|label| of=tableHMLabels>
+                  <td width="200">
+                    <b>${label}</b>
+                  </td>
+                </for> 
+              </tr>
+            </thead>
+            <if(hminstitutions.length)>
+              <tbody>
+                <for|hminstitution| of=hminstitutions>
+                  <tr>
+                    $ const tableHMData = getAsObject(hminstitutionData[hminstitution], "tableHM");
+                    <td class="institution">${hminstitution}</td>
+                    <for|field| of=Object.keys(tableHMData)>
+                      <td class=field>${tableHMData[field]}</td>
+                    </for>
+                  </tr>
+                </for>
+              </tbody>
+            </if>
+          </table>
+        </if>
+      </@section>
       <@section>
         <div class="row">
           <div class="col">
