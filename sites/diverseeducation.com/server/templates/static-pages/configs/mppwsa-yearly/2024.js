@@ -395,7 +395,7 @@ module.exports = {
         stress: 'NO',
       },
       salaryChart: {
-        senior: 102728.3,
+        senior: 102728.30,
         mid: 74382.08,
         entry: 46761.48,
       },
