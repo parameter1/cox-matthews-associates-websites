@@ -47,7 +47,7 @@ $ const rootAlias = 'awards-honors/arthur-ashe';
        <b> Extended Deadline: February 16 </b>
       </div>
       <br/>-->
-    </marko-web-block> 
+    </marko-web-block>
 
     <marko-web-block name="roster">
       <div align="center">
@@ -78,7 +78,7 @@ $ const rootAlias = 'awards-honors/arthur-ashe';
         name="website-section"
         params={ alias, queryFragment: sectionWithChilderenFragment }
       >
-        $ const year = 2023;
+        $ const year = 2024;
         $ const [yearSection] = getAsArray(node, "children.edges").map(({ node }) => node).filter(({ name })=> parseInt(name) === year);
         <if(yearSection)>
           <div class="row">
@@ -102,7 +102,7 @@ $ const rootAlias = 'awards-honors/arthur-ashe';
               name="website-section"
               params={ alias: 'awards-honors/arthur-ashe', queryFragment: sectionWithChilderenFragment }
             >
-            $ const year = 2022; //current/active year
+            $ const year = 2023; //current/active year
             $ const children = getAsArray(node, "children.edges").map(({ node }) => node).filter(({ name })=> parseInt(name) <= year);
               <marko-web-node-list>
                 <@nodes|{ nodes }| nodes=children modifiers=["flush-x"]>
