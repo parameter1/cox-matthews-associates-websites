@@ -1,3 +1,4 @@
+import { get } from "@parameter1/base-cms-object-path";
 import { defaultValue } from "@parameter1/base-cms-marko-web/utils";
 import convertAdToNode from "@parameter1/base-cms-marko-web-native-x/utils/convert-ad-to-node";
 import shuffle from "@cox-matthews-associates/package-global/utils/shuffle-array";
@@ -19,7 +20,41 @@ $ const placement = nxConfig.getPlacement({ name: placementName, aliases });
       <if(hasAd)>
         <marko-web-element block-name=blockName name="col" modifiers=["last"]>
           <if(ads[0] && ads[0].hasCampaign)>
-            <theme-standard-promo-node ...convertAdToNode(ads[0]) />
+            $ const { node } = convertAdToNode(ads[0]);
+            $ const linkText = get(node, "linkText") || "Read";
+            $ const blockName = defaultValue(input.blockName, "pib-page-card");
+            <marko-web-block name="white-papers" attrs=input.attrs>
+              <marko-web-element block-name="white-papers" name="header">
+                Sponsored
+              </marko-web-element>
+              <marko-web-element block-name=blockName name="inner-wrapper">
+                <div>
+                  <marko-web-element block-name=blockName name="title">
+                    ${node.shortName}
+                  </marko-web-element>
+                  <marko-web-element block-name=blockName name="description">
+                    ${node.teaser}
+                  </marko-web-element>
+
+                  <marko-web-link
+                    class=`btn btn-primary ${blockName}__download-btn`
+                    href=node.siteContext.path
+                    title=linkText
+                    attrs=input.linkAttrs
+                  >
+                    ${linkText}
+                  </marko-web-link>
+                </div>
+                <if(node.primaryImage)>
+                  <marko-web-img
+                    class=`${blockName}__issue-cover`
+                    src=node.primaryImage.src
+                    srcset=[`${node.primaryImage.src}&dpr=2 2x`]
+                    alt=node.primaryImage.alt
+                  />
+                </if>
+              </marko-web-element>
+            </marko-web-block>
           </if>
         </marko-web-element>
       </if>
