@@ -4,36 +4,102 @@ import sectionWithChilderenFragment from "../../graphql/fragments/section-with-c
 
 $ const { alias } = input;
 
+$ const males = [null];
+$ const females = [null];
+
 <marko-web-query|{ node }|
   name="website-section"
   params={ alias, queryFragment: sectionWithChilderenFragment }
 >
   $ const awards = getAsArray(node, "children.edges").map(({ node }) => node);
-  <div class="row">
-    <for|award| of=awards>
-      <marko-web-query|{ nodes }|
-        name="website-scheduled-content"
-        params={
-          limit: 25,
-          sectionAlias: award.alias,
-          sectionBubbling: false,
-          queryFragment: profilesFragment,
-        }
-      >
-        <div class="col-md-6">
-          <h2 title=award.name class="page-wrapper__website-section-name page-wrapper__website-section-name--secondary">
-            ${award.name}
-          </h2>
-          <theme-card-deck-flow
-            cols=1
-            nodes=nodes
-            modifiers=["awards-honors", "arthur-ashe"]>
-            <@slot|{ node }|>
-              <site-arthur-ashe-profiles-node node=node with-teaser=true />
-            </@slot>
-          </theme-card-deck-flow>
+  <for|award, index| of=awards>
+    <marko-web-query|{ nodes }|
+      name="website-scheduled-content"
+      params={
+        limit: 25,
+        sectionAlias: award.alias,
+        sectionBubbling: false,
+        queryFragment: profilesFragment,
+      }
+    >
+      $ if (award.name.match(/Female .+? Winners/)) {
+        females[0] = nodes[0];
+      } else if (award.name.match(/Male .+? Winners/)) {
+        males[0] = nodes[0];
+      } else if (award.name.match(/Female .+? Finalists/)) {
+        females.push(...nodes);
+      } else if (award.name.match(/Male .+? Finalists/)) {
+        males.push(...nodes);
+      }
+      <if(index + 1 === awards.length)>
+        $ const maleWinner = males.slice(0, 1);
+        $ const femaleWinner = females.slice(0, 1);
+        $ const maleFinalists = males.slice(1);
+        $ const femaleFinalistS = females.slice(1);
+        <div class="row">
+          <if(maleWinner)>
+            <div class="col-md-6">
+              <h2 title="Male Winner" class="page-wrapper__website-section-name page-wrapper__website-section-name--secondary">
+                Male Winner
+              </h2>
+              <theme-card-deck-flow
+                cols=1
+                nodes=maleWinner
+                modifiers=["awards-honors", "arthur-ashe"]>
+                <@slot|{ node, index }|>
+                  <site-arthur-ashe-profiles-node node=node with-teaser=true />
+                </@slot>
+              </theme-card-deck-flow>
+            </div>
+          </if>
+          <if(femaleWinner)>
+            <div class="col-md-6">
+              <h2 title="Female Winner" class="page-wrapper__website-section-name page-wrapper__website-section-name--secondary">
+                Female Winner
+              </h2>
+              <theme-card-deck-flow
+                cols=1
+                nodes=femaleWinner
+                modifiers=["awards-honors", "arthur-ashe"]>
+                <@slot|{ node, index }|>
+                  <site-arthur-ashe-profiles-node node=node with-teaser=true />
+                </@slot>
+              </theme-card-deck-flow>
+            </div>
+          </if>
+          <div class="col-md-6">
+            <theme-card-deck-flow
+              cols=1
+              nodes=maleFinalists
+              modifiers=["awards-honors", "arthur-ashe"]>
+              <@slot|{ node, index }|>
+                <if(!index)>
+                  <h2 title="Male Finalists" class="page-wrapper__website-section-name page-wrapper__website-section-name--secondary">
+                    Male Finalists
+                  </h2>
+                </if>
+                <site-arthur-ashe-profiles-node node=node with-teaser=true />
+              </@slot>
+            </theme-card-deck-flow>
+          </div>
+          <div class="col-md-6">
+            <theme-card-deck-flow
+              cols=1
+              nodes=femaleFinalistS
+              modifiers=["awards-honors", "arthur-ashe"]>
+              <@slot|{ node, index }|>
+                <if(!index)>
+                  <h2 title="Female Finalists" class="page-wrapper__website-section-name page-wrapper__website-section-name--secondary">
+                    Female Finalists
+                  </h2>
+                </if>
+                <site-arthur-ashe-profiles-node node=node with-teaser=true />
+              </@slot>
+            </theme-card-deck-flow>
+          </div>
         </div>
-      </marko-web-query>
-    </for>
-  </div>
+      </if>
+    </marko-web-query>
+  </for>
+
 </marko-web-query>
