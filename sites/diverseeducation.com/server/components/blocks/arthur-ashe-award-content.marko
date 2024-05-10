@@ -11,9 +11,9 @@ $ const { alias } = input;
   $ const awards = getAsArray(node, "children.edges").map(({ node }) => node);
   $ const awardsAppropriatelyOrdered = awards.reduce((array, award) => {
     const innerArray = array;
-    if (award.name.match("Male Sport Winner")) {
+    if (award.name.match("Male Winner")) {
       innerArray[0] = award;
-    } else if (award.name.match("Female Sport Winner")) {
+    } else if (award.name.match("Female Winner")) {
       innerArray[1] = award;
     } else if (award.name.match("Male Sport Finalists")) {
       innerArray[2] = award;
