@@ -9,8 +9,21 @@ $ const { alias } = input;
   params={ alias, queryFragment: sectionWithChilderenFragment }
 >
   $ const awards = getAsArray(node, "children.edges").map(({ node }) => node);
+  $ const awardsAppropriatelyOrdered = awards.reduce((array, award) => {
+    const innerArray = array;
+    if (award.name.match("Male Sport Winner")) {
+      innerArray[0] = award;
+    } else if (award.name.match("Female Sport Winner")) {
+      innerArray[1] = award;
+    } else if (award.name.match("Male Sport Finalists")) {
+      innerArray[2] = award;
+    } else if (award.name.match("Female Sport Finalists")) {
+      innerArray[3] = award;
+    }
+    return innerArray;
+  }, []);
   <div class="row">
-    <for|award| of=awards>
+    <for|award| of=awardsAppropriatelyOrdered>
       <marko-web-query|{ nodes }|
         name="website-scheduled-content"
         params={
