@@ -36,5 +36,8 @@
   },
   "<global-site-footer>": {
     "template": "./site-footer.marko"
+  },
+  "<global-social-icon-link>": {
+    "template": "./social-icon-link.marko"
   }
 }

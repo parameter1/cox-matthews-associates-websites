@@ -1,0 +1,54 @@
+import { readFileSync } from 'fs';
+import { resolve } from 'path';
+import { get } from "@parameter1/base-cms-object-path";
+import createClasses from "@parameter1/base-cms-marko-web-icons/utils/create-classes";
+
+$ const  getProvider = ({ provider, label }) => {
+  let formatted = provider ? `${provider}`.toLowerCase() : '';
+  if (formatted === 'other' && label) formatted = `${label}`.toLowerCase();
+  return formatted;
+};
+
+$ const load = () => {
+  try {
+    const file = resolve(__dirname, `../svg/${input.provider}.svg`);
+    return readFileSync(file, 'utf8').toString();
+  } catch (e) {
+    return null;
+  }
+};
+
+$ const blockName = input.blockName || 'marko-web-icon';
+$ const className = input.className || "social-icon-link";
+
+$ const provider = get(input, "provider", "");
+$ const label = get(input, "label", "");
+
+$ const formatted = getProvider({ provider, label });
+$ const name = label || provider;
+$ const title = name ? `Visit us on ${name.charAt(0).toUpperCase()}${name.slice(1)}` : null;
+$ const svg = load();
+
+$ const classNames = createClasses({
+  iconName: name,
+  blockName,
+  modifiers: input.modifiers,
+});
+
+<if(formatted && input.href && svg)>
+  $ const tag = input.tag || 'span';
+  <marko-web-link
+    class=className
+    href=input.href
+    target=input.target
+    title=title
+    attrs=input.attrs
+  >
+    <${tag} ...input.attrs class=classNames>$!{svg}</>
+  </marko-web-link>
+</if>
+<else>
+  <theme-social-icon-link
+    ...input
+  />
+</else>
