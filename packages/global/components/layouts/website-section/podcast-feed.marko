@@ -140,12 +140,24 @@ $ const perPage = 10;
     </h5>
     <theme-content-contact-details-section block-name="social-follow" modifiers=["social-links"]>
       <for|item| of=podcastLinks>
-        <theme-social-icon-link
-          label=item.label
-          provider=item.provider
-          href=item.href
-          modifiers=["dark", "xl"]
-        />
+        <if(item.label !== "Amazon")>
+          <theme-social-icon-link
+            label=item.label
+            provider=item.provider
+            href=item.href
+            target="_blank"
+            modifiers=["dark", "xl", "podcast-icon"]
+          />
+        </if>
+        <else>
+          <global-social-icon-link
+            label=item.label
+            provider=item.provider
+            href=item.href
+            target="_blank"
+            modifiers=["dark", "xl", "podcast-icon"]
+          />
+        </else>
       </for>
     </theme-content-contact-details-section>
   </@section>
