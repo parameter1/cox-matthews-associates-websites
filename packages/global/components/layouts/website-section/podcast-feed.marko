@@ -133,6 +133,23 @@ $ const perPage = 10;
     </@section>
   </for>
 
+  <@section>
+    $ const podcastLinks = site.get("podcastLinks");
+    <h5 class="section-feed-content-node__content-short-name">
+      Listen Here
+    </h5>
+    <theme-content-contact-details-section block-name="social-follow" modifiers=["social-links"]>
+      <for|item| of=podcastLinks>
+        <theme-social-icon-link
+          label=item.label
+          provider=item.provider
+          href=item.href
+          modifiers=["dark", "xl"]
+        />
+      </for>
+    </theme-content-contact-details-section>
+  </@section>
+
   <@section|{ aliases }|>
     <theme-gam-define-display-ad
       name="rotation"
