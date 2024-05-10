@@ -54,7 +54,7 @@ module.exports = {
   },
   podcastLinks: [
     { provider: 'applepodcasts', label: 'Apple Podcasts', href: 'https://podcasts.apple.com/us/podcast/in-the-margins/id1540117090' },
-    { provider: 'prime', label: 'Amazon', href: 'https://music.amazon.com/podcasts/cc87b264-f43c-4d79-a423-84e18364640b/in-the-margins' },
+    { provider: 'amazon', label: 'Amazon', href: 'https://music.amazon.com/podcasts/cc87b264-f43c-4d79-a423-84e18364640b/in-the-margins' },
     { provider: 'spotify', label: 'Spotify', href: 'https://open.spotify.com/show/6FSDlxj88XFUgOsfeftBfP' },
     { provider: 'youtube', label: 'YouTube', href: 'https://www.youtube.com/playlist?list=PL6yKpacB8wLWYUWHMgGMtG5G7kEHuKrHK' },
   ],
