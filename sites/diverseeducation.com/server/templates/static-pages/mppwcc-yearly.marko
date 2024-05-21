@@ -9,9 +9,9 @@ $ const currentYear = alias === rootAlias ? Object.keys(config)[Object.keys(conf
 $ const currentYearData = config[currentYear];
 $ const title = currentYearData ? `${currentYear} Most Promising Places to Work in Community Colleges` : 'Most Promising Places to Work in Community Colleges';
 $ const institutionData = getAsObject(currentYearData, "institutionData");
-$ const institutions = Object.keys(institutionData).sort();
-$ const newcomerData = getAsObject(currentYearData, "newcomerData");
-$ const newcomers = Object.keys(newcomerData);
+$ const institutions = Object.keys(institutionData);
+//$ const salariesData = getAsObject(currentYearData, "salariesData");
+//$ const salaries = Object.keys(salariesData);
 $ const pageDescription = currentYearData ? currentYearData.description : title;
 $ const study = currentYearData ? currentYearData.study: title;
 $ const survey = currentYearData ? currentYearData.survey: title;
@@ -24,6 +24,7 @@ $ const biographies = currentYearData ? currentYearData.biographies: title;
 $ const advisoryBoard = currentYearData ? currentYearData.advisoryBoard: title;
 $ const chee = currentYearData ? currentYear.chee: title;
 $ const cheeGoals = currentYearData ? currentYearData.cheeGoals: title;
+$ const mpprecommendationsSrc = currentYearData ? currentYearData.mpprecommendationsSrc: recommnedations;
 
 <marko-web-default-page-layout type=type title=title>
   <@page>
@@ -160,6 +161,17 @@ $ const tableOneLabels = Object.values(getAsObject(currentYearData, "tableLabels
                 <h3>PROMISING PRACTICES AT COMMUNITY COLLEGES</h3>
                 <p>$!{currentYearData.promisingPractices}</p>
               </if>
+              <if(currentYearData && currentYearData.mpprecommendationsSrc)>
+                  <div class="col" align="center" width='500px'>
+                    <marko-web-img
+                      class=["lazyload"]
+                      alt="Promising Places Six Recommendations"
+                      src=currentYearData.mpprecommendationsSrc
+                      srcset=`${currentYearData.mpprecommendationsSrc} x2`
+                      lazyload=true
+                    />
+                </div><br><br>
+            </if>
               <if(currentYearData && currentYearData.theresnoIinmppwcc)>
                 <h3>THERE'S NO "I" IN MPPWCC: IT TAKES TEAMWORK TO DO THIS WORK</h3>
                 <p>$!{currentYearData.theresnoIinmppwcc}</p>
@@ -176,39 +188,6 @@ $ const tableOneLabels = Object.values(getAsObject(currentYearData, "tableLabels
           </div>
         </div>
       </@section>
-
-      $ const tableSevenLabels = Object.values(getAsObject(currentYearData, "tableLabels.tableSeven"));
-      <if(currentYearData && tableSevenLabels.length)>
-        <@section modifiers=["card-deck"]>
-          <table class="table table-responsive table-hover">
-            <thead>
-              <tr>
-                <td width="400"><b>Institution</b></td>
-                <for|label| of=tableSevenLabels>
-                  <td width="200">
-                    <b>${label}</b>
-                  </td>
-                </for>
-              </tr>
-            </thead>
-            <if(newcomers.length)>
-              <tbody>
-                  <for|institution| of=institutions>
-                    $ const tableSevenData = getAsObject(newcomerData[institution], "tableSeven");
-                    <if(tableSevenData && Object.keys(tableSevenData).length)>
-                      <tr>
-                        <td class="institution">${institution}</td>
-                        <for|field| of=Object.keys(tableSevenData)>
-                          <td class=field>${tableSevenData[field]}</td>
-                        </for>
-                      </tr>
-                    </if>
-                  </for>
-              </tbody>
-            </if>
-          </table>
-        </@section>
-      </if>
       <if(currentYearData && currentYearData.advisoryBoard)>
         <@section>
           <div class="page-contents__content-body about-text">
@@ -228,7 +207,6 @@ $ const tableOneLabels = Object.values(getAsObject(currentYearData, "tableLabels
           </div>
         </@section>
       </if>
-
       <if(currentYearData && currentYearData.profiles)>
         <@section>
           <div class="page-contents__content-body page-contents__content-body--profiles">
@@ -266,6 +244,7 @@ $ const tableOneLabels = Object.values(getAsObject(currentYearData, "tableLabels
           </div>
         </@section>
       </if>
+      <!--
       $ const tableTwoLabels = Object.values(getAsObject(currentYearData, "tableLabels.tableTwo"));
       <if(currentYearData && tableTwoLabels.length)>
         <@section modifiers=["card-deck"]>
@@ -352,7 +331,7 @@ $ const tableOneLabels = Object.values(getAsObject(currentYearData, "tableLabels
             </if>
           </table>
         </@section>
-      </if>
+      </if>-->
       $ const tableFourLabels = Object.values(getAsObject(currentYearData, "tableLabels.tableFour"));
       <if(currentYearData && tableFourLabels.length)>
         <@section modifiers=["card-deck"]>
@@ -393,7 +372,7 @@ $ const tableOneLabels = Object.values(getAsObject(currentYearData, "tableLabels
         <@section modifiers=["card-deck"]>
           <div class="row">
             <div class="col">
-              <h2 class="page-wrapper__website-section-name">DEMOGRAPHICS</h2><br/>
+              <h2 class="page-wrapper__website-section-name">DIVERSITY BENEFITS</h2><h3>Part 1</h3><br/>
             </div>
           </div>
           <table class="table table-responsive table-hover">
@@ -421,7 +400,9 @@ $ const tableOneLabels = Object.values(getAsObject(currentYearData, "tableLabels
               </tbody>
             </if>
           </table>
-         <br/>
+          <div class="col">
+            <p><b>CDO</b> = chief diversity officer or equivalent at or near cabinet-level.</p>
+           </div>
         </@section>
       </if>
       $ const tableSixLabels = Object.values(getAsObject(currentYearData, "tableLabels.tableSix"));
@@ -429,7 +410,7 @@ $ const tableOneLabels = Object.values(getAsObject(currentYearData, "tableLabels
         <@section modifiers=["card-deck"]>
           <div class="row">
             <div class="col">
-              <h2 class="page-wrapper__website-section-name">DIVERSITY BENEFITS</h2><br/>
+              <h2 class="page-wrapper__website-section-name">DIVERSITY BENEFITS</h2><h3>Part 2</h3><br/>
             </div>
           </div>
           <table class="table table-responsive table-hover">
@@ -457,14 +438,45 @@ $ const tableOneLabels = Object.values(getAsObject(currentYearData, "tableLabels
               </tbody>
             </if>
           </table>
-          <br/>
-          <br/>
-          <div class="col">
-            <p>CDO = chief diversity officer or equivalent at or near cabinet-level. COMP = compressed work schedule. CE = continuing education.</p>
-           </div>
-         <br/>
         </@section>
       </if>
+      $ const tableSevenLabels = Object.values(getAsObject(currentYearData, "tableLabels.tableSeven"));
+      <if(currentYearData && tableSevenLabels.length)>
+        <@section modifiers=["card-deck"]>
+        <div class="row">
+          <div class="col">
+            <h2 class="page-wrapper__website-section-name">DIVERSITY BENEFITS</h2><h3>Part 3</h3><br/>
+          </div>
+        </div>
+       <table class="table table-responsive table-hover">
+            <thead>
+              <tr>
+                <td width="400"><b>Institution</b></td>
+                <for|label| of=tableSevenLabels>
+                  <td width="200">
+                    <b>${label}</b>
+                  </td>
+                </for>
+              </tr>
+            </thead>
+            <if(institutions.length)>
+              <tbody>
+                  <for|institution| of=institutions>
+                    $ const tableSevenData = getAsObject(institutionData[institution], "tableSeven");
+                    <if(tableSevenData && Object.keys(tableSevenData).length)>
+                      <tr>
+                        <td class="institution">${institution}</td>
+                        <for|field| of=Object.keys(tableSevenData)>
+                          <td class=field>${tableSevenData[field]}</td>
+                        </for>
+                      </tr>
+                    </if>
+                  </for>
+              </tbody>
+            </if>
+          </table>
+        </@section>
+        </if>
     </marko-web-page-wrapper>
   </@page>
 </marko-web-default-page-layout>
