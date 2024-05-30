@@ -15,10 +15,13 @@ module.exports = configureIdentityX({
   activeCustomFieldIds: [
     '64b59e6ab0c3f1123ebfdf04', // Diverse Daily
     '64c03173d786a63621af8423', // Categories
+    '664cbb98afb613413f66941e', // Job Fuction
+    '664cbc2f0635beb3977eb17b', // Job Level
+    '664cbc8e235da564286559d4', // Position Title
   ],
   recommendedQuestionId: '64c03173d786a63621af8423',
   answerToQueryParamsMap: {
-    // job fuction
+    // Categories
     '64c03173d786a63621af8423': {
       // Students/Student Issues
       '64c032d61f6c74cbd9115ed7': {
