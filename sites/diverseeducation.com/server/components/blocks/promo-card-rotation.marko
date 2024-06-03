@@ -20,7 +20,8 @@ $ const placement = nxConfig.getPlacement({ name: placementName, aliases });
       <if(hasAd)>
         <marko-web-element block-name=blockName name="col" modifiers=["last"]>
           <if(ads[0] && ads[0].hasCampaign)>
-            $ const { node } = convertAdToNode(ads[0]);
+            <theme-standard-promo-node ...convertAdToNode(ads[0]) />
+            <!-- $ const { node } = convertAdToNode(ads[0]);
             $ const linkText = get(node, "linkText") || "Read";
             $ const blockName = defaultValue(input.blockName, "pib-page-card");
             <marko-web-block name="white-papers" attrs=input.attrs>
@@ -54,7 +55,7 @@ $ const placement = nxConfig.getPlacement({ name: placementName, aliases });
                   />
                 </if>
               </marko-web-element>
-            </marko-web-block>
+            </marko-web-block> -->
           </if>
         </marko-web-element>
       </if>
