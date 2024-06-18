@@ -33,7 +33,7 @@ const awards = [
   { href: '/page/DOIT', label: 'DOIT' },
   { href: '/awards-honors/dr-john-hope-franklin', label: 'Dr. John Hope Franklin Award' },
   { href: '/awards-honors/emerging-scholars/2024', label: 'Emerging Scholars' },
-  { href: '/awards-honors/graduate-scholars/2023', label: 'Graduate Scholars' },
+  { href: '/awards-honors/graduate-scholars/2024', label: 'Graduate Scholars' },
   { href: '/awards-honors/mppwcc', label: 'Most Promising Places to Work: Community Colleges' },
   { href: '/awards-honors/mppwsa', label: 'Most Promising Places to Work: Student Affairs' },
   { href: 'https://top100.diverseeducation.com', label: 'Top 100', target: '_blank' },
