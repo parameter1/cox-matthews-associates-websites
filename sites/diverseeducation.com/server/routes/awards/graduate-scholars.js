@@ -7,7 +7,7 @@ const graduateScholars = require('../../templates/website-section/awards-honors/
 module.exports = (app) => {
   app.get('/:alias(awards-honors/graduate-scholars)', newsletterState(), asyncRoute(async (req, res) => {
     const { alias } = req.params;
-    res.redirect(301, `/${cleanPath(alias)}/2022`);
+    res.redirect(301, `/${cleanPath(alias)}/2024`);
   }));
 
   app.get('/:alias(awards-honors/graduate-scholars/\\d{4})', newsletterState(), withWebsiteSection({
