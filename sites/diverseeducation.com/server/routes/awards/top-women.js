@@ -7,7 +7,7 @@ const topWomen = require('../../templates/website-section/awards-honors/top-wome
 module.exports = (app) => {
   app.get('/:alias(awards-honors/top-women)', newsletterState(), asyncRoute(async (req, res) => {
     const { alias } = req.params;
-    res.redirect(301, `/${cleanPath(alias)}/2023`);
+    res.redirect(301, `/${cleanPath(alias)}/2024`);
   }));
 
   app.get('/:alias(awards-honors/top-women/\\d{4})', newsletterState(), withWebsiteSection({
