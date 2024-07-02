@@ -22,6 +22,60 @@
   }
 }
 
+.site-navbar__items--other-years-dropdown {
+  top: 35px;
+  display: none;
+  flex-direction: column;
+  z-index: 160000;
+  background: #fff;
+  border: solid 1px $gray-200;
+  width: 200px;
+  padding: map-get($spacers, 2);
+  box-shadow: $theme-box-shadow-lg;
+  li {
+    margin-bottom: 0.25rem;
+  }
+}
+
+.site-navbar__items--other-years-dropdown-open {
+  display: flex;
+}
+
+.btn--other-years-dropdown {
+  @include skin-button($style: "secondary");
+  padding: 0 12px 0 10px;
+  min-width: 40px;
+  height: 40px;
+  font-size: 1rem;
+  color: $white;
+  border-radius: 4px;
+  outline-color: none;
+  box-shadow: none;
+  border: 1px solid $white;
+  background-color: $secondary;
+  &:hover,
+  &:focus {
+    color: $white;
+    border: 1px solid $white;
+    background-color: $secondary;
+    border: 1px solid $white;
+    svg {
+      fill: $white;;
+    }
+  }
+  :first-child {
+    margin-right: 2px;
+  }
+  svg {
+    display: inline-block;
+    width: 12px;
+    height: 1.25rem;
+    fill: $white !important;
+    vertical-align: sub;
+  }
+}
+
+
 @import "./awards/mppw";
 @import "./awards/arthur-ashe";
 @import "./awards/emerging-scholars";
