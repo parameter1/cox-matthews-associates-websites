@@ -108,7 +108,7 @@ module.exports = {
       body: 'At Rowan University in the southern part of New Jersey, student affairs encompasses the three divisions of student success, student life, and strategic enrollment management. The offices support students through vital services and initiatives to help them succeed. In addition, the divisions offer a variety of lifestyle activities, and a wellness community to help students thrive throughout their college experience. Small class sizes, experiential learning, leadership opportunities, and career placement network put the student at the center of Rowan’s world.',
     },
     {
-      thumbnail: '24-Dr_Ricardo_Hall.jpg',
+      thumbnail: 'Mena.png',
       name: 'Rutgers University-New Brunswick',
       body: 'The Division of Student Affairs at Rutgers University-New Brunswick is a diverse institutional powerhouse, with more than 20 departments and areas, over 1,000 staff members, and more than 2,300 student-staff members. The university is committed to enriching the quality of life and academic success of its students and the personal and professional development of its staff. The division is led by Dr. Salvador Mena, senior vice chancellor of student affairs at Rutgers University-New Brunswick. “What drives me to keep going every day is the fact that I really believe we are able to make a difference in the lives of students who will, in turn, make the world a better place for us all,” says Mena.',
     },
