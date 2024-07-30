@@ -1,6 +1,7 @@
 const subscribe = require('./subscribe');
 
 const topics = [
+  { href: '/page/editors-note', label: "Editor's Note" },
   { href: '/students', label: 'Students' },
   { href: '/faculty-staff', label: 'Faculty & Staff' },
   { href: '/leadership-policy', label: 'Leadership & Policy' },
@@ -19,7 +20,9 @@ const resources = [
   // { href: '/reports-data', label: 'Reports & Data' },
   // { href: '/from-the-magazine', label: 'From the Magazine' },
   { href: 'https://www.ccnewsnow.com', label: 'Community Colleges', target: '_blank' },
+  { href: '/health', label: 'Health' },
   { href: 'https://diversejobs.net', label: 'Jobs', target: '_blank' },
+  { href: '/military', label: 'Military' },
   { href: 'https://keepitreal.diverseeducation.com/', label: 'Keep it Real', target: '_blank' },
   { href: 'https://shop.diverseeducation.com/', label: 'Shop', target: '_blank' },
   { href: 'https://testimonials.diverseeducation.com/index.html', label: 'Testimonials', target: '_blank' },
