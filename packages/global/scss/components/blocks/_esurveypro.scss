@@ -94,9 +94,6 @@
     background-color: #0087ca !important;
     border: none !important;
     border-radius: 4px !important;
-    @include media-breakpoint-down(md) {
-      margin-right: 10px !important;
-    }
   }
 }
 /* stylelint-enable declaration-no-important, selector-class-pattern */
