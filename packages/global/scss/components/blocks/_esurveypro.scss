@@ -82,7 +82,6 @@
     padding: 12px !important;
     margin: 0 !important;
     margin-top: 16px !important;
-    margin-right: 10px !important;
     font-family: $skin-font-family-primary !important;
     font-size: 12px !important;
     font-weight: $font-weight-bold !important;
@@ -95,6 +94,9 @@
     background-color: #0087ca !important;
     border: none !important;
     border-radius: 4px !important;
+    @include media-breakpoint-down(md) {
+      margin-right: 10px !important;
+    }
   }
 }
 /* stylelint-enable declaration-no-important, selector-class-pattern */
