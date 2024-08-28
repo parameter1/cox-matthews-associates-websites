@@ -10,10 +10,21 @@ $ const blockName = "callout-cards";
 $ const uri = nxConfig.getUri();
 $ const placement = nxConfig.getPlacement({ name: placementName, aliases });
 
+$ const { site } = out.global;
+$ const podcastVideoID = site.get('podcastVideoID')
+$ const podcastVideoPlaylist = site.get('podcastVideoPlaylist') ? site.get('podcastVideoPlaylist') : podcastVideoID;
+
 <marko-web-block name=blockName>
   <marko-web-element block-name=blockName name="row">
     <marko-web-element block-name=blockName name="col">
+
+  <div class="ad-container__wrapper" style="background-color:#f0f1f2; border-radius: 3px;">
+    <div style="border: 0pt none;">
       <theme-latest-podcast-block alias="podcasts" />
+    <div align="center">  <iframe width="95%" height="180" src=`https://www.youtube.com/embed/${podcastVideoID}?playlist=${podcastVideoPlaylist}&widget_referrer=podcast&rel=0&autoplay=1&mute=1` title="Youtube Player" frameBorder="0"   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  allowFullScreen></iframe>
+  </div>  </div>
+</div>
+
     </marko-web-element>
     <marko-web-native-x-fetch-elements|{ ads }| uri=uri id=placement.id>
       $ const hasAd = ads && ads.length && ads[0] && ads[0].hasCampaign;
