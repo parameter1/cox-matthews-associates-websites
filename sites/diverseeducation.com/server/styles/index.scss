@@ -38,3 +38,11 @@ $primary: #0087ca;
     filter: none;
   }
 }
+
+.latest-podcast {
+  &__content-embed-code {
+    iframe {
+      width: 100% !important;
+    }
+  }
+}
