@@ -1,0 +1,91 @@
+import queryFragment from '@cox-matthews-associates/package-global/graphql/fragments/content-page';
+import sectionFragment from "@parameter1/base-cms-marko-web-theme-monorail/graphql/fragments/section-info";
+
+$ const queryParams = {
+  sectionAlias: "podcasts",
+  includeContentTypes: ["Podcast"],
+  limit: 1,
+  queryFragment,
+  sectionFragment,
+};
+
+$ const { site, i18n } = out.global;
+$ const podcastLinks = site.getAsArray("podcastLinks");
+$ const blockName = "latest-podcast";
+
+<marko-web-block name="callout-cards">
+  <marko-web-element block-name="callout-cards" name="row">
+    <marko-web-query|{ nodes, section }| name="website-scheduled-content" params=queryParams>
+      $ const [node] = nodes;
+      <marko-web-element block-name="callout-cards" name="col">
+      <marko-web-block name=blockName>
+        <marko-web-element block-name=blockName name="header">
+          <marko-web-icon name="file" modifiers=[blockName] />
+          ${section.name}
+        </marko-web-element>
+
+        <marko-web-node
+          type=`${node.type}-content`
+          card=true
+          flush=true
+          full-height=false
+          modifiers=[blockName]
+        >
+          <@body>
+            <@header>
+              <@left>
+                ${i18n("Latest Episode")}
+              </@left>
+            </@header>
+            <@title tag="h5">
+              <marko-web-content-name tag=null obj=node link=true />
+            </@title>
+            <@text modifiers=["more-episodes"]>
+              <marko-web-website-section-name|{ value }| tag=null obj=section link=true>
+                ${i18n("More episodes")} &raquo;
+              </marko-web-website-section-name>
+            </@text>
+            <if(podcastLinks.length)>
+              <@footer>
+                <@left modifiers=["buttons"]>
+                  <for|link| of=podcastLinks>
+                    <marko-web-link
+                      class=`btn btn-light ${blockName}__btn`
+                      href=link.href
+                      title=link.label
+                      target="_blank"
+                    >
+                      ${link.label}
+                    </marko-web-link>
+                  </for>
+                </@left>
+              </@footer>
+            </if>
+          </@body>
+        </marko-web-node>
+      </marko-web-block>
+      </marko-web-element>
+      <marko-web-element block-name="callout-cards" name="col" modifiers=["last"]>
+      <marko-web-block name=blockName>
+        <marko-web-element block-name=blockName name="header">
+          <marko-web-icon name="videocam" modifiers=[blockName] />
+            Video
+        </marko-web-element>
+        <marko-web-query|{ nodes }|
+        name="website-scheduled-content"
+        params={
+          sectionAlias: "videos",
+          limit: 1,
+          includeContentTypes: ['Video'],
+          queryFragment
+        }
+        >
+          <if(nodes[0].embedCode)>
+            <marko-web-content-embed-code block-name=blockName obj=nodes[0] modifiers=["podcast-video"] />
+          </if>
+        </marko-web-query>
+        </marko-web-block>
+      </marko-web-element>
+    </marko-web-query>
+  </marko-web-element>
+</marko-web-block>

@@ -1,4 +1,7 @@
 {
+  "<site-latest-podcast-block>": {
+    "template": "./latest-podcast.marko"
+  },
   "<site-arthur-ashe-award-content-block>": {
     "template": "./arthur-ashe-award-content.marko",
     "@alias" : {
