@@ -81,6 +81,21 @@ $ const blockName = "latest-podcast";
         }
         >
           <if(nodes[0].embedCode)>
+            $ const matches = nodes[0].embedCode.match(/src\=\"(.+?)\"/);
+            $ if (matches.length) {
+              const [, urlMatch] = matches;
+              const urlMatchAsURL = new URL(urlMatch);
+              if (!urlMatchAsURL.searchParams.has('mute', '1')) {
+                urlMatchAsURL.searchParams.set('mute', '1');
+              }
+              if (!urlMatchAsURL.searchParams.has('autoplay', '1')) {
+                urlMatchAsURL.searchParams.set('autoplay', '1');
+              }
+              if (!urlMatchAsURL.searchParams.has('rel', '0')) {
+                urlMatchAsURL.searchParams.set('rel', '0');
+              }
+              nodes[0].embedCode = nodes[0].embedCode.replace(urlMatch, String(urlMatchAsURL));
+            }
             <marko-web-content-embed-code block-name=blockName obj=nodes[0] modifiers=["podcast-video"] />
           </if>
         </marko-web-query>
