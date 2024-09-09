@@ -1,5 +1,7 @@
 import queryFragment from '@cox-matthews-associates/package-global/graphql/fragments/content-page';
 import sectionFragment from "@parameter1/base-cms-marko-web-theme-monorail/graphql/fragments/section-info";
+import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
+
 
 $ const queryParams = {
   sectionAlias: "podcasts",
@@ -12,59 +14,70 @@ $ const queryParams = {
 $ const { site, i18n } = out.global;
 $ const podcastLinks = site.getAsArray("podcastLinks");
 $ const blockName = "latest-podcast";
+$ const withVideo = defaultValue(input.withVideo, false);
 
-<marko-web-block name="callout-cards">
-  <marko-web-element block-name="callout-cards" name="row">
-    <marko-web-query|{ nodes, section }| name="website-scheduled-content" params=queryParams>
-      $ const [node] = nodes;
-      <marko-web-element block-name="callout-cards" name="col">
-      <marko-web-block name=blockName>
-        <marko-web-element block-name=blockName name="header">
-          <marko-web-icon name="file" modifiers=[blockName] />
-          ${section.name}
-        </marko-web-element>
+<if(withVideo)>
+  <marko-web-block name="callout-cards">
+    <marko-web-element block-name="callout-cards" name="row">
+      <marko-web-query|{ nodes, section }| name="website-scheduled-content" params=queryParams>
+        $ const [node] = nodes;
+        <marko-web-element block-name="callout-cards" name="col">
+        <marko-web-block name=blockName>
+          <marko-web-element block-name=blockName name="header">
+            <marko-web-icon name="file" modifiers=[blockName] />
+            ${section.name}
+          </marko-web-element>
+          <div class="podcast-logo-description-wrapper">
+            <marko-web-img
+              class="section__logo"
+              src="https://img.diverseeducation.com/files/base/diverse/all/image/2023/12/InTheMarginsArt23_1_.656deceee49c6.png"
+              srcset=["https://img.diverseeducation.com/files/base/diverse/all/image/2023/12/InTheMarginsArt23_1_.656deceee49c6.png?dpr=2 2x"]
+              alt="In The Margins Logo"
+            />
+          </div>
 
-        <marko-web-node
-          type=`${node.type}-content`
-          card=true
-          flush=true
-          full-height=false
-          modifiers=[blockName]
-        >
-          <@body>
-            <@header>
-              <@left>
-                ${i18n("Latest Episode")}
-              </@left>
-            </@header>
-            <@title tag="h5">
-              <marko-web-content-name tag=null obj=node link=true />
-            </@title>
-            <@text modifiers=["more-episodes"]>
-              <marko-web-website-section-name|{ value }| tag=null obj=section link=true>
-                ${i18n("More episodes")} &raquo;
-              </marko-web-website-section-name>
-            </@text>
-            <if(podcastLinks.length)>
-              <@footer>
-                <@left modifiers=["buttons"]>
-                  <for|link| of=podcastLinks>
-                    <marko-web-link
-                      class=`btn btn-light ${blockName}__btn`
-                      href=link.href
-                      title=link.label
-                      target="_blank"
-                    >
-                      ${link.label}
-                    </marko-web-link>
-                  </for>
+          <marko-web-node
+            type=`${node.type}-content`
+            card=true
+            flush=true
+            full-height=false
+            modifiers=[blockName]
+          >
+            <@body>
+              <@header>
+                <@left>
+                  ${i18n("Latest Episode")}
                 </@left>
-              </@footer>
-            </if>
-          </@body>
-        </marko-web-node>
-      </marko-web-block>
-      </marko-web-element>
+              </@header>
+              <@title tag="h5">
+                <marko-web-content-name tag=null obj=node link=true />
+              </@title>
+              <@text modifiers=["more-episodes"]>
+                <marko-web-website-section-name|{ value }| tag=null obj=section link=true>
+                  ${i18n("More episodes")} &raquo;
+                </marko-web-website-section-name>
+              </@text>
+              <if(podcastLinks.length)>
+                <@footer>
+                  <@left modifiers=["buttons"]>
+                    <for|link| of=podcastLinks>
+                      <marko-web-link
+                        class=`btn btn-light ${blockName}__btn`
+                        href=link.href
+                        title=link.label
+                        target="_blank"
+                      >
+                        ${link.label}
+                      </marko-web-link>
+                    </for>
+                  </@left>
+                </@footer>
+              </if>
+            </@body>
+          </marko-web-node>
+        </marko-web-block>
+        </marko-web-element>
+      </marko-web-query>
       <marko-web-element block-name="callout-cards" name="col" modifiers=["last"]>
       <marko-web-block name=blockName>
         <marko-web-element block-name=blockName name="header">
@@ -101,6 +114,68 @@ $ const blockName = "latest-podcast";
         </marko-web-query>
         </marko-web-block>
       </marko-web-element>
-    </marko-web-query>
-  </marko-web-element>
-</marko-web-block>
+    </marko-web-element>
+  </marko-web-block>
+</if>
+<else>
+  <marko-web-query|{ nodes, section }| name="website-scheduled-content" params=queryParams>
+    $ const [node] = nodes;
+    <marko-web-block name=blockName>
+      <marko-web-element block-name=blockName name="header" attrs={ "style": "display: flex; justify-content: space-between" }>
+        <div>
+          <marko-web-icon name="file" modifiers=[blockName] />
+          ${section.name}
+        </div>
+        <div>
+          <marko-web-img
+            class="section__logo"
+            src="https://img.diverseeducation.com/files/base/diverse/all/image/2023/12/InTheMarginsArt23_1_.656deceee49c6.png?w=100"
+            srcset=["https://img.diverseeducation.com/files/base/diverse/all/image/2023/12/InTheMarginsArt23_1_.656deceee49c6.png?w=100&dpr=2 2x"]
+            alt="In The Margins Logo"
+          />
+        </div>
+      </marko-web-element>
+
+      <marko-web-node
+        type=`${node.type}-content`
+        card=true
+        flush=true
+        full-height=false
+        modifiers=[blockName]
+        attrs={ "style": "width: 75%; margin-top: -75px" }
+      >
+        <@body>
+          <@header>
+            <@left>
+              ${i18n("Latest Episode")}
+            </@left>
+          </@header>
+          <@title tag="h5">
+            <marko-web-content-name tag=null obj=node link=true />
+          </@title>
+          <@text modifiers=["more-episodes"]>
+            <marko-web-website-section-name|{ value }| tag=null obj=section link=true>
+              ${i18n("More episodes")} &raquo;
+            </marko-web-website-section-name>
+          </@text>
+          <if(podcastLinks.length)>
+            <@footer>
+              <@left modifiers=["buttons"]>
+                <for|link| of=podcastLinks>
+                  <marko-web-link
+                    class=`btn btn-light ${blockName}__btn`
+                    href=link.href
+                    title=link.label
+                    target="_blank"
+                  >
+                    ${link.label}
+                  </marko-web-link>
+                </for>
+              </@left>
+            </@footer>
+          </if>
+        </@body>
+      </marko-web-node>
+    </marko-web-block>
+  </marko-web-query>
+</else>
