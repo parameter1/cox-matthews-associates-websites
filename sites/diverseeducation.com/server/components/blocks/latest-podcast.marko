@@ -18,7 +18,7 @@ $ const withVideo = defaultValue(input.withVideo, false);
 
 <if(withVideo)>
   <marko-web-block name="callout-cards">
-    <marko-web-element block-name="callout-cards" name="row">
+    <marko-web-element block-name="callout-cards" name="row" attrs={ "style": "background-color: #f0f1f2;"}>
       <marko-web-query|{ nodes, section }| name="website-scheduled-content" params=queryParams>
         $ const [node] = nodes;
         <marko-web-element block-name="callout-cards" name="col">
@@ -57,7 +57,6 @@ $ const withVideo = defaultValue(input.withVideo, false);
               </marko-web-node>
             </div>
         </div>
-        <br/>
         <marko-web-node
           type=`${node.type}-content`
           card=true
@@ -94,10 +93,6 @@ $ const withVideo = defaultValue(input.withVideo, false);
       </marko-web-query>
       <marko-web-element block-name="callout-cards" name="col" modifiers=["last"]>
       <marko-web-block name=blockName>
-        <marko-web-element block-name=blockName name="header">
-          <marko-web-icon name="videocam" modifiers=[blockName] />
-            Video
-        </marko-web-element>
         <marko-web-query|{ nodes }|
         name="website-scheduled-content"
         params={
@@ -122,6 +117,7 @@ $ const withVideo = defaultValue(input.withVideo, false);
                 urlMatchAsURL.searchParams.set('rel', '0');
               }
               nodes[0].embedCode = nodes[0].embedCode.replace(urlMatch, String(urlMatchAsURL));
+              nodes[0].embedCode = nodes[0].embedCode.replace(/height=\"[0-9]+\"/, 'height="300"')
             }
             <marko-web-content-embed-code block-name=blockName obj=nodes[0] modifiers=["podcast-video"] />
           </if>
