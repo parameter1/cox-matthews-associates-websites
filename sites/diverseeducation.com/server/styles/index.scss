@@ -46,3 +46,20 @@ $primary: #0087ca;
     }
   }
 }
+
+.node {
+  &--latest-podcast {
+    .node__text--podcast-title {
+      font-family: Open Sans,open-sans-fallback,sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: .25px;
+      line-height: 1.33;
+      margin-bottom: 20px;
+      text-transform: none;
+      a {
+        color: #3f4043 !important;
+      }
+    }
+  }
+}
