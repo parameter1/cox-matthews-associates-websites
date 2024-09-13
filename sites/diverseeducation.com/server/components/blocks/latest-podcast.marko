@@ -34,6 +34,7 @@ $ const withVideo = defaultValue(input.withVideo, false);
                 src="https://img.diverseeducation.com/files/base/diverse/all/image/2023/12/InTheMarginsArt23_1_.656deceee49c6.png"
                 srcset=["https://img.diverseeducation.com/files/base/diverse/all/image/2023/12/InTheMarginsArt23_1_.656deceee49c6.png?dpr=2 2x"]
                 alt="In The Margins Logo"
+                attrs={ width: 150, height: 150 }
               />
             </div>
             <div class="col">
@@ -50,9 +51,9 @@ $ const withVideo = defaultValue(input.withVideo, false);
                       ${i18n("Latest Episode")}
                     </@left>
                   </@header>
-                  <@title tag="h5">
+                  <@text tag="h5" modifiers=["podcast-title"]>
                     <marko-web-content-name tag=null obj=node link=true />
-                  </@title>
+                  </@text>
                 </@body>
               </marko-web-node>
             </div>
@@ -142,6 +143,7 @@ $ const withVideo = defaultValue(input.withVideo, false);
                 src="https://img.diverseeducation.com/files/base/diverse/all/image/2023/12/InTheMarginsArt23_1_.656deceee49c6.png?w=100"
                 srcset=["https://img.diverseeducation.com/files/base/diverse/all/image/2023/12/InTheMarginsArt23_1_.656deceee49c6.png?w=100&dpr=2 2x"]
                 alt="In The Margins Logo"
+                attrs={ width: 150, height: 150 }
               />
             </div>
             <div class="col">
@@ -158,9 +160,9 @@ $ const withVideo = defaultValue(input.withVideo, false);
                       ${i18n("Latest Episode")}
                     </@left>
                   </@header>
-                  <@title tag="h5">
+                  <@text tag="h5" modifiers=["podcast-title"]>
                     <marko-web-content-name tag=null obj=node link=true />
-                  </@title>
+                  </@text>
                 </@body>
               </marko-web-node>
             </div>
