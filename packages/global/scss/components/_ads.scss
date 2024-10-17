@@ -29,7 +29,7 @@
   &--template-suggested-video {
     > *:first-child {
       &::before {
-        content: "Sponsored";
+        content: "";
       }
     }
     iframe {
