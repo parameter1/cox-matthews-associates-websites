@@ -1,7 +1,8 @@
 const contentMetering = require('@parameter1/base-cms-marko-web-theme-monorail/middleware/content-metering');
 
 const withContent = require('@cox-matthews-associates/package-global/middleware/with-content');
-const { newsletterState, formatContentResponse } = require('@cox-matthews-associates/package-global/middleware/newsletter-state');
+const { newsletterState } = require('@cox-matthews-associates/package-global/middleware/newsletter-state');
+const { formatContentResponse } = require('@cox-matthews-associates/package-global/middleware/format-content-response');
 const qf = require('@cox-matthews-associates/package-global/graphql/fragments/content-page');
 const contact = require('@cox-matthews-associates/package-global/templates/content/contact');
 const company = require('@cox-matthews-associates/package-global/templates/content/company');
