@@ -11,4 +11,11 @@ module.exports = {
     name: '<strong><em>Diverse</em></strong> Daily and Weekly Recap e-Newsletters',
     description: 'Keeping you abreast of late-breaking news and insights.',
   },
+  modal: {
+    ...baseConfig,
+    enabled: false,
+    cookieValueToMatch: 1,
+    name: '<strong><em>Diverse</em></strong> Daily and Weekly Recap e-Newsletters',
+    description: 'Keeping you abreast of late-breaking news and insights.',
+  },
 };

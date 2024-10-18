@@ -11,4 +11,11 @@ module.exports = {
     name: '<strong><em>Diverse</em></strong> Military e-Newsletters',
     description: 'News, policies, transition issues and information related to higher education in the military.',
   },
+  modal: {
+    ...baseConfig,
+    enabled: false,
+    cookieValueToMatch: 1,
+    name: '<strong><em>Diverse</em></strong> Military e-Newsletters',
+    description: 'News, policies, transition issues and information related to higher education in the military.',
+  },
 };
