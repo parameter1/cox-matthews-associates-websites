@@ -135,6 +135,10 @@
 @import "@parameter1/base-cms-marko-web-theme-monorail/scss/components/site-footer";
 /*! critical:end */
 
+/*! purgecss start ignore */
+@import "@parameter1/base-cms-marko-web-theme-monorail/scss/components/newsletter-signup-modal";
+/*! purgecss end ignore */
+
 /*! critical:start */
 @import "@parameter1/base-cms-marko-web-theme-monorail/scss/components/site-header";
 @import "@parameter1/base-cms-marko-web-theme-monorail/scss/components/site-menu";
