@@ -419,6 +419,12 @@ label {
   }
 }
 
+.content-survey-access-idx__wrapper {
+  .btn {
+    margin-top: map-get($spacers, block)
+  }
+}
+
 .node-list {
   $self: &;
   &__header {
