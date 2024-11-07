@@ -35,5 +35,8 @@
     "@ad-name": "string",
     "@ad-position": "string",
     "@count-only": "boolean"
+  },
+  "<global-content-meter-block>": {
+    "template": "./content-meter.marko"
   }
 }
