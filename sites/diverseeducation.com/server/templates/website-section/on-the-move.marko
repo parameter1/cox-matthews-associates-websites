@@ -35,8 +35,8 @@ $ const perPage = 10;
       <theme-website-section-breadcrumbs section=section display-self=false display-home=false modifiers=["website-section"] />
       <marko-web-element block-name=blockName name="header">
         <marko-web-website-section-name|{ value }| tag="h1" block-name=blockName obj=section>
-          <if(p.page > 1)>${value}: Page ${p.page}</if>
-          <else>${value}</else>
+          <if(p.page > 1)>$!{value}: Page ${p.page}</if>
+          <else>$!{value}</else>
         </marko-web-website-section-name>
         <marko-web-website-section-description|{ value }|
           tag="p"
