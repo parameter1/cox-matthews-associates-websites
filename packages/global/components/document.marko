@@ -2,6 +2,7 @@ import createOmedaIdentityBuilder from "@parameter1/base-cms-marko-web-p1-events
 import { getAsObject } from "@parameter1/base-cms-object-path";
 
 $ const {
+  config,
   site,
   req,
   nativeX,
@@ -81,12 +82,17 @@ $ const omedaConfig = site.get('omeda');
       <global-site-header-2 has-user=hasUser reg-enabled=isEnabled />
       <global-site-menu has-user=hasUser reg-enabled=isEnabled />
     </marko-web-identity-x-context>
+    $ const customSetTextVariablesFunction = () => {
+      const callToAction = `Create a free <span class="content-meter__call-to-action--site-name">${config.siteName()}</span> account to continue reading. Already have an account? Enter your email to access the article.`;
+      return { callToAction };
+    };
     <if(contentMeterState && !contentMeterState.isLoggedIn)>
       <theme-content-meter-block
         views=contentMeterState.views
         view-limit=contentMeterState.viewLimit
         display-overlay=contentMeterState.displayOverlay
         display-gate=contentMeterState.displayGate
+        custom-set-text-variables-function=customSetTextVariablesFunction
       />
     </if>
     <!-- <global-site-newsletter-menu /> -->
