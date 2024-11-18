@@ -11,4 +11,11 @@ module.exports = {
     name: '<strong><em>Diverse</em></strong> Health e-Newsletters',
     description: 'Connecting you with the organizations and resources that address diversity and inclusion in the fields of health and healthcare.',
   },
+  modal: {
+    ...baseConfig,
+    enabled: false,
+    cookieValueToMatch: 1,
+    name: '<strong><em>Diverse</em></strong> Health e-Newsletters',
+    description: 'Connecting you with the organizations and resources that address diversity and inclusion in the fields of health and healthcare.',
+  },
 };

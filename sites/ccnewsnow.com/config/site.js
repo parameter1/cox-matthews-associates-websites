@@ -1,3 +1,5 @@
+const mindful = require('@cox-matthews-associates/package-global/config/mindful');
+
 const navigation = require('./navigation');
 const nativeX = require('./native-x');
 const gam = require('./gam');
@@ -12,6 +14,7 @@ const search = require('./search');
 module.exports = {
   holidayGreetingID: process.env.HOLIDAY_GREETING_ID,
   useLinkInjectedBody: process.env.USE_LINK_INJECTED_BODY === 'true',
+  mindful,
   navigation,
   contentMeter,
   nativeX,

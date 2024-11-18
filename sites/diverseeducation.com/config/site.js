@@ -1,3 +1,5 @@
+const mindful = require('@cox-matthews-associates/package-global/config/mindful');
+
 const navigation = require('./navigation');
 const leaders = require('./leaders');
 const nativeX = require('./native-x');
@@ -18,6 +20,7 @@ module.exports = {
   useLinkInjectedBody: process.env.USE_LINK_INJECTED_BODY === 'true',
   leaders,
   contentMeter,
+  mindful,
   navigation,
   nativeX,
   omeda,

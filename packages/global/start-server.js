@@ -4,6 +4,9 @@ const { set, get, getAsObject } = require('@parameter1/base-cms-object-path');
 const omedaIdentityX = require('@parameter1/base-cms-marko-web-omeda-identity-x');
 const htmlSitemapPagination = require('@parameter1/base-cms-marko-web-html-sitemap/middleware/paginated');
 const contactUsHandler = require('@parameter1/base-cms-marko-web-contact-us');
+const contentGating = require('@parameter1/base-cms-marko-web-theme-monorail/middleware/content-gating');
+const newsletterModalState = require('@parameter1/base-cms-marko-web-theme-monorail/middleware/newsletter-modal-state');
+const MindfulMarkoWebService = require('@parameter1/base-cms-mindful/marko-web/middleware/service');
 
 const document = require('./components/document');
 const components = require('./components');
@@ -46,11 +49,20 @@ module.exports = (options = {}) => {
       // Use paginated middleware
       app.use(htmlSitemapPagination());
 
+      const { namespace } = getAsObject(options, 'siteConfig.mindful');
+      app.use(MindfulMarkoWebService({ namespace }));
+
+      // Use newsletterModalState middleware
+      app.use(newsletterModalState());
+
       // Use Omeda middleware
       const omedaIdentityXConfig = getAsObject(options, 'siteConfig.omedaIdentityX');
       set(app.locals, 'omedaConfig', getAsObject(options, 'siteConfig.omeda'));
       omedaIdentityX(app, { ...omedaIdentityXConfig, idxRouteTemplates });
       idxNavItems({ site: app.locals.site });
+
+      // Install custom content gating middleware
+      contentGating(app);
 
       // Setup GAM.
       const gamConfig = get(options, 'siteConfig.gam');

@@ -2,9 +2,11 @@ const htmlSitemap = require('@parameter1/base-cms-marko-web-html-sitemap/routes'
 const renderBlock = require('@parameter1/base-cms-marko-web-theme-monorail/routes/render-block');
 const taxonomy = require('@parameter1/base-cms-marko-web-theme-monorail/routes/taxonomy');
 const magazine = require('@parameter1/base-cms-marko-web-theme-monorail-magazine/routes');
+const getAdvertisingPostAsNativeStory = require('@parameter1/base-cms-mindful/marko-web/middleware/get-advertising-post-as-native-story');
+
+const advertisingPostTemplate = require('../templates/content/advertising-post');
 const dynamicPage = require('./dynamic-page');
 const feed = require('./feed');
-const nativeX = require('./native-x');
 const printContent = require('./print-content');
 const publicFiles = require('./public-files');
 const redirects = require('./redirects');
@@ -21,7 +23,11 @@ module.exports = (app, siteConfig) => {
   magazine(app);
 
   // NativeX (Story rendering)
-  nativeX(app);
+  getAdvertisingPostAsNativeStory(app, {
+    route: '/sponsored/:section/:slug/:id',
+    tenant: 'diverse',
+    template: advertisingPostTemplate,
+  });
 
   // Shared Print Content
   printContent(app);
