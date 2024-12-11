@@ -1,7 +1,7 @@
 const subscribe = require('./subscribe');
 
 const topics = [
-  { href: '/page/editors-note', label: "Editor's Note" },
+  { href: '/page/editors-note?utm_source=website&utm_medium=page&utm_term=editors-note', label: "Editor's Note" },
   { href: '/students', label: 'Students' },
   { href: '/faculty-staff', label: 'Faculty & Staff' },
   { href: '/leadership-policy', label: 'Leadership & Policy' },
@@ -14,18 +14,18 @@ const topics = [
 const resources = [
   // { href: '/sponsored-content', label: 'Sponsored Content' },
   // { href: '/latest-news', label: 'Latest News' },
-  { href: '/podcasts', label: 'Podcasts' },
+  { href: '/podcasts?utm_source=website&utm_medium=landing-page&utm_term=podcasts', label: 'Podcasts' },
   { href: '/opinion', label: 'Opinion' },
   { href: '/webinars', label: '<em>Diverse</em> Talk Live! Webcasts' },
   // { href: '/reports-data', label: 'Reports & Data' },
   // { href: '/from-the-magazine', label: 'From the Magazine' },
   { href: 'https://www.ccnewsnow.com', label: 'Community Colleges', target: '_blank' },
   { href: '/health', label: 'Health' },
-  { href: 'https://diversejobs.net', label: 'Jobs', target: '_blank' },
+  { href: 'https://diversejobs.net/?utm_source=website&utm_medium=job-board&utm_term=diverse-jobs', label: 'Jobs', target: '_blank' },
   { href: '/military', label: 'Military' },
   { href: 'https://keepitreal.diverseeducation.com/', label: 'Keep it Real', target: '_blank' },
   { href: 'https://shop.diverseeducation.com/', label: 'Shop', target: '_blank' },
-  { href: 'https://testimonials.diverseeducation.com/index.html', label: 'Testimonials', target: '_blank' },
+  { href: 'https://testimonials.diverseeducation.com/index.html?utm_source=website&utm_medium=landing-page&utm_term=testimonials', label: 'Testimonials', target: '_blank' },
 ];
 
 const awards = [
@@ -35,19 +35,19 @@ const awards = [
   { href: '/awards-honors/dr-john-hope-franklin', label: 'Dr. John Hope Franklin Award' },
   { href: '/awards-honors/emerging-scholars/2024', label: 'Emerging Scholars' },
   { href: '/awards-honors/graduate-scholars/2024', label: 'Rising Graduate Scholars' },
-  { href: '/awards-honors/mppwcc', label: 'Most Promising Places to Work: Community Colleges' },
-  { href: '/awards-honors/mppwsa', label: 'Most Promising Places to Work: Student Affairs' },
-  { href: 'https://top100.diverseeducation.com', label: 'Top 100', target: '_blank' },
+  { href: '/awards-honors/mppwcc?utm_source=website&utm_medium=landing-page&utm_term=Most-Promising-Places-to-Work-in-Community-Colleges', label: 'Most Promising Places to Work: Community Colleges' },
+  { href: '/awards-honors/mppwsa?utm_source=website&utm_medium=landing-page&utm_term=Most-Promising-Places-to-Work-in-Student-Affairs', label: 'Most Promising Places to Work: Student Affairs' },
+  { href: 'https://top100.diverseeducation.com/?utm_source=website&utm_medium=landing-page&utm_term=top100', label: 'Top 100', target: '_blank' },
   { href: '/awards-honors/top-women/2024', label: 'Top Women' },
 ];
 
 const utilities = [
-  { href: 'https://mediakit.diverseeducation.com/', label: 'Advertise', target: '_blank' },
+  { href: 'https://mediakit.diverseeducation.com/?utm_source=website&utm_medium=mediakit', label: 'Advertise', target: '_blank' },
   { href: '/press-releases', label: 'Press Releases' },
-  { href: '/page/about-us', label: 'About Us' },
-  { href: '/page/contact-us', label: 'Contact Us' },
+  { href: '/page/about-us?utm_source=website&utm_medium=page&utm_term=about-us', label: 'About Us' },
+  { href: '/page/contact-us?utm_source=website&utm_medium=page&utm_term=cont', label: 'Contact Us' },
   subscribe,
-  { href: 'https://editorial-calendar.diverseeducation.com', label: 'Editorial Calendar', target: '_blank' },
+  { href: 'https://editorial-calendar.diverseeducation.com/?utm_source=website&utm_medium=landing-page&utm_term=editorial-calendar', label: 'Editorial Calendar', target: '_blank' },
 ];
 
 const mobileMenu = {
@@ -58,11 +58,11 @@ const mobileMenu = {
   secondary: [
     ...resources,
     subscribe,
-    { href: 'https://mediakit.diverseeducation.com/', label: 'Advertise', target: '_blank' },
+    { href: 'https://mediakit.diverseeducation.com/?utm_source=website&utm_medium=mediakit', label: 'Advertise', target: '_blank' },
     { href: '/press-releases', label: 'Press Releases' },
     { href: 'https://editorial-calendar.diverseeducation.com', label: 'Editorial Calendar', target: '_blank' },
-    { href: '/page/about-us', label: 'About Us', target: '_blank' },
-    { href: '/page/contact-us', label: 'Contact Us', target: '_blank' },
+    { href: '/page/about-us?utm_source=website&utm_medium=page&utm_term=about-us', label: 'About Us', target: '_blank' },
+    { href: '/page/contact-us?utm_source=website&utm_medium=page&utm_term=contact-us', label: 'Contact Us', target: '_blank' },
   ],
 };
 
@@ -91,10 +91,10 @@ module.exports = {
       { href: '/students', label: 'Students' },
       { href: '/faculty-staff', label: 'Faculty & Staff' },
       { href: '/leadership-policy', label: 'Leadership & Policy' },
-      { href: '/podcasts', label: 'Podcasts' },
-      { href: 'https://top100.diverseeducation.com', label: 'Top 100', target: '_blank' },
+      { href: '/podcasts?utm_source=website&utm_medium=landing-page&utm_term=podcasts', label: 'Podcasts' },
+      { href: 'https://top100.diverseeducation.com/?utm_source=website&utm_medium=landing-page&utm_term=top100', label: 'Top 100', target: '_blank' },
       { href: 'https://mediakit.diverseeducation.com/', label: 'Advertise', target: '_blank' },
-      { href: 'https://diversejobs.net', label: 'Jobs', target: '_blank' },
+      { href: 'https://diversejobs.net/?utm_source=website&utm_medium=job-board&utm_term=diverse-jobs', label: 'Jobs', target: '_blank' },
       { href: 'https://shop.diverseeducation.com', label: 'Shop', target: '_blank' },
     ],
   },
