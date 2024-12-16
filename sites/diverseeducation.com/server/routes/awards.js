@@ -1,7 +1,7 @@
-const { asyncRoute } = require('@parameter1/base-cms-utils');
-const { withWebsiteSection } = require('@parameter1/base-cms-marko-web/middleware');
+const { asyncRoute } = require('@mindful-web/utils');
+const { withWebsiteSection } = require('@mindful-web/marko-web/middleware');
 const { newsletterState } = require('@cox-matthews-associates/package-global/middleware/newsletter-state');
-const queryFragment = require('@parameter1/base-cms-marko-web-theme-monorail/graphql/fragments/website-section-page');
+const queryFragment = require('@mindful-web/marko-web-theme-monorail/graphql/fragments/website-section-page');
 const awardRedirects = require('./awards/redirects');
 const emergingScholars = require('./awards/emerging-scholars');
 const graduateScholars = require('./awards/graduate-scholars');

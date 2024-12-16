@@ -24,7 +24,7 @@ x-env-defaults: &env
   IDENTITYX_API_TOKEN: ${IDENTITYX_API_TOKEN-(unset)}
   RECAPTCHA_V3_SITE_KEY: ${RECAPTCHA_V3_SITE_KEY-}
   RECAPTCHA_V3_SECRET_KEY: ${RECAPTCHA_V3_SECRET_KEY-}
-  BASE_BROWSE_GRAPHQL_URI: ${BASE_BROWSE_GRAPHQL_URI-https://base-browse.virgon.base.parameter1.com/graphql}
+  BASE_BROWSE_GRAPHQL_URI: ${BASE_BROWSE_GRAPHQL_URI-https://browse.virgon.mindful-web.parameter1.com/graphql}
   SENDGRID_API_KEY: ${SENDGRID_API_KEY-(unset)}
   SENDGRID_DEV_TO: developer@endeavorb2b.com
   YARN_CACHE_FOLDER: /.yarn-cache
@@ -36,16 +36,16 @@ x-env-defaults: &env
   NATIVEX_SERVE_URI: ${NATIVEX_SERVE_URI-}
 
 x-env-leonis: &env-leonis
-  GRAPHQL_URI: ${GRAPHQL_URI-https://graphql.leonis.base.parameter1.com}
-  OEMBED_URI: ${OEMBED_URI-https://oembed.leonis.base.parameter1.com}
-  RSS_URI: ${RSS_URI-https://rss.leonis.base.parameter1.com}
-  SITEMAPS_URI: ${SITEMAPS_URI-https://sitemaps.leonis.base.parameter1.com}
+  GRAPHQL_URI: ${GRAPHQL_URI-https://graphql.leonis.mindful-web.parameter1.com}
+  OEMBED_URI: ${OEMBED_URI-https://oembed.leonis.mindful-web.parameter1.com}
+  RSS_URI: ${RSS_URI-https://rss.leonis.mindful-web.parameter1.com}
+  SITEMAPS_URI: ${SITEMAPS_URI-https://sitemaps.leonis.mindful-web.parameter1.com}
 
 x-env-virgon: &env-virgon
-  GRAPHQL_URI: ${GRAPHQL_URI-https://virgon.graphql.base.parameter1.com}
-  OEMBED_URI: ${OEMBED_URI-https://virgon.oembed.base.parameter1.com}
-  RSS_URI: ${RSS_URI-https://virgon.rss.base.parameter1.com}
-  SITEMAPS_URI: ${SITEMAPS_URI-https://virgon.sitemaps.base.parameter1.com}
+  GRAPHQL_URI: ${GRAPHQL_URI-https://virgon.graphql.mindful-web.parameter1.com}
+  OEMBED_URI: ${OEMBED_URI-https://virgon.oembed.mindful-web.parameter1.com}
+  RSS_URI: ${RSS_URI-https://virgon.rss.mindful-web.parameter1.com}
+  SITEMAPS_URI: ${SITEMAPS_URI-https://virgon.sitemaps.mindful-web.parameter1.com}
 
 x-env-development: &env-development
   GRAPHQL_URI: ${GRAPHQL_URI-http://host.docker.internal:10002}

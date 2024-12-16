@@ -1,4 +1,4 @@
-const contentMetering = require('@parameter1/base-cms-marko-web-theme-monorail/middleware/content-metering');
+const contentMetering = require('@mindful-web/marko-web-theme-monorail/middleware/content-metering');
 
 const withContent = require('@cox-matthews-associates/package-global/middleware/with-content');
 const { newsletterState } = require('@cox-matthews-associates/package-global/middleware/newsletter-state');

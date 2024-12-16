@@ -1,5 +1,5 @@
-const IdentityXConfiguration = require('@parameter1/base-cms-marko-web-identity-x/config');
-const { get } = require('@parameter1/base-cms-object-path');
+const IdentityXConfiguration = require('@mindful-web/marko-web-identity-x/config');
+const { get } = require('@mindful-web/object-path');
 const newrelic = require('newrelic');
 
 const { log } = console;

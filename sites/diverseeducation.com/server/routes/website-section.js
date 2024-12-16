@@ -1,6 +1,6 @@
-const { withWebsiteSection } = require('@parameter1/base-cms-marko-web/middleware');
+const { withWebsiteSection } = require('@mindful-web/marko-web/middleware');
 const { newsletterState } = require('@cox-matthews-associates/package-global/middleware/newsletter-state');
-const queryFragment = require('@parameter1/base-cms-marko-web-theme-monorail/graphql/fragments/website-section-page');
+const queryFragment = require('@mindful-web/marko-web-theme-monorail/graphql/fragments/website-section-page');
 const queryFragmentWithLogo = require('@cox-matthews-associates/package-global/graphql/fragments/website-section-with-logo-page');
 const cards = require('../templates/website-section/cards');
 const podcasts = require('../templates/website-section/podcasts');
