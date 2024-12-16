@@ -1,5 +1,5 @@
 const { URL } = require('url');
-const { oembedHandler } = require('@parameter1/base-cms-marko-web/utils/embedded-media');
+const { oembedHandler } = require('@mindful-web/marko-web/utils/embedded-media');
 
 const buildFacebookElement = ({
   href,

@@ -1,7 +1,7 @@
-const { withWebsiteSection } = require('@parameter1/base-cms-marko-web/middleware');
+const { withWebsiteSection } = require('@mindful-web/marko-web/middleware');
 const { newsletterState } = require('@cox-matthews-associates/package-global/middleware/newsletter-state');
-const { asyncRoute, cleanPath } = require('@parameter1/base-cms-utils');
-const queryFragment = require('@parameter1/base-cms-marko-web-theme-monorail/graphql/fragments/website-section-page');
+const { asyncRoute, cleanPath } = require('@mindful-web/utils');
+const queryFragment = require('@mindful-web/marko-web-theme-monorail/graphql/fragments/website-section-page');
 const topWomen = require('../../templates/website-section/awards-honors/top-women');
 
 module.exports = (app) => {

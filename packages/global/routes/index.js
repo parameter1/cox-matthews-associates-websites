@@ -1,8 +1,8 @@
-const htmlSitemap = require('@parameter1/base-cms-marko-web-html-sitemap/routes');
-const renderBlock = require('@parameter1/base-cms-marko-web-theme-monorail/routes/render-block');
-const taxonomy = require('@parameter1/base-cms-marko-web-theme-monorail/routes/taxonomy');
-const magazine = require('@parameter1/base-cms-marko-web-theme-monorail-magazine/routes');
-const getAdvertisingPostAsNativeStory = require('@parameter1/base-cms-mindful/marko-web/middleware/get-advertising-post-as-native-story');
+const htmlSitemap = require('@mindful-web/marko-web-html-sitemap/routes');
+const renderBlock = require('@mindful-web/marko-web-theme-monorail/routes/render-block');
+const taxonomy = require('@mindful-web/marko-web-theme-monorail/routes/taxonomy');
+const magazine = require('@mindful-web/marko-web-theme-monorail-magazine/routes');
+const getAdvertisingPostAsNativeStory = require('@mindful-web/mindful/marko-web/middleware/get-advertising-post-as-native-story');
 
 const advertisingPostTemplate = require('../templates/content/advertising-post');
 const dynamicPage = require('./dynamic-page');
