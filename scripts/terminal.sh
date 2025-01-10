@@ -1,4 +1,4 @@
 #!/bin/bash
-docker-compose run \
+docker compose run \
   --rm \
   terminal
