@@ -308,7 +308,7 @@ module.exports = {
       salaryChart: {
         senior: 77848.84,
         mid: 43084.18,
-        entry: 27267
+        entry: 27267,
       },
     },
     'Lehigh University': {
