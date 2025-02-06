@@ -7,7 +7,9 @@ $ const currentYear = alias === rootAlias ? Object.keys(config)[Object.keys(conf
 $ const currentYearData = config[currentYear];
 $ const title = currentYearData ? `${currentYear} Most Promising Places to Work in Student Affairs` : 'Most Promising Places to Work in Student Affairs';
 $ const institutionData = getAsObject(currentYearData, "institutionData");
+$ const hminstitutionData = getAsObject(currentYearData, "hminstitutionData");
 $ const institutions = Object.keys(institutionData);
+$ const hminstitutions = Object.keys(hminstitutionData);
 $ const pageDescription = currentYearData ? currentYearData.description : title;
 $ const itTakesTeamwork = currentYearData ? currentYearData.itTakesTeamwork : title;
 $ const study = currentYearData ? currentYearData.study : title;
@@ -24,7 +26,6 @@ $ const fostering = currentYearData ? currentYearData.fostering : title;
 $ const chee = currentYearData ? currentYearData.chee : title;
 $ const ideas = currentYearData ? currentYearData.ideas : title;
 $ const nationalPerspective = currentYearData ? currentYearData.nationalPerspective : title;
-
 
 <marko-web-default-page-layout type=type title=title description=pageDescription>
   <@page>
@@ -125,6 +126,37 @@ $ const nationalPerspective = currentYearData ? currentYearData.nationalPerspect
           </table>
         </if>
       </@section>
+      <@section modifiers=["card-deck"]>
+        $ const tableHMLabels = Object.values(getAsObject(currentYearData, "tableHMLabels.tableHM"));
+        <if(currentYearData && tableHMLabels.length)>
+          <table class="table table-responsive table-hover">
+            <thead>
+              <tr>
+                <h3 style='color:#2A96B4;'> HONORABLE MENTION </h3>
+                <td width="400"><b>Institution</b></td>
+                <for|label| of=tableHMLabels>
+                  <td width="200">
+                    <b>${label}</b>
+                  </td>
+                </for>
+              </tr>
+            </thead>
+            <if(hminstitutions.length)>
+              <tbody>
+                <for|hminstitution| of=hminstitutions>
+                  <tr>
+                    $ const tableHMData = getAsObject(hminstitutionData[hminstitution], "tableHM");
+                    <td class="institution">${hminstitution}</td>
+                    <for|field| of=Object.keys(tableHMData)>
+                      <td class=field>${tableHMData[field]}</td>
+                    </for>
+                  </tr>
+                </for>
+              </tbody>
+            </if>
+          </table>
+        </if>
+      </@section>
       <@section>
         <div class="row">
           <div class="col">
@@ -190,7 +222,7 @@ $ const nationalPerspective = currentYearData ? currentYearData.nationalPerspect
                 <p>$!{currentYearData.fostering}</p><br/>
               </div>
             </if>
-            <if(currentYearData && currentYearData.itTakesTeamwork)>
+             <if(currentYearData && currentYearData.itTakesTeamwork)>
               <h2 class="page-wrapper__website-section-name">There’s No “I” in MPPWSA: It Takes Teamwork to Do <i>This</i> Work</h2>
               <div class="page-wrapper__website-section-description">
                 <p>$!{currentYearData.itTakesTeamwork}</p><br/>
@@ -207,7 +239,7 @@ $ const nationalPerspective = currentYearData ? currentYearData.nationalPerspect
         </div>
         $ const tableTwoLabels = Object.values(getAsObject(currentYearData, "tableLabels.tableTwo"));
         <if(currentYearData && tableTwoLabels.length)>
-          <table class="table table table-hover">
+          <table class="table table-responsive table-hover">
             <thead>
               <tr>
                 <td><b>Institution</b></td>
