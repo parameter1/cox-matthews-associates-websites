@@ -48,9 +48,9 @@ module.exports = ({
       ],
     })
     .setTemplate('INLINE-CONTENT-DESKTOP', {
-      size: [[300, 250], [300, 100]],
+      size: [[300, 250]],
       sizeMapping: [
-        { viewport: [750, 0], size: [[300, 250], [300, 100]] },
+        { viewport: [750, 0], size: [[300, 250]] },
         { viewport: [0, 0], size: [] },
       ],
     });
