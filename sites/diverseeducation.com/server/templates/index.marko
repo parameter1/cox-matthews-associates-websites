@@ -1,8 +1,6 @@
 import { get } from "@mindful-web/object-path";
 import hierarchyAliases from "@mindful-web/marko-web/utils/hierarchy-aliases";
-
 $ const { site } = out.global;
-
 $ const { id, alias, name, pageNode } = input;
 
 <global-website-section-home-layout
@@ -20,9 +18,8 @@ $ const { id, alias, name, pageNode } = input;
   </@section>
 
   <@section>
-    <site-latest-podcast-block with-video=true />
-  </@section>
-
+  <site-latest-podcast-block with-video=true />
+</@section>
   <@section|{ aliases }|>
     <div class="row">
       <div class="col-lg-4">
@@ -36,7 +33,6 @@ $ const { id, alias, name, pageNode } = input;
       </div>
     </div>
   </@section>
-
   <@section|{ aliases }|>
     <theme-gam-define-display-ad
       name="rotation"
@@ -45,11 +41,9 @@ $ const { id, alias, name, pageNode } = input;
       modifiers=["inter-block"]
     />
   </@section>
-
   <@section>
     <theme-section-list-deck-block aliases=["sports", "demographics", "institutions"] />
   </@section>
-
   <@section|{ aliases }| modifiers=["break-container"]>
     <global-featured-jobs-block />
   </@section>
@@ -69,22 +63,18 @@ $ const { id, alias, name, pageNode } = input;
       </div>
     </div>
   </@section>
-
   $ const publicationIds = site.get("magazine.publicationIds");
   <if(publicationIds.length)>
     <@section>
       <theme-magazine-issues-block publication-id=publicationIds[0] />
     </@section>
   </if>
-
   <@section>
     <site-promo-card-rotation-block />
   </@section>
-
   <@section>
     <div role="region" aria-label="Most Popular Stories">
       <theme-client-side-most-popular-block />
     </div>
   </@section>
-
 </global-website-section-home-layout>
