@@ -1,0 +1,12 @@
+$ const { id, pageNode } = input;
+
+<theme-magazine-issue-layout id=id page-node=pageNode>
+  <@leaderboard|{ aliases }|>
+    <theme-gam-define-display-ad
+      name="leaderboard"
+      position="section_page"
+      aliases=aliases
+      modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
+    />
+  </@leaderboard>
+</theme-magazine-issue-layout>
