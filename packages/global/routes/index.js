@@ -4,6 +4,9 @@ const taxonomy = require('@mindful-web/marko-web-theme-monorail/routes/taxonomy'
 const magazine = require('@mindful-web/marko-web-theme-monorail-magazine/routes');
 const getAdvertisingPostAsNativeStory = require('@mindful-web/mindful/marko-web/middleware/get-advertising-post-as-native-story');
 
+const magazineIndex = require('../templates/magazine/index');
+const magazineIssue = require('../templates/magazine/issue');
+const magazinePublication = require('../templates/magazine/publication');
 const advertisingPostTemplate = require('../templates/content/advertising-post');
 const dynamicPage = require('./dynamic-page');
 const feed = require('./feed');
@@ -19,8 +22,12 @@ module.exports = (app, siteConfig) => {
   // Feed
   feed(app);
 
-  // magazine
-  magazine(app);
+  // Magazine
+  magazine(app, {
+    index: magazineIndex,
+    issue: magazineIssue,
+    publication: magazinePublication,
+  });
 
   // NativeX (Story rendering)
   getAdvertisingPostAsNativeStory(app, {
