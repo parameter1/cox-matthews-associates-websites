@@ -589,10 +589,10 @@
   dependencies:
     inflected "^2.1.0"
 
-"@mindful-web/leaders-program@^1.1.1":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@mindful-web/leaders-program/-/leaders-program-1.1.1.tgz#6c6890f1781ae9290f4a3babe2fd5f96d2deb0fd"
-  integrity sha512-xCJ2wTcrCvlt1/nmoB53d2rh6zG3t+h7+aqr+cRr4Kgd+9bbMFgl69U6oLR4y3ZI9x60oPyZuyuIZ63kUkF2Rw==
+"@mindful-web/leaders-program@^1.11.2":
+  version "1.11.2"
+  resolved "https://registry.yarnpkg.com/@mindful-web/leaders-program/-/leaders-program-1.11.2.tgz#744500d9137aeccfb8ebfc47ae93767567886f8a"
+  integrity sha512-m2wnBwfGrOKAD/j80Piacnk5vhhoFwhOjiGqsv/+PAQoZ88kpGZVCYvenRrn+Y4l99IPQybA6ybcI36oHR1RXw==
   dependencies:
     object-path "^0.11.8"
     portal-vue "^2.1.7"
@@ -738,12 +738,12 @@
     graphql "^14.7.0"
     graphql-tag "^2.12.6"
 
-"@mindful-web/marko-web-leaders@^1.1.1":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@mindful-web/marko-web-leaders/-/marko-web-leaders-1.1.1.tgz#f588403f28c83bb95fb34a62f1feb51bdf049f11"
-  integrity sha512-zBUn+8VCdu7M/EsO/yAY+JVpq/AkKmnnDmpOFQc85ujPo/LTdCWh+RsulidgFtYG7NHH9ZrxSwK5ViGuKhasGw==
+"@mindful-web/marko-web-leaders@^1.11.2":
+  version "1.11.2"
+  resolved "https://registry.yarnpkg.com/@mindful-web/marko-web-leaders/-/marko-web-leaders-1.11.2.tgz#6436cc35b007245372371da0ed3e6b32ae95eabd"
+  integrity sha512-Vh+bQx8JUmHyA7uJFirW7RfCq+UPGHS4rP9GdIi0GrEQ9oF74ldtB6MyvuHN64EcsRgJShUoBe0sSUwoLeVsaA==
   dependencies:
-    "@mindful-web/leaders-program" "^1.1.1"
+    "@mindful-web/leaders-program" "^1.11.2"
     "@mindful-web/marko-web-icons" "^1.0.0"
     "@mindful-web/object-path" "^1.0.0"
     object-path "^0.11.8"
@@ -839,10 +839,10 @@
   dependencies:
     "@mindful-web/utils" "^1.0.0"
 
-"@mindful-web/marko-web-theme-monorail-magazine@^1.11.0":
-  version "1.11.0"
-  resolved "https://registry.yarnpkg.com/@mindful-web/marko-web-theme-monorail-magazine/-/marko-web-theme-monorail-magazine-1.11.0.tgz#0dc9224a6003e7d55ef90b75bda4333a9a2baa0a"
-  integrity sha512-b75EmPVUOQUt4fI5I6MWsqT1UQm4vUmagS5670Qkv6wvFJITFs0F21jeZuMqsx3iWaYAELG89Epmh2M2pecHLw==
+"@mindful-web/marko-web-theme-monorail-magazine@^1.11.3":
+  version "1.11.3"
+  resolved "https://registry.yarnpkg.com/@mindful-web/marko-web-theme-monorail-magazine/-/marko-web-theme-monorail-magazine-1.11.3.tgz#06318334821b39f1794ac24961a4c3033f27b261"
+  integrity sha512-iqNJjUd9giGnc7i8LOmRJTyDObEUShWIrlO4ObF5AXJ7e5dUCLGkhmCcPBwnpWii8t5CoVmcBTcqT4fTDspIOw==
   dependencies:
     "@mindful-web/marko-web-gtm" "^1.0.1"
     "@mindful-web/marko-web-p1-events" "^1.0.1"
