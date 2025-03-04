@@ -1,3 +1,4 @@
+const hiringFeed = require('@cox-matthews-associates/package-global/routes/hiring-feed');
 const content = require('./content');
 const home = require('./home');
 const awards = require('./awards');
@@ -6,6 +7,9 @@ const websiteSection = require('./website-section');
 const subscribe = require('./subscribe');
 
 module.exports = (app) => {
+  // Hiring XML Feed
+  hiringFeed(app);
+
   // Homepage
   home(app);
 
