@@ -126,7 +126,7 @@ module.exports = (app) => {
       `<rss ${rssAttributes}>`,
       '<channel>',
       `<title>${siteName}</title>`,
-      `<atom:link href="${siteUrl}/feed/" rel="self" type="application/rss+xml" />`,
+      `<atom:link href="${siteUrl}/hiring-feed/" rel="self" type="application/rss+xml" />`,
       `<link>${siteUrl}</link>`,
       `<description>${siteName}</description>`,
       `<lastBuildDate>${lastBuildDate}</lastBuildDate>`,
