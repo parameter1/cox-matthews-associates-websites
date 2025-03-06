@@ -8,7 +8,7 @@ const subscribe = require('./subscribe');
 
 module.exports = (app) => {
   // Hiring XML Feed
-  hiringFeed(app);
+  hiringFeed(app, 119314);
 
   // Homepage
   home(app);
