@@ -4,7 +4,7 @@ const gql = require('graphql-tag');
 const { encode } = require('html-entities');
 const dayjs = require('@mindful-web/dayjs');
 
-module.exports = (app) => {
+module.exports = (app, sectionId) => {
   const parseEmbeddedMedia = get(app, 'locals.parseEmbeddedMedia');
   const renderBody = isFn(parseEmbeddedMedia) ? parseEmbeddedMedia : (v) => v;
   app.get('/hiring-feed', asyncRoute(async (req, res) => {
@@ -68,7 +68,7 @@ module.exports = (app) => {
     const limit = 10;
     const skip = 0;
     const input = {
-      sectionId: 119314,
+      sectionId,
       includeContentTypes: ['Article'],
       pagination: {
         limit,
