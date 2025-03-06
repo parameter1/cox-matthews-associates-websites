@@ -38,7 +38,7 @@ const awards = [
   { href: '/awards-honors/mppwcc?utm_source=website&utm_medium=landing-page&utm_term=Most-Promising-Places-to-Work-in-Community-Colleges', label: 'Most Promising Places to Work: Community Colleges' },
   { href: '/awards-honors/mppwsa?utm_source=website&utm_medium=landing-page&utm_term=Most-Promising-Places-to-Work-in-Student-Affairs', label: 'Most Promising Places to Work: Student Affairs' },
   { href: 'https://top100.diverseeducation.com/?utm_source=website&utm_medium=landing-page&utm_term=top100', label: 'Top 100', target: '_blank' },
-  { href: '/awards-honors/top-women/2024', label: 'Top Women' },
+  { href: '/awards-honors/top-women/2025', label: 'Top Women' },
 ];
 
 const utilities = [
