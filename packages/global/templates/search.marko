@@ -7,7 +7,7 @@ $ const title = "Search";
 $ const description = `Search ${config.siteName()}`;
 $ const apiKey = site.get("gcse.id");
 
-<marko-web-default-page-layout type=type title=title description=description>
+<marko-web-default-page-layout title=title description=description type=type>
   <@head>
     <marko-web-gtm-default-context|{ context }| type=type>
       <marko-web-gtm-push data=context />
