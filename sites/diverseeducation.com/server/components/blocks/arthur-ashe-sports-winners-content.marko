@@ -3,25 +3,35 @@ import profilesFragment from "../../graphql/fragments/arthur-ashe-profile";
 import sectionWithChilderenFragment from "../../graphql/fragments/section-with-children";
 
 $ const { alias } = input;
+$ const awards = [
+  { name: 'Male Winner', alias: `${alias}/male` },
+  { name: 'Female Winner', alias: `${alias}/female` },
+];
 
-<marko-web-query|{ nodes }|
-  name="website-scheduled-content"
-  params={
-    limit: 25,
-    sectionAlias: alias,
-    sectionBubbling: false,
-    queryFragment: profilesFragment,
-  }
->
-  <h2 title="Sport Winners" class="page-wrapper__website-section-name page-wrapper__website-section-name--secondary">
-    Sport Winners
-  </h2>
-  <theme-card-deck-flow
-    cols=2
-    nodes=nodes
-    modifiers=["awards-honors", "arthur-ashe"]>
-    <@slot|{ node }|>
-      <site-arthur-ashe-profiles-node node=node with-teaser=true with-link=false />
-    </@slot>
-  </theme-card-deck-flow>
-</marko-web-query>
+<div class="row">
+  <for|award| of=awards>
+    <marko-web-query|{ nodes }|
+      name="website-scheduled-content"
+      params={
+        limit: 25,
+        sectionAlias: award.alias,
+        sectionBubbling: false,
+        queryFragment: profilesFragment,
+      }
+    >
+      <div class="col-md-6">
+        <h2 title=award.name class="page-wrapper__website-section-name page-wrapper__website-section-name--secondary">
+          ${award.name}
+        </h2>
+        <theme-card-deck-flow
+          cols=1
+          nodes=nodes
+          modifiers=["awards-honors", "arthur-ashe"]>
+          <@slot|{ node }|>
+            <site-arthur-ashe-profiles-node node=node with-teaser=true with-link=false />
+          </@slot>
+        </theme-card-deck-flow>
+      </div>
+    </marko-web-query>
+  </for>
+</div>
