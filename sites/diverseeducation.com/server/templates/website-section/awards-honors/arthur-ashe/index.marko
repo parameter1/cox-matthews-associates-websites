@@ -80,12 +80,12 @@ $ const rootAlias = 'awards-honors/arthur-ashe';
   <!-- Only loop over child section awards types & gender on non root aliases -->
   <!-- This assumes the following section structure -->
   <!-- Year(2021) > Awards(Female Sports Winner || Male Sports Winner || Female Sports Finalists || Male Sports Finalists) -->
-  <if(alias !== rootAlias && !alias.match(/sports-winners$/))>
+  <if(alias !== rootAlias && !alias.match(/sport-winners$/))>
     <@section modifiers=["arthur-ashe", "arthur-ashe-profiles"]>
       <site-arthur-ashe-award-content-block alias=alias />
     </@section>
   </if>
-  <else-if(alias.match(/sports-winners$/))>
+  <else-if(alias.match(/sport-winners$/))>
     <@section modifiers=["arthur-ashe", "arthur-ashe-profiles"]>
       <site-arthur-ashe-sports-winners-content-block alias=alias />
     </@section>
