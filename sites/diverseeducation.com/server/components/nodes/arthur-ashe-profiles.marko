@@ -8,7 +8,8 @@ $ const profileBody = get(profile, "body");
 $ const primaryImage = getAsObject(content, "primaryImage");
 $ const withTeaser = defaultValue(input.withTeaser, true);
 $ const withBody = defaultValue(input.withBody, false);
-$ const imageLink = primaryImage.src ? { href: content.siteContext.path } : false;
+$ const withLink = defaultValue(input.withLink, true);
+$ const imageLink = primaryImage.src && withLink ? { href: content.siteContext.path } : false;
 
 <marko-web-node
   type="arthur-ashe-profile"

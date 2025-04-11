@@ -1,0 +1,27 @@
+import { getAsArray } from "@mindful-web/object-path";
+import profilesFragment from "../../graphql/fragments/arthur-ashe-profile";
+import sectionWithChilderenFragment from "../../graphql/fragments/section-with-children";
+
+$ const { alias } = input;
+
+<marko-web-query|{ nodes }|
+  name="website-scheduled-content"
+  params={
+    limit: 25,
+    sectionAlias: alias,
+    sectionBubbling: false,
+    queryFragment: profilesFragment,
+  }
+>
+  <h2 title="Sports Winners" class="page-wrapper__website-section-name page-wrapper__website-section-name--secondary">
+    Sports Winners
+  </h2>
+  <theme-card-deck-flow
+    cols=2
+    nodes=nodes
+    modifiers=["awards-honors", "arthur-ashe"]>
+    <@slot|{ node }|>
+      <site-arthur-ashe-profiles-node node=node with-teaser=true with-link=false />
+    </@slot>
+  </theme-card-deck-flow>
+</marko-web-query>

@@ -38,6 +38,11 @@ module.exports = (app) => {
     return res.marko(mppwsaYearly, { alias });
   }));
 
+  app.get('/:alias(awards-honors/arthur-ashe/\\d{4}/sports-winners)', newsletterState(), withWebsiteSection({
+    template: arthurAshe,
+    queryFragment,
+  }));
+
   app.get('/:alias(awards-honors/arthur-ashe/\\d{4})', newsletterState(), withWebsiteSection({
     template: arthurAshe,
     queryFragment,
