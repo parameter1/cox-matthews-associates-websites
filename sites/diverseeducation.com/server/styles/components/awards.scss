@@ -22,7 +22,7 @@
   }
 }
 
-.site-navbar__items--other-years-dropdown {
+.site-navbar__items--other-years-dropdown, .site-navbar__items--sport-winners-dropdown, .site-navbar__items--past-scholars-dropdown {
   top: 35px;
   display: none;
   flex-direction: column;
@@ -37,11 +37,11 @@
   }
 }
 
-.site-navbar__items--other-years-dropdown-open {
+.site-navbar__items--other-years-dropdown-open, .site-navbar__items--sport-winners-dropdown-open, .site-navbar__items--past-scholars-dropdown-open {
   display: flex;
 }
 
-.btn--other-years-dropdown {
+.btn--other-years-dropdown, .btn--sport-winners-dropdown, .btn--past-scholars-dropdown {
   @include skin-button($style: "secondary");
   padding: 0 12px 0 10px;
   min-width: 40px;
