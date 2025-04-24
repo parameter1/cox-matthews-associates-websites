@@ -15,13 +15,17 @@ $ const { alias } = input;
       innerArray[0] = award;
     } else if (award.name.match("Female Winner")) {
       innerArray[1] = award;
-    } else if (award.name.match("Male Sport Finalists")) {
+    } else if (award.name.match("Male Finalists")) {
       innerArray[2] = award;
-    } else if (award.name.match("Female Sport Finalists")) {
+    } else if (award.name.match("Female Finalists")) {
       innerArray[3] = award;
+    } else if (award.name.match("Male Semi-Finalists")) {
+      innerArray[4] = award;
+    } else if (award.name.match("Female Semi-Finalists")) {
+      innerArray[5] = award;
     }
     return innerArray;
-  }, []);
+  }, []).filter((v) => v);
   <div class="row">
     <for|award| of=awardsAppropriatelyOrdered>
       <marko-web-query|{ nodes }|

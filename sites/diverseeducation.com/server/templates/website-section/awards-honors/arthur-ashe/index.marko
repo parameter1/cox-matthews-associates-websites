@@ -80,11 +80,16 @@ $ const rootAlias = 'awards-honors/arthur-ashe';
   <!-- Only loop over child section awards types & gender on non root aliases -->
   <!-- This assumes the following section structure -->
   <!-- Year(2021) > Awards(Female Sports Winner || Male Sports Winner || Female Sports Finalists || Male Sports Finalists) -->
-  <if(alias !== rootAlias)>
+  <if(alias !== rootAlias && !alias.match(/sport-winners$/))>
     <@section modifiers=["arthur-ashe", "arthur-ashe-profiles"]>
       <site-arthur-ashe-award-content-block alias=alias />
     </@section>
   </if>
+  <else-if(alias.match(/sport-winners$/))>
+    <@section modifiers=["arthur-ashe", "arthur-ashe-profiles"]>
+      <site-arthur-ashe-sports-winners-content-block alias=alias />
+    </@section>
+  </else-if>
   <else>
     <@section modifiers=["arthur-ashe", "arthur-ashe-profiles"]>
       <marko-web-query|{ node }|
@@ -109,7 +114,6 @@ $ const rootAlias = 'awards-honors/arthur-ashe';
     <div class="row">
       <div class="col-md-6 mb-block">
         <div class="award-about-card">
-          <div class="award-about-card__title">Past Scholars:</div>
           <div class="award-about-card__description award-about-card__description--past-years">
             <marko-web-query|{ node }|
               name="website-section"
@@ -117,17 +121,54 @@ $ const rootAlias = 'awards-honors/arthur-ashe';
             >
             $ const year = 2024; //current/active year
             $ const children = getAsArray(node, "children.edges").map(({ node }) => node).filter(({ name })=> parseInt(name) <= year);
-              <marko-web-node-list>
-                <@nodes|{ nodes }| nodes=children modifiers=["flush-x"]>
-                  <div class="list-flow">
-                    <for|node| of=nodes>
-                      <div class="list-flow__node">
-                        <marko-web-link title=node.name href=`/${node.alias}`>${node.name}</marko-web-link>
-                      </div>
-                    </for>
-                  </div>
-                </@nodes>
-              </marko-web-node-list>
+            <div class="row">
+              <div class="col-md-6">
+                <theme-menu-toggle-button
+                  class="site-navbar__toggler btn btn--past-scholars-dropdown"
+                  targets=[".site-navbar__items--past-scholars-dropdown"]
+                  toggle-class="site-navbar__items--past-scholars-dropdown-open"
+                  icon-modifiers=["sm"]
+                  after="Past Scholars"
+                  icon-name="plus"
+                  expanded-icon-name="dash"
+                />
+                $ const otherYearsItems = children.map(({ alias, name }) => ({ href: `/${alias}`, label: name }));
+                <theme-site-navbar-items
+                  items=otherYearsItems
+                  modifiers=["past-scholars-dropdown"]
+                />
+              </div>
+              <div class="col-md-6">
+                <theme-menu-toggle-button
+                  class="site-navbar__toggler btn btn--sport-winners-dropdown"
+                  targets=[".site-navbar__items--sport-winners-dropdown"]
+                  toggle-class="site-navbar__items--sport-winners-dropdown-open"
+                  icon-modifiers=["sm"]
+                  after="Past Sport Winners"
+                  icon-name="plus"
+                  expanded-icon-name="dash"
+                />
+                $ const otherYearSportWinnerItems = children.map(({ alias, name }) => ({ href: `/${alias}/sport-winners`, label: name }));
+                <theme-site-navbar-items
+                  items=otherYearSportWinnerItems
+                  modifiers=["sport-winners-dropdown"]
+                />
+              </div>
+            </div>
+            <div class="row mt-block">
+              <div class="col">
+                <a class="btn btn-primary" target="_blank" href="https://www.diverseeducation.com/awards-honors/arthur-ashe/2025/sport-winners">
+                  <b style="color:white">2025 Sport Winners</b>
+                </a>
+              </div>
+            </div>
+            <div class="row mt-block">
+              <div class="col">
+                <a class="btn btn-primary" target="_blank" href="https://sponsorship-opportunities.diverseeducation.com/Ashe.pdf">
+                  <b style="color:white">Ashe Sponsorship Opportunities</b>
+                </a>
+              </div>
+            </div>
             </marko-web-query>
           </div>
         </div>
@@ -143,18 +184,6 @@ $ const rootAlias = 'awards-honors/arthur-ashe';
               In addition to their athletic ability, students named Arthur Ashe Jr. Sports Scholars must maintain a cumulative grade-point average of at least 3.5, be at least a sophomore academically and be active on their campuses or in their communities.
             </p>
           </div>
-          <marko-web-block name="sponsorship">
-            <div align="left">
-                  <a class="btn btn-primary" target="_blank" href="https://sponsorship-opportunities.diverseeducation.com/Ashe.pdf">
-                    <b style="color:white">Ashe Sponsorship Opportunities</b>
-                  </a>
-                </div>
-               <!-- <div align="center">
-                <br/>
-                <b> Extended Deadline: February 16 </b>
-                </div> -->
-                <br/>
-              </marko-web-block>
         </div>
       </div>
     </div>
