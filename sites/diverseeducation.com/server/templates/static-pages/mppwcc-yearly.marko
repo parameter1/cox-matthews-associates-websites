@@ -25,6 +25,7 @@ $ const advisoryBoard = currentYearData ? currentYearData.advisoryBoard: title;
 $ const chee = currentYearData ? currentYear.chee: title;
 $ const cheeGoals = currentYearData ? currentYearData.cheeGoals: title;
 $ const mpprecommendationsSrc = currentYearData ? currentYearData.mpprecommendationsSrc: recommnedations;
+$ const celebrating = currentYearData ? currentYearData.celebrating : title;
 
 <marko-web-default-page-layout type=type title=title>
   <@page>
@@ -55,7 +56,7 @@ $ const mpprecommendationsSrc = currentYearData ? currentYearData.mpprecommendat
               targets=[".site-navbar__items--other-years-dropdown"]
               toggle-class="site-navbar__items--other-years-dropdown-open"
               icon-modifiers=["sm"]
-              after="Other Years"
+              after="Previous Years"
               icon-name="plus"
               expanded-icon-name="dash"
             />
@@ -135,6 +136,10 @@ $ const tableOneLabels = Object.values(getAsObject(currentYearData, "tableLabels
                 <h3>ABOUT THE STUDY</h3>
                 <p>$!{currentYearData.study}</p>
               </if>
+              <if(currentYearData && currentYearData.celebrating)>
+                <h3>CELEBRATING PROMISING PLACES AT AACC 2025</h3>
+                <p>$!{currentYearData.celebrating}</p>
+              </if>
               <if(currentYearData && currentYearData.survey)>
                 <h3>ABOUT THE SURVEY</h3>
                 <p>$!{currentYearData.survey}</p>
@@ -164,16 +169,16 @@ $ const tableOneLabels = Object.values(getAsObject(currentYearData, "tableLabels
                 <p>$!{currentYearData.promisingPractices}</p>
               </if>
               <if(currentYearData && currentYearData.mpprecommendationsSrc)>
-                  <div class="col" align="center" width='500px'>
-                    <marko-web-img
-                      class=["lazyload"]
-                      alt="Promising Places Six Recommendations"
-                      src=currentYearData.mpprecommendationsSrc
-                      srcset=`${currentYearData.mpprecommendationsSrc} x2`
-                      lazyload=true
-                    />
+                <div class="col" align="center" width='500px'>
+                  <marko-web-img
+                    class=["lazyload"]
+                    alt="Promising Places Six Recommendations"
+                    src=currentYearData.mpprecommendationsSrc
+                    srcset=`${currentYearData.mpprecommendationsSrc} x2`
+                    lazyload=true
+                  />
                 </div><br><br>
-            </if>
+              </if>
               <if(currentYearData && currentYearData.theresnoIinmppwcc)>
                 <h3>THERE'S NO "I" IN MPPWCC: IT TAKES TEAMWORK TO DO THIS WORK</h3>
                 <p>$!{currentYearData.theresnoIinmppwcc}</p>
@@ -337,11 +342,6 @@ $ const tableOneLabels = Object.values(getAsObject(currentYearData, "tableLabels
       $ const tableFourLabels = Object.values(getAsObject(currentYearData, "tableLabels.tableFour"));
       <if(currentYearData && tableFourLabels.length)>
         <@section modifiers=["card-deck"]>
-          <div class="row">
-            <div class="col">
-              <h2 class="page-wrapper__website-section-name">ENROLLMENT TYPE</h2><br/>
-            </div>
-          </div>
           <table class="table table-responsive table-hover">
             <thead>
               <tr>
@@ -372,11 +372,6 @@ $ const tableOneLabels = Object.values(getAsObject(currentYearData, "tableLabels
       $ const tableFiveLabels = Object.values(getAsObject(currentYearData, "tableLabels.tableFive"));
       <if(currentYearData && tableFiveLabels.length)>
         <@section modifiers=["card-deck"]>
-          <div class="row">
-            <div class="col">
-              <h2 class="page-wrapper__website-section-name">DIVERSITY BENEFITS</h2><h3>Part 1</h3><br/>
-            </div>
-          </div>
           <table class="table table-responsive table-hover">
             <thead>
               <tr>
@@ -402,19 +397,11 @@ $ const tableOneLabels = Object.values(getAsObject(currentYearData, "tableLabels
               </tbody>
             </if>
           </table>
-          <div class="col">
-            <p><b>CDO</b> = chief diversity officer or equivalent at or near cabinet-level.</p>
-           </div>
         </@section>
       </if>
       $ const tableSixLabels = Object.values(getAsObject(currentYearData, "tableLabels.tableSix"));
       <if(currentYearData && tableSixLabels.length)>
         <@section modifiers=["card-deck"]>
-          <div class="row">
-            <div class="col">
-              <h2 class="page-wrapper__website-section-name">DIVERSITY BENEFITS</h2><h3>Part 2</h3><br/>
-            </div>
-          </div>
           <table class="table table-responsive table-hover">
             <thead>
               <tr>
@@ -445,12 +432,7 @@ $ const tableOneLabels = Object.values(getAsObject(currentYearData, "tableLabels
       $ const tableSevenLabels = Object.values(getAsObject(currentYearData, "tableLabels.tableSeven"));
       <if(currentYearData && tableSevenLabels.length)>
         <@section modifiers=["card-deck"]>
-        <div class="row">
-          <div class="col">
-            <h2 class="page-wrapper__website-section-name">DIVERSITY BENEFITS</h2><h3>Part 3</h3><br/>
-          </div>
-        </div>
-       <table class="table table-responsive table-hover">
+          <table class="table table-responsive table-hover">
             <thead>
               <tr>
                 <td width="400"><b>Institution</b></td>
@@ -478,7 +460,41 @@ $ const tableOneLabels = Object.values(getAsObject(currentYearData, "tableLabels
             </if>
           </table>
         </@section>
-        </if>
+      </if>
+      $ const tableThreeLabels = Object.values(getAsObject(currentYearData, "tableLabels.tableSeven"));
+        <if(currentYearData && tableThreeLabels.length)>
+          <@section modifiers=["card-deck"]>
+          <div class="row">
+            <div class="col">
+            </div>
+          </div>
+          <table class="table table-responsive table-hover">
+            <tr>
+              <td width="400"><b>Institution</b></td>
+              <for|label| of=tableThreeLabels>
+                <td width="200">
+                  <b>${label}</b>
+                </td>
+              </for>
+            </tr>
+            <if(institutions.length)>
+              <tbody>
+                <for|institution| of=institutions>
+                  $ const tableThreeData = getAsObject(institutionData[institution], "tableThree");
+                  <if(tableThreeData && Object.keys(tableThreeData).length)>
+                    <tr>
+                      <td class="institution">${institution}</td>
+                      <for|field| of=Object.keys(tableThreeData)>
+                        <td class=field>${tableThreeData[field]}</td>
+                      </for>
+                    </tr>
+                  </if>
+                </for>
+              </tbody>
+            </if>
+          </table>
+        </@section>
+      </if>
     </marko-web-page-wrapper>
   </@page>
 </marko-web-default-page-layout>
