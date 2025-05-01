@@ -27,6 +27,12 @@ $ const queryParams = {
   <@section|{ section }|>
     <marko-web-block name=blockName>
       <theme-content-page-breadcrumbs section=section display-self=false />
+      <div align="center">
+        <a style="color:#FFF;" class="btn btn-primary" target="_blank" href="https://survey.alchemer.com/s3/8265980/Rising-Graduate-Scholars-Nomination-2025?utm_source=website&utm_medium=form&utm_campaign=Graudate_Scholars_nominations">
+          Nominate 2025 Graduate Scholars
+        </a><br/><br/>
+        <h3>   Deadline:  May 19, 2025</h3>
+      </div>
       <marko-web-element block-name=blockName name="header">
         <marko-web-website-section-name|{ value }|
           tag="h1"
@@ -89,6 +95,7 @@ $ const queryParams = {
       </div>
       <div class="col-md-6 mb-block">
         <div class="award-about-card">
+         
           <div class="award-about-card__title">Scholars By Years</div>
           <marko-web-query|{ node }|
             name="website-section"
@@ -104,12 +111,21 @@ $ const queryParams = {
                       <marko-web-link title=node.name href=`/${node.alias}`>${node.name}</marko-web-link>
                     </div>
                   </for>
+                  <br/>
+                  <div align="left">
+                    <a style="color:#FFF;" class="btn btn-primary" target="_blank" href="https://survey.alchemer.com/s3/8265980/Rising-Graduate-Scholars-Nomination-2025?utm_source=website&utm_medium=form&utm_campaign=Graudate_Scholars_nominations">
+                      Nominate 2025 Graduate Scholars
+                    </a><br/><br/>
+                    <h3>   Deadline:  May 19, 2025</h3>
+                  </div>
                 </div>
               </@nodes>
             </marko-web-node-list>
           </marko-web-query>
         </div>
       </div>
+   
     </div>
+  
   </@section>
 </global-website-section-default-layout>
