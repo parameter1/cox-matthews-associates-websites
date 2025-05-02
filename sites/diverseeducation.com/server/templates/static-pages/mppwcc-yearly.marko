@@ -303,15 +303,10 @@ $ const tableOneLabels = Object.values(getAsObject(currentYearData, "tableLabels
             />
           </@section>
         </for>
-      </if>
+      </if> -->
       $ const tableThreeLabels = Object.values(getAsObject(currentYearData, "tableLabels.tableThree"));
       <if(currentYearData && tableThreeLabels.length)>
         <@section modifiers=["card-deck"]>
-          <div class="row">
-            <div class="col">
-              <h2 class="page-wrapper__website-section-name">DIVERSITY BENEFITS</h2><br/>
-            </div>
-          </div>
           <table class="table table-responsive table-hover">
             <thead>
               <tr>
@@ -338,7 +333,7 @@ $ const tableOneLabels = Object.values(getAsObject(currentYearData, "tableLabels
             </if>
           </table>
         </@section>
-      </if>-->
+      </if>
       $ const tableFourLabels = Object.values(getAsObject(currentYearData, "tableLabels.tableFour"));
       <if(currentYearData && tableFourLabels.length)>
         <@section modifiers=["card-deck"]>
