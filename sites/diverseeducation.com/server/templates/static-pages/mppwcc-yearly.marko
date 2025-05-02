@@ -303,15 +303,10 @@ $ const tableOneLabels = Object.values(getAsObject(currentYearData, "tableLabels
             />
           </@section>
         </for>
-      </if>
+      </if> -->
       $ const tableThreeLabels = Object.values(getAsObject(currentYearData, "tableLabels.tableThree"));
       <if(currentYearData && tableThreeLabels.length)>
         <@section modifiers=["card-deck"]>
-          <div class="row">
-            <div class="col">
-              <h2 class="page-wrapper__website-section-name">DIVERSITY BENEFITS</h2><br/>
-            </div>
-          </div>
           <table class="table table-responsive table-hover">
             <thead>
               <tr>
@@ -338,7 +333,7 @@ $ const tableOneLabels = Object.values(getAsObject(currentYearData, "tableLabels
             </if>
           </table>
         </@section>
-      </if>-->
+      </if>
       $ const tableFourLabels = Object.values(getAsObject(currentYearData, "tableLabels.tableFour"));
       <if(currentYearData && tableFourLabels.length)>
         <@section modifiers=["card-deck"]>
@@ -456,40 +451,6 @@ $ const tableOneLabels = Object.values(getAsObject(currentYearData, "tableLabels
                       </tr>
                     </if>
                   </for>
-              </tbody>
-            </if>
-          </table>
-        </@section>
-      </if>
-      $ const tableThreeLabels = Object.values(getAsObject(currentYearData, "tableLabels.tableSeven"));
-        <if(currentYearData && tableThreeLabels.length)>
-          <@section modifiers=["card-deck"]>
-          <div class="row">
-            <div class="col">
-            </div>
-          </div>
-          <table class="table table-responsive table-hover">
-            <tr>
-              <td width="400"><b>Institution</b></td>
-              <for|label| of=tableThreeLabels>
-                <td width="200">
-                  <b>${label}</b>
-                </td>
-              </for>
-            </tr>
-            <if(institutions.length)>
-              <tbody>
-                <for|institution| of=institutions>
-                  $ const tableThreeData = getAsObject(institutionData[institution], "tableThree");
-                  <if(tableThreeData && Object.keys(tableThreeData).length)>
-                    <tr>
-                      <td class="institution">${institution}</td>
-                      <for|field| of=Object.keys(tableThreeData)>
-                        <td class=field>${tableThreeData[field]}</td>
-                      </for>
-                    </tr>
-                  </if>
-                </for>
               </tbody>
             </if>
           </table>
