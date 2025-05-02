@@ -96,16 +96,16 @@ module.exports = {
   ],
   tableLabels: {
     tableThree: {
+      type: 'Campus Type',
+      enrollment: 'Enrollment',
+    },
+    tableFour: {
       sickLeave: 'Sick Leave',
       disabilityLeave: 'Disability Leave',
       vacation: 'Vacation',
       personalLeave: 'Personal Leave',
       educationLeave: 'Education Leave',
       famCareLeave: 'Family Care Leave',
-    },
-    tableFour: {
-      type: 'Campus Type',
-      enrollment: 'Enrollment',
     },
     tableFive: {
       flexwork: 'Flex Work',
@@ -130,16 +130,16 @@ module.exports = {
   institutionData: {
     'Prince George’s Community College': {
       tableThree: {
+        type: 'PBI',
+        enrollment: '10,000-14,999',
+      },
+      tableFour: {
         sickLeave: 'YES',
         disabilityLeave: 'YES',
         vacation: 'YES',
         personalLeave: 'YES',
         educationLeave: 'YES',
         famCareLeave: 'YES',
-      },
-      tableFour: {
-        type: 'PBI',
-        enrollment: '10,000-14,999',
       },
       tableFive: {
         flexwork: 'YES',
@@ -163,16 +163,16 @@ module.exports = {
     },
     'Olive-Harvey College': {
       tableThree: {
+        type: 'PBI',
+        enrollment: '5,000-9,999',
+      },
+      tableFour: {
         sickLeave: 'YES',
         disabilityLeave: 'YES',
         vacation: 'YES',
         personalLeave: 'YES',
         educationLeave: 'YES',
         famCareLeave: 'YES',
-      },
-      tableFour: {
-        type: 'PBI',
-        enrollment: '5,000-9,999',
       },
       tableFive: {
         flexwork: 'YES',
@@ -196,16 +196,16 @@ module.exports = {
     },
     'Chemeketa Community College': {
       tableThree: {
+        type: 'HSI',
+        enrollment: '15,000-19,999',
+      },
+      tableFour: {
         sickLeave: 'YES',
         disabilityLeave: 'YES',
         vacation: 'YES',
         personalLeave: 'YES',
         educationLeave: 'YES',
         famCareLeave: 'YES',
-      },
-      tableFour: {
-        type: 'HSI',
-        enrollment: '15,000-19,999',
       },
       tableFive: {
         flexwork: 'YES',
@@ -229,16 +229,16 @@ module.exports = {
     },
     'Community College of Baltimore': {
       tableThree: {
+        type: 'MMI',
+        enrollment: '20,000 or more',
+      },
+      tableFour: {
         sickLeave: 'YES',
         disabilityLeave: 'YES',
         vacation: 'YES',
         personalLeave: 'YES',
         educationLeave: 'YES',
         famCareLeave: 'YES',
-      },
-      tableFour: {
-        type: 'MMI',
-        enrollment: '20,000 or more',
       },
       tableFive: {
         flexwork: 'YES',
@@ -262,16 +262,16 @@ module.exports = {
     },
     'Arapahoe Community College': {
       tableThree: {
+        type: 'PWI',
+        enrollment: '20,000 or more',
+      },
+      tableFour: {
         sickLeave: 'YES',
         disabilityLeave: 'YES',
         vacation: 'YES',
         personalLeave: 'YES',
         educationLeave: 'YES',
         famCareLeave: 'YES',
-      },
-      tableFour: {
-        type: 'PWI',
-        enrollment: '20,000 or more',
       },
       tableFive: {
         flexwork: 'YES',
@@ -295,16 +295,16 @@ module.exports = {
     },
     'Phoenix College': {
       tableThree: {
+        type: 'HSI',
+        enrollment: '15,000-19,999',
+      },
+      tableFour: {
         sickLeave: 'YES',
         disabilityLeave: 'YES',
         vacation: 'YES',
         personalLeave: 'YES',
         educationLeave: 'YES',
         famCareLeave: 'YES',
-      },
-      tableFour: {
-        type: 'HSI',
-        enrollment: '15,000-19,999',
       },
       tableFive: {
         flexwork: 'YES',
@@ -328,16 +328,16 @@ module.exports = {
     },
     'Montgomery County Community College': {
       tableThree: {
+        type: 'N/A',
+        enrollment: '10,000-14,999',
+      },
+      tableFour: {
         sickLeave: 'YES',
         disabilityLeave: 'YES',
         vacation: 'YES',
         personalLeave: 'YES',
         educationLeave: 'YES',
         famCareLeave: 'YES',
-      },
-      tableFour: {
-        type: 'N/A',
-        enrollment: '10,000-14,999',
       },
       tableFive: {
         flexwork: 'YES',
@@ -361,16 +361,16 @@ module.exports = {
     },
     'GateWay Community College': {
       tableThree: {
+        type: 'HSI',
+        enrollment: '5,000-9,999',
+      },
+      tableFour: {
         sickLeave: 'YES',
         disabilityLeave: 'YES',
         vacation: 'YES',
         personalLeave: 'YES',
         educationLeave: 'YES',
         famCareLeave: 'YES',
-      },
-      tableFour: {
-        type: 'HSI',
-        enrollment: '5,000-9,999',
       },
       tableFive: {
         flexwork: 'YES',
@@ -394,16 +394,16 @@ module.exports = {
     },
     'Joliet Junior College': {
       tableThree: {
+        type: 'HSI',
+        enrollment: '10,000-14,999',
+      },
+      tableFour: {
         sickLeave: 'YES',
         disabilityLeave: 'YES',
         vacation: 'YES',
         personalLeave: 'YES',
         educationLeave: 'YES',
         famCareLeave: 'YES',
-      },
-      tableFour: {
-        type: 'HSI',
-        enrollment: '10,000-14,999',
       },
       tableFive: {
         flexwork: 'YES',
@@ -427,16 +427,16 @@ module.exports = {
     },
     'Palo Alto College': {
       tableThree: {
+        type: 'HSI',
+        enrollment: '10,000-14,999',
+      },
+      tableFour: {
         sickLeave: 'YES',
         disabilityLeave: 'YES',
         vacation: 'YES',
         personalLeave: 'YES',
         educationLeave: 'YES',
         famCareLeave: 'YES',
-      },
-      tableFour: {
-        type: 'HSI',
-        enrollment: '10,000-14,999',
       },
       tableFive: {
         flexwork: 'YES',
@@ -460,16 +460,16 @@ module.exports = {
     },
     'Tallahassee Community College': {
       tableThree: {
+        type: 'HSI',
+        enrollment: '10,000-14,999',
+      },
+      tableFour: {
         sickLeave: 'YES',
         disabilityLeave: 'YES',
         vacation: 'YES',
         personalLeave: 'YES',
         educationLeave: 'NO',
         famCareLeave: 'YES',
-      },
-      tableFour: {
-        type: 'HSI',
-        enrollment: '10,000-14,999',
       },
       tableFive: {
         flexwork: 'YES',
@@ -493,16 +493,16 @@ module.exports = {
     },
     'Coconino Community College': {
       tableThree: {
+        type: 'NASI',
+        enrollment: '1,000-4,999',
+      },
+      tableFour: {
         sickLeave: 'YES',
         disabilityLeave: 'YES',
         vacation: 'NO',
         personalLeave: 'YES',
         educationLeave: 'YES',
         famCareLeave: 'YES',
-      },
-      tableFour: {
-        type: 'NASI',
-        enrollment: '1,000-4,999',
       },
       tableFive: {
         flexwork: 'YES',
@@ -526,16 +526,16 @@ module.exports = {
     },
     'Community College of Allegheny County': {
       tableThree: {
+        type: 'PWI',
+        enrollment: '10,000-14,999',
+      },
+      tableFour: {
         sickLeave: 'YES',
         disabilityLeave: 'YES',
         vacation: 'YES',
         personalLeave: 'YES',
         educationLeave: 'YES',
         famCareLeave: 'YES',
-      },
-      tableFour: {
-        type: 'PWI',
-        enrollment: '10,000-14,999',
       },
       tableFive: {
         flexwork: 'YES',
@@ -559,16 +559,16 @@ module.exports = {
     },
     'Northeast Mississippi Community College': {
       tableThree: {
+        type: 'PWI',
+        enrollment: '1,000-4,999',
+      },
+      tableFour: {
         sickLeave: 'YES',
         disabilityLeave: 'YES',
         vacation: 'YES',
         personalLeave: 'YES',
         educationLeave: 'YES',
         famCareLeave: 'YES',
-      },
-      tableFour: {
-        type: 'PWI',
-        enrollment: '1,000-4,999',
       },
       tableFive: {
         flexwork: 'YES',
@@ -592,16 +592,16 @@ module.exports = {
     },
     'HACC, Central Pennsylvania’s Community College': {
       tableThree: {
+        type: 'N/A',
+        enrollment: '10,000-14,999',
+      },
+      tableFour: {
         sickLeave: 'YES',
         disabilityLeave: 'YES',
         vacation: 'YES',
         personalLeave: 'YES',
         educationLeave: 'YES',
         famCareLeave: 'YES',
-      },
-      tableFour: {
-        type: 'N/A',
-        enrollment: '10,000-14,999',
       },
       tableFive: {
         flexwork: 'YES',
@@ -625,16 +625,16 @@ module.exports = {
     },
     'Northeast Lakeview College': {
       tableThree: {
+        type: 'HSI',
+        enrollment: '5,000-9,999',
+      },
+      tableFour: {
         sickLeave: 'YES',
         disabilityLeave: 'YES',
         vacation: 'YES',
         personalLeave: 'YES',
         educationLeave: 'NO',
         famCareLeave: 'YES',
-      },
-      tableFour: {
-        type: 'HSI',
-        enrollment: '5,000-9,999',
       },
       tableFive: {
         flexwork: 'YES',
@@ -658,16 +658,16 @@ module.exports = {
     },
     'Malcolm X College': {
       tableThree: {
+        type: 'HSI & PBI',
+        enrollment: '10,000-14,999',
+      },
+      tableFour: {
         sickLeave: 'YES',
         disabilityLeave: 'YES',
         vacation: 'YES',
         personalLeave: 'YES',
         educationLeave: 'YES',
         famCareLeave: 'YES',
-      },
-      tableFour: {
-        type: 'HSI & PBI',
-        enrollment: '10,000-14,999',
       },
       tableFive: {
         flexwork: 'YES',
@@ -691,16 +691,16 @@ module.exports = {
     },
     'Hudson County Community College': {
       tableThree: {
+        type: 'HSI',
+        enrollment: '5,000-9,999',
+      },
+      tableFour: {
         sickLeave: 'YES',
         disabilityLeave: 'YES',
         vacation: 'YES',
         personalLeave: 'YES',
         educationLeave: 'YES',
         famCareLeave: 'YES',
-      },
-      tableFour: {
-        type: 'HSI',
-        enrollment: '5,000-9,999',
       },
       tableFive: {
         flexwork: 'YES',
@@ -724,16 +724,16 @@ module.exports = {
     },
     'St. Philip’s College': {
       tableThree: {
+        type: 'HBCU & HSI',
+        enrollment: '10,000-14,999',
+      },
+      tableFour: {
         sickLeave: 'YES',
         disabilityLeave: 'YES',
         vacation: 'YES',
         personalLeave: 'YES',
         educationLeave: 'NO',
         famCareLeave: 'YES',
-      },
-      tableFour: {
-        type: 'HBCU & HSI',
-        enrollment: '10,000-14,999',
       },
       tableFive: {
         flexwork: 'YES',
@@ -757,16 +757,16 @@ module.exports = {
     },
     'Garden City Community College': {
       tableThree: {
+        type: 'HSI',
+        enrollment: '1,000-4,999',
+      },
+      tableFour: {
         sickLeave: 'NO',
         disabilityLeave: 'NO',
         vacation: 'YES',
         personalLeave: 'YES',
         educationLeave: 'YES',
         famCareLeave: 'YES',
-      },
-      tableFour: {
-        type: 'HSI',
-        enrollment: '1,000-4,999',
       },
       tableFive: {
         flexwork: 'YES',
@@ -790,16 +790,16 @@ module.exports = {
     },
     'Bergen Community College': {
       tableThree: {
+        type: 'HSI',
+        enrollment: '10,000-14,999',
+      },
+      tableFour: {
         sickLeave: 'YES',
         disabilityLeave: 'YES',
         vacation: 'YES',
         personalLeave: 'YES',
         educationLeave: 'NO',
         famCareLeave: 'YES',
-      },
-      tableFour: {
-        type: 'HSI',
-        enrollment: '10,000-14,999',
       },
       tableFive: {
         flexwork: 'NO',
@@ -823,16 +823,16 @@ module.exports = {
     },
     'Weatherford College': {
       tableThree: {
+        type: 'PWI',
+        enrollment: '5,000-9,999',
+      },
+      tableFour: {
         sickLeave: 'YES',
         disabilityLeave: 'YES',
         vacation: 'YES',
         personalLeave: 'YES',
         educationLeave: 'YES',
         famCareLeave: 'YES',
-      },
-      tableFour: {
-        type: 'PWI',
-        enrollment: '5,000-9,999',
       },
       tableFive: {
         flexwork: 'YES',
