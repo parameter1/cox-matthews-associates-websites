@@ -54,8 +54,6 @@ jobs:
         site:
           - { dir: ccnewsnow.com, stack: leonis, id: 60c28bc3d28860bc334ebcb2, account: diverse, tenant: diverse_all, rancher_label: cox-matthews-associates-ccnewsnow.com }
           - { dir: diverseeducation.com, stack: leonis, id: 60c281c6d28860bc33464ae0, account: diverse, tenant: diverse_all, rancher_label: cox-matthews-associates-diverseeducation.com }
-          - { dir: diversemilitary.net, stack: leonis, id: 60c28c0dd28860bc334ed723, account: diverse, tenant: diverse_all, rancher_label: cox-matthews-associates-diversemilitary.net }
-          - { dir: divhealth.net, stack: leonis, id: 60c28c4bd28860bc334f485d, account: diverse, tenant: diverse_all, rancher_label: cox-matthews-associates-divhealth.net }
         ###############################################
         #^# Make sure this matches the site matrix! #^#
         ###############################################
@@ -77,8 +75,6 @@ jobs:
         site:
           - { dir: ccnewsnow.com, stack: leonis, id: 60c28bc3d28860bc334ebcb2, account: diverse, tenant: diverse_all, rancher_label: cox-matthews-associates-ccnewsnow.com }
           - { dir: diverseeducation.com, stack: leonis, id: 60c281c6d28860bc33464ae0, account: diverse, tenant: diverse_all, rancher_label: cox-matthews-associates-diverseeducation.com }
-          - { dir: diversemilitary.net, stack: leonis, id: 60c28c0dd28860bc334ed723, account: diverse, tenant: diverse_all, rancher_label: cox-matthews-associates-diversemilitary.net }
-          - { dir: divhealth.net, stack: leonis, id: 60c28c4bd28860bc334f485d, account: diverse, tenant: diverse_all, rancher_label: cox-matthews-associates-divhealth.net }
         ###############################################
         #^# Make sure this matches the site matrix! #^#
         ###############################################
