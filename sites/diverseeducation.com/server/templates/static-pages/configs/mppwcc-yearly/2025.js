@@ -227,7 +227,7 @@ module.exports = {
         inclusiveLearning: 'YES',
       },
     },
-    'Community College of Baltimore': {
+    'Community College of Baltimore County': {
       tableThree: {
         type: 'MMI',
         enrollment: '20,000 or more',
