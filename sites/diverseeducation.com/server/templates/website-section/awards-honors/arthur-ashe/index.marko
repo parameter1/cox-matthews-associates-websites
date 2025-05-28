@@ -148,7 +148,9 @@ $ const rootAlias = 'awards-honors/arthur-ashe';
                   icon-name="plus"
                   expanded-icon-name="dash"
                 />
-                $ const otherYearSportWinnerItems = children.map(({ alias, name }) => ({ href: `/${alias}/sport-winners`, label: name }));
+                $ const otherYearSportWinnerItems = children.filter(
+                    ({ alias }) => Number(alias.split('/').pop()) > 2015
+                  ).map(({ alias, name }) => ({ href: `/${alias}/sport-winners`, label: name }));
                 <theme-site-navbar-items
                   items=otherYearSportWinnerItems
                   modifiers=["sport-winners-dropdown"]
