@@ -305,9 +305,16 @@ $ const withRecommended = defaultValue(input.withRecommended, true);
         </div>
       </div>
       <div class="col-lg-4 page-rail">
-        <if(site.get('suggestedVideoID'))>
+        <!-- <if(site.get('suggestedVideoID'))>
           <global-suggested-video-block />
-        </if>
+        </if> -->
+        <theme-gam-define-display-ad
+          name="right-rail"
+          position="content_page"
+          aliases=aliases
+          modifiers=["max-width-300", "center", "margin-auto-x", "rail"]
+          class="mb-block"
+        />
         <if(withRecommended)>
           <div class="sticky-top">
             <global-recommended-content-block query-params={ excludeContentIds: [content.id], sectionId: primarySection.id } aliases=aliases />
