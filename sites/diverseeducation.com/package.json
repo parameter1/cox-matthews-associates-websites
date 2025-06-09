@@ -11,12 +11,7 @@
     "account": "diverse",
     "stack": "virgon",
     "key": "de",
-    "deploy": {
-      "production": true,
-      "staging": {
-        "stack": "leonis"
-      }
-    }
+    "deploy": true
   },
   "scripts": {
     "dev": "mindful-web-website dev --compile-dir ../../packages --watch-dir ../../packages --purge-css-content-dir ../../packages --purge-css-content-dir ../../node_modules/@mindful-web",
