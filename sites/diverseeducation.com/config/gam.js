@@ -17,7 +17,7 @@ config
     { name: 'rotation-300', templateName: 'ROTATION-300', path: 'rotation' },
     { name: 'inline-content-mobile', templateName: 'INLINE-CONTENT-MOBILE', path: 'rotation' },
     { name: 'inline-content-desktop', templateName: 'INLINE-CONTENT-DESKTOP', path: 'rotation' },
-    { name: 'right-rail', templateName: 'RIGHT-RAIL_300X350', path: 'right-rail_300x250' },
+    { name: 'right-rail', templateName: 'RIGHT-RAIL_300X250', path: 'right-rail_300x250' },
   ]);
 
 const aliases = [
