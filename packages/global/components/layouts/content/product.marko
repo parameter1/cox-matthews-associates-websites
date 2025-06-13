@@ -55,9 +55,9 @@ $ const { req, site } = out.global;
       </div>
 
       <div class="col-lg-4 pt-block">
-        <if(site.get('suggestedVideoID'))>
+        <!-- <if(site.get('suggestedVideoID'))>
           <global-suggested-video-block />
-        </if>
+        </if> -->
         <if(input.rightRail)>
           <${input.rightRail}
             aliases=aliases
@@ -67,7 +67,7 @@ $ const { req, site } = out.global;
         </if>
         <else>
           <theme-gam-define-display-ad
-            name="rail-1"
+            name="right-rail"
             position="content_page"
             aliases=aliases
             modifiers=["max-width-300", "center", "margin-auto-x", "rail"]
