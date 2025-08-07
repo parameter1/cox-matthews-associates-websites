@@ -1,7 +1,6 @@
 const subscribe = require('./subscribe');
 
 const topics = [
-  { href: '/page/editors-note?utm_source=website&utm_medium=page&utm_term=editors-note', label: "Editor's Note" },
   { href: '/students', label: 'Students' },
   { href: '/faculty-staff', label: 'Faculty & Staff' },
   { href: '/leadership-policy', label: 'Leadership & Policy' },
