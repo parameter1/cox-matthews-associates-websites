@@ -1,6 +1,6 @@
 {
   "name": "@cox-matthews-associates/diversemilitary.net",
-  "version": "3.3.14",
+  "version": "3.4.0",
   "author": "Brandon Krigbaum <brandon@parameter1.com>",
   "repository": "https://github.com/parameter1/cox-matthews-associates-websites/tree/master/sites/diversemilitary.net",
   "license": "MIT",
@@ -31,7 +31,7 @@
     "win32"
   ],
   "dependencies": {
-    "@cox-matthews-associates/package-global": "^3.3.14",
+    "@cox-matthews-associates/package-global": "^3.4.0",
     "@mindful-web/marko-core": "^1.28.0",
     "@mindful-web/marko-web": "^1.28.0",
     "@mindful-web/marko-web-gam": "^1.11.9",
