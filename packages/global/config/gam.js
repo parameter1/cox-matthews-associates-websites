@@ -26,7 +26,7 @@ module.exports = ({
       size: [300, 250],
     })
     .setTemplate('RIGHT-RAIL_300X250', {
-      size: [[300, 250], ['640x480v']],
+      size: [[300, 250]],
     })
     .setTemplate('ROTATION', {
       size: [[970, 90], [728, 90]],
