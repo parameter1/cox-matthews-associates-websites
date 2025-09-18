@@ -4,6 +4,9 @@
     "./layouts/marko.json",
     "./wrappers/marko.json"
   ],
+  "<global-announcement-block>": {
+    "template": "./announcement.marko"
+  },
   "<global-sponsored-label-logo>": {
     "template": "./sponsored-label-logo.marko"
   },
