@@ -8,14 +8,14 @@ const baseConfig = {
 module.exports = {
   signupFooter: {
     ...baseConfig,
-    name: '<strong><em>Diverse</em></strong> Daily and Weekly Recap e-Newsletters',
+    name: '<strong>The EDULedger</strong> Daily and Weekly Recap e-Newsletters',
     description: 'Keeping you abreast of late-breaking news and insights.',
   },
   modal: {
     ...baseConfig,
     enabled: false,
     cookieValueToMatch: 1,
-    name: '<strong><em>Diverse</em></strong> Daily and Weekly Recap e-Newsletters',
+    name: '<strong>The EDULedger</strong> Daily and Weekly Recap e-Newsletters',
     description: 'Keeping you abreast of late-breaking news and insights.',
   },
 };
