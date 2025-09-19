@@ -47,9 +47,9 @@ module.exports = {
   },
   logos: {
     navbar: {
-      src: 'https://img.diverseeducation.com/files/base/diverse/all/image/static/EDULEDGER-FINAL.png?h=60&auto=format,compress&q=70',
+      src: 'https://img.diverseeducation.com/files/base/diverse/all/image/static/EDULEDGER.png?h=85&auto=format,compress&q=70',
       srcset: [
-        'https://img.diverseeducation.com/files/base/diverse/all/image/static/EDULEDGER-FINAL.png?h=60&auto=format,compress&q=70&dpr=2 2x',
+        'https://img.diverseeducation.com/files/base/diverse/all/image/static/EDULEDGER.png?h=85&auto=format,compress&q=70&dpr=2 2x',
       ],
     },
     footer: {
