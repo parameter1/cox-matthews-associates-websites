@@ -15,6 +15,10 @@ const contactUs = require('./contact-us');
 const contentMeter = require('./content-meter');
 
 module.exports = {
+  announcement: {
+    title: 'We\'ve Evolved! Introducing the new The EDULedger.com!',
+    shortTitle: 'Introducing the new The EDULedger.com!',
+  },
   suggestedVideoID: process.env.SUGGESTED_VIDEO_ID,
   suggestedVideoPlaylist: process.env.SUGGESTED_VIDEO_PLAYLIST,
   useLinkInjectedBody: process.env.USE_LINK_INJECTED_BODY === 'true',
@@ -43,15 +47,15 @@ module.exports = {
   },
   logos: {
     navbar: {
-      src: 'https://img.diverseeducation.com/files/base/diverse/all/image/static/Diverse-Logo-2023-BlueWithTag.png?h=60&auto=format,compress&q=70',
+      src: 'https://img.diverseeducation.com/files/base/diverse/all/image/static/EDULEDGER.png?h=85&auto=format,compress&q=70',
       srcset: [
-        'https://img.diverseeducation.com/files/base/diverse/all/image/static/Diverse-Logo-2023-BlueWithTag.png?h=60&auto=format,compress&q=70&dpr=2 2x',
+        'https://img.diverseeducation.com/files/base/diverse/all/image/static/EDULEDGER.png?h=85&auto=format,compress&q=70&dpr=2 2x',
       ],
     },
     footer: {
-      src: 'https://img.diverseeducation.com/files/base/diverse/all/image/static/Diverse-Logo-2023-WhiteWithTag-01.png?h=60&auto=format,compress&q=70',
+      src: 'https://img.diverseeducation.com/files/base/diverse/all/image/static/WHITE-LOGO.png?h=60&auto=format,compress&q=70',
       srcset: [
-        'https://img.diverseeducation.com/files/base/diverse/all/image/static/Diverse-Logo-2023-WhiteWithTag-01.png?h=60&auto=format,compress&q=70&dpr=2 2x',
+        'https://img.diverseeducation.com/files/base/diverse/all/image/static/WHITE-LOGO.png?h=60&auto=format,compress&q=70&dpr=2 2x',
       ],
     },
   },
