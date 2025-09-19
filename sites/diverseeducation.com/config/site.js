@@ -16,8 +16,8 @@ const contentMeter = require('./content-meter');
 
 module.exports = {
   announcement: {
-    title: 'We\'ve Evolved! Introducing the new The EDULedger.com!',
-    shortTitle: 'Introducing the new The EDULedger.com!',
+    title: 'We\'ve Evolved! Introducing the new The EDU Ledger.com!',
+    shortTitle: 'Introducing the new The EDU Ledger.com!',
   },
   suggestedVideoID: process.env.SUGGESTED_VIDEO_ID,
   suggestedVideoPlaylist: process.env.SUGGESTED_VIDEO_PLAYLIST,
