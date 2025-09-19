@@ -1,0 +1,18 @@
+$ const { site } = out.global;
+$ const announcement = site.getAsObject("announcement")
+$ const { title, shortTitle } = announcement;
+
+$ const name = input.placementName ? input.placementName : "announcement";
+$ const blockName = "announcement";
+<if(title && shortTitle)>
+  <marko-web-block name=blockName>
+    <marko-web-element block-name=blockName name="wrapper" >
+      <marko-web-element block-name=blockName name="short-title">
+        ${shortTitle}
+      </marko-web-element>
+      <marko-web-element block-name=blockName name="title">
+        $!{title}
+      </marko-web-element>
+    </marko-web-element>
+  </marko-web-block>
+</if>
