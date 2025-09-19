@@ -15,6 +15,10 @@ const contactUs = require('./contact-us');
 const contentMeter = require('./content-meter');
 
 module.exports = {
+  announcement: {
+    title: 'We\'ve Evolved! Introducing the new The EDULedger.com!',
+    shortTitle: 'Introducing the new The EDULedger.com!',
+  },
   suggestedVideoID: process.env.SUGGESTED_VIDEO_ID,
   suggestedVideoPlaylist: process.env.SUGGESTED_VIDEO_PLAYLIST,
   useLinkInjectedBody: process.env.USE_LINK_INJECTED_BODY === 'true',
