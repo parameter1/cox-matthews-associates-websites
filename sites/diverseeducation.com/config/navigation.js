@@ -15,7 +15,7 @@ const resources = [
   // { href: '/latest-news', label: 'Latest News' },
   { href: '/podcasts?utm_source=website&utm_medium=landing-page&utm_term=podcasts', label: 'Podcasts' },
   { href: '/opinion', label: 'Opinion' },
-  { href: '/webinars', label: '<em>The EDU Ledger</em> Talk Live! Webcasts' },
+  { href: '/webinars', label: 'Webcasts' },
   // { href: '/reports-data', label: 'Reports & Data' },
   // { href: '/from-the-magazine', label: 'From the Magazine' },
   { href: 'https://www.ccnewsnow.com', label: 'Community Colleges', target: '_blank' },
