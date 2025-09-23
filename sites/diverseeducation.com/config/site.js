@@ -66,11 +66,11 @@ module.exports = {
     { provider: 'youtube', label: 'YouTube', href: 'https://www.youtube.com/playlist?list=PL6yKpacB8wLWYUWHMgGMtG5G7kEHuKrHK' },
   ],
   socialMediaLinks: [
-    { provider: 'facebook', href: 'https://www.facebook.com/DiverseIssuesInHigherEducation/' },
-    { provider: 'twitter', href: 'https://twitter.com/DiverseIssues' },
-    { provider: 'linkedin', href: 'https://www.linkedin.com/company/diverse-issues-in-higher-education/' },
-    { provider: 'youtube', href: 'https://www.youtube.com/channel/UCXVYpTBoF5lP0FYAz2-ebcQ' },
-    { provider: 'instagram', href: 'https://www.instagram.com/diverseissuesinhighereducation/' },
+    { provider: 'facebook', href: 'https://www.facebook.com/TheEDULedger' },
+    { provider: 'twitter', href: 'https://x.com/TheEDULedger' },
+    { provider: 'linkedin', href: 'https://www.linkedin.com/company/the-edu-ledger' },
+    { provider: 'youtube', href: 'https://www.youtube.com/@TheEDULedger' },
+    { provider: 'instagram', href: 'https://www.instagram.com/TheEDULedger_' },
   ],
   gcse: {
     id: '79253cc8ec9d83184',
