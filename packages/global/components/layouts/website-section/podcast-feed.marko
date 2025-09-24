@@ -60,11 +60,10 @@ $ const perPage = 10;
     </if>
     <div class="podcast-logo-description-wrapper">
       <if(section.logo)>
-        $ const sectionImg = { ...section.logo };
         <marko-web-img
           class=`section__logo`
-          src=`${sectionImg.src}?w=150`
-          srcset=[`${sectionImg.src}?w=150&dpr=2 2x`]
+          src=`https://img.diverseeducation.com/files/base/diverse/all/image/static/InTheMargins.png?w=150`
+          srcset=[`https://img.diverseeducation.com/files/base/diverse/all/image/static/InTheMargins.png?w=150&dpr=2 2x`]
           alt="Section Logo"
         />
       </if>
