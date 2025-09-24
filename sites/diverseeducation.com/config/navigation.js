@@ -24,7 +24,6 @@ const resources = [
   { href: '/military', label: 'Military' },
   { href: 'https://keepitreal.theeduledger.com/', label: 'Keep it Real', target: '_blank' },
   { href: 'https://shop.theeduledger.com/', label: 'Shop', target: '_blank' },
-  { /* href: 'https://testimonials.theeduledger.com/index.html?utm_source=website&utm_medium=landing-page&utm_term=testimonials', label: 'Testimonials', target: '_blank' */ },
 ];
 
 const awards = [
