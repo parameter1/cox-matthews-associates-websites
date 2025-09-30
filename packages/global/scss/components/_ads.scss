@@ -15,7 +15,6 @@
 }
 .ad-container {
   $self: &;
-
   &--inline-content,
   &--inline-section-feed  {
     background-color: #fff;
@@ -37,6 +36,17 @@
       max-width: 100%;
       // max-width: 300px;
       height: auto;
+    }
+  }
+}
+.page-contents__content-body {
+  .ad-container {
+    &--template-inline-content-desktop {
+      margin-bottom: initial;
+      min-height: initial !important;
+      &:has(.ad-container__wrapper > div:not(:empty)) {
+        margin-bottom: map-get($spacers, block);
+      }
     }
   }
 }
