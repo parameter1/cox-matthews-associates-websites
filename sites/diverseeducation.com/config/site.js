@@ -70,7 +70,7 @@ module.exports = {
     { provider: 'twitter', href: 'https://x.com/TheEDULedger' },
     { provider: 'linkedin', href: 'https://www.linkedin.com/company/the-edu-ledger' },
     { provider: 'youtube', href: 'https://www.youtube.com/@TheEDULedger' },
-    { provider: 'instagram', href: 'https://www.instagram.com/TheEDULedger_' },
+    { provider: 'instagram', href: 'https://www.instagram.com/TheEDULedger/#' },
   ],
   gcse: {
     id: '79253cc8ec9d83184',
