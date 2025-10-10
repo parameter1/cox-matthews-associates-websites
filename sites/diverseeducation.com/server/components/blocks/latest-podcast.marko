@@ -18,7 +18,7 @@ $ const withVideo = defaultValue(input.withVideo, false);
 
 <if(withVideo)>
   <marko-web-block name="callout-cards">
-    <marko-web-element block-name="callout-cards" name="row" attrs={ "style": "background-color: #f0f1f2;"}>
+    <marko-web-element block-name="callout-cards" name="row">
       <marko-web-query|{ nodes, section }| name="website-scheduled-content" params=queryParams>
         $ const [node] = nodes;
         <marko-web-element block-name="callout-cards" name="col">
@@ -102,12 +102,13 @@ $ const withVideo = defaultValue(input.withVideo, false);
           includeContentTypes: ['Video'],
           queryFragment
         }
+        collapsible=false
         >
-          <if(nodes[0].embedCode)>
-            $ const matches = nodes[0].embedCode.match(/src\=\"(.+?)\"/);
+          <if(nodes[0].embedCode || true)>
+            $ const matches = nodes[0].embedCode.match(/src\=\"(.+?)\"/) || ['this is', 'temporary'];
             $ if (matches.length) {
               const [, urlMatch] = matches;
-              const urlMatchAsURL = new URL(urlMatch);
+              const urlMatchAsURL = new URL('https://www.youtube.com/embed/drw_orgZy5Y?si=Fw8J4Zewt-wG-sVJ');
               if (!urlMatchAsURL.searchParams.has('mute', '1')) {
                 urlMatchAsURL.searchParams.set('mute', '1');
               }
