@@ -2,6 +2,7 @@ const htmlSitemap = require('@mindful-web/marko-web-html-sitemap/routes');
 const renderBlock = require('@mindful-web/marko-web-theme-monorail/routes/render-block');
 const taxonomy = require('@mindful-web/marko-web-theme-monorail/routes/taxonomy');
 const magazine = require('@mindful-web/marko-web-theme-monorail-magazine/routes');
+const search = require('@mindful-web/marko-web-theme-monorail/routes/search');
 const getAdvertisingPostAsNativeStory = require('@mindful-web/mindful/marko-web/middleware/get-advertising-post-as-native-story');
 
 const magazineIndex = require('../templates/magazine/index');
@@ -13,7 +14,6 @@ const feed = require('./feed');
 const printContent = require('./print-content');
 const publicFiles = require('./public-files');
 const redirects = require('./redirects');
-const search = require('./search');
 
 module.exports = (app, siteConfig) => {
   // HTML Sitemap
