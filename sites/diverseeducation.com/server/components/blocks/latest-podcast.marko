@@ -118,6 +118,8 @@ $ const withVideo = defaultValue(input.withVideo, false);
               if (!urlMatchAsURL.searchParams.has('rel', '0')) {
                 urlMatchAsURL.searchParams.set('rel', '0');
               }
+              urlMatchAsURL.searchParams.set('playlist', 'drw_orgZy5Y');
+              urlMatchAsURL.searchParams.set('loop', '1');
               nodes[0].embedCode = nodes[0].embedCode.replace(urlMatch, String(urlMatchAsURL));
               nodes[0].embedCode = nodes[0].embedCode.replace(/height=\"[0-9]+\"/, 'height="300"')
             }
