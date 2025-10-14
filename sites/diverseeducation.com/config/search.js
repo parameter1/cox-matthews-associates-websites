@@ -8,6 +8,8 @@ module.exports = {
     76098,
     76099,
     76110,
+    76113,
+    83113,
   ],
   defaultSortField: 'SCORE',
   type: 'MATCH_PHRASE',
