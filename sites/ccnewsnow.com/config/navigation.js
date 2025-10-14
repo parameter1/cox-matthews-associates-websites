@@ -54,9 +54,9 @@ module.exports = {
       link: subscribe.href,
     },
     {
-      title: 'Post A Job',
-      callToAction: 'Post A Job',
-      link: 'https://hiring.ccjobsnow.com/purchase/welcome-choose-plan/packages',
+      title: 'Jobs',
+      callToAction: 'Jobs',
+      link: 'https://ccjobsnow.com',
     },
   ],
   desktopMenu,
