@@ -18,7 +18,7 @@ const oembedHandler = require('./oembed-handler');
 const idxRouteTemplates = require('./templates/user');
 const idxNavItems = require('./config/identity-x-nav');
 
-const routes = (siteRoutes) => (app, siteConfig) => {
+const routes = (siteRoutes, siteConfig) => (app) => {
   // Shared/global routes (all sites)
   sharedRoutes(app, siteConfig);
   // Load site routes
