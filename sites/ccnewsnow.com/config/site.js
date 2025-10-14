@@ -49,7 +49,7 @@ module.exports = {
     },
   },
   socialMediaLinks: [
-    { provider: 'facebook', href: 'https://www.facebook.com/CcNewsNow', target: '_blank' },
+    // { provider: 'facebook', href: 'https://www.facebook.com/CcNewsNow', target: '_blank' },
   ],
   gcse: {
     id: '19ff01bb13abc0001',
