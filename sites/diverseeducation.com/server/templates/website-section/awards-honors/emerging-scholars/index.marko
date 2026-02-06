@@ -84,7 +84,7 @@ $ const queryParams = {
           <div class="award-about-card__title">Letter From The Editor</div>
           <div class="award-about-card__description">
             <p>
-              Each year, it is an extremely tough task for our editorial team to select only 15 scholars — this year was no exception.
+              Each year, it is an extremely tough task for our editorial team to select such a small group of scholars  — this year was no exception.
               Therefore, it is our honor to presenting these brilliant young minds to our readers.
               Of this year’s class of Emerging Scholars, each person is, in their own way, working to improve the lot of humanity.
               I have no doubt that you will find their personal stories informative as well as inspirational.
@@ -106,7 +106,7 @@ $ const queryParams = {
             name="website-section"
             params={ alias: 'awards-honors/emerging-scholars', queryFragment: sectionWithChilderenFragment }
           >
-          $ const year = 2025; // current/active year
+          $ const year = 2026; // current/active year
           $ const children = getAsArray(node, "children.edges").map(({ node }) => node).filter(({ name })=> parseInt(name) <= year).sort((a, b) => Number(b.name) - Number(a.name));
             <marko-web-node-list>
               <@nodes|{ nodes }| nodes=children modifiers=["flush-x"]>

@@ -30,7 +30,7 @@ const awards = [
   { href: '/awards-honors/arthur-ashe', label: 'Arthur Ashe Jr.' },
   { href: '/awards-honors/diverse-champions', label: 'Champions Awards' },
   { href: '/awards-honors/dr-john-hope-franklin', label: 'Dr. John Hope Franklin Award' },
-  { href: '/awards-honors/emerging-scholars/2025', label: 'Emerging Scholars' },
+  { href: '/awards-honors/emerging-scholars/', label: 'Emerging Scholars' },
   { href: '/awards-honors/graduate-scholars/2025', label: 'Rising Graduate Scholars' },
   { href: '/awards-honors/mppwcc?utm_source=website&utm_medium=landing-page&utm_term=Most-Promising-Places-to-Work-in-Community-Colleges', label: 'Most Promising Places to Work: Community Colleges' },
   { href: '/awards-honors/mppwsa?utm_source=website&utm_medium=landing-page&utm_term=Most-Promising-Places-to-Work-in-Student-Affairs', label: 'Most Promising Places to Work: Student Affairs' },
