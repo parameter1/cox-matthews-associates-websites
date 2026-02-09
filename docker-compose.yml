@@ -13,13 +13,13 @@ x-node-defaults: &node
     - yarn-cache:/.yarn-cache
 
 x-env-defaults: &env
-  IDENTITYX_GRAPHQL_URI: 'https://identity-x.parameter1.com/graphql'
   CSS_MODE: ${CSS_MODE-optimized}
   GTM_CONTAINER_ID: ${GTM_CONTAINER_ID}
   NEW_RELIC_ENABLED: ${NEW_RELIC_ENABLED-0}
   NEW_RELIC_LICENSE_KEY: ${NEW_RELIC_LICENSE_KEY-(unset)}
   NODE_ENV: development
   IDENTITYX_API_TOKEN: ${IDENTITYX_API_TOKEN-(unset)}
+  IDENTITYX_GRAPHQL_URI: ${IDENTITYX_GRAPHQL_URI-https://apis.mindfulcms.com/graphql/idx-compat}
   RECAPTCHA_V3_SITE_KEY: ${RECAPTCHA_V3_SITE_KEY-}
   RECAPTCHA_V3_SECRET_KEY: ${RECAPTCHA_V3_SECRET_KEY-}
   BASE_BROWSE_GRAPHQL_URI: ${BASE_BROWSE_GRAPHQL_URI-https://browse.virgon.mindful-web.parameter1.com/graphql}
