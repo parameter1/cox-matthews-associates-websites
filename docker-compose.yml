@@ -89,30 +89,6 @@ services:
       - "9810:80"
       - "19810:19810"
 
-  dm:
-    <<: *site-cmd
-    working_dir: /root/sites/diversemilitary.net
-    environment:
-      <<: *env
-      PORT: 80
-      EXPOSED_PORT: 9811
-      LIVERELOAD_PORT: 19811
-    ports:
-      - "9811:80"
-      - "19811:19811"
-
-  dh:
-    <<: *site-cmd
-    working_dir: /root/sites/divhealth.net
-    environment:
-      <<: *env
-      PORT: 80
-      EXPOSED_PORT: 9812
-      LIVERELOAD_PORT: 19812
-    ports:
-      - "9812:80"
-      - "19812:19812"
-
   ccn:
     <<: *site-cmd
     working_dir: /root/sites/ccnewsnow.com
