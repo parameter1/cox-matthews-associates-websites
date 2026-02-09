@@ -4,7 +4,7 @@ $ const siteName = config.websiteContext.name;
 $ const title = 'Stay Connected';
 $ const description = `${siteName} has products that deliver powerful content to you in a variety of forms including print, online, email and social media. To subscribe to a product or manage your current subscription, click below and connect with ${siteName}.`;
 
-<marko-web-default-page-layout type=type title=title description=description>
+<marko-web-default-page-layout title=title description=description type=type>
   <@head>
     <marko-web-gtm-default-context|{ context }| type=type>
       <marko-web-gtm-push data=context />
