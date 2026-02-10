@@ -52,8 +52,8 @@ jobs:
         #v# Make sure this matches the site matrix! #v#
         ###############################################
         site:
-          - { dir: ccnewsnow.com, stack: leonis, id: 60c28bc3d28860bc334ebcb2, account: diverse, tenant: diverse_all, rancher_label: cox-matthews-associates-ccnewsnow.com }
-          - { dir: diverseeducation.com, stack: leonis, id: 60c281c6d28860bc33464ae0, account: diverse, tenant: diverse_all, rancher_label: cox-matthews-associates-diverseeducation.com }
+          - { dir: ccnewsnow.com, stack: virgon, id: 60c28bc3d28860bc334ebcb2, account: diverse, tenant: diverse_all, rancher_label: cox-matthews-associates-ccnewsnow.com }
+          - { dir: diverseeducation.com, stack: virgon, id: 60c281c6d28860bc33464ae0, account: diverse, tenant: diverse_all, rancher_label: cox-matthews-associates-diverseeducation.com }
         ###############################################
         #^# Make sure this matches the site matrix! #^#
         ###############################################
@@ -73,8 +73,8 @@ jobs:
         #v# Make sure this matches the site matrix! #v#
         ###############################################
         site:
-          - { dir: ccnewsnow.com, stack: leonis, id: 60c28bc3d28860bc334ebcb2, account: diverse, tenant: diverse_all, rancher_label: cox-matthews-associates-ccnewsnow.com }
-          - { dir: diverseeducation.com, stack: leonis, id: 60c281c6d28860bc33464ae0, account: diverse, tenant: diverse_all, rancher_label: cox-matthews-associates-diverseeducation.com }
+          - { dir: ccnewsnow.com, stack: virgon, id: 60c28bc3d28860bc334ebcb2, account: diverse, tenant: diverse_all, rancher_label: cox-matthews-associates-ccnewsnow.com }
+          - { dir: diverseeducation.com, stack: virgon, id: 60c281c6d28860bc33464ae0, account: diverse, tenant: diverse_all, rancher_label: cox-matthews-associates-diverseeducation.com }
         ###############################################
         #^# Make sure this matches the site matrix! #^#
         ###############################################

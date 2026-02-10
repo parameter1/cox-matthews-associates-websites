@@ -3,9 +3,7 @@ const mindful = require('@cox-matthews-associates/package-global/config/mindful'
 const navigation = require('./navigation');
 const nativeX = require('./native-x');
 const gam = require('./gam');
-const omeda = require('./omeda');
 const identityX = require('./identity-x');
-const omedaIdentityX = require('./omeda-identity-x');
 const identityXOptInHooks = require('./identity-x-opt-in-hooks');
 const newsletter = require('./newsletter');
 const contentMeter = require('./content-meter');
@@ -18,12 +16,10 @@ module.exports = {
   navigation,
   contentMeter,
   nativeX,
-  omeda,
   identityX,
   idxNavItems: {
     enable: process.env.IDX_NAV_ENABLE === 'true',
   },
-  omedaIdentityX,
   identityXOptInHooks,
   gam,
   newsletter,

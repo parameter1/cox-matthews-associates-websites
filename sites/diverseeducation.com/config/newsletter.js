@@ -1,8 +1,6 @@
 const baseConfig = {
   action: 'https://cma.dragonforms.com/DiverseDaily',
-  hiddenInputs: [
-    // { name: 'omedasite', value: 'diverse_subscriptions' },
-  ],
+  hiddenInputs: [],
 };
 
 module.exports = {

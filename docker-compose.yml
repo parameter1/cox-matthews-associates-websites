@@ -13,16 +13,13 @@ x-node-defaults: &node
     - yarn-cache:/.yarn-cache
 
 x-env-defaults: &env
-  IDENTITYX_GRAPHQL_URI: 'https://identity-x.parameter1.com/graphql'
   CSS_MODE: ${CSS_MODE-optimized}
   GTM_CONTAINER_ID: ${GTM_CONTAINER_ID}
   NEW_RELIC_ENABLED: ${NEW_RELIC_ENABLED-0}
   NEW_RELIC_LICENSE_KEY: ${NEW_RELIC_LICENSE_KEY-(unset)}
   NODE_ENV: development
-  OMEDA_APP_ID: ${OMEDA_APP_ID-(unset)}
-  OMEDA_INPUT_ID: ${OMEDA_INPUT_ID-(unset)}
-  OMEDA_GRAPHQL_URI: ${OMEDA_GRAPHQL_URI-https://graphql.omeda.parameter1.com}
   IDENTITYX_API_TOKEN: ${IDENTITYX_API_TOKEN-(unset)}
+  IDENTITYX_GRAPHQL_URI: ${IDENTITYX_GRAPHQL_URI-https://apis.mindfulcms.com/graphql/idx-compat}
   RECAPTCHA_V3_SITE_KEY: ${RECAPTCHA_V3_SITE_KEY-}
   RECAPTCHA_V3_SECRET_KEY: ${RECAPTCHA_V3_SECRET_KEY-}
   BASE_BROWSE_GRAPHQL_URI: ${BASE_BROWSE_GRAPHQL_URI-https://browse.virgon.mindful-web.parameter1.com/graphql}
@@ -82,45 +79,25 @@ services:
     working_dir: /root/sites/diverseeducation.com
     environment:
       <<: *env
+      HOST: www-cma-de.dev.parameter1.com
       PORT: 80
       EXPOSED_PORT: 9810
       LIVERELOAD_PORT: 19810
+    hostname: www-cma-de.dev.parameter1.com
     ports:
       - "9810:80"
       - "19810:19810"
-
-  dm:
-    <<: *site-cmd
-    working_dir: /root/sites/diversemilitary.net
-    environment:
-      <<: *env
-      PORT: 80
-      EXPOSED_PORT: 9811
-      LIVERELOAD_PORT: 19811
-    ports:
-      - "9811:80"
-      - "19811:19811"
-
-  dh:
-    <<: *site-cmd
-    working_dir: /root/sites/divhealth.net
-    environment:
-      <<: *env
-      PORT: 80
-      EXPOSED_PORT: 9812
-      LIVERELOAD_PORT: 19812
-    ports:
-      - "9812:80"
-      - "19812:19812"
 
   ccn:
     <<: *site-cmd
     working_dir: /root/sites/ccnewsnow.com
     environment:
       <<: *env
+      HOST: www-cma-ccn.dev.parameter1.com
       PORT: 80
       EXPOSED_PORT: 9813
       LIVERELOAD_PORT: 19813
+    hostname: www-cma-ccn.dev.parameter1.com
     ports:
       - "9813:80"
       - "19813:19813"
