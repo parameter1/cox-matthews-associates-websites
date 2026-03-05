@@ -60,7 +60,7 @@ $ const queryParams = {
           name="website-section"
           params={ alias: 'awards-honors/top-women', queryFragment: sectionWithChilderenFragment }
         >
-        $ const year = 2025; //current/active year
+        $ const year = 2026; //current/active year
         $ const children = getAsArray(node, "children.edges").map(({ node }) => node).filter(({ name })=> parseInt(name) <= year);
         <theme-menu-toggle-button
           class="site-navbar__toggler btn btn--other-years-dropdown"
