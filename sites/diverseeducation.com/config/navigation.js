@@ -101,7 +101,6 @@ module.exports = {
       { href: '/faculty-staff', label: 'Faculty & Staff' },
       { href: '/leadership-policy', label: 'Leadership & Policy' },
       { href: '/sports', label: 'Sports' },
-      // { href: '/best-practices', label: 'Best Practices' },
     ],
   },
   tertiary: {
