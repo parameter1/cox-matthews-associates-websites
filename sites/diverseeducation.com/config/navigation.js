@@ -7,6 +7,7 @@ const topics = [
   { href: '/sports', label: 'Sports' },
   { href: '/demographics', label: 'Demographics' },
   { href: '/institutions', label: 'Institutions' },
+  { href: '/ai', label: 'AI' },
   // { href: '/best-practices', label: 'Best Practices' },
 ];
 
