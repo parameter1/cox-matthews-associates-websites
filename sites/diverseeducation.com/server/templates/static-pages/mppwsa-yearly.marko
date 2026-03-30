@@ -26,6 +26,11 @@ $ const fostering = currentYearData ? currentYearData.fostering : title;
 $ const chee = currentYearData ? currentYearData.chee : title;
 $ const ideas = currentYearData ? currentYearData.ideas : title;
 $ const nationalPerspective = currentYearData ? currentYearData.nationalPerspective : title;
+$ const uses = currentYearData ? currentYearData.uses: title;
+$ const yeartoyear = currentYearData ? currentYearData.yeartoyear: title;
+$ const insights = currentYearData ? currentYearData.insights: title;
+$ const whatthismeans = currentYearData ? currentYearData: title;
+
 
 <marko-web-default-page-layout type=type title=title description=pageDescription>
   <@page>
@@ -184,6 +189,53 @@ $ const nationalPerspective = currentYearData ? currentYearData.nationalPerspect
               <h2 class="page-wrapper__website-section-name">ABOUT THE SURVEY</h2>
               <div class="page-wrapper__website-section-description">
                 <p>$!{currentYearData.survey}</p><br/>
+              </div>
+            </if>
+            <if(currentYearData && currentYearData.uses)>
+              <h2 class="page-wrapper__website-section-name">USES OF THIS REPORT</h2>
+              <div class="page-wrapper__website-section-description">
+                <p>$!{currentYearData.uses}</p><br/>
+              </div>
+            </if>
+            <if(currentYearData && currentYearData.yeartoyear)>
+              <h2 class="page-wrapper__website-section-name">YEAR-TO-YEAR VARIATION IN RECOGNIZED INSTITUTIONS</h2>
+              <div class="page-wrapper__website-section-description">
+                <p>$!{currentYearData.yeartoyear}</p><br/>
+                <div class="row">
+                  <div class="col" align="center">
+                    <marko-web-img
+                      class=["lazyload"]
+                      alt="chart"
+                      src=currentYearData.chartSrc
+                      srcset=`${currentYearData.chartSrc} x2`
+                      lazyload=true
+                    />
+                  </div>
+                </div>
+                <div class="row">
+                <div class="col" align="center">
+                  <marko-web-img
+                    class=["lazyload"]
+                    alt="US map"
+                    src=currentYearData.mapSrc2
+                    srcset=`${currentYearData.mapSrc2} x2`
+                    lazyload=true
+                  />
+                </div>
+              </div>
+            </div>
+            <br>
+            </if>
+            <if(currentYearData && currentYearData.insights)>
+              <h2 class="page-wrapper__website-section-name">PRACTICE-ORIENTED INSIGHTS FROM THE 2026 MPPWSA COHORT</h2>
+              <div class="page-wrapper__website-section-description">
+                <p>$!{currentYearData.insights}</p><br/>
+              </div>
+            </if>
+            <if(currentYearData && currentYearData.whatthismeans)>
+              <h2 class="page-wrapper__website-section-name">WHAT THIS MEANS FOR INSTITUTIONS</h2>
+              <div class="page-wrapper__website-section-description">
+                <p>$!{currentYearData.whatthismeans}</p><br/>
               </div>
             </if>
             <if(currentYearData && currentYearData.socialMedia)>
