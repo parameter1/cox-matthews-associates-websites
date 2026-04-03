@@ -2,12 +2,12 @@ import createIdentityBuilder from "@mindful-web/marko-web-identity-x/utils/creat
 
 $ const {
   config,
-  site,
+  contentMeterState,
+  identityX,
+  nativeX,
   req,
   res,
-  nativeX,
-  identityX,
-  contentMeterState,
+  site,
 } = out.global;
 
 <marko-web-document ...input>
@@ -24,11 +24,11 @@ $ const {
     <!-- init p1 website events -->
     <marko-web-identity-x-context|context|>
       <marko-web-p1-events-init
+        enable-gam-plugin=true
+        identity-query-builder=createIdentityBuilder(context, identityX.getIdentity(res))
         on="load"
         request-frame=true
         target-tag="body"
-        identity-query-builder=createIdentityBuilder(context, identityX.getIdentity(res))
-        enable-gam-plugin=true
       />
     </marko-web-identity-x-context>
 
