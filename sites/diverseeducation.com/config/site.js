@@ -67,6 +67,8 @@ module.exports = {
     { provider: 'linkedin', href: 'https://www.linkedin.com/company/the-edu-ledger' },
     { provider: 'youtube', href: 'https://www.youtube.com/@TheEDULedger' },
     { provider: 'instagram', href: 'https://www.instagram.com/TheEDULedger/#' },
+    { provider: 'bluesky', href: 'https://bsky.app/profile/TheEDULedger.bsky.social' },
+    { provider: 'threads', href: 'https://www.threads.com/@TheEDULedger' },
   ],
   gcse: {
     id: '79253cc8ec9d83184',
