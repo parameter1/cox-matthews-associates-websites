@@ -13,16 +13,22 @@ $ const { alias } = input;
     const innerArray = array;
     if (award.name.match("Male Winner")) {
       innerArray[0] = award;
+      awards.withLink = true;
     } else if (award.name.match("Female Winner")) {
       innerArray[1] = award;
+      awards.withLink = true;
     } else if (award.name.match("Male Finalists")) {
       innerArray[2] = award;
+      awards.withLink = true;
     } else if (award.name.match("Female Finalists")) {
       innerArray[3] = award;
+      awards.withLink = true;
     } else if (award.name.match("Male Semi-Finalists")) {
       innerArray[4] = award;
+      award.withLink = false;
     } else if (award.name.match("Female Semi-Finalists")) {
       innerArray[5] = award;
+      award.withLink = false;
     }
     return innerArray;
   }, []).filter((v) => v);
@@ -46,7 +52,7 @@ $ const { alias } = input;
             nodes=nodes
             modifiers=["awards-honors", "arthur-ashe"]>
             <@slot|{ node }|>
-              <site-arthur-ashe-profiles-node node=node with-teaser=true />
+              <site-arthur-ashe-profiles-node node=node with-teaser=true with-link=award.withLink />
             </@slot>
           </theme-card-deck-flow>
         </div>
