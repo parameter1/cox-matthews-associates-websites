@@ -638,18 +638,6 @@
     "@mindful-web/marko-compiler" "^1.57.0"
     marko "~4.20.0"
 
-"@mindful-web/marko-web-contact-us@^1.57.0":
-  version "1.57.0"
-  resolved "https://registry.yarnpkg.com/@mindful-web/marko-web-contact-us/-/marko-web-contact-us-1.57.0.tgz#acbd17a58d8ec77ded8da4f43f7970afcb6c28b8"
-  integrity sha512-4c9ZBDAu8kPD2ACITMYWqyIHFQ2AngPOcAVrOGIJerdwpqc6ov0Bsd3LkrcpykSG2m46XxVteacLiLdzoXQgGg==
-  dependencies:
-    "@mindful-web/env" "^1.0.0"
-    "@mindful-web/marko-web-recaptcha" "^1.26.1"
-    "@mindful-web/utils" "^1.57.0"
-    "@sendgrid/mail" "^6.4.0"
-    body-parser "^1.20.1"
-    node-fetch "^2.6.9"
-
 "@mindful-web/marko-web-deferred-script-loader@^1.57.0":
   version "1.57.0"
   resolved "https://registry.yarnpkg.com/@mindful-web/marko-web-deferred-script-loader/-/marko-web-deferred-script-loader-1.57.0.tgz#348997022f88a4cf09cb3a19cd999ee25d29ade4"

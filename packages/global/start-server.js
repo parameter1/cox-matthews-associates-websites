@@ -2,7 +2,6 @@ const newrelic = require('newrelic');
 const { startServer } = require('@mindful-web/marko-web');
 const { set, get, getAsObject } = require('@mindful-web/object-path');
 const htmlSitemapPagination = require('@mindful-web/marko-web-html-sitemap/middleware/paginated');
-const contactUsHandler = require('@mindful-web/marko-web-contact-us');
 const identityX = require('@mindful-web/marko-web-identity-x');
 const contentGating = require('@mindful-web/marko-web-theme-monorail/middleware/content-gating');
 const newsletterModalState = require('@mindful-web/marko-web-theme-monorail/middleware/newsletter-modal-state');
@@ -23,8 +22,6 @@ const routes = (siteRoutes, siteConfig) => (app) => {
   sharedRoutes(app, siteConfig);
   // Load site routes
   siteRoutes(app);
-  // load contact us route
-  contactUsHandler(app);
 };
 
 module.exports = (options = {}) => {

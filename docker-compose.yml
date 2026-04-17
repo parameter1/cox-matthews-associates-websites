@@ -14,6 +14,7 @@ x-node-defaults: &node
 
 x-env-defaults: &env
   CSS_MODE: ${CSS_MODE-optimized}
+  DEBUG: ${DEBUG-mail}
   GTM_CONTAINER_ID: ${GTM_CONTAINER_ID}
   NEW_RELIC_ENABLED: ${NEW_RELIC_ENABLED-0}
   NEW_RELIC_LICENSE_KEY: ${NEW_RELIC_LICENSE_KEY-(unset)}
@@ -23,8 +24,6 @@ x-env-defaults: &env
   RECAPTCHA_V3_SITE_KEY: ${RECAPTCHA_V3_SITE_KEY-}
   RECAPTCHA_V3_SECRET_KEY: ${RECAPTCHA_V3_SECRET_KEY-}
   BASE_BROWSE_GRAPHQL_URI: ${BASE_BROWSE_GRAPHQL_URI-https://browse.virgon.mindful-web.parameter1.com/graphql}
-  SENDGRID_API_KEY: ${SENDGRID_API_KEY-(unset)}
-  SENDGRID_DEV_TO: developer@endeavorb2b.com
   YARN_CACHE_FOLDER: /.yarn-cache
   ENABLE_CONTENT_METER: ${ENABLE_CONTENT_METER-false}
   SUGGESTED_VIDEO_ID: ${SUGGESTED_VIDEO_ID-},
