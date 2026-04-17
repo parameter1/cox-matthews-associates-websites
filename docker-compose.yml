@@ -1,5 +1,3 @@
-version: '3.7'
-
 x-node-defaults: &node
   tty: true
   init: true
@@ -13,42 +11,24 @@ x-node-defaults: &node
     - yarn-cache:/.yarn-cache
 
 x-env-defaults: &env
+  BASE_BROWSE_GRAPHQL_URI: ${BASE_BROWSE_GRAPHQL_URI-https://browse.virgon.mindful-web.parameter1.com/graphql}
   CSS_MODE: ${CSS_MODE-optimized}
   DEBUG: ${DEBUG-mail}
+  ENABLE_CONTENT_METER: ${ENABLE_CONTENT_METER-false}
   GTM_CONTAINER_ID: ${GTM_CONTAINER_ID}
+  IDENTITYX_API_TOKEN: ${IDENTITYX_API_TOKEN-(unset)}
+  IDENTITYX_GRAPHQL_URI: ${IDENTITYX_GRAPHQL_URI-https://apis.mindfulcms.com/graphql/idx-compat}
+  IDX_NAV_ENABLE: ${IDX_NAV_ENABLE-false}
+  NATIVEX_SERVE_URI: ${NATIVEX_SERVE_URI-}
   NEW_RELIC_ENABLED: ${NEW_RELIC_ENABLED-0}
   NEW_RELIC_LICENSE_KEY: ${NEW_RELIC_LICENSE_KEY-(unset)}
   NODE_ENV: development
-  IDENTITYX_API_TOKEN: ${IDENTITYX_API_TOKEN-(unset)}
-  IDENTITYX_GRAPHQL_URI: ${IDENTITYX_GRAPHQL_URI-https://apis.mindfulcms.com/graphql/idx-compat}
-  RECAPTCHA_V3_SITE_KEY: ${RECAPTCHA_V3_SITE_KEY-}
   RECAPTCHA_V3_SECRET_KEY: ${RECAPTCHA_V3_SECRET_KEY-}
-  BASE_BROWSE_GRAPHQL_URI: ${BASE_BROWSE_GRAPHQL_URI-https://browse.virgon.mindful-web.parameter1.com/graphql}
-  YARN_CACHE_FOLDER: /.yarn-cache
-  ENABLE_CONTENT_METER: ${ENABLE_CONTENT_METER-false}
+  RECAPTCHA_V3_SITE_KEY: ${RECAPTCHA_V3_SITE_KEY-}
   SUGGESTED_VIDEO_ID: ${SUGGESTED_VIDEO_ID-},
   SUGGESTED_VIDEO_PLAYLIST: ${SUGGESTED_VIDEO_PLAYLIST-}
   USE_LINK_INJECTED_BODY: ${USE_LINK_INJECTED_BODY-false}
-  IDX_NAV_ENABLE: ${IDX_NAV_ENABLE-false}
-  NATIVEX_SERVE_URI: ${NATIVEX_SERVE_URI-}
-
-x-env-leonis: &env-leonis
-  GRAPHQL_URI: ${GRAPHQL_URI-https://graphql.leonis.mindful-web.parameter1.com}
-  OEMBED_URI: ${OEMBED_URI-https://oembed.leonis.mindful-web.parameter1.com}
-  RSS_URI: ${RSS_URI-https://rss.leonis.mindful-web.parameter1.com}
-  SITEMAPS_URI: ${SITEMAPS_URI-https://sitemaps.leonis.mindful-web.parameter1.com}
-
-x-env-virgon: &env-virgon
-  GRAPHQL_URI: ${GRAPHQL_URI-https://virgon.graphql.mindful-web.parameter1.com}
-  OEMBED_URI: ${OEMBED_URI-https://virgon.oembed.mindful-web.parameter1.com}
-  RSS_URI: ${RSS_URI-https://virgon.rss.mindful-web.parameter1.com}
-  SITEMAPS_URI: ${SITEMAPS_URI-https://virgon.sitemaps.mindful-web.parameter1.com}
-
-x-env-development: &env-development
-  GRAPHQL_URI: ${GRAPHQL_URI-http://host.docker.internal:10002}
-  OEMBED_URI: ${OEMBED_URI-http://host.docker.internal:10013}
-  RSS_URI: ${RSS_URI-http://host.docker.internal:10011}
-  SITEMAPS_URI: ${SITEMAPS_URI-http://host.docker.internal:10009}
+  YARN_CACHE_FOLDER: /.yarn-cache
 
 x-site-command: &site-cmd
   <<: *node
