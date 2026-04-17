@@ -9,7 +9,6 @@ const identityXOptInHooks = require('./identity-x-opt-in-hooks');
 const magazine = require('./magazine');
 const newsletter = require('./newsletter');
 const search = require('./search');
-const contactUs = require('./contact-us');
 const contentMeter = require('./content-meter');
 
 module.exports = {
@@ -34,7 +33,6 @@ module.exports = {
   magazine,
   newsletter,
   search,
-  contactUs,
   company: 'Cox Matthews and Associates, Inc',
   p1events: {
     tenant: 'diverse',
