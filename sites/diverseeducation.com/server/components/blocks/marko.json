@@ -2,6 +2,9 @@
   "<site-latest-podcast-block>": {
     "template": "./latest-podcast.marko"
   },
+  "<site-latest-issue-block>": {
+    "template": "./latest-issue.marko"
+  },
   "<site-arthur-ashe-award-content-block>": {
     "template": "./arthur-ashe-award-content.marko",
     "@alias" : {

@@ -1,0 +1,68 @@
+.latest-issue {
+  $self: &;
+  $padding: 24px;
+  $button-spacer: 8px;
+
+  height: 100%;
+  padding: $padding;
+  padding-bottom: $padding - $button-spacer;
+  background-color: $gray-100;
+  border-radius: 4px;
+
+  &__header {
+    margin-bottom: 24px;
+    @include skin-typography($style: "section-header-small");
+  }
+
+  &__btn {
+    margin-right: $button-spacer;
+    margin-bottom: $button-spacer;
+  }
+
+  &__content-embed-code iframe {
+    width: 100% !important;
+  }
+  .node-list--latest-issue {
+    .node-list__footer,
+    .node-list__node:first-child {
+      border: none;
+      padding: initial !important;
+    }
+  }
+  .node-list--latest-issue .node-list__node:first-child {
+  }
+
+  .node {
+    & > .node__contents {
+      display: flex;
+      flex-direction: row;
+      column-gap: map-get($spacers, 2);
+    }
+    .node__contents {
+      flex: initial;
+    }
+    &__body {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+
+    }
+    &__footer {
+      margin-top: initial;
+    }
+  }
+}
+
+
+
+.marko-web-icon {
+  $self: &;
+  &--latest-issue {
+    margin-right: 5px;
+    svg {
+      width: 20px;
+      height: 20px;
+      fill: map-deep-get($typography, "section-header-small", "color");
+    }
+  }
+}
