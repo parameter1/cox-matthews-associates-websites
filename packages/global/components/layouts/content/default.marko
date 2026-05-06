@@ -149,27 +149,7 @@ $ const withRecommended = defaultValue(input.withRecommended, true);
                   <marko-web-content-body block-name=blockName obj={ body } />
                   <div class="content-page-preview-overlay" />
                   <marko-web-content-body block-name=blockName attrs={ style: "display: none;" } obj=content modifiers=["ld-json"] />
-                    <marko-web-identity-x-context|{ hasUser, user, application }|>
-                    <if(hasUser)>
-                      <marko-web-identity-x-form-access
-                        content=content
-                        user=user
-                        formId=idxFormId
-                        application=application
-                      />
-                    </if>
-                    <else>
-                      <marko-web-identity-x-non-auth-identify|{ user: identifiedUser }|>
-                        <marko-web-identity-x-form-access
-                          updateProfileOnSubmit=false
-                          content=content
-                          user=identifiedUser
-                          formId=idxFormId
-                          application=application
-                        />
-                      </marko-web-identity-x-non-auth-identify>
-                    </else>
-                  </marko-web-identity-x-context>
+                  <marko-web-identity-x-form-access content=content formId=idxFormId />
                 </if>
                 <else>
                   $ const bodyId = `content-body-${content.id}`;
