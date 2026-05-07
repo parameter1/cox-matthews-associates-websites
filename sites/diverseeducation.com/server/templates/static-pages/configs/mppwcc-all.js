@@ -1,4 +1,5 @@
 // const info2022 = require('./mppwcc-yearly/2021');
+const info2026 = require('./mppwcc-yearly/2026');
 const info2025 = require('./mppwcc-yearly/2025');
 const info2024 = require('./mppwcc-yearly/2024');
 const info2023 = require('./mppwcc-yearly/2023');
@@ -12,6 +13,7 @@ const info2016 = require('./mppwcc-yearly/2016');
 const info2015 = require('./mppwcc-yearly/2015');
 
 module.exports = {
+  2026: info2026,
   2025: info2025,
   2024: info2024,
   2023: info2023,

@@ -26,6 +26,7 @@ $ const chee = currentYearData ? currentYear.chee: title;
 $ const cheeGoals = currentYearData ? currentYearData.cheeGoals: title;
 $ const mpprecommendationsSrc = currentYearData ? currentYearData.mpprecommendationsSrc: recommnedations;
 $ const celebrating = currentYearData ? currentYearData.celebrating : title;
+$ const introProfiles = currentYearData ? currentYearData.introProfiles : introProfiles;
 
 <marko-web-default-page-layout type=type title=title>
   <@page>
@@ -223,6 +224,14 @@ $ const tableOneLabels = Object.values(getAsObject(currentYearData, "tableLabels
             <hr />
           </div>
         </@section>
+        </if>
+        <if(currentYearData && currentYearData.introProfiles)>
+          <@section>
+            <div class="page-contents__content-body page-contents__content-body--introProfiles">
+              <p>$!{currentYearData.introProfiles}</p>
+            </div>
+          </@section>
+        </if>
         <@section>
           <div class="page-contents__content-body page-contents__content-body--profiles">
             <div class="row">
@@ -250,7 +259,6 @@ $ const tableOneLabels = Object.values(getAsObject(currentYearData, "tableLabels
             </div>
           </div>
         </@section>
-      </if>
       <!--
       $ const tableTwoLabels = Object.values(getAsObject(currentYearData, "tableLabels.tableTwo"));
       <if(currentYearData && tableTwoLabels.length)>
