@@ -24,7 +24,6 @@ module.exports = {
   biographies: '<p>Dr. Terrell Strayhorn is professor of education and psychology at Virginia Union University (VUU), where he also serves as director of research in the Center for the Study of HBCUs. Given his expertise in higher education, psychology, and his consequential research on sense of belonging, HBCUs, and minoritized populations, Strayhorn has visiting or adjunct appointments at several access-driven institutions. Author of many books and over 250 journal articles, chapters, and reports, Strayhorn is an internationally recognized student success expert, equity researcher, and public speaker whose work focuses unapologetically on our most difficult subjects, Diverse: Issues in Higher Education named Strayhorn an Emerging Scholar, and he has received ACPA’s Emerging Scholar, Annuit Coeptis, and Diamond Honoree Awards. @tlstrayhorn</p><p>Dr. Royel Johnson is associate professor of education and social work at the University of Southern California, where he also serves as director of the National Assessment of Collegiate Campus Climates at the USC Race and Equity Center. Johnson is a nationally recognized expert on issues of educational access, racial equity, and student success. His work focuses on Black and institutionally marginalized populations like those impacted by the criminal punishment, child welfare, and inequitable educational systems. He has published over 50 academic publications, and several books such as Racial Equity on College Campuses. He’s been recognized by ACPA as both an Emerging Scholar and Diamond Honoree.</p><p>The project also benefited from the contributions of many others over the course of time who have helped contact administrators, write institutional profiles, and elicit quotations from personnel at featured institutions. These include (in alphabetical order): Stanley Gates, J’Quen Johnson, Gabriel Kim, Shay Merritte, Danny Ndungu, Anton Smith, Tiffany Steele, Daniel Thomas, and Catherine Wang. Incredibly talented administrative staff have helped organize files, reply to inquiries, and setup reports including TeNita Freeman, J’Quen Johnson, and Dina Maculada.</p>',
   mpplogoSrc: 'http://img.diverseeducation.com/files/base/diverse/all/image/static/de/mppwcc/MPPWCCLOGO2026.png?w=200&auto=fomat,compress&q=70',
 
-
   profiles: [
     {
       thumbnail: 'Eric Friedman Bergen CC.jpg',
@@ -988,7 +987,7 @@ module.exports = {
         inclusiveLearning: 'YES',
       },
     },
-      'St. Philip’s College': {
+    'St. Philip’s College': {
       tableThree: {
         type: 'HSI',
         enrollment: '20,000 or more',
