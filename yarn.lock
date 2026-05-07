@@ -855,10 +855,10 @@
     graphql-tag "^2.12.6"
     object-path "^0.11.8"
 
-"@mindful-web/marko-web-theme-monorail@^1.66.0":
-  version "1.66.0"
-  resolved "https://registry.yarnpkg.com/@mindful-web/marko-web-theme-monorail/-/marko-web-theme-monorail-1.66.0.tgz#ade7811e7eac1ccc0de73ea6bdd7f07bbc32b937"
-  integrity sha512-xaHHk8CzLr72mLth9Bhgu4F5vXzkKHUG+ZHJzqA7CnrKltp0dTRfmTc+YvkizWmnCg9MDRvtAoksfLmt4v/V8A==
+"@mindful-web/marko-web-theme-monorail@^1.67.2":
+  version "1.67.2"
+  resolved "https://registry.yarnpkg.com/@mindful-web/marko-web-theme-monorail/-/marko-web-theme-monorail-1.67.2.tgz#e38363403b09bee629accd6605302c1e972f7dec"
+  integrity sha512-dJF1bmsu5iDlZQdfZcEyuo77FNqZKiX49tQZYj+gZCF3iS4RKUZz+6+HLSUeubTw2dRA1K98UgVy1VPhMC+vQA==
   dependencies:
     "@mindful-web/dayjs" "^1.49.2"
     "@mindful-web/image" "^1.57.0"
@@ -878,7 +878,7 @@
     "@mindful-web/marko-web-reveal-ad" "^1.57.0"
     "@mindful-web/marko-web-search" "^1.59.2"
     "@mindful-web/marko-web-social-sharing" "^1.57.0"
-    "@mindful-web/mindful" "^1.57.0"
+    "@mindful-web/mindful" "^1.67.2"
     "@mindful-web/object-path" "^1.57.0"
     "@mindful-web/utils" "^1.57.0"
     "@mindful-web/web-common" "^1.57.0"
@@ -931,10 +931,10 @@
     vue "^2.7.14"
     vue-server-renderer "^2.7.14"
 
-"@mindful-web/mindful@^1.57.0":
-  version "1.57.0"
-  resolved "https://registry.yarnpkg.com/@mindful-web/mindful/-/mindful-1.57.0.tgz#6224b15d73534f91446b546ffdcd2411a9cee04a"
-  integrity sha512-yGNa5Q/Vjw7ver7OuXjCSUnVgECQuHvEiaQF/7ZIh9bjlAHwD+QwDLmLwuuMNFyNdqor6F+C0hnySTgdTSsb6Q==
+"@mindful-web/mindful@^1.67.2":
+  version "1.67.2"
+  resolved "https://registry.yarnpkg.com/@mindful-web/mindful/-/mindful-1.67.2.tgz#13c3203d0d12a885c6c047a83e6bf7ec8d9b0a92"
+  integrity sha512-TJ+FshoOIUG2rD221CF0RE4ryOMIH+n36PgaCMdmd4wTroUFgS3oQbZaifRKHSvGBGcSONjoETNf1QGld/Jx/w==
   dependencies:
     "@mindful-web/env" "^1.0.0"
     "@mindful-web/object-path" "^1.57.0"
