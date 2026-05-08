@@ -2,6 +2,7 @@ const htmlSitemap = require('@mindful-web/marko-web-html-sitemap/routes');
 const renderBlock = require('@mindful-web/marko-web-theme-monorail/routes/render-block');
 const taxonomy = require('@mindful-web/marko-web-theme-monorail/routes/taxonomy');
 const magazine = require('@mindful-web/marko-web-theme-monorail-magazine/routes');
+const search = require('@mindful-web/marko-web-theme-monorail/routes/search');
 const searchTemplate = require('../templates/search');
 const getAdvertisingPostAsNativeStory = require('@mindful-web/mindful/marko-web/middleware/get-advertising-post-as-native-story');
 
@@ -15,7 +16,7 @@ const printContent = require('./print-content');
 const publicFiles = require('./public-files');
 const redirects = require('./redirects');
 
-module.exports = (app) => {
+module.exports = (app, siteConfig) => {
   // HTML Sitemap
   htmlSitemap(app);
 
@@ -48,8 +49,8 @@ module.exports = (app) => {
   // Remote component/block loader
   renderBlock(app);
 
-  // Search routes (GCSE-only, no search middleware needed)
-  app.get('/search', (_, res) => { res.marko(searchTemplate); });
+  // Search routes
+  search(app, siteConfig, { template: searchTemplate });
 
   // Taxonomy pages (for handling redirects from old WP sites)
   taxonomy(app);
