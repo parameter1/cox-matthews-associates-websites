@@ -855,10 +855,10 @@
     graphql-tag "^2.12.6"
     object-path "^0.11.8"
 
-"@mindful-web/marko-web-theme-monorail@^1.68.1":
-  version "1.68.1"
-  resolved "https://registry.yarnpkg.com/@mindful-web/marko-web-theme-monorail/-/marko-web-theme-monorail-1.68.1.tgz#cfbeadaf6f94ac57c8e8241da8162bb11b1a804f"
-  integrity sha512-IMKwsTWGmc6QThVI4Duhr7aJS0wjlSckklvL6Om5t1lpHFas4dARsLEkPChUa3tu5rp42fVhrb8NL/Lf7JQqNw==
+"@mindful-web/marko-web-theme-monorail@^1.68.2":
+  version "1.68.2"
+  resolved "https://registry.yarnpkg.com/@mindful-web/marko-web-theme-monorail/-/marko-web-theme-monorail-1.68.2.tgz#b76a43357d1d5d5c9bf6ea171a71726aca230757"
+  integrity sha512-+X1t3jZkvO4NEisx+JusyaOJDTJVeP7VqPKpU86l1D+q5fHew57oxVFsNMMgfYR5ryrRI1/Nt3VEhDOnRzX8yw==
   dependencies:
     "@mindful-web/dayjs" "^1.49.2"
     "@mindful-web/image" "^1.57.0"
