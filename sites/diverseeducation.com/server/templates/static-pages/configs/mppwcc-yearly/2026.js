@@ -1,4 +1,4 @@
-const eightelementsdiagramSrc = 'http://img.diverseeducation.com/files/base/diverse/all/image/static/de/mppwcc/8-Elements.png?w=700&auto=format,compress&q=70';
+const eightelementsdiagramSrc = 'https://img.diverseeducation.com/files/base/diverse/all/image/static/de/mppwcc/8-Elements.png?w=700&auto=format,compress&q=70';
 
 module.exports = {
 
