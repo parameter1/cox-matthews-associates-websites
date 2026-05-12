@@ -22,74 +22,74 @@ $ const withVideo = defaultValue(input.withVideo, false);
       <marko-web-query|{ nodes, section }| name="website-scheduled-content" params=queryParams>
         $ const [node] = nodes;
         <marko-web-element block-name="callout-cards" name="col">
-        <marko-web-block name=blockName>
-          <marko-web-element block-name=blockName name="header">
-            <marko-web-icon name="file" modifiers=[blockName] />
-            ${section.name}
-          </marko-web-element>
-          <div style="display: flex">
-            <div class="podcast-logo-description-wrapper">
-              <marko-web-img
-                class="section__logo"
-                src="https://img.diverseeducation.com/files/base/diverse/all/image/static/InTheMargins.png"
-                srcset=["https://img.diverseeducation.com/files/base/diverse/all/image/static/InTheMargins.png?dpr=2 2x"]
-                alt="In The Margins Logo"
-                attrs={ width: 150, height: 150 }
-              />
+          <marko-web-block name=blockName>
+            <marko-web-element block-name=blockName name="header">
+              <marko-web-icon name="file" modifiers=[blockName] />
+              ${section.name}
+            </marko-web-element>
+            <div style="display: flex">
+              <div class="podcast-logo-description-wrapper">
+                <marko-web-img
+                  class="section__logo"
+                  src="https://img.diverseeducation.com/files/base/diverse/all/image/static/InTheMargins.png"
+                  srcset=["https://img.diverseeducation.com/files/base/diverse/all/image/static/InTheMargins.png?dpr=2 2x"]
+                  alt="In The Margins Logo"
+                  attrs={ width: 150, height: 150 }
+                />
+              </div>
+              <div class="col">
+                <marko-web-node
+                  type=`${node.type}-content`
+                  card=true
+                  flush=true
+                  full-height=false
+                  modifiers=[blockName]
+                >
+                  <@body>
+                    <@header>
+                      <@left>
+                        ${i18n("Latest Episode")}
+                      </@left>
+                    </@header>
+                    <@text tag="h5" modifiers=["podcast-title"]>
+                      <marko-web-content-name tag=null obj=node link=true />
+                    </@text>
+                  </@body>
+                </marko-web-node>
+              </div>
             </div>
-            <div class="col">
-              <marko-web-node
-                type=`${node.type}-content`
-                card=true
-                flush=true
-                full-height=false
-                modifiers=[blockName]
-              >
-                <@body>
-                  <@header>
-                    <@left>
-                      ${i18n("Latest Episode")}
+            <marko-web-node
+              type=`${node.type}-content`
+              card=true
+              flush=true
+              full-height=false
+              modifiers=[blockName]
+            >
+              <@body>
+                <@text modifiers=["more-episodes"]>
+                  <marko-web-website-section-name|{ value }| tag=null obj=section link=true>
+                    ${i18n("More episodes")} &raquo;
+                  </marko-web-website-section-name>
+                </@text>
+                <if(podcastLinks.length)>
+                  <@footer>
+                    <@left modifiers=["buttons"]>
+                      <for|link| of=podcastLinks>
+                        <marko-web-link
+                          class=`btn btn-light ${blockName}__btn`
+                          href=link.href
+                          title=link.label
+                          target="_blank"
+                        >
+                          ${link.label}
+                        </marko-web-link>
+                      </for>
                     </@left>
-                  </@header>
-                  <@text tag="h5" modifiers=["podcast-title"]>
-                    <marko-web-content-name tag=null obj=node link=true />
-                  </@text>
-                </@body>
-              </marko-web-node>
-            </div>
-        </div>
-        <marko-web-node
-          type=`${node.type}-content`
-          card=true
-          flush=true
-          full-height=false
-          modifiers=[blockName]
-        >
-          <@body>
-            <@text modifiers=["more-episodes"]>
-              <marko-web-website-section-name|{ value }| tag=null obj=section link=true>
-                ${i18n("More episodes")} &raquo;
-              </marko-web-website-section-name>
-            </@text>
-            <if(podcastLinks.length)>
-              <@footer>
-                <@left modifiers=["buttons"]>
-                  <for|link| of=podcastLinks>
-                    <marko-web-link
-                      class=`btn btn-light ${blockName}__btn`
-                      href=link.href
-                      title=link.label
-                      target="_blank"
-                    >
-                      ${link.label}
-                    </marko-web-link>
-                  </for>
-                </@left>
-              </@footer>
-            </if>
-          </@body>
-        </marko-web-node>
-        </marko-web-block>
+                  </@footer>
+                </if>
+              </@body>
+            </marko-web-node>
+          </marko-web-block>
         </marko-web-element>
       </marko-web-query>
       <marko-web-element block-name="callout-cards" name="col" modifiers=["last"]>
