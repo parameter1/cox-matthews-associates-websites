@@ -761,7 +761,7 @@
     graphql-tag "^2.12.6"
     node-fetch "^2.6.9"
 
-"@mindful-web/marko-web-omeda-identity-x@^1.49.3", "@mindful-web/marko-web-omeda-identity-x@^1.66.0":
+"@mindful-web/marko-web-omeda-identity-x@^1.66.0":
   version "1.66.0"
   resolved "https://registry.yarnpkg.com/@mindful-web/marko-web-omeda-identity-x/-/marko-web-omeda-identity-x-1.66.0.tgz#fc16866beeb40ed5021992cd74fd877c050899dd"
   integrity sha512-XjoR6I2JunJkJ0q1P7j/UtMy1mUkfiJ1jP24PMAZBIs5rUfjL70rY8ObDIf7fkACdfgwdZ5zM4cMlQMz4mhM3w==
@@ -774,7 +774,7 @@
     graphql "^14.7.0"
     graphql-tag "^2.12.6"
 
-"@mindful-web/marko-web-omeda@^1.41.0", "@mindful-web/marko-web-omeda@^1.57.0":
+"@mindful-web/marko-web-omeda@^1.57.0":
   version "1.57.0"
   resolved "https://registry.yarnpkg.com/@mindful-web/marko-web-omeda/-/marko-web-omeda-1.57.0.tgz#e21eedeccfbf36e6f656282a93e23f8e88fbf8c4"
   integrity sha512-bnxXD1qjqSRruPCnRuvrWG2da7iK9ibM6t3dG/kvTUdkp8T1b/pPiEi4x1oeSmxwyEJF6D60xKXQkYK/rEJguA==
