@@ -1,7 +1,8 @@
 import queryFragment from '@cox-matthews-associates/package-global/graphql/fragments/content-page';
 import sectionFragment from "@mindful-web/marko-web-theme-monorail/graphql/fragments/section-info";
-import defaultValue from "@mindful-web/marko-core/utils/default-value";
-
+import { getAsObject } from "@mindful-web/object-path";
+import { defaultValue } from "@mindful-web/marko-web/utils";
+import latestIssueFragment from "@mindful-web/marko-web-theme-monorail-magazine/graphql/fragments/magazine-latest-issue";
 
 $ const queryParams = {
   sectionAlias: "podcasts",
@@ -16,6 +17,14 @@ $ const podcastLinks = site.getAsArray("podcastLinks");
 $ const blockName = "latest-podcast";
 $ const withVideo = defaultValue(input.withVideo, false);
 
+$ const publicationId = "61128276dc429e5a098b4576";
+
+$ const title = defaultValue(input.title, "In This Issue");
+$ const linkTitle = defaultValue(input.linkTitle, false);
+$ const buttons = defaultValue(input.buttons, ['archives']);
+
+
+
 <if(withVideo)>
   <marko-web-block name="callout-cards">
     <marko-web-element block-name="callout-cards" name="row">
@@ -27,70 +36,41 @@ $ const withVideo = defaultValue(input.withVideo, false);
             <marko-web-icon name="file" modifiers=[blockName] />
             ${section.name}
           </marko-web-element>
-          <div style="display: flex">
-            <div class="podcast-logo-description-wrapper">
-              <marko-web-img
-                class="section__logo"
-                src="https://img.diverseeducation.com/files/base/diverse/all/image/static/InTheMargins.png"
-                srcset=["https://img.diverseeducation.com/files/base/diverse/all/image/static/InTheMargins.png?dpr=2 2x"]
-                alt="In The Margins Logo"
-                attrs={ width: 150, height: 150 }
-              />
-            </div>
-            <div class="col">
-              <marko-web-node
-                type=`${node.type}-content`
-                card=true
-                flush=true
-                full-height=false
-                modifiers=[blockName]
-              >
-                <@body>
-                  <@header>
-                    <@left>
-                      ${i18n("Latest Episode")}
-                    </@left>
-                  </@header>
-                  <@text tag="h5" modifiers=["podcast-title"]>
-                    <marko-web-content-name tag=null obj=node link=true />
-                  </@text>
-                </@body>
-              </marko-web-node>
-            </div>
-        </div>
-        <marko-web-node
-          type=`${node.type}-content`
-          card=true
-          flush=true
-          full-height=false
-          modifiers=[blockName]
+          <marko-web-query|{ node: issue }|
+        name="magazine-latest-issue"
+        params={ publicationId, queryFragment: latestIssueFragment, requiresCoverImage: true  }
+      >
+        <marko-web-node-list
+          inner-justified=false
+          flush-x=true
+          flush-y=true
+          modifiers=[
+            "latest-issue",
+          ]
+          header=input.header
+          footer=input.footer
+          ...input.nodeList
         >
-          <@body>
-            <@text modifiers=["more-episodes"]>
-              <marko-web-website-section-name|{ value }| tag=null obj=section link=true>
-                ${i18n("More episodes")} &raquo;
-              </marko-web-website-section-name>
-            </@text>
-            <if(podcastLinks.length)>
-              <@footer>
-                <@left modifiers=["buttons"]>
-                  <for|link| of=podcastLinks>
-                    <marko-web-link
-                      class=`btn btn-light ${blockName}__btn`
-                      href=link.href
-                      title=link.label
-                      target="_blank"
-                    >
-                      ${link.label}
-                    </marko-web-link>
-                  </for>
-                </@left>
-              </@footer>
-            </if>
-          </@body>
-        </marko-web-node>
-        </marko-web-block>
-        </marko-web-element>
+          <@header>
+            <marko-web-magazine-issue-name tag=null obj=issue link=linkTitle>
+              ${title}
+            </marko-web-magazine-issue-name>
+          </@header>
+          <@nodes nodes=[issue]>
+            <@slot|{ node: issue }| position="at" index=0>
+              <theme-magazine-latest-issue-node node=issue />
+            </@slot>
+          </@nodes>
+          <@footer>
+            <theme-magazine-publication-buttons
+              issue=issue
+              buttons=buttons
+            />
+          </@footer>
+        </marko-web-node-list>
+      </marko-web-query>
+    </marko-web-block>
+  </marko-web-element>
       </marko-web-query>
       <marko-web-element block-name="callout-cards" name="col" modifiers=["last"]>
       <marko-web-block name=blockName>
