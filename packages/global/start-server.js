@@ -1,8 +1,8 @@
 const newrelic = require('newrelic');
 const { startServer } = require('@mindful-web/marko-web');
 const { set, get, getAsObject } = require('@mindful-web/object-path');
+const omedaIdentityX = require('@mindful-web/marko-web-omeda-identity-x');
 const htmlSitemapPagination = require('@mindful-web/marko-web-html-sitemap/middleware/paginated');
-const identityX = require('@mindful-web/marko-web-identity-x');
 const contentGating = require('@mindful-web/marko-web-theme-monorail/middleware/content-gating');
 const newsletterModalState = require('@mindful-web/marko-web-theme-monorail/middleware/newsletter-modal-state');
 const MindfulMarkoWebService = require('@mindful-web/mindful/marko-web/middleware/service');
@@ -52,8 +52,10 @@ module.exports = (options = {}) => {
       // Use newsletterModalState middleware
       app.use(newsletterModalState());
 
-      const idxConfig = get(options, 'siteConfig.identityX');
-      identityX(app, idxConfig, { templates: idxRouteTemplates });
+      // Use Omeda middleware
+      const omedaIdentityXConfig = getAsObject(options, 'siteConfig.omedaIdentityX');
+      set(app.locals, 'omedaConfig', getAsObject(options, 'siteConfig.omeda'));
+      omedaIdentityX(app, { ...omedaIdentityXConfig, idxRouteTemplates });
       idxNavItems({ site: app.locals.site });
 
       // Install custom content gating middleware

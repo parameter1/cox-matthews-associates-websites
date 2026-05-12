@@ -1,14 +1,17 @@
-import createIdentityBuilder from "@mindful-web/marko-web-identity-x/utils/create-identity-builder";
+import createOmedaIdentityBuilder from "@mindful-web/marko-web-p1-events/utils/create-omeda-identity-builder";
 
 $ const {
   config,
   contentMeterState,
+  GAM,
   identityX,
   nativeX,
   req,
   res,
   site,
 } = out.global;
+
+$ const omedaConfig = site.get('omeda');
 
 <marko-web-document ...input>
   <@head>
@@ -25,7 +28,7 @@ $ const {
     <marko-web-identity-x-context|context|>
       <marko-web-p1-events-init
         enable-gam-plugin=true
-        identity-query-builder=createIdentityBuilder(context, identityX.getIdentity(res))
+        identity-query-builder=createOmedaIdentityBuilder(omedaConfig.brandKey)
         on="load"
         request-frame=true
         target-tag="body"
@@ -56,9 +59,18 @@ $ const {
       target-tag="body"
     />
 
+
+    <!-- init omeda olytics -->
+    <marko-web-omeda-olytics-init
+      oid="451c8dee24b0423e97655ab139d3df03"
+      on="load"
+      request-frame=true
+      target-tag="body"
+    />
+
     <${input.head} />
 
-    <marko-web-identity-x-identify />
+    <marko-web-omeda-identity-x-identify />
 
     <!-- start gtm -->
     <marko-web-gtm-start />
@@ -93,5 +105,6 @@ $ const {
   </@below-container>
   <@below-wrapper>
     <marko-web-deferred-script-loader-load />
+    <marko-web-browser-component name="OmedaIdentityXRapidIdentify" />
   </@below-wrapper>
 </marko-web-document>

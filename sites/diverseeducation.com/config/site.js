@@ -4,7 +4,9 @@ const navigation = require('./navigation');
 const leaders = require('./leaders');
 const nativeX = require('./native-x');
 const gam = require('./gam');
+const omeda = require('./omeda');
 const identityX = require('./identity-x');
+const omedaIdentityX = require('./omeda-identity-x');
 const identityXOptInHooks = require('./identity-x-opt-in-hooks');
 const magazine = require('./magazine');
 const newsletter = require('./newsletter');
@@ -24,10 +26,12 @@ module.exports = {
   mindful,
   navigation,
   nativeX,
+  omeda,
   identityX,
   idxNavItems: {
     enable: process.env.IDX_NAV_ENABLE === 'true',
   },
+  omedaIdentityX,
   identityXOptInHooks,
   gam,
   magazine,
